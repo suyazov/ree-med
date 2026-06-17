@@ -446,11 +446,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 .hero-btn-consult {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 28px;
+    bottom: 28px;
     width: 216px;
-    border-radius: 8px 8px 0 0;
-    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: var(--gradient-gray);
     backdrop-filter: blur(60px);
     color: #343434;
     font-size: 14px;
