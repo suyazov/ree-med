@@ -251,7 +251,8 @@ get_header();
                 <span class="section-label"><?php echo esc_html(get_field('why_subtitle') ?: 'Почему выбирают ТриМед'); ?></span>
                     <?php
                     $why_title = get_field('why_title') ?: 'Надёжный поставщик для медицинских учреждений региона';
-                    $why_title = str_replace(' для медицинских учреждений региона', ' <span class="text-green">для медицинских учреждений региона</span>', $why_title);
+                    // Figma: first two words green, the rest black.
+                    $why_title = preg_replace('/^(\S+\s+\S+)(.*)$/', '<span class="text-green">$1</span>$2', $why_title);
                     ?>
                     <h2 class="section-title"><?php echo wp_kses_post($why_title); ?></h2>
             </div>
