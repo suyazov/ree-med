@@ -395,25 +395,30 @@ h1, h2, h3, h4, h5, h6, p {
 .hero-badges {
     position: absolute;
     top: 16px;
-    right: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-items: flex-end;
+    left: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    align-items: start;
+    justify-items: start;
+    max-width: 520px;
 }
 
 .hero-badge {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(54, 118, 67, 0.65);
+    background: rgba(54, 118, 67, 0.45);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     padding: 10px 14px;
     color: var(--color-white);
     font-size: 13px;
     line-height: 110%;
-    max-width: 220px;
+}
+
+.hero-badge:nth-child(3) {
+    grid-column: 1 / 2;
 }
 
 .hero-badge .check {
@@ -429,7 +434,7 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 220px;
+    width: 200px;
     border-radius: 12px 12px 0 0;
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(20px);
