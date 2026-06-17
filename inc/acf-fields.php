@@ -133,8 +133,10 @@ if (function_exists('acf_add_local_field_group')) {
                         'type' => 'select',
                         'choices' => array(
                             'default' => 'По умолчанию',
+                            'gray' => 'Серая',
                             'green' => 'Зелёная',
                             'image' => 'С изображением',
+                            'image-overlay' => 'С изображением + затемнение',
                         ),
                         'default_value' => 'default',
                     ),

@@ -11,14 +11,39 @@ get_header();
     <section class="hero-section">
         <div class="container">
             <div class="hero-grid">
-                <div class="hero-content">
-                    <?php
-                    $hero_title = get_field('hero_title') ?: 'Комплексные решения для дезинфекции и инфекционного контроля';
-                    $hero_title = str_replace(' для ', '<br>для ', $hero_title);
-                    $hero_title = str_replace('дезинфекции', '<span class="text-green">дезинфекции</span><br>', $hero_title);
-                    $hero_title = str_replace('дизенфекции', '<span class="text-green">дизенфекции</span><br>', $hero_title);
-                    ?>
-                    <h1 class="hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
+                <?php
+                $hero_title = get_field('hero_title') ?: 'Комплексные решения для дезинфекции и инфекционного контроля';
+                $hero_title = str_replace('для дезинфекции', '<span class="hero-title-line">для <span class="text-green">дезинфекции</span></span>', $hero_title);
+                $hero_title = str_replace('для дизенфекции', '<span class="hero-title-line">для <span class="text-green">дизенфекции</span></span>', $hero_title);
+                $hero_title = preg_replace('/(<\/span><\/span>)\s+и/', '$1<br>и', $hero_title);
+                $hero_title = str_replace('контроля', '<br>контроля', $hero_title);
+                ?>
+                <h1 class="hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
+                <div class="hero-image-wrap">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.png" alt="Дезинфекция" class="hero-image">
+                    <div class="hero-badges">
+                        <?php
+                        $hero_badges = get_field('hero_badges');
+                        if (!$hero_badges) {
+                            $hero_badges = array(
+                                array('text' => 'Безопасность персонала<br>и пациентов'),
+                                array('text' => 'Соблюдение санитарных<br>требований'),
+                                array('text' => 'Эффективная система инфекционного контроля'),
+                            );
+                        }
+                        foreach ($hero_badges as $index => $badge) :
+                            $badge_text = $badge['text'];
+                            if ($index === 2) {
+                                $badge_text = str_replace('<br>', ' ', $badge_text);
+                                $badge_text = str_replace('<br/>', ' ', $badge_text);
+                                $badge_text = str_replace('<br />', ' ', $badge_text);
+                            }
+                        ?>
+                            <div class="hero-badge"><span class="check"></span> <?php echo wp_kses_post($badge_text); ?></div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="hero-body">
                     <p class="hero-desc"><?php echo esc_html(get_field('hero_desc') ?: 'Подбираем дезинфицирующие средства, оборудование и расходные материалы для медицинских учреждений, стоматологий, лабораторий и организаций различных сфер деятельности'); ?></p>
                     <div class="hero-features">
                         <?php
@@ -38,24 +63,6 @@ get_header();
                         <?php endforeach; ?>
                     </div>
                     <a href="#application" class="btn btn-primary hero-btn-main"><?php echo esc_html(get_field('hero_button_text') ?: 'Подобрать решение'); ?></a>
-                </div>
-                <div class="hero-image-wrap">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.png" alt="Дезинфекция" class="hero-image">
-                    <div class="hero-badges">
-                        <?php
-                        $hero_badges = get_field('hero_badges');
-                        if (!$hero_badges) {
-                            $hero_badges = array(
-                                array('text' => 'Безопасность персонала<br>и пациентов'),
-                                array('text' => 'Соблюдение санитарных<br>требований'),
-                                array('text' => 'Эффективная система<br>инфекционного контроля'),
-                            );
-                        }
-                        foreach ($hero_badges as $badge) :
-                        ?>
-                            <div class="hero-badge"><span class="check"></span> <?php echo wp_kses_post($badge['text']); ?></div>
-                        <?php endforeach; ?>
-                    </div>
                     <a href="#application" class="btn btn-secondary hero-btn-consult">Получить консультацию</a>
                 </div>
             </div>
@@ -65,39 +72,45 @@ get_header();
     <!-- Audience -->
     <section class="audience-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label"><?php echo esc_html(get_field('audience_subtitle') ?: 'Кому подходит'); ?></span>
-                <h2 class="section-title"><?php echo esc_html(get_field('audience_title') ?: 'Работаем с учреждениями разных направлений'); ?></h2>
-            </div>
-            <div class="audience-grid">
+            <div class="audience-inner">
+                <div class="section-header">
+                    <span class="section-label"><?php echo esc_html(get_field('audience_subtitle') ?: 'Кому подходит'); ?></span>
+                    <h2 class="section-title"><?php echo esc_html(get_field('audience_title') ?: 'Работаем с учреждениями разных направлений'); ?></h2>
+                </div>
+                <div class="audience-grid">
                 <?php
                 $audience_cards = get_field('audience_cards');
                 if (!$audience_cards) {
                     $audience_cards = array(
                         array('title' => 'Медицинские центры', 'style' => 'default'),
                         array('title' => 'Стоматологии', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-stomatology.png'),
-                        array('title' => 'Больницы и поликлиники', 'style' => 'default'),
+                        array('title' => 'Больницы и поликлиники', 'style' => 'gray'),
                         array('title' => 'Лаборатории', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-lab.png'),
                         array('title' => 'Санатории и реабилитационные центры', 'style' => 'green'),
                         array('title' => 'Образовательные учреждения', 'style' => 'green'),
                         array('title' => 'Салоны красоты и косметологии', 'style' => 'default'),
                         array('title' => 'Предприятия и организации', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-enterprise.png'),
                         array('title' => 'Ещё можно добавить', 'style' => 'default'),
-                        array('title' => 'Ещё можно добавить', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-medcenter.png'),
+                        array('title' => 'Ещё можно добавить', 'style' => 'image-overlay', 'image' => get_template_directory_uri() . '/assets/img/card-medcenter.png'),
                     );
                 }
                 foreach ($audience_cards as $card) :
                     $style = !empty($card['style']) ? $card['style'] : 'default';
                     $classes = 'audience-card';
                     if ($style === 'green') $classes .= ' green';
-                    if ($style === 'image' && !empty($card['image'])) $classes .= ' has-image';
-                    $bg = ($style === 'image' && !empty($card['image'])) ? ' style="background-image:url(\'' . esc_url($card['image']) . '\')"' : '';
+                    if ($style === 'gray') $classes .= ' gray';
+                    if ($style === 'image' || $style === 'image-overlay') {
+                        if (!empty($card['image'])) $classes .= ' has-image';
+                        $classes .= ' ' . esc_attr($style);
+                    }
+                    $bg = (($style === 'image' || $style === 'image-overlay') && !empty($card['image'])) ? ' style="background-image:url(\'' . esc_url($card['image']) . '\')"' : '';
                 ?>
                     <div class="<?php echo esc_attr($classes); ?>"<?php echo $bg; ?>>
-                        <?php if ($style === 'image' && !empty($card['image'])) echo '<span class="overlay"></span>'; ?>
-                        <span class="arrow"></span><h3><?php echo esc_html($card['title']); ?></h3>
+                        <?php if ($style === 'image' || $style === 'image-overlay') echo '<span class="overlay"></span>'; ?>
+                        <h3><?php echo esc_html($card['title']); ?></h3><span class="arrow"></span>
                     </div>
                 <?php endforeach; ?>
+            </div>
             </div>
         </div>
     </section>
@@ -159,11 +172,11 @@ get_header();
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-1.png', 'number' => '1', 'title' => 'Анализ потребностей учреждения'),
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-2.png', 'number' => '2', 'title' => 'Подбор дезсредств под задачи'),
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-3.png', 'number' => '3', 'title' => 'Подбор оборудования'),
-                        array('is_green' => true, 'title' => $green_text),
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-4.png', 'number' => '4', 'title' => 'Расчет потребности расходных материалов'),
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-5.png', 'number' => '5', 'title' => 'Консультации специалистов'),
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-6.png', 'number' => '6', 'title' => 'Поставка продукции'),
                         array('image' => get_template_directory_uri() . '/assets/img/what-included-7.png', 'number' => '7', 'title' => 'Сопровождение и поддержка'),
+                        array('is_green' => true, 'title' => $green_text),
                     );
                 }
                 foreach ($included_cards as $card) :
