@@ -13,6 +13,7 @@ get_header();
             <div class="hero-grid">
                 <?php
                 $hero_title = get_field('hero_title') ?: 'Комплексные решения для дезинфекции и инфекционного контроля';
+                $hero_title = str_replace('решения ', 'решения<br>', $hero_title);
                 $hero_title = str_replace('для дезинфекции', '<span class="hero-title-line">для <span class="text-green">дезинфекции</span></span>', $hero_title);
                 $hero_title = str_replace('для дизенфекции', '<span class="hero-title-line">для <span class="text-green">дизенфекции</span></span>', $hero_title);
                 $hero_title = preg_replace('/(<\/span><\/span>)\s+и/', '$1<br>и', $hero_title);
@@ -172,7 +173,11 @@ get_header();
         <div class="container">
             <div class="section-header">
                 <span class="section-label"><?php echo esc_html(get_field('included_subtitle') ?: 'Что входит'); ?></span>
-                <h2 class="section-title"><?php echo esc_html(get_field('included_title') ?: 'Помогаем выстроить систему инфекционного контроля'); ?></h2>
+                <?php
+                    $included_title = get_field('included_title') ?: 'Помогаем выстроить систему инфекционного контроля';
+                    $included_title = str_replace('инфекционного контроля', '<span class="text-green">инфекционного контроля</span>', $included_title);
+                    ?>
+                <h2 class="section-title"><?php echo wp_kses_post($included_title); ?></h2>
             </div>
             <div class="included-grid">
                 <?php
@@ -244,7 +249,11 @@ get_header();
         <div class="container">
             <div class="section-header center">
                 <span class="section-label"><?php echo esc_html(get_field('why_subtitle') ?: 'Почему выбирают ТриМед'); ?></span>
-                <h2 class="section-title green"><?php echo esc_html(get_field('why_title') ?: 'Надёжный поставщик для медицинских учреждений региона'); ?></h2>
+                    <?php
+                    $why_title = get_field('why_title') ?: 'Надёжный поставщик для медицинских учреждений региона';
+                    $why_title = str_replace(' для медицинских учреждений региона', ' <span class="text-green">для медицинских учреждений региона</span>', $why_title);
+                    ?>
+                    <h2 class="section-title"><?php echo wp_kses_post($why_title); ?></h2>
             </div>
             <div class="why-grid">
                 <div class="why-image-card" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/why-choose.png')">
@@ -311,7 +320,12 @@ get_header();
     <section class="partners-section">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title"><?php echo esc_html(get_field('partners_title') ?: 'Работаем с ведущими производителями'); ?></h2>
+                    <?php
+                    $partners_title = get_field('partners_title') ?: 'Работаем с ведущими производителями';
+                    $partners_title = str_replace('с ведущими', '<strong>с ведущими</strong>', $partners_title);
+                    $partners_title = str_replace('производителями', '<span class="text-green">производителями</span>', $partners_title);
+                    ?>
+                    <h2 class="section-title partners-title"><?php echo wp_kses_post($partners_title); ?></h2>
             </div>
             <div class="partners-grid">
                 <?php
@@ -335,7 +349,11 @@ get_header();
     <!-- FAQ -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="section-title center"><?php echo esc_html(get_field('faq_title') ?: 'Часто задаваемые вопросы'); ?></h2>
+                    <?php
+                    $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы';
+                    $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
+                    ?>
+                    <h2 class="section-title center"><?php echo wp_kses_post($faq_title); ?></h2>
             <div class="faq-grid">
                 <?php
                 $faq_items = get_field('faq_items');

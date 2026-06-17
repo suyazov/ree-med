@@ -361,18 +361,17 @@ h1, h2, h3, h4, h5, h6, p {
     color: #343434;
 }
 
-.hero-title span {
+.hero-title .text-green {
     color: var(--color-green);
     font-weight: 600;
-}
-
-.hero-title .text-green {
     white-space: nowrap;
 }
 
 .hero-title-line {
     display: inline;
     white-space: nowrap;
+    color: inherit;
+    font-weight: inherit;
 }
 
 .hero-desc {
@@ -1164,6 +1163,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 .partners-section .section-header {
     margin-bottom: 54px;
+}
+
+.partners-section .partners-title {
+    font-weight: 400;
+}
+
+.partners-section .partners-title strong {
+    font-weight: 600;
 }
 
 .partners-grid {
