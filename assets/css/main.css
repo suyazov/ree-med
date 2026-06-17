@@ -918,6 +918,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .why-stats {
     display: flex;
+    align-items: flex-start;
     gap: 13px;
     flex-wrap: nowrap;
     width: 100%;
@@ -925,12 +926,15 @@ h1, h2, h3, h4, h5, h6, p {
 
 .why-stat {
     border-radius: 12px;
-    padding: 12px 20px 20px;
+    padding: 12px 20px;
     display: flex;
     flex-direction: column;
     gap: 4px;
     min-width: 126px;
     flex: 1;
+    height: 90px;
+    box-sizing: border-box;
+    justify-content: flex-start;
 }
 
 .why-stat.glass {
@@ -947,14 +951,16 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .why-stat strong {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 1;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .why-stat span {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
 }
 
 .why-info-card {
@@ -2112,10 +2118,16 @@ h1, h2, h3, h4, h5, h6, p {
     .why-stat {
         padding: 10px 14px;
         min-width: auto;
+        height: auto;
+        white-space: normal;
     }
     .why-stat strong {
         font-size: 24px;
         line-height: 1.2;
+        white-space: normal;
+    }
+    .why-stat span {
+        white-space: normal;
     }
     .why-stats {
         gap: 8px;
