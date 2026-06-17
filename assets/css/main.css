@@ -477,31 +477,33 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card .arrow {
     position: relative;
     z-index: 1;
-    width: 24px;
-    height: 24px;
-    transform: rotate(45deg);
+    width: 28px;
+    height: 28px;
     margin-top: auto;
 }
 
-.audience-card .arrow::before,
+.audience-card .arrow::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 18px;
+    background: currentColor;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 1px;
+}
+
 .audience-card .arrow::after {
     content: '';
     position: absolute;
-    background: currentColor;
-}
-
-.audience-card .arrow::before {
-    width: 2px;
-    height: 13px;
-    left: 11px;
-    top: 0;
-}
-
-.audience-card .arrow::after {
-    width: 13px;
-    height: 2px;
-    left: 11px;
-    top: 0;
+    right: 2px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    border-radius: 0 2px 0 0;
 }
 
 /* Supplies */
