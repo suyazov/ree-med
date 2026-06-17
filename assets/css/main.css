@@ -545,7 +545,7 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card {
     position: relative;
     background: var(--color-white-2);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 24px;
     min-height: 180px;
     display: flex;
@@ -574,13 +574,13 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(54, 118, 67, 0.5);
+    background: rgba(54, 118, 67, 0.6);
 }
 
 .audience-card h3 {
     position: relative;
     z-index: 1;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 110%;
     font-weight: 600;
     max-width: 170px;
@@ -619,8 +619,8 @@ h1, h2, h3, h4, h5, h6, p {
     left: 600px;
     top: 489px;
     transform: translate(-50%, -50%);
-    width: 304px;
-    height: 304px;
+    width: 352px;
+    height: 352px;
     border-radius: 50%;
     overflow: hidden;
     z-index: 2;
@@ -647,13 +647,13 @@ h1, h2, h3, h4, h5, h6, p {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid rgba(54, 118, 67, 0.12);
+    border: 1px solid rgba(54, 118, 67, 0.15);
     border-radius: 50%;
 }
 
-.ring-1 { width: 532px; height: 532px; }
-.ring-2 { width: 760px; height: 760px; }
-.ring-3 { width: 980px; height: 980px; }
+.ring-1 { width: 540px; height: 540px; }
+.ring-2 { width: 820px; height: 820px; }
+.ring-3 { width: 1080px; height: 1080px; }
 
 .supplies-items {
     position: absolute;
@@ -696,19 +696,6 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.3;
     font-weight: 400;
 }
-
-/* Positioning supply items per Figma (Дезинфекция 1440) */
-.supply-item:nth-child(1) { left: 890px; top: 80px; }
-.supply-item:nth-child(2) { left: 722px; top: 237px; }
-.supply-item:nth-child(3) { left: 843px; top: 388px; }
-.supply-item:nth-child(4) { left: 111px; top: 679px; }
-.supply-item:nth-child(5) { left: 964px; top: 539px; }
-.supply-item:nth-child(6) { left: 734px; top: 690px; }
-.supply-item:nth-child(7) { left: 162px; top: 843px; }
-.supply-item:nth-child(8) { left: 814px; top: 903px; }
-.supply-item:nth-child(9) { left: 72px; top: 398px; }
-.supply-item:nth-child(10) { left: -32px; top: 539px; }
-.supply-item:nth-child(11) { left: 21px; top: 258px; }
 
 /* Included */
 .included-section {
@@ -904,7 +891,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .why-section .section-title {
     white-space: nowrap;
-    font-size: 40px;
+    font-size: 36px;
+    display: inline-block;
 }
 
 .why-grid {
@@ -991,8 +979,8 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     color: var(--color-green);
 }
 
@@ -1340,13 +1328,12 @@ h1, h2, h3, h4, h5, h6, p {
 .faq-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-auto-flow: row;
+    gap: 12px 32px;
 }
 
 .faq-col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: contents;
 }
 
 .faq-item {
@@ -1368,15 +1355,16 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .faq-icon {
-    width: 7px;
-    height: 13px;
+    width: 10px;
+    height: 6px;
     border: solid var(--color-black);
     border-width: 0 2px 2px 0;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
+    flex-shrink: 0;
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(45deg);
+    transform: rotate(-135deg);
 }
 
 .faq-item p {
@@ -2245,16 +2233,20 @@ h1, h2, h3, h4, h5, h6, p {
         gap: 8px;
     }
     .faq-col {
-        gap: 8px;
+        display: contents;
     }
     .faq-item {
         padding: 20px 24px;
         font-size: 14px;
     }
     .faq-icon {
-        width: 6px;
-        height: 11px;
+        width: 10px;
+        height: 6px;
         border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+    .faq-item.active .faq-icon {
+        transform: rotate(-135deg);
     }
     .faq-item p {
         font-size: 14px;

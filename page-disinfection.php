@@ -401,28 +401,20 @@ get_header();
                     $faq_items = array(
                         array('question' => 'Какие дезсредства выбрать для стоматологии?', 'answer' => '', 'is_open' => false),
                         array('question' => 'Какие документы предоставляются на продукцию?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Как подобрать рециркулятор?', 'answer' => '', 'is_open' => false),
                         array('question' => 'Есть ли товары в наличии в Чите?', 'answer' => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.', 'is_open' => true),
+                        array('question' => 'Как подобрать рециркулятор?', 'answer' => '', 'is_open' => false),
                         array('question' => 'Какие средства подходят для обработки инструментов?', 'answer' => '', 'is_open' => false),
                     );
                 }
-                // Split into two columns
-                $faq_col1 = array_slice($faq_items, 0, ceil(count($faq_items) / 2));
-                $faq_col2 = array_slice($faq_items, ceil(count($faq_items) / 2));
-                foreach (array($faq_col1, $faq_col2) as $col_items) :
+                foreach ($faq_items as $item) :
+                    $active_class = !empty($item['is_open']) ? ' active' : '';
                 ?>
-                <div class="faq-col">
-                    <?php foreach ($col_items as $item) :
-                        $active_class = !empty($item['is_open']) ? ' active' : '';
-                    ?>
-                        <div class="faq-item<?php echo esc_attr($active_class); ?>">
-                            <span><?php echo esc_html($item['question']); ?></span><span class="faq-icon"></span>
-                            <?php if (!empty($item['answer'])) : ?>
-                                <p><?php echo esc_html($item['answer']); ?></p>
-                            <?php endif; ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                    <div class="faq-item<?php echo esc_attr($active_class); ?>">
+                        <span><?php echo esc_html($item['question']); ?></span><span class="faq-icon"></span>
+                        <?php if (!empty($item['answer'])) : ?>
+                            <p><?php echo esc_html($item['answer']); ?></p>
+                        <?php endif; ?>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>

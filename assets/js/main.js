@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Supplies circular diagram uniform positioning (desktop only)
+    // Supplies circular diagram positioning (desktop only)
     const suppliesItems = document.querySelector('.supplies-items');
     if (suppliesItems) {
         const supplyItems = suppliesItems.querySelectorAll('.supply-item');
@@ -13,21 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             const centerX = 600;
-            const centerY = 520;
-            const radiusX = 460;
-            const radiusXBottom = 540;
-            const radiusY = 280;
+            const centerY = 500;
+            const radiusXInner = 360;
+            const radiusYInner = 220;
+            const radiusXOuter = 520;
+            const radiusYOuter = 320;
             const total = supplyItems.length;
             const step = (2 * Math.PI) / total;
             const startAngle = -Math.PI / 2;
             supplyItems.forEach(function(item, index) {
                 const angle = startAngle + index * step;
+                const isOuter = index % 2 === 0;
+                const rx = isOuter ? radiusXOuter : radiusXInner;
+                const ry = isOuter ? radiusYOuter : radiusYInner;
                 const itemWidth = item.offsetWidth;
                 const itemHeight = item.offsetHeight;
-                const bottomFactor = Math.pow(Math.sin(angle), 2);
-                const rx = radiusX + (radiusXBottom - radiusX) * bottomFactor;
                 const cx = centerX + rx * Math.cos(angle);
-                const cy = centerY + radiusY * Math.sin(angle);
+                const cy = centerY + ry * Math.sin(angle);
                 item.style.left = (cx - itemWidth / 2) + 'px';
                 item.style.top = (cy - itemHeight / 2) + 'px';
                 item.style.flexDirection = Math.cos(angle) < 0 ? 'row-reverse' : 'row';
