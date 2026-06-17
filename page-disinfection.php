@@ -14,8 +14,9 @@ get_header();
                 <div class="hero-content">
                     <?php
                     $hero_title = get_field('hero_title') ?: 'Комплексные решения для дезинфекции и инфекционного контроля';
-                    $hero_title = str_replace('дезинфекции', '<span class="text-green">дезинфекции</span>', $hero_title);
-                    $hero_title = str_replace('дизенфекции', '<span class="text-green">дизенфекции</span>', $hero_title);
+                    $hero_title = str_replace(' для ', '<br>для ', $hero_title);
+                    $hero_title = str_replace('дезинфекции', '<span class="text-green">дезинфекции</span><br>', $hero_title);
+                    $hero_title = str_replace('дизенфекции', '<span class="text-green">дизенфекции</span><br>', $hero_title);
                     ?>
                     <h1 class="hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
                     <p class="hero-desc"><?php echo esc_html(get_field('hero_desc') ?: 'Подбираем дезинфицирующие средства, оборудование и расходные материалы для медицинских учреждений, стоматологий, лабораторий и организаций различных сфер деятельности'); ?></p>
