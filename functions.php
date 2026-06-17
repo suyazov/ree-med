@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.0.7');
+define('TRIMED_VERSION', '1.0.8');
 
 function trimed_setup() {
     add_theme_support('title-tag');
