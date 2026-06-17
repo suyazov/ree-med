@@ -617,8 +617,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .supplies-center {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 600px;
+    top: 489px;
     transform: translate(-50%, -50%);
     width: 304px;
     height: 304px;
@@ -635,8 +635,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .supplies-rings {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 600px;
+    top: 489px;
     transform: translate(-50%, -50%);
     width: 980px;
     height: 980px;
@@ -667,14 +667,15 @@ h1, h2, h3, h4, h5, h6, p {
 
 .supply-item {
     position: absolute;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 16px;
-    background: var(--color-white);
-    border-radius: 12px;
-    padding: 12px 16px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
     font-size: 16px;
     line-height: 110%;
+    font-weight: 400;
     white-space: nowrap;
 }
 
@@ -687,18 +688,24 @@ h1, h2, h3, h4, h5, h6, p {
     box-sizing: border-box;
 }
 
+.supply-item .supply-text {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
 /* Positioning supply items per Figma (Дезинфекция 1440) */
-.supply-item:nth-child(1) { left: 93px; top: 326px; }
-.supply-item:nth-child(2) { left: 962px; top: 148px; }
-.supply-item:nth-child(3) { left: 794px; top: 305px; }
-.supply-item:nth-child(4) { left: 915px; top: 456px; }
-.supply-item:nth-child(5) { left: 40px; top: 607px; }
-.supply-item:nth-child(6) { left: 144px; top: 466px; }
-.supply-item:nth-child(7) { left: 1036px; top: 607px; }
-.supply-item:nth-child(8) { left: 806px; top: 758px; }
-.supply-item:nth-child(9) { left: 183px; top: 747px; }
-.supply-item:nth-child(10) { left: 234px; top: 911px; }
-.supply-item:nth-child(11) { left: 886px; top: 971px; }
+.supply-item:nth-child(1) { left: 890px; top: 80px; }
+.supply-item:nth-child(2) { left: 722px; top: 237px; }
+.supply-item:nth-child(3) { left: 843px; top: 388px; }
+.supply-item:nth-child(4) { left: 111px; top: 679px; }
+.supply-item:nth-child(5) { left: 964px; top: 539px; }
+.supply-item:nth-child(6) { left: 734px; top: 690px; }
+.supply-item:nth-child(7) { left: 162px; top: 843px; }
+.supply-item:nth-child(8) { left: 814px; top: 903px; }
+.supply-item:nth-child(9) { left: 72px; top: 398px; }
+.supply-item:nth-child(10) { left: -32px; top: 539px; }
+.supply-item:nth-child(11) { left: 21px; top: 258px; }
 
 /* Included */
 .included-section {

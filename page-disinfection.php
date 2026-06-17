@@ -127,7 +127,11 @@ get_header();
             <div class="supplies-box">
                 <div class="section-header">
                     <span class="section-label"><?php echo esc_html(get_field('supplies_subtitle') ?: 'Что мы поставляем'); ?></span>
-                    <h2 class="section-title"><?php echo esc_html(get_field('supplies_title') ?: 'Все для организации инфекционного контроля'); ?></h2>
+                    <?php
+                    $supplies_title = get_field('supplies_title') ?: 'Все для организации инфекционного контроля';
+                    $supplies_title = str_replace('инфекционного контроля', '<span class="text-green">инфекционного контроля</span>', $supplies_title);
+                    ?>
+                    <h2 class="section-title"><?php echo wp_kses_post($supplies_title); ?></h2>
                 </div>
                 <div class="supplies-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/supplies-center.png" alt=""></div>
                 <div class="supplies-rings">
@@ -138,24 +142,25 @@ get_header();
                 <div class="supplies-items">
                     <?php
                     $supplies_items = get_field('supplies_items');
-                    if (!$supplies_items) {
-                        $supplies_items = array(
-                            array('text' => 'Средства для обработки рук'),
-                            array('text' => 'Дезинфицирующие средства'),
-                            array('text' => 'Средства для обработки поверхностей'),
-                            array('text' => 'Средства для стерилизации инструментов'),
-                            array('text' => 'Антисептики'),
-                            array('text' => 'Дезинфицирующие салфетки'),
-                            array('text' => 'Контейнеры для дезинфекции'),
-                            array('text' => 'Автоклавы и стерилизационное оборудование'),
-                            array('text' => 'Средства для обработки эндоскопов'),
-                            array('text' => 'Упаковочные материалы для стерилизации'),
-                            array('text' => 'Рециркуляторы и обеззараживатели воздуха'),
-                        );
+                    $supplies_defaults = array(
+                        array('text' => 'Дезинфицирующие средства'),
+                        array('text' => 'Средства для обработки поверхностей'),
+                        array('text' => 'Средства для стерилизации инструментов'),
+                        array('text' => 'Средства для обработки эндоскопов'),
+                        array('text' => 'Контейнеры для дезинфекции'),
+                        array('text' => 'Автоклавы и стерилизационное оборудование'),
+                        array('text' => 'Упаковочные материалы для стерилизации'),
+                        array('text' => 'Рециркуляторы и обеззараживатели воздуха'),
+                        array('text' => 'Дезинфицирующие салфетки'),
+                        array('text' => 'Антисептики'),
+                        array('text' => 'Средства для обработки рук'),
+                    );
+                    if (!$supplies_items || count($supplies_items) < 11) {
+                        $supplies_items = $supplies_defaults;
                     }
                     foreach ($supplies_items as $item) :
                     ?>
-                        <div class="supply-item"><span class="dot"></span><span><?php echo esc_html($item['text']); ?></span></div>
+                        <div class="supply-item"><span class="dot"></span><span class="supply-text"><?php echo esc_html($item['text']); ?></span></div>
                     <?php endforeach; ?>
                 </div>
             </div>
