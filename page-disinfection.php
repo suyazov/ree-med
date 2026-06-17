@@ -406,10 +406,28 @@ get_header();
                         array('question' => 'Какие средства подходят для обработки инструментов?', 'answer' => '', 'is_open' => false),
                     );
                 }
-                foreach ($faq_items as $item) :
+                // Desktop layout as in Figma: items flow row-wise, but the open item
+                // is placed in the right column of its row to balance the columns.
+                $faq_positions = array();
+                $faq_pair_count = ceil(count($faq_items) / 2);
+                for ($p = 0; $p < $faq_pair_count; $p++) {
+                    $left_i = $p * 2;
+                    $right_i = $left_i + 1;
+                    $row = $p + 1;
+                    $faq_positions[$left_i] = 'grid-row:' . $row . ';grid-column:1;';
+                    if (isset($faq_items[$right_i])) {
+                        $faq_positions[$right_i] = 'grid-row:' . $row . ';grid-column:2;';
+                    }
+                    if (!empty($faq_items[$left_i]['is_open']) && isset($faq_items[$right_i])) {
+                        $faq_positions[$left_i] = 'grid-row:' . $row . ';grid-column:2;';
+                        $faq_positions[$right_i] = 'grid-row:' . $row . ';grid-column:1;';
+                    }
+                }
+                foreach ($faq_items as $i => $item) :
                     $active_class = !empty($item['is_open']) ? ' active' : '';
+                    $position_style = isset($faq_positions[$i]) ? esc_attr($faq_positions[$i]) : '';
                 ?>
-                    <div class="faq-item<?php echo esc_attr($active_class); ?>">
+                    <div class="faq-item<?php echo esc_attr($active_class); ?>" style="<?php echo $position_style; ?>">
                         <span><?php echo esc_html($item['question']); ?></span><span class="faq-icon"></span>
                         <?php if (!empty($item['answer'])) : ?>
                             <p><?php echo esc_html($item['answer']); ?></p>
