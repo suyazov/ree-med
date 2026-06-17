@@ -74,7 +74,11 @@ get_header();
             <div class="audience-inner">
                 <div class="section-header">
                     <span class="section-label"><?php echo esc_html(get_field('audience_subtitle') ?: 'Кому подходит'); ?></span>
-                    <h2 class="section-title"><?php echo esc_html(get_field('audience_title') ?: 'Работаем с учреждениями разных направлений'); ?></h2>
+                    <?php
+                    $audience_title = get_field('audience_title') ?: 'Работаем с учреждениями разных направлений';
+                    $audience_title = str_replace('разных направлений', '<span class="text-green">разных направлений</span>', $audience_title);
+                    ?>
+                    <h2 class="section-title"><?php echo wp_kses_post($audience_title); ?></h2>
                 </div>
                 <div class="audience-grid">
                 <?php
@@ -106,7 +110,10 @@ get_header();
                 ?>
                     <div class="<?php echo esc_attr($classes); ?>"<?php echo $bg; ?>>
                         <?php if ($style === 'image' || $style === 'image-overlay') echo '<span class="overlay"></span>'; ?>
-                        <h3><?php echo esc_html($card['title']); ?></h3><span class="arrow"></span>
+                        <h3><?php echo esc_html($card['title']); ?></h3>
+                        <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 <?php endforeach; ?>
             </div>

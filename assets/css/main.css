@@ -123,7 +123,7 @@ h1, h2, h3, h4, h5, h6, p {
     max-width: 436px;
 }
 
-.text-green { color: var(--color-accent-green); }
+.text-green { color: var(--color-green); }
 
 /* Header */
 .site-header {
@@ -575,10 +575,6 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.audience-card.image-overlay .overlay {
     background: rgba(54, 118, 67, 0.5);
 }
 
@@ -594,36 +590,10 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card .arrow {
     position: relative;
     z-index: 1;
-    width: 34px;
-    height: 34px;
-    margin-left: -4px;
-    background: #FFFFFF;
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
-}
-
-.audience-card .arrow::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 14px;
-    background: #343434;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    border-radius: 1px;
-}
-
-.audience-card .arrow::after {
-    content: '';
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    width: 8px;
-    height: 8px;
-    border-top: 2px solid #343434;
-    border-right: 2px solid #343434;
-    border-radius: 0 2px 0 0;
+    margin-top: auto;
 }
 
 /* Supplies */
@@ -1772,17 +1742,6 @@ h1, h2, h3, h4, h5, h6, p {
         width: 20px;
         height: 20px;
         margin-left: 0;
-    }
-    .audience-card .arrow::before {
-        width: 2px;
-        height: 10px;
-    }
-    .audience-card .arrow::after {
-        width: 5px;
-        height: 5px;
-        right: 3px;
-        top: 3px;
-        border-width: 1.5px;
     }
 
     /* Supplies */
