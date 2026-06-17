@@ -8,6 +8,13 @@ if (function_exists('acf_add_local_field_group')) {
         'fields' => array(
             // Hero
             array(
+                'key' => 'tab_hero',
+                'label' => 'Hero',
+                'name' => 'tab_hero',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_hero_title',
                 'label' => 'Заголовок Hero',
                 'name' => 'hero_title',
@@ -72,17 +79,25 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Audience
             array(
+                'key' => 'tab_audience',
+                'label' => 'Кому подходит',
+                'name' => 'tab_audience',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_audience_subtitle',
-                'label' => 'Подзаголовок "Кому подходит"',
+                'label' => 'Подзаголовок',
                 'name' => 'audience_subtitle',
                 'type' => 'text',
                 'default_value' => 'Кому подходит',
             ),
             array(
                 'key' => 'field_audience_title',
-                'label' => 'Заголовок "Кому подходит"',
+                'label' => 'Заголовок',
                 'name' => 'audience_title',
                 'type' => 'text',
                 'default_value' => 'Работаем с учреждениями разных направлений',
@@ -125,17 +140,25 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Supplies
             array(
+                'key' => 'tab_supplies',
+                'label' => 'Что мы поставляем',
+                'name' => 'tab_supplies',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_supplies_subtitle',
-                'label' => 'Подзаголовок "Что мы поставляем"',
+                'label' => 'Подзаголовок',
                 'name' => 'supplies_subtitle',
                 'type' => 'text',
                 'default_value' => 'Что мы поставляем',
             ),
             array(
                 'key' => 'field_supplies_title',
-                'label' => 'Заголовок "Что мы поставляем"',
+                'label' => 'Заголовок',
                 'name' => 'supplies_title',
                 'type' => 'text',
                 'default_value' => 'Все для организации инфекционного контроля',
@@ -158,17 +181,25 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Included
             array(
+                'key' => 'tab_included',
+                'label' => 'Что входит',
+                'name' => 'tab_included',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_included_subtitle',
-                'label' => 'Подзаголовок "Что входит"',
+                'label' => 'Подзаголовок',
                 'name' => 'included_subtitle',
                 'type' => 'text',
                 'default_value' => 'Что входит',
             ),
             array(
                 'key' => 'field_included_title',
-                'label' => 'Заголовок "Что входит"',
+                'label' => 'Заголовок',
                 'name' => 'included_title',
                 'type' => 'text',
                 'default_value' => 'Помогаем выстроить систему инфекционного контроля',
@@ -219,17 +250,25 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Tasks
             array(
+                'key' => 'tab_tasks',
+                'label' => 'Задачи клиентов',
+                'name' => 'tab_tasks',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_tasks_subtitle',
-                'label' => 'Подзаголовок "Задачи"',
+                'label' => 'Подзаголовок',
                 'name' => 'tasks_subtitle',
                 'type' => 'text',
                 'default_value' => 'Популярные задачи клиентов',
             ),
             array(
                 'key' => 'field_tasks_title',
-                'label' => 'Заголовок "Задачи"',
+                'label' => 'Заголовок',
                 'name' => 'tasks_title',
                 'type' => 'text',
                 'default_value' => 'С чем к нам обращаются чаще всего',
@@ -260,17 +299,25 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Why choose
             array(
+                'key' => 'tab_why',
+                'label' => 'Почему выбирают',
+                'name' => 'tab_why',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_why_subtitle',
-                'label' => 'Подзаголовок "Почему выбирают"',
+                'label' => 'Подзаголовок',
                 'name' => 'why_subtitle',
                 'type' => 'text',
                 'default_value' => 'Почему выбирают ТриМед',
             ),
             array(
                 'key' => 'field_why_title',
-                'label' => 'Заголовок "Почему выбирают"',
+                'label' => 'Заголовок',
                 'name' => 'why_title',
                 'type' => 'text',
                 'default_value' => 'Надёжный поставщик для медицинских учреждений региона',
@@ -293,25 +340,41 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Projects
             array(
+                'key' => 'tab_projects',
+                'label' => 'Проекты',
+                'name' => 'tab_projects',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_projects_title',
-                'label' => 'Заголовок "Проекты"',
+                'label' => 'Заголовок',
                 'name' => 'projects_title',
                 'type' => 'text',
                 'default_value' => 'Реализованные проекты',
             ),
             array(
                 'key' => 'field_projects_desc',
-                'label' => 'Описание "Проекты"',
+                'label' => 'Описание',
                 'name' => 'projects_desc',
                 'type' => 'textarea',
                 'default_value' => 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.',
             ),
+
             // Partners
             array(
+                'key' => 'tab_partners',
+                'label' => 'Партнёры',
+                'name' => 'tab_partners',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_partners_title',
-                'label' => 'Заголовок "Партнёры"',
+                'label' => 'Заголовок',
                 'name' => 'partners_title',
                 'type' => 'text',
                 'default_value' => 'Работаем с ведущими производителями',
@@ -348,10 +411,18 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // FAQ
             array(
+                'key' => 'tab_faq',
+                'label' => 'FAQ',
+                'name' => 'tab_faq',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
+            array(
                 'key' => 'field_faq_title',
-                'label' => 'Заголовок "FAQ"',
+                'label' => 'Заголовок',
                 'name' => 'faq_title',
                 'type' => 'text',
                 'default_value' => 'Часто задаваемые вопросы',
@@ -387,7 +458,15 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
+
             // Application
+            array(
+                'key' => 'tab_application',
+                'label' => 'Форма заявки',
+                'name' => 'tab_application',
+                'type' => 'tab',
+                'placement' => 'left',
+            ),
             array(
                 'key' => 'field_application_title',
                 'label' => 'Заголовок формы',
@@ -412,5 +491,9 @@ if (function_exists('acf_add_local_field_group')) {
                 ),
             ),
         ),
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
     ));
 }
