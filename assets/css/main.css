@@ -2173,6 +2173,19 @@ h1, h2, h3, h4, h5, h6, p {
     left: 50%;
     top: 55%;
     z-index: 1;
+    width: 14px;
+    height: 14px;
+}
+
+@keyframes map-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.6);
+        opacity: 0;
+    }
 }
 
 .map-pulse span {
@@ -2188,12 +2201,15 @@ h1, h2, h3, h4, h5, h6, p {
     width: 46px;
     height: 46px;
     opacity: 0.2;
+    animation: map-pulse 2.4s infinite ease-out;
 }
 
 .map-pulse span:nth-child(2) {
     width: 29px;
     height: 29px;
     opacity: 0.6;
+    animation: map-pulse 2.4s infinite ease-out;
+    animation-delay: 1.2s;
 }
 
 .map-pulse span:nth-child(3) {
