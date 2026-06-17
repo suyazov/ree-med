@@ -902,32 +902,37 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 48px;
 }
 
+.why-section .section-title {
+    white-space: nowrap;
+    font-size: 40px;
+}
+
 .why-grid {
     display: grid;
-    grid-template-columns: 480px 344px 336px;
-    grid-template-rows: 187px 198px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 20px;
     align-items: stretch;
-    justify-content: center;
 }
 
 .why-image-card {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / 3;
     border-radius: 12px;
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     align-items: flex-end;
-    padding: 32px;
-    height: 187px;
+    padding: 24px;
+    min-height: 0;
 }
 
 .why-stats {
     display: flex;
     gap: 13px;
     flex-wrap: nowrap;
+    width: 100%;
 }
 
 .why-stat {
@@ -937,6 +942,7 @@ h1, h2, h3, h4, h5, h6, p {
     flex-direction: column;
     gap: 4px;
     min-width: 126px;
+    flex: 1;
 }
 
 .why-stat.glass {
@@ -965,10 +971,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .why-info-card {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1 / 3;
     background: var(--color-white-2);
     border-radius: 12px;
-    padding: 24px 32px;
+    padding: 24px 28px;
     display: flex;
     align-items: flex-start;
     position: relative;
@@ -978,13 +984,13 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 18px;
     line-height: 1.3;
     font-weight: 600;
-    max-width: 240px;
+    max-width: 100%;
 }
 
 .why-plus {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 20px;
+    right: 20px;
     width: 24px;
     height: 24px;
     color: var(--color-green);
@@ -1554,6 +1560,9 @@ h1, h2, h3, h4, h5, h6, p {
     .tasks-grid {
         grid-template-columns: 1fr;
     }
+    .why-section .section-title {
+        white-space: normal;
+    }
     .why-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -1565,6 +1574,10 @@ h1, h2, h3, h4, h5, h6, p {
         grid-column: auto;
         grid-row: auto;
         height: auto;
+        min-height: auto;
+    }
+    .why-image-card {
+        min-height: 280px;
     }
     .project-card {
         grid-template-columns: 1fr;
@@ -1935,6 +1948,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 14px;
     }
     .why-section .section-title {
+        white-space: normal;
         font-size: 24px;
         line-height: 1.2;
     }
