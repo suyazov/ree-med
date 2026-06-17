@@ -450,7 +450,7 @@ h1, h2, h3, h4, h5, h6, p {
     bottom: 0;
     width: 216px;
     border-radius: 8px 8px 0 0;
-    background: var(--gradient-gray);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(60px);
     color: #343434;
     font-size: 14px;
