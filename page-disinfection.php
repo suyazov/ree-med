@@ -263,6 +263,9 @@ get_header();
                     </div>
                 </div>
                 <div class="why-info-card">
+                    <svg class="why-plus" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 4V24M4 14H24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
                     <h3>Работа с государственными и частными учреждениями</h3>
                 </div>
                 <div class="why-warehouse-card" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/warehouse.png')">
