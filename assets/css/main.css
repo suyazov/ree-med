@@ -387,7 +387,7 @@ h1, h2, h3, h4, h5, h6, p {
 .hero-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 39px;
     max-width: 677px;
 }
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .hero-feature img {
     width: auto;
-    height: 32px;
+    height: 28px;
     object-fit: contain;
 }
 

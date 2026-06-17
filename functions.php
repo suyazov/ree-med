@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.2.4');
+define('TRIMED_VERSION', '1.2.5');
 
 function trimed_setup() {
     add_theme_support('title-tag');
@@ -19,7 +19,7 @@ function trimed_setup() {
 add_action('after_setup_theme', 'trimed_setup');
 
 function trimed_enqueue_assets() {
-    wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&display=swap', array(), null);
+    wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&subset=cyrillic&display=swap', array(), null);
     wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), TRIMED_VERSION);
     wp_enqueue_style('trimed-main', get_template_directory_uri() . '/assets/css/main.css', array('trimed-style'), TRIMED_VERSION);
 
