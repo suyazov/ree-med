@@ -46,14 +46,14 @@ get_header();
                         $hero_badges = get_field('hero_badges');
                         if (!$hero_badges) {
                             $hero_badges = array(
-                                array('text' => 'Безопасность персонала и пациентов'),
-                                array('text' => 'Соблюдение санитарных требований'),
-                                array('text' => 'Эффективная система инфекционного контроля'),
+                                array('text' => 'Безопасность персонала<br>и пациентов'),
+                                array('text' => 'Соблюдение санитарных<br>требований'),
+                                array('text' => 'Эффективная система<br>инфекционного контроля'),
                             );
                         }
                         foreach ($hero_badges as $badge) :
                         ?>
-                            <div class="hero-badge"><span class="check"></span> <?php echo esc_html($badge['text']); ?></div>
+                            <div class="hero-badge"><span class="check"></span> <?php echo wp_kses_post($badge['text']); ?></div>
                         <?php endforeach; ?>
                     </div>
                     <a href="#application" class="btn btn-secondary hero-btn-consult">Получить консультацию</a>

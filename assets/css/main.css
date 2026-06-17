@@ -394,26 +394,26 @@ h1, h2, h3, h4, h5, h6, p {
 
 .hero-badges {
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 12px;
+    left: 12px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 6px;
     align-items: start;
     justify-items: start;
-    max-width: 520px;
+    max-width: 440px;
 }
 
 .hero-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(54, 118, 67, 0.45);
+    gap: 6px;
+    background: rgba(54, 118, 67, 0.55);
     backdrop-filter: blur(10px);
     border-radius: 8px;
-    padding: 10px 14px;
+    padding: 8px 12px;
     color: var(--color-white);
-    font-size: 13px;
+    font-size: 12px;
     line-height: 110%;
 }
 
@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5, h6, p {
     bottom: 0;
     width: 200px;
     border-radius: 12px 12px 0 0;
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     color: var(--color-black);
     font-size: 13px;
