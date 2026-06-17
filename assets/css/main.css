@@ -545,7 +545,7 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card {
     position: relative;
     background: var(--color-white-2);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 24px;
     min-height: 180px;
     display: flex;
@@ -574,7 +574,7 @@ h1, h2, h3, h4, h5, h6, p {
 .audience-card .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(54, 118, 67, 0.65);
+    background: rgba(54, 118, 67, 0.5);
 }
 
 .audience-card h3 {
