@@ -1374,8 +1374,18 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
     font-size: 16px;
     line-height: 19px;
-    margin-top: 16px;
     font-weight: 400;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
+}
+
+.faq-item.active p {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 16px;
 }
 
 /* Application */
@@ -2250,6 +2260,8 @@ h1, h2, h3, h4, h5, h6, p {
     }
     .faq-item p {
         font-size: 14px;
+    }
+    .faq-item.active p {
         margin-top: 12px;
     }
 
