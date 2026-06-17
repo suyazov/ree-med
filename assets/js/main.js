@@ -59,6 +59,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Projects slider
+    const projectsSlider = document.querySelector('.projects-slider');
+    if (projectsSlider) {
+        const slides = projectsSlider.querySelectorAll('.project-slide');
+        const prevBtn = projectsSlider.querySelector('.slider-arrow.prev');
+        const nextBtn = projectsSlider.querySelector('.slider-arrow.next');
+        const dots = projectsSlider.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            if (totalSlides === 0) return;
+            currentSlide = (index + totalSlides) % totalSlides;
+            slides.forEach(function(slide, i) {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+            dots.forEach(function(dot, i) {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                showSlide(currentSlide - 1);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                showSlide(currentSlide + 1);
+            });
+        }
+        dots.forEach(function(dot) {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-slide'), 10);
+                showSlide(index);
+            });
+        });
+    }
+
     // Contact form AJAX
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {

@@ -294,27 +294,64 @@ get_header();
     <section class="projects-section">
         <div class="container">
             <div class="section-header row">
-                <h2 class="section-title green"><?php echo esc_html(get_field('projects_title') ?: 'Реализованные проекты'); ?></h2>
+                <h2 class="section-title projects-section-title"><?php echo esc_html(get_field('projects_title') ?: 'Реализованные проекты'); ?></h2>
                 <p class="section-desc"><?php echo esc_html(get_field('projects_desc') ?: 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'); ?></p>
             </div>
+            <?php
+            $projects = get_field('projects_slides');
+            if (empty($projects)) {
+                $projects = array(
+                    array(
+                        'num' => '02.',
+                        'title' => 'Стоматология «Дента-Профи» (г. Чита)',
+                        'task' => 'Полное оснащение двух стоматологических кабинетов и стерилизационной комнаты под ключ для запуска новой клиники. Требовалось обеспечить соответствие санитарным нормам, организовать централизованную подачу воздуха и эффективную систему инфекционного контроля.',
+                        'equipment' => 'Стоматологические установки (2 шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.',
+                        'result' => 'Клиника введена в эксплуатацию в запланированные сроки. Все кабинеты укомплектованы, стерилизационная функционирует в полном объёме, соблюдены требования Роспотребнадзора. Персонал обеспечен всем необходимым для безопасной работы.',
+                        'image' => get_template_directory_uri() . '/assets/img/project.png',
+                    ),
+                    array(
+                        'num' => '03.',
+                        'title' => 'Медицинский центр «Забайкалье» (г. Чита)',
+                        'task' => 'Комплексное оснащение процедурных кабинетов и стерилизационной зоны для многопрофильного медицинского центра. Задача включала подбор дезинфицирующих средств, оборудования для стерилизации и систем хранения.',
+                        'equipment' => 'Автоклав класса B, ультразвуковая мойка, рециркуляторы воздуха, дезинфицирующие средства, контейнеры и упаковочные материалы для стерилизации.',
+                        'result' => 'Центр получил полный комплект оборудования и расходных материалов в соответствии с действующими санитарными нормами. Персонал прошёл консультацию по эксплуатации оборудования.',
+                        'image' => get_template_directory_uri() . '/assets/img/warehouse.png',
+                    ),
+                );
+            }
+            $projects_count = count($projects);
+            ?>
             <div class="projects-slider">
-                <button class="slider-arrow prev"></button>
-                <div class="project-card">
-                    <div class="project-info">
-                        <span class="project-num">02.</span>
-                        <h3>Стоматология «Дента-Профи» (г. Чита)</h3>
-                        <div class="project-columns">
-                            <div><strong>Задача клиента</strong><p>Полное оснащение двух стоматологических кабинетов и стерилизационной комнаты под ключ для запуска новой клиники. Требовалось обеспечить соответствие санитарным нормам, организовать централизованную подачу воздуха и эффективную систему инфекционного контроля.</p></div>
-                            <div><strong>Поставленное оборудование и материалы</strong><p>Стоматологические установки (2 шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.</p></div>
+                <button class="slider-arrow prev" aria-label="Предыдущий слайд"></button>
+                <div class="slides-track">
+                    <?php foreach ($projects as $index => $project) : ?>
+                        <div class="project-slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                            <div class="project-card">
+                                <div class="project-card-inner">
+                                    <div class="project-info">
+                                        <span class="project-num"><?php echo esc_html($project['num'] ?: sprintf('%02d.', $index + 1)); ?></span>
+                                        <h3><?php echo esc_html($project['title']); ?></h3>
+                                        <div class="project-columns">
+                                            <div><strong>Задача клиента</strong><p><?php echo esc_html($project['task']); ?></p></div>
+                                            <div><strong>Поставленное оборудование и материалы</strong><p><?php echo esc_html($project['equipment']); ?></p></div>
+                                        </div>
+                                        <div class="project-result">
+                                            <strong>Результат</strong>
+                                            <p><?php echo esc_html($project['result']); ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="project-image"><img src="<?php echo esc_url($project['image']); ?>" alt=""></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-result">
-                            <strong>Результат</strong>
-                            <p>Клиника введена в эксплуатацию в запланированные сроки. Все кабинеты укомплектованы, стерилизационная функционирует в полном объёме, соблюдены требования Роспотребнадзора. Персонал обеспечен всем необходимым для безопасной работы.</p>
-                        </div>
-                    </div>
-                    <div class="project-image"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/project.png" alt=""></div>
+                    <?php endforeach; ?>
                 </div>
-                <button class="slider-arrow next"></button>
+                <button class="slider-arrow next" aria-label="Следующий слайд"></button>
+                <div class="slider-dots">
+                    <?php for ($i = 0; $i < $projects_count; $i++) : ?>
+                        <button class="slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к слайду <?php echo $i + 1; ?>"></button>
+                    <?php endfor; ?>
+                </div>
             </div>
         </div>
     </section>
