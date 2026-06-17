@@ -827,17 +827,18 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .tasks-intro.green-card {
+    position: relative;
     background: var(--gradient-green);
     border-radius: 12px;
-    padding: 40px;
+    padding: 44px;
     color: var(--color-white);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     min-height: 520px;
 }
 
 .tasks-intro .tag {
+    position: absolute;
+    top: 44px;
+    left: 44px;
     display: inline-flex;
     align-self: flex-start;
     background: rgba(54, 118, 67, 0.5);
@@ -845,21 +846,25 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 12px 18px;
     font-size: 14px;
     line-height: 110%;
-    margin-bottom: 40px;
 }
 
 .tasks-intro h2 {
-    font-size: 44px;
+    position: absolute;
+    left: 44px;
+    bottom: 44px;
+    font-size: 36px;
     line-height: 110%;
     letter-spacing: -0.03em;
-    font-weight: 600;
+    font-weight: 700;
     max-width: 345px;
 }
 
 .tasks-list {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 12px;
+    min-height: 520px;
 }
 
 .task-item {
@@ -867,15 +872,15 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     gap: 20px;
     background: var(--color-white-2);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 12px 16px;
     font-size: 20px;
     line-height: 24px;
 }
 
 .task-item img {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
@@ -1891,12 +1896,21 @@ h1, h2, h3, h4, h5, h6, p {
         padding: 24px;
     }
     .tasks-intro .tag {
-        margin-bottom: 24px;
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        margin-bottom: 0;
         padding: 10px 14px;
         font-size: 14px;
     }
     .tasks-intro h2 {
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
         font-size: 24px;
+    }
+    .tasks-list {
+        min-height: auto;
     }
     .task-item {
         padding: 10px 14px;
@@ -1904,8 +1918,8 @@ h1, h2, h3, h4, h5, h6, p {
         gap: 12px;
     }
     .task-item img {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
     }
 
     /* Why */
