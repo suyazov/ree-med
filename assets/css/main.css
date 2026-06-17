@@ -372,11 +372,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 .hero-title-line {
     display: inline;
+    white-space: nowrap;
 }
 
 .hero-desc {
     font-size: 20px;
     line-height: 24px;
+    font-weight: 400;
     margin-bottom: 44px;
     max-width: 686px;
     color: #343434;
@@ -398,7 +400,8 @@ h1, h2, h3, h4, h5, h6, p {
     border-radius: 8px;
     padding: 20px 16px;
     font-size: 14px;
-    line-height: 110%;
+    line-height: 120%;
+    font-weight: 400;
     min-height: 56px;
     width: auto;
     box-sizing: border-box;
@@ -410,7 +413,7 @@ h1, h2, h3, h4, h5, h6, p {
 .hero-feature:nth-child(4) { width: 386px; }
 
 .hero-feature img {
-    width: 32px;
+    width: auto;
     height: 32px;
     object-fit: contain;
 }
@@ -451,12 +454,12 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     gap: 8px;
     background: rgba(54, 118, 67, 0.5);
-    backdrop-filter: blur(20px);
     border-radius: 8px;
     padding: 12px 16px;
     color: var(--color-white);
     font-size: 14px;
     line-height: 110%;
+    font-weight: 400;
 }
 
 .hero-badge:nth-child(3) {
@@ -486,7 +489,6 @@ h1, h2, h3, h4, h5, h6, p {
     width: 216px;
     border-radius: 8px;
     background: var(--gradient-gray);
-    backdrop-filter: blur(60px);
     color: #343434;
     font-size: 14px;
     line-height: 120%;

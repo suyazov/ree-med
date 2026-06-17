@@ -16,7 +16,6 @@ get_header();
                 $hero_title = str_replace('для дезинфекции', '<span class="hero-title-line">для <span class="text-green">дезинфекции</span></span>', $hero_title);
                 $hero_title = str_replace('для дизенфекции', '<span class="hero-title-line">для <span class="text-green">дизенфекции</span></span>', $hero_title);
                 $hero_title = preg_replace('/(<\/span><\/span>)\s+и/', '$1<br>и', $hero_title);
-                $hero_title = str_replace('контроля', '<br>контроля', $hero_title);
                 ?>
                 <h1 class="hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
                 <div class="hero-image-wrap">
