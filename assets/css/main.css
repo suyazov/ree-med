@@ -1289,7 +1289,7 @@ h1, h2, h3, h4, h5, h6, p {
 .partners-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 24px;
 }
 
 .partner-card {
@@ -1297,27 +1297,30 @@ h1, h2, h3, h4, h5, h6, p {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
+    height: auto;
+    min-height: unset;
 }
 
 .partner-card img {
-    width: 214px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
-    margin: 0 auto 16px;
+    margin: 0 auto 12px;
 }
 
 .partner-card h3 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 120%;
     letter-spacing: -0.03em;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .partner-card p {
-    font-size: 14px;
-    line-height: 120%;
-    letter-spacing: -0.03em;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: #666;
 }
 
 /* FAQ */
@@ -2210,22 +2213,24 @@ h1, h2, h3, h4, h5, h6, p {
         display: none;
     }
     .partner-card {
-        flex: 0 0 243px;
-        width: 243px;
-        height: 253px;
+        flex: 0 0 220px;
+        width: 220px;
+        height: auto;
+        min-height: unset;
         padding: 16px;
     }
     .partner-card img {
-        width: 160px;
-        height: 90px;
-        margin-bottom: 12px;
+        width: 72px;
+        height: 72px;
+        margin-bottom: 10px;
     }
     .partner-card h3 {
         font-size: 14px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
     .partner-card p {
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 1.4;
     }
 
     /* FAQ */
