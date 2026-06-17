@@ -423,12 +423,13 @@ get_header();
                         $faq_positions[$right_i] = 'grid-row:' . $row . ';grid-column:1;';
                     }
                 }
+                $faq_icon_svg = '<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.25L5 5.25L9 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
                 foreach ($faq_items as $i => $item) :
                     $active_class = !empty($item['is_open']) ? ' active' : '';
                     $position_style = isset($faq_positions[$i]) ? esc_attr($faq_positions[$i]) : '';
                 ?>
                     <div class="faq-item<?php echo esc_attr($active_class); ?>" style="<?php echo $position_style; ?>">
-                        <span><?php echo esc_html($item['question']); ?></span><span class="faq-icon"></span>
+                        <span><?php echo esc_html($item['question']); ?></span><span class="faq-icon"><?php echo $faq_icon_svg; ?></span>
                         <?php if (!empty($item['answer'])) : ?>
                             <p><?php echo esc_html($item['answer']); ?></p>
                         <?php endif; ?>

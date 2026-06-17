@@ -1350,17 +1350,24 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .faq-icon {
-    width: 12px;
-    height: 8px;
-    border: solid var(--color-black);
-    border-width: 0 2px 2px 0;
-    border-radius: 1px;
-    transform: rotate(45deg);
+    width: 10px;
+    height: 6px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-black);
+    transition: transform 0.2s ease;
+}
+
+.faq-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(-135deg);
+    transform: rotate(180deg);
 }
 
 .faq-item p {
@@ -2235,13 +2242,11 @@ h1, h2, h3, h4, h5, h6, p {
         grid-column: auto !important;
     }
     .faq-icon {
-        width: 12px;
-        height: 8px;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
+        width: 10px;
+        height: 6px;
     }
     .faq-item.active .faq-icon {
-        transform: rotate(-135deg);
+        transform: rotate(180deg);
     }
     .faq-item p {
         font-size: 14px;
