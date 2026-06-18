@@ -253,8 +253,8 @@ get_header();
                 <span class="section-label"><?php echo esc_html(get_field('why_subtitle') ?: 'Почему выбирают ТриМед'); ?></span>
                     <?php
                     $why_title = get_field('why_title') ?: 'Надёжный поставщик для медицинских учреждений региона';
-                    // Figma: first two words green, the rest black.
-                    $why_title = preg_replace('/^(\S+\s+\S+)(.*)$/', '<span class="text-green">$1</span>$2', $why_title);
+                    // Figma: first two words green on first line, the rest black on second line.
+                    $why_title = preg_replace('/^(\S+\s+\S+)(.*)$/', '<span class="text-green">$1</span><br>$2', $why_title);
                     ?>
                     <h2 class="section-title"><?php echo wp_kses_post($why_title); ?></h2>
             </div>
@@ -266,8 +266,8 @@ get_header();
                     </div>
                 </div>
                 <div class="why-info-card">
-                    <svg class="why-plus" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 4V24M4 14H24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <svg class="why-plus" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 4V32M4 18H32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                     <h3>Работа с государственными и частными учреждениями</h3>
                 </div>
