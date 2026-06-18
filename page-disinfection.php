@@ -452,7 +452,7 @@ get_header();
     <section class="application-section" id="application">
         <div class="container">
             <div class="application-box">
-                <svg class="app-decor" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 7v22M7 18h22" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>
+                <svg class="app-decor" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8v24M8 20h24" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>
                 <div class="application-info">
                     <?php
                     $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
