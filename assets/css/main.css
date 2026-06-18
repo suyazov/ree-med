@@ -1580,8 +1580,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .form-agree span {
     font-size: 11px;
-    line-height: 1.2;
-    white-space: nowrap;
+    line-height: 1.3;
 }
 
 .form-message {
