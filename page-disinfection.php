@@ -366,7 +366,7 @@ get_header();
                     <?php
                     $partners_title = get_field('partners_title') ?: 'Работаем с ведущими производителями';
                     $partners_title = str_replace('с ведущими', '<strong>с ведущими</strong>', $partners_title);
-                    $partners_title = str_replace('производителями', '<span class="text-green">производителями</span>', $partners_title);
+                    $partners_title = str_replace('производителями', '<br><span class="text-green">производителями</span>', $partners_title);
                     ?>
                     <h2 class="section-title partners-title"><?php echo wp_kses_post($partners_title); ?></h2>
             </div>
