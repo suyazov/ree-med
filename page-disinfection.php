@@ -134,35 +134,37 @@ get_header();
                     ?>
                     <h2 class="section-title"><?php echo wp_kses_post($supplies_title); ?></h2>
                 </div>
-                <div class="supplies-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/supplies-center.png" alt=""></div>
-                <div class="supplies-rings">
-                    <div class="ring ring-1"></div>
-                    <div class="ring ring-2"></div>
-                    <div class="ring ring-3"></div>
-                </div>
-                <div class="supplies-items">
-                    <?php
-                    $supplies_items = get_field('supplies_items');
-                    $supplies_defaults = array(
-                        array('text' => 'Дезинфицирующие средства'),
-                        array('text' => 'Средства для обработки поверхностей'),
-                        array('text' => 'Средства для стерилизации инструментов'),
-                        array('text' => 'Средства для обработки эндоскопов'),
-                        array('text' => 'Контейнеры для дезинфекции'),
-                        array('text' => 'Автоклавы и стерилизационное оборудование'),
-                        array('text' => 'Упаковочные материалы для стерилизации'),
-                        array('text' => 'Рециркуляторы и обеззараживатели воздуха'),
-                        array('text' => 'Дезинфицирующие салфетки'),
-                        array('text' => 'Антисептики'),
-                        array('text' => 'Средства для обработки рук'),
-                    );
-                    if (!$supplies_items || count($supplies_items) < 11) {
-                        $supplies_items = $supplies_defaults;
-                    }
-                    foreach ($supplies_items as $item) :
-                    ?>
-                        <div class="supply-item"><span class="dot"></span><span class="supply-text"><?php echo esc_html($item['text']); ?></span></div>
-                    <?php endforeach; ?>
+                <div class="supplies-diagram">
+                    <div class="supplies-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/supplies-center.png" alt=""></div>
+                    <div class="supplies-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                    <div class="supplies-items">
+                        <?php
+                        $supplies_items = get_field('supplies_items');
+                        $supplies_defaults = array(
+                            array('text' => 'Дезинфицирующие средства'),
+                            array('text' => 'Средства для обработки поверхностей'),
+                            array('text' => 'Средства для стерилизации инструментов'),
+                            array('text' => 'Контейнеры для дезинфекции'),
+                            array('text' => 'Автоклавы и стерилизационное оборудование'),
+                            array('text' => 'Средства для обработки рук'),
+                            array('text' => 'Дезинфицирующие салфетки'),
+                            array('text' => 'Антисептики'),
+                            array('text' => 'Средства для обработки эндоскопов'),
+                            array('text' => 'Упаковочные материалы для стерилизации'),
+                            array('text' => 'Рециркуляторы и обеззараживатели воздуха'),
+                        );
+                        if (!$supplies_items || count($supplies_items) < 11) {
+                            $supplies_items = $supplies_defaults;
+                        }
+                        foreach ($supplies_items as $item) :
+                        ?>
+                            <div class="supply-item"><span class="dot"></span><span class="supply-text"><?php echo esc_html($item['text']); ?></span></div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
