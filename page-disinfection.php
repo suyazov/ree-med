@@ -452,8 +452,8 @@ get_header();
     <section class="application-section" id="application">
         <div class="container">
             <div class="application-box">
+                <svg class="app-decor" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 7v22M7 18h22" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>
                 <div class="application-info">
-                    <svg class="app-decor" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8v24M8 20h24" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>
                     <?php
                     $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
                     $application_title = str_replace('решение ', 'решение<br>', $application_title);
@@ -467,7 +467,7 @@ get_header();
                         <div class="phone-input"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/phone-flag.png" alt=""><input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required></div>
                         <input type="text" name="organization" placeholder="Название организации">
                         <input type="text" name="comment" placeholder="Ваш комментарий">
-                        <label class="form-agree"><input type="checkbox" name="agree" required><span>Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных</span></label>
+                        <label class="form-agree"><input type="checkbox" name="agree" required><span>Оставляю заявку, я соглашаюсь с условиями Политики обработки персональных данных</span></label>
                         <button type="submit" class="btn btn-primary">Получить консультацию</button>
                         <div class="form-message"></div>
                     </form>

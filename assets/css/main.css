@@ -1457,7 +1457,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .application-box {
     background: var(--gradient-light-green);
-    border-radius: 20px;
+    border-radius: 14px;
     padding: 60px 48px;
     display: grid;
     grid-template-columns: 445px 490px;
@@ -1470,14 +1470,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 .application-info {
     color: var(--color-white);
-    position: relative;
 }
 
 .app-decor {
     position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.3;
+    left: 24px;
+    top: 24px;
+    opacity: 1;
 }
 
 .application-info h2 {
@@ -1519,6 +1518,12 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: -0.02em;
     color: var(--color-black);
     font-family: 'HelveticaNeueCyr', sans-serif;
+}
+
+.application-form input::-webkit-contacts-auto-fill-button,
+.application-form input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
 }
 
 .application-form input::placeholder {
