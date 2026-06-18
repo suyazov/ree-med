@@ -1648,7 +1648,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .footer-socials {
     display: flex;
-    gap: 34px;
+    gap: 16px;
     margin-bottom: 34px;
 }
 
@@ -1658,9 +1658,7 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: center;
     width: 24px;
     height: 24px;
-    background: var(--color-white);
-    border-radius: 4px;
-    color: var(--color-dark-green);
+    color: var(--color-white);
 }
 
 .footer-callback {
@@ -2414,7 +2412,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 14px;
     }
     .footer-socials {
-        gap: 20px;
+        gap: 16px;
         margin-bottom: 20px;
     }
     .footer-callback {
