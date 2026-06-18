@@ -453,8 +453,12 @@ get_header();
         <div class="container">
             <div class="application-box">
                 <div class="application-info">
-                    <svg class="app-decor" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 0L23.5 16.5L40 20L23.5 23.5L20 40L16.5 23.5L0 20L16.5 16.5L20 0Z" fill="#fff"/></svg>
-                    <h2><?php echo esc_html(get_field('application_title') ?: 'Подберём решение для вашего учреждения'); ?></h2>
+                    <svg class="app-decor" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8v24M8 20h24" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>
+                    <?php
+                    $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
+                    $application_title = str_replace('решение ', 'решение<br>', $application_title);
+                    ?>
+                    <h2><?php echo wp_kses_post($application_title); ?></h2>
                     <p><?php echo esc_html(get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'); ?></p>
                 </div>
                 <div class="application-form-wrap">

@@ -1559,9 +1559,18 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .form-agree input {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     border: 1px solid var(--color-dark-green);
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.form-agree span {
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .form-message {
@@ -1576,10 +1585,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .form-message.error {
     color: #c62828;
-}
-    border-radius: 2px;
-    flex-shrink: 0;
-    margin-top: 1px;
 }
 
 /* Footer */
@@ -1648,10 +1653,14 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .footer-social {
-    width: 36px;
-    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
     background: var(--color-white);
-    border-radius: 2px;
+    border-radius: 4px;
+    color: var(--color-dark-green);
 }
 
 .footer-callback {
