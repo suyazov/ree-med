@@ -1350,8 +1350,26 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
-.faq-section .section-header {
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
     margin-bottom: 24px;
+}
+
+.faq-header .section-title {
+    text-align: left;
+    margin: 0;
+}
+
+.faq-description {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+    max-width: 320px;
+    text-align: right;
+    margin: 0;
 }
 
 .faq-grid {
@@ -2284,8 +2302,15 @@ h1, h2, h3, h4, h5, h6, p {
     .faq-section .section-title {
         font-size: 24px;
     }
-    .faq-section .section-header {
+    .faq-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
         margin-bottom: 24px;
+    }
+    .faq-description {
+        text-align: left;
+        max-width: 100%;
     }
     .faq-grid {
         grid-template-columns: 1fr;

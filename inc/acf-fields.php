@@ -430,6 +430,14 @@ if (function_exists('acf_add_local_field_group')) {
                 'default_value' => 'Часто задаваемые вопросы',
             ),
             array(
+                'key' => 'field_faq_description',
+                'label' => 'Описание справа от заголовка',
+                'name' => 'faq_description',
+                'type' => 'textarea',
+                'rows' => 2,
+                'default_value' => 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля',
+            ),
+            array(
                 'key' => 'field_faq_items',
                 'label' => 'Вопросы и ответы',
                 'name' => 'faq_items',

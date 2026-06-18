@@ -392,11 +392,15 @@ get_header();
     <!-- FAQ -->
     <section class="faq-section">
         <div class="container">
-                    <?php
-                    $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы';
-                    $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
-                    ?>
-                    <h2 class="section-title center"><?php echo wp_kses_post($faq_title); ?></h2>
+            <?php
+            $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы';
+            $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
+            $faq_description = get_field('faq_description') ?: 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля';
+            ?>
+            <div class="faq-header">
+                <h2 class="section-title"><?php echo wp_kses_post($faq_title); ?></h2>
+                <p class="faq-description"><?php echo esc_html($faq_description); ?></p>
+            </div>
             <div class="faq-grid">
                 <?php
                 $faq_items = get_field('faq_items');
