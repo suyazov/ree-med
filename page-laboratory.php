@@ -144,6 +144,13 @@ $projects_subtitle = lab_get_field('lab_projects_subtitle', 'За&nbsp;врем�
 $default_projects = array(
     array(
         'image' => '',
+        'number' => '01.',
+        'title' => 'Клинико-диагностическая лаборатория (г. Чита)',
+        'delivered' => 'Автоматический гематологический анализатор, биохимический анализатор, центрифуга, микроскоп, холодильное оборудование, лабораторная мебель и расходные материалы.',
+        'result' => 'Лаборатория запущена в работу в срок. Обеспечена полная комплектация оборудованием для проведения основных видов исследований, персонал обучен работе на анализаторах.',
+    ),
+    array(
+        'image' => '',
         'number' => '02.',
         'title' => 'Стоматология «Дента-Профи» (г. Чита)',
         'delivered' => 'Стоматологические установки (2&nbsp;шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.',
@@ -186,40 +193,42 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
 <section class="lab-hero">
     <div class="lab-container">
         <div class="lab-hero-grid">
-            <div class="lab-hero-left">
-                <div class="lab-hero-top">
-                    <h1 class="lab-hero-title"><?php echo wp_kses_post(str_replace('лабораторий', '<span class="text-green">лабораторий</span>', $hero_title)); ?></h1>
-                    <p class="lab-hero-desc"><?php echo esc_html($hero_desc); ?></p>
-                </div>
-
-                <div class="lab-hero-features">
-                    <?php foreach ($hero_features as $feature) : ?>
-                        <div class="lab-hero-feature-card">
-                            <?php if (!empty($feature['icon'])) : ?>
-                                <img src="<?php echo esc_url($feature['icon']); ?>" alt="" class="icon">
-                            <?php elseif (!empty($feature['svg'])) : ?>
-                                <?php echo $feature['svg']; ?>
-                            <?php else : ?>
-                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <?php endif; ?>
-                            <span><?php echo esc_html(!empty($feature['text']) ? $feature['text'] : ''); ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+            <div class="lab-hero-top">
+                <h1 class="lab-hero-title"><?php echo wp_kses_post(str_replace('лабораторий', '<span class="text-green">лабораторий</span>', $hero_title)); ?></h1>
+                <p class="lab-hero-desc"><?php echo esc_html($hero_desc); ?></p>
             </div>
 
-            <div class="lab-hero-right">
+            <div class="lab-hero-visual">
                 <img src="<?php echo esc_url($hero_image); ?>" alt="" class="lab-hero-main-image">
                 <div class="lab-hero-badges">
-                    <?php foreach ($hero_badges as $badge) : ?>
-                        <div class="lab-hero-badge lab-hero-badge--safety">
+                    <?php
+                    $badge_classes = array('safety', 'volume', 'budget', 'tasks');
+                    foreach ($hero_badges as $index => $badge) :
+                        $badge_class = !empty($badge_classes[$index]) ? $badge_classes[$index] : 'safety';
+                    ?>
+                        <div class="lab-hero-badge lab-hero-badge--<?php echo esc_attr($badge_class); ?>">
                             <span class="lab-hero-badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                             <span><?php echo esc_html(!empty($badge['text']) ? $badge['text'] : ''); ?></span>
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <button class="lab-hero-cta-btn" type="button"><?php echo esc_html($hero_button_text); ?></button>
             </div>
+
+            <div class="lab-hero-features">
+                <?php foreach ($hero_features as $feature) : ?>
+                    <div class="lab-hero-feature-card">
+                        <?php if (!empty($feature['icon'])) : ?>
+                            <img src="<?php echo esc_url($feature['icon']); ?>" alt="" class="icon">
+                        <?php elseif (!empty($feature['svg'])) : ?>
+                            <?php echo $feature['svg']; ?>
+                        <?php else : ?>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <?php endif; ?>
+                        <span><?php echo esc_html(!empty($feature['text']) ? $feature['text'] : ''); ?></span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <button class="lab-hero-cta-btn" type="button"><?php echo esc_html($hero_button_text); ?></button>
         </div>
         <button class="lab-hero-bottom-btn" type="button"><?php echo esc_html($hero_bottom_button_text); ?></button>
     </div>
@@ -342,31 +351,40 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
             <p class="lab-projects-desc"><?php echo wp_kses_post($projects_subtitle); ?></p>
         </div>
 
-        <div class="lab-projects-grid">
-            <?php foreach ($projects as $project) :
+        <div class="lab-projects-slider">
+            <?php foreach ($projects as $index => $project) :
                 $project_image = !empty($project['image']) ? $project['image'] : $placeholder;
             ?>
-                <div class="lab-project-card">
-                    <div class="lab-project-card-img"><img src="<?php echo esc_url($project_image); ?>" alt=""></div>
-                    <div class="lab-project-card-body">
-                        <div class="lab-project-card-top">
-                            <span class="lab-project-card-num"><?php echo esc_html(!empty($project['number']) ? $project['number'] : ''); ?></span>
-                            <span class="lab-project-card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-                        </div>
-                        <div>
-                            <h3 class="lab-project-card-title"><?php echo esc_html(!empty($project['title']) ? $project['title'] : ''); ?></h3>
-                            <div class="lab-project-card-block">
-                                <p class="lab-project-card-label">Что было поставлено</p>
-                                <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
+                <div class="lab-project-slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <div class="lab-project-card">
+                        <div class="lab-project-card-img"><img src="<?php echo esc_url($project_image); ?>" alt=""></div>
+                        <div class="lab-project-card-body">
+                            <div class="lab-project-card-top">
+                                <span class="lab-project-card-num"><?php echo esc_html(!empty($project['number']) ? $project['number'] : ''); ?></span>
+                                <span class="lab-project-card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
                             </div>
-                            <div class="lab-project-card-block">
-                                <p class="lab-project-card-label">Результат</p>
-                                <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
+                            <div>
+                                <h3 class="lab-project-card-title"><?php echo esc_html(!empty($project['title']) ? $project['title'] : ''); ?></h3>
+                                <div class="lab-project-card-block">
+                                    <p class="lab-project-card-label">Что было поставлено</p>
+                                    <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
+                                </div>
+                                <div class="lab-project-card-block">
+                                    <p class="lab-project-card-label">Результат</p>
+                                    <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
+            <button class="lab-slider-arrow prev" aria-label="Предыдущий проект"></button>
+            <button class="lab-slider-arrow next" aria-label="Следующий проект"></button>
+            <div class="lab-slider-dots">
+                <?php for ($i = 0; $i < count($projects); $i++) : ?>
+                    <button class="lab-slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
+                <?php endfor; ?>
+            </div>
         </div>
     </div>
 </section>
