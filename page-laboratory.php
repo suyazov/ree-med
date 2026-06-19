@@ -77,33 +77,54 @@ $hero_btn   = (function_exists('get_field') && get_field('lab_hero_button_text')
 </section>
 <!-- 3. Supplies -->
 <section class="lab-supplies">
-    <div class="lab-section-inner">
-        <div class="lab-supplies-header">
-            <h2 class="lab-supplies-title">Комплексное оснащение лабораторий</h2>
-            <p class="lab-supplies-subtitle">Подберём оборудование под&nbsp;задачи вашей лаборатории</p>
+    <div class="lab-supplies-diagram">
+        <div class="lab-supplies-label">Комплексное оснащение лабораторий</div>
+        <h2 class="lab-supplies-title">Подберём оборудование <span class="text-green">под&nbsp;задачи вашей лаборатории</span></h2>
+
+        <div class="lab-supplies-rings">
+            <div class="lab-supplies-ring lab-supplies-ring--outer"></div>
+            <div class="lab-supplies-ring lab-supplies-ring--middle"></div>
+            <div class="lab-supplies-ring lab-supplies-ring--inner"></div>
         </div>
 
-        <div class="lab-supplies-diagram">
-            <div class="lab-supplies-center">
-                <span class="lab-supplies-center-num">10</span>
-                <span class="lab-supplies-center-text">направлений</span>
+        <div class="lab-supplies-center">
+            <img src="<?php echo esc_url($img_dir); ?>/placeholder.jpg" alt="">
+        </div>
+
+        <div class="lab-supplies-items">
+            <div class="lab-supplies-item" style="left:66.29%;top:23.02%">
+                <span class="dot"></span><span class="txt">Лабораторная мебель</span>
             </div>
-            <div class="lab-supplies-items">
-                <span class="lab-supplies-item" style="--i:0">Лабораторная мебель</span>
-                <span class="lab-supplies-item" style="--i:1">Автоматические анализаторы</span>
-                <span class="lab-supplies-item" style="--i:2">Холодильное оборудование</span>
-                <span class="lab-supplies-item" style="--i:3">Лабораторные расходные материалы</span>
-                <span class="lab-supplies-item" style="--i:4">Микроскопы</span>
-                <span class="lab-supplies-item" style="--i:5">Аналитическое оборудование</span>
-                <span class="lab-supplies-item" style="--i:6">Центрифуги</span>
-                <span class="lab-supplies-item" style="--i:7">Стерилизационное оборудование</span>
-                <span class="lab-supplies-item" style="--i:8">Инкубаторы и термостаты</span>
-                <span class="lab-supplies-item" style="--i:9">Системы хранения и подготовки образцов</span>
+            <div class="lab-supplies-item" style="left:66.00%;top:38.30%">
+                <span class="dot"></span><span class="txt">Автоматические анализаторы</span>
+            </div>
+            <div class="lab-supplies-item" style="left:76.41%;top:52.55%">
+                <span class="dot"></span><span class="txt">Холодильное оборудование</span>
+            </div>
+            <div class="lab-supplies-item" style="left:61.31%;top:67.83%">
+                <span class="dot"></span><span class="txt">Лабораторные расходные материалы</span>
+            </div>
+            <div class="lab-supplies-item" style="left:71.95%;top:83.11%">
+                <span class="dot"></span><span class="txt">Микроскопы</span>
+            </div>
+            <div class="lab-supplies-item lab-supplies-item--left" style="left:27.75%;top:28.77%">
+                <span class="dot"></span><span class="txt">Аналитическое оборудование</span>
+            </div>
+            <div class="lab-supplies-item lab-supplies-item--left" style="left:14.36%;top:44.06%">
+                <span class="dot"></span><span class="txt">Центрифуги</span>
+            </div>
+            <div class="lab-supplies-item lab-supplies-item--left" style="left:31.70%;top:58.30%">
+                <span class="dot"></span><span class="txt">Стерилизационное оборудование</span>
+            </div>
+            <div class="lab-supplies-item lab-supplies-item--left" style="left:29.98%;top:73.58%">
+                <span class="dot"></span><span class="txt">Инкубаторы и термостаты</span>
+            </div>
+            <div class="lab-supplies-item lab-supplies-item--left" style="left:33.11%;top:88.87%">
+                <span class="dot"></span><span class="txt">Системы хранения и подготовки образцов</span>
             </div>
         </div>
     </div>
 </section>
-
 <!-- 4. Included -->
 <section class="lab-included">
     <div class="lab-section-inner">

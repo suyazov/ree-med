@@ -279,53 +279,115 @@
 .laboratory-page .lab-audience-card .text { position: relative; z-index: 1; }
 
 
-.laboratory-page .lab-supplies { padding: 80px 0; }
+.laboratory-page .lab-supplies { padding: 0; background: var(--color-white-2); }
 
-.laboratory-page .lab-supplies-header { text-align: center; margin-bottom: 60px; }
+.laboratory-page .lab-supplies-diagram {
+    position: relative;
+    width: 100%;
+    max-width: 1344px;
+    margin: 0 auto;
+    aspect-ratio: 1344 / 1060;
+    overflow: hidden;
+}
 
-.laboratory-page .lab-supplies-title { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); margin-bottom: 16px; }
+.laboratory-page .lab-supplies-label {
+    position: absolute;
+    left: 5.36%;
+    top: 6.42%;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-black);
+    z-index: 3;
+}
 
-.laboratory-page .lab-supplies-subtitle { font-size: 32px; line-height: 110%; letter-spacing: -0.03em; color: var(--color-black); }
+.laboratory-page .lab-supplies-title {
+    position: absolute;
+    left: 5.29%;
+    top: 11.89%;
+    max-width: 55%;
+    font-size: 48px;
+    line-height: 110%;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-black);
+    z-index: 3;
+}
 
-.laboratory-page .lab-supplies-diagram { position: relative; min-height: 640px; display: flex; align-items: center; justify-content: center; }
+.laboratory-page .lab-supplies-title .text-green { color: var(--color-green); }
+
+.laboratory-page .lab-supplies-rings {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.laboratory-page .lab-supplies-ring {
+    position: absolute;
+    left: 50%;
+    top: 51.13%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(54, 118, 67, 0.2);
+    aspect-ratio: 1 / 1;
+}
+
+.laboratory-page .lab-supplies-ring--outer { width: 70.54%; }
+.laboratory-page .lab-supplies-ring--middle { width: 54.76%; }
+.laboratory-page .lab-supplies-ring--inner { width: 38.32%; }
 
 .laboratory-page .lab-supplies-center {
-    width: 180px; height: 180px;
+    position: absolute;
+    left: 50%;
+    top: 51.13%;
+    transform: translate(-50%, -50%);
+    width: 22.62%;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background: var(--gradient-green);
-    color: var(--color-white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    overflow: hidden;
     z-index: 2;
 }
 
-.laboratory-page .lab-supplies-center-num { font-size: 64px; line-height: 1; font-weight: 600; }
+.laboratory-page .lab-supplies-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-.laboratory-page .lab-supplies-center-text { font-size: 16px; line-height: 120%; }
-
-.laboratory-page .lab-supplies-items { position: absolute; inset: 0; }
+.laboratory-page .lab-supplies-items {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+}
 
 .laboratory-page .lab-supplies-item {
     position: absolute;
-    left: 50%; top: 50%;
-    width: 210px;
-    text-align: center;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 14px;
     line-height: 120%;
     color: var(--color-black);
-    padding: 8px 12px;
-    background: var(--color-white-2);
-    border-radius: 8px;
-    --radius: 280px;
-    --angle: calc(var(--i) * 36deg - 90deg);
-    transform: translate(-50%, -50%) translate(
-        calc(cos(var(--angle)) * var(--radius)),
-        calc(sin(var(--angle)) * var(--radius))
-    );
+    white-space: nowrap;
 }
+
+.laboratory-page .lab-supplies-item .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2.8px solid rgba(54, 118, 67, 0.5);
+    background: var(--color-white-2);
+    flex-shrink: 0;
+}
+
+.laboratory-page .lab-supplies-item .txt {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.laboratory-page .lab-supplies-item--left { flex-direction: row-reverse; }
+
 
 .laboratory-page .lab-included { background: var(--color-white-2); padding: 80px 0; }
 
@@ -576,16 +638,15 @@
     .laboratory-page .lab-hero-badges { position: relative; left: auto; top: auto; right: auto; bottom: auto; width: 100%; flex-direction: row; flex-wrap: wrap; margin-top: 12px; }
     .laboratory-page .lab-hero-cta-btn { position: relative; right: auto; bottom: auto; width: 100%; margin-top: 12px; }
     .laboratory-page .lab-hero-bottom-btn { width: 100%; }
-    .laboratory-page .lab-supplies-diagram { min-height: auto; }
-    .laboratory-page .lab-supplies-items { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 32px; }
-    .laboratory-page .lab-supplies-item {
-            position: relative;
-            left: auto; top: auto;
-            transform: none;
-            width: auto;
-            background: var(--color-white-2);
-        }
-    .laboratory-page .lab-supplies-center { margin: 0 auto; }
+    .laboratory-page .lab-supplies-diagram { aspect-ratio: auto; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+    .laboratory-page .lab-supplies-label { position: static; text-align: center; }
+    .laboratory-page .lab-supplies-title { position: static; text-align: center; max-width: 100%; }
+    .laboratory-page .lab-supplies-rings { display: none; }
+    .laboratory-page .lab-supplies-center { position: relative; left: auto; top: auto; transform: none; width: 200px; }
+    .laboratory-page .lab-supplies-items { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; }
+    .laboratory-page .lab-supplies-item { position: relative; left: auto; top: auto; transform: none; flex-direction: row; }
+    .laboratory-page .lab-supplies-item--left { flex-direction: row; }
+    .laboratory-page .lab-supplies-item .txt { background: var(--color-white); }
     .laboratory-page .lab-included-result { grid-column: span 1; }
     .laboratory-page .lab-project-card { flex-direction: column; }
     .laboratory-page .lab-project-card-img { width: 100%; height: 220px; min-height: auto; }
@@ -612,9 +673,9 @@
     .laboratory-page .lab-audience-title { font-size: 28px; }
     .laboratory-page .lab-audience-label { font-size: 16px; }
     .laboratory-page .lab-audience-card { min-height: 150px; font-size: 18px; }
-    .laboratory-page .lab-supplies-title, .laboratory-page .lab-included-title, .laboratory-page .lab-why-title, .laboratory-page .lab-projects-title, .laboratory-page .lab-partners-title { font-size: 28px; }
-    .laboratory-page .lab-supplies-subtitle { font-size: 20px; }
+    .laboratory-page .lab-supplies-title { font-size: 28px; }
     .laboratory-page .lab-supplies-items { grid-template-columns: 1fr; }
+    .laboratory-page .lab-included-title, .laboratory-page .lab-why-title, .laboratory-page .lab-projects-title, .laboratory-page .lab-partners-title { font-size: 28px; }
     .laboratory-page .lab-included-grid { gap: 16px; }
     .laboratory-page .lab-included-card-body p { font-size: 16px; }
     .laboratory-page .lab-included-result { font-size: 16px; }
