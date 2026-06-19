@@ -332,14 +332,15 @@ $included_bottom = array_slice($included_cards, 3);
                     <span><?php echo esc_html($request_note); ?></span>
                 </div>
             </div>
-            <form class="stom-request-form" onsubmit="return false;">
-                <input type="text" placeholder="Иванов Николай Сергеевич">
-                <input type="tel" placeholder="+7 (999) 999-99-99">
-                <textarea placeholder="Ваш комментарий"></textarea>
+            <form id="contact-form" class="stom-request-form">
+                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
+                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
+                <textarea name="comment" placeholder="Ваш комментарий"></textarea>
                 <label class="checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" name="agree" value="1" required>
                     <span>Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных</span>
                 </label>
+                <div class="form-message"></div>
                 <button type="submit"><?php echo esc_html($request_button); ?></button>
             </form>
         </div>

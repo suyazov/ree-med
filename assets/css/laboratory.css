@@ -794,7 +794,11 @@
     .laboratory-page .lab-audience-title { font-size: 28px; }
     .laboratory-page .lab-audience-label { font-size: 16px; }
     .laboratory-page .lab-audience-card { min-height: 150px; font-size: 18px; }
-    .laboratory-page .lab-supplies-title { font-size: 28px; }
+    .laboratory-page .lab-supplies-diagram { aspect-ratio: 1 / 1; }
+    .laboratory-page .lab-supplies-label { font-size: 14px; line-height: 16px; top: 3%; left: 50%; transform: translateX(-50%); }
+    .laboratory-page .lab-supplies-title { font-size: 24px; line-height: 110%; max-width: 90%; left: 50%; transform: translateX(-50%); text-align: center; top: 8%; }
+    .laboratory-page .lab-supplies-item { font-size: 12px; gap: 6px; white-space: normal; max-width: 120px; align-items: flex-start; }
+    .laboratory-page .lab-supplies-item .dot { width: 14px; height: 14px; border-width: 2px; flex-shrink: 0; margin-top: 1px; }
     .laboratory-page .lab-supplies-items { grid-template-columns: 1fr; }
     .laboratory-page .lab-included-title, .laboratory-page .lab-why-title, .laboratory-page .lab-projects-title, .laboratory-page .lab-partners-title { font-size: 28px; }
     .laboratory-page .lab-included-grid { gap: 16px; }
