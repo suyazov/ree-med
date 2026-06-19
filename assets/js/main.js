@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Projects slider
-    const projectsSlider = document.querySelector('.projects-slider');
-    if (projectsSlider) {
-        const slides = projectsSlider.querySelectorAll('.project-slide');
-        const prevBtn = projectsSlider.querySelector('.slider-arrow.prev');
-        const nextBtn = projectsSlider.querySelector('.slider-arrow.next');
-        const dots = projectsSlider.querySelectorAll('.slider-dot');
+    // Generic slider
+    function initSlider(container, slideSelector, prevSelector, nextSelector, dotSelector) {
+        if (!container) return;
+        const slides = container.querySelectorAll(slideSelector);
+        const prevBtn = container.querySelector(prevSelector);
+        const nextBtn = container.querySelector(nextSelector);
+        const dots = container.querySelectorAll(dotSelector);
         let currentSlide = 0;
         const totalSlides = slides.length;
 
@@ -82,44 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Laboratory projects slider
-    const labProjectsSlider = document.querySelector('.lab-projects-slider');
-    if (labProjectsSlider) {
-        const labSlides = labProjectsSlider.querySelectorAll('.lab-project-slide');
-        const labPrevBtn = labProjectsSlider.querySelector('.lab-slider-arrow.prev');
-        const labNextBtn = labProjectsSlider.querySelector('.lab-slider-arrow.next');
-        const labDots = labProjectsSlider.querySelectorAll('.lab-slider-dot');
-        let currentLabSlide = 0;
-        const totalLabSlides = labSlides.length;
-
-        function showLabSlide(index) {
-            if (totalLabSlides === 0) return;
-            currentLabSlide = (index + totalLabSlides) % totalLabSlides;
-            labSlides.forEach(function(slide, i) {
-                slide.classList.toggle('active', i === currentLabSlide);
-            });
-            labDots.forEach(function(dot, i) {
-                dot.classList.toggle('active', i === currentLabSlide);
-            });
-        }
-
-        if (labPrevBtn) {
-            labPrevBtn.addEventListener('click', function() {
-                showLabSlide(currentLabSlide - 1);
-            });
-        }
-        if (labNextBtn) {
-            labNextBtn.addEventListener('click', function() {
-                showLabSlide(currentLabSlide + 1);
-            });
-        }
-        labDots.forEach(function(dot) {
-            dot.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-slide'), 10);
-                showLabSlide(index);
-            });
-        });
-    }
+    initSlider(document.querySelector('.projects-slider'), '.project-slide', '.slider-arrow.prev', '.slider-arrow.next', '.slider-dot');
+    initSlider(document.querySelector('.lab-projects-slider'), '.lab-project-slide', '.lab-slider-arrow.prev', '.lab-slider-arrow.next', '.lab-slider-dot');
 
     // Contact form AJAX
     const contactForm = document.getElementById('contact-form');
