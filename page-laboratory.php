@@ -270,17 +270,17 @@ $hero_btn   = (function_exists('get_field') && get_field('lab_hero_button_text')
             <div class="lab-partner-card">
                 <img src="<?php echo esc_url($img_dir); ?>/placeholder.jpg" alt="">
                 <h3 class="lab-partner-name">ДеЗиЛаб</h3>
-                <p class="lab-partner-text">Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.</p>
+                <p class="lab-partner-text">Российский производитель дезинфицирующих средств широкого спектра. Продукция зарегистрирована и эффективна против вирусов, бактерий и грибов.</p>
             </div>
             <div class="lab-partner-card">
                 <img src="<?php echo esc_url($img_dir); ?>/placeholder.jpg" alt="">
-                <h3 class="lab-partner-name">ДеЗиЛаб</h3>
-                <p class="lab-partner-text">Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.</p>
+                <h3 class="lab-partner-name">МедЛаб Системс</h3>
+                <p class="lab-partner-text">Поставщик лабораторного оборудования: анализаторы, микроскопы, центрифуги и расходные материалы для клинико-диагностических лабораторий.</p>
             </div>
             <div class="lab-partner-card">
                 <img src="<?php echo esc_url($img_dir); ?>/placeholder.jpg" alt="">
-                <h3 class="lab-partner-name">ДеЗиЛаб</h3>
-                <p class="lab-partner-text">Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.</p>
+                <h3 class="lab-partner-name">БиоТехно</h3>
+                <p class="lab-partner-text">Производитель стерилизационного и холодильного оборудования, инкубаторов, термостатов и систем хранения биологических образцов.</p>
             </div>
         </div>
     </div>
@@ -294,15 +294,16 @@ $hero_btn   = (function_exists('get_field') && get_field('lab_hero_button_text')
                 <h2 class="lab-request-title">Подберём решение для&nbsp;вашего учреждения</h2>
                 <p class="lab-request-desc">Оставьте заявку, и&nbsp;специалист поможет подобрать оборудование, дезинфицирующие средства и&nbsp;расходные материалы под&nbsp;ваши задачи.</p>
             </div>
-            <form class="lab-request-form" onsubmit="return false;">
-                <input type="text" placeholder="Иванов Николай Сергеевич">
-                <input type="tel" placeholder="+7 (999) 999-99-99">
-                <input type="text" placeholder="Название организации">
-                <textarea placeholder="Ваш комментарий"></textarea>
+            <form id="contact-form" class="lab-request-form">
+                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
+                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
+                <input type="text" name="organization" placeholder="Название организации">
+                <textarea name="comment" placeholder="Ваш комментарий"></textarea>
                 <label class="checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" name="agree" value="1" required>
                     <span>Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных</span>
                 </label>
+                <div class="form-message"></div>
                 <button type="submit">Отправить</button>
             </form>
         </div>
