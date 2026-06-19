@@ -11,8 +11,7 @@
 <header class="site-header">
     <div class="container header-container">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-            <span class="logo-main">ТриМед</span>
-            <span class="logo-tagline">Здоровье. Забота. Жизнь.</span>
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>" alt="ТриМед" width="140" height="41">
         </a>
 
         <nav class="main-nav">
