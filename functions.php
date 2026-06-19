@@ -31,6 +31,13 @@ function trimed_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'trimed_enqueue_assets');
 
+function trimed_enqueue_page_assets() {
+    if (is_page_template('page-stomatology.php')) {
+        wp_enqueue_style('trimed-stomatology', get_template_directory_uri() . '/assets/css/stomatology.css', array('trimed-main'), TRIMED_VERSION);
+    }
+}
+add_action('wp_enqueue_scripts', 'trimed_enqueue_page_assets');
+
 function trimed_handle_contact_form() {
     check_ajax_referer('trimed_contact_nonce', 'nonce');
 
