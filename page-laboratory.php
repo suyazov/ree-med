@@ -44,11 +44,24 @@ $hero_btn   = (function_exists('get_field') && get_field('lab_hero_button_text')
             </div>
 
             <div class="lab-hero-right">
-                <img src="<?php echo esc_url($img_dir); ?>/placeholder.jpg" alt="" class="lab-hero-image">
+                <img src="<?php echo esc_url($img_dir); ?>/placeholder.jpg" alt="" class="lab-hero-main-image">
                 <div class="lab-hero-badges">
-                    <div class="lab-hero-badge-green"><span>Безопасность лаборатории</span></div>
-                    <div class="lab-hero-badge-green"><span>Расчёт под объём исследований</span></div>
-                    <div class="lab-hero-badge-green"><span>Подбор под задачи учреждения</span></div>
+                    <div class="lab-hero-badge lab-hero-badge--safety">
+                        <span class="lab-hero-badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        <span>Безопасность лаборатории</span>
+                    </div>
+                    <div class="lab-hero-badge lab-hero-badge--volume">
+                        <span class="lab-hero-badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        <span>Расчёт под объём исследований</span>
+                    </div>
+                    <div class="lab-hero-badge lab-hero-badge--budget">
+                        <span class="lab-hero-badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        <span>Учёт бюджета</span>
+                    </div>
+                    <div class="lab-hero-badge lab-hero-badge--tasks">
+                        <span class="lab-hero-badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        <span>Подбор под задачи учреждения</span>
+                    </div>
                 </div>
                 <button class="lab-hero-cta-btn" type="button"><?php echo esc_html($hero_btn); ?></button>
             </div>
