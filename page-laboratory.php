@@ -61,10 +61,10 @@ $hero_button_text = lab_get_field('lab_hero_button_text', 'Получить ко
 $hero_bottom_button_text = lab_get_field('lab_hero_bottom_button_text', 'Подобрать оборудование');
 
 $default_hero_features = array(
-    array('svg' => '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4l2 5h-8z"/><path d="M12 7v13"/><path d="M9 20h6"/></svg>', 'text' => 'Комплексное оснащение лабораторий'),
-    array('svg' => '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="10" rx="2"/><path d="M8 18v2"/><path d="M16 18v2"/><path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>', 'text' => 'Поставка со склада и под заказ'),
-    array('svg' => '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>', 'text' => 'Оборудование ведущих производителей'),
-    array('svg' => '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3z"/><path d="M12 18v-3"/></svg>', 'text' => 'Сервисное сопровождение'),
+    array('icon' => $img_dir . '/lab-hero-icon-1.png', 'text' => 'Комплексное оснащение лабораторий'),
+    array('icon' => $img_dir . '/lab-hero-icon-2.png', 'text' => 'Поставка со склада и под заказ'),
+    array('icon' => $img_dir . '/lab-hero-icon-3.png', 'text' => 'Оборудование ведущих производителей'),
+    array('icon' => $img_dir . '/lab-hero-icon-4.png', 'text' => 'Сервисное сопровождение'),
 );
 $hero_features = lab_get_repeater('lab_hero_features', $default_hero_features);
 
@@ -194,7 +194,11 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
     <div class="lab-container">
         <div class="lab-hero-grid">
             <div class="lab-hero-top">
-                <h1 class="lab-hero-title"><?php echo wp_kses_post(str_replace('лабораторий', '<span class="text-green">лабораторий</span>', $hero_title)); ?></h1>
+                <h1 class="lab-hero-title"><?php
+                    $hero_title = str_replace('лабораторий', '<span class="text-green">лабораторий</span>', $hero_title);
+                    $hero_title = preg_replace('/(лабораторий\s+)(.+)/', '$1<br><em>$2</em>', $hero_title);
+                    echo wp_kses_post($hero_title);
+                ?></h1>
                 <p class="lab-hero-desc"><?php echo esc_html($hero_desc); ?></p>
             </div>
 

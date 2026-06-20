@@ -110,6 +110,10 @@
 }
 
 .laboratory-page .lab-hero-title .text-green { color: var(--color-green); }
+.laboratory-page .lab-hero-title em { font-style: italic; font-weight: 400; white-space: nowrap; }
+@media (max-width: 768px) {
+    .laboratory-page .lab-hero-title em { white-space: normal; }
+}
 
 .laboratory-page .lab-hero-desc {
     font-size: 20px;
@@ -144,7 +148,7 @@
     width: 28px;
     height: 28px;
     flex-shrink: 0;
-    color: var(--color-green);
+    object-fit: contain;
 }
 
 
