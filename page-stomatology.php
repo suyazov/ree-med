@@ -12,10 +12,21 @@ function stom_image_url($field, $placeholder) {
     return !empty($url) ? $url : $placeholder;
 }
 
+function stom_why_stat_class($style) {
+    $map = array(
+        'gray'  => 'stom-why-stat--gray',
+        'green' => 'stom-why-stat--green',
+        'image' => 'stom-why-stat--img',
+        'img'   => 'stom-why-stat--img',
+    );
+    return isset($map[$style]) ? $map[$style] : 'stom-why-stat--gray';
+}
+
 $hero_title = get_field('stom_hero_title') ?: 'Оснащение стоматологии под ключ в Забайкальском крае';
 $hero_desc  = get_field('stom_hero_desc') ?: 'Подберём оборудование, поставим и поможем запустить кабинет без лишних затрат и ошибок';
 $hero_btn   = get_field('stom_hero_button_text') ?: 'Получить консультацию';
-$hero_image = stom_image_url('stom_hero_image', $placeholder);
+$hero_image = stom_image_url('stom_hero_image', $img_dir . '/stomatology-hero-main.png');
+$hero_feature_image = stom_image_url('stom_hero_feature_image', $img_dir . '/stomatology-hero-features.png');
 $hero_features = get_field('stom_hero_features');
 $hero_badge_glass_text = get_field('stom_hero_badge_glass_text') ?: 'Работаем с частными и государственными клиниками';
 $hero_badge_green_num  = get_field('stom_hero_badge_green_num') ?: '5000+';
@@ -41,7 +52,7 @@ $projects = get_field('stom_projects');
 $process_title    = get_field('stom_process_title') ?: 'Как проходит работа';
 $process_subtitle = get_field('stom_process_subtitle') ?: 'Мы выстроили простой и понятный процесс, чтобы вы не тратили время на разбор оборудования.';
 $process_steps    = get_field('stom_process_steps');
-$process_image    = stom_image_url('stom_process_image', $placeholder);
+$process_image    = stom_image_url('stom_process_image', $img_dir . '/stomatology-process.png');
 
 $request_title  = get_field('stom_request_title') ?: 'Подберём оборудование под вашу стоматологию';
 $request_desc   = get_field('stom_request_desc') ?: 'Оставьте заявку — свяжемся с вами и предложим решение';
@@ -52,7 +63,7 @@ $why_title    = get_field('stom_why_title') ?: 'Почему выбирают Т
 $why_stats    = get_field('stom_why_stats');
 $why_features = get_field('stom_why_features');
 $why_warehouse_title = get_field('stom_why_warehouse_title') ?: 'Собственный склад в Чите';
-$why_warehouse_image = stom_image_url('stom_why_warehouse_image', $placeholder);
+$why_warehouse_image = stom_image_url('stom_why_warehouse_image', $img_dir . '/stomatology-warehouse.png');
 
 $cta_text   = get_field('stom_cta_text') ?: 'Если вы планируете открыть стоматологию или обновить оборудование — мы поможем подобрать решения под вашу задачу и бюджет';
 $cta_button = get_field('stom_cta_button_text') ?: 'Получить консультацию';
@@ -67,46 +78,46 @@ if (empty($hero_features) || !is_array($hero_features)) {
 
 if (empty($audience_cards) || !is_array($audience_cards)) {
     $audience_cards = array(
-        array('text' => 'Открываете стоматологический кабинет и не знаете, какое оборудование выбрать', 'image' => '', 'style' => 'image'),
-        array('text' => 'Расширяете клинику и добавляете новые кресла', 'image' => $placeholder, 'style' => 'white'),
-        array('text' => 'Хотите заменить устаревшее оборудование', 'image' => $placeholder, 'style' => 'gray'),
+        array('text' => 'Открываете стоматологический кабинет и не знаете, какое оборудование выбрать', 'image' => $img_dir . '/stomatology-audience-2.png', 'style' => 'image'),
+        array('text' => 'Расширяете клинику и добавляете новые кресла', 'image' => $img_dir . '/stomatology-audience-1.png', 'style' => 'white'),
+        array('text' => 'Хотите заменить устаревшее оборудование', 'image' => $img_dir . '/stomatology-audience-3.png', 'style' => 'gray'),
         array('text' => 'Хотите работать без простоев и задержек поставок', 'image' => '', 'style' => 'green'),
     );
 }
 
 if (empty($included_cards) || !is_array($included_cards)) {
     $included_cards = array(
-        array('image' => $placeholder, 'number' => '1', 'title' => 'Подбор стоматологических установок'),
-        array('image' => $placeholder, 'number' => '2', 'title' => 'Компрессоры и аспирационные системы'),
-        array('image' => $placeholder, 'number' => '3', 'title' => 'Стоматологические инструменты и оборудование'),
-        array('image' => $placeholder, 'number' => '4', 'title' => 'Мебель и оснащение кабинета'),
-        array('image' => $placeholder, 'number' => '5', 'title' => 'Поставку оборудования'),
-        array('image' => $placeholder, 'number' => '6', 'title' => 'Консультации на всех этапах'),
+        array('image' => $img_dir . '/stomatology-included-1.png', 'number' => '1', 'title' => 'Подбор стоматологических установок'),
+        array('image' => $img_dir . '/stomatology-included-2.png', 'number' => '2', 'title' => 'Компрессоры и аспирационные системы'),
+        array('image' => $img_dir . '/stomatology-included-3.png', 'number' => '3', 'title' => 'Стоматологические инструменты и оборудование'),
+        array('image' => $img_dir . '/stomatology-included-4.png', 'number' => '4', 'title' => 'Мебель и оснащение кабинета'),
+        array('image' => $img_dir . '/stomatology-included-5.png', 'number' => '5', 'title' => 'Поставку оборудования'),
+        array('image' => $img_dir . '/stomatology-included-6.png', 'number' => '6', 'title' => 'Консультации на всех этапах'),
     );
 }
 
 if (empty($projects) || !is_array($projects)) {
     $projects = array(
         array(
-            'image' => $placeholder,
+            'image' => $img_dir . '/stomatology-project-1.png',
             'number' => '01.',
             'title' => 'Стоматология «Дента-Профи» (г. Чита)',
             'text' => 'Оснащение двух кабинетов под ключ: стоматологические установки, компрессорная, стерилизационная.',
         ),
         array(
-            'image' => $placeholder,
+            'image' => $img_dir . '/stomatology-project-2.png',
             'number' => '02.',
             'title' => 'Стоматологический кабинет «Улыбка Забайкалья» (г. Борзя)',
             'text' => 'Комплексное оснащение с нуля: установка, стерилизационное оборудование, цифровой визиограф, дизайн-проект и расстановка мебели.',
         ),
         array(
-            'image' => $placeholder,
+            'image' => $img_dir . '/stomatology-project-3.png',
             'number' => '03.',
             'title' => 'Стоматологический кабинет «Улыбка Забайкалья» (г. Борзя)',
             'text' => 'Комплексное оснащение с нуля: установка, стерилизационное оборудование, цифровой визиограф, дизайн-проект и расстановка мебели.',
         ),
         array(
-            'image' => $placeholder,
+            'image' => $img_dir . '/stomatology-project-4.png',
             'number' => '04.',
             'title' => 'Стоматология «Дента-Профи» (г. Чита)',
             'text' => 'Оснащение двух кабинетов под ключ: стоматологические установки, компрессорная, стерилизационная.',
@@ -119,7 +130,7 @@ if (empty($process_steps) || !is_array($process_steps)) {
         array('number' => '1', 'title' => 'Консультация', 'text' => 'Обсуждаем формат кабинета и задачи', 'image' => ''),
         array('number' => '2', 'title' => 'Подбор оборудования', 'text' => 'Подбираем решения под бюджет и нагрузку', 'image' => ''),
         array('number' => '3', 'title' => 'Поставка', 'text' => 'Доставляем оборудование со склада или под заказ', 'image' => ''),
-        array('number' => '4', 'title' => 'Запуск', 'text' => 'Помогаем подготовить кабинет к работе', 'image' => $placeholder),
+        array('number' => '4', 'title' => 'Запуск', 'text' => 'Помогаем подготовить кабинет к работе', 'image' => $img_dir . '/stomatology-process-step.png'),
     );
 }
 
@@ -159,7 +170,7 @@ $included_bottom = array_slice($included_cards, 3);
                     <p class="stom-hero-desc"><?php echo esc_html($hero_desc); ?></p>
 
                     <div class="stom-hero-features">
-                        <img src="<?php echo esc_url($hero_image); ?>" alt="" class="stom-hero-feature-img">
+                        <img src="<?php echo esc_url($hero_feature_image); ?>" alt="" class="stom-hero-feature-img">
                         <div class="stom-hero-feature-cards">
                             <?php foreach ($hero_features as $feature) : ?>
                                 <div class="stom-hero-feature-card">
@@ -355,8 +366,7 @@ $included_bottom = array_slice($included_cards, 3);
                 <div class="stom-why-left">
                     <div class="stom-why-stats">
                         <?php foreach ($why_stats as $stat) :
-                            $stat_style = !empty($stat['style']) ? $stat['style'] : 'gray';
-                            $stat_class = 'stom-why-stat--' . $stat_style;
+                            $stat_class = stom_why_stat_class(!empty($stat['style']) ? $stat['style'] : 'gray');
                         ?>
                             <div class="stom-why-stat <?php echo esc_attr($stat_class); ?>">
                                 <span class="num"><?php echo esc_html($stat['number']); ?></span>

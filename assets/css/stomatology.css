@@ -325,7 +325,7 @@
 .stomatology-page .stom-why-left { display: flex; flex-direction: column; gap: 24px; }
 .stomatology-page .stom-why-stats { display: flex; gap: 24px; }
 .stomatology-page .stom-why-stat { height: 203px; padding: 32px 44px; display: flex; flex-direction: column; justify-content: center; }
-.stomatology-page .stom-why-stat--img { width: 286px; background: var(--color-gray-2) url('../img/placeholder.jpg') center/cover no-repeat; color: var(--color-white); position: relative; }
+.stomatology-page .stom-why-stat--img { width: 286px; background: var(--color-gray-2) url('../img/stomatology-why-main.png') center/cover no-repeat; color: var(--color-white); position: relative; }
 .stomatology-page .stom-why-stat--img::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
 .stomatology-page .stom-why-stat--gray { width: 378px; background: var(--color-gray-2); color: var(--color-black); }
 .stomatology-page .stom-why-stat .num { font-size: 64px; line-height: 75px; font-weight: 600; position: relative; }

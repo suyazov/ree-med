@@ -3,6 +3,13 @@
 Template Name: Дезинфекция
 */
 get_header();
+
+$img_dir = get_template_directory_uri() . '/assets/img';
+
+function dis_image_url($field, $fallback) {
+    $url = get_field($field);
+    return !empty($url) ? $url : $fallback;
+}
 ?>
 
 <main class="disinfection-page">
@@ -20,7 +27,7 @@ get_header();
                 ?>
                 <h1 class="hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
                 <div class="hero-image-wrap">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.png" alt="Дезинфекция" class="hero-image">
+                    <img src="<?php echo esc_url(dis_image_url('hero_image', $img_dir . '/disinfection-hero-main.png')); ?>" alt="Дезинфекция" class="hero-image">
                     <div class="hero-badges">
                         <?php
                         $hero_badges = get_field('hero_badges');
@@ -50,10 +57,10 @@ get_header();
                         $hero_features = get_field('hero_features');
                         if (!$hero_features) {
                             $hero_features = array(
-                                array('icon' => get_template_directory_uri() . '/assets/img/hero-icon-1.png', 'text' => 'Широкий выбор дезинфицирующих средств'),
-                                array('icon' => get_template_directory_uri() . '/assets/img/hero-icon-2.png', 'text' => 'Консультации по подбору решений'),
-                                array('icon' => get_template_directory_uri() . '/assets/img/hero-icon-3.png', 'text' => 'Поставка со склада в Чите'),
-                                array('icon' => get_template_directory_uri() . '/assets/img/hero-icon-4.png', 'text' => 'Оборудование для стерилизации и обработки'),
+                                array('icon' => $img_dir . '/disinfection-hero-icon-1.png', 'text' => 'Широкий выбор дезинфицирующих средств'),
+                                array('icon' => $img_dir . '/disinfection-hero-icon-2.png', 'text' => 'Консультации по подбору решений'),
+                                array('icon' => $img_dir . '/disinfection-hero-icon-3.png', 'text' => 'Поставка со склада в Чите'),
+                                array('icon' => $img_dir . '/disinfection-hero-icon-4.png', 'text' => 'Оборудование для стерилизации и обработки'),
                             );
                         }
                         foreach ($hero_features as $feature) :
@@ -87,15 +94,15 @@ get_header();
                 if (!$audience_cards) {
                     $audience_cards = array(
                         array('title' => 'Медицинские центры', 'style' => 'default'),
-                        array('title' => 'Стоматологии', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-stomatology.png'),
+                        array('title' => 'Стоматологии', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-stomatology.png'),
                         array('title' => 'Больницы и поликлиники', 'style' => 'gray'),
-                        array('title' => 'Лаборатории', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-lab.png'),
+                        array('title' => 'Лаборатории', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-laboratory.png'),
                         array('title' => 'Санатории и реабилитационные центры', 'style' => 'green'),
                         array('title' => 'Образовательные учреждения', 'style' => 'green'),
                         array('title' => 'Салоны красоты и косметологии', 'style' => 'default'),
-                        array('title' => 'Предприятия и организации', 'style' => 'image', 'image' => get_template_directory_uri() . '/assets/img/card-enterprise.png'),
+                        array('title' => 'Предприятия и организации', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-enterprise.png'),
                         array('title' => 'Ещё можно добавить', 'style' => 'default'),
-                        array('title' => 'Ещё можно добавить', 'style' => 'image-overlay', 'image' => get_template_directory_uri() . '/assets/img/card-medcenter.png'),
+                        array('title' => 'Ещё можно добавить', 'style' => 'image-overlay', 'image' => $img_dir . '/disinfection-audience-medcenter.png'),
                     );
                 }
                 foreach ($audience_cards as $card) :
@@ -137,7 +144,7 @@ get_header();
                     <h2 class="section-title"><?php echo wp_kses_post($supplies_title); ?></h2>
                 </div>
                 <div class="supplies-diagram">
-                    <div class="supplies-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/supplies-center.png" alt=""></div>
+                    <div class="supplies-center"><img src="<?php echo esc_url(dis_image_url('supplies_center_image', $img_dir . '/disinfection-supplies-center.png')); ?>" alt=""></div>
                     <div class="supplies-rings">
                         <div class="ring ring-1"></div>
                         <div class="ring ring-2"></div>
@@ -189,13 +196,13 @@ get_header();
                 if (!$included_cards) {
                     $green_text = get_field('included_card_text') ?: 'Мы помогаем подобрать решения, которые обеспечивают безопасность, удобство использования и соответствие действующим санитарным требованиям';
                     $included_cards = array(
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-1.png', 'number' => '1', 'title' => 'Анализ потребностей учреждения'),
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-2.png', 'number' => '2', 'title' => 'Подбор дезсредств под задачи'),
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-3.png', 'number' => '3', 'title' => 'Подбор оборудования'),
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-4.png', 'number' => '4', 'title' => 'Расчет потребности расходных материалов'),
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-5.png', 'number' => '5', 'title' => 'Консультации специалистов'),
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-6.png', 'number' => '6', 'title' => 'Поставка продукции'),
-                        array('image' => get_template_directory_uri() . '/assets/img/what-included-7.png', 'number' => '7', 'title' => 'Сопровождение и поддержка'),
+                        array('image' => $img_dir . '/disinfection-included-1.png', 'number' => '1', 'title' => 'Анализ потребностей учреждения'),
+                        array('image' => $img_dir . '/disinfection-included-2.png', 'number' => '2', 'title' => 'Подбор дезсредств под задачи'),
+                        array('image' => $img_dir . '/disinfection-included-3.png', 'number' => '3', 'title' => 'Подбор оборудования'),
+                        array('image' => $img_dir . '/disinfection-included-4.png', 'number' => '4', 'title' => 'Расчет потребности расходных материалов'),
+                        array('image' => $img_dir . '/disinfection-included-5.png', 'number' => '5', 'title' => 'Консультации специалистов'),
+                        array('image' => $img_dir . '/disinfection-included-6.png', 'number' => '6', 'title' => 'Поставка продукции'),
+                        array('image' => $img_dir . '/disinfection-included-7.png', 'number' => '7', 'title' => 'Сопровождение и поддержка'),
                         array('is_green' => true, 'title' => $green_text),
                     );
                 }
@@ -229,13 +236,13 @@ get_header();
                     $tasks_list = get_field('tasks_list');
                     if (!$tasks_list) {
                         $tasks_list = array(
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-1.png', 'text' => 'Оснащение нового медицинского кабинета'),
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-2.png', 'text' => 'Подбор дезинфицирующих средств'),
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-3.png', 'text' => 'Оснащение стерилизационной'),
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-4.png', 'text' => 'Подготовка к лицензированию'),
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-5.png', 'text' => 'Замена используемых средств'),
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-6.png', 'text' => 'Подбор рециркуляторов и обеззараживателей'),
-                            array('icon' => get_template_directory_uri() . '/assets/img/task-icon-7.png', 'text' => 'Организация инфекционного контроля в учреждении'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-1.png', 'text' => 'Оснащение нового медицинского кабинета'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-2.png', 'text' => 'Подбор дезинфицирующих средств'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-3.png', 'text' => 'Оснащение стерилизационной'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-4.png', 'text' => 'Подготовка к лицензированию'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-5.png', 'text' => 'Замена используемых средств'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-6.png', 'text' => 'Подбор рециркуляторов и обеззараживателей'),
+                            array('icon' => $img_dir . '/disinfection-task-icon-7.png', 'text' => 'Организация инфекционного контроля в учреждении'),
                         );
                     }
                     foreach ($tasks_list as $task) :
@@ -261,7 +268,7 @@ get_header();
                     <h2 class="section-title"><?php echo wp_kses_post($why_title); ?></h2>
             </div>
             <div class="why-grid">
-                <div class="why-image-card" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/why-choose.png')">
+                <div class="why-image-card" style="background-image:url('<?php echo esc_url(dis_image_url('why_main_image', $img_dir . '/disinfection-why-main.png')); ?>')">
                     <div class="why-stats">
                         <div class="why-stat glass"><strong>20+ лет</strong><span>работы в медицинской сфере</span></div>
                         <div class="why-stat green"><strong>5000+</strong><span>позиций в наличии</span></div>
@@ -273,7 +280,7 @@ get_header();
                     </svg>
                     <h3>Работа с государственными и частными учреждениями</h3>
                 </div>
-                <div class="why-warehouse-card" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/warehouse.png')">
+                <div class="why-warehouse-card" style="background-image:url('<?php echo esc_url(dis_image_url('why_warehouse_image', $img_dir . '/disinfection-warehouse.png')); ?>')">
                     <h3>Склад в Чите</h3>
                 </div>
                 <div class="why-features-list">
@@ -312,7 +319,7 @@ get_header();
                         'task' => 'Полное оснащение двух стоматологических кабинетов и стерилизационной комнаты под ключ для запуска новой клиники. Требовалось обеспечить соответствие санитарным нормам, организовать централизованную подачу воздуха и эффективную систему инфекционного контроля.',
                         'equipment' => 'Стоматологические установки (2 шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.',
                         'result' => 'Клиника введена в эксплуатацию в запланированные сроки. Все кабинеты укомплектованы, стерилизационная функционирует в полном объёме, соблюдены требования Роспотребнадзора. Персонал обеспечен всем необходимым для безопасной работы.',
-                        'image' => get_template_directory_uri() . '/assets/img/project.png',
+                        'image' => $img_dir . '/disinfection-project.png',
                     ),
                     array(
                         'num' => '03.',
@@ -320,7 +327,7 @@ get_header();
                         'task' => 'Комплексное оснащение процедурных кабинетов и стерилизационной зоны для многопрофильного медицинского центра. Задача включала подбор дезинфицирующих средств, оборудования для стерилизации и систем хранения.',
                         'equipment' => 'Автоклав класса B, ультразвуковая мойка, рециркуляторы воздуха, дезинфицирующие средства, контейнеры и упаковочные материалы для стерилизации.',
                         'result' => 'Центр получил полный комплект оборудования и расходных материалов в соответствии с действующими санитарными нормами. Персонал прошёл консультацию по эксплуатации оборудования.',
-                        'image' => get_template_directory_uri() . '/assets/img/warehouse.png',
+                        'image' => $img_dir . '/disinfection-project.png',
                     ),
                 );
             }
@@ -377,9 +384,9 @@ get_header();
                 $partners = get_field('partners');
                 if (!$partners) {
                     $partners = array(
-                        array('logo' => get_template_directory_uri() . '/assets/img/partner-1.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
-                        array('logo' => get_template_directory_uri() . '/assets/img/partner-2.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
-                        array('logo' => get_template_directory_uri() . '/assets/img/partner-3.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
+                        array('logo' => $img_dir . '/disinfection-partner-1.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
+                        array('logo' => $img_dir . '/disinfection-partner-2.png', 'name' => 'МедЛаб Системс', 'desc' => 'Поставщик лабораторного оборудования: анализаторы, микроскопы, центрифуги и расходные материалы для клинико-диагностических лабораторий.'),
+                        array('logo' => $img_dir . '/disinfection-partner-3.png', 'name' => 'БиоТехно', 'desc' => 'Производитель стерилизационного и холодильного оборудования, инкубаторов, термостатов и систем хранения биологических образцов.'),
                     );
                 }
                 foreach ($partners as $partner) :

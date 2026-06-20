@@ -497,7 +497,7 @@
 }
 
 .laboratory-page .lab-why-stat--img {
-    background: var(--color-gray-2) url('../img/placeholder.jpg') center/cover no-repeat;
+    background: var(--color-gray-2) url('../img/laboratory-why-main.png') center/cover no-repeat;
     color: var(--color-white);
     position: relative;
 }

@@ -56,7 +56,7 @@ function lab_why_stat_class($style) {
 // Hero
 $hero_title = lab_get_field('lab_hero_title', 'Оснащение лабораторий под ключ в Чите и Забайкальском крае');
 $hero_desc  = lab_get_field('lab_hero_desc', 'Подбираем и поставляем лабораторное оборудование для медицинских, клинико-диагностических, исследовательских и производственных лабораторий.');
-$hero_image = lab_image_url('lab_hero_image', $placeholder);
+$hero_image = lab_image_url('lab_hero_image', $img_dir . '/laboratory-hero-main.png');
 $hero_button_text = lab_get_field('lab_hero_button_text', 'Получить консультацию');
 $hero_bottom_button_text = lab_get_field('lab_hero_bottom_button_text', 'Подобрать оборудование');
 
@@ -80,9 +80,9 @@ $hero_badges = lab_get_repeater('lab_hero_badges', $default_hero_badges);
 $audience_subtitle = lab_get_field('lab_audience_subtitle', 'Для кого мы работаем');
 $audience_title = lab_get_field('lab_audience_title', 'Решения <span class="text-green">для разных типов</span> лабораторий');
 $default_audience_cards = array(
-    array('title' => 'Клинико-диагностические лаборатории', 'image' => '', 'style' => 'image'),
+    array('title' => 'Клинико-диагностические лаборатории', 'image' => $img_dir . '/laboratory-audience-1.png', 'style' => 'image'),
     array('title' => 'Лаборатории медицинских центров', 'image' => '', 'style' => 'default'),
-    array('title' => 'Научно-исследовательские лаборатории', 'image' => '', 'style' => 'image'),
+    array('title' => 'Научно-исследовательские лаборатории', 'image' => $img_dir . '/laboratory-audience-2.png', 'style' => 'image'),
     array('title' => 'Ветеринарные лаборатории', 'image' => '', 'style' => 'gray'),
     array('title' => 'Государственные учреждения', 'image' => '', 'style' => 'green'),
     array('title' => 'Производственные лаборатории', 'image' => '', 'style' => 'default'),
@@ -92,7 +92,7 @@ $audience_cards = lab_get_repeater('lab_audience_cards', $default_audience_cards
 // Supplies
 $supplies_subtitle = lab_get_field('lab_supplies_subtitle', 'Комплексное оснащение лабораторий');
 $supplies_title = lab_get_field('lab_supplies_title', 'Подберём оборудование <span class="text-green">под&nbsp;задачи вашей лаборатории</span>');
-$supplies_center_image = lab_image_url('lab_supplies_center_image', $placeholder);
+$supplies_center_image = lab_image_url('lab_supplies_center_image', $img_dir . '/laboratory-supplies-center.png');
 $default_supplies_items = array(
     array('text' => 'Лабораторная мебель', 'left' => false, 'style' => 'left:66.29%;top:23.02%'),
     array('text' => 'Автоматические анализаторы', 'left' => false, 'style' => 'left:66.00%;top:38.30%'),
@@ -110,12 +110,12 @@ $supplies_items = lab_get_repeater('lab_supplies_items', $default_supplies_items
 // Included
 $included_title = lab_get_field('lab_included_title', 'Берём на&nbsp;себя весь процесс оснащения');
 $default_included_cards = array(
-    array('image' => '', 'number' => '1', 'title' => 'Анализ задач лаборатории'),
-    array('image' => '', 'number' => '2', 'title' => 'Подбор оборудования и комплектации'),
-    array('image' => '', 'number' => '3', 'title' => 'Подготовка коммерческого предложения'),
-    array('image' => '', 'number' => '4', 'title' => 'Поставка оборудования'),
-    array('image' => '', 'number' => '5', 'title' => 'Сервисное сопровождение'),
-    array('image' => '', 'number' => '6', 'title' => 'Консультации по эксплуатации'),
+    array('image' => $img_dir . '/laboratory-included-1.png', 'number' => '1', 'title' => 'Анализ задач лаборатории'),
+    array('image' => $img_dir . '/laboratory-included-2.png', 'number' => '2', 'title' => 'Подбор оборудования и комплектации'),
+    array('image' => $img_dir . '/laboratory-included-3.png', 'number' => '3', 'title' => 'Подготовка коммерческого предложения'),
+    array('image' => $img_dir . '/laboratory-included-4.png', 'number' => '4', 'title' => 'Поставка оборудования'),
+    array('image' => $img_dir . '/laboratory-included-5.png', 'number' => '5', 'title' => 'Сервисное сопровождение'),
+    array('image' => $img_dir . '/laboratory-included-6.png', 'number' => '6', 'title' => 'Консультации по эксплуатации'),
 );
 $included_cards = lab_get_repeater('lab_included_cards', $default_included_cards);
 $included_result_text = lab_get_field('lab_included_result_text', 'Мы&nbsp;поставляем не&nbsp;отдельные позиции из&nbsp;каталога, а&nbsp;формируем полноценное решение, которое помогает лаборатории работать эффективно и&nbsp;соответствовать современным требованиям');
@@ -136,21 +136,21 @@ $default_why_features = array(
 );
 $why_features = lab_get_repeater('lab_why_features', $default_why_features);
 $why_warehouse_title = lab_get_field('lab_why_warehouse_title', 'Собственный склад в Чите');
-$why_warehouse_image = lab_image_url('lab_why_warehouse_image', $placeholder);
+$why_warehouse_image = lab_image_url('lab_why_warehouse_image', $img_dir . '/laboratory-warehouse.png');
 
 // Projects
 $projects_title = lab_get_field('lab_projects_title', 'Реализованные проекты');
 $projects_subtitle = lab_get_field('lab_projects_subtitle', 'За&nbsp;время работы мы&nbsp;реализовали проекты по&nbsp;оснащению медицинских кабинетов и&nbsp;центров в&nbsp;Забайкальском крае. Мы&nbsp;понимаем специфику региона, требования врачей и&nbsp;реальные условия работы.');
 $default_projects = array(
     array(
-        'image' => '',
+        'image' => $img_dir . '/laboratory-project.png',
         'number' => '01.',
         'title' => 'Клинико-диагностическая лаборатория (г. Чита)',
         'delivered' => 'Автоматический гематологический анализатор, биохимический анализатор, центрифуга, микроскоп, холодильное оборудование, лабораторная мебель и расходные материалы.',
         'result' => 'Лаборатория запущена в работу в срок. Обеспечена полная комплектация оборудованием для проведения основных видов исследований, персонал обучен работе на анализаторах.',
     ),
     array(
-        'image' => '',
+        'image' => $img_dir . '/laboratory-project.png',
         'number' => '02.',
         'title' => 'Стоматология «Дента-Профи» (г. Чита)',
         'delivered' => 'Стоматологические установки (2&nbsp;шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.',
@@ -175,9 +175,9 @@ $tasks_list = lab_get_repeater('lab_tasks_list', $default_tasks);
 // Partners
 $partners_title = lab_get_field('lab_partners_title', 'Работаем с ведущими производителями');
 $default_partners = array(
-    array('image' => '', 'name' => 'ДеЗиЛаб', 'text' => 'Российский производитель дезинфицирующих средств широкого спектра. Продукция зарегистрирована и эффективна против вирусов, бактерий и грибов.'),
-    array('image' => '', 'name' => 'МедЛаб Системс', 'text' => 'Поставщик лабораторного оборудования: анализаторы, микроскопы, центрифуги и расходные материалы для клинико-диагностических лабораторий.'),
-    array('image' => '', 'name' => 'БиоТехно', 'text' => 'Производитель стерилизационного и холодильного оборудования, инкубаторов, термостатов и систем хранения биологических образцов.'),
+    array('image' => $img_dir . '/laboratory-partner-1.png', 'name' => 'ДеЗиЛаб', 'text' => 'Российский производитель дезинфицирующих средств широкого спектра. Продукция зарегистрирована и эффективна против вирусов, бактерий и грибов.'),
+    array('image' => $img_dir . '/laboratory-partner-2.png', 'name' => 'МедЛаб Системс', 'text' => 'Поставщик лабораторного оборудования: анализаторы, микроскопы, центрифуги и расходные материалы для клинико-диагностических лабораторий.'),
+    array('image' => $img_dir . '/laboratory-partner-3.png', 'name' => 'БиоТехно', 'text' => 'Производитель стерилизационного и холодильного оборудования, инкубаторов, термостатов и систем хранения биологических образцов.'),
 );
 $partners = lab_get_repeater('lab_partners', $default_partners);
 
