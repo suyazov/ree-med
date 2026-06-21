@@ -193,13 +193,31 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
 <section class="lab-hero">
     <div class="lab-container">
         <div class="lab-hero-grid">
-            <div class="lab-hero-top">
-                <h1 class="lab-hero-title"><?php
-                    $hero_title = str_replace('лабораторий', '<span class="text-green">лабораторий</span>', $hero_title);
-                    $hero_title = preg_replace('/(лабораторий\s+)(.+)/', '$1<br><em>$2</em>', $hero_title);
-                    echo wp_kses_post($hero_title);
-                ?></h1>
-                <p class="lab-hero-desc"><?php echo esc_html($hero_desc); ?></p>
+            <div class="lab-hero-left">
+                <div class="lab-hero-top">
+                    <h1 class="lab-hero-title"><?php
+                        $hero_title = str_replace('лабораторий', '<span class="text-green">лабораторий</span>', $hero_title);
+                        $hero_title = preg_replace('/(лабораторий\s+)(.+)/', '$1<br><em>$2</em>', $hero_title);
+                        echo wp_kses_post($hero_title);
+                    ?></h1>
+                    <p class="lab-hero-desc"><?php echo esc_html($hero_desc); ?></p>
+                </div>
+
+                <div class="lab-hero-features">
+                    <?php foreach ($hero_features as $feature) : ?>
+                        <div class="lab-hero-feature-card">
+                            <?php if (!empty($feature['icon'])) : ?>
+                                <img src="<?php echo esc_url($feature['icon']); ?>" alt="" class="icon">
+                            <?php elseif (!empty($feature['svg'])) : ?>
+                                <?php echo $feature['svg']; ?>
+                            <?php else : ?>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <?php endif; ?>
+                            <span><?php echo esc_html(!empty($feature['text']) ? $feature['text'] : ''); ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <button class="lab-hero-bottom-btn" type="button"><?php echo esc_html($hero_bottom_button_text); ?></button>
             </div>
 
             <div class="lab-hero-visual">
@@ -216,25 +234,9 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <button class="lab-hero-cta-btn" type="button"><?php echo esc_html($hero_button_text); ?></button>
             </div>
-
-            <div class="lab-hero-features">
-                <?php foreach ($hero_features as $feature) : ?>
-                    <div class="lab-hero-feature-card">
-                        <?php if (!empty($feature['icon'])) : ?>
-                            <img src="<?php echo esc_url($feature['icon']); ?>" alt="" class="icon">
-                        <?php elseif (!empty($feature['svg'])) : ?>
-                            <?php echo $feature['svg']; ?>
-                        <?php else : ?>
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <?php endif; ?>
-                        <span><?php echo esc_html(!empty($feature['text']) ? $feature['text'] : ''); ?></span>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <button class="lab-hero-cta-btn" type="button"><?php echo esc_html($hero_button_text); ?></button>
         </div>
-        <button class="lab-hero-bottom-btn" type="button"><?php echo esc_html($hero_bottom_button_text); ?></button>
     </div>
 </section>
 
