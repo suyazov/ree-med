@@ -94,16 +94,16 @@ $supplies_subtitle = lab_get_field('lab_supplies_subtitle', 'Комплексн�
 $supplies_title = lab_get_field('lab_supplies_title', 'Подберём оборудование <span class="text-green">под&nbsp;задачи вашей лаборатории</span>');
 $supplies_center_image = lab_image_url('lab_supplies_center_image', $img_dir . '/laboratory-supplies-center.png');
 $default_supplies_items = array(
-    array('text' => 'Лабораторная мебель', 'left' => false, 'style' => 'left:66.29%;top:23.02%'),
-    array('text' => 'Автоматические анализаторы', 'left' => false, 'style' => 'left:66.00%;top:38.30%'),
-    array('text' => 'Холодильное оборудование', 'left' => false, 'style' => 'left:76.41%;top:52.55%'),
-    array('text' => 'Лабораторные расходные материалы', 'left' => false, 'style' => 'left:61.31%;top:67.83%'),
-    array('text' => 'Микроскопы', 'left' => false, 'style' => 'left:71.95%;top:83.11%'),
-    array('text' => 'Аналитическое оборудование', 'left' => true, 'style' => 'left:27.75%;top:28.77%'),
-    array('text' => 'Центрифуги', 'left' => true, 'style' => 'left:14.36%;top:44.06%'),
-    array('text' => 'Стерилизационное оборудование', 'left' => true, 'style' => 'left:31.70%;top:58.30%'),
-    array('text' => 'Инкубаторы и термостаты', 'left' => true, 'style' => 'left:29.98%;top:73.58%'),
-    array('text' => 'Системы хранения и подготовки образцов', 'left' => true, 'style' => 'left:33.11%;top:88.87%'),
+    array('text' => 'Лабораторная мебель', 'left' => false, 'style' => 'left:67.63%;top:23.11%'),
+    array('text' => 'Автоматические анализаторы', 'left' => false, 'style' => 'left:67.34%;top:38.40%'),
+    array('text' => 'Холодильное оборудование', 'left' => false, 'style' => 'left:77.75%;top:53.68%'),
+    array('text' => 'Лабораторные расходные материалы', 'left' => false, 'style' => 'left:62.65%;top:68.96%'),
+    array('text' => 'Микроскопы', 'left' => false, 'style' => 'left:73.29%;top:84.25%'),
+    array('text' => 'Аналитическое оборудование', 'left' => true, 'style' => 'left:8.78%;top:28.87%'),
+    array('text' => 'Центрифуги', 'left' => true, 'style' => 'left:5.36%;top:44.15%'),
+    array('text' => 'Стерилизационное оборудование', 'left' => true, 'style' => 'left:10.57%;top:59.43%'),
+    array('text' => 'Инкубаторы и термостаты', 'left' => true, 'style' => 'left:12.95%;top:74.72%'),
+    array('text' => 'Системы хранения и подготовки образцов', 'left' => true, 'style' => 'left:7.07%;top:90.00%'),
 );
 $supplies_items = lab_get_repeater('lab_supplies_items', $default_supplies_items);
 
@@ -140,7 +140,7 @@ $why_warehouse_image = lab_image_url('lab_why_warehouse_image', $img_dir . '/lab
 
 // Projects
 $projects_title = lab_get_field('lab_projects_title', 'Реализованные проекты');
-$projects_subtitle = lab_get_field('lab_projects_subtitle', 'За&nbsp;время работы мы&nbsp;реализовали проекты по&nbsp;оснащению медицинских кабинетов и&nbsp;центров в&nbsp;Забайкальском крае. Мы&nbsp;понимаем специфику региона, требования врачей и&nbsp;реальные условия работы.');
+$projects_subtitle = lab_get_field('lab_projects_subtitle', '');
 $default_projects = array(
     array(
         'image' => $img_dir . '/laboratory-project.png',
@@ -153,7 +153,7 @@ $default_projects = array(
         'image' => $img_dir . '/laboratory-project.png',
         'number' => '02.',
         'title' => 'Стоматология «Дента-Профи» (г. Чита)',
-        'delivered' => 'Стоматологические установки (2&nbsp;шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.',
+        'delivered' => 'Полное оснащение двух стоматологических кабинетов и стерилизационной комнаты под ключ для запуска новой клиники. Требовалось обеспечить соответствие санитарным нормам, организовать централизованную подачу воздуха и эффективную систему инфекционного контроля.',
         'result' => 'Клиника введена в эксплуатацию в запланированные сроки. Все кабинеты укомплектованы, стерилизационная функционирует в полном объёме, соблюдены требования Роспотребнадзора. Персонал обеспечен всем необходимым для безопасной работы.',
     ),
 );
@@ -182,8 +182,8 @@ $default_partners = array(
 $partners = lab_get_repeater('lab_partners', $default_partners);
 
 // Request
-$request_title = lab_get_field('lab_request_title', 'Подберём решение для&nbsp;вашего учреждения');
-$request_desc = lab_get_field('lab_request_desc', 'Оставьте заявку, и&nbsp;специалист поможет подобрать оборудование, дезинфицирующие средства и&nbsp;расходные материалы под&nbsp;ваши задачи.');
+$request_title = lab_get_field('lab_request_title', 'Подберем оборудование для вашей лаборатории');
+$request_desc = lab_get_field('lab_request_desc', 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий.');
 $request_button_text = lab_get_field('lab_request_button_text', 'Отправить');
 ?>
 
@@ -296,9 +296,9 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
 <!-- 4. Included -->
 <section class="lab-included">
     <div class="lab-section-inner">
-        <h2 class="lab-included-title"><?php echo wp_kses_post($included_title); ?></h2>
-
         <div class="lab-included-grid">
+            <h2 class="lab-included-title"><?php echo wp_kses_post($included_title); ?></h2>
+
             <?php foreach ($included_cards as $card) :
                 $card_image = !empty($card['image']) ? $card['image'] : $placeholder;
             ?>
@@ -324,26 +324,35 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
         </div>
 
         <div class="lab-why-grid">
-            <div class="lab-why-left">
-                <div class="lab-why-stats">
-                    <?php foreach ($why_stats as $stat) :
-                        $stat_class = lab_why_stat_class(!empty($stat['style']) ? $stat['style'] : 'gray');
-                    ?>
-                        <div class="lab-why-stat <?php echo esc_attr($stat_class); ?>">
-                            <span class="num"><?php echo esc_html(!empty($stat['number']) ? $stat['number'] : ''); ?></span>
-                            <span class="txt"><?php echo wp_kses_post(!empty($stat['text']) ? $stat['text'] : ''); ?></span>
-                        </div>
-                    <?php endforeach; ?>
+            <div class="lab-why-stats">
+                <img src="<?php echo esc_url($img_dir . '/laboratory-why-main.png'); ?>" alt="" class="lab-why-stats-bg">
+                <?php foreach ($why_stats as $stat) : ?>
+                    <div class="lab-why-stat-item">
+                        <span class="num"><?php echo esc_html(!empty($stat['number']) ? $stat['number'] : ''); ?></span>
+                        <span class="txt"><?php echo wp_kses_post(!empty($stat['text']) ? $stat['text'] : ''); ?></span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="lab-why-center-col">
+                <div class="lab-why-warehouse">
+                    <h3 class="lab-why-warehouse-title"><?php echo esc_html($why_warehouse_title); ?></h3>
+                    <img src="<?php echo esc_url($why_warehouse_image); ?>" alt="">
                 </div>
-                <div class="lab-why-features">
-                    <?php foreach ($why_features as $feature) : ?>
-                        <div class="lab-why-feature"><span class="plus"></span><span><?php echo esc_html(!empty($feature['text']) ? $feature['text'] : ''); ?></span></div>
+                <div class="lab-why-features-list">
+                    <?php
+                    $why_list_features = array_slice($why_features, 0, 2);
+                    foreach ($why_list_features as $feature) : ?>
+                        <div class="lab-why-feature-item"><span class="plus"></span><span><?php echo esc_html(!empty($feature['text']) ? $feature['text'] : ''); ?></span></div>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="lab-why-warehouse">
-                <h3 class="lab-why-warehouse-title"><?php echo esc_html($why_warehouse_title); ?></h3>
-                <img src="<?php echo esc_url($why_warehouse_image); ?>" alt="">
+
+            <div class="lab-why-right-card">
+                <?php
+                $why_right_feature = !empty($why_features[3]) ? $why_features[3] : array('text' => 'Работа с государственными и частными учреждениями');
+                ?>
+                <p><?php echo wp_kses_post(!empty($why_right_feature['text']) ? $why_right_feature['text'] : ''); ?></p>
             </div>
         </div>
     </div>
@@ -354,33 +363,30 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
     <div class="lab-section-inner">
         <div class="lab-projects-header">
             <h2 class="lab-projects-title"><?php echo wp_kses_post($projects_title); ?></h2>
-            <p class="lab-projects-desc"><?php echo wp_kses_post($projects_subtitle); ?></p>
+            <?php if (!empty($projects_subtitle)) : ?>
+                <p class="lab-projects-desc"><?php echo wp_kses_post($projects_subtitle); ?></p>
+            <?php endif; ?>
         </div>
 
         <div class="lab-projects-slider">
             <?php foreach ($projects as $index => $project) :
                 $project_image = !empty($project['image']) ? $project['image'] : $placeholder;
             ?>
-                <div class="lab-project-slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                <div class="lab-project-slide <?php echo $index === 1 ? 'active' : ''; ?>">
                     <div class="lab-project-card">
-                        <div class="lab-project-card-img"><img src="<?php echo esc_url($project_image); ?>" alt=""></div>
                         <div class="lab-project-card-body">
-                            <div class="lab-project-card-top">
-                                <span class="lab-project-card-num"><?php echo esc_html(!empty($project['number']) ? $project['number'] : ''); ?></span>
-                                <span class="lab-project-card-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+                            <span class="lab-project-card-num"><?php echo esc_html(!empty($project['number']) ? $project['number'] : ''); ?></span>
+                            <h3 class="lab-project-card-title"><?php echo esc_html(!empty($project['title']) ? $project['title'] : ''); ?></h3>
+                            <div class="lab-project-card-block lab-project-card-delivered">
+                                <p class="lab-project-card-label">Что было поставлено</p>
+                                <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
                             </div>
-                            <div>
-                                <h3 class="lab-project-card-title"><?php echo esc_html(!empty($project['title']) ? $project['title'] : ''); ?></h3>
-                                <div class="lab-project-card-block">
-                                    <p class="lab-project-card-label">Что было поставлено</p>
-                                    <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
-                                </div>
-                                <div class="lab-project-card-block">
-                                    <p class="lab-project-card-label">Результат</p>
-                                    <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
-                                </div>
+                            <div class="lab-project-card-block lab-project-card-result">
+                                <p class="lab-project-card-label">Результат</p>
+                                <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
                             </div>
                         </div>
+                        <div class="lab-project-card-img"><img src="<?php echo esc_url($project_image); ?>" alt=""></div>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -388,7 +394,7 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
             <button class="lab-slider-arrow next" aria-label="Следующий проект"></button>
             <div class="lab-slider-dots">
                 <?php for ($i = 0; $i < count($projects); $i++) : ?>
-                    <button class="lab-slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
+                    <button class="lab-slider-dot <?php echo $i === 1 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
                 <?php endfor; ?>
             </div>
         </div>
@@ -398,14 +404,16 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Отправи�
 <!-- 7. Tasks -->
 <section class="lab-tasks">
     <div class="lab-section-inner">
-        <div class="lab-tasks-header">
-            <h2 class="lab-tasks-title"><?php echo wp_kses_post($tasks_title); ?></h2>
-            <p class="lab-tasks-subtitle"><?php echo esc_html($tasks_subtitle); ?></p>
-        </div>
         <div class="lab-tasks-grid">
-            <?php foreach ($tasks_list as $task) : ?>
-                <div class="lab-tasks-item"><span class="lab-tasks-check"></span><span><?php echo esc_html(!empty($task['text']) ? $task['text'] : ''); ?></span></div>
-            <?php endforeach; ?>
+            <div class="lab-tasks-header">
+                <p class="lab-tasks-subtitle"><?php echo esc_html($tasks_subtitle); ?></p>
+                <h2 class="lab-tasks-title"><?php echo wp_kses_post($tasks_title); ?></h2>
+            </div>
+            <div class="lab-tasks-list">
+                <?php foreach ($tasks_list as $task) : ?>
+                    <div class="lab-tasks-item"><span class="lab-tasks-check"></span><span><?php echo esc_html(!empty($task['text']) ? $task['text'] : ''); ?></span></div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </section>
