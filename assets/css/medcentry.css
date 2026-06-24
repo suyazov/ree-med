@@ -1,0 +1,34 @@
+/* Medcentry page styles for Trimed theme */
+.medcentry-page {
+    overflow-x: hidden;
+    --color-white: #EFEFEF;
+    --color-white-2: #F9F9F9;
+    --color-gray: #E6E7E8;
+    --color-gray-2: #D1D3D4;
+    --color-black: #353535;
+    --color-dark-green: #315046;
+    --color-green: #367643;
+    --color-light-green-1: #3F8D50;
+    --color-light-green-2: #51A462;
+    --gradient-green: linear-gradient(271.52deg, #367643 0%, #315046 100%);
+    --gradient-light-green: linear-gradient(46.27deg, #3F8D50 18.16%, #51A462 79.56%);
+
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    color: var(--color-black);
+    background: var(--color-white);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.medcentry-page *,
+.medcentry-page *::before,
+.medcentry-page *::after { box-sizing: border-box; }
+
+.medcentry-page h1,
+.medcentry-page h2,
+.medcentry-page h3,
+.medcentry-page p { margin: 0; }
+
+.medcentry-page img { max-width: 100%; height: auto; display: block; }
+.medcentry-page a { text-decoration: none; color: inherit; }
