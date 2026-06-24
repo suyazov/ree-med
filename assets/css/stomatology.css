@@ -48,6 +48,7 @@
     text-decoration: none;
     color: inherit;
 }
+.stomatology-page .text-green { color: var(--color-green); }
 
 .stomatology-page .stom-container {
     width: 100%;
@@ -507,7 +508,7 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     .stomatology-page .stom-hero-title { order: 1; width: 100%; font-size: 28px; line-height: 94%; margin-bottom: 0; color: #28282a; }
     .stomatology-page .stom-hero-image { width: 100%; height: 244px; }
     .stomatology-page .stom-hero-badges { position: absolute; left: 12px; bottom: 12px; display: flex; flex-wrap: nowrap; gap: 8px; margin: 0; }
-    .stomatology-page .stom-hero-badge-glass { position: relative; left: auto; bottom: auto; width: auto; max-width: 179px; height: 78px; font-size: 12px; line-height: 14px; padding: 12px; }
+    .stomatology-page .stom-hero-badge-glass { position: relative; left: auto; bottom: auto; width: auto; max-width: 179px; height: 78px; font-size: 12px; line-height: 14px; padding: 12px; background: rgba(54, 118, 67, 0.5); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); font-weight: 400; }
     .stomatology-page .stom-hero-badge-glass span { width: auto; }
     .stomatology-page .stom-hero-badge-glass .badge-icon { width: 12px; height: 12px; top: 12px; right: 12px; }
     .stomatology-page .stom-hero-badge-green { position: relative; left: auto; bottom: auto; width: 132px; height: 78px; padding: 12px; }
@@ -530,11 +531,12 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     .stomatology-page .stom-audience-title { font-size: 22px; line-height: 24.2px; letter-spacing: -0.66px; font-weight: 600; }
     .stomatology-page .stom-audience-desc { font-size: 14px; line-height: 16.8px; letter-spacing: 0; margin: 0; width: 295px; }
     .stomatology-page .stom-audience-body { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
-    .stomatology-page .stom-audience-lead { width: auto; font-size: 20px; line-height: 110%; margin: 0; }
+    .stomatology-page .stom-audience-lead { width: auto; font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; text-align: center; margin: 0; }
     .stomatology-page .stom-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .stomatology-page .stom-audience-card { width: 100%; height: 167px; padding: 16px; font-size: 14px; line-height: 110%; border-radius: 12px; }
     .stomatology-page .stom-audience-card .text { width: auto !important; }
-    .stomatology-page .stom-audience-card > img { width: 85px !important; height: 73px !important; }
+    .stomatology-page .stom-audience-card > img:not(.arrow) { width: 85px !important; height: 73px !important; }
+    .stomatology-page .stom-audience-card .arrow { width: 20px; height: 20px; }
     .stomatology-page .stom-audience-card .arrow--tr { right: 16px; top: 16px; }
     .stomatology-page .stom-audience-card .arrow--br { right: 16px; bottom: 16px; }
     .stomatology-page .stom-audience-summary { max-width: 100%; margin: 16px 0 0; font-size: 16px; line-height: 120%; text-align: left; }
@@ -565,8 +567,8 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     /* Projects mobile */
     .stomatology-page .stom-projects { margin-top: 129px; }
     .stomatology-page .stom-projects-header { text-align: left; margin-bottom: 24px; }
-    .stomatology-page .stom-projects-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; width: auto; text-align: left; margin-bottom: 12px; }
-    .stomatology-page .stom-projects-desc { font-size: 14px; line-height: 16.8px; letter-spacing: 0; max-width: 100%; }
+    .stomatology-page .stom-projects-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; width: auto; text-align: left; margin-bottom: 12px; color: var(--color-green); }
+    .stomatology-page .stom-projects-desc { font-size: 16px; line-height: 19.2px; letter-spacing: 0; max-width: 100%; }
     .stomatology-page .stom-projects-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
     .stomatology-page .stom-project-card { flex: 0 0 328px; width: 328px; height: 426px; flex-direction: column; gap: 0; scroll-snap-align: start; }
     .stomatology-page .stom-project-card-img { width: 100%; height: 194px; }
@@ -576,27 +578,33 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
 
     /* Process mobile */
     .stomatology-page .stom-process { margin-top: 100px; }
-    .stomatology-page .stom-process-grid { grid-template-columns: 1fr; gap: 0; }
-    .stomatology-page .stom-process-header { margin-bottom: 24px; }
+    .stomatology-page .stom-process-grid { display: flex; flex-direction: column; gap: 0; }
+    .stomatology-page .stom-process-header { margin-bottom: 24px; grid-column: auto; grid-row: auto; }
     .stomatology-page .stom-process-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; width: auto; }
-    .stomatology-page .stom-process-subtitle { font-size: 14px; line-height: 16.8px; letter-spacing: 0; max-width: 100%; }
-    .stomatology-page .stom-process-image { display: none; }
+    .stomatology-page .stom-process-subtitle { font-size: 16px; line-height: 17.6px; letter-spacing: -0.48px; text-align: center; max-width: 100%; }
+    .stomatology-page .stom-process-image { display: block; order: 2; grid-column: auto; grid-row: auto; width: 100%; height: 193px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+    .stomatology-page .stom-process-cards { order: 3; grid-column: auto; grid-row: auto; }
+    .stomatology-page .stom-process .stom-section-inner { padding: 0 16px; }
     .stomatology-page .stom-process-cards { grid-template-columns: 1fr; gap: 16px; margin: 0; }
     .stomatology-page .stom-process-card { width: 100%; height: 140px; padding: 0 16px 24px; }
     .stomatology-page .stom-process-cards .stom-process-card:last-child { height: 177px; }
-    .stomatology-page .stom-process-card-num { top: 16px; left: 16px; width: 24px; height: 24px; border-radius: 4px; font-size: 14px; line-height: 15px; }
+    .stomatology-page .stom-process-card-num { top: 16px; left: 16px; width: 24px; height: 24px; border-radius: 6px; font-size: 14px; line-height: 15px; }
+    .stomatology-page .stom-process-card--green .stom-process-card-num { background: #fff; color: var(--color-green); }
+    .stomatology-page .stom-process-card--light .stom-process-card-num { background: var(--gradient-green); color: #fff; }
     .stomatology-page .stom-process-card-title { font-size: 16px; line-height: 17.6px; letter-spacing: 0; font-weight: 600; width: auto !important; margin-bottom: 4px; }
     .stomatology-page .stom-process-card-text { font-size: 14px; line-height: 15.4px; letter-spacing: 0; width: auto !important; }
     .stomatology-page .stom-process-card img { width: 175px !important; height: 120px !important; }
 
     /* Request mobile */
     .stomatology-page .stom-request { margin-top: 80px; }
-    .stomatology-page .stom-request-inner { grid-template-columns: 1fr; gap: 16px; padding: 24px 16px; border-radius: 20px; min-height: 0; }
+    .stomatology-page .stom-request-inner { grid-template-columns: 1fr; gap: 16px; padding: 24px 16px; border-radius: 12px; min-height: 0; }
     .stomatology-page .stom-request-inner > div { margin-top: 0; text-align: center; }
-    .stomatology-page .stom-request-icon { width: 24px; height: 24px; left: 16px; top: 24px; }
+    .stomatology-page .stom-request-icon { position: static; display: block; width: 16px; height: 16px; margin: 0 auto 12px; }
     .stomatology-page .stom-request-title { font-size: 24px; line-height: 26.4px; letter-spacing: 0; font-weight: 600; }
     .stomatology-page .stom-request-desc { font-size: 14px; line-height: 15.4px; letter-spacing: 0; width: auto; }
-    .stomatology-page .stom-request-note { justify-content: center; margin-top: 16px; gap: 8px; font-size: 12px; line-height: 13.2px; letter-spacing: 0; }
+    .stomatology-page .stom-request-note { justify-content: center; margin-top: 16px; gap: 8px; font-size: 12px; line-height: 13.2px; letter-spacing: 0; background: rgba(54, 118, 67, 0.5); border-radius: 12px; padding: 12px 20px; }
+    .stomatology-page .stom-request-note .check { background: var(--gradient-light-green); color: #fff; }
+    .stomatology-page .stom-request-form .checkbox span { opacity: 1; }
     .stomatology-page .stom-request-form { width: 100%; padding: 20px; }
     .stomatology-page .stom-request-form input,
     .stomatology-page .stom-request-form textarea { width: 100%; height: 52px; }
@@ -606,7 +614,7 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     /* Why mobile */
     .stomatology-page .stom-why { margin-top: 100px; }
     .stomatology-page .stom-why-header { margin-bottom: 24px; }
-    .stomatology-page .stom-why-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; margin: 0; }
+    .stomatology-page .stom-why-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; margin: 0 auto; text-align: center; }
     .stomatology-page .stom-why-grid { grid-template-columns: 1fr; gap: 16px; }
     .stomatology-page .stom-why-left { gap: 16px; }
     .stomatology-page .stom-why-stats { flex-direction: row; gap: 8px; }
@@ -615,6 +623,9 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     .stomatology-page .stom-why-stat:nth-child(2) { padding-left: 16px; }
     .stomatology-page .stom-why-stat:first-child { flex: 0 0 143px; }
     .stomatology-page .stom-why-stat:nth-child(2) { flex: 0 0 192px; }
+    .stomatology-page .stom-why-stat--img::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); border-radius: inherit; z-index: 0; }
+    .stomatology-page .stom-why-stat--img .num,
+    .stomatology-page .stom-why-stat--img .txt { position: relative; z-index: 1; }
     .stomatology-page .stom-why-stat .num { font-size: 40px; line-height: 48px; letter-spacing: 0; width: auto !important; }
     .stomatology-page .stom-why-stat .txt { font-size: 14px; line-height: 16.8px; letter-spacing: 0; width: auto !important; }
     .stomatology-page .stom-why-stat--gray { background: var(--gradient-green); color: var(--color-white); }
@@ -632,5 +643,5 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     .stomatology-page .stom-cta { display: none; }
 
     /* Footer mobile */
-    body.page-template-page-stomatology-php .site-footer { margin-top: 726px; }
+    body.page-template-page-stomatology-php .site-footer { margin-top: 100px; }
 }
