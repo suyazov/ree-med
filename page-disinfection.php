@@ -101,8 +101,8 @@ function dis_image_url($field, $fallback) {
                         array('title' => 'Образовательные учреждения', 'style' => 'green'),
                         array('title' => 'Салоны красоты и косметологии', 'style' => 'default'),
                         array('title' => 'Предприятия и организации', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-enterprise.png'),
-                        array('title' => 'Ещё можно добавить', 'style' => 'default'),
-                        array('title' => 'Ещё можно добавить', 'style' => 'image-overlay', 'image' => $img_dir . '/disinfection-audience-medcenter.png'),
+                        array('title' => 'Еще можно добавить', 'style' => 'default'),
+                        array('title' => 'Еще можно добавить', 'style' => 'image-overlay', 'image' => $img_dir . '/disinfection-audience-medcenter.png'),
                     );
                 }
                 foreach ($audience_cards as $card) :
@@ -385,8 +385,8 @@ function dis_image_url($field, $fallback) {
                 if (!$partners) {
                     $partners = array(
                         array('logo' => $img_dir . '/disinfection-partner-1.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
-                        array('logo' => $img_dir . '/disinfection-partner-2.png', 'name' => 'МедЛаб Системс', 'desc' => 'Поставщик лабораторного оборудования: анализаторы, микроскопы, центрифуги и расходные материалы для клинико-диагностических лабораторий.'),
-                        array('logo' => $img_dir . '/disinfection-partner-3.png', 'name' => 'БиоТехно', 'desc' => 'Производитель стерилизационного и холодильного оборудования, инкубаторов, термостатов и систем хранения биологических образцов.'),
+                        array('logo' => $img_dir . '/disinfection-partner-2.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
+                        array('logo' => $img_dir . '/disinfection-partner-3.png', 'name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.'),
                     );
                 }
                 foreach ($partners as $partner) :
@@ -475,7 +475,7 @@ function dis_image_url($field, $fallback) {
                         <input type="text" name="organization" placeholder="Название организации">
                         <input type="text" name="comment" placeholder="Ваш комментарий">
                         <label class="form-agree"><input type="checkbox" name="agree" required><span>Оставляю заявку, я соглашаюсь с условиями Политики обработки персональных данных</span></label>
-                        <button type="submit" class="btn btn-primary">Получить консультацию</button>
+                        <button type="submit" class="btn btn-primary"><?php echo esc_html(get_field('application_button_text') ?: 'Отправить'); ?></button>
                         <div class="form-message"></div>
                     </form>
                 </div>
