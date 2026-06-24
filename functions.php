@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.7.4');
+define('TRIMED_VERSION', '1.8.0');
 
 function trimed_setup() {
     add_theme_support('title-tag');
@@ -41,7 +41,7 @@ function trimed_enqueue_page_assets() {
     if (is_page_template('page-disinfection.php')) {
         wp_enqueue_style('trimed-disinfection', get_template_directory_uri() . '/assets/css/disinfection.css', array('trimed-main'), TRIMED_VERSION);
     }
-    if (is_page_template('page-medcentry.php')) {
+    if (is_page_template('page-medcentry.php') || is_page('medcentry')) {
         wp_enqueue_style('trimed-medcentry', get_template_directory_uri() . '/assets/css/medcentry.css', array('trimed-main'), TRIMED_VERSION);
     }
 }
