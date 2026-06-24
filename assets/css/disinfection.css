@@ -1,0 +1,440 @@
+/* Disinfection page scoped overrides */
+
+/* ===== Header mobile burger: green button, white stripes ===== */
+.disinfection-page .site-header .menu-toggle,
+body:has(.disinfection-page) .site-header .menu-toggle {
+    background: var(--color-green);
+    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+}
+
+.disinfection-page .site-header .menu-toggle span,
+body:has(.disinfection-page) .site-header .menu-toggle span {
+    background: #fff;
+}
+
+/* ===== Partners: title black regular ===== */
+.disinfection-page .partners-title,
+.disinfection-page .partners-title strong,
+.disinfection-page .partners-title span {
+    color: var(--color-black);
+    font-weight: 400;
+}
+
+/* ===== Supplies: hide middle ring on desktop ===== */
+.disinfection-page .supplies-rings .ring-2 {
+    display: none;
+}
+
+/* ======================== DESKTOP (>=1201px) ======================== */
+@media (min-width: 1201px) {
+    /* Why section */
+    .disinfection-page .why-section .section-title {
+        font-size: 48px;
+        line-height: 110%;
+        font-weight: 600;
+    }
+
+    .disinfection-page .why-grid {
+        grid-template-columns: 480px 344px 336px;
+        gap: 20px;
+    }
+
+    .disinfection-page .why-stat strong {
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 600;
+    }
+
+    .disinfection-page .why-stat span {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .disinfection-page .why-info-card h3 {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+    }
+
+    .disinfection-page .why-feature {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 600;
+        max-width: none;
+    }
+
+    .disinfection-page .why-plus {
+        width: 28px;
+        height: 28px;
+        top: 24px;
+        right: 24px;
+    }
+
+    /* Tasks */
+    .disinfection-page .tasks-intro h2 {
+        font-size: 44px;
+        line-height: 48.4px;
+        font-weight: 600;
+    }
+
+    .disinfection-page .task-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Application */
+    .disinfection-page .application-box {
+        align-items: flex-end;
+        padding: 30px 48px 30px;
+    }
+
+    .disinfection-page .application-info h2 {
+        margin-top: 0;
+    }
+
+    .disinfection-page .app-decor {
+        width: 40px;
+        height: 40px;
+        left: 48px;
+        top: 43px;
+    }
+
+    /* Projects */
+    .disinfection-page .slider-arrow.prev {
+        left: -49px;
+    }
+
+    .disinfection-page .slider-arrow.next {
+        right: -49px;
+    }
+
+    .disinfection-page .slider-dots {
+        bottom: 16px;
+        right: 163px;
+        gap: 20px;
+    }
+
+    .disinfection-page .slider-dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Partners */
+    .disinfection-page .partner-card {
+        min-height: 258px;
+        padding: 20px 17px;
+    }
+
+    .disinfection-page .partner-card img {
+        width: 214px;
+        height: 120px;
+        object-fit: contain;
+    }
+
+    .disinfection-page .partner-card h3 {
+        font-size: 16px;
+        line-height: 120%;
+        font-weight: 600;
+    }
+
+    .disinfection-page .partner-card p {
+        font-size: 14px;
+        line-height: 16.8px;
+        color: #666;
+    }
+}
+
+/* ======================== TABLET (<=1200px) ======================== */
+@media (max-width: 1200px) {
+    .disinfection-page .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ======================== MOBILE (<=768px) ======================== */
+@media (max-width: 768px) {
+    /* Why mobile */
+    .disinfection-page .why-section .section-title {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .disinfection-page .why-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .disinfection-page .why-stat strong {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .disinfection-page .why-feature {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .disinfection-page .why-info-card h3 {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    /* Tasks mobile */
+    .disinfection-page .tasks-section .container {
+        padding: 0 16px;
+    }
+
+    .disinfection-page .tasks-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .disinfection-page .tasks-intro.green-card {
+        min-height: 182px;
+    }
+
+    .disinfection-page .tasks-intro h2 {
+        width: calc(100% - 48px);
+        font-size: 24px;
+        line-height: 110%;
+    }
+
+    .disinfection-page .task-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Supplies mobile: restore circular diagram */
+    .disinfection-page .supplies-section .container {
+        padding: 0 16px;
+    }
+
+    .disinfection-page .supplies-box {
+        height: 899px;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .disinfection-page .supplies-box .section-header {
+        position: absolute;
+        left: 24px;
+        top: 40px;
+        margin: 0;
+    }
+
+    .disinfection-page .supplies-box .section-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 110%;
+    }
+
+    .disinfection-page .supplies-diagram {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+    }
+
+    .disinfection-page .supplies-rings,
+    .disinfection-page .supplies-center {
+        display: block;
+    }
+
+    .disinfection-page .supplies-rings {
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+
+    .disinfection-page .supplies-center {
+        left: -105px;
+        top: 498px;
+        transform: none;
+        width: 214px;
+        height: 214px;
+    }
+
+    .disinfection-page .supplies-rings .ring {
+        transform: none;
+    }
+
+    .disinfection-page .supplies-rings .ring-1 {
+        width: 556px;
+        height: 556px;
+        left: -383px;
+        top: 220px;
+    }
+
+    .disinfection-page .supplies-rings .ring-2 {
+        display: block;
+        width: 388px;
+        height: 388px;
+        left: -299px;
+        top: 304px;
+    }
+
+    .disinfection-page .supplies-rings .ring-3 {
+        width: 714px;
+        height: 714px;
+        left: -462px;
+        top: 141px;
+    }
+
+    .disinfection-page .supplies-items {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+    }
+
+    .disinfection-page .supply-item {
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        font-size: 14px;
+        line-height: 110%;
+        font-weight: 400;
+        color: #353535;
+        white-space: normal;
+        background: transparent;
+        padding: 0;
+    }
+
+    .disinfection-page .supply-item > span:last-child {
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .disinfection-page .supply-item:nth-child(1)  { left: 79px;  top: 188px; width: 228px; }
+    .disinfection-page .supply-item:nth-child(2)  { left: 22px;  top: 245px; width: 237px; }
+    .disinfection-page .supply-item:nth-child(3)  { left: 99px;  top: 309px; width: 216px; }
+    .disinfection-page .supply-item:nth-child(4)  { left: 49px;  top: 381px; width: 236px; }
+    .disinfection-page .supply-item:nth-child(5)  { left: 159px; top: 446px; width: 126px; }
+    .disinfection-page .supply-item:nth-child(6)  { left: 78px;  top: 503px; width: 236px; }
+    .disinfection-page .supply-item:nth-child(7)  { left: 61px;  top: 567px; width: 264px; }
+    .disinfection-page .supply-item:nth-child(8)  { left: 15px;  top: 632px; width: 282px; }
+    .disinfection-page .supply-item:nth-child(9)  { left: 76px;  top: 689px; width: 240px; }
+    .disinfection-page .supply-item:nth-child(10) { left: 122px; top: 753px; width: 213px; }
+    .disinfection-page .supply-item:nth-child(11) { left: 4px;   top: 825px; width: 234px; }
+
+    .disinfection-page .supply-item .dot {
+        width: 20px;
+        height: 20px;
+        border-width: 2.82353px;
+        flex-shrink: 0;
+        margin-top: 0;
+    }
+
+    /* Projects mobile: horizontal scroll slider */
+    .disinfection-page .slides-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        min-height: auto;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .disinfection-page .project-slide {
+        position: relative;
+        top: auto;
+        left: auto;
+        flex: 0 0 328px;
+        width: 328px;
+        opacity: 1;
+        visibility: visible;
+        scroll-snap-align: start;
+        z-index: 1;
+        transition: none;
+    }
+
+    .disinfection-page .project-slide:not(.active) {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .disinfection-page .projects-slider {
+        gap: 0;
+        width: 100%;
+    }
+
+    .disinfection-page .slider-arrow.prev {
+        left: 16px;
+    }
+
+    .disinfection-page .slider-arrow.next {
+        right: 16px;
+    }
+
+    /* Partners mobile */
+    .disinfection-page .partners-grid {
+        width: 100%;
+    }
+
+    .disinfection-page .partner-card {
+        flex: 0 0 243px;
+        width: 243px;
+        min-height: 253px;
+        padding: 16px;
+    }
+
+    .disinfection-page .partner-card img {
+        width: 174px;
+        height: 98px;
+    }
+
+    .disinfection-page .partner-card h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .disinfection-page .partner-card p {
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+
+    /* Included mobile: green card first */
+    .disinfection-page .included-card.green-wide {
+        order: -1;
+    }
+
+    /* Application mobile */
+    .disinfection-page .application-info h2 {
+        margin-top: 0;
+    }
+}
+
+/* ======================== SMALL MOBILE (<=480px) ======================== */
+@media (max-width: 480px) {
+    /* Audience mobile order */
+    .disinfection-page .audience-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .disinfection-page .audience-card:nth-child(3) { order: 4; }
+    .disinfection-page .audience-card:nth-child(4) { order: 3; }
+    .disinfection-page .audience-card:nth-child(5) { order: 6; }
+    .disinfection-page .audience-card:nth-child(6) { order: 8; }
+    .disinfection-page .audience-card:nth-child(7) { order: 5; }
+    .disinfection-page .audience-card:nth-child(8) { order: 7; }
+    .disinfection-page .audience-card:nth-child(9) { order: 9; }
+    .disinfection-page .audience-card:nth-child(10) { order: 10; }
+
+    .disinfection-page .audience-card {
+        position: relative;
+    }
+
+    .disinfection-page .audience-card .arrow {
+        position: absolute;
+        left: 20px;
+        bottom: 18px;
+        width: 34px;
+        height: 34px;
+    }
+}

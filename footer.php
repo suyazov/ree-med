@@ -27,14 +27,14 @@
                 </div>
 
                 <div class="footer-socials">
-                    <a href="#" class="footer-social" aria-label="VK">
-                        <svg width="24" height="24" viewBox="0 0 512 512" fill="currentColor"><path d="M274.748 369.15c-115.447 0-185.509-80.097-188.233-213.198h58.471c1.823 97.773 46.305 139.266 80.404 147.723V155.952h56.055v84.358c32.89-3.645 67.297-42.024 78.889-84.358h55.112c-8.83 52.082-46.286 90.462-72.786 106.293 26.5 12.8 69.139 46.305 85.584 106.905h-60.599c-12.801-40.51-44.175-71.885-86.2-76.145v76.145h-6.697z"/></svg>
+                    <a href="#" class="footer-social" aria-label="Социальная сеть 1">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer-social-1.svg" alt="" width="36" height="21">
                     </a>
-                    <a href="#" class="footer-social" aria-label="VK">
-                        <svg width="24" height="24" viewBox="0 0 512 512" fill="currentColor"><path d="M274.748 369.15c-115.447 0-185.509-80.097-188.233-213.198h58.471c1.823 97.773 46.305 139.266 80.404 147.723V155.952h56.055v84.358c32.89-3.645 67.297-42.024 78.889-84.358h55.112c-8.83 52.082-46.286 90.462-72.786 106.293 26.5 12.8 69.139 46.305 85.584 106.905h-60.599c-12.801-40.51-44.175-71.885-86.2-76.145v76.145h-6.697z"/></svg>
+                    <a href="#" class="footer-social" aria-label="Социальная сеть 2">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer-social-2.svg" alt="" width="36" height="21">
                     </a>
-                    <a href="#" class="footer-social" aria-label="VK">
-                        <svg width="24" height="24" viewBox="0 0 512 512" fill="currentColor"><path d="M274.748 369.15c-115.447 0-185.509-80.097-188.233-213.198h58.471c1.823 97.773 46.305 139.266 80.404 147.723V155.952h56.055v84.358c32.89-3.645 67.297-42.024 78.889-84.358h55.112c-8.83 52.082-46.286 90.462-72.786 106.293 26.5 12.8 69.139 46.305 85.584 106.905h-60.599c-12.801-40.51-44.175-71.885-86.2-76.145v76.145h-6.697z"/></svg>
+                    <a href="#" class="footer-social" aria-label="Социальная сеть 3">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer-social-3.svg" alt="" width="36" height="21">
                     </a>
                 </div>
 

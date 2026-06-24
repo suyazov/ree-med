@@ -140,7 +140,7 @@ $why_warehouse_image = lab_image_url('lab_why_warehouse_image', $img_dir . '/lab
 
 // Projects
 $projects_title = lab_get_field('lab_projects_title', 'Реализованные проекты');
-$projects_subtitle = lab_get_field('lab_projects_subtitle', '');
+$projects_subtitle = lab_get_field('lab_projects_subtitle', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.');
 $default_projects = array(
     array(
         'image' => $img_dir . '/laboratory-project.png',

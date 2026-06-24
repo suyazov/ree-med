@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.6.9');
+define('TRIMED_VERSION', '1.7.4');
 
 function trimed_setup() {
     add_theme_support('title-tag');
@@ -37,6 +37,9 @@ function trimed_enqueue_page_assets() {
     }
     if (is_page_template('page-laboratory.php')) {
         wp_enqueue_style('trimed-laboratory', get_template_directory_uri() . '/assets/css/laboratory.css', array('trimed-main'), TRIMED_VERSION);
+    }
+    if (is_page_template('page-disinfection.php')) {
+        wp_enqueue_style('trimed-disinfection', get_template_directory_uri() . '/assets/css/disinfection.css', array('trimed-main'), TRIMED_VERSION);
     }
 }
 add_action('wp_enqueue_scripts', 'trimed_enqueue_page_assets');
