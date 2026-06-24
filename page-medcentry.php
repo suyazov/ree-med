@@ -49,14 +49,14 @@ $included_result_text = med_get_field('med_included_result_text', 'В резул
 $projects_title = med_get_field('med_projects_title', 'Реализованные проекты');
 $projects_desc  = med_get_field('med_projects_desc', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.');
 
-$process_title    = med_get_field('med_process_title', 'Как проходит <span class="text-green">работа</span>');
+$process_title    = med_get_field('med_process_title', 'Как мы работаем');
 $process_subtitle = med_get_field('med_process_subtitle', 'Мы выстроили понятный и прозрачный процесс работы, чтобы клиенту было комфортно на каждом этапе.');
 $process_image    = med_image_url('med_process_image', $img_dir . '/process-main.png');
 
 $request_title  = med_get_field('med_request_title', 'Подберём оборудование под вашу клинику');
 $request_desc   = med_get_field('med_request_desc', 'Оставьте заявку — свяжемся с вами, разберём задачу и предложим решение');
 $request_note   = med_get_field('med_request_note', 'Консультация бесплатная');
-$request_button = med_get_field('med_request_button_text', 'Получить консультацию');
+$request_button = med_get_field('med_request_button_text', 'Отправить');
 
 $why_title    = med_get_field('med_why_title', 'Почему выбирают <span class="text-green">ТриМед</span>');
 $why_warehouse_title = med_get_field('med_why_warehouse_title', 'Собственный склад в Чите');
@@ -80,7 +80,7 @@ if (function_exists('get_field')) {
 $included_cards = array(
     array('image' => $img_dir . '/included-1.png', 'number' => '1', 'title' => 'Подбор оборудования под профиль клиники'),
     array('image' => $img_dir . '/included-2.png', 'number' => '2', 'title' => 'Оснащение кабинетов (приём, диагностика, лечение)'),
-    array('image' => $img_dir . '/included-3.png', 'number' => '3', 'title' => 'Подбор оборудования под профиль клиники'),
+    array('image' => $img_dir . '/included-3.png', 'number' => '3', 'title' => 'Планировка и расстановка оборудования'),
     array('image' => $img_dir . '/included-4.png', 'number' => '4', 'title' => 'Поставка со склада или под заказ'),
     array('image' => $img_dir . '/included-5.png', 'number' => '5', 'title' => 'Консультации на всех этапах'),
 );
