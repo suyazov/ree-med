@@ -3,6 +3,10 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .mobile-menu:not(.active) { display: none !important; }
+        .mobile-menu.active { display: flex !important; }
+    </style>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

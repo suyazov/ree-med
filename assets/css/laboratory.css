@@ -300,8 +300,10 @@
 
 .laboratory-page .lab-audience-card .arrow {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
+    left: auto;
+    right: 24px;
+    top: 24px;
+    bottom: auto;
     width: 34px;
     height: 34px;
     color: currentColor;
@@ -317,7 +319,7 @@
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M17 7H7M17 7V17'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
-.laboratory-page .lab-audience-card .text { position: relative; z-index: 1; }
+.laboratory-page .lab-audience-card .text { position: relative; z-index: 1; padding-right: 48px; }
 
 
 .laboratory-page .lab-supplies { padding: 62px 0 0; background: var(--color-white-2); overflow: hidden; }
@@ -842,9 +844,9 @@
     .laboratory-page .lab-audience-card .arrow { width: 20px; height: 20px; }
     .laboratory-page .lab-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .laboratory-page .lab-audience-card { min-height: 108px; padding: 16px; font-size: 14px; }
-    .laboratory-page .lab-audience-card .arrow { left: 16px; bottom: 16px; }
+    .laboratory-page .lab-audience-card .arrow { left: auto; right: 16px; top: 16px; bottom: auto; }
     .laboratory-page .lab-audience-card--white .text,
-    .laboratory-page .lab-audience-card--gray .text { max-width: calc(100% - 70px); }
+    .laboratory-page .lab-audience-card--gray .text { max-width: 100%; padding-right: 36px; }
     .laboratory-page .lab-audience-card--white .arrow,
     .laboratory-page .lab-audience-card--gray .arrow { color: var(--color-black); }
     .laboratory-page .lab-audience-card--image .arrow,
@@ -987,4 +989,3 @@
     .laboratory-page .lab-request-form input::placeholder,
     .laboratory-page .lab-request-form textarea::placeholder { font-size: 12px; }
 }
-

@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -30,6 +31,8 @@ body {
     background: var(--color-white);
     font-size: 16px;
     line-height: 1.4;
+    overflow-x: hidden;
+    position: relative;
 }
 
 img {
