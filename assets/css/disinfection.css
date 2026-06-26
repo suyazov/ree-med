@@ -27,6 +27,11 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     display: none;
 }
 
+/* Inline audience-card images are mobile-only */
+.disinfection-page .audience-card-img {
+    display: none;
+}
+
 /* ======================== DESKTOP (>=1201px) ======================== */
 @media (min-width: 1201px) {
     /* Why section */
@@ -580,6 +585,14 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
 /* ======================== SMALL MOBILE (<=480px) ======================== */
 @media (max-width: 480px) {
+    .disinfection-page .hero-title-last {
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    /* Avoid empty line between "для дезинфекции" and "и инфекционного контроля" on mobile */
+    .disinfection-page .hero-title br:nth-of-type(2) { display: none; }
+
     /* Hero badges: constrain text wrapping to match reference */
     .disinfection-page .hero-badges {
         left: 12px;
@@ -648,8 +661,8 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     .disinfection-page .audience-card.default .arrow,
     .disinfection-page .audience-card.gray .arrow {
-        left: auto;
-        right: 12px;
+        left: 12px;
+        right: auto;
         top: auto;
         bottom: 12px;
         width: 24px;
@@ -671,12 +684,13 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     /* Audience default/gray inline images: small and top-right on mobile */
     .disinfection-page .audience-card > .audience-card-img {
+        display: block;
         position: absolute !important;
         right: 12px !important;
         top: 12px !important;
         bottom: auto !important;
-        width: 56px !important;
-        height: 48px !important;
+        width: 40px !important;
+        height: 32px !important;
         opacity: 1 !important;
         object-fit: contain;
         z-index: 1;
@@ -684,7 +698,7 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     .disinfection-page .audience-card.default h3,
     .disinfection-page .audience-card.gray h3 {
-        padding-right: 52px;
+        padding-right: 36px;
     }
 
     /* Included cards: reverse so title/number appears above image */
@@ -722,9 +736,11 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         text-align: left !important;
         font-size: 14px;
         line-height: 130%;
+        padding-right: 30px;
     }
 
     .disinfection-page .included-card.green-wide::after {
+        position: absolute !important;
         top: 20px;
         right: 20px;
     }

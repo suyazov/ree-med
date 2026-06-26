@@ -23,7 +23,7 @@ function med_get_field($field, $fallback = '') {
     return $fallback;
 }
 
-$hero_title = med_get_field('med_hero_title', 'Оснащение <span class="text-green">медицинских</span><br>центров <span class="text-green">под ключ</span><br>в Забайкальском крае');
+$hero_title = med_get_field('med_hero_title', 'Оснащение <span class="text-green">медицинских центров под ключ</span><br>в Забайкальском крае');
 $hero_desc  = med_get_field('med_hero_desc', 'Помогаем клиникам запускаться, развиваться и работать на современном оборудовании от подбора до поставки');
 $hero_btn   = med_get_field('med_hero_button_text', 'Получить консультацию');
 $hero_image = med_image_url('med_hero_image', $img_dir . '/hero-main.png');
@@ -173,9 +173,11 @@ $phone_flag = '<img src="' . esc_url($img_dir . '/phone-flag.png') . '" alt="" w
                     <h1 class="mc-hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
                     <p class="mc-hero-desc"><?php echo esc_html($hero_desc); ?></p>
 
-                    <div class="mc-hero-feature">
-                        <img src="<?php echo esc_url($hero_feature_bg); ?>" alt="" class="mc-hero-feature-bg">
-                        <div class="mc-hero-feature-content">
+                    <div class="mc-hero-features">
+                        <div class="mc-hero-feature-card mc-hero-feature-card--image">
+                            <img src="<?php echo esc_url($hero_feature_bg); ?>" alt="">
+                        </div>
+                        <div class="mc-hero-feature-card mc-hero-feature-card--warehouse">
                             <span class="mc-hero-feature-text"><?php echo esc_html($hero_feature_text); ?></span>
                             <img src="<?php echo esc_url($hero_warehouse); ?>" alt="" class="mc-hero-feature-warehouse">
                         </div>
@@ -304,6 +306,7 @@ $phone_flag = '<img src="' . esc_url($img_dir . '/phone-flag.png') . '" alt="" w
                     <?php $step_index = 0; foreach ($process_steps as $step) : $step_index++; ?>
                         <div class="mc-process-card <?php echo $step_index === 1 ? 'mc-process-card--green' : 'mc-process-card--light'; ?>">
                             <span class="mc-process-card-num"><?php echo esc_html($step['number']); ?></span>
+                            <?php if ($step_index === 1) echo $clover_icon; ?>
                             <h3 class="mc-process-card-title"><?php echo esc_html($step['title']); ?></h3>
                             <p class="mc-process-card-text"><?php echo esc_html($step['text']); ?></p>
                         </div>
