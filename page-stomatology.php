@@ -12,6 +12,18 @@ function stom_image_url($field, $placeholder) {
     return !empty($url) ? $url : $placeholder;
 }
 
+function stom_picture($url, $class = '', $alt = '', $width = null, $height = null, $style = '') {
+    $mobile = preg_replace('/\.(png|jpe?g|webp)(\?.*)?$/i', '-mobile.$1$2', $url);
+    $mobile_path = str_replace(get_template_directory_uri(), get_template_directory(), $mobile);
+    if (!file_exists($mobile_path)) {
+        $mobile = $url;
+    }
+    $class_attr = $class ? ' class="' . esc_attr($class) . '"' : '';
+    $wh_attr = ($width && $height) ? ' width="' . esc_attr($width) . '" height="' . esc_attr($height) . '"' : '';
+    $style_attr = $style ? ' style="' . esc_attr($style) . '"' : '';
+    echo '<picture><source media="(max-width: 768px)" srcset="' . esc_url($mobile) . '"><img src="' . esc_url($url) . '"' . $class_attr . $wh_attr . $style_attr . ' alt="' . esc_attr($alt) . '"></picture>';
+}
+
 function stom_why_stat_class($style) {
     $map = array(
         'gray'  => 'stom-why-stat--gray',
@@ -175,7 +187,7 @@ $included_bottom = array_slice($included_cards, 3);
                     <p class="stom-hero-desc"><?php echo esc_html($hero_desc); ?></p>
 
                     <div class="stom-hero-features">
-                        <img src="<?php echo esc_url($hero_feature_image); ?>" alt="" class="stom-hero-feature-img">
+                        <?php stom_picture($hero_feature_image, 'stom-hero-feature-img', ''); ?>
                         <div class="stom-hero-feature-cards">
                             <?php foreach ($hero_features as $feature) : ?>
                                 <div class="stom-hero-feature-card">
@@ -190,7 +202,7 @@ $included_bottom = array_slice($included_cards, 3);
                 </div>
 
                 <div class="stom-hero-right">
-                    <img src="<?php echo esc_url($hero_image); ?>" alt="" class="stom-hero-image">
+                    <?php stom_picture($hero_image, 'stom-hero-image', ''); ?>
                     <div class="stom-hero-badges">
                         <div class="stom-hero-badge-glass">
                             <img src="<?php echo esc_url($img_dir . '/stomatology-hero-badge-icon.svg'); ?>" alt="" class="badge-icon">
@@ -231,7 +243,7 @@ $included_bottom = array_slice($included_cards, 3);
                         <img class="arrow <?php echo esc_attr($arrow_class); ?>" src="<?php echo esc_url($img_dir . '/stomatology-audience-arrow.svg'); ?>" alt="" width="20" height="20">
                         <p class="text"><?php echo esc_html($card['text']); ?></p>
                         <?php if ($card_style === 'white' || $card_style === 'gray') : ?>
-                            <img src="<?php echo esc_url(!empty($card_image) ? $card_image : $placeholder); ?>" alt="" style="position:absolute; right:0; bottom:0; width:154px; height:132px; object-fit:cover; opacity:.8;">
+                            <?php stom_picture(!empty($card_image) ? $card_image : $placeholder, '', '', null, null, 'position:absolute; right:0; bottom:0; width:154px; height:132px; object-fit:cover; opacity:.8;'); ?>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
@@ -255,7 +267,7 @@ $included_bottom = array_slice($included_cards, 3);
             <div class="stom-included-top">
                 <?php foreach ($included_top as $card) : ?>
                     <div class="stom-included-card">
-                        <div class="stom-included-card-img"><img src="<?php echo esc_url(!empty($card['image']) ? $card['image'] : $placeholder); ?>" alt=""></div>
+                        <div class="stom-included-card-img"><?php stom_picture(!empty($card['image']) ? $card['image'] : $placeholder, '', ''); ?></div>
                         <div class="stom-included-card-body">
                             <span class="stom-included-card-num"><?php echo esc_html($card['number']); ?></span>
                             <p class="stom-included-card-title"><?php echo esc_html($card['title']); ?></p>
@@ -267,7 +279,7 @@ $included_bottom = array_slice($included_cards, 3);
             <div class="stom-included-bottom">
                 <?php foreach ($included_bottom as $card) : ?>
                     <div class="stom-included-card">
-                        <div class="stom-included-card-img"><img src="<?php echo esc_url(!empty($card['image']) ? $card['image'] : $placeholder); ?>" alt=""></div>
+                        <div class="stom-included-card-img"><?php stom_picture(!empty($card['image']) ? $card['image'] : $placeholder, '', ''); ?></div>
                         <div class="stom-included-card-body">
                             <span class="stom-included-card-num"><?php echo esc_html($card['number']); ?></span>
                             <p class="stom-included-card-title"><?php echo esc_html($card['title']); ?></p>
@@ -292,7 +304,7 @@ $included_bottom = array_slice($included_cards, 3);
             <div class="stom-projects-grid">
                 <?php foreach ($projects as $project) : ?>
                     <div class="stom-project-card">
-                        <div class="stom-project-card-img"><img src="<?php echo esc_url(!empty($project['image']) ? $project['image'] : $placeholder); ?>" alt=""></div>
+                        <div class="stom-project-card-img"><?php stom_picture(!empty($project['image']) ? $project['image'] : $placeholder, '', ''); ?></div>
                         <div class="stom-project-card-body">
                             <div class="stom-project-card-top">
                                 <span class="stom-project-card-num"><?php echo esc_html($project['number']); ?></span>
@@ -323,12 +335,12 @@ $included_bottom = array_slice($included_cards, 3);
                             <h3 class="stom-process-card-title"><?php echo esc_html($step['title']); ?></h3>
                             <p class="stom-process-card-text"><?php echo esc_html($step['text']); ?></p>
                             <?php if (!empty($step['image'])) : ?>
-                                <img src="<?php echo esc_url($step['image']); ?>" alt="" style="position:absolute; right:0; bottom:0; width:236px; height:162px; object-fit:cover; opacity:.7;">
+                                <?php stom_picture($step['image'], '', '', null, null, 'position:absolute; right:0; bottom:0; width:236px; height:162px; object-fit:cover; opacity:.7;'); ?>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="stom-process-image"><img src="<?php echo esc_url($process_image); ?>" alt=""></div>
+                <div class="stom-process-image"><?php stom_picture($process_image, '', ''); ?></div>
             </div>
         </div>
     </section>
@@ -389,7 +401,7 @@ $included_bottom = array_slice($included_cards, 3);
                 </div>
                 <div class="stom-why-warehouse">
                     <h3 class="stom-why-warehouse-title"><?php echo esc_html($why_warehouse_title); ?></h3>
-                    <img src="<?php echo esc_url($why_warehouse_image); ?>" alt="">
+                    <?php stom_picture($why_warehouse_image, '', ''); ?>
                 </div>
             </div>
         </div>
