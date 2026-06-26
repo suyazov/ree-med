@@ -45,11 +45,11 @@ $hero_badge_green_num  = get_field('stom_hero_badge_green_num') ?: '5000+';
 $hero_badge_green_text = get_field('stom_hero_badge_green_text') ?: 'позиций в наличии';
 
 $audience_label = get_field('stom_audience_label') ?: 'Кому подходит';
-$audience_title = get_field('stom_audience_title') ?: 'Работаем со стоматологиями на разных этапах';
+$audience_title = get_field('stom_audience_title') ?: 'Работаем со стоматологиями <em>на разных этапах</em>';
 $audience_desc  = get_field('stom_audience_desc') ?: 'Мы понимаем, что задачи у всех разные: кто-то открывается с нуля, кто-то расширяется, а кто-то просто хочет обновить оборудование.';
 $audience_lead  = get_field('stom_audience_lead') ?: 'Мы будем полезны, если вы:';
 $audience_cards = get_field('stom_audience_cards');
-$audience_summary = get_field('stom_audience_summary') ?: 'Мы помогаем не просто купить оборудование, а сделать так, чтобы кабинет начал работать максимально эффективно за короткие сроки.';
+$audience_summary = get_field('stom_audience_summary') ?: 'Мы помогаем не просто купить оборудование, а сделать так, чтобы кабинет начал работать <span class="text-green">максимально эффективно за короткие сроки</span>.';
 
 $included_title = get_field('stom_included_title') ?: 'Что входит в оснащение <span class="text-green">стоматологии</span>';
 $included_label = get_field('stom_included_label') ?: 'Мы берём на себя весь процесс:';
@@ -67,7 +67,7 @@ $process_subtitle = get_field('stom_process_subtitle') ?: 'Мы выстроил
 $process_steps    = get_field('stom_process_steps');
 $process_image    = stom_image_url('stom_process_image', $img_dir . '/stomatology-process.png');
 
-$request_title  = get_field('stom_request_title') ?: 'Подберём оборудование под вашу стоматологию';
+$request_title  = get_field('stom_request_title') ?: 'Подберём оборудование под вашу <em>стоматологию</em>';
 $request_desc   = get_field('stom_request_desc') ?: 'Оставьте заявку — свяжемся с вами и предложим решение';
 $request_note   = get_field('stom_request_note') ?: 'Консультация бесплатная';
 $request_button = get_field('stom_request_button_text') ?: 'Отправить';
@@ -224,7 +224,7 @@ $included_bottom = array_slice($included_cards, 3);
                 <img class="icon" src="<?php echo esc_url($img_dir . '/stomatology-audience-icon.svg'); ?>" alt="" width="55" height="55">
                 <div>
                     <p class="stom-audience-label"><?php echo esc_html($audience_label); ?></p>
-                    <h2 class="stom-audience-title"><?php echo esc_html($audience_title); ?></h2>
+                    <h2 class="stom-audience-title"><?php echo wp_kses_post($audience_title); ?></h2>
                 </div>
                 <p class="stom-audience-desc"><?php echo esc_html($audience_desc); ?></p>
             </div>
@@ -250,7 +250,7 @@ $included_bottom = array_slice($included_cards, 3);
             </div>
             </div>
 
-            <p class="stom-audience-summary"><?php echo esc_html($audience_summary); ?></p>
+            <p class="stom-audience-summary"><?php echo wp_kses_post($audience_summary); ?></p>
         </div>
     </section>
 
@@ -352,7 +352,7 @@ $included_bottom = array_slice($included_cards, 3);
                 <path d="M4 12l16 12 16-12" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div>
-                <h2 class="stom-request-title"><?php echo esc_html($request_title); ?></h2>
+                <h2 class="stom-request-title"><?php echo wp_kses_post($request_title); ?></h2>
                 <p class="stom-request-desc"><?php echo esc_html($request_desc); ?></p>
                 <div class="stom-request-note">
                     <span class="check"><svg width="10" height="8" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5l3 3 5-6"/></svg></span>
