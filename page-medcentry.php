@@ -23,7 +23,7 @@ function med_get_field($field, $fallback = '') {
     return $fallback;
 }
 
-$hero_title = med_get_field('med_hero_title', 'Оснащение <span class="text-green">медицинских центров под ключ</span> в Забайкальском крае');
+$hero_title = med_get_field('med_hero_title', 'Оснащение <span class="text-green">медицинских</span><br>центров <span class="text-green">под ключ</span><br>в Забайкальском крае');
 $hero_desc  = med_get_field('med_hero_desc', 'Помогаем клиникам запускаться, развиваться и работать на современном оборудовании от подбора до поставки');
 $hero_btn   = med_get_field('med_hero_button_text', 'Получить консультацию');
 $hero_image = med_image_url('med_hero_image', $img_dir . '/hero-main.png');
@@ -46,10 +46,10 @@ $included_label = med_get_field('med_included_label', 'Мы берём на се
 $included_desc  = med_get_field('med_included_desc', 'Оснащение медицинского центра — это не просто закупка оборудования. Важно подобрать решения, которые будут соответствовать профилю клиники, нагрузке и бюджету.');
 $included_result_text = med_get_field('med_included_result_text', 'В результате, вы получаете не просто оборудование, а продуманную систему для стабильной и комфортной работы клиники');
 
-$projects_title = med_get_field('med_projects_title', 'Реализованные проекты');
+$projects_title = med_get_field('med_projects_title', '<span class="text-green">Реализованные</span> проекты');
 $projects_desc  = med_get_field('med_projects_desc', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.');
 
-$process_title    = med_get_field('med_process_title', 'Как мы работаем');
+$process_title    = med_get_field('med_process_title', 'Как <span class="text-green">мы работаем</span>');
 $process_subtitle = med_get_field('med_process_subtitle', 'Мы выстроили понятный и прозрачный процесс работы, чтобы клиенту было комфортно на каждом этапе.');
 $process_image    = med_image_url('med_process_image', $img_dir . '/process-main.png');
 

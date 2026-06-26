@@ -76,6 +76,7 @@
     max-width: 726px;
     margin-bottom: 28px;
 }
+.medcentry-page .mc-hero-title br { display: none; }
 .medcentry-page .mc-hero-desc {
     font-size: 20px;
     line-height: 24px;
@@ -537,8 +538,9 @@
     .medcentry-page .mc-hero-grid { display: flex; flex-direction: column; min-height: 0; gap: 16px; }
     .medcentry-page .mc-hero-left { display: contents; padding-top: 0; }
     .medcentry-page .mc-hero-right { order: 2; position: relative; width: 100%; }
-    .medcentry-page .mc-hero-title { order: 1; width: 100%; font-size: 28px; line-height: 94%; margin-bottom: 0; color: #28282a; }
-    .medcentry-page .mc-hero-image { width: 100%; height: 293px; }
+    .medcentry-page .mc-hero-title { order: 1; width: 100%; font-size: 26px; line-height: 110%; letter-spacing: -0.05em; margin-bottom: 0; color: #28282a; }
+    .medcentry-page .mc-hero-title .text-green { color: var(--color-green); font-weight: 600; }
+    .medcentry-page .mc-hero-image { width: 100%; height: 293px; content: url('../img/medcentry/hero-main-mobile.png'); }
     .medcentry-page .mc-hero-badges { position: absolute; left: 12px; bottom: 12px; right: 12px; display: flex; flex-wrap: nowrap; gap: 8px; margin: 0; }
     .medcentry-page .mc-hero-badge-glass { position: relative; left: auto; bottom: auto; width: 160px; flex-shrink: 0; height: 78px; font-size: 12px; line-height: 14px; padding: 12px; background: rgba(54, 118, 67, 0.5); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); font-weight: 400; align-items: flex-end; }
     .medcentry-page .mc-hero-badge-glass svg { width: 12px; height: 12px; top: 12px; right: 12px; }
@@ -546,10 +548,10 @@
     .medcentry-page .mc-hero-badge-green { position: relative; left: auto; bottom: auto; width: 156px; flex-shrink: 0; height: 78px; padding: 12px; }
     .medcentry-page .mc-hero-badge-green .num { font-size: 28px; line-height: 34px; }
     .medcentry-page .mc-hero-badge-green .txt { font-size: 12px; line-height: 14px; }
-    .medcentry-page .mc-hero-feature { order: 3; width: 100%; height: 74px; margin-bottom: 0; }
-    .medcentry-page .mc-hero-feature-content { flex-direction: row; align-items: center; padding: 12px 16px; }
-    .medcentry-page .mc-hero-feature-text { font-size: 12px; line-height: 14px; max-width: 119px; }
-    .medcentry-page .mc-hero-feature-warehouse { width: 117px; height: 62px; margin: 0; align-self: center; }
+    .medcentry-page .mc-hero-feature { order: 3; width: 196px; height: 66px; margin-bottom: 0; border-radius: 12px; margin-top: 0; }
+    .medcentry-page .mc-hero-feature-content { flex-direction: row; align-items: center; padding: 10px 12px; gap: 8px; }
+    .medcentry-page .mc-hero-feature-text { font-size: 12px; line-height: 14px; max-width: 90px; }
+    .medcentry-page .mc-hero-feature-warehouse { width: 80px; height: 50px; margin: 0; align-self: center; }
     .medcentry-page .mc-hero-desc { order: 4; width: 100%; font-size: 16px; line-height: 19px; margin-bottom: 0; }
     .medcentry-page .mc-hero-btn { order: 5; width: 100%; height: 57px; }
 
@@ -563,9 +565,10 @@
     .medcentry-page .mc-audience-body { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
     .medcentry-page .mc-audience-lead { width: auto; font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; text-align: center; margin: 0; }
     .medcentry-page .mc-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .medcentry-page .mc-audience-card { width: 100%; height: 167px; padding: 16px; font-size: 14px; line-height: 110%; border-radius: 12px; }
+    .medcentry-page .mc-audience-card { width: 100%; height: 196px; padding: 16px; font-size: 14px; line-height: 110%; border-radius: 12px; }
     .medcentry-page .mc-audience-card .text { max-width: none; }
     .medcentry-page .mc-audience-card-img { width: 85px; height: 73px; }
+    .medcentry-page .mc-audience-card--white .mc-audience-card-img { top: 16px; bottom: auto; width: 70px; height: 60px; }
     .medcentry-page .mc-audience-summary { max-width: 100%; margin: 16px 0 0; font-size: 20px; line-height: 24px; letter-spacing: -0.6px; text-align: left; }
 
     /* Included mobile */
@@ -574,12 +577,15 @@
     .medcentry-page .mc-included-header { display: block; }
     .medcentry-page .mc-included-header-left { width: auto; }
     .medcentry-page .mc-included-subtitle { margin: 0 0 12px; }
-    .medcentry-page .mc-included-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; max-width: 100%; margin: 0 0 12px; }
+    .medcentry-page .mc-included-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; max-width: 235px; margin: 0 0 12px; color: var(--color-green); }
+    .medcentry-page .mc-included-title .text-green { color: var(--color-black); }
     .medcentry-page .mc-included-desc { font-size: 16px; line-height: 19.2px; letter-spacing: 0; max-width: 284px; margin: 0 0 32px; }
     .medcentry-page .mc-included-label { position: static; width: auto; font-size: 20px; line-height: 22px; letter-spacing: 0; font-weight: 600; max-width: 100%; margin: 0 0 16px; }
     .medcentry-page .mc-included-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 0; }
     .medcentry-page .mc-included-card { width: 100%; height: auto; }
     .medcentry-page .mc-included-card-img { width: 100%; height: 180px; }
+    .medcentry-page .mc-included-card-img img[src*="included-3.png"] { content: url('../img/medcentry/included-4.png'); }
+    .medcentry-page .mc-included-card-img img[src*="included-4.png"] { content: url('../img/medcentry/included-3.png'); }
     .medcentry-page .mc-included-card-body { height: auto; }
     .medcentry-page .mc-included-card-title { font-size: 18px; line-height: 21.6px; letter-spacing: -0.54px; max-width: 240px; min-height: 0; }
     .medcentry-page .mc-included-result { display: none; }
@@ -589,9 +595,13 @@
     .medcentry-page .mc-projects-header { text-align: left; margin-bottom: 24px; }
     .medcentry-page .mc-projects-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; width: auto; text-align: left; margin-bottom: 12px; color: var(--color-black); }
     .medcentry-page .mc-projects-desc { font-size: 16px; line-height: 19.2px; letter-spacing: 0; max-width: 100%; }
-    .medcentry-page .mc-projects-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
-    .medcentry-page .mc-project-card { flex: 0 0 328px; width: 328px; height: 426px; flex-direction: column; gap: 0; scroll-snap-align: start; }
+    .medcentry-page .mc-projects-grid { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+    .medcentry-page .mc-project-card { flex: 0 0 300px; width: 300px; height: 380px; flex-direction: column; gap: 0; scroll-snap-align: start; border-radius: 12px; overflow: hidden; }
     .medcentry-page .mc-project-card-img { width: 100%; height: 194px; }
+    .medcentry-page .mc-project-card-img img[src*="project-1.png"] { content: url('../img/medcentry/project-mobile-1.png'); }
+    .medcentry-page .mc-project-card-img img[src*="project-2.png"] { content: url('../img/medcentry/project-mobile-2.png'); }
+    .medcentry-page .mc-project-card-img img[src*="project-3.png"] { content: url('../img/medcentry/project-mobile-1.png'); }
+    .medcentry-page .mc-project-card-img img[src*="project-4.png"] { content: url('../img/medcentry/project-mobile-2.png'); }
     .medcentry-page .mc-project-card-body { flex: 1; padding: 20px; }
     .medcentry-page .mc-project-card-title { font-size: 20px; line-height: 24px; letter-spacing: -0.6px; font-weight: 600; width: auto; }
     .medcentry-page .mc-project-card-text { width: auto; font-size: 16px; line-height: 19.2px; letter-spacing: -0.48px; opacity: 1; }
@@ -634,12 +644,12 @@
     .medcentry-page .mc-why-grid { grid-template-columns: 1fr; gap: 16px; }
     .medcentry-page .mc-why-left { gap: 16px; }
     .medcentry-page .mc-why-stats { flex-direction: row; gap: 8px; }
-    .medcentry-page .mc-why-stat { height: 117px; padding: 16px; border-radius: 12px; }
+    .medcentry-page .mc-why-stat { height: 100px; padding: 16px; border-radius: 12px; }
     .medcentry-page .mc-why-stat:first-child,
     .medcentry-page .mc-why-stat:nth-child(2) { padding-left: 16px; }
     .medcentry-page .mc-why-stat--image { flex: 0 0 143px; }
     .medcentry-page .mc-why-stat--gray { flex: 1; }
-    .medcentry-page .mc-why-stat--image::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); border-radius: inherit; z-index: 0; }
+    .medcentry-page .mc-why-stat--image::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.3); border-radius: inherit; z-index: 0; }
     .medcentry-page .mc-why-stat--image .num,
     .medcentry-page .mc-why-stat--image .txt { position: relative; z-index: 1; }
     .medcentry-page .mc-why-stat .num { font-size: 40px; line-height: 48px; letter-spacing: 0; }
