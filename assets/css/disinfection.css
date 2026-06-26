@@ -580,6 +580,35 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
 /* ======================== SMALL MOBILE (<=480px) ======================== */
 @media (max-width: 480px) {
+    /* Hero badges: constrain text wrapping to match reference */
+    .disinfection-page .hero-badges {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .disinfection-page .hero-badge {
+        justify-content: flex-start;
+        text-align: left;
+        padding: 6px 8px;
+        font-size: 11px;
+        line-height: 110%;
+    }
+
+    .disinfection-page .hero-badge span:not(.check) {
+        display: block;
+        max-width: 110px;
+    }
+
+    .disinfection-page .hero-badge:nth-child(3) span:not(.check) {
+        max-width: 230px;
+    }
+
+    .disinfection-page .hero-badge:nth-child(3) {
+        padding: 8px 12px;
+    }
+
     /* Audience mobile order */
     .disinfection-page .audience-grid {
         grid-template-columns: 1fr 1fr;
@@ -596,14 +625,186 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     .disinfection-page .audience-card {
         position: relative;
+        min-height: 108px;
     }
 
-    .disinfection-page .audience-card .arrow {
-        position: absolute;
-        left: 20px;
-        bottom: 18px;
-        width: 34px;
-        height: 34px;
+    .disinfection-page .audience-card h3 {
+        position: relative;
+        z-index: 2;
+        max-width: calc(100% - 28px);
+    }
+
+    /* Audience arrows: top-right for image/green, bottom-right for default/gray */
+    .disinfection-page .audience-card.image .arrow,
+    .disinfection-page .audience-card.image-overlay .arrow,
+    .disinfection-page .audience-card.green .arrow {
+        left: auto;
+        right: 12px;
+        top: 12px;
+        bottom: auto;
+        width: 24px;
+        height: 24px;
+    }
+
+    .disinfection-page .audience-card.default .arrow,
+    .disinfection-page .audience-card.gray .arrow {
+        left: auto;
+        right: 12px;
+        top: auto;
+        bottom: 12px;
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Audience image cards keep full background image */
+    .disinfection-page .audience-card.image,
+    .disinfection-page .audience-card.image-overlay {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .disinfection-page .audience-card.image h3,
+    .disinfection-page .audience-card.image-overlay h3 {
+        padding-right: 0;
+        max-width: 110px;
+    }
+
+    /* Audience default/gray inline images: small and top-right on mobile */
+    .disinfection-page .audience-card > .audience-card-img {
+        position: absolute !important;
+        right: 12px !important;
+        top: 12px !important;
+        bottom: auto !important;
+        width: 56px !important;
+        height: 48px !important;
+        opacity: 1 !important;
+        object-fit: contain;
+        z-index: 1;
+    }
+
+    .disinfection-page .audience-card.default h3,
+    .disinfection-page .audience-card.gray h3 {
+        padding-right: 52px;
+    }
+
+    /* Included cards: reverse so title/number appears above image */
+    .disinfection-page .included-card:not(.green-wide) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .disinfection-page .included-card:not(.green-wide) img {
+        margin-bottom: 0;
+        border-radius: 8px;
+    }
+
+    .disinfection-page .included-card .num {
+        position: static;
+        margin-bottom: 8px;
+    }
+
+    .disinfection-page .included-card h3 {
+        padding-left: 0;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    .disinfection-page .included-card.green-wide {
+        align-items: flex-start !important;
+        justify-content: flex-start;
+        text-align: left !important;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .disinfection-page .included-card.green-wide p {
+        text-align: left !important;
+        font-size: 14px;
+        line-height: 130%;
+    }
+
+    .disinfection-page .included-card.green-wide::after {
+        top: 20px;
+        right: 20px;
+    }
+
+    /* Why section: uniform card heights and stat text visibility */
+    .disinfection-page .why-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .disinfection-page .why-image-card {
+        grid-column: 1 / -1;
+        min-height: 220px;
+        padding: 16px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .disinfection-page .why-stats {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .disinfection-page .why-stat {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 12px;
+        height: auto;
+        white-space: normal;
+    }
+
+    .disinfection-page .why-stat strong {
+        font-size: 24px;
+        line-height: 1.1;
+        white-space: normal;
+    }
+
+    .disinfection-page .why-stat span {
+        display: block;
+        font-size: 11px;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .disinfection-page .why-info-card,
+    .disinfection-page .why-warehouse-card {
+        min-height: 110px;
+        display: flex;
+        align-items: flex-end;
+        padding: 16px;
+    }
+
+    .disinfection-page .why-info-card h3,
+    .disinfection-page .why-warehouse-card h3 {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    /* Warehouse card keeps full background image */
+    .disinfection-page .why-warehouse-card {
+        background-size: cover;
+        background-position: center;
+        color: var(--color-white);
+    }
+
+    .disinfection-page .why-plus {
+        width: 20px;
+        height: 20px;
+        top: 12px;
+        right: 12px;
+    }
+
+    .disinfection-page .why-features-list {
+        grid-column: 1 / -1;
+    }
+
+    .disinfection-page .why-feature {
+        padding: 12px;
+        font-size: 13px;
+        line-height: 1.3;
     }
 }
 

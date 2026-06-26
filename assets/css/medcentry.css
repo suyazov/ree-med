@@ -577,8 +577,8 @@
     .medcentry-page .mc-included-header { display: block; }
     .medcentry-page .mc-included-header-left { width: auto; }
     .medcentry-page .mc-included-subtitle { margin: 0 0 12px; }
-    .medcentry-page .mc-included-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; max-width: 235px; margin: 0 0 12px; color: var(--color-green); }
-    .medcentry-page .mc-included-title .text-green { color: var(--color-black); }
+    .medcentry-page .mc-included-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; max-width: 235px; margin: 0 0 12px; color: var(--color-black); }
+    .medcentry-page .mc-included-title .text-green { color: var(--color-green); }
     .medcentry-page .mc-included-desc { font-size: 16px; line-height: 19.2px; letter-spacing: 0; max-width: 284px; margin: 0 0 32px; }
     .medcentry-page .mc-included-label { position: static; width: auto; font-size: 20px; line-height: 22px; letter-spacing: 0; font-weight: 600; max-width: 100%; margin: 0 0 16px; }
     .medcentry-page .mc-included-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 0; }
@@ -644,11 +644,11 @@
     .medcentry-page .mc-why-grid { grid-template-columns: 1fr; gap: 16px; }
     .medcentry-page .mc-why-left { gap: 16px; }
     .medcentry-page .mc-why-stats { flex-direction: row; gap: 8px; }
-    .medcentry-page .mc-why-stat { height: 100px; padding: 16px; border-radius: 12px; }
+    .medcentry-page .mc-why-stat { height: 117px; padding: 16px; border-radius: 12px; }
     .medcentry-page .mc-why-stat:first-child,
     .medcentry-page .mc-why-stat:nth-child(2) { padding-left: 16px; }
     .medcentry-page .mc-why-stat--image { flex: 0 0 143px; }
-    .medcentry-page .mc-why-stat--gray { flex: 1; }
+    .medcentry-page .mc-why-stat--gray { flex: 0 0 192px; background: var(--gradient-green); color: var(--color-white); }
     .medcentry-page .mc-why-stat--image::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.3); border-radius: inherit; z-index: 0; }
     .medcentry-page .mc-why-stat--image .num,
     .medcentry-page .mc-why-stat--image .txt { position: relative; z-index: 1; }

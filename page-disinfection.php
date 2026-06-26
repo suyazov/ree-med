@@ -51,7 +51,7 @@ function dis_image_url($field, $fallback) {
                     </div>
                 </div>
                 <div class="hero-body">
-                    <p class="hero-desc"><?php echo esc_html(get_field('hero_desc') ?: 'Подбираем дезинфицирующие средства, оборудование и расходные материалы для медицинских учреждений, стоматологий, лабораторий и организаций различных сфер деятельности'); ?></p>
+                    <p class="hero-desc"><?php echo wp_kses_post(get_field('hero_desc') ?: 'Подбираем дезинфицирующие средства, оборудование и расходные материалы для медицинских учреждений, стоматологий, лабораторий и организаций различных сфер деятельности'); ?></p>
                     <div class="hero-features">
                         <?php
                         $hero_features = get_field('hero_features');
@@ -66,7 +66,7 @@ function dis_image_url($field, $fallback) {
                         foreach ($hero_features as $feature) :
                             $icon = !empty($feature['icon']) ? $feature['icon'] : get_template_directory_uri() . '/assets/img/hero-icon-1.png';
                         ?>
-                            <div class="hero-feature"><img src="<?php echo esc_url($icon); ?>" alt=""><span><?php echo esc_html($feature['text']); ?></span></div>
+                            <div class="hero-feature"><img src="<?php echo esc_url($icon); ?>" alt=""><span><?php echo wp_kses_post($feature['text']); ?></span></div>
                         <?php endforeach; ?>
                     </div>
                     <a href="#application" class="btn btn-primary hero-btn-main"><?php echo esc_html(get_field('hero_button_text') ?: 'Подобрать решение'); ?></a>
@@ -93,9 +93,9 @@ function dis_image_url($field, $fallback) {
                 $audience_cards = get_field('audience_cards');
                 if (!$audience_cards) {
                     $audience_cards = array(
-                        array('title' => 'Медицинские центры', 'style' => 'default'),
+                        array('title' => 'Медицинские центры', 'style' => 'default', 'image' => $img_dir . '/disinfection-audience-medcenter.png'),
                         array('title' => 'Стоматологии', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-stomatology.png'),
-                        array('title' => 'Больницы и поликлиники', 'style' => 'gray'),
+                        array('title' => 'Больницы и поликлиники', 'style' => 'default'),
                         array('title' => 'Лаборатории', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-laboratory.png'),
                         array('title' => 'Санатории и реабилитационные центры', 'style' => 'green'),
                         array('title' => 'Образовательные учреждения', 'style' => 'green'),
@@ -118,7 +118,10 @@ function dis_image_url($field, $fallback) {
                 ?>
                     <div class="<?php echo esc_attr($classes); ?>"<?php echo $bg; ?>>
                         <?php if ($style === 'image' || $style === 'image-overlay') echo '<span class="overlay"></span>'; ?>
-                        <h3><?php echo esc_html($card['title']); ?></h3>
+                        <?php if (($style === 'default' || $style === 'gray') && !empty($card['image'])) : ?>
+                            <img src="<?php echo esc_url($card['image']); ?>" alt="" class="audience-card-img" style="position:absolute; right:0; bottom:0; width:80px; height:70px; object-fit:cover; opacity:1;">
+                        <?php endif; ?>
+                        <h3><?php echo wp_kses_post($card['title']); ?></h3>
                         <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -171,7 +174,7 @@ function dis_image_url($field, $fallback) {
                         }
                         foreach ($supplies_items as $item) :
                         ?>
-                            <div class="supply-item"><span class="dot"></span><span class="supply-text"><?php echo esc_html($item['text']); ?></span></div>
+                            <div class="supply-item"><span class="dot"></span><span class="supply-text"><?php echo wp_kses_post($item['text']); ?></span></div>
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -210,13 +213,13 @@ function dis_image_url($field, $fallback) {
                     if (!empty($card['is_green'])) :
                 ?>
                     <div class="included-card green-wide">
-                        <p><?php echo esc_html($card['title']); ?></p>
+                        <p><?php echo wp_kses_post($card['title']); ?></p>
                     </div>
                 <?php else : ?>
                     <div class="included-card">
                         <img src="<?php echo esc_url(!empty($card['image']) ? $card['image'] : get_template_directory_uri() . '/assets/img/what-included-1.png'); ?>" alt="">
                         <span class="num"><?php echo esc_html($card['number']); ?></span>
-                        <h3><?php echo esc_html($card['title']); ?></h3>
+                        <h3><?php echo wp_kses_post($card['title']); ?></h3>
                     </div>
                 <?php endif; endforeach; ?>
             </div>
@@ -229,7 +232,7 @@ function dis_image_url($field, $fallback) {
             <div class="tasks-grid">
                 <div class="tasks-intro green-card">
                     <span class="tag"><?php echo esc_html(get_field('tasks_subtitle') ?: 'Популярные задачи клиентов'); ?></span>
-                    <h2><?php echo esc_html(get_field('tasks_title') ?: 'С чем к нам обращаются чаще всего'); ?></h2>
+                    <h2><?php echo wp_kses_post(get_field('tasks_title') ?: 'С чем к нам обращаются чаще всего'); ?></h2>
                 </div>
                 <div class="tasks-list">
                     <?php
@@ -248,7 +251,7 @@ function dis_image_url($field, $fallback) {
                     foreach ($tasks_list as $task) :
                         $icon = !empty($task['icon']) ? $task['icon'] : get_template_directory_uri() . '/assets/img/task-icon-1.png';
                     ?>
-                        <div class="task-item"><img src="<?php echo esc_url($icon); ?>" alt=""><span><?php echo esc_html($task['text']); ?></span></div>
+                        <div class="task-item"><img src="<?php echo esc_url($icon); ?>" alt=""><span><?php echo wp_kses_post($task['text']); ?></span></div>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -271,7 +274,7 @@ function dis_image_url($field, $fallback) {
                 <div class="why-image-card" style="background-image:url('<?php echo esc_url(dis_image_url('why_main_image', $img_dir . '/disinfection-why-main.png')); ?>')">
                     <div class="why-stats">
                         <div class="why-stat glass"><strong>20+ лет</strong><span>работы в медицинской сфере</span></div>
-                        <div class="why-stat green"><strong>5000+</strong><span>позиций в наличии</span></div>
+                        <div class="why-stat green"><strong>5000+</strong><span>позиций оборудования в наличии</span></div>
                     </div>
                 </div>
                 <div class="why-info-card">
@@ -295,7 +298,7 @@ function dis_image_url($field, $fallback) {
                     }
                     foreach ($why_features as $feature) :
                     ?>
-                        <div class="why-feature"><span class="check"></span><span><?php echo esc_html($feature['text']); ?></span></div>
+                        <div class="why-feature"><span class="check"></span><span><?php echo wp_kses_post($feature['text']); ?></span></div>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -307,7 +310,7 @@ function dis_image_url($field, $fallback) {
         <div class="container">
             <div class="section-header row">
                 <h2 class="section-title projects-section-title"><?php echo esc_html(get_field('projects_title') ?: 'Реализованные проекты'); ?></h2>
-                <p class="section-desc"><?php echo esc_html(get_field('projects_desc') ?: 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'); ?></p>
+                <p class="section-desc"><?php echo wp_kses_post(get_field('projects_desc') ?: 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'); ?></p>
             </div>
             <?php
             $projects = get_field('projects_slides');
@@ -344,12 +347,12 @@ function dis_image_url($field, $fallback) {
                                         <span class="project-num"><?php echo esc_html($project['num'] ?: sprintf('%02d.', $index + 1)); ?></span>
                                         <h3><?php echo esc_html($project['title']); ?></h3>
                                         <div class="project-columns">
-                                            <div><strong>Задача клиента</strong><p><?php echo esc_html($project['task']); ?></p></div>
-                                            <div><strong>Поставленное оборудование и материалы</strong><p><?php echo esc_html($project['equipment']); ?></p></div>
+                                            <div><strong>Задача клиента</strong><p><?php echo wp_kses_post($project['task']); ?></p></div>
+                                            <div><strong>Поставленное оборудование и материалы</strong><p><?php echo wp_kses_post($project['equipment']); ?></p></div>
                                         </div>
                                         <div class="project-result">
                                             <strong>Результат</strong>
-                                            <p><?php echo esc_html($project['result']); ?></p>
+                                            <p><?php echo wp_kses_post($project['result']); ?></p>
                                         </div>
                                     </div>
                                     <div class="project-image"><img src="<?php echo esc_url($project['image']); ?>" alt=""></div>
@@ -392,7 +395,7 @@ function dis_image_url($field, $fallback) {
                 foreach ($partners as $partner) :
                     $logo = !empty($partner['logo']) ? $partner['logo'] : get_template_directory_uri() . '/assets/img/partner-1.png';
                 ?>
-                    <div class="partner-card"><img src="<?php echo esc_url($logo); ?>" alt=""><h3><?php echo esc_html($partner['name']); ?></h3><p><?php echo esc_html($partner['desc']); ?></p></div>
+                    <div class="partner-card"><img src="<?php echo esc_url($logo); ?>" alt=""><h3><?php echo wp_kses_post($partner['name']); ?></h3><p><?php echo wp_kses_post($partner['desc']); ?></p></div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -408,7 +411,7 @@ function dis_image_url($field, $fallback) {
             ?>
             <div class="faq-header">
                 <h2 class="section-title"><?php echo wp_kses_post($faq_title); ?></h2>
-                <p class="faq-description"><?php echo esc_html($faq_description); ?></p>
+                <p class="faq-description"><?php echo wp_kses_post($faq_description); ?></p>
             </div>
             <div class="faq-grid">
                 <?php
@@ -445,9 +448,9 @@ function dis_image_url($field, $fallback) {
                     $position_style = isset($faq_positions[$i]) ? esc_attr($faq_positions[$i]) : '';
                 ?>
                     <div class="faq-item<?php echo esc_attr($active_class); ?>" style="<?php echo $position_style; ?>">
-                        <span><?php echo esc_html($item['question']); ?></span><span class="faq-icon"><?php echo $faq_icon_svg; ?></span>
+                        <span><?php echo wp_kses_post($item['question']); ?></span><span class="faq-icon"><?php echo $faq_icon_svg; ?></span>
                         <?php if (!empty($item['answer'])) : ?>
-                            <p><?php echo esc_html($item['answer']); ?></p>
+                            <p><?php echo wp_kses_post($item['answer']); ?></p>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
@@ -466,7 +469,7 @@ function dis_image_url($field, $fallback) {
                     $application_title = str_replace('решение ', 'решение<br>', $application_title);
                     ?>
                     <h2><?php echo wp_kses_post($application_title); ?></h2>
-                    <p><?php echo esc_html(get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'); ?></p>
+                    <p><?php echo wp_kses_post(get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'); ?></p>
                 </div>
                 <div class="application-form-wrap">
                     <form class="application-form" id="contact-form">

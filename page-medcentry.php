@@ -38,10 +38,10 @@ $audience_label = med_get_field('med_audience_label', 'Кому подходит
 $audience_title = med_get_field('med_audience_title', 'Работаем с медицинскими центрами на разных этапах');
 $audience_desc  = med_get_field('med_audience_desc', 'Мы понимаем, что у каждой клиники своя задача, поэтому подходим к оснащению индивидуально');
 $audience_lead  = med_get_field('med_audience_lead', 'Мы поможем, если вы:');
-$audience_summary = med_get_field('med_audience_summary', 'Мы создаём продуманное оснащение, которое помогает клинике работать уверенно каждый день.');
+$audience_summary = med_get_field('med_audience_summary', 'Мы создаём продуманное оснащение, которое помогает клинике работать <em>уверенно</em> каждый день.');
 
 $included_subtitle = med_get_field('med_included_subtitle', 'Что входит');
-$included_title = med_get_field('med_included_title', 'Комплексное <span class="text-green">оснащение клиники</span>');
+$included_title = med_get_field('med_included_title', '<span class="text-green">Комплексное</span> оснащение клиники');
 $included_label = med_get_field('med_included_label', 'Мы берём на себя весь процесс:');
 $included_desc  = med_get_field('med_included_desc', 'Оснащение медицинского центра — это не просто закупка оборудования. Важно подобрать решения, которые будут соответствовать профилю клиники, нагрузке и бюджету.');
 $included_result_text = med_get_field('med_included_result_text', 'В результате, вы получаете не просто оборудование, а продуманную систему для стабильной и комфортной работы клиники');
@@ -232,7 +232,7 @@ $phone_flag = '<img src="' . esc_url($img_dir . '/phone-flag.png') . '" alt="" w
                 </div>
             </div>
 
-            <p class="mc-audience-summary"><?php echo esc_html($audience_summary); ?></p>
+            <p class="mc-audience-summary"><?php echo wp_kses_post($audience_summary); ?></p>
         </div>
     </section>
 
