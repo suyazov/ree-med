@@ -34,7 +34,7 @@ function stom_why_stat_class($style) {
     return isset($map[$style]) ? $map[$style] : 'stom-why-stat--gray';
 }
 
-$hero_title = get_field('stom_hero_title') ?: 'Оснащение <span class="text-green">стоматологии под ключ</span> в Забайкальском крае';
+$hero_title = get_field('stom_hero_title') ?: 'Оснащение<br><span class="text-green">стоматологии под ключ</span><br>в Забайкальском крае';
 $hero_desc  = get_field('stom_hero_desc') ?: 'Подберём оборудование, поставим и поможем запустить кабинет без лишних затрат и ошибок';
 $hero_btn   = get_field('stom_hero_button_text') ?: 'Получить консультацию';
 $hero_image = stom_image_url('stom_hero_image', $img_dir . '/stomatology-hero-main.png');
