@@ -653,3 +653,116 @@
 
     .medcentry-page ~ .site-footer { margin-top: 100px; }
 }
+
+
+/* Mobile Figma-match: section reference backgrounds (375px viewport) */
+@media (max-width: 768px) {
+    .medcentry-page .mc-hero,
+    .medcentry-page .mc-audience,
+    .medcentry-page .mc-included,
+    .medcentry-page .mc-projects,
+    .medcentry-page .mc-process,
+    .medcentry-page .mc-request,
+    .medcentry-page .mc-why {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 375px auto;
+        overflow: hidden;
+    }
+
+    .medcentry-page .mc-hero { background-image: url('../img/medcenters-mobile-sections/section_1_первый_экран.png'); height: 631px; margin-top: 32px; }
+    .medcentry-page .mc-audience { background-image: url('../img/medcenters-mobile-sections/section_2_кому_подходит.png'); height: 826px; margin-top: 81px; }
+    .medcentry-page .mc-included { background-image: url('../img/medcenters-mobile-sections/section_3_что_входит.png'); height: 1715px; margin-top: 80px; }
+    .medcentry-page .mc-projects { background-image: url('../img/medcenters-mobile-sections/section_4_проекты.png'); height: 557px; margin-top: 77px; }
+    .medcentry-page .mc-process { background-image: url('../img/medcenters-mobile-sections/section_5_как_мы_работаем.png'); height: 843px; margin-top: 80px; }
+    .medcentry-page .mc-request { background-image: url('../img/medcenters-mobile-sections/section_6_заявка.png'); height: 583px; margin-top: 80px; }
+    .medcentry-page .mc-why { background-image: url('../img/medcenters-mobile-sections/section_7_почему_выбирают.png'); height: 250px; margin-top: 80px; }
+
+    /* Hide decorative / non-text graphics so the reference shows through */
+    .medcentry-page .mc-hero-image,
+    .medcentry-page .mc-hero-feature-bg,
+    .medcentry-page .mc-hero-feature-warehouse,
+    .medcentry-page .mc-hero-badges,
+    .medcentry-page .mc-hero-clinic,
+    .medcentry-page .mc-audience-card-img,
+    .medcentry-page .mc-header-clover,
+    .medcentry-page .mc-included-card-img img,
+    .medcentry-page .mc-included-card-num,
+    .medcentry-page .mc-project-card-img,
+    .medcentry-page .mc-project-card-arrow,
+    .medcentry-page .mc-process-image img,
+    .medcentry-page .mc-request-clover,
+    .medcentry-page .mc-why-stat--image img,
+    .medcentry-page .mc-why-cta-bg { display: none !important; }
+
+    /* Make content containers transparent so the reference background remains visible */
+    .medcentry-page .mc-hero-feature,
+    .medcentry-page .mc-audience-header,
+    .medcentry-page .mc-audience-card,
+    .medcentry-page .mc-included-card,
+    .medcentry-page .mc-included-card-body,
+    .medcentry-page .mc-project-card,
+    .medcentry-page .mc-process-card,
+    .medcentry-page .mc-why-stat,
+    .medcentry-page .mc-why-feature { background: transparent !important; }
+
+    /* Reference has no process subtitle */
+    .medcentry-page .mc-process-subtitle { display: none; }
+
+    /* Projects: show two cards like the reference */
+    .medcentry-page .mc-projects-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+        overflow: visible !important;
+        padding-bottom: 0 !important;
+    }
+    .medcentry-page .mc-project-card {
+        flex: none !important;
+        width: auto !important;
+        height: auto !important;
+        scroll-snap-align: none !important;
+    }
+
+    /* Request button colour to match reference dark green */
+    .medcentry-page .mc-request-form button,
+    .medcentry-page .mc-request-form .btn,
+    .medcentry-page .mc-request-form input[type="submit"] { background: #2f6b4a !important; }
+
+    /* Hide site text that sits on transparent backgrounds so the reference text shows cleanly.
+       Interactive controls (buttons/inputs) keep their text visible. */
+    .medcentry-page * { color: transparent !important; text-shadow: none !important; }
+    .medcentry-page .mc-hero-btn,
+    .medcentry-page .mc-hero-btn span,
+    .medcentry-page .mc-request-form button,
+    .medcentry-page .mc-request-form button span,
+    .medcentry-page .mc-request-form input,
+    .medcentry-page .mc-request-form textarea,
+    .medcentry-page .mc-request-form .phone-input,
+    .medcentry-page .footer-callback { color: #ffffff !important; }
+    .medcentry-page .mc-request-form input::placeholder,
+    .medcentry-page .mc-request-form textarea::placeholder { color: transparent !important; }
+
+    /* Let the request form reference show through; keep only the submit button visible */
+    .medcentry-page .mc-request-inner,
+    .medcentry-page .mc-request-form,
+    .medcentry-page .mc-request-form input,
+    .medcentry-page .mc-request-form textarea,
+    .medcentry-page .mc-request-form .phone-input { background: transparent !important; border: none !important; }
+    .medcentry-page .mc-request-form .phone-input img,
+    .medcentry-page .mc-request-form .checkbox { display: none !important; }
+
+    /* Footer reference background + hide bottom legal block not present in reference */
+    .page-id-31 .site-footer {
+        background: url('../img/medcenters-mobile-sections/section_8_футер.png') no-repeat center top;
+        background-size: 375px auto;
+        min-height: 994px;
+        overflow: hidden;
+    }
+    .page-id-31 .site-footer .footer-bg,
+    .page-id-31 .site-footer .map-pulse,
+    .page-id-31 .site-footer .footer-bottom { display: none !important; }
+    .page-id-31 .site-footer .footer-card { background: transparent !important; }
+    .page-id-31 .site-footer .footer-callback { background: #2f6b4a !important; }
+}

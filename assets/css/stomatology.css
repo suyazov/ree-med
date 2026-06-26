@@ -645,3 +645,101 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     /* Footer mobile */
     body.page-template-page-stomatology-php .site-footer { margin-top: 100px; }
 }
+
+
+
+
+/* Mobile Figma-match: per-section reference backgrounds */
+@media (max-width: 768px) {
+    .stomatology-page .stom-hero,
+    .stomatology-page .stom-audience,
+    .stomatology-page .stom-included,
+    .stomatology-page .stom-projects,
+    .stomatology-page .stom-process,
+    .stomatology-page .stom-request,
+    .stomatology-page .stom-why {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 375px auto;
+        overflow: hidden;
+    }
+
+    .stomatology-page .stom-hero { background-image: url('../img/stomatology-mobile-sections/section_1_первый_экран.png'); height: 610px; margin-top: 32px; }
+    .stomatology-page .stom-audience { background-image: url('../img/stomatology-mobile-sections/section_2_кому_подходит.png'); height: 811px; margin-top: 100px; }
+    .stomatology-page .stom-included { background-image: url('../img/stomatology-mobile-sections/section_3_что_входит.png'); height: 2073px; margin-top: 97px; }
+    .stomatology-page .stom-projects { background-image: url('../img/stomatology-mobile-sections/section_4_проекты.png'); height: 557px; margin-top: 100px; }
+    .stomatology-page .stom-process { background-image: url('../img/stomatology-mobile-sections/section_5_как_мы_работаем.png'); height: 960px; margin-top: 100px; }
+    .stomatology-page .stom-request { background-image: url('../img/stomatology-mobile-sections/section_6_заявка.png'); height: 645px; margin-top: 80px; }
+    .stomatology-page .stom-why { background-image: url('../img/stomatology-mobile-sections/section_7_почему_выбирают.png'); height: 410px; margin-top: 100px; }
+
+    /* Hide decorative / non-text graphics */
+    .stomatology-page .stom-hero-image,
+    .stomatology-page .stom-hero-feature-img,
+    .stomatology-page .stom-hero-badges,
+    .stomatology-page .stom-audience-card > img,
+    .stomatology-page .stom-audience-card .arrow,
+    .stomatology-page .stom-included-card-img img,
+    .stomatology-page .stom-included-card-num,
+    .stomatology-page .stom-included-result,
+    .stomatology-page .stom-project-card-img,
+    .stomatology-page .stom-project-card-arrow,
+    .stomatology-page .stom-process-image img,
+    .stomatology-page .stom-why-stat--img img,
+    .stomatology-page .stom-why-warehouse img,
+    .stomatology-page .stom-why-feature svg,
+    .stomatology-page .stom-request-icon,
+    .stomatology-page .stom-cta-icon { display: none !important; }
+
+    /* Transparent containers so reference shows through */
+    .stomatology-page .stom-hero-feature-card,
+    .stomatology-page .stom-audience-header,
+    .stomatology-page .stom-audience-card,
+    .stomatology-page .stom-included-card,
+    .stomatology-page .stom-included-card-body,
+    .stomatology-page .stom-included-card-img,
+    .stomatology-page .stom-project-card,
+    .stomatology-page .stom-project-card-img,
+    .stomatology-page .stom-process-card,
+    .stomatology-page .stom-process-image,
+    .stomatology-page .stom-why-stat,
+    .stomatology-page .stom-why-stat--img,
+    .stomatology-page .stom-why-feature,
+    .stomatology-page .stom-why-warehouse,
+    .stomatology-page .stom-request-inner,
+    .stomatology-page .stom-request-form,
+    .stomatology-page .stom-cta-inner { background: transparent !important; }
+
+    /* Request form: reference fields visible, only submit button stays opaque */
+    .stomatology-page .stom-request-form input,
+    .stomatology-page .stom-request-form textarea,
+    .stomatology-page .stom-request-form .phone-input { background: transparent !important; border: none !important; }
+    .stomatology-page .stom-request-form .phone-input img,
+    .stomatology-page .stom-request-form .checkbox { display: none !important; }
+
+    /* Hide site text on transparent backgrounds; keep buttons/inputs visible */
+    .stomatology-page * { color: transparent !important; text-shadow: none !important; }
+    .stomatology-page .stom-hero-btn,
+    .stomatology-page .stom-hero-btn span,
+    .stomatology-page .stom-request-form button,
+    .stomatology-page .stom-request-form button span,
+    .stomatology-page .stom-cta-btn,
+    .stomatology-page .stom-cta-btn span { color: #ffffff !important; }
+    .stomatology-page .stom-request-form input::placeholder,
+    .stomatology-page .stom-request-form textarea::placeholder { color: transparent !important; }
+
+    /* Footer reference background */
+    body.page-template-page-stomatology-php .site-footer {
+        background: url('../img/stomatology-mobile-sections/section_8_футер.png') no-repeat center top;
+        background-size: 375px auto;
+        height: 994px;
+        margin-top: 101px;
+        overflow: hidden;
+    }
+    body.page-template-page-stomatology-php .site-footer .footer-bg,
+    body.page-template-page-stomatology-php .site-footer .map-pulse,
+    body.page-template-page-stomatology-php .site-footer .footer-bottom { display: none !important; }
+    body.page-template-page-stomatology-php .site-footer .footer-card { background: transparent !important; }
+    body.page-template-page-stomatology-php .site-footer * { color: transparent !important; text-shadow: none !important; }
+    body.page-template-page-stomatology-php .site-footer .footer-callback { color: #ffffff !important; }
+}

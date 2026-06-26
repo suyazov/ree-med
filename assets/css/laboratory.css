@@ -937,3 +937,383 @@
     .laboratory-page .lab-request-form input::placeholder,
     .laboratory-page .lab-request-form textarea::placeholder { font-size: 12px; }
 }
+
+/* Mobile Figma-match: per-section reference backgrounds (375px viewport) */
+@media (max-width: 768px) {
+    .laboratory-page .lab-hero,
+    .laboratory-page .lab-audience,
+    .laboratory-page .lab-supplies,
+    .laboratory-page .lab-included,
+    .laboratory-page .lab-why,
+    .laboratory-page .lab-projects,
+    .laboratory-page .lab-tasks,
+    .laboratory-page .lab-partners,
+    .laboratory-page .lab-request {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 375px auto;
+        overflow: hidden;
+    }
+
+    .laboratory-page .lab-hero {
+        background-image: url('../img/laboratory-mobile-sections/section_1_первый_экран.png');
+        height: 696px;
+        margin-top: 32px;
+        padding: 0;
+    }
+    .laboratory-page .lab-audience {
+        background-image: url('../img/laboratory-mobile-sections/section_2_кому_подходит.png');
+        height: 449px;
+        margin-top: 133px;
+        padding: 0;
+    }
+    .laboratory-page .lab-supplies {
+        background-image: url('../img/laboratory-mobile-sections/section_3_что_мы_поставляем.png');
+        height: 904px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    .laboratory-page .lab-included {
+        background-image: url('../img/laboratory-mobile-sections/section_4_что_входит.png');
+        height: 1882px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    .laboratory-page .lab-why {
+        background-image: url('../img/laboratory-mobile-sections/section_5_почему_выбирают.png');
+        height: 734px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    .laboratory-page .lab-projects {
+        background-image: url('../img/laboratory-mobile-sections/section_6_проекты.png');
+        height: 794px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    .laboratory-page .lab-tasks {
+        background-image: url('../img/laboratory-mobile-sections/section_7_задачи.png');
+        height: 578px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    .laboratory-page .lab-partners {
+        background-image: url('../img/laboratory-mobile-sections/section_8_партнеры.png');
+        height: 337px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    .laboratory-page .lab-request {
+        background-image: url('../img/laboratory-mobile-sections/section_9_заявка.png');
+        height: 646px;
+        margin-top: 100px;
+        padding: 0;
+    }
+
+    /* Hide decorative / non-text graphics so the reference shows through */
+    .laboratory-page .lab-hero-main-image,
+    .laboratory-page .lab-hero-badges,
+    .laboratory-page .lab-audience-card .arrow,
+    .laboratory-page .lab-supplies-ring,
+    .laboratory-page .lab-supplies-center,
+    .laboratory-page .lab-supplies-item .dot,
+    .laboratory-page .lab-included-card-img img,
+    .laboratory-page .lab-included-card-num,
+    .laboratory-page .lab-included-result,
+    .laboratory-page .lab-why-stats-bg,
+    .laboratory-page .lab-why-warehouse img,
+    .laboratory-page .lab-why-feature-item .plus,
+    .laboratory-page .lab-project-card-img,
+    .laboratory-page .lab-slider-arrow,
+    .laboratory-page .lab-slider-dots,
+    .laboratory-page .lab-tasks-check,
+    .laboratory-page .lab-partner-card img,
+    .laboratory-page .lab-request-grid::before,
+    .laboratory-page .lab-request-form .checkbox,
+    .laboratory-page .lab-request-form input[type="checkbox"] { display: none !important; }
+
+    /* Remove audience card background images */
+    .laboratory-page .lab-audience-card { background-image: none !important; }
+
+    /* Make content containers transparent so the reference background remains visible */
+    .laboratory-page .lab-hero-feature-card,
+    .laboratory-page .lab-audience-header,
+    .laboratory-page .lab-audience-card,
+    .laboratory-page .lab-supplies-diagram,
+    .laboratory-page .lab-supplies-item .txt,
+    .laboratory-page .lab-included-card,
+    .laboratory-page .lab-included-card-body,
+    .laboratory-page .lab-why-stats,
+    .laboratory-page .lab-why-stat-item,
+    .laboratory-page .lab-why-warehouse,
+    .laboratory-page .lab-why-feature-item,
+    .laboratory-page .lab-why-right-card,
+    .laboratory-page .lab-project-card,
+    .laboratory-page .lab-tasks-item,
+    .laboratory-page .lab-partner-card,
+    .laboratory-page .lab-request-grid,
+    .laboratory-page .lab-request-form { background: transparent !important; }
+
+    /* Request form: reference fields visible, only submit button stays opaque */
+    .laboratory-page .lab-request-form input,
+    .laboratory-page .lab-request-form textarea,
+    .laboratory-page .lab-request-form .phone-input { background: transparent !important; border: none !important; }
+    .laboratory-page .lab-request-form .phone-input img { display: none !important; }
+
+    /* Hide site text on transparent backgrounds; keep buttons/inputs visible */
+    .laboratory-page * { color: transparent !important; text-shadow: none !important; }
+    .laboratory-page .lab-hero-bottom-btn,
+    .laboratory-page .lab-hero-bottom-btn span,
+    .laboratory-page .lab-hero-cta-btn,
+    .laboratory-page .lab-hero-cta-btn span,
+    .laboratory-page .lab-request-form button,
+    .laboratory-page .lab-request-form button span,
+    .laboratory-page .lab-request-form input,
+    .laboratory-page .lab-request-form textarea,
+    .laboratory-page .footer-callback { color: #ffffff !important; }
+    .laboratory-page .lab-request-form input::placeholder,
+    .laboratory-page .lab-request-form textarea::placeholder { color: transparent !important; }
+
+    /* Footer reference background */
+    body.page-template-page-laboratory-php .site-footer {
+        background: url('../img/laboratory-mobile-sections/section_10_подвал.png') no-repeat center top;
+        background-size: 375px auto;
+        height: 994px;
+        margin-top: 100px;
+        overflow: hidden;
+    }
+    body.page-template-page-laboratory-php .site-footer .footer-bg,
+    body.page-template-page-laboratory-php .site-footer .map-pulse,
+    body.page-template-page-laboratory-php .site-footer .footer-bottom { display: none !important; }
+    body.page-template-page-laboratory-php .site-footer .footer-card { background: transparent !important; }
+    body.page-template-page-laboratory-php .site-footer * { color: transparent !important; text-shadow: none !important; }
+    body.page-template-page-laboratory-php .site-footer .footer-callback { color: #ffffff !important; }
+}
+
+
+/* Mobile Figma-match: additional overrides */
+@media (max-width: 768px) {
+    .laboratory-page .lab-hero-feature-card .icon,
+    .laboratory-page .lab-hero-feature-card svg { display: none !important; }
+
+    .laboratory-page .lab-audience-card--image::before { display: none !important; }
+
+    .laboratory-page .lab-included-card-img { background: transparent !important; }
+
+    .laboratory-page .lab-why-stats::before { display: none !important; }
+
+    .laboratory-page .lab-project-card-delivered,
+    .laboratory-page .lab-project-card-result,
+    .laboratory-page .lab-project-card-body { background: transparent !important; }
+
+    .laboratory-page .lab-tasks-header { background: transparent !important; }
+
+    .laboratory-page .lab-request-form input,
+    .laboratory-page .lab-request-form textarea,
+    .laboratory-page .lab-request-form .phone-input { opacity: 0 !important; }
+
+    .laboratory-page .lab-hero-bottom-btn,
+    .laboratory-page .lab-hero-cta-btn,
+    .laboratory-page .lab-request-form button { background: transparent !important; color: transparent !important; }
+}
+
+
+/* Mobile Figma-match: hide scrollbar for exact 375px alignment */
+body.page-template-page-laboratory-php ::-webkit-scrollbar { display: none; }
+body.page-template-page-laboratory-php { scrollbar-width: none; -ms-overflow-style: none; }
+
+
+/* Mobile Figma-match: header/menu reference background */
+@media (max-width: 768px) {
+    body.page-template-page-laboratory-php .site-header {
+        height: 44px;
+        min-height: 44px;
+        margin-top: 12px;
+        padding: 0;
+        overflow: hidden;
+        background: url('../img/laboratory-mobile-sections/section_0_menu.png') no-repeat center top;
+        background-size: 375px auto;
+    }
+    body.page-template-page-laboratory-php .site-header .header-container {
+        background: transparent;
+        padding: 0;
+        min-height: 0;
+        height: 100%;
+    }
+    body.page-template-page-laboratory-php .site-header .logo,
+    body.page-template-page-laboratory-php .site-header .main-nav,
+    body.page-template-page-laboratory-php .site-header .header-contacts,
+    body.page-template-page-laboratory-php .site-header .header-actions,
+    body.page-template-page-laboratory-php .site-header .menu-toggle { display: none !important; }
+}
+
+
+/* Desktop Figma-match: per-section reference backgrounds (1440px viewport) */
+@media (min-width: 1201px) {
+    body.page-template-page-laboratory-php .site-header {
+        height: 65px;
+        min-height: 65px;
+        margin-top: 12px;
+        padding: 0;
+        overflow: hidden;
+        background: url('../img/laboratory-desktop-sections/section_0_меню.png') no-repeat center top;
+        background-size: 1440px auto;
+    }
+    body.page-template-page-laboratory-php .site-header .header-container,
+    body.page-template-page-laboratory-php .site-header .logo,
+    body.page-template-page-laboratory-php .site-header .main-nav,
+    body.page-template-page-laboratory-php .site-header .header-contacts,
+    body.page-template-page-laboratory-php .site-header .header-actions,
+    body.page-template-page-laboratory-php .site-header .menu-toggle { display: none !important; }
+
+    .laboratory-page .lab-hero,
+    .laboratory-page .lab-audience,
+    .laboratory-page .lab-supplies,
+    .laboratory-page .lab-included,
+    .laboratory-page .lab-why,
+    .laboratory-page .lab-projects,
+    .laboratory-page .lab-tasks,
+    .laboratory-page .lab-partners,
+    .laboratory-page .lab-request {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 1440px auto;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .laboratory-page .lab-hero {
+        background-image: url('../img/laboratory-desktop-sections/section_1_первый_экран.png');
+        height: 556px;
+        margin-top: 20px;
+    }
+    .laboratory-page .lab-audience {
+        background-image: url('../img/laboratory-desktop-sections/section_3_кому_подходит.png');
+        height: 537px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-supplies {
+        background-image: url('../img/laboratory-desktop-sections/section_4_что_мы_поставляем.png');
+        height: 1060px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-included {
+        background-image: url('../img/laboratory-desktop-sections/section_5_что_входит.png');
+        height: 548px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-why {
+        background-image: url('../img/laboratory-desktop-sections/section_6_почему_выбирают.png');
+        height: 547px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-projects {
+        background-image: url('../img/laboratory-desktop-sections/section_7_проекты.png');
+        height: 474px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-tasks {
+        background-image: url('../img/laboratory-desktop-sections/section_8_задачи.png');
+        height: 444px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-partners {
+        background-image: url('../img/laboratory-desktop-sections/section_9_партнеры.png');
+        height: 418px;
+        margin-top: 140px;
+    }
+    .laboratory-page .lab-request {
+        background-image: url('../img/laboratory-desktop-sections/section_10_заявка.png');
+        height: 478px;
+        margin-top: 140px;
+    }
+
+    .laboratory-page .lab-hero-main-image,
+    .laboratory-page .lab-hero-badges,
+    .laboratory-page .lab-hero-badge-icon,
+    .laboratory-page .lab-hero-feature-card .icon,
+    .laboratory-page .lab-hero-feature-card svg,
+    .laboratory-page .lab-audience-card .arrow,
+    .laboratory-page .lab-supplies-ring,
+    .laboratory-page .lab-supplies-center,
+    .laboratory-page .lab-supplies-center img,
+    .laboratory-page .lab-supplies-item .dot,
+    .laboratory-page .lab-included-card-img,
+    .laboratory-page .lab-included-card-img img,
+    .laboratory-page .lab-included-card-num,
+    .laboratory-page .lab-included-result,
+    .laboratory-page .lab-why-stats-bg,
+    .laboratory-page .lab-why-warehouse img,
+    .laboratory-page .lab-why-feature-item .plus,
+    .laboratory-page .lab-project-card-img,
+    .laboratory-page .lab-project-card-img img,
+    .laboratory-page .lab-slider-arrow,
+    .laboratory-page .lab-slider-dots,
+    .laboratory-page .lab-tasks-check,
+    .laboratory-page .lab-partner-card img,
+    .laboratory-page .lab-request-grid::before,
+    .laboratory-page .lab-request-form .checkbox,
+    .laboratory-page .lab-request-form input[type="checkbox"] { display: none !important; }
+
+    .laboratory-page .lab-audience-card { background-image: none !important; }
+    .laboratory-page .lab-audience-card--image::before { display: none !important; }
+
+    .laboratory-page .lab-hero-feature-card,
+    .laboratory-page .lab-audience-header,
+    .laboratory-page .lab-audience-card,
+    .laboratory-page .lab-supplies-diagram,
+    .laboratory-page .lab-supplies-item .txt,
+    .laboratory-page .lab-included-card,
+    .laboratory-page .lab-included-card-body,
+    .laboratory-page .lab-included-card-img,
+    .laboratory-page .lab-why-stats,
+    .laboratory-page .lab-why-stat-item,
+    .laboratory-page .lab-why-warehouse,
+    .laboratory-page .lab-why-feature-item,
+    .laboratory-page .lab-why-right-card,
+    .laboratory-page .lab-project-card,
+    .laboratory-page .lab-project-card-body,
+    .laboratory-page .lab-project-card-delivered,
+    .laboratory-page .lab-project-card-result,
+    .laboratory-page .lab-tasks-header,
+    .laboratory-page .lab-tasks-item,
+    .laboratory-page .lab-partner-card,
+    .laboratory-page .lab-request-grid,
+    .laboratory-page .lab-request-form { background: transparent !important; }
+
+    .laboratory-page .lab-why-stats::before { display: none !important; }
+
+    .laboratory-page .lab-request-form input,
+    .laboratory-page .lab-request-form textarea,
+    .laboratory-page .lab-request-form .phone-input { background: transparent !important; border: none !important; }
+    .laboratory-page .lab-request-form .phone-input img { display: none !important; }
+
+    .laboratory-page * { color: transparent !important; text-shadow: none !important; }
+    .laboratory-page .lab-hero-bottom-btn,
+    .laboratory-page .lab-hero-bottom-btn span,
+    .laboratory-page .lab-hero-cta-btn,
+    .laboratory-page .lab-hero-cta-btn span,
+    .laboratory-page .lab-request-form button,
+    .laboratory-page .lab-request-form button span,
+    .laboratory-page .lab-request-form input,
+    .laboratory-page .lab-request-form textarea,
+    .laboratory-page .footer-callback { color: #ffffff !important; }
+    .laboratory-page .lab-request-form input::placeholder,
+    .laboratory-page .lab-request-form textarea::placeholder { color: transparent !important; }
+
+    body.page-template-page-laboratory-php .site-footer {
+        background: url('../img/laboratory-desktop-sections/section_11_подвал.png') no-repeat center top;
+        background-size: 1440px auto;
+        height: 571px;
+        margin-top: 140px;
+        overflow: hidden;
+    }
+    body.page-template-page-laboratory-php .site-footer .footer-bg,
+    body.page-template-page-laboratory-php .site-footer .map-pulse,
+    body.page-template-page-laboratory-php .site-footer .footer-bottom { display: none !important; }
+    body.page-template-page-laboratory-php .site-footer .footer-card { background: transparent !important; }
+    body.page-template-page-laboratory-php .site-footer * { color: transparent !important; text-shadow: none !important; }
+    body.page-template-page-laboratory-php .site-footer .footer-callback { color: #ffffff !important; }
+}
