@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.8.12');
+define('TRIMED_VERSION', '1.10.0');
 
 // Email для заявок: можно переопределить в wp-config.php через define('TRIMED_FORM_EMAIL', 'email@example.com')
 if (!defined('TRIMED_FORM_EMAIL')) {
@@ -24,7 +24,7 @@ function trimed_setup() {
 add_action('after_setup_theme', 'trimed_setup');
 
 function trimed_favicon() {
-    echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/logo.png') . '">\n';
+    echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/logo.png') . '">' . "\n";
 }
 add_action('wp_head', 'trimed_favicon', 1);
 
@@ -48,6 +48,10 @@ function trimed_enqueue_assets() {
     wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), TRIMED_VERSION);
     wp_enqueue_style('trimed-main', get_template_directory_uri() . '/assets/css/main.css', array('trimed-style'), TRIMED_VERSION);
 
+    if (is_front_page()) {
+        wp_enqueue_style('trimed-home', get_template_directory_uri() . '/assets/css/home.css', array('trimed-main'), TRIMED_VERSION);
+    }
+
     wp_enqueue_script('trimed-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), TRIMED_VERSION, true);
     wp_localize_script('trimed-main', 'trimed_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
@@ -55,6 +59,27 @@ function trimed_enqueue_assets() {
     ));
 }
 add_action('wp_enqueue_scripts', 'trimed_enqueue_assets');
+
+function trimed_document_title($title) {
+    if (is_front_page() && !is_admin()) {
+        $title['title'] = 'Главная — ТриМед';
+        $title['tagline'] = '';
+    }
+    return $title;
+}
+add_filter('document_title_parts', 'trimed_document_title');
+
+function trimed_nav_menu_objects($items, $args) {
+    if (is_front_page() && isset($args->theme_location) && $args->theme_location === 'primary') {
+        foreach ($items as $key => $item) {
+            if ($item->title === 'Медцентры') {
+                unset($items[$key]);
+            }
+        }
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'trimed_nav_menu_objects', 10, 2);
 
 function trimed_enqueue_page_assets() {
     if (is_page_template('page-stomatology.php')) {
@@ -124,3 +149,4 @@ add_filter('excerpt_length', 'trimed_excerpt_length', 999);
 // ACF fields
 require_once get_template_directory() . '/inc/acf-fields.php';
 require_once get_template_directory() . '/inc/acf-fields-medcentry.php';
+require_once get_template_directory() . '/inc/acf-fields-main.php';

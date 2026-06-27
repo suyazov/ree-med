@@ -26,3 +26,6 @@ Thumbs.db
 
 # WordPress uploads (if any)
 uploads/
+
+# Heavy Figma audit artifacts (screenshots, node_modules, JSON dumps)
+figma-audit/
