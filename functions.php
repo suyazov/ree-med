@@ -3,7 +3,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.8.11');
+define('TRIMED_VERSION', '1.8.12');
+
+// Email для заявок: можно переопределить в wp-config.php через define('TRIMED_FORM_EMAIL', 'email@example.com')
+if (!defined('TRIMED_FORM_EMAIL')) {
+    define('TRIMED_FORM_EMAIL', '');
+}
 
 function trimed_setup() {
     add_theme_support('title-tag');
@@ -17,6 +22,26 @@ function trimed_setup() {
     ));
 }
 add_action('after_setup_theme', 'trimed_setup');
+
+function trimed_favicon() {
+    echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/logo.png') . '">\n';
+}
+add_action('wp_head', 'trimed_favicon', 1);
+
+function trimed_get_contact($key, $fallback = '') {
+    if (function_exists('get_field')) {
+        $value = get_field('trimed_contact_' . $key, 'option');
+        if (!empty($value)) {
+            return $value;
+        }
+    }
+    $fallbacks = array(
+        'phone'   => '+7 (3022) 31 88 88',
+        'email'   => 'treemed16@yandex.ru',
+        'address' => 'Чита, ул.Фёдора Гладкова, 8А пом. 8',
+    );
+    return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
+}
 
 function trimed_enqueue_assets() {
     wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&subset=cyrillic&display=swap', array(), null);
@@ -64,14 +89,29 @@ function trimed_handle_contact_form() {
         wp_send_json_error('Необходимо согласие на обработку персональных данных.');
     }
 
-    $to = get_option('admin_email');
+    $to = TRIMED_FORM_EMAIL;
+    if (empty($to) && function_exists('get_field')) {
+        $to = get_field('trimed_contact_email', 'option');
+    }
+    if (empty($to)) {
+        $to = get_option('admin_email');
+    }
+
+    if (empty($to) || !is_email($to)) {
+        wp_send_json_error('Не настроен email получателя. Обратитесь к администратору сайта.');
+    }
+
     $subject = 'Новая заявка с сайта ТриМед';
     $message = "Имя: $name\nТелефон: $phone\nОрганизация: $org\nКомментарий: $comment";
     $headers = array('Content-Type: text/plain; charset=UTF-8');
 
-    wp_mail($to, $subject, $message, $headers);
+    $sent = wp_mail($to, $subject, $message, $headers);
 
-    wp_send_json_success('Спасибо! Ваша заявка отправлена.');
+    if ($sent) {
+        wp_send_json_success('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+    } else {
+        wp_send_json_error('Не удалось отправить заявку. Попробуйте позже или свяжитесь с нами по телефону.');
+    }
 }
 add_action('wp_ajax_trimed_contact', 'trimed_handle_contact_form');
 add_action('wp_ajax_nopriv_trimed_contact', 'trimed_handle_contact_form');
@@ -83,3 +123,4 @@ add_filter('excerpt_length', 'trimed_excerpt_length', 999);
 
 // ACF fields
 require_once get_template_directory() . '/inc/acf-fields.php';
+require_once get_template_directory() . '/inc/acf-fields-medcentry.php';

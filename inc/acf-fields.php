@@ -1,7 +1,87 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Контакты и настройки темы',
+        'menu_title' => 'Контакты ТриМед',
+        'menu_slug'  => 'trimed-theme-options',
+        'capability' => 'manage_options',
+        'redirect'   => false,
+    ));
+}
+
 if (function_exists('acf_add_local_field_group')) {
+
+    // Theme contacts / options
+    acf_add_local_field_group(array(
+        'key' => 'group_trimed_contacts',
+        'title' => 'Контакты сайта',
+        'fields' => array(
+            array(
+                'key' => 'field_trimed_contact_phone',
+                'label' => 'Телефон',
+                'name' => 'trimed_contact_phone',
+                'type' => 'text',
+                'default_value' => '+7 (3022) 31 88 88',
+            ),
+            array(
+                'key' => 'field_trimed_contact_email',
+                'label' => 'Email для заявок',
+                'name' => 'trimed_contact_email',
+                'type' => 'text',
+                'default_value' => 'treemed16@yandex.ru',
+                'instructions' => 'Используется как получатель заявок с форм. Также можно переопределить через константу TRIMED_FORM_EMAIL в wp-config.php.',
+            ),
+            array(
+                'key' => 'field_trimed_contact_address',
+                'label' => 'Адрес',
+                'name' => 'trimed_contact_address',
+                'type' => 'text',
+                'default_value' => 'Чита, ул.Фёдора Гладкова, 8А пом. 8',
+            ),
+            array(
+                'key' => 'field_trimed_contact_socials',
+                'label' => 'Социальные сети',
+                'name' => 'trimed_contact_socials',
+                'type' => 'repeater',
+                'min' => 0,
+                'max' => 5,
+                'layout' => 'table',
+                'button_label' => 'Добавить соцсеть',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_trimed_social_url',
+                        'label' => 'Ссылка',
+                        'name' => 'url',
+                        'type' => 'url',
+                    ),
+                    array(
+                        'key' => 'field_trimed_social_icon',
+                        'label' => 'Иконка',
+                        'name' => 'icon',
+                        'type' => 'image',
+                        'return_format' => 'url',
+                        'preview_size' => 'thumbnail',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'trimed-theme-options',
+                ),
+            ),
+        ),
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+    ));
+
     acf_add_local_field_group(array(
         'key' => 'group_disinfection_page',
         'title' => 'Страница Дезинфекция',
