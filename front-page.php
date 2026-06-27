@@ -180,9 +180,8 @@ $form_btn   = get_field('main_form_btn')   ?: 'Получить консульт
     <section class="home-hero">
         <div class="container">
             <div class="home-hero-grid">
-                <div class="home-hero-top">
+                <div class="home-hero-title-wrap">
                     <h1 class="home-hero-title"><span>Комплексное оснащение</span> <span class="text-green">медицинских учреждений</span> <span>в Забайкальском крае</span></h1>
-                    <p class="home-hero-desc"><?php echo wp_kses_post($hero_desc); ?></p>
                 </div>
                 <div class="home-hero-image-wrap">
                     <a href="#" class="home-hero-shop-btn"><?php echo esc_html($hero_btn2); ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -201,6 +200,9 @@ $form_btn   = get_field('main_form_btn')   ?: 'Получить консульт
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
+                </div>
+                <div class="home-hero-desc-block">
+                    <p class="home-hero-desc"><?php echo wp_kses_post($hero_desc); ?></p>
                 </div>
                 <div class="home-hero-bottom">
                     <div class="home-hero-thumb">
