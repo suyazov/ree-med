@@ -8,6 +8,8 @@
 
 Подробная документация по проекту находится в файле [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md).
 
+Регламент совместной работы AI-агентов: [`AI_HANDOFF.md`](AI_HANDOFF.md).
+
 ## Быстрый старт
 
 1. Активировать тему `trimed` в админке WordPress.
