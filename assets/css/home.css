@@ -236,6 +236,109 @@ body.home .site-header {
     opacity: 0.9;
 }
 
+/* Mobile hero 375 fine-tuning (Figma AS2 frame 3116:538) */
+@media (max-width: 991px) {
+    .home-hero .container {
+        padding: 0 16px;
+    }
+
+    .home-hero-grid {
+        gap: 20px;
+    }
+
+    .home-hero-title-wrap {
+        margin-bottom: 0;
+    }
+
+    .home-hero-title {
+        font-size: 28px;
+        line-height: 94%;
+        letter-spacing: -0.03em;
+        margin-bottom: 0;
+    }
+
+    .home-hero-image-wrap {
+        border-radius: 12px;
+    }
+
+    .home-hero-image {
+        height: 244px;
+        min-height: 244px;
+        border-radius: 12px;
+    }
+
+    .home-hero-badges {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .home-hero-badge {
+        padding: 12px;
+        border-radius: 12px;
+        line-height: 120%;
+    }
+
+    .home-hero-badge.light {
+        flex: 0 0 auto;
+        background: rgba(39, 81, 69, 0.12);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #EFEFEF;
+    }
+
+    .home-hero-badge .badge-text {
+        font-weight: 400;
+    }
+
+    .home-hero-badge.stat {
+        flex: 0 0 auto;
+        background: var(--gradient-light-green);
+        color: #EFEFEF;
+    }
+
+    .home-hero-badge.stat .badge-text {
+        font-size: 28px;
+        line-height: 1.1;
+        font-weight: 600;
+    }
+
+    .home-hero-desc {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .home-hero-check-card {
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 4px;
+    }
+
+    .home-hero-check {
+        width: max-content;
+        max-width: 100%;
+        min-height: 44px;
+        padding: 14px 16px;
+        border-radius: 8px;
+        gap: 16px;
+        font-size: 12px;
+        line-height: 130%;
+        background: var(--color-gray);
+    }
+
+    .home-hero-cta,
+    .home-hero-shop-btn-mobile {
+        min-height: 57px;
+        font-size: 14px;
+    }
+
+    .home-hero-shop-btn-mobile {
+        background: var(--gradient-light-green);
+    }
+}
+
 /* About */
 .home-about {
     background: var(--color-white);
@@ -1516,13 +1619,5 @@ body.home .site-footer .map-pulse {
 
     .categories-grid {
         grid-template-columns: 1fr;
-    }
-
-    .home-hero-title {
-        font-size: 26px;
-    }
-
-    .home-hero-badge.stat .badge-text {
-        font-size: 24px;
     }
 }
