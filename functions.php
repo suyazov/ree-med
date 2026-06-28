@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.10.9');
+define('TRIMED_VERSION', '1.10.10');
 
 // Email для заявок: можно переопределить в wp-config.php через define('TRIMED_FORM_EMAIL', 'email@example.com')
 if (!defined('TRIMED_FORM_EMAIL')) {

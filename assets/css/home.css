@@ -345,11 +345,17 @@ body.home .site-header {
     padding: 80px 0;
 }
 
+.home-about .container {
+    padding: 0 16px;
+}
+
 .home-about-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
     align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .home-about-left {
@@ -357,31 +363,37 @@ body.home .site-header {
 }
 
 .home-about-text {
-    background: var(--color-green);
+    background: linear-gradient(135deg, #367643 0%, #315046 100%);
     border-radius: 20px;
-    padding: 32px;
+    padding: 20px;
+    min-height: 221px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    position: relative;
 }
 
 .home-about-text .section-title {
     margin: 0;
-    font-size: 28px;
+    font-size: 22px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: #EFEFEF;
 }
 
 .home-about-desc {
-    color: var(--color-white);
-    font-size: 16px;
-    line-height: 140%;
+    color: #EFEFEF;
+    font-size: 14px;
+    line-height: 120%;
     margin: 0;
-    opacity: 0.9;
 }
 
 .home-about-add {
-    color: var(--color-black);
+    color: #353535;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    margin: 0;
 }
 
 .home-about-visual {
@@ -397,36 +409,50 @@ body.home .site-header {
 .home-about-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 8px;
+    width: 100%;
 }
 
 .about-stat {
-    background: var(--color-light-green-2);
     border-radius: 12px;
-    padding: 20px;
-    color: var(--color-white);
+    padding: 16px;
+    min-height: 151px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 120px;
+    justify-content: flex-end;
+    position: relative;
 }
 
-.about-stat:nth-child(2),
+.about-stat:nth-child(1) {
+    background: #F9F9F9;
+    color: #353535;
+}
+
+.about-stat:nth-child(2) {
+    background: var(--color-green);
+    color: #EFEFEF;
+}
+
 .about-stat:nth-child(3) {
-    background: var(--color-dark-green);
+    background: var(--gradient-light-green);
+    color: #EFEFEF;
+}
+
+.about-stat:nth-child(4) {
+    background: #E6E7E8;
+    color: #353535;
 }
 
 .about-stat-num {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 110%;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 4px;
 }
 
 .about-stat-label {
-    font-size: 13px;
-    line-height: 130%;
-    opacity: 0.9;
+    font-size: 14px;
+    line-height: 110%;
 }
 
 /* Directions */
@@ -1311,10 +1337,19 @@ body.home .site-footer .map-pulse {
     }
 
     /* About */
+    .home-about {
+        padding: 140px 0;
+    }
+
+    .home-about .container {
+        padding: 0 20px;
+    }
+
     .home-about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        align-items: stretch;
+        grid-template-columns: minmax(0, 360px) minmax(0, 792px);
+        gap: 32px;
+        align-items: start;
+        justify-content: center;
     }
 
     .home-about-text {
@@ -1324,6 +1359,7 @@ body.home .site-footer .map-pulse {
         justify-content: space-between;
         gap: 48px;
         padding: 40px;
+        min-height: 260px;
     }
 
     .home-about-text .section-title {
@@ -1334,30 +1370,31 @@ body.home .site-footer .map-pulse {
     .home-about-desc {
         flex: 1;
         font-size: 20px;
-        line-height: 130%;
+        line-height: 120%;
     }
 
     .home-about-add {
         grid-column: 1;
         align-self: start;
         font-size: 20px;
-        line-height: 130%;
+        line-height: 110%;
+        letter-spacing: -0.03em;
         max-width: 360px;
-        padding-top: 20px;
+        padding-top: 24px;
     }
 
     .home-about-visual {
         grid-column: 2;
-        height: 100%;
+        align-items: flex-end;
     }
 
     .home-about-stats {
-        height: 100%;
-        gap: 16px;
+        max-width: 792px;
+        gap: 28px;
     }
 
     .about-stat {
-        min-height: 180px;
+        min-height: 229px;
         padding: 24px;
     }
 
@@ -1365,8 +1402,12 @@ body.home .site-footer .map-pulse {
         font-size: 48px;
     }
 
+    .about-stat:nth-child(2) .about-stat-num {
+        font-size: 40px;
+    }
+
     .about-stat-label {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     /* Directions */
