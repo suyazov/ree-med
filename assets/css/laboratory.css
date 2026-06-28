@@ -865,19 +865,21 @@
     .laboratory-page .lab-supplies-ring--outer { width: 120%; }
     .laboratory-page .lab-supplies-center { display: none; }
     .laboratory-page .lab-supplies-items { position: absolute; inset: 0; }
-    .laboratory-page .lab-supplies-item { position: absolute; font-size: 11px; gap: 4px; max-width: 110px; white-space: normal; }
-    .laboratory-page .lab-supplies-item .dot { width: 14px; height: 14px; border-width: 2px; margin-top: 0; }
-    .laboratory-page .lab-supplies-item .txt { padding: 5px 6px; }
-    .laboratory-page .lab-supplies-item:nth-child(1) { left: 50%; top: 26%; }
-    .laboratory-page .lab-supplies-item:nth-child(2) { left: 8%; top: 32%; }
-    .laboratory-page .lab-supplies-item:nth-child(3) { left: 52%; top: 38%; }
-    .laboratory-page .lab-supplies-item:nth-child(4) { left: 6%; top: 45%; }
-    .laboratory-page .lab-supplies-item:nth-child(5) { left: 50%; top: 52%; }
-    .laboratory-page .lab-supplies-item:nth-child(6) { left: 8%; top: 58%; }
-    .laboratory-page .lab-supplies-item:nth-child(7) { left: 48%; top: 65%; }
-    .laboratory-page .lab-supplies-item:nth-child(8) { left: 8%; top: 71%; }
-    .laboratory-page .lab-supplies-item:nth-child(9) { left: 44%; top: 78%; }
-    .laboratory-page .lab-supplies-item:nth-child(10) { left: 10%; top: 84%; }
+    .laboratory-page .lab-supplies-item { position: absolute; font-size: 10px; line-height: 1.15; gap: 3px; max-width: 104px; white-space: normal; }
+    .laboratory-page .lab-supplies-item .dot { width: 13px; height: 13px; border-width: 2px; margin-top: 0; flex: 0 0 13px; }
+    .laboratory-page .lab-supplies-item .txt { padding: 5px 6px; overflow-wrap: anywhere; }
+    .laboratory-page .lab-supplies-item:not(.lab-supplies-item--left) { left: auto !important; right: 8px !important; }
+    .laboratory-page .lab-supplies-item--left { left: 18px !important; max-width: 118px; }
+    .laboratory-page .lab-supplies-item:nth-child(1) { top: 26% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(2) { top: 38% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(3) { top: 51% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(4) { top: 65% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(5) { top: 79% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(6) { top: 31% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(7) { top: 45% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(8) { top: 59% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(9) { top: 73% !important; }
+    .laboratory-page .lab-supplies-item:nth-child(10) { top: 86% !important; }
     .laboratory-page .lab-included { padding: 60px 0; }
     .laboratory-page .lab-included .lab-section-inner { padding: 0 16px; }
     .laboratory-page .lab-included-title { font-size: 24px; margin-bottom: 16px; color: var(--color-green); max-width: 240px; }
