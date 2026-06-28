@@ -70,7 +70,7 @@ $process_image    = stom_image_url('stom_process_image', $img_dir . '/stomatolog
 $request_title  = get_field('stom_request_title') ?: 'Подберём оборудование под вашу <em>стоматологию</em>';
 $request_desc   = get_field('stom_request_desc') ?: 'Оставьте заявку — свяжемся с вами и предложим решение';
 $request_note   = get_field('stom_request_note') ?: 'Консультация бесплатная';
-$request_button = get_field('stom_request_button_text') ?: 'Отправить';
+$request_button = get_field('stom_request_button_text') ?: 'Получить консультацию';
 
 $why_title    = get_field('stom_why_title') ?: 'Почему выбирают <span class="text-green">ТриМед</span>';
 $why_stats    = get_field('stom_why_stats');

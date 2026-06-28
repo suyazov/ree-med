@@ -172,7 +172,8 @@ if (empty($testimonials)) {
 // Form
 $form_title = get_field('main_form_title') ?: 'Подберём оборудование под задачи вашей клиники';
 $form_desc  = get_field('main_form_desc')  ?: 'Оставьте заявку и получите консультацию специалиста';
-$form_btn   = get_field('main_form_btn')   ?: 'Получить консультацию';
+$form_btn_raw = get_field('main_form_btn');
+$form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') ? $form_btn_raw : 'Получить консультацию';
 ?>
 
 <main class="front-page">

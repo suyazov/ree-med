@@ -184,7 +184,7 @@ $partners = lab_get_repeater('lab_partners', $default_partners);
 // Request
 $request_title = lab_get_field('lab_request_title', 'Подберём решение для вашего учреждения');
 $request_desc = lab_get_field('lab_request_desc', 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий.');
-$request_button_text = lab_get_field('lab_request_button_text', 'Отправить');
+$request_button_text = lab_get_field('lab_request_button_text', 'Получить консультацию');
 ?>
 
 <main class="laboratory-page">

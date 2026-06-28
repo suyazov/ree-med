@@ -272,6 +272,7 @@ body.home .site-header {
         right: 12px;
         bottom: 12px;
         gap: 8px;
+        justify-content: flex-start;
     }
 
     .home-hero-badge {
@@ -281,7 +282,8 @@ body.home .site-header {
     }
 
     .home-hero-badge.light {
-        flex: 0 0 auto;
+        flex: 0 1 auto;
+        max-width: 70%;
         background: rgba(39, 81, 69, 0.12);
         backdrop-filter: blur(40px);
         -webkit-backdrop-filter: blur(40px);
@@ -822,8 +824,8 @@ body.home .site-header {
 }
 
 .step-card {
-    background: var(--color-green);
-    color: var(--color-white);
+    background: var(--color-white-2);
+    color: var(--color-black);
     border-radius: 12px;
     padding: 16px;
     display: flex;
@@ -832,8 +834,15 @@ body.home .site-header {
     min-height: 120px;
 }
 
+.step-card:nth-child(1),
+.step-card:nth-child(4) {
+    background: var(--color-green);
+    color: var(--color-white);
+}
+
 .step-card-last {
-    background: var(--color-dark-green);
+    background: var(--color-white-2);
+    color: var(--color-black);
     grid-column: span 2;
     min-height: auto;
 }
@@ -842,12 +851,18 @@ body.home .site-header {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-green);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     font-weight: 700;
+}
+
+.step-card:nth-child(1) .step-num,
+.step-card:nth-child(4) .step-num {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .step-title {
@@ -949,6 +964,7 @@ body.home .site-header {
 
 .testimonial-card {
     flex: 0 0 calc(100% - 8px);
+    max-width: calc(100% - 8px);
     background: var(--color-white-2);
     border-radius: 12px;
     padding: 20px;
@@ -1101,16 +1117,41 @@ body.home .site-header {
 
 .checkbox-label {
     display: flex;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
     font-size: 12px;
     line-height: 140%;
     color: var(--color-black);
 }
 
-.checkbox-label input {
+.checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin: 0;
+    border: 1px solid var(--color-green);
+    border-radius: 4px;
+    background: var(--color-white);
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: var(--color-green);
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--color-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 .checkbox-label a {
@@ -1119,8 +1160,10 @@ body.home .site-header {
 }
 
 .request-submit {
-    width: 100%;
-    padding: 16px;
+    width: auto;
+    min-width: 220px;
+    align-self: flex-start;
+    padding: 16px 32px;
     font-size: 14px;
 }
 
@@ -1308,8 +1351,8 @@ body.home .site-footer .map-pulse {
     }
 
     .home-hero-badge:last-child {
-        background: rgba(230, 231, 232, 0.92);
-        color: var(--color-black);
+        background: var(--gradient-light-green);
+        color: var(--color-white);
         max-width: 166px;
         padding: 12px 20px;
     }
@@ -1323,7 +1366,7 @@ body.home .site-footer .map-pulse {
         font-size: 40px;
         line-height: 48px;
         font-weight: 600;
-        color: var(--color-black);
+        color: #EFEFEF;
     }
 
     .home-hero-badge:last-child .badge-sub {
@@ -1528,6 +1571,14 @@ body.home .site-footer .map-pulse {
         gap: 16px;
     }
 
+    .category-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .category-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .category-card:nth-child(3) { grid-column: 3; grid-row: 1; }
+    .category-card:nth-child(4) { grid-column: 1; grid-row: 2; }
+    .category-card:nth-child(5) { grid-column: 2; grid-row: 2; }
+    .category-card:nth-child(6) { grid-column: 3; grid-row: 2; }
+    .category-card:nth-child(7) { grid-column: 4; grid-row: 2; }
+
     .category-card {
         min-height: auto;
         padding: 16px;
@@ -1571,6 +1622,8 @@ body.home .site-footer .map-pulse {
     .step-card-last {
         grid-column: span 3;
         min-height: auto;
+        background: var(--color-white-2);
+        color: var(--color-black);
     }
 
     .steps-image-wrap {
@@ -1660,5 +1713,18 @@ body.home .site-footer .map-pulse {
 
     .categories-grid {
         grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        overflow: visible;
+    }
+
+    .testimonial-card {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
     }
 }

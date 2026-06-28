@@ -56,7 +56,7 @@ $process_image    = med_image_url('med_process_image', $img_dir . '/process-main
 $request_title  = med_get_field('med_request_title', 'Подберём оборудование под вашу клинику');
 $request_desc   = med_get_field('med_request_desc', 'Оставьте заявку — свяжемся с вами, разберём задачу и предложим решение');
 $request_note   = med_get_field('med_request_note', 'Консультация бесплатная');
-$request_button = med_get_field('med_request_button_text', 'Отправить');
+$request_button = med_get_field('med_request_button_text', 'Получить консультацию');
 
 $why_title    = med_get_field('med_why_title', 'Почему выбирают <span class="text-green">ТриМед</span>');
 $why_warehouse_title = med_get_field('med_why_warehouse_title', 'Собственный склад в Чите');
