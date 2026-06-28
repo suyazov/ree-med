@@ -24,8 +24,8 @@ if (empty($hero_checks)) {
 $hero_badges = get_field('main_hero_badges');
 if (empty($hero_badges)) {
     $hero_badges = array(
-        array('text' => 'Работаем с частными и государственными клиниками', 'sub' => '', 'light' => false),
-        array('text' => '5000+', 'sub' => 'позиций в наличии', 'light' => true),
+        array('text' => 'Работаем с частными и государственными клиниками', 'sub' => '', 'light' => true),
+        array('text' => '5000+', 'sub' => 'позиций в наличии', 'light' => false, 'stat' => true),
     );
 }
 
@@ -193,7 +193,7 @@ $form_btn   = get_field('main_form_btn')   ?: 'Получить консульт
                             $badge_text = $badge['text'] ?? '';
                             $badge_sub  = $badge['sub'] ?? '';
                         ?>
-                            <div class="home-hero-badge<?php echo $light ? ' light' : ''; ?>">
+                            <div class="home-hero-badge<?php echo $light ? ' light' : ''; ?><?php echo !empty($badge['stat']) || !empty($badge_sub) ? ' stat' : ''; ?>">
                                 <span class="badge-text"><?php echo wp_kses_post($badge_text); ?></span>
                                 <?php if ($badge_sub) : ?><span class="badge-sub"><?php echo wp_kses_post($badge_sub); ?></span><?php endif; ?>
                             </div>

@@ -114,6 +114,12 @@ body.home .site-header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
+.home-hero-check {
     background: var(--color-white-2);
     border-radius: 12px;
     padding: 14px;
@@ -141,12 +147,17 @@ body.home .site-header {
     justify-content: center;
     gap: 8px;
     width: 100%;
+    min-height: 56px;
     text-align: center;
-    padding: 16px;
+    padding: 14px 16px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
+}
+
+.home-hero-shop-btn-mobile {
+    background: var(--gradient-green);
 }
 
 .home-hero-cta {
@@ -165,7 +176,7 @@ body.home .site-header {
 
 .home-hero-image {
     width: 100%;
-    height: 226px;
+    height: 280px;
     object-fit: cover;
     border-radius: 12px;
     display: block;
@@ -178,12 +189,21 @@ body.home .site-header {
     right: 16px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     align-items: flex-end;
+    justify-content: space-between;
+}
+
+.home-hero-badge.light {
+    flex: 0 1 50%;
+}
+
+.home-hero-badge.stat {
+    flex: 0 0 auto;
 }
 
 .home-hero-badge {
-    background: rgba(54, 118, 67, 0.65);
+    background: rgba(54, 118, 67, 0.82);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: var(--color-white);
@@ -196,7 +216,7 @@ body.home .site-header {
 }
 
 .home-hero-badge.light {
-    background: rgba(239, 239, 239, 0.95);
+    background: rgba(239, 239, 239, 0.92);
     color: var(--color-black);
 }
 
@@ -204,7 +224,7 @@ body.home .site-header {
     font-weight: 600;
 }
 
-.home-hero-badge.light .badge-text {
+.home-hero-badge.stat .badge-text {
     font-size: 28px;
     line-height: 1;
     font-weight: 600;
@@ -1013,13 +1033,13 @@ body.home .site-footer .map-pulse {
     }
 
     .home-hero {
-        padding: 12px 0 0;
+        padding: 16px 0 0;
     }
 
     .home-hero-grid {
         grid-template-columns: minmax(0, 744px) 594px;
         grid-template-rows: auto auto auto;
-        gap: 6px;
+        gap: 8px;
         align-items: start;
     }
 
@@ -1052,14 +1072,15 @@ body.home .site-footer .map-pulse {
     }
 
     .home-hero-title {
-        font-size: 58px;
-        margin-bottom: 28px;
+        font-size: 56px;
+        line-height: 100%;
+        margin-bottom: 24px;
     }
 
     .home-hero-desc {
         font-size: 20px;
         line-height: 24px;
-        margin-bottom: 38px;
+        margin-bottom: 32px;
     }
 
     .home-hero-thumb {
@@ -1074,7 +1095,7 @@ body.home .site-footer .map-pulse {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 65% 50%;
+        object-position: 50% 40%;
         display: block;
     }
 
@@ -1082,12 +1103,13 @@ body.home .site-footer .map-pulse {
         flex: 1;
         background: transparent;
         padding: 0;
-        gap: 12px;
+        gap: 16px;
         justify-content: flex-start;
+        flex-direction: row;
     }
 
     .home-hero-check {
-        flex: 1 1 auto;
+        flex: 1 1 calc(50% - 8px);
         background: var(--color-white-2);
         border-radius: 12px;
         padding: 16px;
@@ -1133,21 +1155,23 @@ body.home .site-footer .map-pulse {
         bottom: 36px;
         flex-wrap: nowrap;
         justify-content: space-between;
-        gap: 12px;
+        gap: 16px;
     }
 
     .home-hero-badge {
+        background: var(--color-green);
         font-size: 16px;
         padding: 12px 18px;
         max-width: 280px;
     }
 
     .home-hero-badge.light {
+        background: rgba(239, 239, 239, 0.92);
         padding: 10px 18px;
-        max-width: none;
+        max-width: 300px;
     }
 
-    .home-hero-badge.light .badge-text {
+    .home-hero-badge.stat .badge-text {
         font-size: 40px;
         line-height: 1;
         font-weight: 600;
@@ -1472,7 +1496,7 @@ body.home .site-footer .map-pulse {
         font-size: 26px;
     }
 
-    .home-hero-badge.light .badge-text {
+    .home-hero-badge.stat .badge-text {
         font-size: 24px;
     }
 }
