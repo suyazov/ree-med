@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.10.12');
+define('TRIMED_VERSION', '1.10.37');
 
 // Email для заявок: можно переопределить в wp-config.php через define('TRIMED_FORM_EMAIL', 'email@example.com')
 if (!defined('TRIMED_FORM_EMAIL')) {
@@ -22,6 +22,17 @@ function trimed_setup() {
     ));
 }
 add_action('after_setup_theme', 'trimed_setup');
+
+function trimed_body_class($classes) {
+    if (is_page_template('page-disinfection.php')) {
+        $classes[] = 'disinfection-page';
+    }
+    if (is_page_template('page-laboratory.php')) {
+        $classes[] = 'laboratory-page';
+    }
+    return $classes;
+}
+add_filter('body_class', 'trimed_body_class');
 
 function trimed_favicon() {
     echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/logo.png') . '">' . "\n";

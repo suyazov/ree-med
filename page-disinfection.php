@@ -93,16 +93,16 @@ function dis_image_url($field, $fallback) {
                 $audience_cards = get_field('audience_cards');
                 if (!$audience_cards) {
                     $audience_cards = array(
-                        array('title' => 'Медицинские центры', 'style' => 'default', 'image' => $img_dir . '/disinfection-audience-medcenter.png'),
+                        array('title' => 'Медицинские центры', 'style' => 'default'),
                         array('title' => 'Стоматологии', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-stomatology.png'),
-                        array('title' => 'Больницы и поликлиники', 'style' => 'default'),
                         array('title' => 'Лаборатории', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-laboratory.png'),
-                        array('title' => 'Санатории и реабилитационные центры', 'style' => 'green'),
-                        array('title' => 'Образовательные учреждения', 'style' => 'green'),
+                        array('title' => 'Больницы и поликлиники', 'style' => 'default'),
                         array('title' => 'Салоны красоты и косметологии', 'style' => 'default'),
+                        array('title' => 'Санатории и реабилитационные центры', 'style' => 'green'),
                         array('title' => 'Предприятия и организации', 'style' => 'image', 'image' => $img_dir . '/disinfection-audience-enterprise.png'),
+                        array('title' => 'Образовательные учреждения', 'style' => 'green'),
                         array('title' => 'Еще можно добавить', 'style' => 'default'),
-                        array('title' => 'Еще можно добавить', 'style' => 'image-overlay', 'image' => $img_dir . '/disinfection-audience-medcenter.png'),
+                        array('title' => 'Еще можно добавить', 'style' => 'green'),
                     );
                 }
                 foreach ($audience_cards as $card) :
@@ -317,20 +317,20 @@ function dis_image_url($field, $fallback) {
             if (empty($projects)) {
                 $projects = array(
                     array(
-                        'num' => '02.',
+                        'num' => '01.',
                         'title' => 'Стоматология «Дента-Профи» (г. Чита)',
                         'task' => 'Полное оснащение двух стоматологических кабинетов и стерилизационной комнаты под ключ для запуска новой клиники. Требовалось обеспечить соответствие санитарным нормам, организовать централизованную подачу воздуха и эффективную систему инфекционного контроля.',
                         'equipment' => 'Стоматологические установки (2 шт.), компрессорная станция, автоклав, упаковочные материалы для стерилизации, рециркулятор воздуха, дезинфицирующие средства, контейнеры для дезинфекции.',
                         'result' => 'Клиника введена в эксплуатацию в запланированные сроки. Все кабинеты укомплектованы, стерилизационная функционирует в полном объёме, соблюдены требования Роспотребнадзора. Персонал обеспечен всем необходимым для безопасной работы.',
-                        'image' => $img_dir . '/disinfection-project.png',
+                        'image' => $img_dir . '/disinfection-project-1.png',
                     ),
                     array(
-                        'num' => '03.',
+                        'num' => '02.',
                         'title' => 'Медицинский центр «Забайкалье» (г. Чита)',
                         'task' => 'Комплексное оснащение процедурных кабинетов и стерилизационной зоны для многопрофильного медицинского центра. Задача включала подбор дезинфицирующих средств, оборудования для стерилизации и систем хранения.',
                         'equipment' => 'Автоклав класса B, ультразвуковая мойка, рециркуляторы воздуха, дезинфицирующие средства, контейнеры и упаковочные материалы для стерилизации.',
                         'result' => 'Центр получил полный комплект оборудования и расходных материалов в соответствии с действующими санитарными нормами. Персонал прошёл консультацию по эксплуатации оборудования.',
-                        'image' => $img_dir . '/disinfection-project.png',
+                        'image' => $img_dir . '/disinfection-project-2.png',
                     ),
                 );
             }
@@ -419,10 +419,10 @@ function dis_image_url($field, $fallback) {
                 if (!$faq_items) {
                     $faq_items = array(
                         array('question' => 'Какие дезсредства выбрать для стоматологии?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Какие документы предоставляются на продукцию?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Есть ли товары в наличии в Чите?', 'answer' => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.', 'is_open' => true),
                         array('question' => 'Как подобрать рециркулятор?', 'answer' => '', 'is_open' => false),
                         array('question' => 'Какие средства подходят для обработки инструментов?', 'answer' => '', 'is_open' => false),
+                        array('question' => 'Какие документы предоставляются на продукцию?', 'answer' => '', 'is_open' => false),
+                        array('question' => 'Есть ли товары в наличии в Чите?', 'answer' => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.', 'is_open' => true),
                     );
                 }
                 // Desktop layout as in Figma: items flow row-wise, but the open item

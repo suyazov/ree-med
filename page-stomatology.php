@@ -77,7 +77,7 @@ $why_stats    = get_field('stom_why_stats');
 $why_features = get_field('stom_why_features');
 $why_feature_icons = array(
     '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18h15v8H4z" stroke-linejoin="round"/><path d="M19 18v-4a2 2 0 0 1 2-2h3l5 5v5h-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="24" r="2"/><circle cx="23" cy="24" r="2"/></svg>',
-    '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14L16 4l12 10v14H4V14z" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26V16h8v10" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    '<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 19.8157V6.50314C25 5.47813 24.375 4.56563 23.425 4.17813L13.425 0.178125C12.825 -0.0593751 12.1625 -0.0593751 11.5625 0.178125L1.5625 4.17813C0.625001 4.56563 0 5.49063 0 6.50314V19.8157C0 21.1907 1.125 22.3157 2.5 22.3157H6.25001V11.0656H18.75V22.3157H22.5C23.875 22.3157 25 21.1907 25 19.8157ZM11.25 19.8157H8.75001V22.3157H11.25V19.8157ZM13.75 16.0657H11.25V18.5657H13.75V16.0657ZM16.25 19.8157H13.75V22.3157H16.25V19.8157Z" fill="url(#paint0_linear_182_301)"/><defs><linearGradient id="paint0_linear_182_301" x1="4.31819" y1="18.0554" x2="18.2966" y2="3.07637" gradientUnits="userSpaceOnUse"><stop stop-color="#3F8D50"/><stop offset="1" stop-color="#51A462"/></linearGradient></defs></svg>',
 );
 $why_warehouse_title = get_field('stom_why_warehouse_title') ?: 'Собственный склад в Чите';
 $why_warehouse_image = stom_image_url('stom_why_warehouse_image', $img_dir . '/stomatology-warehouse.png');
@@ -347,9 +347,8 @@ $included_bottom = array_slice($included_cards, 3);
 
     <section class="stom-request">
         <div class="stom-request-inner">
-            <svg class="stom-request-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="4" y="8" width="32" height="24" rx="4"/>
-                <path d="M4 12l16 12 16-12" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg class="stom-request-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.4421 5.44229C11.8491 5.44229 10.5574 4.15049 10.5574 2.55745C10.5574 1.14536 9.41256 9.53674e-07 8 9.53674e-07C6.58744 9.53674e-07 5.44211 1.14536 5.44211 2.55745C5.44211 4.15049 4.15088 5.44229 2.55789 5.44229C1.14532 5.44229 0 6.58713 0 8.00026C0 9.41287 1.14532 10.5577 2.55789 10.5577C4.15088 10.5577 5.44211 11.849 5.44211 13.442C5.44211 14.8552 6.58744 16 8 16C9.41256 16 10.5574 14.8552 10.5574 13.442C10.5574 11.849 11.8491 10.5577 13.4421 10.5577C14.8547 10.5577 16 9.41287 16 8.00026C16 6.58713 14.8547 5.44229 13.4421 5.44229Z" fill="currentColor"/>
             </svg>
             <div>
                 <h2 class="stom-request-title"><?php echo wp_kses_post($request_title); ?></h2>

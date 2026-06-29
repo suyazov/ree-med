@@ -14,6 +14,12 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     background: #fff;
 }
 
+/* ===== Hero secondary CTA: green button ===== */
+.disinfection-page .hero-btn-consult {
+    background: var(--color-green);
+    color: #FFFFFF;
+}
+
 /* ===== Partners: title black regular ===== */
 .disinfection-page .partners-title,
 .disinfection-page .partners-title strong,
@@ -186,7 +192,7 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         line-height: 1.2;
     }
 
-    /* Tasks mobile */
+    /* Tasks mobile: two-column grid with icon above text */
     .disinfection-page .tasks-section .container {
         padding: 0 16px;
     }
@@ -206,9 +212,25 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         line-height: 110%;
     }
 
+    .disinfection-page .tasks-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        min-height: auto;
+    }
+
+    .disinfection-page .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
     .disinfection-page .task-item img {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
     }
 
     /* Supplies mobile: snake arc layout matching Figma */
@@ -342,13 +364,13 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     .disinfection-page .supply-item:nth-child(10) { order: 10; margin-left: 150px; }
     .disinfection-page .supply-item:nth-child(11) { order: 11; margin-left: 50px; max-width: 290px; }
 
-    /* Projects mobile: horizontal scroll slider */
+    /* Projects mobile: one slide at a time */
     .disinfection-page .slides-track {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         min-height: auto;
-        gap: 12px;
+        gap: 0;
         width: 100%;
     }
 
@@ -356,8 +378,8 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         position: relative;
         top: auto;
         left: auto;
-        flex: 0 0 328px;
-        width: 328px;
+        flex: 0 0 100%;
+        width: 100%;
         opacity: 1;
         visibility: visible;
         scroll-snap-align: start;
@@ -429,22 +451,47 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         transform: none;
     }
 
-    /* Application mobile */
+    /* Application mobile: single green box, form directly under info */
+    .disinfection-page .application-section {
+        padding: 16px 0;
+    }
+
+    .disinfection-page .application-section .container {
+        padding: 0 30px;
+    }
+
+    .disinfection-page .application-box {
+        gap: 0;
+        padding: 24px 20px;
+    }
+
     .disinfection-page .application-info {
         text-align: center;
+        padding-top: 40px;
     }
 
     .disinfection-page .application-info h2 {
         margin-top: 0;
+        margin-bottom: 8px;
     }
 
     .disinfection-page .application-info p {
-        max-width: none;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
     .disinfection-page .app-decor {
+        width: 24px;
+        height: 24px;
         left: 50%;
+        top: 24px;
         transform: translateX(-50%);
+    }
+
+    .disinfection-page .application-form-wrap {
+        margin-top: 0;
+        padding: 24px 20px;
+        background: var(--color-white);
     }
 
     .disinfection-page .application-form .btn-primary {
@@ -554,7 +601,7 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         line-height: 1.4;
     }
 
-    /* FAQ mobile reorder and title wrap */
+    /* FAQ mobile: stack vertically */
     .disinfection-page .faq-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -565,21 +612,24 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         grid-column: auto !important;
     }
 
-    .disinfection-page .faq-item:nth-child(1) { order: 1; }
-    .disinfection-page .faq-item:nth-child(2) { order: 4; }
-    .disinfection-page .faq-item:nth-child(3) { order: 5; }
-    .disinfection-page .faq-item:nth-child(4) { order: 2; }
-    .disinfection-page .faq-item:nth-child(5) { order: 3; }
-
     .disinfection-page .faq-header .section-title {
         max-width: 200px;
     }
 
     /* Footer card centered on map */
-    body:has(.disinfection-page) .footer-card {
+    body.disinfection-page .footer-main {
+        min-height: 560px;
+        height: 560px;
+    }
+
+    body.disinfection-page .footer-card {
         top: 50%;
         bottom: auto;
         transform: translate(-50%, -50%);
+    }
+
+    body.disinfection-page .footer-socials {
+        gap: 24px;
     }
 }
 
@@ -622,19 +672,10 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         padding: 8px 12px;
     }
 
-    /* Audience mobile order */
+    /* Audience mobile */
     .disinfection-page .audience-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    .disinfection-page .audience-card:nth-child(3) { order: 4; }
-    .disinfection-page .audience-card:nth-child(4) { order: 3; }
-    .disinfection-page .audience-card:nth-child(5) { order: 6; }
-    .disinfection-page .audience-card:nth-child(6) { order: 8; }
-    .disinfection-page .audience-card:nth-child(7) { order: 5; }
-    .disinfection-page .audience-card:nth-child(8) { order: 7; }
-    .disinfection-page .audience-card:nth-child(9) { order: 9; }
-    .disinfection-page .audience-card:nth-child(10) { order: 10; }
 
     .disinfection-page .audience-card {
         position: relative;
@@ -701,10 +742,10 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         padding-right: 36px;
     }
 
-    /* Included cards: reverse so title/number appears above image */
+    /* Included cards: image on top, title/number below */
     .disinfection-page .included-card:not(.green-wide) {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         gap: 12px;
     }
 
@@ -715,7 +756,7 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     .disinfection-page .included-card .num {
         position: static;
-        margin-bottom: 8px;
+        margin-bottom: 0;
     }
 
     .disinfection-page .included-card h3 {

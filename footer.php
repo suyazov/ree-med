@@ -58,7 +58,6 @@
 
         <div class="footer-bottom">
             <div class="footer-info">
-                <p>© <?php echo date('Y'); ?>, «ТриМед». Все права защищены.</p>
                 <p>ИНН 7500009501</p>
                 <p>ОГРН 1237500001859</p>
             </div>
@@ -67,6 +66,7 @@
                 <a href="#">Политика об обработке персональных данных</a>
                 <a href="#">Пользовательское соглашение</a>
             </div>
+            <p class="footer-copyright">© <?php echo date('Y'); ?>, «ТриМед». Все права защищены.</p>
         </div>
     </div>
 </footer>
