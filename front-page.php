@@ -128,7 +128,7 @@ if (empty($categories)) {
 
 // Steps
 $steps_subtitle = get_field('main_steps_subtitle') ?: 'Этапы работы';
-$steps_title    = get_field('main_steps_title')    ?: 'От запроса до поставки';
+$steps_title    = get_field('main_steps_title')    ?: 'От запроса <span class="text-green">до поставки</span>';
 $steps_image    = main_image('main_steps_image', $img_main . '/103-0.png');
 $steps = get_field('main_steps');
 if (empty($steps)) {
@@ -377,13 +377,13 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
             <div class="steps-layout">
                 <span class="section-label steps-label"><?php echo esc_html($steps_subtitle); ?></span>
                 <div class="steps-header">
-                    <h2 class="section-title"><?php echo wp_kses_post($steps_title); ?></h2>
+                    <h2 class="section-title"><?php echo wp_kses_post(str_replace('до поставки', '<span class="text-green">до поставки</span>', wp_strip_all_tags($steps_title))); ?></h2>
                 </div>
                 <div class="steps-cards">
                     <?php foreach ($steps as $i => $step) :
                         $is_last = ($i === count($steps) - 1);
                         if ($is_last) : ?>
-                            <div class="step-card step-card-mobile">
+                            <div class="step-card step-card-mobile" style="--step-bg: url('<?php echo esc_url($steps_image); ?>');">
                                 <span class="step-num"><?php echo esc_html($step['num']); ?></span>
                                 <span class="step-title"><?php echo esc_html($step['title']); ?></span>
                             </div>
