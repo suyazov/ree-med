@@ -665,16 +665,24 @@ body.home .site-header {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .project-card {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 14px;
-    align-items: stretch;
+    flex: 0 0 328px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     background: var(--color-white-2);
     border-radius: 12px;
     padding: 12px;
@@ -686,8 +694,8 @@ body.home .site-header {
 .project-image {
     border-radius: 8px;
     overflow: hidden;
-    height: 100%;
-    min-height: 120px;
+    height: 220px;
+    min-height: 220px;
 }
 
 .project-image img {
@@ -697,10 +705,11 @@ body.home .site-header {
 }
 
 .project-body {
-    padding: 4px 28px 4px 0;
+    min-height: 150px;
+    padding: 0 24px 4px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .project-cat {
@@ -901,15 +910,25 @@ body.home .site-header {
 }
 
 .partners-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.partners-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .partner-card {
+    flex: 0 0 243px;
+    min-height: 253px;
+    scroll-snap-align: start;
     background: var(--color-white);
     border-radius: 12px;
-    padding: 24px;
+    padding: 16px;
     text-align: center;
     text-decoration: none;
     color: var(--color-black);
@@ -919,7 +938,7 @@ body.home .site-header {
 }
 
 .partner-logo {
-    height: 80px;
+    height: 98px;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -968,13 +987,22 @@ body.home .site-header {
 
 .testimonials-grid {
     display: flex;
-    gap: 16px;
-    overflow: hidden;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.testimonials-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .testimonial-card {
-    flex: 0 0 calc(100% - 8px);
-    max-width: calc(100% - 8px);
+    flex: 0 0 322px;
+    max-width: 322px;
+    min-height: 260px;
+    scroll-snap-align: start;
     background: var(--color-white-2);
     border-radius: 12px;
     padding: 20px;
@@ -1550,16 +1578,28 @@ body.home .site-footer .map-pulse {
     }
 
     .projects-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        overflow: visible;
+        padding-bottom: 0;
     }
 
     .project-card {
+        flex: initial;
+        display: grid;
         grid-template-columns: 175px 1fr;
         padding: 16px;
     }
 
     .project-image {
+        height: 100%;
         min-height: 180px;
+    }
+
+    .project-body {
+        min-height: 0;
+        padding: 4px 28px 4px 0;
+        justify-content: center;
     }
 
     .project-cat {
@@ -1684,8 +1724,17 @@ body.home .site-footer .map-pulse {
 
     /* Partners */
     .partners-grid {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+
+    .partner-card {
+        flex: initial;
+        min-height: 0;
+        padding: 24px;
     }
 
     .partner-logo {
@@ -1717,8 +1766,15 @@ body.home .site-footer .map-pulse {
         top: 100px;
     }
 
+    .testimonials-grid {
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+
     .testimonial-card {
         flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+        min-height: 0;
     }
 
     /* Request */
@@ -1760,16 +1816,25 @@ body.home .site-footer .map-pulse {
         grid-template-columns: 1fr;
     }
 
+    .testimonials-intro .section-title {
+        max-width: 335px;
+        font-size: 32px;
+        line-height: 1.08;
+        letter-spacing: -0.96px;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
     .testimonials-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-        overflow: visible;
+        display: flex;
+        grid-template-columns: none;
+        gap: 12px;
+        overflow-x: auto;
     }
 
     .testimonial-card {
-        flex: none;
-        max-width: 100%;
-        width: 100%;
+        flex: 0 0 322px;
+        max-width: 322px;
+        width: auto;
     }
 }
