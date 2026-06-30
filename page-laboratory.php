@@ -61,10 +61,10 @@ $hero_button_text = lab_get_field('lab_hero_button_text', 'Получить ко
 $hero_bottom_button_text = lab_get_field('lab_hero_bottom_button_text', 'Подобрать оборудование');
 
 $default_hero_features = array(
-    array('icon' => $img_dir . '/lab-hero-icon-1.png', 'text' => 'Комплексное оснащение лабораторий'),
     array('icon' => $img_dir . '/lab-hero-icon-2.png', 'text' => 'Поставка со склада и под заказ'),
-    array('icon' => $img_dir . '/lab-hero-icon-3.png', 'text' => 'Оборудование ведущих производителей'),
     array('icon' => $img_dir . '/lab-hero-icon-4.png', 'text' => 'Сервисное сопровождение'),
+    array('icon' => $img_dir . '/lab-hero-icon-3.png', 'text' => 'Оборудование ведущих производителей'),
+    array('icon' => $img_dir . '/lab-hero-icon-1.png', 'text' => 'Комплексное оснащение лабораторий'),
 );
 $hero_features = lab_get_repeater('lab_hero_features', $default_hero_features);
 

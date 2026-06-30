@@ -375,22 +375,34 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
     <section class="home-steps">
         <div class="container">
             <div class="steps-layout">
+                <span class="section-label steps-label"><?php echo esc_html($steps_subtitle); ?></span>
+                <div class="steps-header">
+                    <h2 class="section-title"><?php echo wp_kses_post($steps_title); ?></h2>
+                </div>
                 <div class="steps-cards">
                     <?php foreach ($steps as $i => $step) :
                         $is_last = ($i === count($steps) - 1);
-                    ?>
-                        <div class="step-card<?php echo $is_last ? ' step-card-last' : ''; ?>">
-                            <span class="step-num"><?php echo esc_html($step['num']); ?></span>
-                            <span class="step-title"><?php echo esc_html($step['title']); ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="steps-header">
-                    <span class="section-label"><?php echo esc_html($steps_subtitle); ?></span>
-                    <h2 class="section-title"><?php echo wp_kses_post($steps_title); ?></h2>
+                        if ($is_last) : ?>
+                            <div class="step-card step-card-mobile">
+                                <span class="step-num"><?php echo esc_html($step['num']); ?></span>
+                                <span class="step-title"><?php echo esc_html($step['title']); ?></span>
+                            </div>
+                        <?php else : ?>
+                            <div class="step-card">
+                                <span class="step-num"><?php echo esc_html($step['num']); ?></span>
+                                <span class="step-title"><?php echo esc_html($step['title']); ?></span>
+                            </div>
+                        <?php endif;
+                    endforeach; ?>
                 </div>
                 <div class="steps-image-wrap">
                     <img src="<?php echo esc_url($steps_image); ?>" alt="" class="steps-image">
+                    <?php if (!empty($steps[4])) : ?>
+                    <div class="step-image-card">
+                        <span class="step-num"><?php echo esc_html($steps[4]['num']); ?></span>
+                        <span class="step-title"><?php echo esc_html($steps[4]['title']); ?></span>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

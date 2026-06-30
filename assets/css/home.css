@@ -805,22 +805,31 @@ body.home .site-header {
 .steps-layout {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "cards";
     gap: 24px;
 }
 
+.home-steps .steps-label {
+    display: none;
+}
+
 .steps-header {
-    order: 1;
+    grid-area: header;
 }
 
 .steps-header .section-title {
     margin-bottom: 0;
+    font-size: 24px;
+    white-space: nowrap;
 }
 
 .steps-cards {
+    grid-area: cards;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    order: 3;
 }
 
 .step-card {
@@ -830,39 +839,38 @@ body.home .site-header {
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    min-height: 120px;
+    justify-content: space-between;
+    min-height: 136px;
 }
 
 .step-card:nth-child(1),
 .step-card:nth-child(4) {
-    background: var(--color-green);
-    color: var(--color-white);
+    background: linear-gradient(135deg, #3F8D50 0%, #51A462 100%);
+    color: #EFEFEF;
 }
 
-.step-card-last {
-    background: var(--color-white-2);
-    color: var(--color-black);
+.step-card-mobile {
     grid-column: span 2;
-    min-height: auto;
 }
 
 .step-num {
     width: 32px;
     height: 32px;
-    border-radius: 50%;
-    background: var(--color-green);
-    color: var(--color-white);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3F8D50 0%, #51A462 100%);
+    color: #EFEFEF;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
 .step-card:nth-child(1) .step-num,
 .step-card:nth-child(4) .step-num {
-    background: rgba(255, 255, 255, 0.2);
+    background: #EFEFEF;
+    color: #366D43;
 }
 
 .step-title {
@@ -871,18 +879,9 @@ body.home .site-header {
     font-weight: 600;
 }
 
-.steps-image-wrap {
-    order: 2;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.steps-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
+.steps-image-wrap,
+.step-image-card {
+    display: none;
 }
 
 /* Partners */
@@ -1590,12 +1589,18 @@ body.home .site-footer .map-pulse {
 
     /* Steps */
     .steps-layout {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas:
-            "cards header"
+            "label header"
             "cards image";
-        align-items: stretch;
-        gap: 24px;
+        gap: 24px 16px;
+        align-items: start;
+    }
+
+    .steps-label {
+        grid-area: label;
+        display: block;
+        margin-bottom: 0;
     }
 
     .steps-header {
@@ -1603,38 +1608,68 @@ body.home .site-footer .map-pulse {
         text-align: left;
     }
 
-    .steps-header .section-label {
-        color: var(--color-dark-green);
-    }
-
     .steps-cards {
         grid-area: cards;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr;
         gap: 16px;
-        order: unset;
     }
 
     .step-card {
-        min-height: 180px;
+        min-height: 220px;
         padding: 20px;
+        border-radius: 16px;
     }
 
-    .step-card-last {
-        grid-column: span 3;
-        min-height: auto;
-        background: var(--color-white-2);
-        color: var(--color-black);
+    .step-card:nth-child(3) {
+        grid-column: span 2;
+        min-height: 160px;
+    }
+
+    .step-card-mobile {
+        display: none;
     }
 
     .steps-image-wrap {
         grid-area: image;
-        height: 100%;
-        order: unset;
+        display: block;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 456px;
+        background: var(--color-white-2);
     }
 
     .steps-image {
+        width: 100%;
         height: 100%;
-        min-height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .step-image-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        min-height: 156px;
+        padding: 20px;
+        border-radius: 16px;
+        background: rgba(18, 38, 28, 0.86);
+        color: #EFEFEF;
+        backdrop-filter: blur(8px);
+    }
+
+    .step-image-card .step-num {
+        background: linear-gradient(135deg, #3F8D50 0%, #51A462 100%);
+        color: #EFEFEF;
+    }
+
+    .step-image-card .step-title {
+        max-width: 260px;
     }
 
     /* Partners */
