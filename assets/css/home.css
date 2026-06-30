@@ -1608,7 +1608,7 @@ body.home .site-footer .map-pulse {
         align-items: start;
     }
 
-    .steps-label {
+    .home-steps .steps-label {
         grid-area: label;
         display: block;
         margin-bottom: 0;
@@ -1663,15 +1663,11 @@ body.home .site-footer .map-pulse {
         justify-content: space-between;
         align-items: flex-start;
         position: absolute;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        min-height: 156px;
-        padding: 20px;
+        inset: 0;
+        padding: 48px 40px 44px;
         border-radius: 16px;
-        background: rgba(18, 38, 28, 0.86);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.42) 100%);
         color: #EFEFEF;
-        backdrop-filter: blur(8px);
     }
 
     .step-image-card .step-num {
@@ -1680,7 +1676,10 @@ body.home .site-footer .map-pulse {
     }
 
     .step-image-card .step-title {
-        max-width: 260px;
+        max-width: 220px;
+        font-size: 24px;
+        line-height: 1.1;
+        letter-spacing: -0.72px;
     }
 
     /* Partners */
