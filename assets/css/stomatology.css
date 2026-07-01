@@ -671,7 +671,9 @@ body.page-template-page-stomatology-php .map-pulse { display: none; }
     .stomatology-page .stom-request-form .checkbox input { width: 15px !important; height: 15px !important; }
     .stomatology-page .stom-request-form input[name="phone"] { padding-left: 44px; background: var(--color-gray) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' fill='%23fff'/%3E%3Crect width='24' height='5.33' fill='%23fff'/%3E%3Crect y='5.33' width='24' height='5.33' fill='%230047c7'/%3E%3Crect y='10.67' width='24' height='5.33' fill='%23d52b1e'/%3E%3C/svg%3E") no-repeat 16px center / 20px auto; }
     .stomatology-page .stom-request-form textarea[name="comment"] { height: 52px; }
-    .stomatology-page .stom-request-form button { width: 100%; height: 57px; }
+    .stomatology-page .stom-request-form button { width: 100%; height: 57px; font-size: 0; }
+    .stomatology-page .stom-request-form button span { font-size: 0; }
+    .stomatology-page .stom-request-form button::after { content: 'Отправить'; font-size: 14px; line-height: 17px; }
 
     /* Why mobile */
     .stomatology-page .stom-why { margin-top: 100px; padding: 0; }
