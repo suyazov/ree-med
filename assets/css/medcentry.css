@@ -279,11 +279,12 @@
     height: 20px;
     right: 16px;
     top: 16px;
+    z-index: 2;
 }
 .medcentry-page .mc-audience-card .text { position: relative; z-index: 1; max-width: 318px; }
 .medcentry-page .mc-audience-card--image {
-    background: var(--color-gray) url('../img/medcentry/audience-1.png') center/cover no-repeat;
-    justify-content: flex-start;
+    background: var(--color-gray);
+    justify-content: flex-end;
 }
 .medcentry-page .mc-audience-card--image::before {
     content: '';
@@ -291,9 +292,10 @@
     inset: 0;
     background: rgba(54, 118, 67, 0.5);
     border-radius: inherit;
+    z-index: 1;
 }
 .medcentry-page .mc-audience-card--gray {
-    background: var(--color-gray-2);
+    background: #e6e7e8;
     color: var(--color-black);
 }
 .medcentry-page .mc-audience-card--white {
@@ -306,23 +308,50 @@
 }
 .medcentry-page .mc-audience-card-img {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 12px;
+    top: 7px;
     width: 154px;
     height: 132px;
+    object-fit: contain;
+    opacity: 1;
+}
+.medcentry-page .mc-audience-card--image .mc-audience-card-img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    opacity: 0.9;
+    border-radius: inherit;
+    z-index: 0;
+}
+.medcentry-page .mc-audience-card--gray .mc-clover { display: none; }
+.medcentry-page .mc-audience-card--gray .mc-audience-card-img {
+    top: 24px;
+    right: 29px;
+    width: 100px;
+    height: 100px;
+}
+.medcentry-page .mc-audience-card--white .mc-clover {
+    left: 16px;
+    right: auto;
+    top: 16px;
+    color: #d1d3d4;
+}
+.medcentry-page .mc-audience-card--green .mc-clover {
+    top: 20px;
+    right: 20px;
 }
 .medcentry-page .mc-audience-summary {
     width: 738px;
     max-width: 738px;
     margin: 40px 0 0 409px;
-    font-size: 31px;
+    font-size: 32px;
     line-height: 120%;
     letter-spacing: -0.03em;
     color: var(--color-black);
-    text-align: right;
+    text-align: left;
 }
+.medcentry-page .mc-audience-summary-green { color: var(--color-green); }
+.medcentry-page .mc-audience-summary em { font-style: italic; }
 
 /* Included */
 .medcentry-page .mc-included { background: transparent; border-radius: 0; padding: 0; margin-top: 140px; overflow: visible; }
