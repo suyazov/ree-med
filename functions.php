@@ -54,13 +54,18 @@ function trimed_get_contact($key, $fallback = '') {
     return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
 }
 
+function trimed_asset_version($relative_path) {
+    $path = get_template_directory() . '/' . ltrim($relative_path, '/');
+    return file_exists($path) ? TRIMED_VERSION . '.' . filemtime($path) : TRIMED_VERSION;
+}
+
 function trimed_enqueue_assets() {
     wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&subset=cyrillic&display=swap', array(), null);
-    wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), TRIMED_VERSION);
-    wp_enqueue_style('trimed-main', get_template_directory_uri() . '/assets/css/main.css', array('trimed-style'), TRIMED_VERSION);
+    wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), trimed_asset_version('style.css'));
+    wp_enqueue_style('trimed-main', get_template_directory_uri() . '/assets/css/main.css', array('trimed-style'), trimed_asset_version('assets/css/main.css'));
 
     if (is_front_page()) {
-        wp_enqueue_style('trimed-home', get_template_directory_uri() . '/assets/css/home.css', array('trimed-main'), TRIMED_VERSION);
+        wp_enqueue_style('trimed-home', get_template_directory_uri() . '/assets/css/home.css', array('trimed-main'), trimed_asset_version('assets/css/home.css'));
     }
 
     wp_enqueue_script('trimed-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), TRIMED_VERSION, true);
@@ -82,16 +87,16 @@ add_filter('document_title_parts', 'trimed_document_title');
 
 function trimed_enqueue_page_assets() {
     if (is_page_template('page-stomatology.php')) {
-        wp_enqueue_style('trimed-stomatology', get_template_directory_uri() . '/assets/css/stomatology.css', array('trimed-main'), TRIMED_VERSION);
+        wp_enqueue_style('trimed-stomatology', get_template_directory_uri() . '/assets/css/stomatology.css', array('trimed-main'), trimed_asset_version('assets/css/stomatology.css'));
     }
     if (is_page_template('page-laboratory.php')) {
-        wp_enqueue_style('trimed-laboratory', get_template_directory_uri() . '/assets/css/laboratory.css', array('trimed-main'), TRIMED_VERSION);
+        wp_enqueue_style('trimed-laboratory', get_template_directory_uri() . '/assets/css/laboratory.css', array('trimed-main'), trimed_asset_version('assets/css/laboratory.css'));
     }
     if (is_page_template('page-disinfection.php')) {
-        wp_enqueue_style('trimed-disinfection', get_template_directory_uri() . '/assets/css/disinfection.css', array('trimed-main'), TRIMED_VERSION);
+        wp_enqueue_style('trimed-disinfection', get_template_directory_uri() . '/assets/css/disinfection.css', array('trimed-main'), trimed_asset_version('assets/css/disinfection.css'));
     }
     if (is_page_template('page-medcentry.php') || is_page('medcentry')) {
-        wp_enqueue_style('trimed-medcentry', get_template_directory_uri() . '/assets/css/medcentry.css', array('trimed-main'), TRIMED_VERSION);
+        wp_enqueue_style('trimed-medcentry', get_template_directory_uri() . '/assets/css/medcentry.css', array('trimed-main'), trimed_asset_version('assets/css/medcentry.css'));
     }
 }
 add_action('wp_enqueue_scripts', 'trimed_enqueue_page_assets');
