@@ -23,7 +23,30 @@ function med_get_field($field, $fallback = '') {
     return $fallback;
 }
 
+function med_format_hero_title($title) {
+    if (strpos($title, 'mc-hero-title-tail') !== false) {
+        return $title;
+    }
+
+    $patterns = array(
+        '<br>в Забайкальском крае',
+        '<br>в&nbsp;Забайкальском крае',
+        'в Забайкальском крае',
+        'в&nbsp;Забайкальском крае',
+    );
+
+    foreach ($patterns as $pattern) {
+        if (strpos($title, $pattern) !== false) {
+            $prefix = substr($pattern, 0, 4) === '<br>' ? '<br>' : '<br>';
+            return str_replace($pattern, $prefix . '<span class="mc-hero-title-tail">в Забайкальском крае</span>', $title);
+        }
+    }
+
+    return $title;
+}
+
 $hero_title = med_get_field('med_hero_title', 'Оснащение <span class="text-green">медицинских центров под ключ</span><br>в Забайкальском крае');
+$hero_title = med_format_hero_title($hero_title);
 $hero_desc  = med_get_field('med_hero_desc', 'Помогаем клиникам запускаться, развиваться и работать на современном оборудовании от подбора до поставки');
 $hero_btn   = med_get_field('med_hero_button_text', 'Получить консультацию');
 $hero_image = med_image_url('med_hero_image', $img_dir . '/hero-main.png');

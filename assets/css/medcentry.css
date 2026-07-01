@@ -76,6 +76,15 @@
     max-width: 726px;
     margin-bottom: 28px;
 }
+.medcentry-page .mc-hero-title .text-green {
+    font-weight: 600;
+    color: var(--color-green);
+}
+.medcentry-page .mc-hero-title-tail {
+    font-style: italic;
+    font-weight: 400;
+    color: #353535;
+}
 .medcentry-page .mc-hero-desc {
     font-size: 20px;
     line-height: 24px;
