@@ -86,7 +86,8 @@
 }
 .medcentry-page .mc-hero-features {
     display: flex;
-    gap: 24px;
+    gap: 20px;
+    width: 686px;
     margin-bottom: 24px;
 }
 .medcentry-page .mc-hero-feature-card {
@@ -126,7 +127,7 @@
 }
 .medcentry-page .mc-hero-btn {
     width: 100%;
-    max-width: 726px;
+    max-width: 686px;
     height: 57px;
     display: inline-flex;
     align-items: center;
@@ -153,16 +154,16 @@
 .medcentry-page .mc-hero-badges {
     position: absolute;
     left: 36px;
-    bottom: 50px;
-    right: 36px;
+    top: 396px;
+    width: 522px;
     display: flex;
-    gap: 12px;
-    align-items: flex-end;
+    gap: 13px;
+    align-items: flex-start;
 }
 .medcentry-page .mc-hero-badge-glass {
     position: relative;
     width: 315px;
-    height: 104px;
+    height: 118px;
     display: flex;
     align-items: flex-end;
     background: rgba(54, 118, 67, 0.65);
@@ -187,8 +188,9 @@
 }
 .medcentry-page .mc-hero-badge-glass span { width: 275px; }
 .medcentry-page .mc-hero-badge-green {
-    width: 188px;
-    min-height: 112px;
+    width: 194px;
+    height: 118px;
+    min-height: 118px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
