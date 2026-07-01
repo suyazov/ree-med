@@ -40,13 +40,13 @@ if (empty($stats)) {
 
 // About
 $about_title = get_field('main_about_title') ?: 'ТриМед — поставщик медицинского оборудования и расходных материалов';
-$about_desc  = get_field('main_about_desc')  ?: 'Мы помогаем медицинским учреждениям оснащать кабинеты, отделения и клиники современным оборудованием.';
+$about_desc  = get_field('main_about_desc')  ?: 'Мы помогаем медицинским учреждениям оснащать кабинеты, отделения и клиники современным оборудованием';
 $about_text  = get_field('main_about_text')  ?: 'Берём на себя подбор решений, поставку, консультации и сопровождение проекта на всех этапах';
 $about_image = main_image('main_about_image', $img_main . '/3-0.png');
 $about_stats = get_field('main_about_stats');
 if (empty($about_stats)) {
     $about_stats = array(
-        array('num' => '8+', 'label' => 'лет на рынке'),
+        array('num' => '8+ лет', 'label' => 'на рынке'),
         array('num' => '5000+', 'label' => 'позиций оборудования'),
         array('num' => '100+', 'label' => 'медицинских учреждений региона'),
         array('num' => '15', 'label' => 'специалистов в команде'),
@@ -73,14 +73,14 @@ $aud_title    = get_field('main_audience_title')    ?: 'Работаем с ме
 $audience_items = get_field('main_audience_items');
 if (empty($audience_items)) {
     $audience_items = array(
-        array('icon' => $img_main . '/icons/hospital.png', 'text' => 'Государственные больницы'),
-        array('icon' => $img_main . '/icons/clinic.png', 'text' => 'Поликлиники'),
-        array('icon' => $img_main . '/icons/private.png', 'text' => 'Частные клиники'),
-        array('icon' => $img_main . '/icons/hospital.png', 'text' => 'Стоматологии'),
-        array('icon' => $img_main . '/icons/lab.png', 'text' => 'Лаборатории'),
-        array('icon' => $img_main . '/icons/rehab.png', 'text' => 'Реабилитационные центры'),
-        array('icon' => $img_main . '/icons/sanatorium.png', 'text' => 'Санатории'),
-        array('icon' => $img_main . '/icons/diagnostic.png', 'text' => 'Диагностические центры'),
+        array('icon' => $img_main . '/icons/figma-audience-hospital.png', 'text' => 'Государственные больницы'),
+        array('icon' => $img_main . '/icons/figma-audience-polyclinic.png', 'text' => 'Поликлиники'),
+        array('icon' => $img_main . '/icons/figma-audience-private.png', 'text' => 'Частные клиники'),
+        array('icon' => $img_main . '/icons/figma-audience-dentistry.png', 'text' => 'Стоматологии'),
+        array('icon' => $img_main . '/icons/figma-audience-lab.png', 'text' => 'Лаборатории'),
+        array('icon' => $img_main . '/icons/figma-audience-rehab.png', 'text' => 'Реабилитационные центры'),
+        array('icon' => $img_main . '/icons/figma-audience-sanatorium.png', 'text' => 'Санатории'),
+        array('icon' => $img_main . '/icons/figma-audience-diagnostic.png', 'text' => 'Диагностические центры'),
     );
 }
 
@@ -90,16 +90,16 @@ $tasks = get_field('main_tasks');
 if (empty($tasks)) {
     $tasks = array(
         array('num' => '01.', 'title' => 'Подбор под бюджет', 'image' => $img_main . '/104-0.png'),
-        array('num' => '02.', 'title' => 'Склад в Чите', 'image' => $img_main . '/106-0.png'),
-        array('num' => '03.', 'title' => 'Поставка под заказ', 'image' => $img_main . '/105-0.png'),
-        array('num' => '04.', 'title' => 'Помощь в комплектации', 'image' => $img_main . '/105-3.png'),
+        array('num' => '02.', 'title' => 'Склад в Чите', 'image' => $img_main . '/105-3.png'),
+        array('num' => '03.', 'title' => 'Поставка под заказ', 'image' => $img_main . '/106-0.png'),
+        array('num' => '04.', 'title' => 'Помощь в комплектации', 'image' => $img_main . '/asset-11.png'),
         array('num' => '05.', 'title' => 'Консультации специалистов', 'image' => $img_main . '/105-0.png'),
-        array('num' => '06.', 'title' => 'Сервисное сопровождение', 'image' => $img_main . '/104-0.png'),
+        array('num' => '06.', 'title' => 'Сервисное сопровождение', 'image' => $img_main . '/105-3.png'),
     );
 }
 
 // Projects
-$projects_title = get_field('main_projects_title') ?: 'Реализованные проекты';
+$projects_title = get_field('main_projects_title') ?: '<span class="text-green">Реализованные</span> проекты';
 $projects_btn   = get_field('main_projects_btn')   ?: 'Смотреть все проекты';
 $projects = get_field('main_projects');
 if (empty($projects)) {
@@ -112,7 +112,7 @@ if (empty($projects)) {
 }
 
 // Categories
-$cat_title = get_field('main_categories_title') ?: 'Основные категории оборудования';
+$cat_title = get_field('main_categories_title') ?: 'Основные категории <span class="text-green">оборудования</span>';
 $categories = get_field('main_categories');
 if (empty($categories)) {
     $categories = array(
@@ -157,8 +157,8 @@ if (empty($partners)) {
 // Testimonials
 $test_subtitle = get_field('main_testimonials_subtitle') ?: 'Что о нас говорят клиенты';
 $test_title    = get_field('main_testimonials_title')    ?: 'Отзывы руководителей клиник и врачей';
-    $test_title_first = 'Отзывы';
-    $test_title_rest  = preg_replace('/^Отзывы\s*/u', '', $test_title);
+    $test_title_first = 'Отзывы руководителей';
+    $test_title_rest  = preg_replace('/^Отзывы руководителей\s*/u', '', $test_title);
 $testimonials = get_field('main_testimonials');
 if (empty($testimonials)) {
     $testimonials = array(
@@ -170,7 +170,7 @@ if (empty($testimonials)) {
 }
 
 // Form
-$form_title = get_field('main_form_title') ?: 'Подберём оборудование под задачи вашей клиники';
+$form_title = get_field('main_form_title') ?: 'Подберём оборудование<br><em>под задачи вашей клиники</em>';
 $form_desc  = get_field('main_form_desc')  ?: 'Оставьте заявку и получите консультацию специалиста';
 $form_btn_raw = get_field('main_form_btn');
 $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') ? $form_btn_raw : 'Получить консультацию';
@@ -207,7 +207,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                 </div>
                 <div class="home-hero-bottom">
                     <div class="home-hero-thumb">
-                        <img src="<?php echo esc_url($img_main . '/3-0.png'); ?>" alt="">
+                        <img src="<?php echo esc_url($img_main . '/hero-thumb-3116-136.png'); ?>" alt="">
                     </div>
                     <?php if (!empty($hero_checks)) : ?>
                     <div class="home-hero-check-card">
@@ -229,6 +229,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
     <section class="home-about">
         <div class="container">
             <div class="home-about-grid">
+                <span class="home-about-mobile-label">Кому подходит</span>
                 <div class="home-about-left">
                     <div class="home-about-text">
                         <h2 class="section-title white"><?php echo wp_kses_post($about_title); ?></h2>
@@ -256,8 +257,11 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
     <section class="home-directions">
         <div class="container">
             <div class="section-header home-directions-header">
-                <h2 class="section-title">Решения для разных <span class="text-green">направлений медицины</span></h2>
-                <span class="section-label"><?php echo esc_html($dir_subtitle); ?></span>
+                <h2 class="section-title">
+                    <span class="directions-copy-desktop">Решения для разных<br><span class="text-green">направлений медицины</span></span>
+                    <span class="directions-copy-mobile">Помогаем выстроить систему <span class="text-green">инфекционного контроля</span></span>
+                </h2>
+                <span class="section-label"><span class="directions-copy-desktop"><?php echo esc_html($dir_subtitle); ?></span><span class="directions-copy-mobile">Что входит</span></span>
             </div>
             <?php if (!empty($directions)) : ?>
             <div class="directions-grid">
@@ -325,29 +329,37 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         <div class="container">
             <div class="home-projects-header">
                 <h2 class="section-title"><?php echo wp_kses_post($projects_title); ?></h2>
-                <a href="#" class="btn btn-primary"><?php echo esc_html($projects_btn); ?></a>
+                <a href="#" class="btn btn-primary projects-btn-desktop"><?php echo esc_html($projects_btn); ?></a>
             </div>
             <?php if (!empty($projects)) : ?>
-            <div class="projects-grid">
-                <?php foreach ($projects as $project) :
-                    $project_link = !empty($project['link']) ? $project['link'] : '#';
-                ?>
-                    <a href="<?php echo esc_url($project_link); ?>" class="project-card">
-                        <div class="project-image">
-                            <img src="<?php echo esc_url($project['image'] ?: $img_main . '/67-0.png'); ?>" alt="">
-                        </div>
-                        <div class="project-body">
-                            <span class="project-cat"><?php echo esc_html($project['cat']); ?></span>
-                            <h3 class="project-title"><?php echo esc_html($project['title']); ?></h3>
-                            <p class="project-desc"><?php echo wp_kses_post($project['desc']); ?></p>
-                        </div>
-                        <span class="project-arrow">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                    </a>
-                <?php endforeach; ?>
+            <div class="home-projects-slider projects-slider">
+                <button class="slider-arrow prev" aria-label="Предыдущие проекты"></button>
+                <div class="project-slide active">
+                    <div class="projects-grid">
+                        <?php foreach ($projects as $project) :
+                            $project_link = !empty($project['link']) ? $project['link'] : '#';
+                            $project_cat = (string) $project['cat'];
+                        ?>
+                            <a href="<?php echo esc_url($project_link); ?>" class="project-card">
+                                <div class="project-image">
+                                    <img src="<?php echo esc_url($project['image'] ?: $img_main . '/67-0.png'); ?>" alt="">
+                                </div>
+                                <div class="project-body">
+                                    <span class="project-cat"><?php echo esc_html($project_cat); ?></span>
+                                    <h3 class="project-title"><?php echo esc_html($project['title']); ?></h3>
+                                    <p class="project-desc"><?php echo wp_kses_post($project['desc']); ?></p>
+                                </div>
+                                <span class="project-arrow">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <button class="slider-arrow next" aria-label="Следующие проекты"></button>
             </div>
             <?php endif; ?>
+            <a href="#" class="btn btn-primary projects-btn-mobile"><?php echo esc_html($projects_btn); ?></a>
         </div>
     </section>
 
@@ -360,9 +372,11 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                 <?php foreach ($categories as $cat) :
                     $cat_link = !empty($cat['link']) ? $cat['link'] : '#';
                 ?>
-                    <a href="<?php echo esc_url($cat_link); ?>" class="category-card" style="background-image:url('<?php echo esc_url($cat['image'] ?: $img_main . '/cat-diagnostic.png'); ?>')">
-                        <span class="category-overlay"></span>
+                    <a href="<?php echo esc_url($cat_link); ?>" class="category-card">
                         <span class="category-num"><?php echo esc_html($cat['num']); ?></span>
+                        <span class="category-image">
+                            <img src="<?php echo esc_url($cat['image'] ?: $img_main . '/cat-diagnostic.png'); ?>" alt="<?php echo esc_attr($cat['title']); ?>">
+                        </span>
                         <span class="category-title"><?php echo esc_html($cat['title']); ?></span>
                     </a>
                 <?php endforeach; ?>
@@ -433,7 +447,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         <div class="container">
             <div class="testimonials-layout">
                 <div class="testimonials-intro">
-                    <h2 class="section-title"><span><?php echo esc_html($test_title_first); ?></span> <span class="text-green"><?php echo esc_html($test_title_rest); ?></span></h2>
+                    <h2 class="section-title"><span class="text-green"><?php echo esc_html($test_title_first); ?></span> <span><?php echo esc_html($test_title_rest); ?></span></h2>
                 </div>
             <?php if (!empty($testimonials)) : ?>
                 <div class="testimonials-content">
@@ -445,7 +459,10 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                 ?>
                     <div class="testimonial-card">
                         <div class="testimonial-author">
-                            <span class="testimonial-avatar" style="background-color:<?php echo esc_attr($color); ?>"><?php echo esc_html($initial); ?></span>
+                            <span class="testimonial-avatar" style="background-color:<?php echo esc_attr($color); ?>">
+                                <img src="<?php echo esc_url($img_main . '/10-2.png'); ?>" alt="">
+                                <span><?php echo esc_html($initial); ?></span>
+                            </span>
                             <div class="testimonial-meta">
                                 <strong><?php echo esc_html($test['name']); ?></strong>
                                 <span><?php echo esc_html($test['position']); ?></span>
@@ -455,6 +472,11 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     </div>
                 <?php endforeach; ?>
             </div>
+                    <div class="testimonials-dots" aria-hidden="true">
+                        <?php foreach ($testimonials as $i => $_test) : ?>
+                            <span class="testimonials-dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
+                        <?php endforeach; ?>
+                    </div>
             <?php endif; ?>
             </div>
         </div>
@@ -463,12 +485,18 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
     <section class="home-request" id="request">
         <div class="container">
             <div class="request-grid">
+                <svg class="request-plus" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
                 <div class="request-text">
-                    <h2 class="section-title white"><?php echo wp_kses_post($form_title); ?></h2>
-                    <p><?php echo wp_kses_post($form_desc); ?></p>
+                    <h2 class="section-title white">
+                        <span class="request-copy-desktop"><?php echo wp_kses_post($form_title); ?></span>
+                        <span class="request-copy-mobile">Подберём оборудование<br><em>для вашей лаборатории</em></span>
+                    </h2>
+                    <p>
+                        <span class="request-copy-desktop"><?php echo wp_kses_post($form_desc); ?></span>
+                        <span class="request-copy-mobile">Оставьте заявку и получите консультацию специалиста по оснащению лабораторий</span>
+                    </p>
                 </div>
                 <div class="request-form-wrap">
-                    <svg class="request-plus" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8v24M8 20h24" stroke="#367643" stroke-width="5" stroke-linecap="round"/></svg>
                     <form id="contact-form" class="home-request-form">
                         <div class="form-row">
                             <label class="form-field">
@@ -501,7 +529,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                                 <span>Оставляя заявку, я соглашаюсь с условиями <a href="#">Политики обработки персональных данных</a></span>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary request-submit"><?php echo esc_html($form_btn); ?></button>
+                        <button type="submit" class="btn btn-primary request-submit"><span class="request-copy-desktop"><?php echo esc_html($form_btn); ?></span><span class="request-copy-mobile">Отправить</span></button>
                         <div class="form-message"></div>
                     </form>
                 </div>

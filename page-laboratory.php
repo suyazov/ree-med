@@ -108,7 +108,7 @@ $default_supplies_items = array(
 $supplies_items = lab_get_repeater('lab_supplies_items', $default_supplies_items);
 
 // Included
-$included_title = lab_get_field('lab_included_title', 'Берём на&nbsp;себя весь процесс оснащения');
+$included_title = lab_get_field('lab_included_title', 'Берём на&nbsp;себя весь <span class="text-green">процесс оснащения</span>');
 $default_included_cards = array(
     array('image' => $img_dir . '/laboratory-included-4.png', 'number' => '1', 'title' => 'Анализ задач лаборатории'),
     array('image' => $img_dir . '/laboratory-included-5.png', 'number' => '2', 'title' => 'Подбор оборудования и комплектации'),

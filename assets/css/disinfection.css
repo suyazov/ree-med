@@ -132,7 +132,28 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         height: 12px;
     }
 
+    .disinfection-page .projects-section {
+        padding: 105px 0 140px;
+    }
+
+    .disinfection-page .projects-slider,
+    .disinfection-page .slides-track {
+        min-height: 435px;
+    }
+
+    .disinfection-page .project-image img {
+        height: 355px;
+    }
+
     /* Partners */
+    .disinfection-page .partners-section {
+        padding: 0 0 140px;
+    }
+
+    .disinfection-page .partners-section .section-header {
+        margin-bottom: 46px;
+    }
+
     .disinfection-page .partner-card {
         min-height: 258px;
         padding: 20px 17px;
@@ -154,6 +175,27 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         font-size: 14px;
         line-height: 16.8px;
         color: #666;
+    }
+
+    .disinfection-page .faq-section {
+        padding: 0 0 141px;
+    }
+
+    .disinfection-page .faq-item {
+        padding: 12.6667px 24px;
+    }
+
+    .disinfection-page .application-section {
+        padding: 0 0 140px;
+    }
+
+    .disinfection-page .application-box {
+        min-height: 478px;
+    }
+
+    .disinfection-page .application-form-wrap {
+        padding-top: 14px;
+        padding-bottom: 14px;
     }
 }
 
@@ -370,16 +412,16 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         min-height: auto;
-        gap: 0;
-        width: 100%;
+        gap: 16px;
+        width: 672px;
     }
 
     .disinfection-page .project-slide {
         position: relative;
         top: auto;
         left: auto;
-        flex: 0 0 100%;
-        width: 100%;
+        flex: 0 0 328px;
+        width: 328px;
         opacity: 1;
         visibility: visible;
         scroll-snap-align: start;
@@ -393,16 +435,18 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     }
 
     .disinfection-page .projects-slider {
-        gap: 0;
-        width: 100%;
+        gap: 16px;
+        width: 672px;
+        margin-top: 51px;
     }
 
     .disinfection-page .slider-arrow.prev {
-        left: 16px;
+        left: 12px;
     }
 
     .disinfection-page .slider-arrow.next {
-        right: 16px;
+        right: auto;
+        left: 292px;
     }
 
     /* Partners mobile */
@@ -510,6 +554,8 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     /* Header mobile: keep actions and burger in one row */
     body:has(.disinfection-page) .site-header .header-container {
         flex-wrap: nowrap;
+        background: transparent;
+        border-radius: 0;
     }
 
     /* Hero mobile badges */
@@ -565,11 +611,24 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     /* Projects mobile */
     .disinfection-page .project-card {
-        padding: 12px;
+        width: 328px;
+        height: 759px;
+        padding: 0;
+        gap: 12px;
+    }
+
+    .disinfection-page .project-image,
+    .disinfection-page .project-image img {
+        width: 328px;
+        height: 194px;
     }
 
     .disinfection-page .project-info {
-        padding: 16px;
+        width: 328px;
+        height: 553px;
+        padding: 20px 24px;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .disinfection-page .project-info h3 {
@@ -635,6 +694,11 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
 /* ======================== SMALL MOBILE (<=480px) ======================== */
 @media (max-width: 480px) {
+    body.disinfection-page,
+    .disinfection-page .projects-section {
+        overflow-x: hidden;
+    }
+
     .disinfection-page .hero-title-last {
         white-space: nowrap;
         display: inline-block;
@@ -742,48 +806,78 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         padding-right: 36px;
     }
 
-    /* Included cards: image on top, title/number below */
+    /* Included cards: fixed mobile geometry from Figma */
+    .disinfection-page .included-grid {
+        gap: 40px;
+        margin-top: 40px;
+    }
+
     .disinfection-page .included-card:not(.green-wide) {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+        display: block;
+        position: relative;
+        height: 219px;
     }
 
     .disinfection-page .included-card:not(.green-wide) img {
+        width: 295px;
+        height: 180px;
         margin-bottom: 0;
-        border-radius: 8px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .disinfection-page .included-card:nth-child(1),
+    .disinfection-page .included-card:nth-child(4) {
+        height: 236px;
+    }
+
+    .disinfection-page .included-card:nth-child(7) {
+        height: 216px;
     }
 
     .disinfection-page .included-card .num {
-        position: static;
+        position: absolute;
+        left: 0;
+        top: 195px;
+        width: 24px;
+        height: 24px;
         margin-bottom: 0;
+        border-radius: 2px;
+        font-size: 13px;
+        line-height: 24px;
     }
 
     .disinfection-page .included-card h3 {
+        position: absolute;
+        left: 40px;
+        top: 192px;
+        width: 255px;
         padding-left: 0;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 120%;
+        letter-spacing: -0.03em;
     }
 
     .disinfection-page .included-card.green-wide {
         align-items: flex-start !important;
         justify-content: flex-start;
         text-align: left !important;
-        min-height: auto;
-        padding: 20px;
+        height: 196px;
+        min-height: 196px;
+        padding: 70px 24px 24px;
     }
 
     .disinfection-page .included-card.green-wide p {
         text-align: left !important;
         font-size: 14px;
-        line-height: 130%;
+        line-height: 17px;
         padding-right: 30px;
     }
 
     .disinfection-page .included-card.green-wide::after {
         position: absolute !important;
-        top: 20px;
-        right: 20px;
+        top: 16px;
+        right: 17px;
     }
 
     /* Why section: uniform card heights and stat text visibility */
@@ -863,5 +957,170 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         font-size: 13px;
         line-height: 1.3;
     }
-}
 
+    /* 375px Figma vertical rhythm */
+    body.disinfection-page .hero-section {
+        padding: 8px 0 50px;
+    }
+
+    body.disinfection-page .hero-section .container {
+        padding: 0 16px;
+        min-height: 729px;
+        box-sizing: border-box;
+    }
+
+    body.disinfection-page .audience-section,
+    body.disinfection-page .supplies-section,
+    body.disinfection-page .included-section,
+    body.disinfection-page .tasks-section,
+    body.disinfection-page .why-section,
+    body.disinfection-page .projects-section,
+    body.disinfection-page .partners-section,
+    body.disinfection-page .faq-section {
+        padding: 50px 0;
+    }
+
+    body.disinfection-page .audience-inner,
+    body.disinfection-page .supplies-section .container,
+    body.disinfection-page .tasks-section .container,
+    body.disinfection-page .why-section .container,
+    body.disinfection-page .projects-section .container,
+    body.disinfection-page .faq-section .container {
+        width: auto;
+        max-width: none;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    body.disinfection-page .audience-inner {
+        margin: 0;
+    }
+
+    body.disinfection-page .supplies-box {
+        height: 899px !important;
+    }
+
+    body.disinfection-page .included-section .container {
+        min-height: 2191px;
+    }
+
+    body.disinfection-page .tasks-section .container {
+        min-height: 648px;
+    }
+
+    body.disinfection-page .why-section .container {
+        min-height: 829px;
+    }
+
+    body.disinfection-page .projects-section .container {
+        min-height: 943px;
+    }
+
+    body.disinfection-page .partners-section .container {
+        width: auto;
+        max-width: none;
+        height: 337px;
+        min-height: 337px;
+        padding-left: 16px;
+        box-sizing: border-box;
+    }
+
+    body.disinfection-page .partners-section .section-header {
+        width: 343px;
+        margin: 0 0 32px;
+    }
+
+    body.disinfection-page .partners-grid {
+        height: 253px;
+        gap: 12px;
+        padding-bottom: 0;
+    }
+
+    body.disinfection-page .partner-card {
+        flex: 0 0 243px;
+        width: 243px;
+        height: 253px;
+        padding: 16px;
+    }
+
+    body.disinfection-page .partner-card img {
+        width: 174px;
+        height: 98px;
+    }
+
+    body.disinfection-page .faq-section .container {
+        min-height: 552px;
+    }
+
+    body.disinfection-page .faq-description {
+        display: none;
+    }
+
+    body.disinfection-page .faq-header {
+        margin-bottom: 32px;
+    }
+
+    body.disinfection-page .faq-header .section-title {
+        max-width: 283px;
+        line-height: 26px;
+    }
+
+    body.disinfection-page .faq-grid {
+        gap: 12px;
+    }
+
+    body.disinfection-page .faq-item {
+        padding: 20px 24px;
+    }
+
+    body.disinfection-page .faq-item span:first-child,
+    body.disinfection-page .faq-item p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    body.disinfection-page .faq-item span:first-child {
+        max-width: 257px;
+    }
+
+    body.disinfection-page .faq-item.active p {
+        margin-top: 6px;
+    }
+
+    body.disinfection-page .application-section {
+        padding: 50px 0 100px;
+    }
+
+    body.disinfection-page .application-section .container {
+        padding: 0 16px;
+    }
+
+    body.disinfection-page .application-box {
+        width: 100%;
+        min-height: 646px;
+        padding: 24px 20px;
+        box-sizing: border-box;
+    }
+
+    body.disinfection-page .site-footer {
+        min-height: 1026px;
+        height: 1026px;
+    }
+
+    body.disinfection-page .site-footer .footer-main {
+        min-height: 770px;
+        height: 770px;
+    }
+
+    body.disinfection-page .site-footer .footer-card {
+        bottom: 32px;
+        min-height: 353px;
+    }
+
+    body.disinfection-page .site-footer .footer-bottom {
+        min-height: 256px;
+        padding-bottom: 32px;
+        box-sizing: border-box;
+    }
+}
