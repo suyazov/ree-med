@@ -514,9 +514,11 @@
 .medcentry-page .mc-request-clover { position: absolute; left: 48px; top: 32px; width: 40px; height: 40px; color: var(--color-white); }
 .medcentry-page .mc-request-left { margin-top: 154px; }
 .medcentry-page .mc-request-title { font-size: 36px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin: 0 0 16px; }
+.medcentry-page .mc-request-title em { font-style: italic; font-weight: 400; }
 .medcentry-page .mc-request-desc { font-size: 16px; line-height: 120%; color: var(--color-white); max-width: 387px; }
 .medcentry-page .mc-request-note { display: inline-flex; align-items: center; gap: 12px; margin-top: 41px; color: var(--color-white); font-size: 16px; line-height: 18px; background: rgba(54, 118, 67, 0.5); border-radius: 12px; padding: 12px 20px; }
-.medcentry-page .mc-request-note .check { width: 20px; height: 20px; border-radius: 50%; background: var(--color-white); color: var(--color-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.medcentry-page .mc-request-note .check { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(46.27deg, #3F8D50 18.16%, #51A462 79.56%); color: var(--color-white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.medcentry-page .mc-request-note .check svg { width: 11px; height: 9px; display: block; }
 .medcentry-page .mc-request-form { width: 490px; height: 358px; background: var(--color-white); border-radius: 12px; padding: 32px 30px 32px 31px; display: flex; flex-direction: column; }
 .medcentry-page .mc-request-form input,
 .medcentry-page .mc-request-form textarea { width: 429px; height: 52px; flex-shrink: 0; background: var(--color-gray); border: none; border-radius: 8px; padding: 20px 16px; font-family: 'Exo 2', sans-serif; font-size: 12px; line-height: 12px; color: var(--color-black); box-sizing: border-box; }
@@ -529,7 +531,7 @@
 .medcentry-page .mc-request-form textarea::placeholder { color: var(--color-black); opacity: 0.6; }
 .medcentry-page .mc-request-form .checkbox { display: flex; align-items: center; gap: 8px; font-size: 12px; line-height: 12px; color: var(--color-dark-green); margin-bottom: 12px; height: 24px; }
 .medcentry-page .mc-request-form .checkbox span { width: 278px; display: block; opacity: 0.6; }
-.medcentry-page .mc-request-form .checkbox input { width: 15px; height: 15px; flex-shrink: 0; margin: 0; border: 1px solid var(--color-dark-green); border-radius: 2px; appearance: none; -webkit-appearance: none; background: transparent; cursor: pointer; }
+.medcentry-page .mc-request-form .checkbox input { width: 15px; height: 15px; flex-shrink: 0; margin: 0; padding: 0; border: 1px solid #315046; border-radius: 2px; appearance: none; -webkit-appearance: none; background: transparent; cursor: pointer; box-sizing: border-box; }
 .medcentry-page .mc-request-form .checkbox input:checked { background: var(--color-dark-green); }
 .medcentry-page .mc-request-form button { width: 429px; height: 57px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-green); color: var(--color-white); border: none; border-radius: 8px; font-family: inherit; font-size: 14px; line-height: 17px; font-weight: 600; cursor: pointer; }
 .medcentry-page .mc-request-form .form-message { min-height: 0; margin: 0; font-size: 12px; line-height: 14px; }
