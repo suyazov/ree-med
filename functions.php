@@ -80,18 +80,6 @@ function trimed_document_title($title) {
 }
 add_filter('document_title_parts', 'trimed_document_title');
 
-function trimed_nav_menu_objects($items, $args) {
-    if (is_front_page() && isset($args->theme_location) && $args->theme_location === 'primary') {
-        foreach ($items as $key => $item) {
-            if ($item->title === 'Медцентры') {
-                unset($items[$key]);
-            }
-        }
-    }
-    return $items;
-}
-add_filter('wp_nav_menu_objects', 'trimed_nav_menu_objects', 10, 2);
-
 function trimed_enqueue_page_assets() {
     if (is_page_template('page-stomatology.php')) {
         wp_enqueue_style('trimed-stomatology', get_template_directory_uri() . '/assets/css/stomatology.css', array('trimed-main'), TRIMED_VERSION);
