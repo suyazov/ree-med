@@ -73,12 +73,73 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
+:where(.lab-container) {
+    width: 100%;
+    max-width: 1344px;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .service-section-inner,
 :where(.mc-section-inner, .stom-section-inner) {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
+}
+
+:where(.lab-section-inner) {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) {
+    --color-white: #EFEFEF;
+    --color-white-2: #F9F9F9;
+    --color-gray: #E6E7E8;
+    --color-gray-2: #D1D3D4;
+    --color-black: #353535;
+    --color-dark-green: #315046;
+    --color-green: #367643;
+    --color-light-green-1: #3F8D50;
+    --color-light-green-2: #51A462;
+    --gradient-green: linear-gradient(271.52deg, #367643 0%, #315046 100%);
+    --gradient-light-green: linear-gradient(46.27deg, #3F8D50 18.16%, #51A462 79.56%);
+
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    color: var(--color-black);
+    background: var(--color-white);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page),
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) *::before,
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) *::after,
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) * {
+    box-sizing: border-box;
+}
+
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) :is(h1, h2, h3, h4, h5, h6, p) {
+    margin: 0;
+}
+
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:where(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page) .text-green {
+    color: var(--color-green);
 }
 
 .btn {
