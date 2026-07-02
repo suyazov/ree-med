@@ -551,10 +551,10 @@ curl -H "X-Figma-Token: $FIGMA_API_KEY" \
 
 ## Статус: Стоматология (19.06.2026)
 
-- **Прототип свёрстан** в `/prototypes/stomatology.html` + `/prototypes/stomatology.css`.
+- **Прототип перенесён в WordPress**, старые файлы из `/prototypes/` удалены при чистке мёртвого кода.
 - **Секции:** Hero, Кому подходит, Что входит, Реализованные проекты, Как мы работаем, Заявка, Почему выбирают, CTA-bottom, Footer-заглушка.
 - **Адаптив:** десктоп (1440) и мобильная (375) версии. Скриншоты сохранены в `/root/stomatology_proto_1440_v2.png` и `/root/stomatology_proto_375.png`.
-- **Ассеты:** изображения из Figma пока не выгружены — API возвращает `429 Rate limit exceeded`. Используется плейсхолдер `prototypes/placeholder.jpg`. Повторная попытка экспорта отложена до снятия лимита.
+- **Ассеты:** изображения из Figma пока не выгружены — API возвращал `429 Rate limit exceeded`. В WordPress используется общий плейсхолдер из `assets/img/placeholder.jpg`.
 - **Интегрировано в WordPress:** шаблон `page-stomatology.php`, стили `assets/css/stomatology.css`, страница `/stomatologiya/` опубликована, пункт меню добавлен.
 - **Следующий шаг:** замена плейсхолдеров на финальные ассеты из Figma после снятия Rate limit.
 
@@ -572,7 +572,7 @@ curl -H "X-Figma-Token: $FIGMA_API_KEY" \
   9. Заявка — форма на зелёном фоне.
   10. Footer.
 - **Ассеты:** изображения не выгружены (Figma API 429), будут использованы плейсхолдеры.
-- **Прототип свёрстан:** `prototypes/laboratory.html` + `prototypes/laboratory.css`.
+- **Прототип перенесён в WordPress**, старые файлы из `/prototypes/` удалены при чистке мёртвого кода.
 - **Интегрировано в WordPress:** шаблон `page-laboratory.php`, стили `assets/css/laboratory.css`, страница `/laboratoriya/` опубликована, пункт меню добавлен.
 - **Следующий шаг:** замена плейсхолдеров на финальные ассеты из Figma после снятия Rate limit.
 
