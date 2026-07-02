@@ -8,8 +8,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
 $placeholder = $img_dir . '/placeholder.jpg';
 
 function stom_image_url($field, $placeholder) {
-    $url = get_field($field);
-    return !empty($url) ? $url : $placeholder;
+    return trimed_image_field($field, $placeholder);
 }
 
 function stom_picture($url, $class = '', $alt = '', $width = null, $height = null, $style = '') {

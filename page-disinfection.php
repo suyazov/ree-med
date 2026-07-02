@@ -7,8 +7,7 @@ get_header();
 $img_dir = get_template_directory_uri() . '/assets/img';
 
 function dis_image_url($field, $fallback) {
-    $url = get_field($field);
-    return !empty($url) ? $url : $fallback;
+    return trimed_image_field($field, $fallback);
 }
 ?>
 

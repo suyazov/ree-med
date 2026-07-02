@@ -8,19 +8,11 @@ $img_dir = get_template_directory_uri() . '/assets/img/medcentry';
 $placeholder = get_template_directory_uri() . '/assets/img/placeholder.jpg';
 
 function med_image_url($field, $placeholder) {
-    if (function_exists('get_field')) {
-        $url = get_field($field);
-        if (!empty($url)) return $url;
-    }
-    return $placeholder;
+    return trimed_image_field($field, $placeholder);
 }
 
 function med_get_field($field, $fallback = '') {
-    if (function_exists('get_field')) {
-        $val = get_field($field);
-        if (!empty($val)) return $val;
-    }
-    return $fallback;
+    return trimed_get_field_value($field, $fallback);
 }
 
 function med_format_hero_title($title) {

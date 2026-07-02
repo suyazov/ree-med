@@ -8,29 +8,15 @@ $img_dir = get_template_directory_uri() . '/assets/img';
 $placeholder = $img_dir . '/placeholder.jpg';
 
 function lab_get_field($key, $fallback = '') {
-    if (function_exists('get_field')) {
-        $value = get_field($key);
-        return ($value !== null && $value !== false && $value !== '') ? $value : $fallback;
-    }
-    return $fallback;
+    return trimed_get_field_value($key, $fallback);
 }
 
 function lab_image_url($key, $placeholder) {
-    $url = '';
-    if (function_exists('get_field')) {
-        $url = get_field($key);
-    }
-    return (!empty($url)) ? $url : $placeholder;
+    return trimed_image_field($key, $placeholder);
 }
 
 function lab_get_repeater($key, $fallback = array()) {
-    if (function_exists('get_field')) {
-        $value = get_field($key);
-        if (!empty($value) && is_array($value)) {
-            return $value;
-        }
-    }
-    return $fallback;
+    return trimed_repeater_field($key, $fallback);
 }
 
 function lab_audience_card_class($style) {

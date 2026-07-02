@@ -77,6 +77,26 @@ function trimed_img_url($relative_path = '') {
     return get_template_directory_uri() . '/assets/img' . ($relative_path ? '/' . ltrim($relative_path, '/') : '');
 }
 
+function trimed_get_field_value($field, $fallback = '') {
+    if (function_exists('get_field')) {
+        $value = get_field($field);
+        if ($value !== null && $value !== false && $value !== '') {
+            return $value;
+        }
+    }
+    return $fallback;
+}
+
+function trimed_image_field($field, $fallback) {
+    $value = trimed_get_field_value($field, '');
+    return !empty($value) ? $value : $fallback;
+}
+
+function trimed_repeater_field($field, $fallback = array()) {
+    $value = trimed_get_field_value($field, array());
+    return !empty($value) && is_array($value) ? $value : $fallback;
+}
+
 function trimed_render_phone_input($args = array()) {
     $args = wp_parse_args($args, array(
         'class'       => 'phone-input',
