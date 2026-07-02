@@ -1791,6 +1791,67 @@ h1, h2, h3, h4, h5, h6, p {
     background: var(--color-dark-green);
 }
 
+:where(.mc-request-form, .stom-request-form) {
+    display: flex;
+    flex-direction: column;
+    width: 490px;
+    height: 358px;
+    padding: 32px 30px 32px 31px;
+    border-radius: var(--radius-card);
+    background: var(--color-white);
+}
+
+:where(.mc-request-form, .stom-request-form) input,
+:where(.mc-request-form, .stom-request-form) textarea {
+    width: 429px;
+    height: var(--control-height);
+    flex-shrink: 0;
+    padding: 20px 16px;
+    border: none;
+    border-radius: var(--radius-control);
+    background: var(--color-gray);
+    box-sizing: border-box;
+    color: var(--color-black);
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+:where(.mc-request-form, .stom-request-form) input[name="name"] {
+    margin-bottom: 12px;
+}
+
+:where(.mc-request-form, .stom-request-form) textarea[name="comment"] {
+    height: var(--control-height);
+    margin-bottom: 20px;
+    padding-top: 20px;
+    resize: none;
+}
+
+:where(.mc-request-form, .stom-request-form) input::placeholder,
+:where(.mc-request-form, .stom-request-form) textarea::placeholder {
+    color: var(--color-black);
+    opacity: 0.6;
+}
+
+:where(.mc-request-form, .stom-request-form) button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 429px;
+    height: var(--button-height);
+    flex-shrink: 0;
+    border: none;
+    border-radius: var(--radius-control);
+    background: var(--gradient-green);
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .form-message {
     font-size: 14px;
     margin-top: 8px;
