@@ -112,6 +112,11 @@ function trimed_get_contact($key, $fallback = '') {
     return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
 }
 
+function trimed_phone_href($phone = '') {
+    $value = $phone !== '' ? $phone : trimed_get_contact('phone');
+    return esc_attr(preg_replace('/[^0-9+]/', '', $value));
+}
+
 function trimed_asset_version($relative_path) {
     $path = get_template_directory() . '/' . ltrim($relative_path, '/');
     return file_exists($path) ? TRIMED_VERSION . '.' . filemtime($path) : TRIMED_VERSION;
