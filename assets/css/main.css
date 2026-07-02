@@ -1334,6 +1334,39 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Shared project cards for service pages */
+:where(.mc-projects, .stom-projects) {
+    padding: 0;
+    margin-top: 141px;
+}
+
+:where(.mc-projects-header, .stom-projects-header) {
+    text-align: center;
+}
+
+:where(.mc-projects-title, .stom-projects-title) {
+    margin: 0 auto 32px;
+    color: var(--color-black);
+    font-size: 48px;
+    line-height: 110%;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+:where(.mc-projects-desc, .stom-projects-desc) {
+    max-width: 892px;
+    margin: 0 auto;
+    color: var(--color-black);
+    font-size: 16px;
+    line-height: 120%;
+}
+
+:where(.mc-projects-grid, .stom-projects-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
 :where(.mc-project-card, .stom-project-card) {
     display: flex;
     height: var(--project-card-height);

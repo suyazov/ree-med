@@ -451,11 +451,8 @@
 .medcentry-page .mc-included-result .mc-clover { display: none; }
 
 /* Projects */
-.medcentry-page .mc-projects { padding: 0; margin-top: 141px; }
-.medcentry-page .mc-projects-header { text-align: center; margin-bottom: 67px; }
-.medcentry-page .mc-projects-title { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); margin: 0 auto 32px; width: fit-content; text-align: center; }
-.medcentry-page .mc-projects-desc { font-size: 16px; line-height: 120%; color: var(--color-black); max-width: 892px; margin: 0 auto; }
-.medcentry-page .mc-projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.medcentry-page .mc-projects-header { margin-bottom: 67px; }
+.medcentry-page .mc-projects-title { width: fit-content; }
 .medcentry-page .mc-project-card-arrow {
     margin-right: 20px;
 }
