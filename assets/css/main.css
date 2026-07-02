@@ -1551,6 +1551,21 @@ h1, h2, h3, h4, h5, h6, p {
     object-fit: cover;
 }
 
+:where(.mc-why-cta-btn, .stom-cta-btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 57px;
+    border: none;
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .project-card {
     background: #F5F5F5;
     border-radius: 16px;

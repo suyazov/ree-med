@@ -394,7 +394,7 @@
 .stomatology-page .stom-cta { padding: 0; margin-top: 40px; }
 .stomatology-page .stom-cta-inner { max-width: 1200px; margin: 0 auto; background: var(--gradient-green); border-radius: 20px; padding: 32px 48px; min-height: 201px; display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; }
 .stomatology-page .stom-cta-text { font-size: 28px; line-height: 110%; letter-spacing: -0.02em; color: var(--color-white); max-width: 623px; margin-left: 54px; }
-.stomatology-page .stom-cta-btn { width: 363px; height: 57px; display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; background: var(--gradient-light-green); color: var(--color-white); border-radius: 8px; font-family: inherit; font-size: 14px; line-height: 17px; font-weight: 600; border: none; cursor: pointer; margin: 58px 6px 0 0; }
+.stomatology-page .stom-cta-btn { width: 363px; align-self: flex-start; background: var(--gradient-light-green); margin: 58px 6px 0 0; }
 .stomatology-page .stom-cta-btn span { font-family: inherit; font-weight: 600; white-space: nowrap; }
 .stomatology-page .stom-cta-icon { position: absolute; left: 36px; top: 36px; width: 31px; height: 31px; color: var(--color-white); }
 /* Responsive */

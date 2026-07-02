@@ -500,7 +500,7 @@
 .medcentry-page .mc-why-cta-bg { position: absolute; left: -34.03%; top: -0.16%; width: 168.12%; height: 200.83%; object-fit: fill; max-width: none; }
 .medcentry-page .mc-why-cta-content { position: absolute; left: 68px; top: 68px; width: 345px; height: 166px; z-index: 2; }
 .medcentry-page .mc-why-cta-text { font-size: 28px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin-bottom: 16px; max-width: 345px; }
-.medcentry-page .mc-why-cta-btn { width: 345px; height: 57px; display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-green); color: var(--color-white); border-radius: 8px; font-family: inherit; font-size: 14px; line-height: 17px; font-weight: 600; border: none; cursor: pointer; }
+.medcentry-page .mc-why-cta-btn { width: 345px; background: var(--gradient-green); }
 
 /* Responsive */
 @media (max-width: 1200px) {
