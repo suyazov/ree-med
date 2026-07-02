@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TRIMED_VERSION', '1.10.46');
+define('TRIMED_VERSION', '1.10.48');
 
 // Email для заявок: можно переопределить в wp-config.php через define('TRIMED_FORM_EMAIL', 'email@example.com')
 if (!defined('TRIMED_FORM_EMAIL')) {
@@ -175,6 +175,34 @@ function trimed_render_agree_checkbox($args = array()) {
     echo '</label>';
 }
 
+function trimed_get_default_form_fields() {
+    return array(
+        'name' => array(
+            'label' => 'Ваше имя',
+            'placeholder' => 'Иванов Николай Сергеевич',
+            'required' => true,
+        ),
+        'phone' => array(
+            'label' => 'Телефон',
+            'placeholder' => '+7 (999) 999-99-99',
+            'required' => true,
+            'type' => 'tel',
+            'is_phone' => true,
+        ),
+        'organization' => array(
+            'label' => 'Организация',
+            'placeholder' => 'Название организации',
+            'required' => false,
+        ),
+        'comment' => array(
+            'label' => 'Комментарий',
+            'placeholder' => 'Ваш комментарий',
+            'required' => false,
+            'is_textarea' => true,
+        ),
+    );
+}
+
 function trimed_render_contact_form($args = array()) {
     $args = wp_parse_args($args, array(
         'id'                 => 'contact-form',
@@ -191,35 +219,36 @@ function trimed_render_contact_form($args = array()) {
         'message_position'   => 'auto',
     ));
 
-    $field_labels = array(
-        'name'         => 'Ваше имя',
-        'phone'        => 'Телефон',
-        'organization' => 'Организация',
-        'comment'      => 'Комментарий',
-    );
-    $field_placeholders = array(
-        'name'         => 'Иванов Николай Сергеевич',
-        'phone'        => '+7 (999) 999-99-99',
-        'organization' => 'Название организации',
-        'comment'      => 'Ваш комментарий',
-    );
+    $default_form_fields = trimed_get_default_form_fields();
+    $fields = is_array($args['fields']) ? $args['fields'] : array();
 
-    echo '<form id="' . esc_attr($args['id']) . '" class="' . esc_attr($args['class']) . '">';
+    $form_class = trim((string) $args['class']);
+    if ($form_class !== '') {
+        $form_class .= ' ';
+    }
+    $form_class .= 'contact-form';
 
-    foreach ($args['fields'] as $field) {
+    echo '<form id="' . esc_attr($args['id']) . '" class="' . esc_attr(trim($form_class)) . '">';
+
+    foreach ($fields as $field) {
+        if (!isset($default_form_fields[$field])) {
+            continue;
+        }
+
+        $meta = $default_form_fields[$field];
         if ($args['layout'] === 'rows') {
             echo '<div class="form-row">';
             $field_class = $field === 'phone' ? 'form-field form-field-phone' : 'form-field';
             echo '<label class="' . esc_attr($field_class) . '">';
-            echo '<span class="form-field-label">' . esc_html($field_labels[$field]) . '</span>';
+            echo '<span class="form-field-label">' . esc_html($meta['label']) . '</span>';
             if ($field === 'phone') {
                 echo '<img src="' . esc_url($args['flag_url']) . '" alt="" class="phone-flag">';
-                echo '<input type="tel" name="phone" placeholder="' . esc_attr($field_placeholders[$field]) . '" required>';
+                echo '<input type="tel" name="phone" placeholder="' . esc_attr($meta['placeholder']) . '" required>';
             } elseif ($field === 'comment') {
-                echo '<textarea name="comment" rows="3" placeholder="' . esc_attr($field_placeholders[$field]) . '"></textarea>';
+                echo '<textarea name="comment" rows="3" placeholder="' . esc_attr($meta['placeholder']) . '"></textarea>';
             } else {
-                $required = $field === 'name' ? ' required' : '';
-                echo '<input type="text" name="' . esc_attr($field) . '" placeholder="' . esc_attr($field_placeholders[$field]) . '"' . $required . '>';
+                $required = !empty($meta['required']) ? ' required' : '';
+                echo '<input type="text" name="' . esc_attr($field) . '" placeholder="' . esc_attr($meta['placeholder']) . '"' . $required . '>';
             }
             echo '</label>';
             echo '</div>';
@@ -229,12 +258,12 @@ function trimed_render_contact_form($args = array()) {
         if ($field === 'phone' && $args['phone_style'] === 'phone-input') {
             trimed_render_phone_input(array('flag_url' => $args['flag_url']));
         } elseif ($field === 'phone') {
-            echo '<input type="tel" name="phone" placeholder="' . esc_attr($field_placeholders[$field]) . '" required>';
+            echo '<input type="tel" name="phone" placeholder="' . esc_attr($meta['placeholder']) . '" required>';
         } elseif ($field === 'comment') {
-            echo '<textarea name="comment" placeholder="' . esc_attr($field_placeholders[$field]) . '"></textarea>';
+            echo '<textarea name="comment" placeholder="' . esc_attr($meta['placeholder']) . '"></textarea>';
         } else {
-            $required = $field === 'name' ? ' required' : '';
-            echo '<input type="text" name="' . esc_attr($field) . '" placeholder="' . esc_attr($field_placeholders[$field]) . '"' . $required . '>';
+            $required = !empty($meta['required']) ? ' required' : '';
+            echo '<input type="text" name="' . esc_attr($field) . '" placeholder="' . esc_attr($meta['placeholder']) . '"' . $required . '>';
         }
     }
 
@@ -282,9 +311,15 @@ function trimed_render_request_summary_block($args = array()) {
         'content_tag' => 'div',
         'content_class' => '',
         'title'       => '',
+        'title_mobile' => '',
         'title_class' => '',
+        'title_class_copy' => 'request-copy-desktop',
+        'title_mobile_class' => 'request-copy-mobile',
         'desc'        => '',
+        'desc_mobile' => '',
         'desc_class'  => '',
+        'desc_class_copy' => 'request-copy-desktop',
+        'desc_mobile_class' => 'request-copy-mobile',
         'note'        => '',
         'note_class'  => '',
         'note_icon'   => '',
@@ -304,10 +339,24 @@ function trimed_render_request_summary_block($args = array()) {
 
     echo '<' . $tag . (!empty($content_class) ? ' class="' . esc_attr($content_class) . '"' : '') . '>';
     if (!empty($args['title'])) {
-        echo '<h2' . (!empty($title_class) ? ' class="' . esc_attr($title_class) . '"' : '') . '>' . wp_kses_post($args['title']) . '</h2>';
+        echo '<h2' . (!empty($title_class) ? ' class="' . esc_attr($title_class) . '"' : '') . '>';
+        if (!empty($args['title_mobile'])) {
+            echo '<span class="' . esc_attr(sanitize_html_class($args['title_class_copy'])) . '">' . wp_kses_post($args['title']) . '</span>';
+            echo '<span class="' . esc_attr(sanitize_html_class($args['title_mobile_class'])) . '">' . wp_kses_post($args['title_mobile']) . '</span>';
+        } else {
+            echo wp_kses_post($args['title']);
+        }
+        echo '</h2>';
     }
     if (!empty($args['desc'])) {
-        echo '<p' . (!empty($desc_class) ? ' class="' . esc_attr($desc_class) . '"' : '') . '>' . wp_kses_post($args['desc']) . '</p>';
+        echo '<p' . (!empty($desc_class) ? ' class="' . esc_attr($desc_class) . '"' : '') . '>';
+        if (!empty($args['desc_mobile'])) {
+            echo '<span class="' . esc_attr(sanitize_html_class($args['desc_class_copy'])) . '">' . wp_kses_post($args['desc']) . '</span>';
+            echo '<span class="' . esc_attr(sanitize_html_class($args['desc_mobile_class'])) . '">' . wp_kses_post($args['desc_mobile']) . '</span>';
+        } else {
+            echo wp_kses_post($args['desc']);
+        }
+        echo '</p>';
     }
     if (!empty($args['note'])) {
         echo '<div' . (!empty($note_class) ? ' class="' . esc_attr($note_class) . '"' : '') . '>';
@@ -318,6 +367,22 @@ function trimed_render_request_summary_block($args = array()) {
         echo '</div>';
     }
     echo '</' . $tag . '>';
+}
+
+function trimed_sanitize_class_list($value) {
+    if (!is_string($value)) {
+        return '';
+    }
+
+    $classes = preg_split('/\s+/', trim($value));
+    if (empty($classes) || (count($classes) === 1 && $classes[0] === '')) {
+        return '';
+    }
+
+    $safe = array_map('sanitize_html_class', $classes);
+    $safe = array_filter($safe, 'strlen');
+
+    return trim(implode(' ', $safe));
 }
 
 function trimed_render_request_callout($args = array()) {
@@ -347,41 +412,161 @@ function trimed_render_request_callout($args = array()) {
         'button_class'  => 'btn btn-primary request-submit',
     ));
 
-    $section_id = trim(sanitize_html_class($args['section_id']));
+    trimed_render_service_request_section(array(
+        'section_class' => $args['section_class'],
+        'section_id'    => $args['section_id'],
+        'container_class' => $args['container_class'],
+        'inner_class'   => $args['grid_class'],
+        'summary' => array(
+            'icon'              => $args['icon'],
+            'content_tag'       => 'div',
+            'content_class'     => 'request-text',
+            'title'             => $args['title'],
+            'title_mobile'      => $args['title_mobile'],
+            'title_class'       => $args['title_class'],
+            'title_class_copy'  => $args['title_class_copy'],
+            'title_mobile_class' => $args['title_mobile_class'],
+            'desc'              => $args['description'],
+            'desc_mobile'       => $args['description_mobile'],
+            'desc_class'        => $args['description_class'],
+            'desc_class_copy'   => 'request-copy-desktop',
+            'desc_mobile_class' => 'request-copy-mobile',
+        ),
+        'form' => $form_args,
+        'wrap_form' => true,
+    ));
+}
 
-    echo '<section class="' . esc_attr($args['section_class']) . '"' . (!empty($section_id) ? ' id="' . esc_attr($section_id) . '"' : '') . '>';
-    echo '<div class="' . esc_attr($args['container_class']) . '">';
-    echo '<div class="' . esc_attr($args['grid_class']) . '">';
-    echo wp_kses_post($args['icon']);
-    echo '<div class="request-text">';
+function trimed_get_default_faq_items($scope = '') {
+    if ($scope === 'disinfection') {
+        return array(
+            array(
+                'question' => 'Какие дезсредства выбрать для стоматологии?',
+                'answer'   => '',
+                'is_open'  => false,
+            ),
+            array(
+                'question' => 'Как подобрать рециркулятор?',
+                'answer'   => '',
+                'is_open'  => false,
+            ),
+            array(
+                'question' => 'Какие средства подходят для обработки инструментов?',
+                'answer'   => '',
+                'is_open'  => false,
+            ),
+            array(
+                'question' => 'Какие документы предоставляются на продукцию?',
+                'answer'   => '',
+                'is_open'  => false,
+            ),
+            array(
+                'question' => 'Есть ли товары в наличии в Чите?',
+                'answer'   => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.',
+                'is_open'  => true,
+            ),
+        );
+    }
 
+    return array();
+}
+
+function trimed_prepare_faq_items($items = array(), $options = array()) {
+    $options = wp_parse_args($options, array(
+        'open_first' => true,
+    ));
+
+    $raw_items = is_array($items) ? $items : array();
+    $prepared = array();
+    $opened = false;
+
+    foreach ($raw_items as $item) {
+        if (!is_array($item)) {
+            continue;
+        }
+
+        $question = isset($item['question']) ? sanitize_text_field(wp_strip_all_tags((string)$item['question'])) : '';
+        $answer = isset($item['answer']) ? (string)$item['answer'] : '';
+        $answer = trim($answer);
+        if ($question === '') {
+            continue;
+        }
+
+        $has_answer = $answer !== '';
+        $is_open = false;
+        if ($options['open_first'] && !$opened && !empty($item['is_open']) && $has_answer) {
+            $is_open = true;
+            $opened = true;
+        }
+
+        $prepared[] = array(
+            'question'   => $question,
+            'answer'     => $answer,
+            'has_answer' => $has_answer,
+            'is_open'    => $is_open,
+        );
+    }
+
+    return $prepared;
+}
+
+function trimed_render_faq_section($args = array()) {
+    $args = wp_parse_args($args, array(
+        'section_class' => 'faq-section',
+        'section_id'    => '',
+        'container_class' => 'container',
+        'header_class'  => 'faq-header',
+        'title_class'   => 'section-title',
+        'description_class' => 'faq-description',
+        'grid_class'    => 'faq-grid',
+        'items'         => array(),
+        'title'         => '',
+        'description'   => '',
+        'split_columns' => true,
+        'open_first'    => true,
+        'icon_svg'      => '<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.25L5 5.25L9 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    ));
+
+    $items = trimed_prepare_faq_items($args['items'], array(
+        'open_first' => (bool)$args['open_first'],
+    ));
+
+    echo '<section class="' . esc_attr(sanitize_html_class($args['section_class'])) . '"' . (!empty($args['section_id']) ? ' id="' . esc_attr(sanitize_html_class($args['section_id'])) . '"' : '') . '>';
+    echo '<div class="' . esc_attr(sanitize_html_class($args['container_class'])) . '">';
+    echo '<div class="' . esc_attr(sanitize_html_class($args['header_class'])) . '">';
     if (!empty($args['title'])) {
-        echo '<h2 class="' . esc_attr($args['title_class']) . '">';
-        if (!empty($args['title_mobile'])) {
-            echo '<span class="' . esc_attr($args['title_class_copy']) . '">' . wp_kses_post($args['title']) . '</span>';
-            echo '<span class="' . esc_attr($args['title_mobile_class']) . '">' . wp_kses_post($args['title_mobile']) . '</span>';
-        } else {
-            echo wp_kses_post($args['title']);
-        }
-        echo '</h2>';
+        echo '<h2 class="' . esc_attr(sanitize_html_class($args['title_class'])) . '">' . wp_kses_post($args['title']) . '</h2>';
     }
-
     if (!empty($args['description'])) {
-        echo '<p' . (!empty($args['description_class']) ? ' class="' . esc_attr($args['description_class']) . '"' : '') . '>';
-        if (!empty($args['description_mobile'])) {
-            echo '<span class="request-copy-desktop">' . wp_kses_post($args['description']) . '</span>';
-            echo '<span class="request-copy-mobile">' . wp_kses_post($args['description_mobile']) . '</span>';
-        } else {
-            echo wp_kses_post($args['description']);
-        }
-        echo '</p>';
+        echo '<p class="' . esc_attr(sanitize_html_class($args['description_class'])) . '">' . wp_kses_post($args['description']) . '</p>';
     }
-
-    echo '</div>';
-    echo '<div class="request-form-wrap">';
-    trimed_render_contact_form($form_args);
     echo '</div>';
 
+    echo '<div class="' . esc_attr(sanitize_html_class($args['grid_class'])) . '">';
+    $count = count($items);
+    $left_count = $args['split_columns'] ? (int) ceil($count / 2) : $count;
+    foreach ($items as $index => $item) {
+        $question = $item['question'];
+        $answer   = $item['answer'];
+        $has_answer = $item['has_answer'];
+
+        $column = $args['split_columns'] && $count > 1 && $index < $left_count ? 1 : 2;
+        $row = $args['split_columns'] && $count > 1 && $index < $left_count ? $index + 1 : $index - $left_count + 1;
+        $style = '';
+        if ($args['split_columns'] && $count > 1) {
+            $style = 'grid-row:' . $row . ';grid-column:' . $column . ';';
+        }
+
+        $active_class = (!empty($item['is_open']) && $has_answer) ? ' active' : '';
+        $answer_class = $has_answer ? ' has-answer' : '';
+        echo '<div class="faq-item' . esc_attr($active_class) . esc_attr($answer_class) . '"' . (!empty($style) ? ' style="' . esc_attr($style) . '"' : '') . '>';
+        echo '<span>' . esc_html($question) . '</span>';
+        echo '<span class="faq-icon">' . $args['icon_svg'] . '</span>';
+        if ($has_answer) {
+            echo '<p>' . wp_kses_post($answer) . '</p>';
+        }
+        echo '</div>';
+    }
     echo '</div>';
     echo '</div>';
     echo '</section>';
@@ -393,14 +578,15 @@ function trimed_render_service_request_section($args = array()) {
         'section_id'    => '',
         'container_class' => '',
         'inner_class'   => '',
+        'wrap_form'     => false,
         'summary'       => array(),
         'form'          => array(),
     ));
 
-    $section_class = trim(sanitize_html_class($args['section_class']));
+    $section_class = trimed_sanitize_class_list($args['section_class']);
     $section_id = trim(sanitize_html_class($args['section_id']));
-    $container_class = trim(sanitize_html_class($args['container_class']));
-    $inner_class = trim(sanitize_html_class($args['inner_class']));
+    $container_class = trimed_sanitize_class_list($args['container_class']);
+    $inner_class = trimed_sanitize_class_list($args['inner_class']);
 
     $summary = is_array($args['summary']) ? $args['summary'] : array();
     $form = is_array($args['form']) ? $args['form'] : array();
@@ -413,7 +599,13 @@ function trimed_render_service_request_section($args = array()) {
 
     echo '<div class="' . esc_attr($inner_class) . '">';
     trimed_render_request_summary_block($summary);
-    trimed_render_contact_form($form);
+    if (!empty($args['wrap_form'])) {
+        echo '<div class="request-form-wrap">';
+        trimed_render_contact_form($form);
+        echo '</div>';
+    } else {
+        trimed_render_contact_form($form);
+    }
     echo '</div>';
 
     if ($container_class) {

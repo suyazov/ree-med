@@ -401,66 +401,17 @@ $img_dir = get_template_directory_uri() . '/assets/img';
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section">
-        <div class="container">
-            <?php
-            $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы';
-            $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
-            $faq_description = get_field('faq_description') ?: 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля';
-            ?>
-            <div class="faq-header">
-                <h2 class="section-title"><?php echo wp_kses_post($faq_title); ?></h2>
-                <p class="faq-description"><?php echo wp_kses_post($faq_description); ?></p>
-            </div>
-            <div class="faq-grid">
-                <?php
-                $faq_items = get_field('faq_items');
-                if (!$faq_items) {
-                    $faq_items = array(
-                        array('question' => 'Какие дезсредства выбрать для стоматологии?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Как подобрать рециркулятор?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Какие средства подходят для обработки инструментов?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Какие документы предоставляются на продукцию?', 'answer' => '', 'is_open' => false),
-                        array('question' => 'Есть ли товары в наличии в Чите?', 'answer' => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.', 'is_open' => true),
-                    );
-                }
+    <?php
+    $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы';
+    $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
 
-                $faq_opened = false;
-                foreach ($faq_items as &$faq_item) {
-                    $has_answer = !empty($faq_item['answer']);
-                    $should_open = !empty($faq_item['is_open']) && $has_answer && !$faq_opened;
-                    $faq_item['is_open'] = (bool) $should_open;
-                    if ($should_open) {
-                        $faq_opened = true;
-                    }
-                }
-                unset($faq_item);
-
-                // Desktop layout as in Figma: first three questions in the left column,
-                // the remaining questions in the right column.
-                $faq_positions = array();
-                $faq_left_count = (int) ceil(count($faq_items) / 2);
-                foreach ($faq_items as $pos_i => $pos_item) {
-                    $column = $pos_i < $faq_left_count ? 1 : 2;
-                    $row = $pos_i < $faq_left_count ? $pos_i + 1 : $pos_i - $faq_left_count + 1;
-                    $faq_positions[$pos_i] = 'grid-row:' . $row . ';grid-column:' . $column . ';';
-                }
-                $faq_icon_svg = '<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.25L5 5.25L9 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-                foreach ($faq_items as $i => $item) :
-                    $has_answer = !empty($item['answer']);
-                    $active_class = !empty($item['is_open']) && $has_answer ? ' active' : '';
-                    $position_style = isset($faq_positions[$i]) ? esc_attr($faq_positions[$i]) : '';
-                ?>
-                    <div class="faq-item<?php echo esc_attr($active_class); ?><?php echo $has_answer ? ' has-answer' : ''; ?>" style="<?php echo $position_style; ?>">
-                        <span><?php echo wp_kses_post($item['question']); ?></span><span class="faq-icon"><?php echo $faq_icon_svg; ?></span>
-                        <?php if (!empty($item['answer'])) : ?>
-                            <p><?php echo wp_kses_post($item['answer']); ?></p>
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
+    trimed_render_faq_section(array(
+        'section_class' => 'faq-section',
+        'title'         => $faq_title,
+        'description'   => get_field('faq_description') ?: 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля',
+        'items'         => get_field('faq_items') ?: trimed_get_default_faq_items('disinfection'),
+    ));
+    ?>
 
     <!-- Application -->
     <?php
