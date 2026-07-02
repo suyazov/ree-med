@@ -129,7 +129,7 @@ if (function_exists('get_field')) {
 }
 
 $included_cards = array(
-    array('image' => $img_dir . '/included-1.png', 'number' => '1', 'title' => 'Подбор оборудования под профиль клиники'),
+    array('image' => $img_dir . '/audience-1.png', 'number' => '1', 'title' => 'Подбор оборудования под профиль клиники'),
     array('image' => $img_dir . '/included-2.png', 'number' => '2', 'title' => 'Оснащение кабинетов (приём, диагностика, лечение)'),
     array('image' => $img_dir . '/included-3.png', 'number' => '3', 'title' => 'Подбор оборудования под бюджет'),
     array('image' => $img_dir . '/included-4.png', 'number' => '4', 'title' => 'Поставка со склада или под заказ'),
