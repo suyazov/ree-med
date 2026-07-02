@@ -17,6 +17,7 @@
     --radius-control: 8px;
     --radius-card: 12px;
     --control-height: 52px;
+    --button-height: 57px;
     --project-card-height: 220px;
     --project-card-image-width: 175px;
     --project-card-gap: 36px;
@@ -69,7 +70,7 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     justify-content: center;
     padding: 20px 28px;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     font-size: 14px;
     line-height: 17px;
     font-weight: 600;
@@ -1667,7 +1668,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .application-form-wrap {
     background: var(--color-white);
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     padding: 36px 30px;
 }
 
@@ -1688,7 +1689,7 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
     background: var(--color-gray);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     padding: 20px 16px;
     font-size: 12px;
     line-height: 12px;
@@ -1713,7 +1714,7 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     gap: 8px;
     background: var(--color-gray);
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     padding: 16px;
 }
 
@@ -1778,7 +1779,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     border: 1px solid var(--color-dark-green);
-    border-radius: 2px;
+    border-radius: calc(var(--radius-small) / 2);
     appearance: none;
     -webkit-appearance: none;
     background: transparent;
