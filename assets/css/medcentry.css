@@ -461,27 +461,12 @@
 }
 
 /* Process */
-.medcentry-page .mc-process { padding: 0; margin-top: 140px; }
-.medcentry-page .mc-process-grid {
-    display: grid;
-    grid-template-columns: 680px 522px;
-    grid-template-rows: auto 1fr;
-    gap: 0;
-}
-.medcentry-page .mc-process-header { grid-column: 1; grid-row: 1; }
-.medcentry-page .mc-process-title { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); margin: 0 0 12px; width: 568px; }
 .medcentry-page .mc-process-subtitle { font-size: 16px; line-height: 120%; color: var(--color-black); max-width: 440px; }
-.medcentry-page .mc-process-cards { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: repeat(2, 324px); gap: 16px; margin: 31px 0 0 0; }
-.medcentry-page .mc-process-card { width: 324px; height: 280px; padding: 0 0 28px 0; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; border-radius: 12px; }
-.medcentry-page .mc-process-card--green { background: var(--gradient-green); color: var(--color-white); }
-.medcentry-page .mc-process-card--light { background: var(--color-white-2); color: var(--color-black); }
-.medcentry-page .mc-process-card-num { position: absolute; top: 32px; left: 28px; width: 44px; height: 44px; border-radius: 4px; background: var(--gradient-green); color: var(--color-white); display: flex; align-items: center; justify-content: center; font-size: 24px; line-height: 26.4px; font-weight: 800; }
-.medcentry-page .mc-process-card--green .mc-process-card-num { background: rgba(255,255,255,0.2); }
-.medcentry-page .mc-process-card-title { font-size: 24px; line-height: 110%; font-weight: 600; margin: 0 28px 8px; }
-.medcentry-page .mc-process-card-text { font-size: 14px; line-height: 110%; margin: 0 28px; }
+.medcentry-page .mc-process-cards { margin: 31px 0 0 0; }
+.medcentry-page .mc-process-card-num { left: 28px; }
+.medcentry-page .mc-process-card-title { margin: 0 28px 8px; }
+.medcentry-page .mc-process-card-text { margin: 0 28px; }
 .medcentry-page .mc-process-card .mc-clover { display: none; }
-.medcentry-page .mc-process-image { grid-column: 2; grid-row: 1 / 3; width: 522px; height: 689px; margin-top: 22px; background: var(--color-gray-2); border-radius: 12px; overflow: hidden; }
-.medcentry-page .mc-process-image img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Request */
 .medcentry-page .mc-request { padding: 0; margin-top: 28px; }
