@@ -1772,6 +1772,11 @@ body.home .site-header {
     margin-bottom: 12px;
 }
 
+.testimonials-dot {
+    cursor: pointer;
+    transition: width .2s ease, background-color .2s ease, border-radius .2s ease;
+}
+
 .testimonials-grid {
     display: flex;
     gap: 12px;

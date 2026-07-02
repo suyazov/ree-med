@@ -116,6 +116,72 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function initTestimonialsSlider() {
+        const container = document.querySelector('.home-testimonials');
+        if (!container) {
+            return;
+        }
+
+        const track = container.querySelector('.testimonials-grid');
+        const dots = container.querySelectorAll('.testimonials-dot');
+        if (!track || !dots.length) {
+            return;
+        }
+
+        const slides = track.querySelectorAll('.testimonial-card');
+        if (!slides.length) {
+            return;
+        }
+
+        const items = Array.from(slides);
+        let currentIndex = 0;
+
+        function goTo(index, smooth) {
+            currentIndex = Math.max(0, Math.min(index, items.length - 1));
+            const target = items[currentIndex];
+            if (!target) {
+                return;
+            }
+
+            track.scrollTo({
+                left: target.offsetLeft,
+                behavior: smooth ? 'smooth' : 'auto',
+            });
+
+            dots.forEach(function(dot, dotIndex) {
+                dot.classList.toggle('active', dotIndex === currentIndex);
+            });
+        }
+
+        dots.forEach(function(dot, index) {
+            dot.addEventListener('click', function() {
+                goTo(index, true);
+            });
+        });
+
+        track.addEventListener('scroll', function() {
+            let nearestIndex = 0;
+            let nearestOffset = Infinity;
+
+            items.forEach(function(item, itemIndex) {
+                const distance = Math.abs(track.scrollLeft - item.offsetLeft);
+                if (distance < nearestOffset) {
+                    nearestOffset = distance;
+                    nearestIndex = itemIndex;
+                }
+            });
+
+            if (nearestIndex !== currentIndex) {
+                currentIndex = nearestIndex;
+                dots.forEach(function(dot, dotIndex) {
+                    dot.classList.toggle('active', dotIndex === currentIndex);
+                });
+            }
+        }, { passive: true });
+
+        goTo(0, false);
+    }
+
     function initContactForms() {
         if (typeof trimed_ajax === 'undefined' || !trimed_ajax.ajax_url) {
             return;
@@ -170,5 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initSlider(document.querySelector('.projects-slider'), '.project-slide', '.slider-arrow.prev', '.slider-arrow.next', '.slider-dot');
     initSlider(document.querySelector('.lab-projects-slider'), '.lab-project-slide', '.lab-slider-arrow.prev', '.lab-slider-arrow.next', '.lab-slider-dot');
+    initTestimonialsSlider();
     initContactForms();
 });
