@@ -204,25 +204,27 @@ $included_bottom = array_slice($included_cards, 3);
                     $card_image = !empty($card['image']) ? $card['image'] : '';
                     $arrow_class = '';
                     $show_arrow = false;
+                    $show_mark = false;
 
                     if ($card_style === 'image') {
                         $show_arrow = true;
                         $arrow_class = 'arrow--image';
-                    } elseif ($card_style === 'white') {
-                        $show_arrow = true;
-                        $arrow_class = 'arrow--white';
                     } elseif ($card_style === 'green') {
                         $show_arrow = true;
                         $arrow_class = 'arrow--green';
-                    } elseif ($card_style === 'gray') {
-                        $show_arrow = true;
-                        $arrow_class = 'arrow--br';
+                    } elseif ($card_style === 'white' || $card_style === 'gray') {
+                        $show_mark = true;
                     }
                 ?>
                     <div class="<?php echo esc_attr($card_class); ?>">
                         <?php if ($show_arrow) : ?>
                             <svg class="arrow <?php echo esc_attr($arrow_class); ?>" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M7 17L17 7M17 7H7M17 7V17" />
+                            </svg>
+                        <?php endif; ?>
+                        <?php if ($show_mark) : ?>
+                            <svg class="stom-audience-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M16.8026 6.80286C14.8114 6.80286 13.1967 5.18812 13.1967 3.19681C13.1967 1.4317 11.7657 0 10 0C8.23429 0 6.80264 1.4317 6.80264 3.19681C6.80264 5.18812 5.1886 6.80286 3.19736 6.80286C1.43165 6.80286 0 8.23391 0 10.0003C0 11.7661 1.43165 13.1971 3.19736 13.1971C5.1886 13.1971 6.80264 14.8112 6.80264 16.8025C6.80264 18.569 8.23429 20 10 20C11.7657 20 13.1967 18.569 13.1967 16.8025C13.1967 14.8112 14.8114 13.1971 16.8026 13.1971C18.5683 13.1971 20 11.7661 20 10.0003C20 8.23391 18.5683 6.80286 16.8026 6.80286Z" fill="currentColor"/>
                             </svg>
                         <?php endif; ?>
                         <p class="text"><?php echo esc_html($card['text']); ?></p>
