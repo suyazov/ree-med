@@ -269,6 +269,10 @@ body.home .site-header {
         gap: 8px;
     }
 
+    body.home .site-header .header-action-compare {
+        display: none;
+    }
+
     body.home .site-header .menu-toggle {
         margin-left: 0;
         width: 44px;
@@ -426,6 +430,10 @@ body.home .site-header {
 
     .home-hero-shop-btn-mobile {
         background: var(--gradient-light-green);
+    }
+
+    .home-hero-shop-btn-mobile svg {
+        display: none;
     }
 
     .home-directions .container {
