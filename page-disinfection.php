@@ -455,29 +455,62 @@ function dis_image_url($field, $fallback) {
     </section>
 
     <!-- Application -->
-    <section class="application-section" id="application">
+    <section class="home-request disinfection-request" id="application">
         <div class="container">
-            <div class="application-box">
-                <?php trimed_render_plus_svg('app-decor'); ?>
-                <div class="application-info">
+            <div class="request-grid">
+                <svg class="request-plus" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
+                <div class="request-text">
                     <?php
                     $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
-                    $application_title = str_replace('решение ', 'решение<br>', $application_title);
+                    if (trim(wp_strip_all_tags($application_title)) === 'Подберём решение для вашего учреждения') {
+                        $application_title = 'Подберём решение<br><em>для вашего учреждения</em>';
+                    } else {
+                        $application_title = str_replace('решение ', 'решение<br>', $application_title);
+                    }
                     ?>
-                    <h2><?php echo wp_kses_post($application_title); ?></h2>
+                    <h2 class="section-title white"><?php echo wp_kses_post($application_title); ?></h2>
                     <p><?php echo wp_kses_post(get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'); ?></p>
                 </div>
-                <div class="application-form-wrap">
-                    <form class="application-form" id="contact-form">
-                        <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                        <?php trimed_render_phone_input(); ?>
-                        <input type="text" name="organization" placeholder="Название организации">
-                        <input type="text" name="comment" placeholder="Ваш комментарий">
-                        <?php trimed_render_agree_checkbox(array(
-                            'class' => 'form-agree',
-                            'text'  => 'Оставляю заявку, я соглашаюсь с условиями Политики обработки персональных данных',
-                        )); ?>
-                        <button type="submit" class="btn btn-primary"><?php echo esc_html(get_field('application_button_text') ?: 'Отправить'); ?></button>
+                <div class="request-form-wrap">
+                    <form id="contact-form" class="home-request-form">
+                        <div class="form-row">
+                            <label class="form-field">
+                                <span class="form-field-label">Ваше имя</span>
+                                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-field form-field-phone">
+                                <span class="form-field-label">Телефон</span>
+                                <img src="<?php echo esc_url($img_dir . '/main/197-0.png'); ?>" alt="" class="phone-flag">
+                                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-field">
+                                <span class="form-field-label">Организация</span>
+                                <input type="text" name="organization" placeholder="Название организации">
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-field">
+                                <span class="form-field-label">Комментарий</span>
+                                <textarea name="comment" rows="3" placeholder="Ваш комментарий"></textarea>
+                            </label>
+                        </div>
+                        <div class="form-row form-agree">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="agree" value="1" required>
+                                <span>Оставляя заявку, я соглашаюсь с условиями <a href="#">Политики обработки персональных данных</a></span>
+                            </label>
+                        </div>
+                        <?php
+                        $application_button_text = get_field('application_button_text') ?: 'Получить консультацию';
+                        if (trim($application_button_text) === 'Отправить') {
+                            $application_button_text = 'Получить консультацию';
+                        }
+                        ?>
+                        <button type="submit" class="btn btn-primary request-submit"><?php echo esc_html($application_button_text); ?></button>
                         <div class="form-message"></div>
                     </form>
                 </div>
