@@ -355,9 +355,9 @@
 
 /* Request */
 .stomatology-page .stom-request { padding: 0; margin-top: 20px; }
-.stomatology-page .stom-request-desc { font-size: 16px; line-height: 110%; color: var(--color-white); width: 283px; }
-.stomatology-page .stom-request-note { display: flex; align-items: center; gap: 19px; margin-top: 41px; color: var(--color-white); font-size: 16px; line-height: 18px; }
-.stomatology-page .stom-request-note .check { width: 20px; height: 20px; border-radius: 50%; background: var(--color-white); color: var(--color-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.stomatology-page .stom-request-desc { line-height: 110%; width: 283px; }
+.stomatology-page .stom-request-note { display: flex; gap: 19px; }
+.stomatology-page .stom-request-note .check { background: var(--color-white); color: var(--color-green); }
 .stomatology-page .stom-request-form input[name="phone"] { margin-bottom: 12px; }
 .stomatology-page .stom-request-form button span { font-family: inherit; font-weight: 600; white-space: nowrap; }
 
