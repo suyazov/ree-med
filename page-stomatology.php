@@ -204,7 +204,7 @@ $included_bottom = array_slice($included_cards, 3);
                     <?php stom_picture($hero_image, 'stom-hero-image', ''); ?>
                     <div class="stom-hero-badges">
                         <div class="stom-hero-badge-glass">
-                            <img src="<?php echo esc_url($img_dir . '/stomatology-hero-badge-icon.svg'); ?>" alt="" class="badge-icon">
+                            <svg class="badge-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.4829 7.48289C16.2925 7.48289 14.5164 5.70673 14.5164 3.51636C14.5164 1.57481 12.9423 -1.33514e-05 11 -1.33514e-05C9.05772 -1.33514e-05 7.4829 1.57481 7.4829 3.51636C7.4829 5.70673 5.70746 7.48289 3.51709 7.48289C1.57482 7.48289 0 9.05699 0 11C0 12.9423 1.57482 14.5164 3.51709 14.5164C5.70746 14.5164 7.4829 16.2918 7.4829 18.4822C7.4829 20.4252 9.05772 21.9993 11 21.9993C12.9423 21.9993 14.5164 20.4252 14.5164 18.4822C14.5164 16.2918 16.2925 14.5164 18.4829 14.5164C20.4252 14.5164 22 12.9423 22 11C22 9.05699 20.4252 7.48289 18.4829 7.48289Z" fill="currentColor"/></svg>
                             <span><?php echo esc_html($hero_badge_glass_text); ?></span>
                         </div>
                         <div class="stom-hero-badge-green">
