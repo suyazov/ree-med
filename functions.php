@@ -387,6 +387,42 @@ function trimed_render_request_callout($args = array()) {
     echo '</section>';
 }
 
+function trimed_render_service_request_section($args = array()) {
+    $args = wp_parse_args($args, array(
+        'section_class' => '',
+        'section_id'    => '',
+        'container_class' => '',
+        'inner_class'   => '',
+        'summary'       => array(),
+        'form'          => array(),
+    ));
+
+    $section_class = trim(sanitize_html_class($args['section_class']));
+    $section_id = trim(sanitize_html_class($args['section_id']));
+    $container_class = trim(sanitize_html_class($args['container_class']));
+    $inner_class = trim(sanitize_html_class($args['inner_class']));
+
+    $summary = is_array($args['summary']) ? $args['summary'] : array();
+    $form = is_array($args['form']) ? $args['form'] : array();
+
+    echo '<section class="' . esc_attr($section_class) . '"' . (!empty($section_id) ? ' id="' . esc_attr($section_id) . '"' : '') . '>';
+
+    if ($container_class) {
+        echo '<div class="' . esc_attr($container_class) . '">';
+    }
+
+    echo '<div class="' . esc_attr($inner_class) . '">';
+    trimed_render_request_summary_block($summary);
+    trimed_render_contact_form($form);
+    echo '</div>';
+
+    if ($container_class) {
+        echo '</div>';
+    }
+
+    echo '</section>';
+}
+
 function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stroke_width = 5, $offset = null) {
     $half = $size / 2;
     $offset = $offset === null ? $size * 0.2 : $offset;

@@ -359,33 +359,32 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
         </div>
     </section>
 
-    <section class="mc-request" id="request">
-        <div class="mc-request-inner">
-            <?php
-            trimed_render_request_summary_block(array(
-                'icon'         => $request_clover,
-                'content_class'=> 'mc-request-left',
-                'title'        => $request_title,
-                'title_class'  => 'mc-request-title',
-                'desc'         => $request_desc,
-                'desc_class'   => 'mc-request-desc',
-                'note'         => $request_note,
-                'note_class'   => 'mc-request-note',
-                'note_icon'    => $check_icon,
-                'note_label_class' => 'check',
-            ));
-            ?>
-            <?php
-            trimed_render_contact_form(array(
-                'class'       => 'mc-request-form request-form',
-                'phone_style' => 'phone-input',
-                'flag_url'    => $img_dir . '/phone-flag.png',
-                'button_text' => $request_button,
-                'button_span' => true,
-            ));
-            ?>
-        </div>
-    </section>
+    <?php
+    trimed_render_service_request_section(array(
+        'section_class' => 'mc-request',
+        'section_id'    => 'request',
+        'inner_class'   => 'mc-request-inner',
+        'summary' => array(
+            'icon'             => $request_clover,
+            'content_class'    => 'mc-request-left',
+            'title'            => $request_title,
+            'title_class'      => 'mc-request-title',
+            'desc'             => $request_desc,
+            'desc_class'       => 'mc-request-desc',
+            'note'             => $request_note,
+            'note_class'       => 'mc-request-note',
+            'note_icon'        => $check_icon,
+            'note_label_class' => 'check',
+        ),
+        'form' => array(
+            'class'       => 'mc-request-form request-form',
+            'phone_style' => 'phone-input',
+            'flag_url'    => $img_dir . '/phone-flag.png',
+            'button_text' => $request_button,
+            'button_span' => true,
+        ),
+    ));
+    ?>
 
     <section class="mc-why">
         <div class="mc-section-inner">
