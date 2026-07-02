@@ -1,9 +1,5 @@
 /* Stomatology page styles for Trimed theme */
 
-.stomatology-page .header-actions .header-action:first-child {
-    display: none;
-}
-
 /* Hero */
 .stomatology-page .stom-hero { padding: 0; margin-top: 20px; }
 .stomatology-page .stom-hero .stom-container { max-width: 1344px; padding: 0; }
