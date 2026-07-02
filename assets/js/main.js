@@ -25,34 +25,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initFAQAccordion() {
-        const faqItems = document.querySelectorAll('.faq-item');
-        const itemsWithAnswer = Array.from(faqItems).filter(item => !!item.querySelector('p'));
+        document.querySelectorAll('.faq-section').forEach(function(section) {
+            const faqItems = section.querySelectorAll('.faq-item');
+            const itemsWithAnswer = Array.from(faqItems).filter(item => !!item.querySelector('p'));
 
-        if (itemsWithAnswer.length > 0) {
-            let hasActive = false;
-            itemsWithAnswer.forEach(function(item) {
-                item.classList.remove('active');
+            if (itemsWithAnswer.length > 0) {
+                let hasActive = false;
+                itemsWithAnswer.forEach(function(item) {
+                    item.classList.remove('active');
 
-                if (!hasActive) {
-                    item.classList.add('active');
-                    hasActive = true;
-                }
-            });
-        }
-
-        faqItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                const hasAnswer = !!item.querySelector('p');
-                if (!hasAnswer) {
-                    return;
-                }
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(function(targetItem) {
-                    targetItem.classList.remove('active');
+                    if (!hasActive) {
+                        item.classList.add('active');
+                        hasActive = true;
+                    }
                 });
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+            }
+
+            faqItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    const hasAnswer = !!item.querySelector('p');
+                    if (!hasAnswer) {
+                        return;
+                    }
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(function(targetItem) {
+                        targetItem.classList.remove('active');
+                    });
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
             });
         });
     }
