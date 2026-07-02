@@ -428,12 +428,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         'title'         => $application_title,
         'description'   => get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.',
         'form_args'     => array(
-            'class'        => 'home-request-form',
-            'layout'       => 'rows',
-            'fields'       => array('name', 'phone', 'organization', 'comment'),
-            'flag_url'     => $img_dir . '/main/197-0.png',
             'button_text'  => $application_button_text,
-            'button_class' => 'btn btn-primary request-submit',
         ),
     ));
     ?>

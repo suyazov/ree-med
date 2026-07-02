@@ -486,12 +486,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         'description'         => $form_desc,
         'description_mobile'  => 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий',
         'form_args'           => array(
-            'class'              => 'home-request-form',
-            'layout'             => 'rows',
-            'fields'             => array('name', 'phone', 'organization', 'comment'),
-            'flag_url'           => $img_main . '/197-0.png',
             'button_text'        => $form_btn,
-            'button_class'       => 'btn btn-primary request-submit',
             'button_mobile_text' => 'Отправить',
         ),
     ));
