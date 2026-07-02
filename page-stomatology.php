@@ -7,18 +7,6 @@ get_header();
 $img_dir = get_template_directory_uri() . '/assets/img';
 $placeholder = $img_dir . '/placeholder.jpg';
 
-function stom_picture($url, $class = '', $alt = '', $width = null, $height = null, $style = '') {
-    $mobile = preg_replace('/\.(png|jpe?g|webp)(\?.*)?$/i', '-mobile.$1$2', $url);
-    $mobile_path = str_replace(get_template_directory_uri(), get_template_directory(), $mobile);
-    if (!file_exists($mobile_path)) {
-        $mobile = $url;
-    }
-    $class_attr = $class ? ' class="' . esc_attr($class) . '"' : '';
-    $wh_attr = ($width && $height) ? ' width="' . esc_attr($width) . '" height="' . esc_attr($height) . '"' : '';
-    $style_attr = $style ? ' style="' . esc_attr($style) . '"' : '';
-    echo '<picture><source media="(max-width: 768px)" srcset="' . esc_url($mobile) . '"><img src="' . esc_url($url) . '"' . $class_attr . $wh_attr . $style_attr . ' alt="' . esc_attr($alt) . '"></picture>';
-}
-
 $hero_title = get_field('stom_hero_title') ?: 'Оснащение<br><span class="text-green">стоматологии под ключ</span><br>в Забайкальском крае';
 $hero_desc  = get_field('stom_hero_desc') ?: 'Подберём оборудование, поставим и поможем запустить кабинет без лишних затрат и ошибок';
 $hero_btn   = get_field('stom_hero_button_text') ?: 'Получить консультацию';
@@ -150,14 +138,6 @@ if (empty($why_features) || !is_array($why_features)) {
     );
 }
 
-$audience_style_classes = array(
-    'default' => 'stom-audience-card',
-    'white' => 'stom-audience-card stom-audience-card--white',
-    'gray' => 'stom-audience-card stom-audience-card--gray',
-    'green' => 'stom-audience-card stom-audience-card--green',
-    'image' => 'stom-audience-card stom-audience-card--image',
-);
-
 $included_top = array_slice($included_cards, 0, 3);
 $included_bottom = array_slice($included_cards, 3);
 ?>
@@ -172,7 +152,7 @@ $included_bottom = array_slice($included_cards, 3);
                     <p class="stom-hero-desc"><?php echo esc_html($hero_desc); ?></p>
 
                     <div class="stom-hero-features">
-                        <?php stom_picture($hero_feature_image, 'stom-hero-feature-img', ''); ?>
+                    <?php trimed_render_responsive_picture($hero_feature_image, array('class' => 'stom-hero-feature-img')); ?>
                         <div class="stom-hero-feature-cards">
                             <?php foreach ($hero_features as $feature) : ?>
                                 <div class="stom-hero-feature-card">
@@ -187,7 +167,7 @@ $included_bottom = array_slice($included_cards, 3);
                 </div>
 
                 <div class="stom-hero-right">
-                    <?php stom_picture($hero_image, 'stom-hero-image', ''); ?>
+                    <?php trimed_render_responsive_picture($hero_image, array('class' => 'stom-hero-image')); ?>
                     <div class="stom-hero-badges">
                         <div class="stom-hero-badge-glass">
                             <svg class="badge-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.4829 7.48289C16.2925 7.48289 14.5164 5.70673 14.5164 3.51636C14.5164 1.57481 12.9423 -1.33514e-05 11 -1.33514e-05C9.05772 -1.33514e-05 7.4829 1.57481 7.4829 3.51636C7.4829 5.70673 5.70746 7.48289 3.51709 7.48289C1.57482 7.48289 0 9.05699 0 11C0 12.9423 1.57482 14.5164 3.51709 14.5164C5.70746 14.5164 7.4829 16.2918 7.4829 18.4822C7.4829 20.4252 9.05772 21.9993 11 21.9993C12.9423 21.9993 14.5164 20.4252 14.5164 18.4822C14.5164 16.2918 16.2925 14.5164 18.4829 14.5164C20.4252 14.5164 22 12.9423 22 11C22 9.05699 20.4252 7.48289 18.4829 7.48289Z" fill="currentColor"/></svg>
@@ -220,7 +200,7 @@ $included_bottom = array_slice($included_cards, 3);
                 <div class="stom-audience-grid">
                 <?php foreach ($audience_cards as $card) :
                     $card_style = !empty($card['style']) ? $card['style'] : 'default';
-                    $card_class = isset($audience_style_classes[$card_style]) ? $audience_style_classes[$card_style] : $audience_style_classes['default'];
+                    $card_class = trimed_audience_card_class('stomatology', $card_style);
                     $card_image = !empty($card['image']) ? $card['image'] : '';
                     $arrow_class = '';
                     $show_arrow = false;
@@ -248,7 +228,7 @@ $included_bottom = array_slice($included_cards, 3);
                         <p class="text"><?php echo esc_html($card['text']); ?></p>
                         <?php if (in_array($card_style, ['white', 'gray'], true)) : ?>
                             <div class="stom-audience-card-media">
-                                <?php stom_picture(!empty($card_image) ? $card_image : $placeholder, '', '', 100, 100); ?>
+                                <?php trimed_render_responsive_picture(!empty($card_image) ? $card_image : $placeholder, array('width' => 100, 'height' => 100)); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -273,7 +253,7 @@ $included_bottom = array_slice($included_cards, 3);
             <div class="stom-included-top">
                 <?php foreach ($included_top as $card) : ?>
                     <div class="stom-included-card">
-                        <div class="stom-included-card-img"><?php stom_picture(!empty($card['image']) ? $card['image'] : $placeholder, '', ''); ?></div>
+                        <div class="stom-included-card-img"><?php trimed_render_responsive_picture(!empty($card['image']) ? $card['image'] : $placeholder); ?></div>
                         <div class="stom-included-card-body">
                             <span class="stom-included-card-num"><?php echo esc_html($card['number']); ?></span>
                             <p class="stom-included-card-title"><?php echo esc_html($card['title']); ?></p>
@@ -285,7 +265,7 @@ $included_bottom = array_slice($included_cards, 3);
             <div class="stom-included-bottom">
                 <?php foreach ($included_bottom as $card) : ?>
                     <div class="stom-included-card">
-                        <div class="stom-included-card-img"><?php stom_picture(!empty($card['image']) ? $card['image'] : $placeholder, '', ''); ?></div>
+                        <div class="stom-included-card-img"><?php trimed_render_responsive_picture(!empty($card['image']) ? $card['image'] : $placeholder); ?></div>
                         <div class="stom-included-card-body">
                             <span class="stom-included-card-num"><?php echo esc_html($card['number']); ?></span>
                             <p class="stom-included-card-title"><?php echo esc_html($card['title']); ?></p>
@@ -310,7 +290,7 @@ $included_bottom = array_slice($included_cards, 3);
             <div class="stom-projects-grid">
                 <?php foreach ($projects as $project) : ?>
                     <div class="stom-project-card">
-                        <div class="stom-project-card-img"><?php stom_picture(!empty($project['image']) ? $project['image'] : $placeholder, '', ''); ?></div>
+                        <div class="stom-project-card-img"><?php trimed_render_responsive_picture(!empty($project['image']) ? $project['image'] : $placeholder); ?></div>
                         <div class="stom-project-card-body">
                             <div class="stom-project-card-top">
                                 <span class="stom-project-card-num"><?php echo esc_html($project['number']); ?></span>
@@ -341,12 +321,12 @@ $included_bottom = array_slice($included_cards, 3);
                             <h3 class="stom-process-card-title"><?php echo esc_html($step['title']); ?></h3>
                             <p class="stom-process-card-text"><?php echo esc_html($step['text']); ?></p>
                             <?php if (!empty($step['image'])) : ?>
-                                <?php stom_picture($step['image'], '', '', null, null, 'position:absolute; right:0; bottom:0; width:236px; height:162px; object-fit:cover; opacity:.7;'); ?>
+                                <?php trimed_render_responsive_picture($step['image'], array('style' => 'position:absolute; right:0; bottom:0; width:236px; height:162px; object-fit:cover; opacity:.7;')); ?>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="stom-process-image"><?php stom_picture($process_image, '', ''); ?></div>
+                <div class="stom-process-image"><?php trimed_render_responsive_picture($process_image); ?></div>
             </div>
         </div>
     </section>
@@ -407,7 +387,7 @@ $included_bottom = array_slice($included_cards, 3);
                 </div>
                 <div class="stom-why-warehouse">
                     <h3 class="stom-why-warehouse-title"><?php echo esc_html($why_warehouse_title); ?></h3>
-                    <?php stom_picture($why_warehouse_image, '', ''); ?>
+                    <?php trimed_render_responsive_picture($why_warehouse_image); ?>
                 </div>
             </div>
         </div>

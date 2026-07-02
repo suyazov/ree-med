@@ -150,6 +150,95 @@ function trimed_image_field($field, $fallback) {
     return !empty($value) ? $value : $fallback;
 }
 
+function trimed_render_responsive_picture($url, $args = array()) {
+    $args = wp_parse_args($args, array(
+        'class' => '',
+        'alt' => '',
+        'width' => null,
+        'height' => null,
+        'style' => '',
+    ));
+
+    if (empty($url)) {
+        return;
+    }
+
+    $mobile_url = preg_replace('/\.(png|jpe?g|webp)(\?.*)?$/i', '-mobile.$1$2', $url);
+    $mobile_path = str_replace(get_template_directory_uri(), get_template_directory(), $mobile_url);
+    if (!file_exists($mobile_path)) {
+        $mobile_url = $url;
+    }
+
+    $class_attr = $args['class'] ? ' class="' . esc_attr($args['class']) . '"' : '';
+    $wh_attr = ($args['width'] && $args['height'])
+        ? ' width="' . esc_attr((string)$args['width']) . '" height="' . esc_attr((string)$args['height']) . '"'
+        : '';
+    $style_attr = $args['style'] ? ' style="' . esc_attr($args['style']) . '"' : '';
+
+    echo '<picture>';
+    echo '<source media="(max-width: 768px)" srcset="' . esc_url($mobile_url) . '">';
+    echo '<img src="' . esc_url($url) . '"' . $class_attr . $wh_attr . $style_attr . ' alt="' . esc_attr($args['alt']) . '">';
+    echo '</picture>';
+}
+
+function trimed_medcentry_format_hero_title($title) {
+    if (strpos($title, 'mc-hero-title-tail') !== false) {
+        return $title;
+    }
+
+    $patterns = array(
+        '<br>в Забайкальском крае',
+        '<br>в&nbsp;Забайкальском крае',
+        'в Забайкальском крае',
+        'в&nbsp;Забайкальском крае',
+    );
+
+    foreach ($patterns as $pattern) {
+        if (strpos($title, $pattern) !== false) {
+            $prefix = substr($pattern, 0, 4) === '<br>' ? '<br>' : '<br>';
+            return str_replace($pattern, $prefix . '<span class="mc-hero-title-tail">в Забайкальском крае</span>', $title);
+        }
+    }
+
+    return $title;
+}
+
+function trimed_medcentry_format_audience_summary($summary) {
+    $summary = str_replace('<em>уверенно</em> каждый день.', '<em>уверенно каждый день.</em>', $summary);
+
+    if (strpos($summary, 'mc-audience-summary-green') === false) {
+        $summary = str_replace(
+            'продуманное оснащение,',
+            '<span class="mc-audience-summary-green">продуманное оснащение,</span>',
+            $summary
+        );
+    }
+
+    if (strpos($summary, '<em>') === false && strpos($summary, 'уверенно каждый день.') !== false) {
+        $summary = str_replace('уверенно каждый день.', '<em>уверенно каждый день.</em>', $summary);
+    }
+
+    return $summary;
+}
+
+function trimed_medcentry_format_request_title($title) {
+    if (strpos($title, '<em>') === false && strpos($title, 'под вашу клинику') !== false) {
+        return str_replace('под вашу клинику', '<em>под вашу клинику</em>', $title);
+    }
+
+    return $title;
+}
+
+function trimed_medcentry_format_projects_desc($desc) {
+    $second_sentence = 'Мы понимаем специфику региона, требования врачей и реальные условия работы.';
+
+    if (strpos($desc, 'Мы понимаем специфику региона') === false) {
+        $desc = rtrim($desc) . ' ' . $second_sentence;
+    }
+
+    return $desc;
+}
+
 function trimed_repeater_field($field, $fallback = array()) {
     $value = trimed_get_field_value($field, array());
     return !empty($value) && is_array($value) ? $value : $fallback;
@@ -157,6 +246,73 @@ function trimed_repeater_field($field, $fallback = array()) {
 
 function trimed_map_class($value, $map, $fallback = '') {
     return isset($map[$value]) ? $map[$value] : $fallback;
+}
+
+function trimed_audience_card_class($scope, $style, $has_image = false) {
+    $scope = is_string($scope) ? sanitize_key($scope) : '';
+    $style = is_string($style) ? sanitize_key($style) : 'default';
+    if ($style === '') {
+        $style = 'default';
+    }
+
+    $maps = array(
+        'medcentry' => array(
+            'base'   => 'mc-audience-card',
+            'styles' => array(
+                'default' => '',
+                'image'   => ' mc-audience-card--image',
+                'white'   => ' mc-audience-card--white',
+                'gray'    => ' mc-audience-card--gray',
+                'green'   => ' mc-audience-card--green',
+            ),
+        ),
+        'stomatology' => array(
+            'base'   => 'stom-audience-card',
+            'styles' => array(
+                'default' => '',
+                'image'   => ' stom-audience-card--image',
+                'white'   => ' stom-audience-card--white',
+                'gray'    => ' stom-audience-card--gray',
+                'green'   => ' stom-audience-card--green',
+            ),
+        ),
+        'laboratory' => array(
+            'base'   => 'lab-audience-card',
+            'styles' => array(
+                'default'       => ' lab-audience-card--white',
+                'white'         => ' lab-audience-card--white',
+                'gray'          => ' lab-audience-card--gray',
+                'green'         => ' lab-audience-card--green',
+                'image'         => ' lab-audience-card--image',
+                'image-overlay' => ' lab-audience-card--image',
+            ),
+        ),
+        'disinfection' => array(
+            'base'   => 'audience-card',
+            'styles' => array(
+                'default'       => '',
+                'gray'          => ' gray',
+                'green'         => ' green',
+                'image'         => ' image',
+                'image-overlay' => ' image-overlay',
+            ),
+        ),
+    );
+
+    if (!isset($maps[$scope])) {
+        $scope = 'disinfection';
+    }
+
+    $map = $maps[$scope];
+    $class = trimed_sanitize_class_list($map['base']);
+    $mapped = isset($map['styles'][$style]) ? $map['styles'][$style] : $map['styles']['default'];
+    $class .= ' ' . trim($mapped);
+
+    if ($scope === 'disinfection' && $has_image && in_array($style, array('image', 'image-overlay'), true)) {
+        $class .= ' has-image';
+    }
+
+    return trim($class);
 }
 
 function trimed_render_phone_input($args = array()) {

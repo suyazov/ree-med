@@ -1,0 +1,116 @@
+# Аудит CSS-классов и ID
+
+## Классы
+- Всего классов в CSS: 582
+- Найдено в шаблонах/JS: 502
+- Кандидатов на проверку: 98
+
+- arrow--br
+- arrow--green
+- arrow--image
+- arrow--tr
+- arrow--white
+- audience-card
+- category-overlay
+- checkbox
+- direction-card
+- faq-description
+- faq-grid
+- faq-header
+- faq-item
+- faq-section
+- form-field
+- form-field-phone
+- home-hero-badge
+- home-request
+- home-request-form
+- lab-audience-card--gray
+- lab-audience-card--green
+- lab-audience-card--image
+- lab-audience-card--white
+- lab-footer
+- lab-footer-contacts
+- lab-footer-info
+- lab-footer-inner
+- lab-footer-links
+- lab-hero-badge--budget
+- lab-hero-badge--safety
+- lab-hero-badge--tasks
+- lab-hero-badge--volume
+- lab-project-card-arrow
+- lab-project-card-top
+- lab-request
+- lab-request-desc
+- lab-request-form
+- lab-request-grid
+- lab-request-text
+- lab-request-title
+- lab-supplies-item
+- lab-supplies-item--left
+- lab-why-feature
+- lab-why-features
+- lab-why-left
+- lab-why-stat
+- lab-why-stat--gray
+- lab-why-stat--img
+- logo-main
+- logo-tagline
+- mc-audience-card
+- mc-audience-card--gray
+- mc-audience-card--green
+- mc-audience-card--image
+- mc-audience-card--white
+- mc-process-card--green
+- mc-process-card--light
+- mc-request
+- mc-request-desc
+- mc-request-form
+- mc-request-inner
+- mc-request-left
+- mc-request-note
+- mc-request-title
+- mc-why-stat--gray
+- mc-why-stat--image
+- mobile-nav-menu
+- nav-menu
+- phone-input
+- request-form
+- request-grid
+- request-submit
+- request-text
+- section-inner
+- service-container
+- service-section-inner
+- stom-audience-card
+- stom-audience-card--gray
+- stom-audience-card--green
+- stom-audience-card--image
+- stom-audience-card--white
+- stom-footer
+- stom-footer-inner
+- stom-footer-links
+- stom-hero-feature-img
+- stom-hero-image
+- stom-process-card--green
+- stom-process-card--light
+- stom-request
+- stom-request-desc
+- stom-request-form
+- stom-request-inner
+- stom-request-note
+- stom-request-title
+- stom-why-stat--gray
+- stom-why-stat--img
+- sub-menu
+- why-plus
+
+## ID
+- Всего ID в CSS: 0
+- Найдено в шаблонах/JS: 5
+- Кандидатов на проверку: 0
+
+
+## Методика
+- Чтение только из `*.php`, `*.js` файлов темы.
+- Динамические классы из `sprintf`, `wp_kses_post`, inline-рендеров и JS-генерации могут быть не учтены.
+- Этот список — кандидаты для ручной проверки, а не автоснесение.

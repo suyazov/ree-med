@@ -102,13 +102,8 @@ $img_dir = get_template_directory_uri() . '/assets/img';
                 }
                 foreach ($audience_cards as $card) :
                     $style = !empty($card['style']) ? $card['style'] : 'default';
-                    $classes = 'audience-card';
-                    if ($style === 'green') $classes .= ' green';
-                    if ($style === 'gray') $classes .= ' gray';
-                    if ($style === 'image' || $style === 'image-overlay') {
-                        if (!empty($card['image'])) $classes .= ' has-image';
-                        $classes .= ' ' . esc_attr($style);
-                    }
+                    $image = !empty($card['image']) ? $card['image'] : '';
+                    $classes = trimed_audience_card_class('disinfection', $style, (bool) $image);
                     $bg = (($style === 'image' || $style === 'image-overlay') && !empty($card['image'])) ? ' style="background-image:url(\'' . esc_url($card['image']) . '\')"' : '';
                 ?>
                     <div class="<?php echo esc_attr($classes); ?>"<?php echo $bg; ?>>

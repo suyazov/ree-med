@@ -205,18 +205,13 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
 
         <div class="lab-audience-grid">
             <?php foreach ($audience_cards as $card) :
-                $card_class = trimed_map_class(!empty($card['style']) ? $card['style'] : 'default', array(
-                    'default'       => 'lab-audience-card--white',
-                    'gray'          => 'lab-audience-card--gray',
-                    'green'         => 'lab-audience-card--green',
-                    'image'         => 'lab-audience-card--image',
-                    'image-overlay' => 'lab-audience-card--image',
-                ), 'lab-audience-card--white');
+                $card_style = !empty($card['style']) ? $card['style'] : 'default';
+                $card_class = trimed_audience_card_class('laboratory', $card_style);
                 $card_image = !empty($card['image']) ? $card['image'] : '';
                 $card_title = !empty($card['title']) ? $card['title'] : '';
                 $inline_style = $card_image ? 'background-image:url(' . esc_url($card_image) . ');' : '';
             ?>
-                <div class="lab-audience-card <?php echo esc_attr($card_class); ?>" style="<?php echo esc_attr($inline_style); ?>">
+                <div class="<?php echo esc_attr($card_class); ?>" style="<?php echo esc_attr($inline_style); ?>">
                     <span class="arrow"></span>
                     <p class="text"><?php echo esc_html($card_title); ?></p>
                 </div>
