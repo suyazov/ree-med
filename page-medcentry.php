@@ -7,14 +7,6 @@ get_header();
 $img_dir = get_template_directory_uri() . '/assets/img/medcentry';
 $placeholder = get_template_directory_uri() . '/assets/img/placeholder.jpg';
 
-function med_image_url($field, $placeholder) {
-    return trimed_image_field($field, $placeholder);
-}
-
-function med_get_field($field, $fallback = '') {
-    return trimed_get_field_value($field, $fallback);
-}
-
 function med_format_hero_title($title) {
     if (strpos($title, 'mc-hero-title-tail') !== false) {
         return $title;
@@ -73,48 +65,48 @@ function med_format_projects_desc($desc) {
     return $desc;
 }
 
-$hero_title = med_get_field('med_hero_title', 'Оснащение <span class="text-green">медицинских центров под ключ</span><br>в Забайкальском крае');
+$hero_title = trimed_get_field_value('med_hero_title', 'Оснащение <span class="text-green">медицинских центров под ключ</span><br>в Забайкальском крае');
 $hero_title = med_format_hero_title($hero_title);
-$hero_desc  = med_get_field('med_hero_desc', 'Помогаем клиникам запускаться, развиваться и работать на современном оборудовании от подбора до поставки');
-$hero_btn   = med_get_field('med_hero_button_text', 'Получить консультацию');
-$hero_image = med_image_url('med_hero_image', $img_dir . '/hero-main.png');
-$hero_feature_bg = med_image_url('med_hero_feature_bg', $img_dir . '/hero-feature-bg.png');
-$hero_feature_text = med_get_field('med_hero_feature_text', 'Склад в Чите — быстрая поставка');
-$hero_warehouse = med_image_url('med_hero_warehouse', $img_dir . '/warehouse-illustration.png');
-$hero_badge_glass_text = med_get_field('med_hero_badge_glass_text', 'Работаем с клиниками по всему Забайкальскому краю');
-$hero_badge_green_num  = med_get_field('med_hero_badge_green_num', '5000+');
-$hero_badge_green_text = med_get_field('med_hero_badge_green_text', 'позиций оборудования в наличии');
+$hero_desc  = trimed_get_field_value('med_hero_desc', 'Помогаем клиникам запускаться, развиваться и работать на современном оборудовании от подбора до поставки');
+$hero_btn   = trimed_get_field_value('med_hero_button_text', 'Получить консультацию');
+$hero_image = trimed_image_field('med_hero_image', $img_dir . '/hero-main.png');
+$hero_feature_bg = trimed_image_field('med_hero_feature_bg', $img_dir . '/hero-feature-bg.png');
+$hero_feature_text = trimed_get_field_value('med_hero_feature_text', 'Склад в Чите — быстрая поставка');
+$hero_warehouse = trimed_image_field('med_hero_warehouse', $img_dir . '/warehouse-illustration.png');
+$hero_badge_glass_text = trimed_get_field_value('med_hero_badge_glass_text', 'Работаем с клиниками по всему Забайкальскому краю');
+$hero_badge_green_num  = trimed_get_field_value('med_hero_badge_green_num', '5000+');
+$hero_badge_green_text = trimed_get_field_value('med_hero_badge_green_text', 'позиций оборудования в наличии');
 
-$audience_label = med_get_field('med_audience_label', 'Кому подходит');
-$audience_title = med_get_field('med_audience_title', 'Работаем с медицинскими центрами на разных этапах');
-$audience_desc  = med_get_field('med_audience_desc', 'Мы понимаем, что у каждой клиники своя задача, поэтому подходим к оснащению индивидуально');
-$audience_lead  = med_get_field('med_audience_lead', 'Мы <span class="text-green">поможем</span>, если вы:');
-$audience_summary = med_get_field('med_audience_summary', 'Мы создаём продуманное оснащение, которое помогает клинике работать <em>уверенно</em> каждый день.');
+$audience_label = trimed_get_field_value('med_audience_label', 'Кому подходит');
+$audience_title = trimed_get_field_value('med_audience_title', 'Работаем с медицинскими центрами на разных этапах');
+$audience_desc  = trimed_get_field_value('med_audience_desc', 'Мы понимаем, что у каждой клиники своя задача, поэтому подходим к оснащению индивидуально');
+$audience_lead  = trimed_get_field_value('med_audience_lead', 'Мы <span class="text-green">поможем</span>, если вы:');
+$audience_summary = trimed_get_field_value('med_audience_summary', 'Мы создаём продуманное оснащение, которое помогает клинике работать <em>уверенно</em> каждый день.');
 $audience_summary = med_format_audience_summary($audience_summary);
 
-$included_subtitle = med_get_field('med_included_subtitle', 'Что входит');
-$included_title = med_get_field('med_included_title', '<span class="text-green">Комплексное</span> оснащение клиники');
-$included_label = med_get_field('med_included_label', 'Мы берём на себя весь процесс:');
-$included_desc  = med_get_field('med_included_desc', 'Оснащение медицинского центра — это не просто закупка оборудования. Важно подобрать решения, которые будут соответствовать профилю клиники, нагрузке и бюджету.');
-$included_result_text = med_get_field('med_included_result_text', 'В результате, вы получаете не просто оборудование, а продуманную систему для стабильной и комфортной работы клиники');
+$included_subtitle = trimed_get_field_value('med_included_subtitle', 'Что входит');
+$included_title = trimed_get_field_value('med_included_title', '<span class="text-green">Комплексное</span> оснащение клиники');
+$included_label = trimed_get_field_value('med_included_label', 'Мы берём на себя весь процесс:');
+$included_desc  = trimed_get_field_value('med_included_desc', 'Оснащение медицинского центра — это не просто закупка оборудования. Важно подобрать решения, которые будут соответствовать профилю клиники, нагрузке и бюджету.');
+$included_result_text = trimed_get_field_value('med_included_result_text', 'В результате, вы получаете не просто оборудование, а продуманную систему для стабильной и комфортной работы клиники');
 
-$projects_title = med_get_field('med_projects_title', '<span class="text-green">Реализованные</span> проекты');
-$projects_desc  = med_format_projects_desc(med_get_field('med_projects_desc', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'));
+$projects_title = trimed_get_field_value('med_projects_title', '<span class="text-green">Реализованные</span> проекты');
+$projects_desc  = med_format_projects_desc(trimed_get_field_value('med_projects_desc', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'));
 
-$process_title    = med_get_field('med_process_title', 'Как <span class="text-green">мы работаем</span>');
-$process_subtitle = med_get_field('med_process_subtitle', 'Мы выстроили понятный и прозрачный процесс работы, чтобы клиенту было комфортно на каждом этапе.');
-$process_image    = med_image_url('med_process_image', $img_dir . '/process-main.png');
+$process_title    = trimed_get_field_value('med_process_title', 'Как <span class="text-green">мы работаем</span>');
+$process_subtitle = trimed_get_field_value('med_process_subtitle', 'Мы выстроили понятный и прозрачный процесс работы, чтобы клиенту было комфортно на каждом этапе.');
+$process_image    = trimed_image_field('med_process_image', $img_dir . '/process-main.png');
 
-$request_title  = med_get_field('med_request_title', 'Подберём оборудование под вашу клинику');
+$request_title  = trimed_get_field_value('med_request_title', 'Подберём оборудование под вашу клинику');
 $request_title = med_format_request_title($request_title);
-$request_desc   = med_get_field('med_request_desc', 'Оставьте заявку — свяжемся с вами, разберём задачу и предложим решение');
-$request_note   = med_get_field('med_request_note', 'Консультация бесплатная');
-$request_button = med_get_field('med_request_button_text', 'Получить консультацию');
+$request_desc   = trimed_get_field_value('med_request_desc', 'Оставьте заявку — свяжемся с вами, разберём задачу и предложим решение');
+$request_note   = trimed_get_field_value('med_request_note', 'Консультация бесплатная');
+$request_button = trimed_get_field_value('med_request_button_text', 'Получить консультацию');
 
-$why_title    = med_get_field('med_why_title', 'Почему выбирают <span class="text-green">ТриМед</span>');
-$why_warehouse_title = med_get_field('med_why_warehouse_title', 'Собственный склад в Чите');
-$why_cta_text = med_get_field('med_why_cta_text', 'Нужна консультация по оборудованию?');
-$why_cta_button = med_get_field('med_why_cta_button_text', 'Оставить заявку');
+$why_title    = trimed_get_field_value('med_why_title', 'Почему выбирают <span class="text-green">ТриМед</span>');
+$why_warehouse_title = trimed_get_field_value('med_why_warehouse_title', 'Собственный склад в Чите');
+$why_cta_text = trimed_get_field_value('med_why_cta_text', 'Нужна консультация по оборудованию?');
+$why_cta_button = trimed_get_field_value('med_why_cta_button_text', 'Оставить заявку');
 
 // Fallbacks
 $audience_cards = array(

@@ -7,10 +7,6 @@ get_header();
 $img_dir = get_template_directory_uri() . '/assets/img';
 $placeholder = $img_dir . '/placeholder.jpg';
 
-function stom_image_url($field, $placeholder) {
-    return trimed_image_field($field, $placeholder);
-}
-
 function stom_picture($url, $class = '', $alt = '', $width = null, $height = null, $style = '') {
     $mobile = preg_replace('/\.(png|jpe?g|webp)(\?.*)?$/i', '-mobile.$1$2', $url);
     $mobile_path = str_replace(get_template_directory_uri(), get_template_directory(), $mobile);
@@ -23,21 +19,11 @@ function stom_picture($url, $class = '', $alt = '', $width = null, $height = nul
     echo '<picture><source media="(max-width: 768px)" srcset="' . esc_url($mobile) . '"><img src="' . esc_url($url) . '"' . $class_attr . $wh_attr . $style_attr . ' alt="' . esc_attr($alt) . '"></picture>';
 }
 
-function stom_why_stat_class($style) {
-    $map = array(
-        'gray'  => 'stom-why-stat--gray',
-        'green' => 'stom-why-stat--green',
-        'image' => 'stom-why-stat--img',
-        'img'   => 'stom-why-stat--img',
-    );
-    return isset($map[$style]) ? $map[$style] : 'stom-why-stat--gray';
-}
-
 $hero_title = get_field('stom_hero_title') ?: 'Оснащение<br><span class="text-green">стоматологии под ключ</span><br>в Забайкальском крае';
 $hero_desc  = get_field('stom_hero_desc') ?: 'Подберём оборудование, поставим и поможем запустить кабинет без лишних затрат и ошибок';
 $hero_btn   = get_field('stom_hero_button_text') ?: 'Получить консультацию';
-$hero_image = stom_image_url('stom_hero_image', $img_dir . '/stomatology-hero-main.png');
-$hero_feature_image = stom_image_url('stom_hero_feature_image', $img_dir . '/stomatology-hero-features.png');
+$hero_image = trimed_image_field('stom_hero_image', $img_dir . '/stomatology-hero-main.png');
+$hero_feature_image = trimed_image_field('stom_hero_feature_image', $img_dir . '/stomatology-hero-features.png');
 $hero_features = get_field('stom_hero_features');
 $hero_badge_glass_text = get_field('stom_hero_badge_glass_text') ?: 'Работаем с частными и государственными клиниками';
 $hero_badge_green_num  = get_field('stom_hero_badge_green_num') ?: '5000+';
@@ -64,7 +50,7 @@ $projects = get_field('stom_projects');
 $process_title    = get_field('stom_process_title') ?: 'Как проходит <span class="text-green">работа</span>';
 $process_subtitle = get_field('stom_process_subtitle') ?: 'Мы выстроили простой и понятный процесс, чтобы вы не тратили время на разбор оборудования.';
 $process_steps    = get_field('stom_process_steps');
-$process_image    = stom_image_url('stom_process_image', $img_dir . '/stomatology-process.png');
+$process_image    = trimed_image_field('stom_process_image', $img_dir . '/stomatology-process.png');
 
 $request_title  = get_field('stom_request_title') ?: 'Подберём оборудование под вашу <em>стоматологию</em>';
 $request_desc   = get_field('stom_request_desc') ?: 'Оставьте заявку — свяжемся с вами и предложим решение';
@@ -79,7 +65,7 @@ $why_feature_icons = array(
     '<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 19.8157V6.50314C25 5.47813 24.375 4.56563 23.425 4.17813L13.425 0.178125C12.825 -0.0593751 12.1625 -0.0593751 11.5625 0.178125L1.5625 4.17813C0.625001 4.56563 0 5.49063 0 6.50314V19.8157C0 21.1907 1.125 22.3157 2.5 22.3157H6.25001V11.0656H18.75V22.3157H22.5C23.875 22.3157 25 21.1907 25 19.8157ZM11.25 19.8157H8.75001V22.3157H11.25V19.8157ZM13.75 16.0657H11.25V18.5657H13.75V16.0657ZM16.25 19.8157H13.75V22.3157H16.25V19.8157Z" fill="url(#paint0_linear_182_301)"/><defs><linearGradient id="paint0_linear_182_301" x1="4.31819" y1="18.0554" x2="18.2966" y2="3.07637" gradientUnits="userSpaceOnUse"><stop stop-color="#3F8D50"/><stop offset="1" stop-color="#51A462"/></linearGradient></defs></svg>',
 );
 $why_warehouse_title = get_field('stom_why_warehouse_title') ?: 'Собственный склад в Чите';
-$why_warehouse_image = stom_image_url('stom_why_warehouse_image', $img_dir . '/stomatology-warehouse.png');
+$why_warehouse_image = trimed_image_field('stom_why_warehouse_image', $img_dir . '/stomatology-warehouse.png');
 
 $cta_text   = get_field('stom_cta_text') ?: 'Если вы планируете открыть стоматологию или обновить оборудование — мы поможем подобрать решения под вашу задачу и бюджет';
 $cta_button = get_field('stom_cta_button_text') ?: 'Получить консультацию';
@@ -376,7 +362,12 @@ $included_bottom = array_slice($included_cards, 3);
                 <div class="stom-why-left">
                     <div class="stom-why-stats">
                         <?php foreach ($why_stats as $stat) :
-                            $stat_class = stom_why_stat_class(!empty($stat['style']) ? $stat['style'] : 'gray');
+                            $stat_class = trimed_map_class(!empty($stat['style']) ? $stat['style'] : 'gray', array(
+                                'gray'  => 'stom-why-stat--gray',
+                                'green' => 'stom-why-stat--green',
+                                'image' => 'stom-why-stat--img',
+                                'img'   => 'stom-why-stat--img',
+                            ), 'stom-why-stat--gray');
                         ?>
                             <div class="stom-why-stat <?php echo esc_attr($stat_class); ?>">
                                 <span class="num"><?php echo esc_html($stat['number']); ?></span>

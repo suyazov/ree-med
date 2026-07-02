@@ -146,6 +146,10 @@ function trimed_repeater_field($field, $fallback = array()) {
     return !empty($value) && is_array($value) ? $value : $fallback;
 }
 
+function trimed_map_class($value, $map, $fallback = '') {
+    return isset($map[$value]) ? $map[$value] : $fallback;
+}
+
 function trimed_render_phone_input($args = array()) {
     $args = wp_parse_args($args, array(
         'class'       => 'phone-input',

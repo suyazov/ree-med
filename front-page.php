@@ -3,15 +3,10 @@ get_header();
 
 $img_main = get_template_directory_uri() . '/assets/img/main';
 
-function main_image($field, $fallback) {
-    $url = get_field($field);
-    return !empty($url) ? $url : $fallback;
-}
-
 // Hero
 $hero_title = get_field('main_hero_title') ?: 'Комплексное оснащение медицинских учреждений в Забайкальском крае';
 $hero_desc  = get_field('main_hero_desc')  ?: 'Подбираем оборудование, расходные материалы и готовые решения для клиник, лабораторий, стоматологий и медицинских центров.';
-$hero_image = main_image('main_hero_image', $img_main . '/главная-1440-4.png');
+$hero_image = trimed_image_field('main_hero_image', $img_main . '/главная-1440-4.png');
 $hero_btn1  = get_field('main_hero_btn1') ?: 'Получить консультацию';
 $hero_btn2  = get_field('main_hero_btn2') ?: 'В магазин';
 $hero_checks = get_field('main_hero_checks');
@@ -42,7 +37,7 @@ if (empty($stats)) {
 $about_title = get_field('main_about_title') ?: 'ТриМед — поставщик медицинского оборудования и расходных материалов';
 $about_desc  = get_field('main_about_desc')  ?: 'Мы помогаем медицинским учреждениям оснащать кабинеты, отделения и клиники современным оборудованием';
 $about_text  = get_field('main_about_text')  ?: 'Берём на себя подбор решений, поставку, консультации и сопровождение проекта на всех этапах';
-$about_image = main_image('main_about_image', $img_main . '/3-0.png');
+$about_image = trimed_image_field('main_about_image', $img_main . '/3-0.png');
 $about_stats = get_field('main_about_stats');
 if (empty($about_stats)) {
     $about_stats = array(
@@ -129,7 +124,7 @@ if (empty($categories)) {
 // Steps
 $steps_subtitle = get_field('main_steps_subtitle') ?: 'Этапы работы';
 $steps_title    = get_field('main_steps_title')    ?: 'От запроса <span class="text-green">до поставки</span>';
-$steps_image    = main_image('main_steps_image', $img_main . '/103-0.png');
+$steps_image    = trimed_image_field('main_steps_image', $img_main . '/103-0.png');
 $steps = get_field('main_steps');
 if (empty($steps)) {
     $steps = array(

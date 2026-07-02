@@ -5,10 +5,6 @@ Template Name: Дезинфекция
 get_header();
 
 $img_dir = get_template_directory_uri() . '/assets/img';
-
-function dis_image_url($field, $fallback) {
-    return trimed_image_field($field, $fallback);
-}
 ?>
 
 <main class="disinfection-page">
@@ -26,7 +22,7 @@ function dis_image_url($field, $fallback) {
                 ?>
                 <h1 class="hero-title"><?php echo wp_kses_post($hero_title); ?></h1>
                 <div class="hero-image-wrap">
-                    <img src="<?php echo esc_url(dis_image_url('hero_image', $img_dir . '/disinfection-hero-main.png')); ?>" alt="Дезинфекция" class="hero-image">
+                    <img src="<?php echo esc_url(trimed_image_field('hero_image', $img_dir . '/disinfection-hero-main.png')); ?>" alt="Дезинфекция" class="hero-image">
                     <div class="hero-badges">
                         <?php
                         $hero_badges = get_field('hero_badges');
@@ -146,7 +142,7 @@ function dis_image_url($field, $fallback) {
                     <h2 class="section-title"><?php echo wp_kses_post($supplies_title); ?></h2>
                 </div>
                 <div class="supplies-diagram">
-                    <div class="supplies-center"><img src="<?php echo esc_url(dis_image_url('supplies_center_image', $img_dir . '/disinfection-supplies-center.png')); ?>" alt=""></div>
+                    <div class="supplies-center"><img src="<?php echo esc_url(trimed_image_field('supplies_center_image', $img_dir . '/disinfection-supplies-center.png')); ?>" alt=""></div>
                     <div class="supplies-rings">
                         <div class="ring ring-1"></div>
                         <div class="ring ring-2"></div>
@@ -276,7 +272,7 @@ function dis_image_url($field, $fallback) {
                     <h2 class="section-title"><?php echo wp_kses_post($why_title); ?></h2>
             </div>
             <div class="why-grid">
-                <div class="why-image-card" style="background-image:url('<?php echo esc_url(dis_image_url('why_main_image', $img_dir . '/disinfection-why-main.png')); ?>')">
+                <div class="why-image-card" style="background-image:url('<?php echo esc_url(trimed_image_field('why_main_image', $img_dir . '/disinfection-why-main.png')); ?>')">
                     <div class="why-stats">
                         <div class="why-stat glass"><strong>20+ лет</strong><span>работы в медицинской сфере</span></div>
                         <div class="why-stat green"><strong>5000+</strong><span>позиций оборудования в наличии</span></div>
@@ -286,7 +282,7 @@ function dis_image_url($field, $fallback) {
                     <?php trimed_render_plus_svg('why-plus', 36, 'currentColor', 3, 4); ?>
                     <h3>Работа с государственными и частными учреждениями</h3>
                 </div>
-                <div class="why-warehouse-card" style="background-image:url('<?php echo esc_url(dis_image_url('why_warehouse_image', $img_dir . '/disinfection-warehouse.png')); ?>')">
+                <div class="why-warehouse-card" style="background-image:url('<?php echo esc_url(trimed_image_field('why_warehouse_image', $img_dir . '/disinfection-warehouse.png')); ?>')">
                     <h3>Склад в Чите</h3>
                 </div>
                 <div class="why-features-list">
