@@ -424,23 +424,6 @@ body.disinfection-page .task-item img {
         height: 50px;
     }
 
-    /* Application */
-    .disinfection-page .application-box {
-        align-items: flex-end;
-        padding: 30px 48px 30px;
-    }
-
-    .disinfection-page .application-info h2 {
-        margin-top: 0;
-    }
-
-    .disinfection-page .app-decor {
-        width: 40px;
-        height: 40px;
-        left: 48px;
-        top: 43px;
-    }
-
     /* Projects */
     .disinfection-page .slider-arrow.prev {
         left: -49px;
@@ -1012,69 +995,6 @@ body.disinfection-page .task-item img {
         line-height: 1;
         color: #EFEFEF;
         transform: none;
-    }
-
-    /* Application mobile: single green box, form directly under info */
-    .disinfection-page .application-section {
-        padding: 16px 0;
-    }
-
-    .disinfection-page .application-section .container {
-        padding: 0 30px;
-    }
-
-    .disinfection-page .application-box {
-        gap: 0;
-        padding: 24px 20px;
-    }
-
-    .disinfection-page .application-info {
-        text-align: center;
-        padding-top: 40px;
-    }
-
-    .disinfection-page .application-info h2 {
-        margin-top: 0;
-        margin-bottom: 8px;
-    }
-
-    .disinfection-page .application-info p {
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .disinfection-page .app-decor {
-        width: 24px;
-        height: 24px;
-        left: 50%;
-        top: 24px;
-        transform: translateX(-50%);
-    }
-
-    .disinfection-page .application-form-wrap {
-        width: 308px;
-        height: 402px;
-        margin-top: 36px;
-        padding: 20px 18px;
-        background: var(--color-white);
-        box-sizing: border-box;
-    }
-
-    .disinfection-page .application-form .btn-primary {
-        width: 100%;
-        align-self: stretch;
-        height: 57px;
-        padding: 0;
-    }
-
-    .disinfection-page .application-form {
-        gap: 12px;
-    }
-
-    .disinfection-page .application-form input[type="text"],
-    .disinfection-page .phone-input {
-        height: 52px;
-        padding: 0 16px;
     }
 
     .disinfection-page .form-message:empty {
@@ -1666,60 +1586,6 @@ body.disinfection-page .task-item img {
 
     body.disinfection-page .faq-item.active p {
         margin-top: 6px;
-    }
-
-    body.disinfection-page .application-section {
-        padding: 50px 0 100px;
-    }
-
-    body.disinfection-page .application-section .container {
-        padding: 0 16px;
-    }
-
-    body.disinfection-page .application-box {
-        width: 100%;
-        min-height: 646px;
-        height: 646px;
-        display: block;
-        position: relative;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body.disinfection-page .application-info {
-        position: absolute;
-        left: 23px;
-        top: 70px;
-        width: 297px;
-        padding: 0;
-        text-align: left;
-    }
-
-    body.disinfection-page .application-info h2 {
-        margin: 0 0 8px;
-    }
-
-    body.disinfection-page .application-info p {
-        max-width: 297px;
-        margin: 0;
-    }
-
-    body.disinfection-page .app-decor {
-        width: 16px;
-        height: 16px;
-        left: 164px;
-        top: 22px;
-        transform: none;
-    }
-
-    body.disinfection-page .application-form-wrap {
-        position: absolute;
-        left: 18px;
-        top: 226px;
-        width: 308px;
-        height: 402px;
-        margin: 0;
-        padding: 20px 18px;
     }
 
 }

@@ -1617,98 +1617,6 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: 16px;
 }
 
-/* Application */
-.application-section {
-    padding: 70px 0;
-}
-
-.application-section .container {
-    max-width: 1200px;
-    padding: 0;
-}
-
-.application-box {
-    background: var(--gradient-light-green);
-    border-radius: 14px;
-    padding: 60px 48px;
-    display: grid;
-    grid-template-columns: 445px 490px;
-    gap: 80px;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-}
-
-.application-info {
-    color: var(--color-white);
-}
-
-.app-decor {
-    position: absolute;
-    left: 24px;
-    top: 24px;
-    opacity: 1;
-}
-
-.application-info h2 {
-    font-size: 36px;
-    line-height: 110%;
-    letter-spacing: -0.03em;
-    font-weight: 600;
-    margin-bottom: 16px;
-    margin-top: 40px;
-}
-
-.application-info p {
-    font-size: 16px;
-    line-height: 110%;
-    max-width: 387px;
-}
-
-.application-form-wrap {
-    background: var(--color-white);
-    border-radius: var(--radius-card);
-    padding: 36px 30px;
-}
-
-.application-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.application-form .btn-primary {
-    width: auto;
-    align-self: flex-start;
-    padding: 16px 32px;
-}
-
-.application-form input[type="text"],
-.application-form input[type="tel"] {
-    width: 100%;
-    background: var(--color-gray);
-    border: none;
-    border-radius: var(--radius-control);
-    padding: 20px 16px;
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: -0.02em;
-    color: var(--color-black);
-    font-family: 'HelveticaNeueCyr', sans-serif;
-}
-
-.application-form input::-webkit-contacts-auto-fill-button,
-.application-form input::-webkit-credentials-auto-fill-button {
-    visibility: hidden;
-    display: none !important;
-}
-
-.application-form input::placeholder {
-    color: var(--color-black);
-    opacity: 0.6;
-}
-
 .phone-input {
     display: flex;
     align-items: center;
@@ -2196,10 +2104,6 @@ h1, h2, h3, h4, h5, h6, p {
     }
     .included-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .application-box {
-        grid-template-columns: 1fr;
-        gap: 40px;
     }
     .supplies-box {
         height: auto;
@@ -2848,35 +2752,6 @@ h1, h2, h3, h4, h5, h6, p {
         margin-top: 12px;
     }
 
-    /* Application */
-    .application-box {
-        padding: 24px 20px;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        align-items: start;
-    }
-    .application-info {
-        padding-top: 46px;
-    }
-    .application-info h2 {
-        font-size: 24px;
-        margin-top: 0;
-        margin-bottom: 12px;
-    }
-    .application-info p {
-        font-size: 14px;
-        max-width: none;
-    }
-    .app-decor {
-        width: 24px;
-        height: 24px;
-    }
-    .application-form-wrap {
-        padding: 24px 20px;
-    }
-    .application-form input {
-        padding: 16px;
-    }
     .phone-input {
         padding: 12px;
     }
