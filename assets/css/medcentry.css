@@ -648,13 +648,20 @@
     .medcentry-page .mc-header-clover { width: 29px; height: 29px; top: 24px; right: 24px; }
     .medcentry-page .mc-audience-title { font-size: 22px; line-height: 24.2px; letter-spacing: -0.66px; font-weight: 600; margin-top: 62px; }
     .medcentry-page .mc-audience-desc { font-size: 14px; line-height: 16.8px; letter-spacing: 0; margin: 12px 0 0; width: 295px; }
-    .medcentry-page .mc-audience-body { grid-template-columns: 1fr; gap: 16px; margin-top: 52px; }
-    .medcentry-page .mc-audience-lead { width: auto; font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; text-align: center; margin: 0 0 28px; }
-    .medcentry-page .mc-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .medcentry-page .mc-audience-card { width: 100%; height: 167px; padding: 16px; font-size: 14px; line-height: 110%; border-radius: 12px; }
-    .medcentry-page .mc-audience-card .text { max-width: none; }
-    .medcentry-page .mc-audience-card-img { position: absolute; right: 16px; top: 16px; bottom: auto; width: 85px; height: 73px; opacity: 1; object-fit: contain; }
-    .medcentry-page .mc-audience-card--gray .mc-audience-card-img { width: 72px; height: 72px; }
+    .medcentry-page .mc-audience-body { display: block; margin-top: 52px; }
+    .medcentry-page .mc-audience-lead { width: 251px; font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; text-align: center; margin: 0 auto 28px; font-weight: 600; }
+    .medcentry-page .mc-audience-grid { display: grid; grid-template-columns: 168px 167px; gap: 12px 8px; width: 343px; max-width: 100%; }
+    .medcentry-page .mc-audience-card { width: 100%; height: 167px; padding: 16px; font-size: 14px; line-height: 110%; border-radius: 12px; font-weight: 400; }
+    .medcentry-page .mc-audience-card .text { max-width: 152px; }
+    .medcentry-page .mc-audience-card .mc-clover { width: 12px; height: 12px; top: 16px; right: 16px; }
+    .medcentry-page .mc-audience-card-img { position: absolute; right: 7px; top: 4px; bottom: auto; width: 85px; height: 73px; opacity: 1; object-fit: contain; }
+    .medcentry-page .mc-audience-card--image .mc-audience-card-img { content: url('../img/medcentry/audience-1.png'); }
+    .medcentry-page .mc-audience-card--image .text { max-width: 152px; }
+    .medcentry-page .mc-audience-card--gray .mc-clover { display: block; left: 16px; right: auto; top: 16px; width: 20px; height: 20px; color: #D1D3D4; }
+    .medcentry-page .mc-audience-card--gray .mc-audience-card-img { top: 8px; right: 8px; width: 72px; height: 72px; border-radius: 6px; }
+    .medcentry-page .mc-audience-card--gray .text { max-width: 124px; }
+    .medcentry-page .mc-audience-card--green .mc-clover { top: 20px; right: 16px; width: 12px; height: 12px; }
+    .medcentry-page .mc-audience-card--green .text { max-width: 147px; }
     .medcentry-page .mc-audience-summary { max-width: 100%; margin: 16px 0 0; font-size: 20px; line-height: 24px; letter-spacing: -0.6px; text-align: left; }
 
     /* Included mobile */
