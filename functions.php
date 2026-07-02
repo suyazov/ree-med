@@ -23,18 +23,56 @@ function trimed_setup() {
 }
 add_action('after_setup_theme', 'trimed_setup');
 
+function trimed_get_service_pages_config() {
+    return array(
+        'medcentry' => array(
+            'template'   => 'page-medcentry.php',
+            'slug'       => 'medcentry',
+            'body_class' => 'medcentry-page',
+            'style'      => array(
+                'handle' => 'trimed-medcentry',
+                'file'   => 'assets/css/medcentry.css',
+            ),
+        ),
+        'stomatology' => array(
+            'template'   => 'page-stomatology.php',
+            'slug'       => 'stomatologiya',
+            'body_class' => 'stomatology-page',
+            'style'      => array(
+                'handle' => 'trimed-stomatology',
+                'file'   => 'assets/css/stomatology.css',
+            ),
+        ),
+        'disinfection' => array(
+            'template'   => 'page-disinfection.php',
+            'slug'       => 'dezinfektsiya',
+            'body_class' => 'disinfection-page',
+            'style'      => array(
+                'handle' => 'trimed-disinfection',
+                'file'   => 'assets/css/disinfection.css',
+            ),
+        ),
+        'laboratory' => array(
+            'template'   => 'page-laboratory.php',
+            'slug'       => 'laboratoriya',
+            'body_class' => 'laboratory-page',
+            'style'      => array(
+                'handle' => 'trimed-laboratory',
+                'file'   => 'assets/css/laboratory.css',
+            ),
+        ),
+    );
+}
+
+function trimed_is_service_page($config) {
+    return is_page_template($config['template']) || is_page($config['slug']);
+}
+
 function trimed_body_class($classes) {
-    if (is_page_template('page-medcentry.php') || is_page('medcentry')) {
-        $classes[] = 'medcentry-page';
-    }
-    if (is_page_template('page-stomatology.php') || is_page('stomatologiya')) {
-        $classes[] = 'stomatology-page';
-    }
-    if (is_page_template('page-disinfection.php') || is_page('dezinfektsiya')) {
-        $classes[] = 'disinfection-page';
-    }
-    if (is_page_template('page-laboratory.php') || is_page('laboratoriya')) {
-        $classes[] = 'laboratory-page';
+    foreach (trimed_get_service_pages_config() as $config) {
+        if (trimed_is_service_page($config)) {
+            $classes[] = $config['body_class'];
+        }
     }
     return $classes;
 }
@@ -862,17 +900,17 @@ function trimed_document_title($title) {
 add_filter('document_title_parts', 'trimed_document_title');
 
 function trimed_enqueue_page_assets() {
-    if (is_page_template('page-stomatology.php') || is_page('stomatologiya')) {
-        wp_enqueue_style('trimed-stomatology', get_template_directory_uri() . '/assets/css/stomatology.css', array('trimed-main'), trimed_asset_version('assets/css/stomatology.css'));
-    }
-    if (is_page_template('page-laboratory.php') || is_page('laboratoriya')) {
-        wp_enqueue_style('trimed-laboratory', get_template_directory_uri() . '/assets/css/laboratory.css', array('trimed-main'), trimed_asset_version('assets/css/laboratory.css'));
-    }
-    if (is_page_template('page-disinfection.php') || is_page('dezinfektsiya')) {
-        wp_enqueue_style('trimed-disinfection', get_template_directory_uri() . '/assets/css/disinfection.css', array('trimed-main'), trimed_asset_version('assets/css/disinfection.css'));
-    }
-    if (is_page_template('page-medcentry.php') || is_page('medcentry')) {
-        wp_enqueue_style('trimed-medcentry', get_template_directory_uri() . '/assets/css/medcentry.css', array('trimed-main'), trimed_asset_version('assets/css/medcentry.css'));
+    foreach (trimed_get_service_pages_config() as $config) {
+        if (!trimed_is_service_page($config)) {
+            continue;
+        }
+
+        wp_enqueue_style(
+            $config['style']['handle'],
+            get_template_directory_uri() . '/' . $config['style']['file'],
+            array('trimed-main'),
+            trimed_asset_version($config['style']['file'])
+        );
     }
 }
 add_action('wp_enqueue_scripts', 'trimed_enqueue_page_assets');
