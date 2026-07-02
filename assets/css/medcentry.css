@@ -509,7 +509,7 @@
 .medcentry-page .mc-request-form .form-message { font-size: 12px; line-height: 14px; }
 
 /* Why */
-.medcentry-page .mc-why { padding: 0; margin-top: 140px; }
+.medcentry-page .mc-why { padding: 0; margin-top: 140px; margin-bottom: 110px; }
 .medcentry-page .mc-why-title { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); width: fit-content; margin: 0 auto 61px; text-align: center; }
 .medcentry-page .mc-why-grid { display: grid; grid-template-columns: 684px 481px; gap: 35px; align-items: start; }
 .medcentry-page .mc-why-left { display: flex; flex-direction: column; gap: 20px; }
@@ -699,7 +699,7 @@
     .medcentry-page .mc-request-form button::after { content: 'Отправить'; font-size: 14px; line-height: 17px; }
 
     /* Why mobile */
-    .medcentry-page .mc-why { margin-top: 80px; padding: 0 16px; }
+    .medcentry-page .mc-why { margin-top: 80px; margin-bottom: 80px; padding: 0 16px; }
     .medcentry-page .mc-why-title { width: 295px; font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; margin: 0 0 32px 24px; text-align: left; }
     .medcentry-page .mc-why-grid { grid-template-columns: 1fr; gap: 0; }
     .medcentry-page .mc-why-left { gap: 11px; }
