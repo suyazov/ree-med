@@ -2083,17 +2083,17 @@ h1, h2, h3, h4, h5, h6, p {
     border-radius: 50%;
 }
 
-:where(.mc-request-form, .stom-request-form) .form-message {
+:where(.request-form) .form-message {
     min-height: 0;
     margin: 0;
 }
 
-:where(.mc-request-form, .stom-request-form) .form-message:not(:empty) {
+:where(.request-form) .form-message:not(:empty) {
     min-height: 20px;
     margin-top: 8px;
 }
 
-:where(.mc-request-form, .stom-request-form) .checkbox {
+:where(.request-form) .checkbox {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -2104,13 +2104,13 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 12px;
 }
 
-:where(.mc-request-form, .stom-request-form) .checkbox span {
+:where(.request-form) .checkbox span {
     display: block;
     width: 278px;
     opacity: 0.6;
 }
 
-:where(.mc-request-form, .stom-request-form) .checkbox input {
+:where(.request-form) .checkbox input {
     width: 15px;
     height: 15px;
     flex-shrink: 0;
@@ -2125,11 +2125,11 @@ h1, h2, h3, h4, h5, h6, p {
     box-sizing: border-box;
 }
 
-:where(.mc-request-form, .stom-request-form) .checkbox input:checked {
+:where(.request-form) .checkbox input:checked {
     background: var(--color-dark-green);
 }
 
-:where(.mc-request-form, .stom-request-form) {
+:where(.request-form) {
     display: flex;
     flex-direction: column;
     width: 490px;
@@ -2139,8 +2139,8 @@ h1, h2, h3, h4, h5, h6, p {
     background: var(--color-white);
 }
 
-:where(.mc-request-form, .stom-request-form) input,
-:where(.mc-request-form, .stom-request-form) textarea {
+:where(.request-form) input,
+:where(.request-form) textarea {
     width: 429px;
     height: var(--control-height);
     flex-shrink: 0;
@@ -2155,24 +2155,24 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 12px;
 }
 
-:where(.mc-request-form, .stom-request-form) input[name="name"] {
+:where(.request-form) input[name="name"] {
     margin-bottom: 12px;
 }
 
-:where(.mc-request-form, .stom-request-form) textarea[name="comment"] {
+:where(.request-form) textarea[name="comment"] {
     height: var(--control-height);
     margin-bottom: 20px;
     padding-top: 20px;
     resize: none;
 }
 
-:where(.mc-request-form, .stom-request-form) input::placeholder,
-:where(.mc-request-form, .stom-request-form) textarea::placeholder {
+:where(.request-form) input::placeholder,
+:where(.request-form) textarea::placeholder {
     color: var(--color-black);
     opacity: 0.6;
 }
 
-:where(.mc-request-form, .stom-request-form) button {
+:where(.request-form) button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3671,7 +3671,7 @@ body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection
         letter-spacing: 0;
     }
 
-    :where(.mc-request-form, .stom-request-form) {
+    :where(.request-form) {
         padding: 20px;
     }
 

@@ -276,6 +276,50 @@ function trimed_render_contact_form($args = array()) {
     echo '</form>';
 }
 
+function trimed_render_request_summary_block($args = array()) {
+    $args = wp_parse_args($args, array(
+        'icon'        => '',
+        'content_tag' => 'div',
+        'content_class' => '',
+        'title'       => '',
+        'title_class' => '',
+        'desc'        => '',
+        'desc_class'  => '',
+        'note'        => '',
+        'note_class'  => '',
+        'note_icon'   => '',
+        'note_label_class' => '',
+    ));
+
+    $tag = in_array($args['content_tag'], array('section', 'article', 'div', 'aside')) ? $args['content_tag'] : 'div';
+    $content_class = trim(sanitize_html_class($args['content_class']));
+    $title_class = trim(sanitize_html_class($args['title_class']));
+    $desc_class = trim(sanitize_html_class($args['desc_class']));
+    $note_class = trim(sanitize_html_class($args['note_class']));
+    $note_label_class = trim(sanitize_html_class($args['note_label_class']));
+
+    if (!empty($args['icon'])) {
+        echo $args['icon'];
+    }
+
+    echo '<' . $tag . (!empty($content_class) ? ' class="' . esc_attr($content_class) . '"' : '') . '>';
+    if (!empty($args['title'])) {
+        echo '<h2' . (!empty($title_class) ? ' class="' . esc_attr($title_class) . '"' : '') . '>' . wp_kses_post($args['title']) . '</h2>';
+    }
+    if (!empty($args['desc'])) {
+        echo '<p' . (!empty($desc_class) ? ' class="' . esc_attr($desc_class) . '"' : '') . '>' . wp_kses_post($args['desc']) . '</p>';
+    }
+    if (!empty($args['note'])) {
+        echo '<div' . (!empty($note_class) ? ' class="' . esc_attr($note_class) . '"' : '') . '>';
+        if (!empty($args['note_icon'])) {
+            echo '<span' . (!empty($note_label_class) ? ' class="' . esc_attr($note_label_class) . '"' : '') . '>' . wp_kses_post($args['note_icon']) . '</span>';
+        }
+        echo '<span>' . esc_html($args['note']) . '</span>';
+        echo '</div>';
+    }
+    echo '</' . $tag . '>';
+}
+
 function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stroke_width = 5, $offset = null) {
     $half = $size / 2;
     $offset = $offset === null ? $size * 0.2 : $offset;

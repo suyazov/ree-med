@@ -332,20 +332,23 @@ $included_bottom = array_slice($included_cards, 3);
 
     <section class="stom-request">
         <div class="stom-request-inner">
-            <svg class="stom-request-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.4421 5.44229C11.8491 5.44229 10.5574 4.15049 10.5574 2.55745C10.5574 1.14536 9.41256 9.53674e-07 8 9.53674e-07C6.58744 9.53674e-07 5.44211 1.14536 5.44211 2.55745C5.44211 4.15049 4.15088 5.44229 2.55789 5.44229C1.14532 5.44229 0 6.58713 0 8.00026C0 9.41287 1.14532 10.5577 2.55789 10.5577C4.15088 10.5577 5.44211 11.849 5.44211 13.442C5.44211 14.8552 6.58744 16 8 16C9.41256 16 10.5574 14.8552 10.5574 13.442C10.5574 11.849 11.8491 10.5577 13.4421 10.5577C14.8547 10.5577 16 9.41287 16 8.00026C16 6.58713 14.8547 5.44229 13.4421 5.44229Z" fill="currentColor"/>
-            </svg>
-            <div>
-                <h2 class="stom-request-title"><?php echo wp_kses_post($request_title); ?></h2>
-                <p class="stom-request-desc"><?php echo esc_html($request_desc); ?></p>
-                <div class="stom-request-note">
-                    <span class="check"><svg width="10" height="8" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5l3 3 5-6"/></svg></span>
-                    <span><?php echo esc_html($request_note); ?></span>
-                </div>
-            </div>
+            <?php
+            trimed_render_request_summary_block(array(
+                'icon'         => '<svg class="stom-request-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.4421 5.44229C11.8491 5.44229 10.5574 4.15049 10.5574 2.55745C10.5574 1.14536 9.41256 9.53674e-07 8 9.53674e-07C6.58744 9.53674e-07 5.44211 1.14536 5.44211 2.55745C5.44211 4.15049 4.15088 5.44229 2.55789 5.44229C1.14532 5.44229 0 6.58713 0 8.00026C0 9.41287 1.14532 10.5577 2.55789 10.5577C4.15088 10.5577 5.44211 11.849 5.44211 13.442C5.44211 14.8552 6.58744 16 8 16C9.41256 16 10.5574 14.8552 10.5574 13.442C10.5574 11.849 11.8491 10.5577 13.4421 10.5577C14.8547 10.5577 16 9.41287 16 8.00026C16 6.58713 14.8547 5.44229 13.4421 5.44229Z" fill="currentColor"/></svg>',
+                'content_class'=> '',
+                'title'        => $request_title,
+                'title_class'  => 'stom-request-title',
+                'desc'         => $request_desc,
+                'desc_class'   => 'stom-request-desc',
+                'note'         => $request_note,
+                'note_class'   => 'stom-request-note',
+                'note_icon'    => '<svg width="10" height="8" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5l3 3 5-6"/></svg>',
+                'note_label_class' => 'check',
+            ));
+            ?>
             <?php
             trimed_render_contact_form(array(
-                'class'       => 'stom-request-form',
+                'class'       => 'stom-request-form request-form',
                 'button_text' => $request_button,
                 'button_span' => true,
             ));

@@ -398,19 +398,24 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
 </section>
 
 <!-- 9. Request -->
-<section class="lab-request">
-    <div class="lab-section-inner">
-        <div class="lab-request-grid">
-            <div class="lab-request-text">
-                <h2 class="lab-request-title"><?php echo wp_kses_post($request_title); ?></h2>
-                <p class="lab-request-desc"><?php echo wp_kses_post($request_desc); ?></p>
-            </div>
-            <?php
-            trimed_render_contact_form(array(
-                'class'       => 'lab-request-form',
-                'fields'      => array('name', 'phone', 'organization', 'comment'),
-                'button_text' => $request_button_text,
-            ));
+    <section class="lab-request">
+        <div class="lab-section-inner">
+            <div class="lab-request-grid">
+                <?php
+                trimed_render_request_summary_block(array(
+                    'content_class' => 'lab-request-text',
+                    'title'        => $request_title,
+                    'title_class'  => 'lab-request-title',
+                    'desc'         => $request_desc,
+                    'desc_class'   => 'lab-request-desc',
+                ));
+                ?>
+                <?php
+                trimed_render_contact_form(array(
+                    'class'       => 'lab-request-form request-form',
+                    'fields'      => array('name', 'phone', 'organization', 'comment'),
+                    'button_text' => $request_button_text,
+                ));
             ?>
         </div>
     </div>
