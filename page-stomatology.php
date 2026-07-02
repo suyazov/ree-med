@@ -223,12 +223,17 @@ $included_bottom = array_slice($included_cards, 3);
                     $card_class = isset($audience_style_classes[$card_style]) ? $audience_style_classes[$card_style] : $audience_style_classes['default'];
                     $card_image = !empty($card['image']) ? $card['image'] : '';
                     $arrow_class = ($audience_index % 2 === 1) ? 'arrow--br' : 'arrow--tr';
+                    $show_arrow = in_array($card_style, ['image', 'white', 'green'], true);
                 ?>
                     <div class="<?php echo esc_attr($card_class); ?>">
-                        <img class="arrow <?php echo esc_attr($arrow_class); ?>" src="<?php echo esc_url($img_dir . '/stomatology-audience-arrow.svg'); ?>" alt="" width="20" height="20">
+                        <?php if ($show_arrow) : ?>
+                            <img class="arrow <?php echo esc_attr($arrow_class); ?>" src="<?php echo esc_url($img_dir . '/stomatology-audience-arrow.svg'); ?>" alt="" width="20" height="20">
+                        <?php endif; ?>
                         <p class="text"><?php echo esc_html($card['text']); ?></p>
-                        <?php if ($card_style === 'white' || $card_style === 'gray') : ?>
-                            <?php stom_picture(!empty($card_image) ? $card_image : $placeholder, '', '', null, null, 'position:absolute; right:0; bottom:0; width:154px; height:132px; object-fit:cover; opacity:.8;'); ?>
+                        <?php if (in_array($card_style, ['white', 'gray'], true)) : ?>
+                            <div class="stom-audience-card-media">
+                                <?php stom_picture(!empty($card_image) ? $card_image : $placeholder, '', '', 100, 100); ?>
+                            </div>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
