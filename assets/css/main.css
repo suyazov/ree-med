@@ -246,21 +246,6 @@ h1, h2, h3, h4, h5, h6, p {
     height: auto;
 }
 
-.logo-main {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--color-dark-green);
-    line-height: 1;
-}
-
-.logo-tagline {
-    font-size: 10px;
-    line-height: 12px;
-    color: var(--color-green);
-    margin-top: 2px;
-    letter-spacing: 0.02em;
-}
-
 .main-nav .nav-menu {
     display: flex;
     gap: 24px;
