@@ -116,6 +116,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function initSliders(containerSelector, slideSelector, prevSelector, nextSelector, dotSelector) {
+        document.querySelectorAll(containerSelector).forEach(function(container) {
+            initSlider(container, slideSelector, prevSelector, nextSelector, dotSelector);
+        });
+    }
+
     function initTestimonialsSlider() {
         const container = document.querySelector('.home-testimonials');
         if (!container) {
@@ -234,8 +240,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initSupplyLayout();
     initFAQAccordion();
     initMobileMenu();
-    initSlider(document.querySelector('.projects-slider'), '.project-slide', '.slider-arrow.prev', '.slider-arrow.next', '.slider-dot');
-    initSlider(document.querySelector('.lab-projects-slider'), '.lab-project-slide', '.lab-slider-arrow.prev', '.lab-slider-arrow.next', '.lab-slider-dot');
+    initSliders('.projects-slider', '.project-slide', '.slider-arrow.prev', '.slider-arrow.next', '.slider-dot');
+    initSliders('.lab-projects-slider', '.lab-project-slide', '.lab-slider-arrow.prev', '.lab-slider-arrow.next', '.lab-slider-dot');
     initTestimonialsSlider();
     initContactForms();
 });
