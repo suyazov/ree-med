@@ -532,11 +532,15 @@ function trimed_render_request_summary_block($args = array()) {
     ));
 
     $tag = in_array($args['content_tag'], array('section', 'article', 'div', 'aside')) ? $args['content_tag'] : 'div';
-    $content_class = trim(sanitize_html_class($args['content_class']));
-    $title_class = trim(sanitize_html_class($args['title_class']));
-    $desc_class = trim(sanitize_html_class($args['desc_class']));
-    $note_class = trim(sanitize_html_class($args['note_class']));
-    $note_label_class = trim(sanitize_html_class($args['note_label_class']));
+    $content_class = trimed_sanitize_class_list($args['content_class']);
+    $title_class = trimed_sanitize_class_list($args['title_class']);
+    $title_class_copy = trimed_sanitize_class_list($args['title_class_copy']);
+    $title_mobile_class = trimed_sanitize_class_list($args['title_mobile_class']);
+    $desc_class = trimed_sanitize_class_list($args['desc_class']);
+    $desc_class_copy = trimed_sanitize_class_list($args['desc_class_copy']);
+    $desc_mobile_class = trimed_sanitize_class_list($args['desc_mobile_class']);
+    $note_class = trimed_sanitize_class_list($args['note_class']);
+    $note_label_class = trimed_sanitize_class_list($args['note_label_class']);
 
     if (!empty($args['icon'])) {
         echo $args['icon'];
@@ -546,8 +550,8 @@ function trimed_render_request_summary_block($args = array()) {
     if (!empty($args['title'])) {
         echo '<h2' . (!empty($title_class) ? ' class="' . esc_attr($title_class) . '"' : '') . '>';
         if (!empty($args['title_mobile'])) {
-            echo '<span class="' . esc_attr(sanitize_html_class($args['title_class_copy'])) . '">' . wp_kses_post($args['title']) . '</span>';
-            echo '<span class="' . esc_attr(sanitize_html_class($args['title_mobile_class'])) . '">' . wp_kses_post($args['title_mobile']) . '</span>';
+            echo '<span' . (!empty($title_class_copy) ? ' class="' . esc_attr($title_class_copy) . '"' : '') . '>' . wp_kses_post($args['title']) . '</span>';
+            echo '<span' . (!empty($title_mobile_class) ? ' class="' . esc_attr($title_mobile_class) . '"' : '') . '>' . wp_kses_post($args['title_mobile']) . '</span>';
         } else {
             echo wp_kses_post($args['title']);
         }
@@ -556,8 +560,8 @@ function trimed_render_request_summary_block($args = array()) {
     if (!empty($args['desc'])) {
         echo '<p' . (!empty($desc_class) ? ' class="' . esc_attr($desc_class) . '"' : '') . '>';
         if (!empty($args['desc_mobile'])) {
-            echo '<span class="' . esc_attr(sanitize_html_class($args['desc_class_copy'])) . '">' . wp_kses_post($args['desc']) . '</span>';
-            echo '<span class="' . esc_attr(sanitize_html_class($args['desc_mobile_class'])) . '">' . wp_kses_post($args['desc_mobile']) . '</span>';
+            echo '<span' . (!empty($desc_class_copy) ? ' class="' . esc_attr($desc_class_copy) . '"' : '') . '>' . wp_kses_post($args['desc']) . '</span>';
+            echo '<span' . (!empty($desc_mobile_class) ? ' class="' . esc_attr($desc_mobile_class) . '"' : '') . '>' . wp_kses_post($args['desc_mobile']) . '</span>';
         } else {
             echo wp_kses_post($args['desc']);
         }
