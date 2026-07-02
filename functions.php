@@ -766,18 +766,26 @@ function trimed_render_faq_section($args = array()) {
         'open_first' => (bool)$args['open_first'],
     ));
 
-    echo '<section class="' . esc_attr(sanitize_html_class($args['section_class'])) . '"' . (!empty($args['section_id']) ? ' id="' . esc_attr(sanitize_html_class($args['section_id'])) . '"' : '') . '>';
-    echo '<div class="' . esc_attr(sanitize_html_class($args['container_class'])) . '">';
-    echo '<div class="' . esc_attr(sanitize_html_class($args['header_class'])) . '">';
+    $section_class = trimed_sanitize_class_list($args['section_class']);
+    $section_id = trim(sanitize_html_class($args['section_id']));
+    $container_class = trimed_sanitize_class_list($args['container_class']);
+    $header_class = trimed_sanitize_class_list($args['header_class']);
+    $title_class = trimed_sanitize_class_list($args['title_class']);
+    $description_class = trimed_sanitize_class_list($args['description_class']);
+    $grid_class = trimed_sanitize_class_list($args['grid_class']);
+
+    echo '<section class="' . esc_attr($section_class) . '"' . (!empty($section_id) ? ' id="' . esc_attr($section_id) . '"' : '') . '>';
+    echo '<div class="' . esc_attr($container_class) . '">';
+    echo '<div class="' . esc_attr($header_class) . '">';
     if (!empty($args['title'])) {
-        echo '<h2 class="' . esc_attr(sanitize_html_class($args['title_class'])) . '">' . wp_kses_post($args['title']) . '</h2>';
+        echo '<h2 class="' . esc_attr($title_class) . '">' . wp_kses_post($args['title']) . '</h2>';
     }
     if (!empty($args['description'])) {
-        echo '<p class="' . esc_attr(sanitize_html_class($args['description_class'])) . '">' . wp_kses_post($args['description']) . '</p>';
+        echo '<p class="' . esc_attr($description_class) . '">' . wp_kses_post($args['description']) . '</p>';
     }
     echo '</div>';
 
-    echo '<div class="' . esc_attr(sanitize_html_class($args['grid_class'])) . '">';
+    echo '<div class="' . esc_attr($grid_class) . '">';
     $count = count($items);
 
     if ($args['split_columns'] && $count > 1) {
