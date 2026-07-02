@@ -2855,3 +2855,124 @@ h1, h2, h3, h4, h5, h6, p {
     height: 14px;
     opacity: 1;
 }
+
+/* Shared service footer: matches the front page footer/map component */
+body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer {
+    margin-top: 0;
+}
+
+body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-container {
+    max-width: none;
+    padding: 0;
+}
+
+body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-bg {
+    background-image: url('../img/main/подвал-0.png') !important;
+}
+
+body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .map-pulse {
+    display: block;
+}
+
+@media (min-width: 769px) {
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .map-pulse {
+        left: calc((100vw - 1200px) / 2 + 600px);
+        top: 61.1%;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-main {
+        min-height: 470px;
+        height: 470px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-card {
+        right: calc((100vw - 1200px) / 2);
+        top: 50px;
+        transform: none;
+        height: 376px;
+        min-height: 0;
+        padding: 36px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-logo {
+        margin-bottom: 34px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-contacts {
+        margin-bottom: 24px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-bottom {
+        position: relative;
+        display: block;
+        height: 101px;
+        min-height: 101px;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-copyright {
+        position: absolute;
+        left: calc((100vw - 1200px) / 2);
+        top: 28px;
+        width: 307px;
+        margin: 0;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-info {
+        position: absolute;
+        left: calc((100vw - 1200px) / 2);
+        top: 55px;
+        width: 307px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-links {
+        position: absolute;
+        left: calc((100vw - 1200px) / 2 + 829px);
+        top: 28px;
+        width: 351px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-info p,
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-links a,
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-copyright {
+        color: rgba(53, 53, 53, 0.7);
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 768px) {
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-main {
+        min-height: 560px;
+        height: 560px;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-card {
+        bottom: 16px;
+        min-height: 0;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .footer-bottom {
+        padding: 20px 0;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .map-pulse {
+        left: 50%;
+        top: 18%;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .map-pulse span:nth-child(1),
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .map-pulse span:nth-child(2) {
+        animation: map-pulse 2.4s infinite ease-out;
+    }
+
+    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer .map-pulse span:nth-child(2) {
+        animation-delay: 1.2s;
+    }
+}

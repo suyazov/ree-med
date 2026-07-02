@@ -541,18 +541,6 @@
 .medcentry-page .mc-why-cta-text { font-size: 28px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin-bottom: 16px; max-width: 345px; }
 .medcentry-page .mc-why-cta-btn { width: 345px; height: 57px; display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-green); color: var(--color-white); border-radius: 8px; font-family: inherit; font-size: 14px; line-height: 17px; font-weight: 600; border: none; cursor: pointer; }
 
-.medcentry-page ~ .site-footer { margin-top: 373px; }
-
-@media (min-width: 769px) {
-    .medcentry-page {
-        padding-bottom: 374px;
-    }
-
-    .medcentry-page ~ .site-footer {
-        display: none;
-    }
-}
-
 /* Responsive */
 @media (max-width: 1200px) {
     .medcentry-page .mc-hero-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -740,36 +728,4 @@
     .medcentry-page .mc-why-feature:nth-child(2) svg { width: 25px; height: 22px; }
     .medcentry-page .mc-why-cta { display: none; }
 
-    .medcentry-page ~ .site-footer {
-        margin-top: 100px;
-        min-height: 1026px;
-        padding-bottom: 32px;
-    }
-
-    .medcentry-page ~ .site-footer .footer-main {
-        min-height: 770px;
-    }
-
-    .medcentry-page ~ .site-footer .footer-card {
-        bottom: 32px;
-        min-height: 353px;
-    }
-
-    .medcentry-page ~ .site-footer .footer-bottom {
-        padding: 27px 0 22px;
-    }
-
-    .medcentry-page ~ .site-footer .map-pulse {
-        left: 68.8%;
-        top: 17.3%;
-    }
-
-    .medcentry-page ~ .site-footer .map-pulse span:nth-child(1),
-    .medcentry-page ~ .site-footer .map-pulse span:nth-child(2) {
-        animation: map-pulse 2.4s infinite ease-out;
-    }
-
-    .medcentry-page ~ .site-footer .map-pulse span:nth-child(2) {
-        animation-delay: 1.2s;
-    }
 }

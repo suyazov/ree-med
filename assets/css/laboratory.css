@@ -1009,17 +1009,4 @@
     .laboratory-page .lab-request-form button { font-size: 0; }
     .laboratory-page .lab-request-form button::after { content: 'Отправить'; font-size: 14px; line-height: 17px; }
 
-    .laboratory-page ~ .site-footer {
-        min-height: 1026px;
-        padding-bottom: 32px;
-    }
-
-    .laboratory-page ~ .site-footer .footer-main {
-        min-height: 770px;
-    }
-
-    .laboratory-page ~ .site-footer .footer-card {
-        bottom: 32px;
-        min-height: 353px;
-    }
 }
