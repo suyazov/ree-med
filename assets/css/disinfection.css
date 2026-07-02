@@ -1,19 +1,5 @@
 /* Disinfection page scoped overrides */
 
-/* ===== Header mobile burger: green button, white stripes ===== */
-.disinfection-page .site-header .menu-toggle,
-body:has(.disinfection-page) .site-header .menu-toggle {
-    background: var(--color-green);
-    border-radius: 8px;
-    width: 44px;
-    height: 44px;
-}
-
-.disinfection-page .site-header .menu-toggle span,
-body:has(.disinfection-page) .site-header .menu-toggle span {
-    background: #fff;
-}
-
 /* ===== Hero secondary CTA: green button ===== */
 .disinfection-page .hero-btn-consult {
     background: var(--color-green);
@@ -1010,13 +996,6 @@ body.disinfection-page .task-item img {
 
     .disinfection-page .form-agree input {
         border-color: #fff;
-    }
-
-    /* Header mobile: keep actions and burger in one row */
-    body:has(.disinfection-page) .site-header .header-container {
-        flex-wrap: nowrap;
-        background: transparent;
-        border-radius: 0;
     }
 
     /* Hero mobile badges */

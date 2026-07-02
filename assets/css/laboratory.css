@@ -749,11 +749,6 @@
 }
 
 @media (max-width: 768px) {
-    body:has(.laboratory-page) .site-header .header-container { flex-wrap: nowrap; padding: 0 16px; background: transparent; border-radius: 0; }
-    body:has(.laboratory-page) .site-header .logo img { width: 100px; height: auto; }
-    body:has(.laboratory-page) .site-header .header-actions { gap: 8px; }
-    body:has(.laboratory-page) .site-header .menu-toggle { background: var(--color-green); border-radius: 8px; }
-    body:has(.laboratory-page) .site-header .menu-toggle span { background: var(--color-white); }
     .laboratory-page .lab-hero { padding: 0; margin-top: 32px; }
     .laboratory-page .lab-hero .lab-container { padding: 0 16px; }
     .laboratory-page .lab-hero-grid { display: flex; flex-direction: column; gap: 0; }

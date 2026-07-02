@@ -387,13 +387,6 @@
 @media (max-width: 768px) {
     .stomatology-page { overflow-x: hidden; }
 
-    /* Header mobile */
-    body.page-template-page-stomatology-php .site-header .header-container { flex-wrap: nowrap; padding: 0 16px; background: transparent; border-radius: 0; }
-    body.page-template-page-stomatology-php .site-header .logo img { width: 100px; height: auto; }
-    body.page-template-page-stomatology-php .site-header .header-actions { gap: 8px; }
-    body.page-template-page-stomatology-php .menu-toggle { background: var(--color-green); border-radius: 8px; }
-    body.page-template-page-stomatology-php .menu-toggle span { background: var(--color-white); }
-
     /* Mobile Figma image assets */
     .stomatology-page .stom-audience-card--image { background-image: url('../img/stomatology-audience-2-mobile.png') !important; }
     .stomatology-page .stom-audience-card--image::before { background: rgba(54, 118, 67, 0.5); }

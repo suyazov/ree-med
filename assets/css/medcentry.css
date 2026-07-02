@@ -503,13 +503,6 @@
 @media (max-width: 768px) {
     .medcentry-page { overflow-x: hidden; }
 
-    /* Header mobile */
-    .page-id-31 .site-header .header-container { flex-wrap: nowrap; padding: 0 16px; background: transparent; border-radius: 0; }
-    .page-id-31 .site-header .logo img { width: 100px; height: auto; }
-    .page-id-31 .site-header .header-actions { gap: 8px; }
-    .page-id-31 .menu-toggle { background: var(--color-green); border-radius: 8px; }
-    .page-id-31 .menu-toggle span { background: var(--color-white); }
-
     /* Hero mobile */
     .medcentry-page .mc-hero { padding: 0 16px 40px; margin-top: 32px; }
     .medcentry-page .mc-hero-grid { display: flex; flex-direction: column; min-height: 0; gap: 0; }
