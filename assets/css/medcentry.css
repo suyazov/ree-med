@@ -542,25 +542,25 @@
 .medcentry-page .mc-why-title { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); width: fit-content; margin: 0 auto 61px; text-align: center; }
 .medcentry-page .mc-why-grid { display: grid; grid-template-columns: 684px 481px; gap: 35px; align-items: start; }
 .medcentry-page .mc-why-left { display: flex; flex-direction: column; gap: 20px; }
-.medcentry-page .mc-why-stats { display: flex; gap: 24px; }
+.medcentry-page .mc-why-stats { display: flex; gap: 20px; }
 .medcentry-page .mc-why-stat { height: 203px; padding: 45px 44px 0; display: flex; flex-direction: column; justify-content: flex-start; border-radius: 12px; }
 .medcentry-page .mc-why-stat:first-child { padding-left: 76px; }
 .medcentry-page .mc-why-stat:nth-child(2) { padding-left: 69px; }
 .medcentry-page .mc-why-stat--image { width: 286px; background: var(--color-gray-2) url('../img/medcentry/why-stat-image.png') center/cover no-repeat; color: var(--color-white); position: relative; overflow: hidden; }
-.medcentry-page .mc-why-stat--image::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.25); border-radius: inherit; }
+.medcentry-page .mc-why-stat--image::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.2); border-radius: inherit; }
 .medcentry-page .mc-why-stat--gray { width: 378px; background: var(--color-gray-2); color: var(--color-black); }
 .medcentry-page .mc-why-stat .num { font-size: 62.4px; line-height: 74.9px; font-weight: 600; position: relative; margin-bottom: 4px; }
 .medcentry-page .mc-why-stat .txt { font-size: 21.8px; line-height: 26.2px; position: relative; }
-.medcentry-page .mc-why-features { display: flex; gap: 24px; }
+.medcentry-page .mc-why-features { display: flex; gap: 20px; }
 .medcentry-page .mc-why-feature { height: 80px; background: var(--color-white-2); border-radius: 9px; display: flex; align-items: center; gap: 16px; padding: 0 20px; font-size: 20px; line-height: 24px; color: var(--color-black); }
-.medcentry-page .mc-why-feature:nth-child(1) { width: 378px; padding-left: 24px; }
-.medcentry-page .mc-why-feature:nth-child(2) { width: 282px; padding-left: 20px; }
-.medcentry-page .mc-why-feature svg { width: 32px; height: 32px; color: var(--color-dark-green); flex-shrink: 0; }
-.medcentry-page .mc-why-feature svg path[fill] { fill: url(#paint0_wh_warehouse); }
-.medcentry-page .mc-why-cta { width: 481px; height: 302px; border-radius: 12px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 32px; }
-.medcentry-page .mc-why-cta::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); border-radius: inherit; z-index: 0; }
-.medcentry-page .mc-why-cta-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.medcentry-page .mc-why-cta-content { position: relative; z-index: 1; }
+.medcentry-page .mc-why-feature:nth-child(1) { width: 378px; padding-left: 70px; }
+.medcentry-page .mc-why-feature:nth-child(2) { width: 286px; padding-left: 52px; }
+.medcentry-page .mc-why-feature svg { width: 40px; height: 40px; color: var(--color-dark-green); flex-shrink: 0; }
+.medcentry-page .mc-why-feature:nth-child(2) svg { width: 32px; height: 29px; }
+.medcentry-page .mc-why-cta { width: 481px; height: 302px; border-radius: 12px; position: relative; overflow: hidden; display: block; padding: 0; }
+.medcentry-page .mc-why-cta::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.3); border-radius: inherit; z-index: 1; }
+.medcentry-page .mc-why-cta-bg { position: absolute; left: -34.03%; top: -0.16%; width: 168.12%; height: 200.83%; object-fit: fill; max-width: none; }
+.medcentry-page .mc-why-cta-content { position: absolute; left: 68px; top: 68px; width: 345px; height: 166px; z-index: 2; }
 .medcentry-page .mc-why-cta-text { font-size: 28px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin-bottom: 16px; max-width: 345px; }
 .medcentry-page .mc-why-cta-btn { width: 345px; height: 57px; display: inline-flex; align-items: center; justify-content: center; background: var(--gradient-green); color: var(--color-white); border-radius: 8px; font-family: inherit; font-size: 14px; line-height: 17px; font-weight: 600; border: none; cursor: pointer; }
 
