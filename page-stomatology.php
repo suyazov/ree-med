@@ -218,16 +218,32 @@ $included_bottom = array_slice($included_cards, 3);
                 <p class="stom-audience-lead"><?php echo esc_html($audience_lead); ?></p>
 
                 <div class="stom-audience-grid">
-                <?php $audience_index = 0; foreach ($audience_cards as $card) : $audience_index++;
+                <?php foreach ($audience_cards as $card) :
                     $card_style = !empty($card['style']) ? $card['style'] : 'default';
                     $card_class = isset($audience_style_classes[$card_style]) ? $audience_style_classes[$card_style] : $audience_style_classes['default'];
                     $card_image = !empty($card['image']) ? $card['image'] : '';
-                    $arrow_class = ($audience_index % 2 === 1) ? 'arrow--br' : 'arrow--tr';
-                    $show_arrow = in_array($card_style, ['image', 'white', 'green'], true);
+                    $arrow_class = '';
+                    $show_arrow = false;
+
+                    if ($card_style === 'image') {
+                        $show_arrow = true;
+                        $arrow_class = 'arrow--image';
+                    } elseif ($card_style === 'white') {
+                        $show_arrow = true;
+                        $arrow_class = 'arrow--white';
+                    } elseif ($card_style === 'green') {
+                        $show_arrow = true;
+                        $arrow_class = 'arrow--green';
+                    } elseif ($card_style === 'gray') {
+                        $show_arrow = true;
+                        $arrow_class = 'arrow--br';
+                    }
                 ?>
                     <div class="<?php echo esc_attr($card_class); ?>">
                         <?php if ($show_arrow) : ?>
-                            <img class="arrow <?php echo esc_attr($arrow_class); ?>" src="<?php echo esc_url($img_dir . '/stomatology-audience-arrow.svg'); ?>" alt="" width="20" height="20">
+                            <svg class="arrow <?php echo esc_attr($arrow_class); ?>" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" />
+                            </svg>
                         <?php endif; ?>
                         <p class="text"><?php echo esc_html($card['text']); ?></p>
                         <?php if (in_array($card_style, ['white', 'gray'], true)) : ?>
