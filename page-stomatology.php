@@ -362,10 +362,7 @@ $included_bottom = array_slice($included_cards, 3);
                 <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
                 <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
                 <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-                <label class="checkbox">
-                    <input type="checkbox" name="agree" value="1" required>
-                    <span>Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных</span>
-                </label>
+                <?php trimed_render_agree_checkbox(); ?>
                 <div class="form-message"></div>
                 <button type="submit"><span><?php echo esc_html($request_button); ?></span></button>
             </form>

@@ -73,6 +73,45 @@ function trimed_asset_version($relative_path) {
     return file_exists($path) ? TRIMED_VERSION . '.' . filemtime($path) : TRIMED_VERSION;
 }
 
+function trimed_img_url($relative_path = '') {
+    return get_template_directory_uri() . '/assets/img' . ($relative_path ? '/' . ltrim($relative_path, '/') : '');
+}
+
+function trimed_render_phone_input($args = array()) {
+    $args = wp_parse_args($args, array(
+        'class'       => 'phone-input',
+        'flag_url'    => trimed_img_url('phone-flag.png'),
+        'placeholder' => '+7 (999) 999-99-99',
+    ));
+
+    echo '<div class="' . esc_attr($args['class']) . '">';
+    echo '<img src="' . esc_url($args['flag_url']) . '" alt="" width="20" height="13">';
+    echo '<input type="tel" name="phone" placeholder="' . esc_attr($args['placeholder']) . '" required>';
+    echo '</div>';
+}
+
+function trimed_render_agree_checkbox($args = array()) {
+    $args = wp_parse_args($args, array(
+        'class' => 'checkbox',
+        'text'  => 'Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных',
+    ));
+
+    echo '<label class="' . esc_attr($args['class']) . '">';
+    echo '<input type="checkbox" name="agree" value="1" required>';
+    echo '<span>' . esc_html($args['text']) . '</span>';
+    echo '</label>';
+}
+
+function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stroke_width = 5, $offset = null) {
+    $half = $size / 2;
+    $offset = $offset === null ? $size * 0.2 : $offset;
+    $end = $size - $offset;
+
+    echo '<svg class="' . esc_attr($class) . '" width="' . esc_attr($size) . '" height="' . esc_attr($size) . '" viewBox="0 0 ' . esc_attr($size) . ' ' . esc_attr($size) . '" fill="none">';
+    echo '<path d="M' . esc_attr($half) . ' ' . esc_attr($offset) . 'v' . esc_attr($end - $offset) . 'M' . esc_attr($offset) . ' ' . esc_attr($half) . 'H' . esc_attr($end) . '" stroke="' . esc_attr($stroke) . '" stroke-width="' . esc_attr($stroke_width) . '" stroke-linecap="round"/>';
+    echo '</svg>';
+}
+
 function trimed_enqueue_assets() {
     wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&subset=cyrillic&display=swap', array(), null);
     wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), trimed_asset_version('style.css'));

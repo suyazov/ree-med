@@ -222,7 +222,6 @@ $delivery_icon = '<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xm
 
 $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 25.7512V8.45106C32 7.11903 31.2 5.9332 29.984 5.42963L17.184 0.23148C16.416 -0.0771601 15.568 -0.0771601 14.8 0.23148L2 5.42963C0.8 5.9332 0 7.13528 0 8.45106V25.7512C0 27.538 1.44 29 3.2 29H8V14.3802H24V29H28.8C30.56 29 32 27.538 32 25.7512ZM14.4 25.7512H11.2V29H14.4V25.7512ZM17.6 20.8779H14.4V24.1267H17.6V20.8779ZM20.8 25.7512H17.6V29H20.8V25.7512Z" fill="url(#paint0_wh_warehouse)"/><defs><linearGradient id="paint0_wh_warehouse" x1="5.52727" y1="23.4636" x2="23.7097" y2="4.27264" gradientUnits="userSpaceOnUse"><stop stop-color="#3F8D50"/><stop offset="1" stop-color="#51A462"/></linearGradient></defs></svg>';
 
-$phone_flag = '<img src="' . esc_url($img_dir . '/phone-flag.png') . '" alt="" width="20" height="13">';
 ?>
 
 <main class="medcentry-page">
@@ -389,15 +388,9 @@ $phone_flag = '<img src="' . esc_url($img_dir . '/phone-flag.png') . '" alt="" w
             </div>
             <form id="contact-form" class="mc-request-form">
                 <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                <div class="phone-input">
-                    <?php echo $phone_flag; ?>
-                    <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
-                </div>
+                <?php trimed_render_phone_input(array('flag_url' => $img_dir . '/phone-flag.png')); ?>
                 <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-                <label class="checkbox">
-                    <input type="checkbox" name="agree" value="1" required>
-                    <span>Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных</span>
-                </label>
+                <?php trimed_render_agree_checkbox(); ?>
                 <div class="form-message"></div>
                 <button type="submit"><span><?php echo esc_html($request_button); ?></span></button>
             </form>

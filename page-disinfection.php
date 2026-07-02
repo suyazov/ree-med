@@ -284,9 +284,7 @@ function dis_image_url($field, $fallback) {
                     </div>
                 </div>
                 <div class="why-info-card">
-                    <svg class="why-plus" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 4V32M4 18H32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
+                    <?php trimed_render_plus_svg('why-plus', 36, 'currentColor', 3, 4); ?>
                     <h3>Работа с государственными и частными учреждениями</h3>
                 </div>
                 <div class="why-warehouse-card" style="background-image:url('<?php echo esc_url(dis_image_url('why_warehouse_image', $img_dir . '/disinfection-warehouse.png')); ?>')">
@@ -461,7 +459,7 @@ function dis_image_url($field, $fallback) {
     <section class="application-section" id="application">
         <div class="container">
             <div class="application-box">
-                <svg class="app-decor" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8v24M8 20h24" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>
+                <?php trimed_render_plus_svg('app-decor'); ?>
                 <div class="application-info">
                     <?php
                     $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
@@ -473,10 +471,13 @@ function dis_image_url($field, $fallback) {
                 <div class="application-form-wrap">
                     <form class="application-form" id="contact-form">
                         <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                        <div class="phone-input"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/phone-flag.png" alt=""><input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required></div>
+                        <?php trimed_render_phone_input(); ?>
                         <input type="text" name="organization" placeholder="Название организации">
                         <input type="text" name="comment" placeholder="Ваш комментарий">
-                        <label class="form-agree"><input type="checkbox" name="agree" required><span>Оставляю заявку, я соглашаюсь с условиями Политики обработки персональных данных</span></label>
+                        <?php trimed_render_agree_checkbox(array(
+                            'class' => 'form-agree',
+                            'text'  => 'Оставляю заявку, я соглашаюсь с условиями Политики обработки персональных данных',
+                        )); ?>
                         <button type="submit" class="btn btn-primary"><?php echo esc_html(get_field('application_button_text') ?: 'Отправить'); ?></button>
                         <div class="form-message"></div>
                     </form>

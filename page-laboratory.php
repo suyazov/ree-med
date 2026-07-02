@@ -450,10 +450,7 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Получит�
                 <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
                 <input type="text" name="organization" placeholder="Название организации">
                 <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-                <label class="checkbox">
-                    <input type="checkbox" name="agree" value="1" required>
-                    <span>Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных</span>
-                </label>
+                <?php trimed_render_agree_checkbox(); ?>
                 <div class="form-message"></div>
                 <button type="submit"><?php echo esc_html($request_button_text); ?></button>
             </form>
