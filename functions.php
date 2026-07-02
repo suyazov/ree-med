@@ -719,28 +719,63 @@ function trimed_render_faq_section($args = array()) {
 
     echo '<div class="' . esc_attr(sanitize_html_class($args['grid_class'])) . '">';
     $count = count($items);
-    $left_count = $args['split_columns'] ? (int) ceil($count / 2) : $count;
-    foreach ($items as $index => $item) {
-        $question = $item['question'];
-        $answer   = $item['answer'];
-        $has_answer = $item['has_answer'];
 
-        $column = $args['split_columns'] && $count > 1 && $index < $left_count ? 1 : 2;
-        $row = $args['split_columns'] && $count > 1 && $index < $left_count ? $index + 1 : $index - $left_count + 1;
-        $style = '';
-        if ($args['split_columns'] && $count > 1) {
-            $style = 'grid-row:' . $row . ';grid-column:' . $column . ';';
+    if ($args['split_columns'] && $count > 1) {
+        $left_count = (int) ceil($count / 2);
+        $left_items = array_slice($items, 0, $left_count);
+        $right_items = array_slice($items, $left_count);
+
+        echo '<div class="faq-column">';
+        foreach ($left_items as $item) {
+            $question = $item['question'];
+            $answer = $item['answer'];
+            $has_answer = $item['has_answer'];
+
+            $active_class = (!empty($item['is_open']) && $has_answer) ? ' active' : '';
+            $answer_class = $has_answer ? ' has-answer' : '';
+            echo '<div class="faq-item' . esc_attr($active_class) . esc_attr($answer_class) . '">';
+            echo '<span>' . esc_html($question) . '</span>';
+            echo '<span class="faq-icon">' . $args['icon_svg'] . '</span>';
+            if ($has_answer) {
+                echo '<p>' . wp_kses_post($answer) . '</p>';
+            }
+            echo '</div>';
         }
+        echo '</div>';
+
+        echo '<div class="faq-column">';
+        foreach ($right_items as $item) {
+            $question = $item['question'];
+            $answer = $item['answer'];
+            $has_answer = $item['has_answer'];
+
+            $active_class = (!empty($item['is_open']) && $has_answer) ? ' active' : '';
+            $answer_class = $has_answer ? ' has-answer' : '';
+            echo '<div class="faq-item' . esc_attr($active_class) . esc_attr($answer_class) . '">';
+            echo '<span>' . esc_html($question) . '</span>';
+            echo '<span class="faq-icon">' . $args['icon_svg'] . '</span>';
+            if ($has_answer) {
+                echo '<p>' . wp_kses_post($answer) . '</p>';
+            }
+            echo '</div>';
+        }
+        echo '</div>';
+    } else {
+        foreach ($items as $item) {
+            $question = $item['question'];
+            $answer   = $item['answer'];
+            $has_answer = $item['has_answer'];
 
         $active_class = (!empty($item['is_open']) && $has_answer) ? ' active' : '';
         $answer_class = $has_answer ? ' has-answer' : '';
-        echo '<div class="faq-item' . esc_attr($active_class) . esc_attr($answer_class) . '"' . (!empty($style) ? ' style="' . esc_attr($style) . '"' : '') . '>';
+            echo '<div class="faq-item' . esc_attr($active_class) . esc_attr($answer_class) . '">';
         echo '<span>' . esc_html($question) . '</span>';
         echo '<span class="faq-icon">' . $args['icon_svg'] . '</span>';
         if ($has_answer) {
             echo '<p>' . wp_kses_post($answer) . '</p>';
         }
         echo '</div>';
+        }
     }
     echo '</div>';
     echo '</div>';

@@ -504,10 +504,16 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .faq-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        display: flex;
         gap: 12px 36px;
-        align-items: start;
+        align-items: flex-start;
+    }
+
+    body.disinfection-page .faq-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
     body.disinfection-page .faq-item {
@@ -1109,13 +1115,8 @@ body.disinfection-page .task-item img {
 
     /* FAQ mobile: stack vertically */
     .disinfection-page .faq-grid {
+        flex-direction: column;
         display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .disinfection-page .faq-item {
-        grid-row: auto !important;
-        grid-column: auto !important;
     }
 
     .disinfection-page .faq-header .section-title {
