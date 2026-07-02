@@ -588,15 +588,13 @@
 
     /* Request mobile */
     .stomatology-page .stom-request { margin-top: 80px; }
-    .stomatology-page .stom-request-inner { grid-template-columns: 1fr; gap: 16px; padding: 24px 16px; border-radius: 12px; min-height: 645px; }
-    .stomatology-page .stom-request-inner > div { margin-top: 0; text-align: center; }
+    .stomatology-page .stom-request-inner { min-height: 645px; }
     .stomatology-page .stom-request-icon { position: static; display: block; width: 16px; height: 16px; margin: 0 auto 50px; }
-    .stomatology-page .stom-request-title { font-size: 24px; line-height: 26.4px; letter-spacing: 0; font-weight: 600; }
-    .stomatology-page .stom-request-desc { font-size: 14px; line-height: 15.4px; letter-spacing: 0; width: auto; }
-    .stomatology-page .stom-request-note { display: inline-flex; justify-content: center; margin-top: 16px; gap: 8px; font-size: 12px; line-height: 13.2px; letter-spacing: 0; background: rgba(54, 118, 67, 0.35); border-radius: 999px; padding: 10px 20px; width: fit-content; }
+    .stomatology-page .stom-request-desc { width: auto; }
+    .stomatology-page .stom-request-note { display: inline-flex; background: rgba(54, 118, 67, 0.35); border-radius: 999px; padding: 10px 20px; width: fit-content; }
     .stomatology-page .stom-request-note .check { background: var(--gradient-light-green); color: #fff; }
     .stomatology-page .stom-request-form .checkbox span { opacity: 1; }
-    .stomatology-page .stom-request-form { width: 308px !important; margin: 0 auto; padding: 20px; }
+    .stomatology-page .stom-request-form { width: 308px !important; margin: 0 auto; }
     .stomatology-page .stom-request-form input:not(.checkbox input),
     .stomatology-page .stom-request-form textarea { width: 100%; height: 52px; }
     .stomatology-page .stom-request-form .checkbox input { width: 15px !important; height: 15px !important; }

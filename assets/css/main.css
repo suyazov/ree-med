@@ -3157,6 +3157,44 @@ body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer
 }
 
 @media (max-width: 768px) {
+    :where(.mc-request-inner, .stom-request-inner) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+
+    :where(.mc-request-left, .stom-request-inner > div) {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    :where(.mc-request-title, .stom-request-title) {
+        font-size: 24px;
+        line-height: 26.4px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    :where(.mc-request-desc, .stom-request-desc) {
+        font-size: 14px;
+        line-height: 15.4px;
+        letter-spacing: 0;
+    }
+
+    :where(.mc-request-note, .stom-request-note) {
+        justify-content: center;
+        margin-top: 16px;
+        gap: 8px;
+        font-size: 12px;
+        line-height: 13.2px;
+        letter-spacing: 0;
+    }
+
+    :where(.mc-request-form, .stom-request-form) {
+        padding: 20px;
+    }
+
     body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page)) .site-footer {
         margin-top: 0;
         padding-bottom: 0;

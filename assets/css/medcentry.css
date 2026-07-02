@@ -649,13 +649,11 @@
 
     /* Request mobile */
     .medcentry-page .mc-request { margin-top: 80px; padding: 0 16px; }
-    .medcentry-page .mc-request-inner { grid-template-columns: 1fr; gap: 16px; padding: 24px 16px; border-radius: 12px; min-height: 583px; }
-    .medcentry-page .mc-request-left { margin-top: 0; text-align: center; }
+    .medcentry-page .mc-request-inner { min-height: 583px; }
     .medcentry-page .mc-request-clover { position: static; display: block; width: 16px; height: 16px; margin: 0 auto 12px; }
-    .medcentry-page .mc-request-title { font-size: 24px; line-height: 26.4px; letter-spacing: 0; font-weight: 600; }
-    .medcentry-page .mc-request-desc { font-size: 14px; line-height: 15.4px; letter-spacing: 0; max-width: 100%; }
-    .medcentry-page .mc-request-note { justify-content: center; margin: 16px auto 0; gap: 8px; font-size: 12px; line-height: 13.2px; letter-spacing: 0; }
-    .medcentry-page .mc-request-form { width: 100%; padding: 20px; }
+    .medcentry-page .mc-request-desc { max-width: 100%; }
+    .medcentry-page .mc-request-note { margin-right: auto; margin-left: auto; }
+    .medcentry-page .mc-request-form { width: 100%; }
     .medcentry-page .mc-request-form input,
     .medcentry-page .mc-request-form textarea,
     .medcentry-page .mc-request-form .phone-input { width: 100%; margin-bottom: 8px; }
