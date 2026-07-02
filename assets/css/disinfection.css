@@ -359,11 +359,79 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .faq-section {
-        padding: 0 0 122px;
+        padding: 70px 0 122px;
     }
 
-    .disinfection-page .faq-item {
-        padding: 12.6667px 24px;
+    body.disinfection-page .faq-section .container {
+        max-width: 1344px;
+        padding: 0;
+    }
+
+    body.disinfection-page .faq-header {
+        display: block;
+        margin-bottom: 56px;
+        text-align: center;
+    }
+
+    body.disinfection-page .faq-header .section-title {
+        margin: 0;
+        text-align: center;
+        font-size: 56px;
+        line-height: 110%;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+    }
+
+    body.disinfection-page .faq-description {
+        display: none;
+    }
+
+    body.disinfection-page .faq-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 12px 36px;
+        align-items: start;
+    }
+
+    body.disinfection-page .faq-item {
+        min-height: 68px;
+        padding: 0 28px;
+        border-radius: 12px;
+        background: #F9F9F9;
+        align-content: center;
+        align-self: start;
+        gap: 0 24px;
+    }
+
+    body.disinfection-page .faq-item span:first-child {
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 600;
+        color: #353535;
+    }
+
+    body.disinfection-page .faq-icon {
+        width: 16px;
+        height: 10px;
+    }
+
+    body.disinfection-page .faq-icon svg {
+        width: 16px;
+        height: 10px;
+    }
+
+    body.disinfection-page .faq-item.active.has-answer {
+        min-height: 149px;
+        padding-top: 28px;
+        padding-bottom: 28px;
+        align-content: flex-start;
+    }
+
+    body.disinfection-page .faq-item.active p {
+        margin-top: 24px;
+        font-size: 20px;
+        line-height: 120%;
+        color: #353535;
     }
 
     .disinfection-page .application-section {

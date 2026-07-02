@@ -22,12 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // FAQ accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const isActive = this.classList.contains('active');
-            faqItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) {
+	    const faqItems = document.querySelectorAll('.faq-item');
+	    faqItems.forEach(item => {
+	        item.addEventListener('click', function() {
+	            if (!this.querySelector('p')) {
+	                return;
+	            }
+	            const isActive = this.classList.contains('active');
+	            faqItems.forEach(i => i.classList.remove('active'));
+	            if (!isActive) {
                 this.classList.add('active');
             }
         });

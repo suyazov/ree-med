@@ -431,29 +431,22 @@ function dis_image_url($field, $fallback) {
                         array('question' => 'Есть ли товары в наличии в Чите?', 'answer' => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.', 'is_open' => true),
                     );
                 }
-                // Desktop layout as in Figma: items flow row-wise, but the open item
-                // is placed in the right column of its row to balance the columns.
+                // Desktop layout as in Figma: first three questions in the left column,
+                // the remaining questions in the right column.
                 $faq_positions = array();
-                $faq_pair_count = ceil(count($faq_items) / 2);
-                for ($p = 0; $p < $faq_pair_count; $p++) {
-                    $left_i = $p * 2;
-                    $right_i = $left_i + 1;
-                    $row = $p + 1;
-                    $faq_positions[$left_i] = 'grid-row:' . $row . ';grid-column:1;';
-                    if (isset($faq_items[$right_i])) {
-                        $faq_positions[$right_i] = 'grid-row:' . $row . ';grid-column:2;';
-                    }
-                    if (!empty($faq_items[$left_i]['is_open']) && isset($faq_items[$right_i])) {
-                        $faq_positions[$left_i] = 'grid-row:' . $row . ';grid-column:2;';
-                        $faq_positions[$right_i] = 'grid-row:' . $row . ';grid-column:1;';
-                    }
+                $faq_left_count = (int) ceil(count($faq_items) / 2);
+                foreach ($faq_items as $pos_i => $pos_item) {
+                    $column = $pos_i < $faq_left_count ? 1 : 2;
+                    $row = $pos_i < $faq_left_count ? $pos_i + 1 : $pos_i - $faq_left_count + 1;
+                    $faq_positions[$pos_i] = 'grid-row:' . $row . ';grid-column:' . $column . ';';
                 }
                 $faq_icon_svg = '<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.25L5 5.25L9 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
                 foreach ($faq_items as $i => $item) :
-                    $active_class = !empty($item['is_open']) ? ' active' : '';
+                    $has_answer = !empty($item['answer']);
+                    $active_class = !empty($item['is_open']) && $has_answer ? ' active' : '';
                     $position_style = isset($faq_positions[$i]) ? esc_attr($faq_positions[$i]) : '';
                 ?>
-                    <div class="faq-item<?php echo esc_attr($active_class); ?>" style="<?php echo $position_style; ?>">
+                    <div class="faq-item<?php echo esc_attr($active_class); ?><?php echo $has_answer ? ' has-answer' : ''; ?>" style="<?php echo $position_style; ?>">
                         <span><?php echo wp_kses_post($item['question']); ?></span><span class="faq-icon"><?php echo $faq_icon_svg; ?></span>
                         <?php if (!empty($item['answer'])) : ?>
                             <p><?php echo wp_kses_post($item['answer']); ?></p>
