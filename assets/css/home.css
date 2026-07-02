@@ -3440,7 +3440,7 @@ body.home .site-footer .map-pulse {
     }
 
     body.home .home-partners {
-        height: 443px;
+        height: 403px;
         padding: 0;
         box-sizing: border-box;
         overflow: hidden;
@@ -3452,7 +3452,7 @@ body.home .site-footer .map-pulse {
 
     body.home .home-partners .section-title {
         width: 343px;
-        margin: 0 0 32px;
+        margin: 0 0 16px;
         font-size: 24px;
         line-height: 26px;
         letter-spacing: -0.03em;
@@ -3485,7 +3485,7 @@ body.home .site-footer .map-pulse {
         gap: 8px;
         width: calc(100vw - 32px);
         max-width: 498px;
-        margin-top: 16px;
+        margin-top: 12px;
     }
 
     body.home .partner-card {
@@ -3526,7 +3526,7 @@ body.home .site-footer .map-pulse {
     }
 
     body.home .home-testimonials {
-        height: 453px;
+        height: 373px;
         padding: 0;
         box-sizing: border-box;
         overflow: hidden;
