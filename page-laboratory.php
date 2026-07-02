@@ -333,7 +333,7 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
             <?php foreach ($projects as $index => $project) :
                 $project_image = !empty($project['image']) ? $project['image'] : $placeholder;
             ?>
-                <div class="lab-project-slide <?php echo $index === 1 ? 'active' : ''; ?>">
+                <div class="lab-project-slide <?php echo $index === 0 ? 'active' : ''; ?>">
                     <div class="lab-project-card">
                         <div class="lab-project-card-body">
                             <span class="lab-project-card-num"><?php echo esc_html(!empty($project['number']) ? $project['number'] : ''); ?></span>
@@ -355,7 +355,7 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
             <button class="lab-slider-arrow next" aria-label="Следующий проект"></button>
             <div class="lab-slider-dots">
                 <?php for ($i = 0; $i < count($projects); $i++) : ?>
-                    <button class="lab-slider-dot <?php echo $i === 1 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
+                    <button class="lab-slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
                 <?php endfor; ?>
             </div>
         </div>

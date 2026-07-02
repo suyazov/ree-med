@@ -24,16 +24,16 @@ function trimed_setup() {
 add_action('after_setup_theme', 'trimed_setup');
 
 function trimed_body_class($classes) {
-    if (is_page_template('page-medcentry.php')) {
+    if (is_page_template('page-medcentry.php') || is_page('medcentry')) {
         $classes[] = 'medcentry-page';
     }
-    if (is_page_template('page-stomatology.php')) {
+    if (is_page_template('page-stomatology.php') || is_page('stomatologiya')) {
         $classes[] = 'stomatology-page';
     }
-    if (is_page_template('page-disinfection.php')) {
+    if (is_page_template('page-disinfection.php') || is_page('dezinfektsiya')) {
         $classes[] = 'disinfection-page';
     }
-    if (is_page_template('page-laboratory.php')) {
+    if (is_page_template('page-laboratory.php') || is_page('laboratoriya')) {
         $classes[] = 'laboratory-page';
     }
     return $classes;
@@ -49,10 +49,11 @@ function trimed_ensure_medcentry_menu_item($items, $args) {
         return $items;
     }
 
+    $items_text = wp_strip_all_tags($items);
     if (
-        strpos($items, 'Медцентры') !== false ||
-        strpos($items, 'Медцентр') !== false ||
-        strpos($items, '/medcentry') !== false
+        stripos($items, 'Медцентры') !== false ||
+        stripos($items_text, 'Медцентр') !== false ||
+        stripos($items, '/medcentry') !== false
     ) {
         return $items;
     }
@@ -487,6 +488,7 @@ function trimed_prepare_faq_items($items = array(), $options = array()) {
     $raw_items = is_array($items) ? $items : array();
     $prepared = array();
     $opened = false;
+    $first_answer_index = null;
 
     foreach ($raw_items as $item) {
         if (!is_array($item)) {
@@ -502,9 +504,14 @@ function trimed_prepare_faq_items($items = array(), $options = array()) {
 
         $has_answer = $answer !== '';
         $is_open = false;
-        if ($options['open_first'] && !$opened && !empty($item['is_open']) && $has_answer) {
-            $is_open = true;
-            $opened = true;
+        if ($options['open_first']) {
+            if (!empty($item['is_open']) && $has_answer && !$opened) {
+                $is_open = true;
+                $opened = true;
+            }
+            if ($has_answer && $first_answer_index === null) {
+                $first_answer_index = count($prepared);
+            }
         }
 
         $prepared[] = array(
@@ -513,6 +520,10 @@ function trimed_prepare_faq_items($items = array(), $options = array()) {
             'has_answer' => $has_answer,
             'is_open'    => $is_open,
         );
+    }
+
+    if ($options['open_first'] && !$opened && $first_answer_index !== null && isset($prepared[$first_answer_index])) {
+        $prepared[$first_answer_index]['is_open'] = true;
     }
 
     return $prepared;
@@ -660,13 +671,13 @@ function trimed_document_title($title) {
 add_filter('document_title_parts', 'trimed_document_title');
 
 function trimed_enqueue_page_assets() {
-    if (is_page_template('page-stomatology.php')) {
+    if (is_page_template('page-stomatology.php') || is_page('stomatologiya')) {
         wp_enqueue_style('trimed-stomatology', get_template_directory_uri() . '/assets/css/stomatology.css', array('trimed-main'), trimed_asset_version('assets/css/stomatology.css'));
     }
-    if (is_page_template('page-laboratory.php')) {
+    if (is_page_template('page-laboratory.php') || is_page('laboratoriya')) {
         wp_enqueue_style('trimed-laboratory', get_template_directory_uri() . '/assets/css/laboratory.css', array('trimed-main'), trimed_asset_version('assets/css/laboratory.css'));
     }
-    if (is_page_template('page-disinfection.php')) {
+    if (is_page_template('page-disinfection.php') || is_page('dezinfektsiya')) {
         wp_enqueue_style('trimed-disinfection', get_template_directory_uri() . '/assets/css/disinfection.css', array('trimed-main'), trimed_asset_version('assets/css/disinfection.css'));
     }
     if (is_page_template('page-medcentry.php') || is_page('medcentry')) {

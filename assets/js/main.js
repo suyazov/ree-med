@@ -26,6 +26,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initFAQAccordion() {
         const faqItems = document.querySelectorAll('.faq-item');
+        const itemsWithAnswer = Array.from(faqItems).filter(item => !!item.querySelector('p'));
+
+        if (itemsWithAnswer.length > 0) {
+            let hasActive = false;
+            itemsWithAnswer.forEach(function(item) {
+                item.classList.remove('active');
+
+                if (!hasActive) {
+                    item.classList.add('active');
+                    hasActive = true;
+                }
+            });
+        }
+
         faqItems.forEach(function(item) {
             item.addEventListener('click', function() {
                 const hasAnswer = !!item.querySelector('p');

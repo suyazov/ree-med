@@ -2517,28 +2517,43 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width: 768px) {
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .site-header .header-container {
+    body.medcentry-page .site-header .header-container,
+    body.stomatology-page .site-header .header-container,
+    body.laboratory-page .site-header .header-container,
+    body.disinfection-page .site-header .header-container {
         flex-wrap: nowrap;
         padding: 0 16px;
         background: transparent;
         border-radius: 0;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .site-header .logo img {
+    body.medcentry-page .site-header .logo img,
+    body.stomatology-page .site-header .logo img,
+    body.laboratory-page .site-header .logo img,
+    body.disinfection-page .site-header .logo img {
         width: 100px;
         height: auto;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .site-header .header-actions {
+    body.medcentry-page .site-header .header-actions,
+    body.stomatology-page .site-header .header-actions,
+    body.laboratory-page .site-header .header-actions,
+    body.disinfection-page .site-header .header-actions {
         gap: 8px;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .menu-toggle {
+    body.medcentry-page .menu-toggle,
+    body.stomatology-page .menu-toggle,
+    body.laboratory-page .menu-toggle,
+    body.disinfection-page .menu-toggle {
         background: var(--color-green);
         border-radius: 8px;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .menu-toggle span {
+    body.medcentry-page .menu-toggle span,
+    body.stomatology-page .menu-toggle span,
+    body.laboratory-page .menu-toggle span,
+    body.disinfection-page .menu-toggle span {
         background: var(--color-white);
     }
 
@@ -3292,35 +3307,56 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Shared service footer: matches the front page footer/map component */
-body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer {
+body.medcentry-page .site-footer,
+body.stomatology-page .site-footer,
+body.laboratory-page .site-footer,
+body.disinfection-page .site-footer {
     margin-top: 0;
 }
 
-body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-container {
+body.medcentry-page .site-footer .footer-container,
+body.stomatology-page .site-footer .footer-container,
+body.laboratory-page .site-footer .footer-container,
+body.disinfection-page .site-footer .footer-container {
     max-width: none;
     padding: 0;
 }
 
-body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-bg {
+body.medcentry-page .site-footer .footer-bg,
+body.stomatology-page .site-footer .footer-bg,
+body.laboratory-page .site-footer .footer-bg,
+body.disinfection-page .site-footer .footer-bg {
     background-image: url('../img/main/подвал-0.png') !important;
 }
 
-body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .map-pulse {
+body.medcentry-page .site-footer .map-pulse,
+body.stomatology-page .site-footer .map-pulse,
+body.laboratory-page .site-footer .map-pulse,
+body.disinfection-page .site-footer .map-pulse {
     display: block;
 }
 
 @media (min-width: 769px) {
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .map-pulse {
+    body.medcentry-page .site-footer .map-pulse,
+    body.stomatology-page .site-footer .map-pulse,
+    body.laboratory-page .site-footer .map-pulse,
+    body.disinfection-page .site-footer .map-pulse {
         left: calc((100vw - 1200px) / 2 + 600px);
         top: 61.1%;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-main {
+    body.medcentry-page .site-footer .footer-main,
+    body.stomatology-page .site-footer .footer-main,
+    body.laboratory-page .site-footer .footer-main,
+    body.disinfection-page .site-footer .footer-main {
         min-height: 470px;
         height: 470px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-card {
+    body.medcentry-page .site-footer .footer-card,
+    body.stomatology-page .site-footer .footer-card,
+    body.laboratory-page .site-footer .footer-card,
+    body.disinfection-page .site-footer .footer-card {
         right: calc((100vw - 1200px) / 2);
         top: 50px;
         transform: none;
@@ -3329,15 +3365,24 @@ body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection
         padding: 36px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-logo {
+    body.medcentry-page .site-footer .footer-logo,
+    body.stomatology-page .site-footer .footer-logo,
+    body.laboratory-page .site-footer .footer-logo,
+    body.disinfection-page .site-footer .footer-logo {
         margin-bottom: 34px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-contacts {
+    body.medcentry-page .site-footer .footer-contacts,
+    body.stomatology-page .site-footer .footer-contacts,
+    body.laboratory-page .site-footer .footer-contacts,
+    body.disinfection-page .site-footer .footer-contacts {
         margin-bottom: 24px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-bottom {
+    body.medcentry-page .site-footer .footer-bottom,
+    body.stomatology-page .site-footer .footer-bottom,
+    body.laboratory-page .site-footer .footer-bottom,
+    body.disinfection-page .site-footer .footer-bottom {
         position: relative;
         display: block;
         height: 101px;
@@ -3346,7 +3391,10 @@ body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection
         box-sizing: border-box;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-copyright {
+    body.medcentry-page .site-footer .footer-copyright,
+    body.stomatology-page .site-footer .footer-copyright,
+    body.laboratory-page .site-footer .footer-copyright,
+    body.disinfection-page .site-footer .footer-copyright {
         position: absolute;
         left: calc((100vw - 1200px) / 2);
         top: 28px;
@@ -3354,23 +3402,38 @@ body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection
         margin: 0;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-info {
+    body.medcentry-page .site-footer .footer-info,
+    body.stomatology-page .site-footer .footer-info,
+    body.laboratory-page .site-footer .footer-info,
+    body.disinfection-page .site-footer .footer-info {
         position: absolute;
         left: calc((100vw - 1200px) / 2);
         top: 55px;
         width: 307px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-links {
+    body.medcentry-page .site-footer .footer-links,
+    body.stomatology-page .site-footer .footer-links,
+    body.laboratory-page .site-footer .footer-links,
+    body.disinfection-page .site-footer .footer-links {
         position: absolute;
         left: calc((100vw - 1200px) / 2 + 829px);
         top: 28px;
         width: 351px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-info p,
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-links a,
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-copyright {
+    body.medcentry-page .site-footer .footer-info p,
+    body.medcentry-page .site-footer .footer-links a,
+    body.medcentry-page .site-footer .footer-copyright,
+    body.stomatology-page .site-footer .footer-info p,
+    body.stomatology-page .site-footer .footer-links a,
+    body.stomatology-page .site-footer .footer-copyright,
+    body.laboratory-page .site-footer .footer-info p,
+    body.laboratory-page .site-footer .footer-links a,
+    body.laboratory-page .site-footer .footer-copyright,
+    body.disinfection-page .site-footer .footer-info p,
+    body.disinfection-page .site-footer .footer-links a,
+    body.disinfection-page .site-footer .footer-copyright {
         color: rgba(53, 53, 53, 0.7);
         font-size: 16px;
         line-height: 19px;
@@ -3416,36 +3479,60 @@ body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection
         padding: 20px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer {
+    body.medcentry-page .site-footer,
+    body.stomatology-page .site-footer,
+    body.laboratory-page .site-footer,
+    body.disinfection-page .site-footer {
         margin-top: 0;
         padding-bottom: 0;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-main {
+    body.medcentry-page .site-footer .footer-main,
+    body.stomatology-page .site-footer .footer-main,
+    body.laboratory-page .site-footer .footer-main,
+    body.disinfection-page .site-footer .footer-main {
         min-height: 560px;
         height: 560px;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-card {
+    body.medcentry-page .site-footer .footer-card,
+    body.stomatology-page .site-footer .footer-card,
+    body.laboratory-page .site-footer .footer-card,
+    body.disinfection-page .site-footer .footer-card {
         bottom: 16px;
         min-height: 0;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .footer-bottom {
+    body.medcentry-page .site-footer .footer-bottom,
+    body.stomatology-page .site-footer .footer-bottom,
+    body.laboratory-page .site-footer .footer-bottom,
+    body.disinfection-page .site-footer .footer-bottom {
         padding: 20px 0;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .map-pulse {
+    body.medcentry-page .site-footer .map-pulse,
+    body.stomatology-page .site-footer .map-pulse,
+    body.laboratory-page .site-footer .map-pulse,
+    body.disinfection-page .site-footer .map-pulse {
         left: 50%;
         top: 18%;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .map-pulse span:nth-child(1),
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .map-pulse span:nth-child(2) {
+    body.medcentry-page .site-footer .map-pulse span:nth-child(1),
+    body.stomatology-page .site-footer .map-pulse span:nth-child(1),
+    body.laboratory-page .site-footer .map-pulse span:nth-child(1),
+    body.disinfection-page .site-footer .map-pulse span:nth-child(1),
+    body.medcentry-page .site-footer .map-pulse span:nth-child(2),
+    body.stomatology-page .site-footer .map-pulse span:nth-child(2),
+    body.laboratory-page .site-footer .map-pulse span:nth-child(2),
+    body.disinfection-page .site-footer .map-pulse span:nth-child(2) {
         animation: map-pulse 2.4s infinite ease-out;
     }
 
-    body:has(:is(.medcentry-page, .stomatology-page, .laboratory-page, .disinfection-page)) .site-footer .map-pulse span:nth-child(2) {
+    body.medcentry-page .site-footer .map-pulse span:nth-child(2),
+    body.stomatology-page .site-footer .map-pulse span:nth-child(2),
+    body.laboratory-page .site-footer .map-pulse span:nth-child(2),
+    body.disinfection-page .site-footer .map-pulse span:nth-child(2) {
         animation-delay: 1.2s;
     }
 }

@@ -1,8 +1,7 @@
 /* Medcentry page styles for Trimed theme */
 
+/* Medcentry page root */
 .medcentry-page {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
     position: relative;
 }
 
