@@ -1755,6 +1755,57 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.3;
 }
 
+/* Shared service request block */
+:where(.mc-request-inner, .stom-request-inner) {
+    max-width: 1200px;
+    min-height: 448px;
+    margin: 0 auto;
+    padding: 32px 30px 32px 48px;
+    display: grid;
+    grid-template-columns: 445px 490px;
+    gap: 187px;
+    position: relative;
+    border-radius: 20px;
+    background: var(--gradient-light-green);
+}
+
+:where(.mc-request-left, .stom-request-inner > div) {
+    margin-top: 154px;
+}
+
+:where(.mc-request-clover, .stom-request-icon) {
+    position: absolute;
+    left: 48px;
+    top: 32px;
+    width: 40px;
+    height: 40px;
+    color: var(--color-white);
+}
+
+:where(.mc-request-title, .stom-request-title) {
+    margin: 0 0 16px;
+    color: var(--color-white);
+    font-size: 36px;
+    line-height: 110%;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+.mc-request-title em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+:where(.mc-request-form, .stom-request-form) .form-message {
+    min-height: 0;
+    margin: 0;
+}
+
+:where(.mc-request-form, .stom-request-form) .form-message:not(:empty) {
+    min-height: 20px;
+    margin-top: 8px;
+}
+
 :where(.mc-request-form, .stom-request-form) .checkbox {
     display: flex;
     align-items: center;

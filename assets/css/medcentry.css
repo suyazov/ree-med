@@ -500,19 +500,13 @@
 
 /* Request */
 .medcentry-page .mc-request { padding: 0; margin-top: 28px; }
-.medcentry-page .mc-request-inner { max-width: 1200px; margin: 0 auto; background: var(--gradient-light-green); border-radius: 20px; padding: 32px 30px 32px 48px; display: grid; grid-template-columns: 445px 490px; gap: 187px; position: relative; min-height: 448px; }
-.medcentry-page .mc-request-clover { position: absolute; left: 48px; top: 32px; width: 40px; height: 40px; color: var(--color-white); }
-.medcentry-page .mc-request-left { margin-top: 154px; }
-.medcentry-page .mc-request-title { font-size: 36px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin: 0 0 16px; }
-.medcentry-page .mc-request-title em { font-style: italic; font-weight: 400; }
 .medcentry-page .mc-request-desc { font-size: 16px; line-height: 120%; color: var(--color-white); max-width: 387px; }
 .medcentry-page .mc-request-note { display: inline-flex; align-items: center; gap: 12px; margin-top: 41px; color: var(--color-white); font-size: 16px; line-height: 18px; background: rgba(54, 118, 67, 0.5); border-radius: 12px; padding: 12px 20px; }
 .medcentry-page .mc-request-note .check { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(46.27deg, #3F8D50 18.16%, #51A462 79.56%); color: var(--color-white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .medcentry-page .mc-request-note .check svg { width: 11px; height: 9px; display: block; }
 .medcentry-page .mc-request-form .phone-input { width: 429px; height: 52px; padding: 0 16px; margin-bottom: 12px; box-sizing: border-box; }
 .medcentry-page .mc-request-form .phone-input input { width: 100%; background: transparent; padding: 0; margin: 0; }
-.medcentry-page .mc-request-form .form-message { min-height: 0; margin: 0; font-size: 12px; line-height: 14px; }
-.medcentry-page .mc-request-form .form-message:not(:empty) { min-height: 20px; margin-top: 8px; }
+.medcentry-page .mc-request-form .form-message { font-size: 12px; line-height: 14px; }
 
 /* Why */
 .medcentry-page .mc-why { padding: 0; margin-top: 140px; }

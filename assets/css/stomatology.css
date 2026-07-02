@@ -388,17 +388,11 @@
 
 /* Request */
 .stomatology-page .stom-request { padding: 0; margin-top: 20px; }
-.stomatology-page .stom-request-inner { max-width: 1200px; margin: 0 auto; background: var(--gradient-light-green); border-radius: 20px; padding: 32px 30px 32px 48px; display: grid; grid-template-columns: 445px 490px; gap: 187px; position: relative; min-height: 448px; }
-.stomatology-page .stom-request-inner > div { margin-top: 154px; }
-.stomatology-page .stom-request-title { font-size: 36px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin: 0 0 16px; }
 .stomatology-page .stom-request-desc { font-size: 16px; line-height: 110%; color: var(--color-white); width: 283px; }
-.stomatology-page .stom-request-icon { position: absolute; left: 48px; top: 32px; width: 40px; height: 40px; color: var(--color-white); }
 .stomatology-page .stom-request-note { display: flex; align-items: center; gap: 19px; margin-top: 41px; color: var(--color-white); font-size: 16px; line-height: 18px; }
 .stomatology-page .stom-request-note .check { width: 20px; height: 20px; border-radius: 50%; background: var(--color-white); color: var(--color-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .stomatology-page .stom-request-form input[name="phone"] { margin-bottom: 12px; }
 .stomatology-page .stom-request-form button span { font-family: inherit; font-weight: 600; white-space: nowrap; }
-.stomatology-page .stom-request-form .form-message { min-height: 0; margin: 0; }
-.stomatology-page .stom-request-form .form-message:not(:empty) { min-height: 20px; margin-top: 8px; }
 
 /* Why */
 .stomatology-page .stom-why { padding: 0; margin-top: 140px; }
