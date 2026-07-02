@@ -122,6 +122,107 @@ function trimed_render_agree_checkbox($args = array()) {
     echo '</label>';
 }
 
+function trimed_render_contact_form($args = array()) {
+    $args = wp_parse_args($args, array(
+        'id'                 => 'contact-form',
+        'class'              => '',
+        'layout'             => 'plain',
+        'fields'             => array('name', 'phone', 'comment'),
+        'phone_style'        => 'plain',
+        'flag_url'           => trimed_img_url('phone-flag.png'),
+        'button_text'        => 'Получить консультацию',
+        'button_class'       => '',
+        'button_span'        => false,
+        'button_mobile_text' => '',
+        'checkbox_class'     => 'checkbox',
+        'message_position'   => 'auto',
+    ));
+
+    $field_labels = array(
+        'name'         => 'Ваше имя',
+        'phone'        => 'Телефон',
+        'organization' => 'Организация',
+        'comment'      => 'Комментарий',
+    );
+    $field_placeholders = array(
+        'name'         => 'Иванов Николай Сергеевич',
+        'phone'        => '+7 (999) 999-99-99',
+        'organization' => 'Название организации',
+        'comment'      => 'Ваш комментарий',
+    );
+
+    echo '<form id="' . esc_attr($args['id']) . '" class="' . esc_attr($args['class']) . '">';
+
+    foreach ($args['fields'] as $field) {
+        if ($args['layout'] === 'rows') {
+            echo '<div class="form-row">';
+            $field_class = $field === 'phone' ? 'form-field form-field-phone' : 'form-field';
+            echo '<label class="' . esc_attr($field_class) . '">';
+            echo '<span class="form-field-label">' . esc_html($field_labels[$field]) . '</span>';
+            if ($field === 'phone') {
+                echo '<img src="' . esc_url($args['flag_url']) . '" alt="" class="phone-flag">';
+                echo '<input type="tel" name="phone" placeholder="' . esc_attr($field_placeholders[$field]) . '" required>';
+            } elseif ($field === 'comment') {
+                echo '<textarea name="comment" rows="3" placeholder="' . esc_attr($field_placeholders[$field]) . '"></textarea>';
+            } else {
+                $required = $field === 'name' ? ' required' : '';
+                echo '<input type="text" name="' . esc_attr($field) . '" placeholder="' . esc_attr($field_placeholders[$field]) . '"' . $required . '>';
+            }
+            echo '</label>';
+            echo '</div>';
+            continue;
+        }
+
+        if ($field === 'phone' && $args['phone_style'] === 'phone-input') {
+            trimed_render_phone_input(array('flag_url' => $args['flag_url']));
+        } elseif ($field === 'phone') {
+            echo '<input type="tel" name="phone" placeholder="' . esc_attr($field_placeholders[$field]) . '" required>';
+        } elseif ($field === 'comment') {
+            echo '<textarea name="comment" placeholder="' . esc_attr($field_placeholders[$field]) . '"></textarea>';
+        } else {
+            $required = $field === 'name' ? ' required' : '';
+            echo '<input type="text" name="' . esc_attr($field) . '" placeholder="' . esc_attr($field_placeholders[$field]) . '"' . $required . '>';
+        }
+    }
+
+    if ($args['layout'] === 'rows') {
+        echo '<div class="form-row form-agree">';
+        echo '<label class="checkbox-label">';
+        echo '<input type="checkbox" name="agree" value="1" required>';
+        echo '<span>Оставляя заявку, я соглашаюсь с условиями <a href="#">Политики обработки персональных данных</a></span>';
+        echo '</label>';
+        echo '</div>';
+    } else {
+        trimed_render_agree_checkbox(array('class' => $args['checkbox_class']));
+    }
+
+    $message_position = $args['message_position'];
+    if ($message_position === 'auto') {
+        $message_position = $args['layout'] === 'rows' ? 'after_button' : 'before_button';
+    }
+
+    if ($message_position === 'before_button') {
+        echo '<div class="form-message"></div>';
+    }
+
+    echo '<button type="submit"' . ($args['button_class'] ? ' class="' . esc_attr($args['button_class']) . '"' : '') . '>';
+    if ($args['button_mobile_text']) {
+        echo '<span class="request-copy-desktop">' . esc_html($args['button_text']) . '</span>';
+        echo '<span class="request-copy-mobile">' . esc_html($args['button_mobile_text']) . '</span>';
+    } elseif ($args['button_span']) {
+        echo '<span>' . esc_html($args['button_text']) . '</span>';
+    } else {
+        echo esc_html($args['button_text']);
+    }
+    echo '</button>';
+
+    if ($message_position === 'after_button') {
+        echo '<div class="form-message"></div>';
+    }
+
+    echo '</form>';
+}
+
 function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stroke_width = 5, $offset = null) {
     $half = $size / 2;
     $offset = $offset === null ? $size * 0.2 : $offset;

@@ -357,14 +357,13 @@ $included_bottom = array_slice($included_cards, 3);
                     <span><?php echo esc_html($request_note); ?></span>
                 </div>
             </div>
-            <form id="contact-form" class="stom-request-form">
-                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
-                <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-                <?php trimed_render_agree_checkbox(); ?>
-                <div class="form-message"></div>
-                <button type="submit"><span><?php echo esc_html($request_button); ?></span></button>
-            </form>
+            <?php
+            trimed_render_contact_form(array(
+                'class'       => 'stom-request-form',
+                'button_text' => $request_button,
+                'button_span' => true,
+            ));
+            ?>
         </div>
     </section>
 

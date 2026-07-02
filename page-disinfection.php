@@ -472,47 +472,20 @@ function dis_image_url($field, $fallback) {
                     <p><?php echo wp_kses_post(get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'); ?></p>
                 </div>
                 <div class="request-form-wrap">
-                    <form id="contact-form" class="home-request-form">
-                        <div class="form-row">
-                            <label class="form-field">
-                                <span class="form-field-label">Ваше имя</span>
-                                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label class="form-field form-field-phone">
-                                <span class="form-field-label">Телефон</span>
-                                <img src="<?php echo esc_url($img_dir . '/main/197-0.png'); ?>" alt="" class="phone-flag">
-                                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label class="form-field">
-                                <span class="form-field-label">Организация</span>
-                                <input type="text" name="organization" placeholder="Название организации">
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label class="form-field">
-                                <span class="form-field-label">Комментарий</span>
-                                <textarea name="comment" rows="3" placeholder="Ваш комментарий"></textarea>
-                            </label>
-                        </div>
-                        <div class="form-row form-agree">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agree" value="1" required>
-                                <span>Оставляя заявку, я соглашаюсь с условиями <a href="#">Политики обработки персональных данных</a></span>
-                            </label>
-                        </div>
-                        <?php
-                        $application_button_text = get_field('application_button_text') ?: 'Получить консультацию';
-                        if (trim($application_button_text) === 'Отправить') {
-                            $application_button_text = 'Получить консультацию';
-                        }
-                        ?>
-                        <button type="submit" class="btn btn-primary request-submit"><?php echo esc_html($application_button_text); ?></button>
-                        <div class="form-message"></div>
-                    </form>
+                    <?php
+                    $application_button_text = get_field('application_button_text') ?: 'Получить консультацию';
+                    if (trim($application_button_text) === 'Отправить') {
+                        $application_button_text = 'Получить консультацию';
+                    }
+                    trimed_render_contact_form(array(
+                        'class'        => 'home-request-form',
+                        'layout'       => 'rows',
+                        'fields'       => array('name', 'phone', 'organization', 'comment'),
+                        'flag_url'     => $img_dir . '/main/197-0.png',
+                        'button_text'  => $application_button_text,
+                        'button_class' => 'btn btn-primary request-submit',
+                    ));
+                    ?>
                 </div>
             </div>
         </div>

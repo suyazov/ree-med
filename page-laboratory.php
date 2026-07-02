@@ -431,15 +431,13 @@ $request_button_text = lab_get_field('lab_request_button_text', 'Получит�
                 <h2 class="lab-request-title"><?php echo wp_kses_post($request_title); ?></h2>
                 <p class="lab-request-desc"><?php echo wp_kses_post($request_desc); ?></p>
             </div>
-            <form id="contact-form" class="lab-request-form">
-                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
-                <input type="text" name="organization" placeholder="Название организации">
-                <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-                <?php trimed_render_agree_checkbox(); ?>
-                <div class="form-message"></div>
-                <button type="submit"><?php echo esc_html($request_button_text); ?></button>
-            </form>
+            <?php
+            trimed_render_contact_form(array(
+                'class'       => 'lab-request-form',
+                'fields'      => array('name', 'phone', 'organization', 'comment'),
+                'button_text' => $request_button_text,
+            ));
+            ?>
         </div>
     </div>
 </section>

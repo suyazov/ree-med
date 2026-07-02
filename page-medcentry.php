@@ -378,14 +378,15 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
                     <span><?php echo esc_html($request_note); ?></span>
                 </div>
             </div>
-            <form id="contact-form" class="mc-request-form">
-                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                <?php trimed_render_phone_input(array('flag_url' => $img_dir . '/phone-flag.png')); ?>
-                <textarea name="comment" placeholder="Ваш комментарий"></textarea>
-                <?php trimed_render_agree_checkbox(); ?>
-                <div class="form-message"></div>
-                <button type="submit"><span><?php echo esc_html($request_button); ?></span></button>
-            </form>
+            <?php
+            trimed_render_contact_form(array(
+                'class'       => 'mc-request-form',
+                'phone_style' => 'phone-input',
+                'flag_url'    => $img_dir . '/phone-flag.png',
+                'button_text' => $request_button,
+                'button_span' => true,
+            ));
+            ?>
         </div>
     </section>
 

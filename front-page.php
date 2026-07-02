@@ -497,41 +497,17 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     </p>
                 </div>
                 <div class="request-form-wrap">
-                    <form id="contact-form" class="home-request-form">
-                        <div class="form-row">
-                            <label class="form-field">
-                                <span class="form-field-label">Ваше имя</span>
-                                <input type="text" name="name" placeholder="Иванов Николай Сергеевич" required>
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label class="form-field form-field-phone">
-                                <span class="form-field-label">Телефон</span>
-                                <img src="<?php echo esc_url($img_main . '/197-0.png'); ?>" alt="" class="phone-flag">
-                                <input type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label class="form-field">
-                                <span class="form-field-label">Организация</span>
-                                <input type="text" name="organization" placeholder="Название организации">
-                            </label>
-                        </div>
-                        <div class="form-row">
-                            <label class="form-field">
-                                <span class="form-field-label">Комментарий</span>
-                                <textarea name="comment" rows="3" placeholder="Ваш комментарий"></textarea>
-                            </label>
-                        </div>
-                        <div class="form-row form-agree">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="agree" value="1" required>
-                                <span>Оставляя заявку, я соглашаюсь с условиями <a href="#">Политики обработки персональных данных</a></span>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary request-submit"><span class="request-copy-desktop"><?php echo esc_html($form_btn); ?></span><span class="request-copy-mobile">Отправить</span></button>
-                        <div class="form-message"></div>
-                    </form>
+                    <?php
+                    trimed_render_contact_form(array(
+                        'class'              => 'home-request-form',
+                        'layout'             => 'rows',
+                        'fields'             => array('name', 'phone', 'organization', 'comment'),
+                        'flag_url'           => $img_main . '/197-0.png',
+                        'button_text'        => $form_btn,
+                        'button_class'       => 'btn btn-primary request-submit',
+                        'button_mobile_text' => 'Отправить',
+                    ));
+                    ?>
                 </div>
             </div>
         </div>
