@@ -1390,6 +1390,11 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--color-white);
 }
 
+:where(.mc-project-card-arrow, .stom-project-card-arrow) svg {
+    width: 14px;
+    height: 14px;
+}
+
 :where(.mc-project-card-title, .stom-project-card-title) {
     margin-bottom: 12px;
     color: var(--color-black);
