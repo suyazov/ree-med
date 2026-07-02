@@ -41,11 +41,19 @@ function trimed_body_class($classes) {
 add_filter('body_class', 'trimed_body_class');
 
 function trimed_ensure_medcentry_menu_item($items, $args) {
-    if (empty($args->theme_location) || $args->theme_location !== 'primary') {
+    if (!empty($args->theme_location) && $args->theme_location !== 'primary') {
         return $items;
     }
 
-    if (preg_match('~(?:/|>)\s*Медцентры\s*<~i', $items) || strpos($items, '/medcentry') !== false || strpos($items, 'Медцентры') !== false) {
+    if (empty($args->theme_location) && !in_array($args->menu_class, array('nav-menu', 'mobile-nav-menu'), true)) {
+        return $items;
+    }
+
+    if (
+        strpos($items, 'Медцентры') !== false ||
+        strpos($items, 'Медцентр') !== false ||
+        strpos($items, '/medcentry') !== false
+    ) {
         return $items;
     }
 
