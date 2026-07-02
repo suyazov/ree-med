@@ -350,20 +350,11 @@
 .stomatology-page .stom-projects-title { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); margin: 0 auto 32px; width: 568px; text-align: center; }
 .stomatology-page .stom-projects-desc { font-size: 16px; line-height: 120%; color: var(--color-black); max-width: 892px; margin: 0 auto; }
 .stomatology-page .stom-projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.stomatology-page .stom-project-card { display: flex; background: var(--color-white-2); height: 220px; overflow: hidden; gap: 36px; }
-.stomatology-page .stom-project-card-img { width: 175px; height: 220px; flex-shrink: 0; background: var(--color-gray-2); }
-.stomatology-page .stom-project-card-img img { width: 100%; height: 100%; object-fit: cover; }
-.stomatology-page .stom-project-card-body { flex: 1; padding: 20px 0; display: flex; flex-direction: column; justify-content: space-between; }
-.stomatology-page .stom-project-card-top { display: flex; justify-content: space-between; align-items: center; }
-.stomatology-page .stom-project-card-num { font-size: 12px; line-height: 14.4px; color: var(--color-black); }
-.stomatology-page .stom-project-card-arrow { width: 32px; height: 32px; background: var(--gradient-green); border-radius: 2.18px; display: flex; align-items: center; justify-content: center; color: var(--color-white); }
-.stomatology-page .stom-project-card-title { font-size: 20px; line-height: 120%; font-weight: 600; letter-spacing: -0.04em; color: var(--color-black); margin-bottom: 12px; }
-.stomatology-page .stom-project-card-text { font-size: 16px; line-height: 120%; color: var(--color-black); width: 353px; }
+.stomatology-page .stom-project-card-text { width: 353px; }
 .stomatology-page .stom-project-card:nth-child(1) .stom-project-card-title,
 .stomatology-page .stom-project-card:nth-child(4) .stom-project-card-title { width: 354px; }
 .stomatology-page .stom-project-card:nth-child(2) .stom-project-card-title,
 .stomatology-page .stom-project-card:nth-child(3) .stom-project-card-title { width: 330px; }
-.stomatology-page .stom-project-card-text { font-size: 16px; line-height: 120%; color: var(--color-black); opacity: 0.8; }
 
 /* Process */
 .stomatology-page .stom-process { padding: 0; margin-top: 140px; }

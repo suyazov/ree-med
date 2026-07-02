@@ -13,6 +13,13 @@
     --gradient-gray: linear-gradient(330.13deg, #CDCDCD 17.07%, #E1E1E1 91.62%);
     --font-main: 'Exo 2', sans-serif;
     --container: 1344px;
+    --radius-small: 4px;
+    --radius-control: 8px;
+    --radius-card: 12px;
+    --control-height: 52px;
+    --project-card-height: 220px;
+    --project-card-image-width: 175px;
+    --project-card-gap: 36px;
 }
 
 * {
@@ -1307,6 +1314,79 @@ h1, h2, h3, h4, h5, h6, p {
 .slider-dot.active,
 .slider-dot:hover {
     background: #3A7D44;
+}
+
+/* Shared project cards for service pages */
+:where(.mc-project-card, .stom-project-card) {
+    display: flex;
+    height: var(--project-card-height);
+    gap: var(--project-card-gap);
+    overflow: hidden;
+    background: var(--color-white-2);
+    border-radius: var(--radius-card);
+}
+
+:where(.mc-project-card-img, .stom-project-card-img) {
+    width: var(--project-card-image-width);
+    height: var(--project-card-height);
+    flex-shrink: 0;
+    background: var(--color-gray-2);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+}
+
+:where(.mc-project-card-img, .stom-project-card-img) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+:where(.mc-project-card-body, .stom-project-card-body) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+:where(.mc-project-card-top, .stom-project-card-top) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+:where(.mc-project-card-num, .stom-project-card-num) {
+    color: var(--color-black);
+    font-size: 12px;
+    line-height: 14.4px;
+}
+
+:where(.mc-project-card-arrow, .stom-project-card-arrow) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-small);
+    background: var(--gradient-green);
+    color: var(--color-white);
+}
+
+:where(.mc-project-card-title, .stom-project-card-title) {
+    margin-bottom: 12px;
+    color: var(--color-black);
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+}
+
+:where(.mc-project-card-text, .stom-project-card-text) {
+    color: var(--color-black);
+    font-size: 16px;
+    line-height: 120%;
+    opacity: 0.8;
 }
 
 .project-card {
