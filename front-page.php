@@ -422,7 +422,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
             <h2 class="section-title center">Работаем с ведущими производителями<br><span class="text-green">медицинского оборудования</span></h2>
             <?php if (!empty($partners)) : ?>
             <div class="partners-grid">
-                <?php foreach ($partners as $partner) :
+                <?php foreach ($partners as $index => $partner) :
                     $partner_link = !empty($partner['link']) ? $partner['link'] : '#';
                 ?>
                     <a href="<?php echo esc_url($partner_link); ?>" class="partner-card">
@@ -432,6 +432,11 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                         <h3 class="partner-name"><?php echo esc_html($partner['name']); ?></h3>
                         <p class="partner-desc"><?php echo wp_kses_post($partner['desc']); ?></p>
                     </a>
+                <?php endforeach; ?>
+            </div>
+            <div class="partners-dots" aria-label="Навигация по производителям">
+                <?php foreach ($partners as $index => $_partner) : ?>
+                    <button class="partners-dot <?php echo $index === 0 ? 'active' : ''; ?>" type="button" data-slide="<?php echo esc_attr($index); ?>" aria-label="Показать производителя <?php echo esc_attr($index + 1); ?>"></button>
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>

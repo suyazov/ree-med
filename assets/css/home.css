@@ -1752,6 +1752,27 @@ body.home .site-header {
     margin: 0;
 }
 
+.partners-dots {
+    display: none;
+}
+
+.partners-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(54, 118, 67, 0.22);
+    cursor: pointer;
+    transition: width .2s ease, background-color .2s ease, border-radius .2s ease;
+}
+
+.partners-dot.active {
+    width: 24px;
+    border-radius: 999px;
+    background: var(--color-green);
+}
+
 /* Testimonials */
 .home-testimonials {
     background: var(--color-white);
@@ -3448,6 +3469,15 @@ body.home .site-footer .map-pulse {
 
     body.home .partners-grid::-webkit-scrollbar {
         display: none;
+    }
+
+    body.home .partners-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        width: calc(100vw - 32px);
+        max-width: 498px;
+        margin-top: 16px;
     }
 
     body.home .partner-card {
