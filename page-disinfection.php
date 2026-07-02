@@ -463,41 +463,34 @@ $img_dir = get_template_directory_uri() . '/assets/img';
     </section>
 
     <!-- Application -->
-    <section class="home-request disinfection-request" id="application">
-        <div class="container">
-            <div class="request-grid">
-                <svg class="request-plus" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
-                <div class="request-text">
-                    <?php
-                    $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
-                    if (trim(wp_strip_all_tags($application_title)) === 'Подберём решение для вашего учреждения') {
-                        $application_title = 'Подберём решение<br><em>для вашего учреждения</em>';
-                    } else {
-                        $application_title = str_replace('решение ', 'решение<br>', $application_title);
-                    }
-                    ?>
-                    <h2 class="section-title white"><?php echo wp_kses_post($application_title); ?></h2>
-                    <p><?php echo wp_kses_post(get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'); ?></p>
-                </div>
-                <div class="request-form-wrap">
-                    <?php
-                    $application_button_text = get_field('application_button_text') ?: 'Получить консультацию';
-                    if (trim($application_button_text) === 'Отправить') {
-                        $application_button_text = 'Получить консультацию';
-                    }
-                    trimed_render_contact_form(array(
-                        'class'        => 'home-request-form',
-                        'layout'       => 'rows',
-                        'fields'       => array('name', 'phone', 'organization', 'comment'),
-                        'flag_url'     => $img_dir . '/main/197-0.png',
-                        'button_text'  => $application_button_text,
-                        'button_class' => 'btn btn-primary request-submit',
-                    ));
-                    ?>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php
+    $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
+    if (trim(wp_strip_all_tags($application_title)) === 'Подберём решение для вашего учреждения') {
+        $application_title = 'Подберём решение<br><em>для вашего учреждения</em>';
+    } else {
+        $application_title = str_replace('решение ', 'решение<br>', $application_title);
+    }
+
+    $application_button_text = get_field('application_button_text') ?: 'Получить консультацию';
+    if (trim($application_button_text) === 'Отправить') {
+        $application_button_text = 'Получить консультацию';
+    }
+
+    trimed_render_request_callout(array(
+        'section_class' => 'home-request disinfection-request',
+        'section_id'    => 'application',
+        'title'         => $application_title,
+        'description'   => get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.',
+        'form_args'     => array(
+            'class'        => 'home-request-form',
+            'layout'       => 'rows',
+            'fields'       => array('name', 'phone', 'organization', 'comment'),
+            'flag_url'     => $img_dir . '/main/197-0.png',
+            'button_text'  => $application_button_text,
+            'button_class' => 'btn btn-primary request-submit',
+        ),
+    ));
+    ?>
 
 </main>
 

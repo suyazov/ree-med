@@ -477,36 +477,25 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         </div>
     </section>
 
-    <section class="home-request" id="request">
-        <div class="container">
-            <div class="request-grid">
-                <svg class="request-plus" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
-                <div class="request-text">
-                    <h2 class="section-title white">
-                        <span class="request-copy-desktop"><?php echo wp_kses_post($form_title); ?></span>
-                        <span class="request-copy-mobile">Подберём оборудование<br><em>для вашей лаборатории</em></span>
-                    </h2>
-                    <p>
-                        <span class="request-copy-desktop"><?php echo wp_kses_post($form_desc); ?></span>
-                        <span class="request-copy-mobile">Оставьте заявку и получите консультацию специалиста по оснащению лабораторий</span>
-                    </p>
-                </div>
-                <div class="request-form-wrap">
-                    <?php
-                    trimed_render_contact_form(array(
-                        'class'              => 'home-request-form',
-                        'layout'             => 'rows',
-                        'fields'             => array('name', 'phone', 'organization', 'comment'),
-                        'flag_url'           => $img_main . '/197-0.png',
-                        'button_text'        => $form_btn,
-                        'button_class'       => 'btn btn-primary request-submit',
-                        'button_mobile_text' => 'Отправить',
-                    ));
-                    ?>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php
+    trimed_render_request_callout(array(
+        'section_class'       => 'home-request',
+        'section_id'          => 'request',
+        'title'               => $form_title,
+        'title_mobile'        => 'Подберём оборудование<br><em>для вашей лаборатории</em>',
+        'description'         => $form_desc,
+        'description_mobile'  => 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий',
+        'form_args'           => array(
+            'class'              => 'home-request-form',
+            'layout'             => 'rows',
+            'fields'             => array('name', 'phone', 'organization', 'comment'),
+            'flag_url'           => $img_main . '/197-0.png',
+            'button_text'        => $form_btn,
+            'button_class'       => 'btn btn-primary request-submit',
+            'button_mobile_text' => 'Отправить',
+        ),
+    ));
+    ?>
 
 </main>
 

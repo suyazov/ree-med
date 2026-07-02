@@ -320,6 +320,73 @@ function trimed_render_request_summary_block($args = array()) {
     echo '</' . $tag . '>';
 }
 
+function trimed_render_request_callout($args = array()) {
+    $args = wp_parse_args($args, array(
+        'section_class'      => 'home-request',
+        'section_id'         => '',
+        'container_class'    => 'container',
+        'grid_class'         => 'request-grid',
+        'icon'               => '<svg class="request-plus" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>',
+        'title'              => '',
+        'title_mobile'       => '',
+        'title_class'        => 'section-title white',
+        'title_class_copy'   => 'request-copy-desktop',
+        'title_mobile_class'  => 'request-copy-mobile',
+        'description'        => '',
+        'description_mobile'  => '',
+        'description_class'  => '',
+        'form_args'          => array(),
+    ));
+
+    $form_args = wp_parse_args($args['form_args'], array(
+        'class'         => 'home-request-form',
+        'layout'        => 'rows',
+        'fields'        => array('name', 'phone', 'organization', 'comment'),
+        'flag_url'      => trimed_img_url('main/197-0.png'),
+        'button_text'   => 'Получить консультацию',
+        'button_class'  => 'btn btn-primary request-submit',
+    ));
+
+    $section_id = trim(sanitize_html_class($args['section_id']));
+
+    echo '<section class="' . esc_attr($args['section_class']) . '"' . (!empty($section_id) ? ' id="' . esc_attr($section_id) . '"' : '') . '>';
+    echo '<div class="' . esc_attr($args['container_class']) . '">';
+    echo '<div class="' . esc_attr($args['grid_class']) . '">';
+    echo wp_kses_post($args['icon']);
+    echo '<div class="request-text">';
+
+    if (!empty($args['title'])) {
+        echo '<h2 class="' . esc_attr($args['title_class']) . '">';
+        if (!empty($args['title_mobile'])) {
+            echo '<span class="' . esc_attr($args['title_class_copy']) . '">' . wp_kses_post($args['title']) . '</span>';
+            echo '<span class="' . esc_attr($args['title_mobile_class']) . '">' . wp_kses_post($args['title_mobile']) . '</span>';
+        } else {
+            echo wp_kses_post($args['title']);
+        }
+        echo '</h2>';
+    }
+
+    if (!empty($args['description'])) {
+        echo '<p' . (!empty($args['description_class']) ? ' class="' . esc_attr($args['description_class']) . '"' : '') . '>';
+        if (!empty($args['description_mobile'])) {
+            echo '<span class="request-copy-desktop">' . wp_kses_post($args['description']) . '</span>';
+            echo '<span class="request-copy-mobile">' . wp_kses_post($args['description_mobile']) . '</span>';
+        } else {
+            echo wp_kses_post($args['description']);
+        }
+        echo '</p>';
+    }
+
+    echo '</div>';
+    echo '<div class="request-form-wrap">';
+    trimed_render_contact_form($form_args);
+    echo '</div>';
+
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+}
+
 function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stroke_width = 5, $offset = null) {
     $half = $size / 2;
     $offset = $offset === null ? $size * 0.2 : $offset;
