@@ -24,6 +24,12 @@ function trimed_setup() {
 add_action('after_setup_theme', 'trimed_setup');
 
 function trimed_body_class($classes) {
+    if (is_page_template('page-medcentry.php')) {
+        $classes[] = 'medcentry-page';
+    }
+    if (is_page_template('page-stomatology.php')) {
+        $classes[] = 'stomatology-page';
+    }
     if (is_page_template('page-disinfection.php')) {
         $classes[] = 'disinfection-page';
     }

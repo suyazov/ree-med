@@ -2397,28 +2397,28 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width: 768px) {
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), .page-id-31) .site-header .header-container {
+    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .site-header .header-container {
         flex-wrap: nowrap;
         padding: 0 16px;
         background: transparent;
         border-radius: 0;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), .page-id-31) .site-header .logo img {
+    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .site-header .logo img {
         width: 100px;
         height: auto;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), .page-id-31) .site-header .header-actions {
+    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .site-header .header-actions {
         gap: 8px;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), .page-id-31) .menu-toggle {
+    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .menu-toggle {
         background: var(--color-green);
         border-radius: 8px;
     }
 
-    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), .page-id-31) .menu-toggle span {
+    :is(body:has(.medcentry-page), body:has(.stomatology-page), body:has(.laboratory-page), body:has(.disinfection-page), body.medcentry-page) .menu-toggle span {
         background: var(--color-white);
     }
 
