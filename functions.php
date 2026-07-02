@@ -34,6 +34,20 @@ function trimed_body_class($classes) {
 }
 add_filter('body_class', 'trimed_body_class');
 
+function trimed_ensure_medcentry_menu_item($items, $args) {
+    if (empty($args->theme_location) || $args->theme_location !== 'primary') {
+        return $items;
+    }
+
+    if (strpos($items, '/medcentry/') !== false) {
+        return $items;
+    }
+
+    $items .= '<li class="menu-item menu-item-medcentry"><a href="' . esc_url(home_url('/medcentry/')) . '">Медцентры</a></li>';
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'trimed_ensure_medcentry_menu_item', 10, 2);
+
 function trimed_favicon() {
     echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/logo.png') . '">' . "\n";
 }

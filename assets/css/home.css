@@ -2017,11 +2017,6 @@ body.home .site-header {
 .form-message.success { color: var(--color-green); }
 .form-message.error { color: #c33; }
 
-/* Header/Footer tweaks for front page */
-body.home .nav-menu li a[href*="medcentry"] {
-    display: none;
-}
-
 body.home .site-footer .footer-bg {
     background-image: url('../img/main/подвал-0.png') !important;
 }
