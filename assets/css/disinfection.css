@@ -121,15 +121,73 @@ body.disinfection-page .task-item img {
 /* ======================== DESKTOP (>=1201px) ======================== */
 @media (min-width: 1201px) {
     /* Why section */
-    .disinfection-page .why-section .section-title {
-        font-size: 48px;
-        line-height: 110%;
-        font-weight: 600;
+    body.disinfection-page .why-section {
+        padding: 70px 0;
     }
 
-    .disinfection-page .why-grid {
-        grid-template-columns: 480px 344px 336px;
-        gap: 20px;
+    body.disinfection-page .why-section .container {
+        max-width: 1344px;
+        padding: 0;
+    }
+
+    body.disinfection-page .why-section .section-header {
+        margin-bottom: 60px;
+    }
+
+    body.disinfection-page .why-section .section-label {
+        margin-bottom: 42px;
+        font-size: 24px;
+        line-height: 120%;
+        color: #353535;
+    }
+
+    .disinfection-page .why-section .section-title {
+        font-size: 56px;
+        line-height: 110%;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+    }
+
+    body.disinfection-page .why-section .section-title .text-green {
+        display: inline-block;
+    }
+
+    body.disinfection-page .why-grid {
+        grid-template-columns: 540px 386px 376px;
+        grid-template-rows: 209px 226px;
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    body.disinfection-page .why-image-card {
+        min-height: 459px;
+        padding: 36px;
+        border-radius: 12px;
+        background-position: center;
+    }
+
+    body.disinfection-page .why-stats {
+        gap: 16px;
+        align-items: flex-end;
+    }
+
+    body.disinfection-page .why-stat {
+        min-height: 116px;
+        padding: 20px 24px;
+        border-radius: 12px;
+        justify-content: flex-start;
+    }
+
+    body.disinfection-page .why-stat.glass {
+        flex: 1 1 270px;
+        background: rgba(180, 186, 184, 0.62);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        backdrop-filter: blur(28px);
+    }
+
+    body.disinfection-page .why-stat.green {
+        flex: 0 0 188px;
+        background: #49A65C;
     }
 
     .disinfection-page .why-stat strong {
@@ -143,24 +201,67 @@ body.disinfection-page .task-item img {
         line-height: 17px;
     }
 
+    body.disinfection-page .why-info-card {
+        min-height: 459px;
+        padding: 48px;
+        border-radius: 12px;
+        background: #F9F9F9;
+    }
+
     .disinfection-page .why-info-card h3 {
-        font-size: 20px;
-        line-height: 24px;
+        max-width: 250px;
+        font-size: 24px;
+        line-height: 120%;
         font-weight: 600;
+    }
+
+    body.disinfection-page .why-warehouse-card {
+        height: auto;
+        min-height: 209px;
+        padding: 36px;
+        border-radius: 12px;
+    }
+
+    body.disinfection-page .why-warehouse-card h3 {
+        font-size: 28px;
+        line-height: 120%;
+    }
+
+    body.disinfection-page .why-features-list {
+        gap: 12px;
     }
 
     .disinfection-page .why-feature {
-        font-size: 16px;
-        line-height: 18px;
-        font-weight: 600;
         max-width: none;
+        min-height: 67px;
+        padding: 0 28px;
+        gap: 20px;
+        border-radius: 12px;
+        background: #E4E6E6;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 600;
+    }
+
+    body.disinfection-page .why-feature .check {
+        width: 24px;
+        height: 24px;
+        background: #49A65C;
+    }
+
+    body.disinfection-page .why-feature .check::after {
+        left: 8px;
+        top: 5px;
+        width: 6px;
+        height: 10px;
     }
 
     .disinfection-page .why-plus {
-        width: 28px;
-        height: 28px;
-        top: 24px;
-        right: 24px;
+        width: 32px;
+        height: 32px;
+        top: 36px;
+        right: 36px;
+        color: #49A65C;
     }
 
     /* Tasks */
