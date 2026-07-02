@@ -19,14 +19,7 @@
         </a>
 
         <nav class="main-nav">
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'menu_class'     => 'nav-menu',
-                'container'      => false,
-                'fallback_cb'    => false,
-            ));
-            ?>
+            <?php trimed_render_primary_menu('nav-menu'); ?>
         </nav>
 
         <div class="header-contacts">
@@ -85,14 +78,7 @@
 </header>
 
 <div class="mobile-menu">
-    <?php
-    wp_nav_menu(array(
-        'theme_location' => 'primary',
-        'menu_class'     => 'mobile-nav-menu',
-        'container'      => false,
-        'fallback_cb'    => false,
-    ));
-    ?>
+    <?php trimed_render_primary_menu('mobile-nav-menu'); ?>
     <div class="mobile-contacts">
         <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', trimed_get_contact('phone'))); ?>"><?php echo esc_html(trimed_get_contact('phone')); ?></a>
         <span><?php echo esc_html(trimed_get_contact('address')); ?></span>

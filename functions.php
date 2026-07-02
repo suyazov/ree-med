@@ -45,7 +45,7 @@ function trimed_ensure_medcentry_menu_item($items, $args) {
         return $items;
     }
 
-    if (strpos($items, '/medcentry/') !== false) {
+    if (preg_match('~(?:/|>)\s*Медцентры\s*<~i', $items) || strpos($items, '/medcentry') !== false || strpos($items, 'Медцентры') !== false) {
         return $items;
     }
 
@@ -53,6 +53,44 @@ function trimed_ensure_medcentry_menu_item($items, $args) {
     return $items;
 }
 add_filter('wp_nav_menu_items', 'trimed_ensure_medcentry_menu_item', 10, 2);
+
+function trimed_get_default_menu_items() {
+    return array(
+        'home'       => array('url' => home_url('/'), 'label' => 'Главная'),
+        'medcentry'  => array('url' => home_url('/medcentry/'), 'label' => 'Медцентры'),
+        'stomatologiya' => array('url' => home_url('/stomatologiya/'), 'label' => 'Стоматология'),
+        'laboratory' => array('url' => home_url('/laboratoriya/'), 'label' => 'Лаборатория'),
+        'disinfection' => array('url' => home_url('/dezinfektsiya/'), 'label' => 'Дезинфекция'),
+    );
+}
+
+function trimed_primary_nav_fallback($args) {
+    $items = '';
+    foreach (trimed_get_default_menu_items() as $key => $item) {
+        $class_name = sanitize_html_class('menu-item-' . $key);
+        $items .= sprintf(
+            '<li class="menu-item %s"><a href="%s">%s</a></li>',
+            esc_attr($class_name),
+            esc_url($item['url']),
+            esc_html($item['label'])
+        );
+    }
+
+    return sprintf(
+        '<ul class="%s">%s</ul>',
+        esc_attr($args->menu_class),
+        $items
+    );
+}
+
+function trimed_render_primary_menu($menu_class) {
+    wp_nav_menu(array(
+        'theme_location' => 'primary',
+        'menu_class'     => $menu_class,
+        'container'      => false,
+        'fallback_cb'    => 'trimed_primary_nav_fallback',
+    ));
+}
 
 function trimed_favicon() {
     echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/logo.png') . '">' . "\n";
