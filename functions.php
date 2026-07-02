@@ -71,7 +71,9 @@ function trimed_is_service_page($config) {
 function trimed_body_class($classes) {
     foreach (trimed_get_service_pages_config() as $config) {
         if (trimed_is_service_page($config)) {
+            $classes[] = 'trimed-service-page';
             $classes[] = $config['body_class'];
+            break;
         }
     }
     return $classes;
