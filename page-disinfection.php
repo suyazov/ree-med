@@ -428,6 +428,18 @@ function dis_image_url($field, $fallback) {
                         array('question' => 'Есть ли товары в наличии в Чите?', 'answer' => 'Да, в Чите есть склад, и товары имеются в наличии — более 5000 позиций. Осуществляется поставка непосредственно со склада в Чите.', 'is_open' => true),
                     );
                 }
+
+                $faq_opened = false;
+                foreach ($faq_items as &$faq_item) {
+                    $has_answer = !empty($faq_item['answer']);
+                    $should_open = !empty($faq_item['is_open']) && $has_answer && !$faq_opened;
+                    $faq_item['is_open'] = (bool) $should_open;
+                    if ($should_open) {
+                        $faq_opened = true;
+                    }
+                }
+                unset($faq_item);
+
                 // Desktop layout as in Figma: first three questions in the left column,
                 // the remaining questions in the right column.
                 $faq_positions = array();
