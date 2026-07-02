@@ -38,6 +38,86 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     display: none;
 }
 
+/* ===== Tasks block: desktop Figma layout ===== */
+body.disinfection-page .tasks-section {
+    padding: 70px 0;
+}
+
+body.disinfection-page .tasks-section .container {
+    max-width: 1344px;
+    padding: 0;
+}
+
+body.disinfection-page .tasks-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+body.disinfection-page .tasks-intro.green-card {
+    min-height: 580px;
+    padding: 64px 48px;
+    border-radius: 12px;
+    background: linear-gradient(106deg, #284f45 0%, #347641 100%);
+}
+
+body.disinfection-page .tasks-intro .tag {
+    top: 64px;
+    left: 48px;
+    min-width: 260px;
+    justify-content: center;
+    padding: 16px 24px;
+    background: rgba(63, 141, 80, 0.45);
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 120%;
+    color: #fff;
+}
+
+body.disinfection-page .tasks-intro h2 {
+    left: 48px;
+    bottom: 64px;
+    width: 420px;
+    max-width: 420px;
+    color: #fff;
+    font-size: 48px;
+    line-height: 110%;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+body.disinfection-page .tasks-intro h2 em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+body.disinfection-page .tasks-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 580px;
+}
+
+body.disinfection-page .task-item {
+    min-height: 72px;
+    padding: 0 24px;
+    gap: 32px;
+    border-radius: 12px;
+    background: #F9F9F9;
+    color: #353535;
+    font-size: 24px;
+    line-height: 110%;
+    font-weight: 400;
+}
+
+body.disinfection-page .task-item img {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+}
+
 /* ======================== DESKTOP (>=1201px) ======================== */
 @media (min-width: 1201px) {
     /* Why section */
@@ -85,14 +165,14 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
 
     /* Tasks */
     .disinfection-page .tasks-intro h2 {
-        font-size: 44px;
-        line-height: 48.4px;
+        font-size: 48px;
+        line-height: 110%;
         font-weight: 600;
     }
 
     .disinfection-page .task-item img {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 
     /* Application */
@@ -235,33 +315,38 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     }
 
     /* Tasks mobile: two-column grid with icon above text */
-    .disinfection-page .tasks-section .container {
+    body.disinfection-page .tasks-section .container {
         padding: 0 16px;
     }
 
-    .disinfection-page .tasks-grid {
+    body.disinfection-page .tasks-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
-    .disinfection-page .tasks-intro.green-card {
+    body.disinfection-page .tasks-intro.green-card {
         min-height: 182px;
+        padding: 24px;
     }
 
-    .disinfection-page .tasks-intro h2 {
+    body.disinfection-page .tasks-intro h2 {
+        left: 24px;
+        bottom: 24px;
         width: calc(100% - 48px);
+        max-width: calc(100% - 48px);
         font-size: 24px;
         line-height: 110%;
     }
 
-    .disinfection-page .tasks-list {
+    body.disinfection-page .tasks-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
         min-height: auto;
     }
 
-    .disinfection-page .task-item {
+    body.disinfection-page .task-item {
+        min-height: auto;
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
@@ -270,9 +355,10 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
         line-height: 1.2;
     }
 
-    .disinfection-page .task-item img {
+    body.disinfection-page .task-item img {
         width: 24px;
         height: 24px;
+        flex-basis: 24px;
     }
 
     /* Supplies mobile: snake arc layout matching Figma */
@@ -621,7 +707,7 @@ body:has(.disinfection-page) .site-header .menu-toggle span {
     }
 
     /* Tasks intro title line breaks */
-    .disinfection-page .tasks-intro h2 {
+    body.disinfection-page .tasks-intro h2 {
         width: 180px;
         max-width: 180px;
     }

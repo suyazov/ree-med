@@ -232,7 +232,13 @@ function dis_image_url($field, $fallback) {
             <div class="tasks-grid">
                 <div class="tasks-intro green-card">
                     <span class="tag"><?php echo esc_html(get_field('tasks_subtitle') ?: 'Популярные задачи клиентов'); ?></span>
-                    <h2><?php echo wp_kses_post(get_field('tasks_title') ?: 'С чем к нам обращаются чаще всего'); ?></h2>
+                    <?php
+                    $tasks_title = get_field('tasks_title') ?: 'С чем к нам обращаются чаще всего';
+                    if (wp_strip_all_tags($tasks_title) === 'С чем к нам обращаются чаще всего') {
+                        $tasks_title = 'С чем к нам<br><em>обращаются</em><br>чаще всего';
+                    }
+                    ?>
+                    <h2><?php echo wp_kses_post($tasks_title); ?></h2>
                 </div>
                 <div class="tasks-list">
                     <?php
