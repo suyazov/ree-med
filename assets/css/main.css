@@ -65,7 +65,6 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0 20px;
 }
 
-.service-container,
 :where(.mc-container, .stom-container) {
     width: 100%;
     max-width: 1344px;
@@ -80,7 +79,6 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
-.service-section-inner,
 :where(.mc-section-inner, .stom-section-inner) {
     width: 100%;
     max-width: 1200px;
@@ -244,21 +242,6 @@ h1, h2, h3, h4, h5, h6, p {
 .logo img {
     width: 140px;
     height: auto;
-}
-
-.logo-main {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--color-dark-green);
-    line-height: 1;
-}
-
-.logo-tagline {
-    font-size: 10px;
-    line-height: 12px;
-    color: var(--color-green);
-    margin-top: 2px;
-    letter-spacing: 0.02em;
 }
 
 .main-nav .nav-menu {

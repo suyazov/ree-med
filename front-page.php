@@ -467,11 +467,15 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     </div>
                 <?php endforeach; ?>
             </div>
-                    <div class="testimonials-dots" aria-hidden="true">
-                        <?php foreach ($testimonials as $i => $_test) : ?>
-                            <span class="testimonials-dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
-                        <?php endforeach; ?>
-                    </div>
+                    <?php trimed_render_slider_dots(
+                        count($testimonials),
+                        array(
+                            'base_class'    => 'testimonials-dot',
+                            'active_index'  => 0,
+                            'wrapper_class' => 'testimonials-dots',
+                            'tag'           => 'span',
+                        )
+                    ); ?>
             <?php endif; ?>
             </div>
         </div>

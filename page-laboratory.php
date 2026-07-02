@@ -353,11 +353,16 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
             <?php endforeach; ?>
             <button class="lab-slider-arrow prev" aria-label="Предыдущий проект"></button>
             <button class="lab-slider-arrow next" aria-label="Следующий проект"></button>
-            <div class="lab-slider-dots">
-                <?php for ($i = 0; $i < count($projects); $i++) : ?>
-                    <button class="lab-slider-dot <?php echo $i === 1 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
-                <?php endfor; ?>
-            </div>
+            <?php
+            trimed_render_slider_dots(
+                count($projects),
+                array(
+                    'base_class'    => 'lab-slider-dot',
+                    'active_index'  => 1,
+                    'wrapper_class' => 'lab-slider-dots',
+                )
+            );
+            ?>
         </div>
     </div>
 </section>

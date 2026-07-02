@@ -361,11 +361,17 @@ $img_dir = get_template_directory_uri() . '/assets/img';
                     <?php endforeach; ?>
                 </div>
                 <button class="slider-arrow next" aria-label="Следующий слайд"></button>
-                <div class="slider-dots">
-                    <?php for ($i = 0; $i < $projects_count; $i++) : ?>
-                        <button class="slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к слайду <?php echo $i + 1; ?>"></button>
-                    <?php endfor; ?>
-                </div>
+                <?php
+                trimed_render_slider_dots(
+                    $projects_count,
+                    array(
+                        'base_class'    => 'slider-dot',
+                        'active_index'  => 0,
+                        'wrapper_class' => 'slider-dots',
+                        'aria_prefix'   => 'Перейти к слайду',
+                    )
+                );
+                ?>
             </div>
         </div>
     </section>
