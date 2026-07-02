@@ -40,20 +40,6 @@
     position: relative;
 }
 
-.medcentry-page .mc-container {
-    width: 100%;
-    max-width: 1344px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.medcentry-page .mc-section-inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
-
 /* SVG helpers */
 .medcentry-page .mc-clover { color: currentColor; }
 

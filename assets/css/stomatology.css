@@ -50,20 +50,6 @@
 }
 .stomatology-page .text-green { color: var(--color-green); }
 
-.stomatology-page .stom-container {
-    width: 100%;
-    max-width: 1344px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.stomatology-page .stom-section-inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
-
 /* Hero */
 .stomatology-page .stom-hero { padding: 0; margin-top: 20px; }
 .stomatology-page .stom-hero .stom-container { max-width: 1344px; padding: 0; }
