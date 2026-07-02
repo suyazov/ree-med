@@ -867,6 +867,10 @@ function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stro
     echo '</svg>';
 }
 
+function trimed_get_clover_svg($class = '', $size = 20) {
+    return '<svg class="' . esc_attr($class) . '" width="' . esc_attr($size) . '" height="' . esc_attr($size) . '" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.8026 6.80286C14.8114 6.80286 13.1967 5.18812 13.1967 3.19681C13.1967 1.4317 11.7657 0 10 0C8.23429 0 6.80264 1.4317 6.80264 3.19681C6.80264 5.18812 5.1886 6.80286 3.19736 6.80286C1.43165 6.80286 0 8.23391 0 10.0003C0 11.7661 1.43165 13.1971 3.19736 13.1971C5.1886 13.1971 6.80264 14.8112 6.80264 16.8025C6.80264 18.569 8.23429 20 10 20C11.7657 20 13.1967 18.569 13.1967 16.8025C13.1967 14.8112 14.8114 13.1971 16.8026 13.1971C18.5683 13.1971 20 11.7661 20 10.0003C20 8.23391 18.5683 6.80286 16.8026 6.80286Z" fill="currentColor"/></svg>';
+}
+
 function trimed_enqueue_assets() {
     wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&subset=cyrillic&display=swap', array(), null);
     wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), trimed_asset_version('style.css'));
