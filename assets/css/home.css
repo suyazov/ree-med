@@ -320,10 +320,14 @@ body.home .site-header {
     }
 
     .home-hero-title {
-        font-size: 28px;
+        font-size: 26px;
         line-height: 94%;
         letter-spacing: -0.03em;
         margin-bottom: 0;
+    }
+
+    .home-hero-title .text-green {
+        white-space: nowrap;
     }
 
     .home-hero-image-wrap {
