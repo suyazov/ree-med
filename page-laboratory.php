@@ -4,8 +4,8 @@ Template Name: Лаборатория
 */
 get_header();
 
-$img_dir = get_template_directory_uri() . '/assets/img';
-$placeholder = $img_dir . '/placeholder.jpg';
+$img_dir = trimed_get_image_dir();
+$placeholder = trimed_get_placeholder_url();
 
 // Hero
 $hero_title = trimed_get_field_value('lab_hero_title', 'Оснащение лабораторий под ключ в Чите и Забайкальском крае');

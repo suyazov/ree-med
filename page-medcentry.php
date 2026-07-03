@@ -4,8 +4,8 @@ Template Name: Медцентры
 */
 get_header();
 
-$img_dir = get_template_directory_uri() . '/assets/img/medcentry';
-$placeholder = get_template_directory_uri() . '/assets/img/placeholder.jpg';
+$img_dir = trimed_get_image_dir('medcentry');
+$placeholder = trimed_get_placeholder_url();
 
 $hero_title = trimed_get_field_value('med_hero_title', 'Оснащение <span class="text-green">медицинских центров под ключ</span><br>в Забайкальском крае');
 $hero_title = trimed_medcentry_format_hero_title($hero_title);
@@ -92,7 +92,7 @@ $why_features = trimed_repeater_field('med_why_features', array(
 
 $clover_icon = trimed_get_clover_svg('mc-clover', 20);
 
-$arrow_icon = '<svg class="mc-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15L15 3M15 3H6M15 3V12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+$arrow_icon = trimed_get_arrow_svg('mc-arrow', 18, 1.6);
 
 $header_clover = '<svg class="mc-header-clover" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M46.2073 18.7079C40.7314 18.7079 36.2909 14.2673 36.2909 8.79123C36.2909 3.93718 32.3557 0 27.5 0C22.6443 0 18.7073 3.93718 18.7073 8.79123C18.7073 14.2673 14.2686 18.7079 8.79274 18.7079C3.93704 18.7079 0 22.6432 0 27.5009C0 32.3567 3.93704 36.2921 8.79274 36.2921C14.2686 36.2921 18.7073 40.7309 18.7073 46.207C18.7073 51.0646 22.6443 55 27.5 55C32.3557 55 36.2909 51.0646 36.2909 46.207C36.2909 40.7309 40.7314 36.2921 46.2073 36.2921C51.063 36.2921 55 32.3567 55 27.5009C55 22.6432 51.063 18.7079 46.2073 18.7079Z" fill="url(#paint0_linear_header)"/><defs><linearGradient id="paint0_linear_header" x1="9.5" y1="10.5" x2="44" y2="43.5" gradientUnits="userSpaceOnUse"><stop stop-color="#3F8D50"/><stop offset="1" stop-color="#51A462"/></linearGradient></defs></svg>';
 

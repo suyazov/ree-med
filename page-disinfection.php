@@ -4,7 +4,7 @@ Template Name: Дезинфекция
 */
 get_header();
 
-$img_dir = get_template_directory_uri() . '/assets/img';
+$img_dir = trimed_get_image_dir();
 ?>
 
 <main class="disinfection-page">
@@ -14,7 +14,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         <div class="container">
             <div class="hero-grid">
                 <?php
-                $hero_title = get_field('hero_title') ?: 'Комплексные решения для дезинфекции и инфекционного контроля';
+                $hero_title = trimed_get_field_value('hero_title', 'Комплексные решения для дезинфекции и инфекционного контроля');
                 $hero_title = str_replace('решения ', 'решения<br>', $hero_title);
                 $hero_title = str_replace('для дезинфекции', '<span class="hero-title-line">для <span class="text-green">дезинфекции</span></span>', $hero_title);
                 $hero_title = str_replace('для дизенфекции', '<span class="hero-title-line">для <span class="text-green">дизенфекции</span></span>', $hero_title);
@@ -43,7 +43,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
                     </div>
                 </div>
                 <div class="hero-body">
-                    <p class="hero-desc"><?php echo wp_kses_post(get_field('hero_desc') ?: 'Подбираем дезинфицирующие средства, оборудование и расходные материалы для медицинских учреждений, стоматологий, лабораторий и организаций различных сфер деятельности'); ?></p>
+                    <p class="hero-desc"><?php echo wp_kses_post(trimed_get_field_value('hero_desc', 'Подбираем дезинфицирующие средства, оборудование и расходные материалы для медицинских учреждений, стоматологий, лабораторий и организаций различных сфер деятельности')); ?></p>
                     <div class="hero-features">
                         <?php
                         $hero_features = trimed_repeater_field('hero_features', array(
@@ -58,7 +58,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
                             <div class="hero-feature"><img src="<?php echo esc_url($icon); ?>" alt=""><span><?php echo wp_kses_post($feature['text']); ?></span></div>
                         <?php endforeach; ?>
                     </div>
-                    <a href="#application" class="btn btn-primary hero-btn-main"><?php echo esc_html(get_field('hero_button_text') ?: 'Подобрать решение'); ?></a>
+                    <a href="#application" class="btn btn-primary hero-btn-main"><?php echo esc_html(trimed_get_field_value('hero_button_text', 'Подобрать решение')); ?></a>
                     <a href="#application" class="btn btn-secondary hero-btn-consult">Получить консультацию</a>
                 </div>
             </div>
@@ -70,9 +70,9 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         <div class="container">
             <div class="audience-inner">
                 <div class="section-header">
-                    <span class="section-label"><?php echo esc_html(get_field('audience_subtitle') ?: 'Кому подходит'); ?></span>
+                    <span class="section-label"><?php echo esc_html(trimed_get_field_value('audience_subtitle', 'Кому подходит')); ?></span>
                     <?php
-                    $audience_title = get_field('audience_title') ?: 'Работаем с учреждениями разных направлений';
+                    $audience_title = trimed_get_field_value('audience_title', 'Работаем с учреждениями разных направлений');
                     $audience_title = str_replace('разных направлений', '<span class="text-green">разных направлений</span>', $audience_title);
                     ?>
                     <h2 class="section-title"><?php echo wp_kses_post($audience_title); ?></h2>
@@ -103,9 +103,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
                             <img src="<?php echo esc_url($card['image']); ?>" alt="" class="audience-card-img" style="position:absolute; right:0; bottom:0; width:80px; height:70px; object-fit:cover; opacity:1;">
                         <?php endif; ?>
                         <h3><?php echo wp_kses_post($card['title']); ?></h3>
-                        <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <?php echo trimed_get_arrow_svg('arrow', 24, 2); ?>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -118,9 +116,9 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         <div class="container">
             <div class="supplies-box">
                 <div class="section-header">
-                    <span class="section-label"><?php echo esc_html(get_field('supplies_subtitle') ?: 'Что мы поставляем'); ?></span>
+                    <span class="section-label"><?php echo esc_html(trimed_get_field_value('supplies_subtitle', 'Что мы поставляем')); ?></span>
                     <?php
-                    $supplies_title = get_field('supplies_title') ?: 'Все для организации инфекционного контроля';
+                    $supplies_title = trimed_get_field_value('supplies_title', 'Все для организации инфекционного контроля');
                     $supplies_title = str_replace('Все для организации', '<span class="supplies-title-line">Все для организации</span>', $supplies_title);
                     $supplies_title = str_replace('инфекционного контроля', '<span class="text-green supplies-title-line">инфекционного контроля</span>', $supplies_title);
                     $supplies_title = str_replace('</span> <span class="text-green supplies-title-line">', '</span><br><span class="text-green supplies-title-line">', $supplies_title);
@@ -167,16 +165,16 @@ $img_dir = get_template_directory_uri() . '/assets/img';
     <section class="included-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label"><?php echo esc_html(get_field('included_subtitle') ?: 'Что входит'); ?></span>
+                <span class="section-label"><?php echo esc_html(trimed_get_field_value('included_subtitle', 'Что входит')); ?></span>
                 <?php
-                    $included_title = get_field('included_title') ?: 'Помогаем выстроить систему инфекционного контроля';
+                    $included_title = trimed_get_field_value('included_title', 'Помогаем выстроить систему инфекционного контроля');
                     $included_title = str_replace('инфекционного контроля', '<span class="text-green">инфекционного контроля</span>', $included_title);
                     ?>
                 <h2 class="section-title"><?php echo wp_kses_post($included_title); ?></h2>
             </div>
             <div class="included-grid">
                 <?php
-                $green_text = get_field('included_card_text') ?: 'Мы помогаем подобрать решения, которые обеспечивают безопасность, удобство использования и соответствие действующим санитарным требованиям';
+                $green_text = trimed_get_field_value('included_card_text', 'Мы помогаем подобрать решения, которые обеспечивают безопасность, удобство использования и соответствие действующим санитарным требованиям');
                 $included_cards = trimed_repeater_field('included_cards', array(
                     array('image' => $img_dir . '/disinfection-included-1.png', 'number' => '1', 'title' => 'Анализ потребностей учреждения'),
                     array('image' => $img_dir . '/disinfection-included-2.png', 'number' => '2', 'title' => 'Подбор дезсредств под задачи'),
@@ -209,9 +207,9 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         <div class="container">
             <div class="tasks-grid">
                 <div class="tasks-intro green-card">
-                    <span class="tag"><?php echo esc_html(get_field('tasks_subtitle') ?: 'Популярные задачи клиентов'); ?></span>
+                    <span class="tag"><?php echo esc_html(trimed_get_field_value('tasks_subtitle', 'Популярные задачи клиентов')); ?></span>
                     <?php
-                    $tasks_title = get_field('tasks_title') ?: 'С чем к нам обращаются чаще всего';
+                    $tasks_title = trimed_get_field_value('tasks_title', 'С чем к нам обращаются чаще всего');
                     if (wp_strip_all_tags($tasks_title) === 'С чем к нам обращаются чаще всего') {
                         $tasks_title = 'С чем к нам<br><em>обращаются</em><br>чаще всего';
                     }
@@ -243,9 +241,9 @@ $img_dir = get_template_directory_uri() . '/assets/img';
     <section class="why-section">
         <div class="container">
             <div class="section-header center">
-                <span class="section-label"><?php echo esc_html(get_field('why_subtitle') ?: 'Почему выбирают ТриМед'); ?></span>
+                <span class="section-label"><?php echo esc_html(trimed_get_field_value('why_subtitle', 'Почему выбирают ТриМед')); ?></span>
                     <?php
-                    $why_title = get_field('why_title') ?: 'Надёжный поставщик для медицинских учреждений региона';
+                    $why_title = trimed_get_field_value('why_title', 'Надёжный поставщик для медицинских учреждений региона');
                     // Figma: first two words green on first line, the rest black on second line.
                     $why_title = preg_replace('/^(\S+\s+\S+)(.*)$/', '<span class="text-green">$1</span><br>$2', $why_title);
                     ?>
@@ -285,8 +283,8 @@ $img_dir = get_template_directory_uri() . '/assets/img';
     <section class="projects-section">
         <div class="container">
             <div class="section-header row">
-                <h2 class="section-title projects-section-title"><?php echo esc_html(get_field('projects_title') ?: 'Реализованные проекты'); ?></h2>
-                <p class="section-desc"><?php echo wp_kses_post(get_field('projects_desc') ?: 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'); ?></p>
+                <h2 class="section-title projects-section-title"><?php echo esc_html(trimed_get_field_value('projects_title', 'Реализованные проекты')); ?></h2>
+                <p class="section-desc"><?php echo wp_kses_post(trimed_get_field_value('projects_desc', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.')); ?></p>
             </div>
             <?php
             $projects = trimed_repeater_field('projects_slides', array(
@@ -349,7 +347,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         <div class="container">
             <div class="section-header center">
                     <?php
-                    $partners_title = get_field('partners_title') ?: 'Работаем с ведущими производителями';
+                    $partners_title = trimed_get_field_value('partners_title', 'Работаем с ведущими производителями');
                     $partners_title = str_replace('с ведущими', '<strong>с ведущими</strong>', $partners_title);
                     $partners_title = str_replace('производителями', '<br><span class="text-green">производителями</span>', $partners_title);
                     ?>
@@ -373,27 +371,27 @@ $img_dir = get_template_directory_uri() . '/assets/img';
 
     <!-- FAQ -->
     <?php
-    $faq_title = get_field('faq_title') ?: 'Часто задаваемые вопросы';
+    $faq_title = trimed_get_field_value('faq_title', 'Часто задаваемые вопросы');
     $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
 
     trimed_render_faq_section(array(
         'section_class' => 'faq-section',
         'title'         => $faq_title,
-        'description'   => get_field('faq_description') ?: 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля',
+        'description'   => trimed_get_field_value('faq_description', 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля'),
         'items'         => get_field('faq_items') ?: trimed_get_default_faq_items('disinfection'),
     ));
     ?>
 
     <!-- Application -->
     <?php
-    $application_title = get_field('application_title') ?: 'Подберём решение для вашего учреждения';
+    $application_title = trimed_get_field_value('application_title', 'Подберём решение для вашего учреждения');
     if (trim(wp_strip_all_tags($application_title)) === 'Подберём решение для вашего учреждения') {
         $application_title = 'Подберём решение<br><em>для вашего учреждения</em>';
     } else {
         $application_title = str_replace('решение ', 'решение<br>', $application_title);
     }
 
-    $application_button_text = get_field('application_button_text') ?: 'Получить консультацию';
+    $application_button_text = trimed_get_field_value('application_button_text', 'Получить консультацию');
     if (trim($application_button_text) === 'Отправить') {
         $application_button_text = 'Получить консультацию';
     }
@@ -402,7 +400,7 @@ $img_dir = get_template_directory_uri() . '/assets/img';
         'section_class' => 'home-request disinfection-request',
         'section_id'    => 'application',
         'title'         => $application_title,
-        'description'   => get_field('application_desc') ?: 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.',
+        'description'   => trimed_get_field_value('application_desc', 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'),
         'form_args'     => array(
             'button_text'  => $application_button_text,
         ),

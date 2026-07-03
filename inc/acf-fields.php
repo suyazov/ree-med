@@ -23,14 +23,14 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Телефон',
                 'name' => 'trimed_contact_phone',
                 'type' => 'text',
-                'default_value' => '+7 (3022) 31 88 88',
+                'default_value' => trimed_get_default_contacts()['phone'],
             ),
             array(
                 'key' => 'field_trimed_contact_email',
                 'label' => 'Email для заявок',
                 'name' => 'trimed_contact_email',
                 'type' => 'text',
-                'default_value' => 'treemed16@yandex.ru',
+                'default_value' => trimed_get_default_contacts()['email'],
                 'instructions' => 'Используется как получатель заявок с форм. Также можно переопределить через константу TRIMED_FORM_EMAIL в wp-config.php.',
             ),
             array(
@@ -38,7 +38,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Адрес',
                 'name' => 'trimed_contact_address',
                 'type' => 'text',
-                'default_value' => 'Чита, ул.Фёдора Гладкова, 8А пом. 8',
+                'default_value' => trimed_get_default_contacts()['address'],
             ),
             array(
                 'key' => 'field_trimed_contact_socials',

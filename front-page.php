@@ -232,7 +232,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                         <span class="direction-overlay"></span>
                         <span class="direction-title"><?php echo esc_html($dir['title']); ?></span>
                         <span class="direction-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <?php echo trimed_get_arrow_svg(); ?>
                         </span>
                     </a>
                 <?php endforeach; ?>
@@ -275,7 +275,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                         <span class="task-num"><?php echo esc_html($task['num']); ?></span>
                         <span class="task-title"><?php echo esc_html($task['title']); ?></span>
                         <span class="task-arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <?php echo trimed_get_arrow_svg(); ?>
                         </span>
                     </a>
                 <?php endforeach; ?>

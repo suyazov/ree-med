@@ -146,6 +146,14 @@ function trimed_favicon() {
 }
 add_action('wp_head', 'trimed_favicon', 1);
 
+function trimed_get_default_contacts() {
+    return array(
+        'phone'   => '+7 (3022) 31 88 88',
+        'email'   => 'treemed16@yandex.ru',
+        'address' => 'Чита, ул.Фёдора Гладкова, 8А пом. 8',
+    );
+}
+
 function trimed_get_contact($key, $fallback = '') {
     if (function_exists('get_field')) {
         $value = get_field('trimed_contact_' . $key, 'option');
@@ -153,11 +161,7 @@ function trimed_get_contact($key, $fallback = '') {
             return $value;
         }
     }
-    $fallbacks = array(
-        'phone'   => '+7 (3022) 31 88 88',
-        'email'   => 'treemed16@yandex.ru',
-        'address' => 'Чита, ул.Фёдора Гладкова, 8А пом. 8',
-    );
+    $fallbacks = trimed_get_default_contacts();
     return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
 }
 
@@ -173,6 +177,18 @@ function trimed_asset_version($relative_path) {
 
 function trimed_img_url($relative_path = '') {
     return get_template_directory_uri() . '/assets/img' . ($relative_path ? '/' . ltrim($relative_path, '/') : '');
+}
+
+function trimed_get_image_dir($subdir = '') {
+    $uri = get_template_directory_uri() . '/assets/img';
+    if ($subdir !== '') {
+        $uri .= '/' . ltrim($subdir, '/');
+    }
+    return $uri;
+}
+
+function trimed_get_placeholder_url() {
+    return trimed_get_image_dir() . '/placeholder.jpg';
 }
 
 function trimed_get_field_value($field, $fallback = '') {
@@ -869,6 +885,16 @@ function trimed_render_plus_svg($class = '', $size = 40, $stroke = '#fff', $stro
 
 function trimed_get_clover_svg($class = '', $size = 20) {
     return '<svg class="' . esc_attr($class) . '" width="' . esc_attr($size) . '" height="' . esc_attr($size) . '" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.8026 6.80286C14.8114 6.80286 13.1967 5.18812 13.1967 3.19681C13.1967 1.4317 11.7657 0 10 0C8.23429 0 6.80264 1.4317 6.80264 3.19681C6.80264 5.18812 5.1886 6.80286 3.19736 6.80286C1.43165 6.80286 0 8.23391 0 10.0003C0 11.7661 1.43165 13.1971 3.19736 13.1971C5.1886 13.1971 6.80264 14.8112 6.80264 16.8025C6.80264 18.569 8.23429 20 10 20C11.7657 20 13.1967 18.569 13.1967 16.8025C13.1967 14.8112 14.8114 13.1971 16.8026 13.1971C18.5683 13.1971 20 11.7661 20 10.0003C20 8.23391 18.5683 6.80286 16.8026 6.80286Z" fill="currentColor"/></svg>';
+}
+
+function trimed_get_arrow_svg($class = '', $size = 24, $stroke_width = 2) {
+    $class_attr = $class !== '' ? ' class="' . esc_attr($class) . '"' : '';
+    if ((int) $size === 18) {
+        $path = 'M3 15L15 3M15 3H6M15 3V12';
+    } else {
+        $path = 'M7 17L17 7M17 7H9M17 7V15';
+    }
+    return '<svg' . $class_attr . ' width="' . esc_attr($size) . '" height="' . esc_attr($size) . '" viewBox="0 0 ' . esc_attr($size) . ' ' . esc_attr($size) . '" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="' . $path . '" stroke="currentColor" stroke-width="' . esc_attr($stroke_width) . '" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 }
 
 function trimed_enqueue_assets() {

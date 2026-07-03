@@ -4,8 +4,8 @@ Template Name: Стоматология
 */
 get_header();
 
-$img_dir = get_template_directory_uri() . '/assets/img';
-$placeholder = $img_dir . '/placeholder.jpg';
+$img_dir = trimed_get_image_dir();
+$placeholder = trimed_get_placeholder_url();
 
 $hero_title = get_field('stom_hero_title') ?: 'Оснащение<br><span class="text-green">стоматологии под ключ</span><br>в Забайкальском крае';
 $hero_desc  = get_field('stom_hero_desc') ?: 'Подберём оборудование, поставим и поможем запустить кабинет без лишних затрат и ошибок';
