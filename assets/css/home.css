@@ -1124,7 +1124,7 @@ body.home .site-header {
 
 /* Tasks */
 .home-tasks {
-    background: var(--color-white-2);
+    background: #EFEFEF;
 }
 
 .tasks-grid {
@@ -2690,55 +2690,144 @@ body.home .site-footer .map-pulse {
         width: 168px;
     }
 
-    /* Tasks */
+    /* Tasks / Что входит */
+    .front-page .home-tasks {
+        padding: 80px 0;
+    }
+
+    .home-tasks .container {
+        min-height: 772px;
+        padding: 72px;
+        background: #F9F9F9;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+    .home-tasks .section-title {
+        width: 828px;
+        margin: 0 0 103px;
+        font-size: 48px;
+        line-height: 1.1;
+        font-weight: 600;
+        letter-spacing: -1.44px;
+        color: #353535;
+    }
+
+    .home-tasks .section-title .text-green {
+        color: #367643;
+    }
+
     .tasks-grid {
-        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 382px);
         grid-template-rows: repeat(2, 220px);
+        gap: 28px 27px;
+        width: 1200px;
     }
 
     .task-card {
-        padding: 20px;
+        position: relative;
+        width: 382px;
+        height: 220px;
+        min-height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 0;
+        text-decoration: none;
     }
 
-    .task-card:nth-child(2),
-    .task-card:nth-child(4),
-    .task-card:nth-child(6) {
-        background-color: transparent;
-        background-size: 100% 100%;
-        background-position: center;
+    .task-card:nth-child(odd) {
+        color: #EFEFEF;
         background-repeat: no-repeat;
-        color: var(--color-black);
     }
 
-    .task-card:nth-child(2) {
-        background-image: url('../img/main/figma-task-desktop-02.png') !important;
+    .task-card:nth-child(1) {
+        background-size: 218.38% 379.2%;
+        background-position: -22px -138px;
     }
 
-    .task-card:nth-child(4) {
-        background-image: url('../img/main/figma-task-desktop-04.png') !important;
+    .task-card:nth-child(1) .task-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+        z-index: 1;
     }
 
-    .task-card:nth-child(6) {
-        background-image: url('../img/main/figma-task-desktop-06.png') !important;
+    .task-card:nth-child(3) {
+        background-size: 168.74% 195.02%;
+        background-position: -263px -78px;
     }
 
-    .task-card:nth-child(2) .task-overlay,
-    .task-card:nth-child(4) .task-overlay,
-    .task-card:nth-child(6) .task-overlay,
-    .task-card:nth-child(2) .task-arrow,
-    .task-card:nth-child(4) .task-arrow,
-    .task-card:nth-child(6) .task-arrow,
-    .task-card:nth-child(2) .task-num,
-    .task-card:nth-child(4) .task-num,
-    .task-card:nth-child(6) .task-num,
-    .task-card:nth-child(2) .task-title,
-    .task-card:nth-child(4) .task-title,
-    .task-card:nth-child(6) .task-title {
+    .task-card:nth-child(3) .task-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.38) 100%);
+        z-index: 1;
+    }
+
+    .task-card:nth-child(5) {
+        background-size: 100% 231.52%;
+        background-position: 0 -98px;
+    }
+
+    .task-card:nth-child(5) .task-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+        z-index: 1;
+    }
+
+    .task-card:nth-child(even) {
+        background-color: #EFEFEF;
+        background-repeat: no-repeat;
+        color: #353535;
+    }
+
+    .task-card:nth-child(even) .task-overlay,
+    .task-card:nth-child(even) .task-arrow {
         display: none;
     }
 
+    .task-card:nth-child(2) {
+        background-size: 158px 150px;
+        background-position: 217px 5px;
+    }
+
+    .task-card:nth-child(4) {
+        background-size: 138px 149px;
+        background-position: 226px 9px;
+    }
+
+    .task-card:nth-child(6) {
+        background-size: 199px 116px;
+        background-position: 173px 7px;
+    }
+
+    .task-num {
+        position: absolute;
+        left: 28px;
+        top: 28px;
+        z-index: 2;
+        font-size: 14px;
+        line-height: 1;
+        opacity: 1;
+        margin: 0;
+    }
+
     .task-title {
-        font-size: 24px;
+        position: absolute;
+        left: 28px;
+        top: 166px;
+        z-index: 2;
+        width: calc(100% - 56px);
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .task-arrow {
+        display: none;
     }
 
     /* Projects */
@@ -3494,6 +3583,15 @@ body.home .site-footer .map-pulse {
         max-width: 1344px;
     }
 
+    body.home .home-tasks .container {
+        width: calc(100% - 96px);
+        max-width: 1344px;
+        min-height: 772px;
+        padding: 72px;
+        background: #F9F9F9;
+        border-radius: 20px;
+    }
+
     body.home .home-categories .section-title {
         font-size: 36px;
         line-height: 110%;
@@ -3503,6 +3601,10 @@ body.home .site-footer .map-pulse {
     body.home .tasks-grid,
     body.home .categories-grid {
         gap: 28px;
+    }
+
+    body.home .home-tasks .tasks-grid {
+        gap: 28px 27px;
     }
 
     body.home .home-directions {

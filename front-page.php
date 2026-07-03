@@ -75,7 +75,12 @@ $audience_items = trimed_repeater_field('main_audience_items', array(
 ));
 
 // Tasks
-$tasks_title = get_field('main_tasks_title') ?: 'Не просто поставляем оборудование, а решаем задачи клиники';
+$tasks_title_raw = get_field('main_tasks_title');
+if (empty($tasks_title_raw)) {
+    $tasks_title_html = 'Не просто поставляем оборудование,<br><span class="text-green">а решаем задачи клиники</span>';
+} else {
+    $tasks_title_html = wp_kses_post($tasks_title_raw);
+}
 $tasks = trimed_repeater_field('main_tasks', array(
     array('num' => '01.', 'title' => 'Подбор под бюджет', 'image' => $img_main . '/104-0.png'),
     array('num' => '02.', 'title' => 'Склад в Чите', 'image' => $img_main . '/105-3.png'),
@@ -297,7 +302,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
 
     <section class="home-tasks">
         <div class="container">
-            <h2 class="section-title">Не просто поставляем оборудование,<br><span class="text-green">а решаем задачи клиники</span></h2>
+            <h2 class="section-title"><?php echo $tasks_title_html; ?></h2>
             <?php if (!empty($tasks)) : ?>
             <div class="tasks-grid">
                 <?php foreach ($tasks as $task) :
