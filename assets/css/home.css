@@ -3491,8 +3491,19 @@ body.home .site-footer .map-pulse {
         resize: none;
     }
 
+    .home-request-form .form-field-phone .phone-flag {
+        left: 16px;
+        top: 50%;
+        bottom: auto;
+        width: 20px;
+        height: 13px;
+        transform: translateY(-50%);
+        object-fit: cover;
+    }
+
     .home-request-form .form-field-phone input {
-        padding-left: 52px;
+        height: 53px;
+        padding-left: 44px;
     }
 
     .home-request-form .form-field input::placeholder,
