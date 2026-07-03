@@ -3406,6 +3406,18 @@ body.trimed-service-page .site-footer .map-pulse {
         padding: 20px;
     }
 
+    :where(.request-form) .checkbox {
+        height: auto;
+        min-height: 24px;
+        align-items: flex-start;
+    }
+
+    :where(.request-form) .checkbox span {
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+    }
+
     body.trimed-service-page .site-footer {
         margin-top: 0;
         padding-bottom: 0;
