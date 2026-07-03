@@ -9,160 +9,124 @@ $hero_desc  = get_field('main_hero_desc')  ?: 'Подбираем оборудо
 $hero_image = trimed_image_field('main_hero_image', $img_main . '/главная-1440-4.png');
 $hero_btn1  = get_field('main_hero_btn1') ?: 'Получить консультацию';
 $hero_btn2  = get_field('main_hero_btn2') ?: 'В магазин';
-$hero_checks = get_field('main_hero_checks');
-if (empty($hero_checks)) {
-    $hero_checks = array(
-        array('text' => 'Подбираем решения под задачи и бюджет'),
-        array('text' => 'Собственный склад в Чите'),
-    );
-}
-$hero_badges = get_field('main_hero_badges');
-if (empty($hero_badges)) {
-    $hero_badges = array(
-        array('text' => 'Работаем с частными и государственными клиниками', 'sub' => '', 'light' => true),
-        array('text' => '5000+', 'sub' => 'позиций в наличии', 'light' => false, 'stat' => true),
-    );
-}
+$hero_checks = trimed_repeater_field('main_hero_checks', array(
+    array('text' => 'Подбираем решения под задачи и бюджет'),
+    array('text' => 'Собственный склад в Чите'),
+));
+$hero_badges = trimed_repeater_field('main_hero_badges', array(
+    array('text' => 'Работаем с частными и государственными клиниками', 'sub' => '', 'light' => true),
+    array('text' => '5000+', 'sub' => 'позиций в наличии', 'light' => false, 'stat' => true),
+));
 
 // Stats bar
-$stats = get_field('main_stats');
-if (empty($stats)) {
-    $stats = array(
-        array('text' => 'Подбираем решения под задачи и бюджет'),
-        array('text' => 'Собственный склад в Чите'),
-    );
-}
+$stats = trimed_repeater_field('main_stats', array(
+    array('text' => 'Подбираем решения под задачи и бюджет'),
+    array('text' => 'Собственный склад в Чите'),
+));
 
 // About
 $about_title = get_field('main_about_title') ?: 'ТриМед — поставщик медицинского оборудования и расходных материалов';
 $about_desc  = get_field('main_about_desc')  ?: 'Мы помогаем медицинским учреждениям оснащать кабинеты, отделения и клиники современным оборудованием';
 $about_text  = get_field('main_about_text')  ?: 'Берём на себя подбор решений, поставку, консультации и сопровождение проекта на всех этапах';
 $about_image = trimed_image_field('main_about_image', $img_main . '/3-0.png');
-$about_stats = get_field('main_about_stats');
-if (empty($about_stats)) {
-    $about_stats = array(
-        array('num' => '8+ лет', 'label' => 'на рынке'),
-        array('num' => '5000+', 'label' => 'позиций оборудования'),
-        array('num' => '100+', 'label' => 'медицинских учреждений региона'),
-        array('num' => '15', 'label' => 'специалистов в команде'),
-    );
-}
+$about_stats = trimed_repeater_field('main_about_stats', array(
+    array('num' => '8+ лет', 'label' => 'на рынке'),
+    array('num' => '5000+', 'label' => 'позиций оборудования'),
+    array('num' => '100+', 'label' => 'медицинских учреждений региона'),
+    array('num' => '15', 'label' => 'специалистов в команде'),
+));
 
 // Directions
 $dir_subtitle = get_field('main_directions_subtitle') ?: 'Направления работы';
 $dir_title    = get_field('main_directions_title')    ?: 'Решения для разных направлений медицины';
-$directions   = get_field('main_directions');
-if (empty($directions)) {
-    $directions = array(
-        array('title' => 'Стоматология', 'image' => $img_main . '/76-0.png', 'link' => home_url('/stomatologiya/'), 'large' => false),
-        array('title' => 'Лаборатория',  'image' => $img_main . '/80-0.png', 'link' => home_url('/laboratoriya/'), 'large' => false),
-        array('title' => 'Медицинские центры', 'image' => $img_main . '/78-0.png', 'link' => home_url('/medcentry/'), 'large' => true),
-        array('title' => 'Дезинфекция и стерилизация', 'image' => $img_main . '/asset-10.png', 'link' => home_url('/dezinfektsiya/'), 'large' => false),
-        array('title' => 'Расходные материалы', 'image' => $img_main . '/asset-11.png', 'link' => '#', 'large' => false),
-    );
-}
+$directions   = trimed_repeater_field('main_directions', array(
+    array('title' => 'Стоматология', 'image' => $img_main . '/76-0.png', 'link' => home_url('/stomatologiya/'), 'large' => false),
+    array('title' => 'Лаборатория',  'image' => $img_main . '/80-0.png', 'link' => home_url('/laboratoriya/'), 'large' => false),
+    array('title' => 'Медицинские центры', 'image' => $img_main . '/78-0.png', 'link' => home_url('/medcentry/'), 'large' => true),
+    array('title' => 'Дезинфекция и стерилизация', 'image' => $img_main . '/asset-10.png', 'link' => home_url('/dezinfektsiya/'), 'large' => false),
+    array('title' => 'Расходные материалы', 'image' => $img_main . '/asset-11.png', 'link' => '#', 'large' => false),
+));
 
 // Audience
 $aud_subtitle = get_field('main_audience_subtitle') ?: 'Кому мы помогаем';
 $aud_title    = get_field('main_audience_title')    ?: 'Работаем с медицинскими учреждениями любого масштаба';
-$audience_items = get_field('main_audience_items');
-if (empty($audience_items)) {
-    $audience_items = array(
-        array('icon' => $img_main . '/icons/figma-audience-hospital.png', 'text' => 'Государственные больницы'),
-        array('icon' => $img_main . '/icons/figma-audience-polyclinic.png', 'text' => 'Поликлиники'),
-        array('icon' => $img_main . '/icons/figma-audience-private.png', 'text' => 'Частные клиники'),
-        array('icon' => $img_main . '/icons/figma-audience-dentistry.png', 'text' => 'Стоматологии'),
-        array('icon' => $img_main . '/icons/figma-audience-lab.png', 'text' => 'Лаборатории'),
-        array('icon' => $img_main . '/icons/figma-audience-rehab.png', 'text' => 'Реабилитационные центры'),
-        array('icon' => $img_main . '/icons/figma-audience-sanatorium.png', 'text' => 'Санатории'),
-        array('icon' => $img_main . '/icons/figma-audience-diagnostic.png', 'text' => 'Диагностические центры'),
-    );
-}
+$audience_items = trimed_repeater_field('main_audience_items', array(
+    array('icon' => $img_main . '/icons/figma-audience-hospital.png', 'text' => 'Государственные больницы'),
+    array('icon' => $img_main . '/icons/figma-audience-polyclinic.png', 'text' => 'Поликлиники'),
+    array('icon' => $img_main . '/icons/figma-audience-private.png', 'text' => 'Частные клиники'),
+    array('icon' => $img_main . '/icons/figma-audience-dentistry.png', 'text' => 'Стоматологии'),
+    array('icon' => $img_main . '/icons/figma-audience-lab.png', 'text' => 'Лаборатории'),
+    array('icon' => $img_main . '/icons/figma-audience-rehab.png', 'text' => 'Реабилитационные центры'),
+    array('icon' => $img_main . '/icons/figma-audience-sanatorium.png', 'text' => 'Санатории'),
+    array('icon' => $img_main . '/icons/figma-audience-diagnostic.png', 'text' => 'Диагностические центры'),
+));
 
 // Tasks
 $tasks_title = get_field('main_tasks_title') ?: 'Не просто поставляем оборудование, а решаем задачи клиники';
-$tasks = get_field('main_tasks');
-if (empty($tasks)) {
-    $tasks = array(
-        array('num' => '01.', 'title' => 'Подбор под бюджет', 'image' => $img_main . '/104-0.png'),
-        array('num' => '02.', 'title' => 'Склад в Чите', 'image' => $img_main . '/105-3.png'),
-        array('num' => '03.', 'title' => 'Поставка под заказ', 'image' => $img_main . '/106-0.png'),
-        array('num' => '04.', 'title' => 'Помощь в комплектации', 'image' => $img_main . '/asset-11.png'),
-        array('num' => '05.', 'title' => 'Консультации специалистов', 'image' => $img_main . '/105-0.png'),
-        array('num' => '06.', 'title' => 'Сервисное сопровождение', 'image' => $img_main . '/105-3.png'),
-    );
-}
+$tasks = trimed_repeater_field('main_tasks', array(
+    array('num' => '01.', 'title' => 'Подбор под бюджет', 'image' => $img_main . '/104-0.png'),
+    array('num' => '02.', 'title' => 'Склад в Чите', 'image' => $img_main . '/105-3.png'),
+    array('num' => '03.', 'title' => 'Поставка под заказ', 'image' => $img_main . '/106-0.png'),
+    array('num' => '04.', 'title' => 'Помощь в комплектации', 'image' => $img_main . '/asset-11.png'),
+    array('num' => '05.', 'title' => 'Консультации специалистов', 'image' => $img_main . '/105-0.png'),
+    array('num' => '06.', 'title' => 'Сервисное сопровождение', 'image' => $img_main . '/105-3.png'),
+));
 
 // Projects
 $projects_title = get_field('main_projects_title') ?: '<span class="text-green">Реализованные</span> проекты';
 $projects_btn   = get_field('main_projects_btn')   ?: 'Смотреть все проекты';
-$projects = get_field('main_projects');
-if (empty($projects)) {
-    $projects = array(
-        array('cat' => '01. Оснащение стоматологического кабинета', 'title' => 'Стоматология «Дента-Профи» (г. Чита)', 'desc' => 'Оснащение двух кабинетов под ключ: стоматологические установки, компрессорная, стерилизационная.', 'image' => $img_main . '/67-0.png'),
-        array('cat' => '02. Оснащение лаборатории', 'title' => 'Медицинский центр «Здоровье» (г. Чита)', 'desc' => 'Поставка и монтаж рентген-кабинета с радиационной защитой, пуско-наладка.', 'image' => $img_main . '/67-0.png'),
-        array('cat' => '03. Поставка оборудования для медицинского центра', 'title' => 'Медицинский центр «Здоровье» (г. Чита)', 'desc' => 'Поставка и монтаж рентген-кабинета с радиационной защитой, пуско-наладка.', 'image' => $img_main . '/67-0.png'),
-        array('cat' => '04. Оснащение стоматологического кабинета', 'title' => 'Центр «Здоровье Забайкалья» (пгт. Агинское)', 'desc' => 'Оснащение процедурного кабинета и перевязочной. Обеспечена непрерывная стерилизация инструментов и обеззараживание воздуха.', 'image' => $img_main . '/67-0.png'),
-    );
-}
+$projects = trimed_repeater_field('main_projects', array(
+    array('cat' => '01. Оснащение стоматологического кабинета', 'title' => 'Стоматология «Дента-Профи» (г. Чита)', 'desc' => 'Оснащение двух кабинетов под ключ: стоматологические установки, компрессорная, стерилизационная.', 'image' => $img_main . '/67-0.png'),
+    array('cat' => '02. Оснащение лаборатории', 'title' => 'Медицинский центр «Здоровье» (г. Чита)', 'desc' => 'Поставка и монтаж рентген-кабинета с радиационной защитой, пуско-наладка.', 'image' => $img_main . '/67-0.png'),
+    array('cat' => '03. Поставка оборудования для медицинского центра', 'title' => 'Медицинский центр «Здоровье» (г. Чита)', 'desc' => 'Поставка и монтаж рентген-кабинета с радиационной защитой, пуско-наладка.', 'image' => $img_main . '/67-0.png'),
+    array('cat' => '04. Оснащение стоматологического кабинета', 'title' => 'Центр «Здоровье Забайкалья» (пгт. Агинское)', 'desc' => 'Оснащение процедурного кабинета и перевязочной. Обеспечена непрерывная стерилизация инструментов и обеззараживание воздуха.', 'image' => $img_main . '/67-0.png'),
+));
 
 // Categories
 $cat_title = get_field('main_categories_title') ?: 'Основные категории <span class="text-green">оборудования</span>';
-$categories = get_field('main_categories');
-if (empty($categories)) {
-    $categories = array(
-        array('num' => '1', 'title' => 'Диагностика', 'image' => $img_main . '/cat-diagnostic.png', 'link' => '#'),
-        array('num' => '2', 'title' => 'Стоматология', 'image' => $img_main . '/cat-stomatology.png', 'link' => home_url('/stomatologiya/')),
-        array('num' => '3', 'title' => 'Лаборатория', 'image' => $img_main . '/cat-laboratory.png', 'link' => home_url('/laboratoriya/')),
-        array('num' => '4', 'title' => 'Хирургия', 'image' => $img_main . '/68-0.png', 'link' => '#'),
-        array('num' => '5', 'title' => 'Реабилитация', 'image' => $img_main . '/69-0.png', 'link' => '#'),
-        array('num' => '6', 'title' => 'Расходные материалы', 'image' => $img_main . '/cat-consumables.png', 'link' => '#'),
-        array('num' => '7', 'title' => 'Дезинфекция', 'image' => $img_main . '/82-0.png', 'link' => home_url('/dezinfektsiya/')),
-    );
-}
+$categories = trimed_repeater_field('main_categories', array(
+    array('num' => '1', 'title' => 'Диагностика', 'image' => $img_main . '/cat-diagnostic.png', 'link' => '#'),
+    array('num' => '2', 'title' => 'Стоматология', 'image' => $img_main . '/cat-stomatology.png', 'link' => home_url('/stomatologiya/')),
+    array('num' => '3', 'title' => 'Лаборатория', 'image' => $img_main . '/cat-laboratory.png', 'link' => home_url('/laboratoriya/')),
+    array('num' => '4', 'title' => 'Хирургия', 'image' => $img_main . '/68-0.png', 'link' => '#'),
+    array('num' => '5', 'title' => 'Реабилитация', 'image' => $img_main . '/69-0.png', 'link' => '#'),
+    array('num' => '6', 'title' => 'Расходные материалы', 'image' => $img_main . '/cat-consumables.png', 'link' => '#'),
+    array('num' => '7', 'title' => 'Дезинфекция', 'image' => $img_main . '/82-0.png', 'link' => home_url('/dezinfektsiya/')),
+));
 
 // Steps
 $steps_subtitle = get_field('main_steps_subtitle') ?: 'Этапы работы';
 $steps_title    = get_field('main_steps_title')    ?: 'От запроса <span class="text-green">до поставки</span>';
 $steps_image    = trimed_image_field('main_steps_image', $img_main . '/103-0.png');
-$steps = get_field('main_steps');
-if (empty($steps)) {
-    $steps = array(
-        array('num' => '1', 'title' => 'Получаем задачу'),
-        array('num' => '2', 'title' => 'Подбираем решение'),
-        array('num' => '3', 'title' => 'Согласовываем спецификацию'),
-        array('num' => '4', 'title' => 'Поставляем оборудование'),
-        array('num' => '5', 'title' => 'Сопровождаем после поставки'),
-    );
-}
+$steps = trimed_repeater_field('main_steps', array(
+    array('num' => '1', 'title' => 'Получаем задачу'),
+    array('num' => '2', 'title' => 'Подбираем решение'),
+    array('num' => '3', 'title' => 'Согласовываем спецификацию'),
+    array('num' => '4', 'title' => 'Поставляем оборудование'),
+    array('num' => '5', 'title' => 'Сопровождаем после поставки'),
+));
 
 // Partners
 $partners_title = get_field('main_partners_title') ?: 'Работаем с ведущими производителями медицинского оборудования';
     $partners_title_line1 = 'Работаем с ведущими';
     $partners_title_line2 = preg_replace('/^Работаем с ведущими\s*/u', '', $partners_title);
-$partners = get_field('main_partners');
-if (empty($partners)) {
-    $partners = array(
-        array('name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.', 'logo' => $img_main . '/662-0.png'),
-        array('name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.', 'logo' => $img_main . '/662-0.png'),
-        array('name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.', 'logo' => $img_main . '/662-0.png'),
-    );
-}
+$partners = trimed_repeater_field('main_partners', array(
+    array('name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.', 'logo' => $img_main . '/662-0.png'),
+    array('name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.', 'logo' => $img_main . '/662-0.png'),
+    array('name' => 'ДеЗиЛаб', 'desc' => 'Российский производитель дезинфицирующих средств широкого спектра. Вся продукция зарегистрирована, эффективна против вирусов, бактерий, грибов.', 'logo' => $img_main . '/662-0.png'),
+));
 
 // Testimonials
 $test_subtitle = get_field('main_testimonials_subtitle') ?: 'Что о нас говорят клиенты';
 $test_title    = get_field('main_testimonials_title')    ?: 'Отзывы руководителей клиник и врачей';
     $test_title_first = 'Отзывы руководителей';
     $test_title_rest  = preg_replace('/^Отзывы руководителей\s*/u', '', $test_title);
-$testimonials = get_field('main_testimonials');
-if (empty($testimonials)) {
-    $testimonials = array(
-        array('name' => 'Киселёва Елена Валерьевна', 'position' => 'Главный врач ООО «Медицинский центр „Здоровье“» (г. Чита)', 'text' => 'Оснащали процедурный кабинет и перевязочную под ключ. Специалисты подобрали всё необходимое: от дезсредств до рециркуляторов и автоклава. Всё пришло точно в срок, без задержек. Особенно порадовала консультационная поддержка — помогли разобраться с нормативной документацией. Рекомендуем как надёжного поставщика', 'color' => '#315046'),
-        array('name' => 'Андреева Марина Сергеевна', 'position' => 'Заведующая лабораторией ООО «Диагностика+» (г. Чита)', 'text' => 'Для лаборатории важно было получить не просто товар, а комплексное решение с учётом объёма исследований и бюджета. Нам подобрали дезсредства для поверхностей и оборудования, контейнеры для стерилизации, упаковочные материалы. Всё с документами, сертификатами. Работаем уже полгода — нареканий нет. Спасибо команде!', 'color' => '#367643'),
-        array('name' => 'Гаврилов Сергей Николаевич', 'position' => 'Директор санатория «Забайкалье» (Забайкальский край)', 'text' => 'В двух корпусах санатория требовалось организовать систему инфекционного контроля. Поставили рециркуляторы воздуха, дозаторы с антисептиками, дезсредства для помещений. Всё качественное, сертифицированное, с зелёной маркировкой — удобно для контроля использования. Персонал обучен, проблем нет. Сотрудничество оставило только положительные впечатления', 'color' => '#3F8D50'),
-        array('name' => 'Петров Дмитрий Владимирович', 'position' => 'Руководитель стоматологической клиники «Дента-Профи» (г. Чита)', 'text' => 'Открывали новую стоматологию с нуля. Обратились за полным оснащением двух кабинетов и стерилизационной. Получили чёткий расчёт, быструю поставку и монтаж. Инструменты, расходники, оборудование — всё в наличии было на складе в Чите, что сильно ускорило процесс. Клиника запущена в срок, проверки пройдены. Будем обращаться ещё.', 'color' => '#51A462'),
-    );
-}
+$testimonials = trimed_repeater_field('main_testimonials', array(
+    array('name' => 'Киселёва Елена Валерьевна', 'position' => 'Главный врач ООО «Медицинский центр „Здоровье“» (г. Чита)', 'text' => 'Оснащали процедурный кабинет и перевязочную под ключ. Специалисты подобрали всё необходимое: от дезсредств до рециркуляторов и автоклава. Всё пришло точно в срок, без задержек. Особенно порадовала консультационная поддержка — помогли разобраться с нормативной документацией. Рекомендуем как надёжного поставщика', 'color' => '#315046'),
+    array('name' => 'Андреева Марина Сергеевна', 'position' => 'Заведующая лабораторией ООО «Диагностика+» (г. Чита)', 'text' => 'Для лаборатории важно было получить не просто товар, а комплексное решение с учётом объёма исследований и бюджета. Нам подобрали дезсредства для поверхностей и оборудования, контейнеры для стерилизации, упаковочные материалы. Всё с документами, сертификатами. Работаем уже полгода — нареканий нет. Спасибо команде!', 'color' => '#367643'),
+    array('name' => 'Гаврилов Сергей Николаевич', 'position' => 'Директор санатория «Забайкалье» (Забайкальский край)', 'text' => 'В двух корпусах санатория требовалось организовать систему инфекционного контроля. Поставили рециркуляторы воздуха, дозаторы с антисептиками, дезсредства для помещений. Всё качественное, сертифицированное, с зелёной маркировкой — удобно для контроля использования. Персонал обучен, проблем нет. Сотрудничество оставило только положительные впечатления', 'color' => '#3F8D50'),
+    array('name' => 'Петров Дмитрий Владимирович', 'position' => 'Руководитель стоматологической клиники «Дента-Профи» (г. Чита)', 'text' => 'Открывали новую стоматологию с нуля. Обратились за полным оснащением двух кабинетов и стерилизационной. Получили чёткий расчёт, быструю поставку и монтаж. Инструменты, расходники, оборудование — всё в наличии было на складе в Чите, что сильно ускорило процесс. Клиника запущена в срок, проверки пройдены. Будем обращаться ещё.', 'color' => '#51A462'),
+));
 
 // Form
 $form_title = get_field('main_form_title') ?: 'Подберём оборудование<br><em>под задачи вашей клиники</em>';
