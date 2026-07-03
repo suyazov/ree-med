@@ -3548,6 +3548,10 @@ body.home .site-footer .map-pulse {
     body.home .direction-card:nth-child(2) {
         grid-column: 2;
         grid-row: 1;
+        /* Figma nodes 3116:193-194: lab card image crop (h 191%, top -50.76%, width 100%) */
+        background-size: 100% 191%;
+        background-position: center 55.78%;
+        background-repeat: no-repeat;
     }
 
     body.home .direction-card:nth-child(4) {
@@ -3599,6 +3603,14 @@ body.home .site-footer .map-pulse {
 
     body.home .direction-card:nth-child(1) .direction-arrow {
         /* Figma node 3116:189: 33.941×33.941 container at x328 y149 inside 382×200 card */
+        right: 20.059px;
+        bottom: 17.059px;
+        width: 33.941px;
+        height: 33.941px;
+    }
+
+    body.home .direction-card:nth-child(2) .direction-arrow {
+        /* Figma node 3116:196: 33.941×33.941 container at x328 y149 inside 382×200 card */
         right: 20.059px;
         bottom: 17.059px;
         width: 33.941px;
