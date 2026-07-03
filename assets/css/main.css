@@ -3474,3 +3474,20 @@ h1, h2, h3, h4, h5, h6, p {
         animation-delay: 1.2s;
     }
 }
+
+
+@media (max-width: 768px) {
+    .footer-card {
+        width: calc(100vw - 32px);
+        max-width: 318px;
+        box-sizing: border-box;
+    }
+    .footer-callback {
+        width: 100%;
+        max-width: 100%;
+    }
+    .footer-bottom {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
