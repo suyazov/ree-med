@@ -66,14 +66,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .service-container,
-:where(.mc-container, .stom-container) {
-    width: 100%;
-    max-width: 1344px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-:where(.lab-container) {
+:where(.mc-container, .stom-container, .lab-container) {
     width: 100%;
     max-width: 1344px;
     margin: 0 auto;
@@ -81,14 +74,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .service-section-inner,
-:where(.mc-section-inner, .stom-section-inner) {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-:where(.lab-section-inner) {
+:where(.mc-section-inner, .stom-section-inner, .lab-section-inner) {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
