@@ -2267,7 +2267,19 @@ body.home .site-footer .map-pulse {
 
     .about-stat:nth-child(2) .about-stat-num {
         font-size: 40px;
-        top: 128px;
+        line-height: 1.1;
+        color: #EFEFEF;
+        left: 28px;
+        top: 123px;
+    }
+
+    .about-stat:nth-child(2) .about-stat-label {
+        left: 28px;
+        top: 171px;
+        color: #EFEFEF;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.1;
     }
 
     .about-stat-label {
@@ -2309,6 +2321,7 @@ body.home .site-footer .map-pulse {
 
     .about-stat:nth-child(2) {
         background: url('../img/main/3-0.png') center / cover no-repeat;
+        color: #EFEFEF;
     }
 
     .about-stat:nth-child(2)::before {
@@ -2319,7 +2332,17 @@ body.home .site-footer .map-pulse {
         z-index: 1;
     }
 
-    .about-stat:nth-child(2)::after,
+    .about-stat:nth-child(2)::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        width: 20px;
+        height: 20px;
+        background: url('../img/main/hero-badge-plus.svg') center / contain no-repeat;
+        z-index: 2;
+    }
+
     .about-stat:nth-child(3)::after {
         content: "";
         position: absolute;
