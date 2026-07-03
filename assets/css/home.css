@@ -542,11 +542,12 @@ body.home .site-header {
     }
 
     .home-tasks .container {
-        width: 343px;
-        max-width: 343px;
-        padding: 36px 24px 37px;
+        width: 100%;
+        max-width: calc(100vw - 32px);
+        padding: 40px 24px 47px;
         background: #F9F9F9;
-        border-radius: 16px;
+        border-radius: 20px;
+        box-sizing: border-box;
     }
 
     .front-page .home-tasks {
@@ -555,60 +556,39 @@ body.home .site-header {
     }
 
     .home-tasks .section-title {
-        width: 295px;
+        width: 100%;
+        max-width: 295px;
         margin: 0 0 28px;
+        font-family: 'Exo 2', sans-serif;
         font-size: 24px;
-        line-height: 26.4px;
+        font-weight: 600;
+        line-height: 1.1;
         letter-spacing: -0.03em;
+        color: #353535;
+    }
+
+    .home-tasks .section-title .text-green {
+        color: #367643;
     }
 
     .home-tasks .tasks-grid {
-        width: 295px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 295px;
         gap: 20px;
     }
 
     .home-tasks .task-card {
-        width: 295px;
-        min-height: 180px;
-        height: 180px;
-        padding: 24px;
-    }
-
-    .task-card:nth-child(1),
-    .task-card:nth-child(2),
-    .task-card:nth-child(3),
-    .task-card:nth-child(4),
-    .task-card:nth-child(5),
-    .task-card:nth-child(6) {
-        background-color: transparent;
-        background-size: 100% 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: var(--color-black);
-    }
-
-    .task-card:nth-child(1) {
-        background-image: url('../img/main/figma-task-mobile-01.png') !important;
-    }
-
-    .task-card:nth-child(2) {
-        background-image: url('../img/main/figma-task-mobile-02.png') !important;
-    }
-
-    .task-card:nth-child(3) {
-        background-image: url('../img/main/figma-task-mobile-03.png') !important;
-    }
-
-    .task-card:nth-child(4) {
-        background-image: url('../img/main/figma-task-mobile-04.png') !important;
-    }
-
-    .task-card:nth-child(5) {
-        background-image: url('../img/main/figma-task-mobile-05.png') !important;
-    }
-
-    .task-card:nth-child(6) {
-        background-image: url('../img/main/figma-task-mobile-06.png') !important;
+        position: relative;
+        width: 100%;
+        max-width: 295px;
+        min-height: 200px;
+        height: 200px;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .task-card .task-overlay,
@@ -618,10 +598,70 @@ body.home .site-header {
 
     .task-card .task-num,
     .task-card .task-title {
-        position: relative;
+        position: absolute;
         z-index: 2;
-        color: #EFEFEF;
         font-family: 'Exo 2', sans-serif;
+        margin: 0;
+    }
+
+    .task-card .task-num {
+        top: 24px;
+        left: 24px;
+        font-size: 12px;
+        line-height: 130%;
+        font-weight: 600;
+        opacity: 0.85;
+    }
+
+    .task-card .task-title {
+        left: 24px;
+        bottom: 24px;
+        width: calc(100% - 48px);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+
+    /* Photo cards (odd) */
+    .task-card:nth-child(odd) {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #EFEFEF;
+    }
+
+    .task-card:nth-child(odd) .task-overlay {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        z-index: 1;
+    }
+
+    /* Illustration cards (even) */
+    .task-card:nth-child(even) {
+        background-color: #EFEFEF;
+        background-repeat: no-repeat;
+        color: #353535;
+    }
+
+    .task-card:nth-child(even) .task-overlay {
+        display: none;
+    }
+
+    .task-card:nth-child(2) {
+        background-size: 158px 150px;
+        background-position: right 16px top 8px;
+    }
+
+    .task-card:nth-child(4) {
+        background-size: 138px 149px;
+        background-position: right 16px top 8px;
+    }
+
+    .task-card:nth-child(6) {
+        background-size: 199px 116px;
+        background-position: right 16px top 8px;
     }
 }
 
@@ -4385,9 +4425,6 @@ body.home .site-header {
     .home-directions .directions-grid,
     .direction-card,
     .direction-card.large,
-    .home-tasks .section-title,
-    .home-tasks .tasks-grid,
-    .home-tasks .task-card,
     .home-categories .section-title,
     .home-categories .categories-grid,
     .category-card,
@@ -4415,11 +4452,6 @@ body.home .site-header {
 
     .testimonial-card {
         flex: 0 0 auto;
-    }
-
-    .audience-list li {
-        white-space: normal;
-        min-width: 0;
     }
 
     .category-card::before {
