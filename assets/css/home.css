@@ -2678,6 +2678,18 @@ body.home .site-footer .map-pulse {
         height: 34px;
     }
 
+    .audience-list li:nth-child(1) span {
+        width: 167px;
+    }
+
+    .audience-list li:nth-child(6) span {
+        width: 191px;
+    }
+
+    .audience-list li:nth-child(8) span {
+        width: 168px;
+    }
+
     /* Tasks */
     .tasks-grid {
         grid-template-columns: repeat(3, 1fr);
