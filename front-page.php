@@ -213,12 +213,23 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         </div>
     </section>
 
+    <?php
+    // Prepare directions title markup: keep default green highlight, otherwise preserve admin text.
+    $default_dir_title = 'Решения для разных направлений медицины';
+    if ( $dir_title === $default_dir_title || strpos($dir_title, $default_dir_title) !== false ) {
+        $dir_title_formatted        = 'Решения для разных<br><span class="text-green">направлений медицины</span>';
+        $dir_title_formatted_mobile = 'Решения для разных <span class="text-green">направлений медицины</span>';
+    } else {
+        $dir_title_formatted        = wp_kses_post($dir_title);
+        $dir_title_formatted_mobile = wp_kses_post($dir_title);
+    }
+    ?>
     <section class="home-directions">
         <div class="container">
             <div class="section-header home-directions-header">
                 <h2 class="section-title">
-                    <span class="directions-copy-desktop">Решения для разных<br><span class="text-green">направлений медицины</span></span>
-                    <span class="directions-copy-mobile">Решения для разных <span class="text-green">направлений медицины</span></span>
+                    <span class="directions-copy-desktop"><?php echo $dir_title_formatted; ?></span>
+                    <span class="directions-copy-mobile"><?php echo $dir_title_formatted_mobile; ?></span>
                 </h2>
                 <span class="section-label"><span class="directions-copy-desktop"><?php echo esc_html($dir_subtitle); ?></span><span class="directions-copy-mobile"><?php echo esc_html($dir_subtitle); ?></span></span>
             </div>
