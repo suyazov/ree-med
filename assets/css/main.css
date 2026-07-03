@@ -2619,9 +2619,6 @@ h1, h2, h3, h4, h5, h6, p {
     .hero-title-line {
         display: block;
     }
-    .hero-image-wrap {
-        position: relative;
-    }
     .hero-image-wrap::after {
         content: '';
         position: absolute;
@@ -3144,9 +3141,6 @@ h1, h2, h3, h4, h5, h6, p {
     .faq-icon {
         width: 10px;
         height: 6px;
-    }
-    .faq-item.active .faq-icon {
-        transform: rotate(180deg);
     }
     .faq-item p {
         font-size: 14px;

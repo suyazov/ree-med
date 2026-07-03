@@ -1298,12 +1298,6 @@ body.disinfection-page .task-item img {
         right: 17px;
     }
 
-    /* Why section: uniform card heights and stat text visibility */
-    .disinfection-page .why-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-
     .disinfection-page .why-image-card {
         grid-column: 1 / -1;
         min-height: 220px;
