@@ -2343,11 +2343,15 @@ body.home .site-footer .map-pulse {
         z-index: 2;
     }
 
+    .about-stat:nth-child(3) {
+        background: linear-gradient(32.076deg, #3F8D50 18.162%, #51A462 79.556%);
+    }
+
     .about-stat:nth-child(3)::after {
         content: "";
         position: absolute;
-        right: 22px;
-        top: 21px;
+        right: 20px;
+        top: 20px;
         width: 20px;
         height: 20px;
         background: url('../img/main/hero-badge-plus.svg') center / contain no-repeat;
@@ -2355,12 +2359,22 @@ body.home .site-footer .map-pulse {
     }
 
     .about-stat:nth-child(3) .about-stat-num {
+        left: 32px;
         top: 88px;
+        font-size: 48px;
+        line-height: 1.1;
+        font-weight: 600;
+        color: #EFEFEF;
     }
 
     .about-stat:nth-child(3) .about-stat-label {
+        left: 32px;
         top: 149px;
         max-width: 259px;
+        font-size: 24px;
+        line-height: 1.1;
+        font-weight: 400;
+        color: #EFEFEF;
     }
 
     .about-stat:nth-child(4)::after {
