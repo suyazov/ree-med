@@ -71,39 +71,24 @@
     margin-bottom: 12px;
 }
 
-.disinfection-page .form-field {
-    display: block;
-}
-
 .disinfection-page .form-field-label {
     display: none;
 }
 
 .disinfection-page .home-request-form .form-field input,
 .disinfection-page .home-request-form .form-field textarea {
-    width: 100%;
     height: 52px;
     border: 0;
-    border-radius: 8px;
     padding: 0 16px;
     background: #E6E7E8;
-    box-sizing: border-box;
-    font-family: var(--font-main);
     font-size: 12px;
     line-height: 12px;
-    color: var(--color-black);
-    outline: none;
 }
 
 .disinfection-page .home-request-form .form-field textarea {
-    min-height: 52px;
     padding-top: 17px;
     padding-bottom: 12px;
     resize: none;
-}
-
-.disinfection-page .form-field-phone {
-    position: relative;
 }
 
 .disinfection-page .form-field-phone .phone-flag {
