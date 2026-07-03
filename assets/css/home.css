@@ -3605,6 +3605,21 @@ body.home .site-footer .map-pulse {
         box-sizing: border-box;
     }
 
+    body.home .home-request .container,
+    body.home .home-request .request-grid {
+        width: 1200px;
+        max-width: 1200px;
+    }
+
+    body.home .home-request .request-grid {
+        height: 478px;
+        min-height: 478px;
+        padding: 30px;
+        border-radius: 20px;
+        background: linear-gradient(22.609deg, #3F8D50 18.162%, #51A462 79.556%);
+        box-sizing: border-box;
+    }
+
     body.home .home-categories .section-title {
         font-size: 36px;
         line-height: 110%;
