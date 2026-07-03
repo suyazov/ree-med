@@ -2377,6 +2377,10 @@ body.home .site-footer .map-pulse {
         color: #EFEFEF;
     }
 
+    .about-stat:nth-child(4) {
+        background: #E6E7E8;
+    }
+
     .about-stat:nth-child(4)::after {
         content: "";
         position: absolute;
@@ -2387,7 +2391,22 @@ body.home .site-footer .map-pulse {
         background: url('../img/main/12-2.png') center / contain no-repeat;
     }
 
+    .about-stat:nth-child(4) .about-stat-num {
+        left: 32px;
+        top: 114px;
+        font-size: 48px;
+        line-height: 1.1;
+        font-weight: 600;
+        color: #367643;
+    }
+
     .about-stat:nth-child(4) .about-stat-label {
+        left: 32px;
+        top: 171px;
+        font-size: 24px;
+        line-height: 1.1;
+        font-weight: 400;
+        color: #353535;
         max-width: 281px;
     }
 
