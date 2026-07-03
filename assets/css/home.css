@@ -2282,6 +2282,20 @@ body.home .site-footer .map-pulse {
         line-height: 110%;
     }
 
+    .about-stat:nth-child(1) {
+        background: #F9F9F9;
+    }
+
+    .about-stat:nth-child(1) .about-stat-num {
+        color: #367643;
+        font-weight: 600;
+    }
+
+    .about-stat:nth-child(1) .about-stat-label {
+        color: #353535;
+        line-height: 1.1;
+    }
+
     .about-stat:nth-child(1)::after {
         content: "";
         position: absolute;
