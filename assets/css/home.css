@@ -362,9 +362,9 @@ body.home .site-header {
         max-width: 179px;
         align-items: flex-end;
         background: rgba(39, 81, 69, 0.05);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         color: #EFEFEF;
     }
 
@@ -429,7 +429,7 @@ body.home .site-header {
     }
 
     .home-hero-shop-btn-mobile svg {
-        display: none;
+        display: inline-block;
     }
 
     .home-directions .container {
