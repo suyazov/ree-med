@@ -85,7 +85,7 @@ $tasks = trimed_repeater_field('main_tasks', array(
     array('num' => '01.', 'title' => 'Подбор под бюджет', 'image' => $img_main . '/104-0.png'),
     array('num' => '02.', 'title' => 'Склад в Чите', 'image' => $img_main . '/105-3.png'),
     array('num' => '03.', 'title' => 'Поставка под заказ', 'image' => $img_main . '/106-0.png'),
-    array('num' => '04.', 'title' => 'Помощь в комплектации', 'image' => $img_main . '/asset-11.png'),
+    array('num' => '04.', 'title' => 'Помощь в комплектации', 'image' => $img_main . '/figma-task-desktop-04.png'),
     array('num' => '05.', 'title' => 'Консультации специалистов', 'image' => $img_main . '/105-0.png'),
     array('num' => '06.', 'title' => 'Сервисное сопровождение', 'image' => $img_main . '/figma-task-desktop-06.png'),
 ));

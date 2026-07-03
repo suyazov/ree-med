@@ -2770,8 +2770,8 @@ body.home .site-footer .map-pulse {
     }
 
     .task-card:nth-child(4) {
-        background-size: 138px 149px;
-        background-position: 226px 9px;
+        background-size: 100% 100%;
+        background-position: center;
     }
 
     .task-card:nth-child(6) {
@@ -2779,6 +2779,8 @@ body.home .site-footer .map-pulse {
         background-position: center;
     }
 
+    .task-card:nth-child(4) .task-num,
+    .task-card:nth-child(4) .task-title,
     .task-card:nth-child(6) .task-num,
     .task-card:nth-child(6) .task-title {
         display: none;
