@@ -218,9 +218,9 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
             <div class="section-header home-directions-header">
                 <h2 class="section-title">
                     <span class="directions-copy-desktop">Решения для разных<br><span class="text-green">направлений медицины</span></span>
-                    <span class="directions-copy-mobile">Помогаем выстроить систему <span class="text-green">инфекционного контроля</span></span>
+                    <span class="directions-copy-mobile">Решения для разных <span class="text-green">направлений медицины</span></span>
                 </h2>
-                <span class="section-label"><span class="directions-copy-desktop"><?php echo esc_html($dir_subtitle); ?></span><span class="directions-copy-mobile">Что входит</span></span>
+                <span class="section-label"><span class="directions-copy-desktop"><?php echo esc_html($dir_subtitle); ?></span><span class="directions-copy-mobile"><?php echo esc_html($dir_subtitle); ?></span></span>
             </div>
             <?php if (!empty($directions)) : ?>
             <div class="directions-grid">
