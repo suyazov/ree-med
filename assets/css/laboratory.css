@@ -752,7 +752,6 @@
     .laboratory-page .lab-hero-visual { display: contents; }
     .laboratory-page .lab-hero-top { display: contents; padding-left: 0; }
     .laboratory-page .lab-hero-title { order: 1; font-size: 28px; line-height: 94%; margin: 0 0 20px; color: #28282a; }
-    .laboratory-page .lab-hero-title .text-green { color: var(--color-green); }
     .laboratory-page .lab-hero-title em { font-style: italic; }
     .laboratory-page .lab-hero-image-wrap { order: 2; position: relative; width: 343px; margin-top: 0; }
     .laboratory-page .lab-hero-main-image { width: 343px; height: 226px; object-fit: cover; border-radius: 12px; }
@@ -770,7 +769,6 @@
     .laboratory-page .lab-audience .lab-section-inner { padding: 0 16px; }
     .laboratory-page .lab-audience-header { padding: 0; margin-bottom: 24px; flex-direction: column; align-items: center; text-align: center; }
     .laboratory-page .lab-audience-title { order: 2; font-size: 24px; margin-bottom: 0; }
-    .laboratory-page .lab-audience-title .text-green { color: var(--color-green); }
     .laboratory-page .lab-audience-label { order: 1; font-size: 14px; margin: 0 0 8px; }
     .laboratory-page .lab-audience-card .arrow { width: 20px; height: 20px; }
     .laboratory-page .lab-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -788,7 +786,6 @@
     .laboratory-page .lab-supplies-diagram { width: 100%; max-width: 343px; margin: 0 auto; aspect-ratio: auto; height: 660px; padding: 80px 0 0; }
     .laboratory-page .lab-supplies-label { position: absolute; left: 16px; top: 40px; font-size: 14px; line-height: 16px; transform: none; }
     .laboratory-page .lab-supplies-title { position: absolute; left: 16px; top: 90px; font-size: 24px; line-height: 110%; max-width: 295px; transform: none; text-align: left; }
-    .laboratory-page .lab-supplies-title .text-green { color: var(--color-green); }
     .laboratory-page .lab-supplies-rings { display: block; }
     .laboratory-page .lab-supplies-ring { top: 52%; }
     .laboratory-page .lab-supplies-ring--inner { width: 64%; }

@@ -1465,10 +1465,6 @@ body.disinfection-page .task-item img {
         min-height: 552px;
     }
 
-    body.disinfection-page .faq-description {
-        display: none;
-    }
-
     body.disinfection-page .faq-header {
         margin-bottom: 32px;
     }

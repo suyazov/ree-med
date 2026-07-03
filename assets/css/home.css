@@ -752,10 +752,6 @@ body.home .site-header {
 }
 
 @media (max-width: 991px) {
-    .home-about-grid {
-        gap: 20px;
-    }
-
     .home-about-mobile-label {
         display: block;
         width: 100%;
@@ -1073,86 +1069,6 @@ body.home .site-header {
     height: 32px;
     object-fit: contain;
     flex-shrink: 0;
-}
-
-@media (max-width: 991px) {
-    .front-page .home-audience {
-        padding: 44px 0 80px;
-    }
-
-    .home-audience .container {
-        padding: 0 16px;
-    }
-
-    .home-audience-grid {
-        gap: 8px;
-    }
-
-    .audience-left {
-        width: 343px;
-        height: 206px;
-        min-height: 206px;
-        padding: 20px;
-        border-radius: 12px;
-        background: linear-gradient(90deg, #367643 0%, #315046 100%);
-        justify-content: flex-start;
-    }
-
-    .audience-left .section-label {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 152px;
-        height: 39px;
-        min-height: 39px;
-        margin: 0 0 49px;
-        border-radius: 8px;
-        background: rgba(54, 118, 67, 0.5);
-        color: #EFEFEF;
-        font-size: 14px;
-        line-height: 110%;
-    }
-
-    .audience-left .section-title {
-        width: 306px;
-        max-width: 100%;
-        font-size: 24px;
-        line-height: 110%;
-    }
-
-    .audience-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        align-items: flex-start;
-    }
-
-    .audience-list li {
-        flex: 0 0 auto;
-        min-height: 54px;
-        height: 54px;
-        padding: 12px;
-        border-radius: 12px;
-        background: #F9F9F9;
-        gap: 10px;
-        font-size: 14px;
-        line-height: 17px;
-        white-space: nowrap;
-    }
-
-    .audience-list img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .audience-list li:nth-child(1) { width: 247px; order: 1; }
-    .audience-list li:nth-child(5) { width: 153px; order: 2; }
-    .audience-list li:nth-child(2) { width: 154px; order: 3; }
-    .audience-list li:nth-child(6) { width: 245px; order: 4; }
-    .audience-list li:nth-child(3) { width: 179px; order: 5; }
-    .audience-list li:nth-child(7) { width: 135px; height: 48px; min-height: 48px; order: 6; }
-    .audience-list li:nth-child(4) { width: 159px; order: 7; }
-    .audience-list li:nth-child(8) { width: 232px; order: 8; }
 }
 
 /* Tasks */
