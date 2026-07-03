@@ -642,7 +642,7 @@ body.home .site-header {
 
 /* About */
 .home-about {
-    background: var(--color-white);
+    background: #EFEFEF;
     padding: 80px 0;
 }
 
@@ -2158,8 +2158,12 @@ body.home .site-footer .map-pulse {
         align-items: flex-start;
         justify-content: space-between;
         gap: 137px;
-        padding: 81px 48px 40px 58px;
+        width: 1200px;
+        height: 260px;
         min-height: 260px;
+        padding: 81px 48px 40px 58px;
+        background: linear-gradient(277deg, #367643 0%, #315046 100%);
+        box-sizing: border-box;
     }
 
     .home-about-text::before,
@@ -2187,14 +2191,22 @@ body.home .site-footer .map-pulse {
     .front-page .home-about-text .section-title {
         flex: 0 0 549px;
         font-size: 40px;
-        line-height: 110%;
+        line-height: 108%;
+        font-weight: 400;
+        letter-spacing: -0.03em;
         margin: 0;
+    }
+
+    .front-page .home-about-text .section-title strong,
+    .front-page .home-about-text .section-title b {
+        font-weight: 600;
     }
 
     .home-about-desc {
         flex: 0 0 408px;
         font-size: 20px;
         line-height: 120%;
+        font-weight: 400;
         margin: 57px 0 0;
     }
 
@@ -2216,9 +2228,12 @@ body.home .site-footer .map-pulse {
     .home-about-stats {
         max-width: 792px;
         gap: 28px;
+        grid-template-columns: repeat(2, 382px);
     }
 
     .about-stat {
+        width: 382px;
+        height: 229px;
         min-height: 229px;
         padding: 0;
         overflow: hidden;
@@ -2245,6 +2260,7 @@ body.home .site-footer .map-pulse {
 
     .about-stat-label {
         font-size: 24px;
+        font-weight: 400;
         position: absolute;
         left: 32px;
         top: 171px;
@@ -2273,7 +2289,7 @@ body.home .site-footer .map-pulse {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(54, 118, 67, 0.66);
+        background: rgba(54, 118, 67, 0.5);
         z-index: 1;
     }
 
@@ -2290,11 +2306,11 @@ body.home .site-footer .map-pulse {
     }
 
     .about-stat:nth-child(3) .about-stat-num {
-        top: 91px;
+        top: 88px;
     }
 
     .about-stat:nth-child(3) .about-stat-label {
-        top: 148px;
+        top: 149px;
         max-width: 259px;
     }
 
