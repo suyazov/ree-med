@@ -2144,12 +2144,11 @@ body.home .site-footer .map-pulse {
     }
 
     .home-about-grid {
-        grid-template-columns: minmax(0, 376px) minmax(0, 792px);
+        grid-template-columns: 376px 792px;
         gap: 32px;
         align-items: start;
-        justify-content: center;
         max-width: 1200px;
-        width: min(1200px, calc(100vw - 40px));
+        width: 1200px;
     }
 
     .home-about-text {
@@ -2231,20 +2230,25 @@ body.home .site-footer .map-pulse {
     .home-about-visual {
         grid-column: 2;
         align-items: flex-end;
+        width: 792px;
     }
 
     .home-about-stats {
-        max-width: 792px;
-        gap: 28px;
+        display: grid;
         grid-template-columns: repeat(2, 382px);
+        gap: 28px;
+        width: 792px;
+        max-width: 792px;
     }
 
     .about-stat {
         width: 382px;
         height: 229px;
         min-height: 229px;
+        border-radius: 12px;
         padding: 0;
         overflow: hidden;
+        box-sizing: border-box;
     }
 
     .about-stat-num {
