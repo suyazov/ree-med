@@ -491,7 +491,7 @@ body.disinfection-page .task-item img {
     body.disinfection-page .faq-grid {
         display: flex;
         gap: 12px 36px;
-        align-items: flex-start;
+        align-items: stretch;
     }
 
     body.disinfection-page .faq-column {
@@ -499,6 +499,7 @@ body.disinfection-page .task-item img {
         display: flex;
         flex-direction: column;
         gap: 12px;
+        align-self: stretch;
     }
 
     body.disinfection-page .faq-item {
@@ -539,7 +540,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .faq-item.active.has-answer {
-        min-height: 149px;
+        min-height: 0;
         padding-top: 28px;
         padding-bottom: 28px;
         align-content: flex-start;
