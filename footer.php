@@ -1,7 +1,7 @@
 <footer class="site-footer">
     <div class="container footer-container">
         <div class="footer-main">
-            <div class="footer-bg" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer-map.png')"></div>
+            <div class="footer-bg" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/main/подвал-0.png')"></div>
             <div class="map-pulse">
                 <span></span>
                 <span></span>

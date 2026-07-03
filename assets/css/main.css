@@ -2296,7 +2296,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Footer */
 .site-footer {
-    background: var(--color-white-2);
+    background: #EFEFEF;
     padding-top: 0;
 }
 
@@ -2310,13 +2310,6 @@ h1, h2, h3, h4, h5, h6, p {
     inset: 0;
     background-size: cover;
     background-position: center;
-}
-
-.footer-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.3);
 }
 
 .footer-card {
@@ -2334,7 +2327,9 @@ h1, h2, h3, h4, h5, h6, p {
 
 .footer-logo {
     width: 164px;
-    height: auto;
+    height: 48px;
+    object-fit: contain;
+    object-position: left center;
     margin-bottom: 34px;
 }
 
@@ -2349,13 +2344,27 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: #EFEFEF;
+    font-family: var(--font-main);
     font-size: 16px;
+    font-weight: 400;
     line-height: 19px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-contact svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
 }
 
 .footer-socials {
     display: flex;
+    align-items: center;
     gap: 34px;
+    width: 176px;
+    height: 21px;
     margin-bottom: 34px;
 }
 
@@ -3281,36 +3290,28 @@ h1, h2, h3, h4, h5, h6, p {
     opacity: 1;
 }
 
-/* Shared service footer: matches the front page footer/map component */
-body.trimed-service-page .site-footer {
-    margin-top: 0;
-}
-
-body.trimed-service-page .site-footer .footer-container {
+/* Shared footer: map component aligned to 1200px grid across all pages */
+.site-footer .footer-container {
     max-width: none;
     padding: 0;
 }
 
-body.trimed-service-page .site-footer .footer-bg {
-    background-image: url('../img/main/подвал-0.png') !important;
-}
-
-body.trimed-service-page .site-footer .map-pulse {
-    display: block;
+.site-footer .footer-bg {
+    background-image: url('../img/main/подвал-0.png');
 }
 
 @media (min-width: 769px) {
-    body.trimed-service-page .site-footer .map-pulse {
+    .site-footer .map-pulse {
         left: calc((100vw - 1200px) / 2 + 600px);
         top: 61.1%;
     }
 
-    body.trimed-service-page .site-footer .footer-main {
+    .site-footer .footer-main {
         min-height: 470px;
         height: 470px;
     }
 
-    body.trimed-service-page .site-footer .footer-card {
+    .site-footer .footer-card {
         right: calc((100vw - 1200px) / 2);
         top: 50px;
         transform: none;
@@ -3319,15 +3320,15 @@ body.trimed-service-page .site-footer .map-pulse {
         padding: 36px;
     }
 
-    body.trimed-service-page .site-footer .footer-logo {
+    .site-footer .footer-logo {
         margin-bottom: 34px;
     }
 
-    body.trimed-service-page .site-footer .footer-contacts {
+    .site-footer .footer-contacts {
         margin-bottom: 24px;
     }
 
-    body.trimed-service-page .site-footer .footer-bottom {
+    .site-footer .footer-bottom {
         position: relative;
         display: block;
         height: 101px;
@@ -3336,7 +3337,7 @@ body.trimed-service-page .site-footer .map-pulse {
         box-sizing: border-box;
     }
 
-    body.trimed-service-page .site-footer .footer-copyright {
+    .site-footer .footer-copyright {
         position: absolute;
         left: calc((100vw - 1200px) / 2);
         top: 28px;
@@ -3344,23 +3345,23 @@ body.trimed-service-page .site-footer .map-pulse {
         margin: 0;
     }
 
-    body.trimed-service-page .site-footer .footer-info {
+    .site-footer .footer-info {
         position: absolute;
         left: calc((100vw - 1200px) / 2);
         top: 55px;
         width: 307px;
     }
 
-    body.trimed-service-page .site-footer .footer-links {
+    .site-footer .footer-links {
         position: absolute;
         left: calc((100vw - 1200px) / 2 + 829px);
         top: 28px;
         width: 351px;
     }
 
-    body.trimed-service-page .site-footer .footer-info p,
-    body.trimed-service-page .site-footer .footer-links a,
-    body.trimed-service-page .site-footer .footer-copyright {
+    .site-footer .footer-info p,
+    .site-footer .footer-links a,
+    .site-footer .footer-copyright {
         color: rgba(53, 53, 53, 0.7);
         font-size: 16px;
         line-height: 19px;
