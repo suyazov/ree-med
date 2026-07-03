@@ -2589,13 +2589,15 @@ body.home .site-footer .map-pulse {
     }
 
     .audience-left {
+        flex: 0 0 563px;
         flex-shrink: 0;
         width: 563px;
         height: 432px;
         min-height: 432px;
         padding: 44px;
         border-radius: 12px;
-        background: linear-gradient(-88.0203deg, #367643 0%, #315046 100%);
+        box-sizing: border-box;
+        background: linear-gradient(-88.020deg, #367643 0%, #315046 100%);
         justify-content: flex-start;
     }
 
