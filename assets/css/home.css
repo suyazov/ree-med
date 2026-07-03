@@ -1191,7 +1191,7 @@ body.home .site-header {
 
 /* Projects */
 .home-projects {
-    background: var(--color-white-2);
+    background: #EFEFEF;
 }
 
 .home-projects-header {
@@ -2827,7 +2827,20 @@ body.home .site-footer .map-pulse {
     }
 
     .home-projects-header .btn {
-        align-self: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 305px;
+        height: 57px;
+        padding: 20px 75px;
+        border-radius: 8px;
+        background: linear-gradient(-81.923deg, #367643 0%, #315046 100%);
+        font-family: 'Exo 2', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #EFEFEF;
+        text-align: center;
+        box-sizing: border-box;
     }
 
     .projects-grid {
