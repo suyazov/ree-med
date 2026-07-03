@@ -170,7 +170,7 @@ $included_bottom = array_slice($included_cards, 3);
                     <?php trimed_render_responsive_picture($hero_image, array('class' => 'stom-hero-image')); ?>
                     <div class="stom-hero-badges">
                         <div class="stom-hero-badge-glass">
-                            <svg class="badge-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.4829 7.48289C16.2925 7.48289 14.5164 5.70673 14.5164 3.51636C14.5164 1.57481 12.9423 -1.33514e-05 11 -1.33514e-05C9.05772 -1.33514e-05 7.4829 1.57481 7.4829 3.51636C7.4829 5.70673 5.70746 7.48289 3.51709 7.48289C1.57482 7.48289 0 9.05699 0 11C0 12.9423 1.57482 14.5164 3.51709 14.5164C5.70746 14.5164 7.4829 16.2918 7.4829 18.4822C7.4829 20.4252 9.05772 21.9993 11 21.9993C12.9423 21.9993 14.5164 20.4252 14.5164 18.4822C14.5164 16.2918 16.2925 14.5164 18.4829 14.5164C20.4252 14.5164 22 12.9423 22 11C22 9.05699 20.4252 7.48289 18.4829 7.48289Z" fill="currentColor"/></svg>
+                            <?php echo trimed_get_clover_svg('badge-icon', 22); ?>
                             <span><?php echo esc_html($hero_badge_glass_text); ?></span>
                         </div>
                         <div class="stom-hero-badge-green">
@@ -336,7 +336,7 @@ $included_bottom = array_slice($included_cards, 3);
         'section_class' => 'stom-request',
         'inner_class'   => 'stom-request-inner',
         'summary'       => array(
-            'icon'             => '<svg class="stom-request-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.4421 5.44229C11.8491 5.44229 10.5574 4.15049 10.5574 2.55745C10.5574 1.14536 9.41256 9.53674e-07 8 9.53674e-07C6.58744 9.53674e-07 5.44211 1.14536 5.44211 2.55745C5.44211 4.15049 4.15088 5.44229 2.55789 5.44229C1.14532 5.44229 0 6.58713 0 8.00026C0 9.41287 1.14532 10.5577 2.55789 10.5577C4.15088 10.5577 5.44211 11.849 5.44211 13.442C5.44211 14.8552 6.58744 16 8 16C9.41256 16 10.5574 14.8552 10.5574 13.442C10.5574 11.849 11.8491 10.5577 13.4421 10.5577C14.8547 10.5577 16 9.41287 16 8.00026C16 6.58713 14.8547 5.44229 13.4421 5.44229Z" fill="currentColor"/></svg>',
+            'icon'             => trimed_get_clover_svg('stom-request-icon', 16),
             'title'            => $request_title,
             'title_class'      => 'stom-request-title',
             'desc'             => $request_desc,
