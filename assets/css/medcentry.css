@@ -613,3 +613,105 @@
     .medcentry-page .mc-why-cta { display: none; }
 
 }
+
+
+/* Desktop/mobile copy helpers */
+.mc-process-title-desktop,
+.request-copy-desktop { display: inline; }
+.mc-process-title-mobile,
+.request-copy-mobile { display: none; }
+
+@media (max-width: 768px) {
+    .mc-process-title-desktop,
+    .request-copy-desktop { display: none; }
+    .mc-process-title-mobile,
+    .request-copy-mobile { display: inline; }
+
+    /* Hero title and badges fit */
+    .medcentry-page .mc-hero-title { width: 100%; max-width: 100%; }
+    .medcentry-page .mc-hero-badges {
+        width: auto;
+        max-width: calc(100% - 24px);
+        flex-wrap: nowrap;
+    }
+    .medcentry-page .mc-hero-badge-glass,
+    .medcentry-page .mc-hero-badge-green {
+        width: auto;
+        min-width: 0;
+    }
+
+    .medcentry-page .mc-hero-badge-glass {
+        flex: 1 1 60%;
+    }
+
+    .medcentry-page .mc-hero-badge-green {
+        flex: 0 1 40%;
+    }
+
+    /* Audience grid responsive */
+    .medcentry-page .mc-audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+    .medcentry-page .mc-audience-desc { width: 100%; max-width: 100%; }
+
+    /* Included images fit */
+    .medcentry-page .mc-included-card-img {
+        width: 100%;
+        height: 180px;
+        max-width: 100%;
+    }
+    .medcentry-page .mc-included-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Projects header fit */
+    .medcentry-page .mc-projects-header { width: 100%; max-width: 100%; }
+
+    /* Why section fit */
+    .medcentry-page .mc-why-title { width: 100%; max-width: 100%; margin-left: 0; }
+    .medcentry-page .mc-why-stats { flex-wrap: wrap; }
+    .medcentry-page .mc-why-stat--image,
+    .medcentry-page .mc-why-stat--gray {
+        flex: 1 1 calc(50% - 4px);
+        width: auto;
+        min-width: 0;
+    }
+    .medcentry-page .mc-why-features { flex-wrap: wrap; }
+    .medcentry-page .mc-why-feature:nth-child(1),
+    .medcentry-page .mc-why-feature:nth-child(2) {
+        flex: 1 1 calc(50% - 4px);
+        width: auto;
+        min-width: 0;
+    }
+
+    /* Mobile Figma keeps only name and phone in the medcentry request form. */
+    .medcentry-page .mc-request-form input[name="organization"],
+    .medcentry-page .mc-request-form textarea[name="comment"] { display: none; }
+    .medcentry-page .mc-request-form { height: auto; min-height: 0; }
+}
+
+@media (max-width: 360px) {
+    .medcentry-page .mc-hero-badge-glass {
+        flex-basis: 62%;
+        padding: 10px;
+    }
+
+    .medcentry-page .mc-hero-badge-green {
+        flex-basis: 38%;
+        padding: 4px 8px 10px;
+    }
+
+    .medcentry-page .mc-hero-badge-green .num {
+        font-size: 24px;
+        line-height: 1.1;
+    }
+
+    .medcentry-page .mc-hero-badge-green .txt {
+        font-size: 11px;
+        line-height: 1.1;
+    }
+}
