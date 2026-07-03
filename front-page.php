@@ -56,6 +56,7 @@ $directions   = trimed_repeater_field('main_directions', array(
 // Audience
 $aud_subtitle = get_field('main_audience_subtitle') ?: 'Кому мы помогаем';
 $aud_title    = get_field('main_audience_title')    ?: 'Работаем с медицинскими учреждениями любого масштаба';
+$aud_title_html = preg_replace('/(с медицинскими)/u', '<em>$1</em>', wp_kses_post($aud_title), 1);
 $audience_items = trimed_repeater_field('main_audience_items', array(
     array('icon' => $img_main . '/icons/figma-audience-hospital.png', 'text' => 'Государственные больницы'),
     array('icon' => $img_main . '/icons/figma-audience-polyclinic.png', 'text' => 'Поликлиники'),
@@ -272,7 +273,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
             <div class="home-audience-grid">
                 <div class="audience-left">
                     <span class="section-label"><?php echo esc_html($aud_subtitle); ?></span>
-                    <h2 class="section-title white"><?php echo wp_kses_post($aud_title); ?></h2>
+                    <h2 class="section-title white"><?php echo $aud_title_html; ?></h2>
                 </div>
                 <?php if (!empty($audience_items)) : ?>
                 <ul class="audience-list">
