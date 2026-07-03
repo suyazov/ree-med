@@ -2403,8 +2403,10 @@ h1, h2, h3, h4, h5, h6, p {
 .footer-bottom {
     display: flex;
     justify-content: space-between;
+    min-height: 101px;
     padding: 28px 0;
     gap: 40px;
+    background: #EFEFEF;
 }
 
 .footer-info,
@@ -2415,10 +2417,18 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .footer-info p,
-.footer-links a {
+.footer-links a,
+.footer-copyright {
+    margin: 0;
+    font-family: var(--font-main);
     font-size: 16px;
     line-height: 19px;
-    color: #353535;
+    font-weight: 400;
+    color: rgba(53, 53, 53, 0.7);
+}
+
+.footer-links a {
+    text-decoration: none;
 }
 
 /* Responsive */
