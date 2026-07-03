@@ -56,7 +56,13 @@ $directions   = trimed_repeater_field('main_directions', array(
 // Audience
 $aud_subtitle = get_field('main_audience_subtitle') ?: 'Кому мы помогаем';
 $aud_title    = get_field('main_audience_title')    ?: 'Работаем с медицинскими учреждениями любого масштаба';
-$aud_title_html = preg_replace('/(с медицинскими)/u', '<em>$1</em>', wp_kses_post($aud_title), 1);
+$aud_title_raw  = wp_kses_post($aud_title);
+$aud_title_html = preg_replace('/(с медицинскими)/u', '<em>$1</em>', $aud_title_raw, 1);
+
+// Exact Figma line breaks for the default title text only (preserves ACF edits).
+if ($aud_title_raw === 'Работаем с медицинскими учреждениями любого масштаба') {
+    $aud_title_html = 'Работаем<br><em>с медицинскими</em><br>учреждениями<br>любого масштаба';
+}
 $audience_items = trimed_repeater_field('main_audience_items', array(
     array('icon' => $img_main . '/icons/figma-audience-hospital.png', 'text' => 'Государственные больницы'),
     array('icon' => $img_main . '/icons/figma-audience-polyclinic.png', 'text' => 'Поликлиники'),
