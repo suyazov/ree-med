@@ -3472,23 +3472,37 @@ body.home .site-footer .map-pulse {
 
     .home-request-form .form-field input,
     .home-request-form .form-field textarea {
+        width: 429px;
         height: 52px;
-        padding: 0 16px;
+        padding: 20px 16px;
+        border-radius: 8px;
         font-size: 12px;
+        line-height: 1;
+        letter-spacing: -0.24px;
         border: 0;
         background: #E6E7E8;
+        box-sizing: border-box;
+        font-weight: 400;
     }
 
     .home-request-form .form-field textarea {
-        height: 52px;
-        min-height: 52px;
-        padding-top: 17px;
-        padding-bottom: 12px;
+        height: 53px;
+        min-height: 53px;
         resize: none;
     }
 
     .home-request-form .form-field-phone input {
         padding-left: 52px;
+    }
+
+    .home-request-form .form-field input::placeholder,
+    .home-request-form .form-field textarea::placeholder {
+        font-family: 'HelveticaNeueCyr', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: -0.24px;
+        color: #353535;
+        opacity: 0.6;
     }
 
     .home-request-form .checkbox-label {
@@ -4119,6 +4133,7 @@ body.home .site-footer .map-pulse {
 
     body.home .home-request-form .form-field input,
     body.home .home-request-form .form-field textarea {
+        width: 100%;
         height: 52px;
         padding: 16px;
         box-sizing: border-box;
