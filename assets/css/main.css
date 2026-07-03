@@ -2384,8 +2384,20 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .footer-callback {
-    width: 100%;
-    background: var(--gradient-light-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 299px;
+    height: 57px;
+    padding: 20px 14px;
+    border-radius: 8px;
+    background: linear-gradient(11.271deg, #3F8D50 18.162%, #51A462 79.556%);
+    color: #EFEFEF;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .footer-bottom {
