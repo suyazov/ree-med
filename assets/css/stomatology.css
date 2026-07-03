@@ -199,10 +199,7 @@
 .stomatology-page .stom-audience-card--white .text,
 .stomatology-page .stom-audience-card--gray .text { max-width: 331px; }
 .stomatology-page .stom-audience-card .arrow { position: absolute; width: 20px; height: 20px; color: currentColor; }
-.stomatology-page .stom-audience-card .arrow--tr { right: 16px; top: 16px; }
-.stomatology-page .stom-audience-card .arrow--br { right: 40px; bottom: 40px; }
 .stomatology-page .stom-audience-card .arrow--image { right: 40px; bottom: 40px; color: var(--color-white); }
-.stomatology-page .stom-audience-card .arrow--white { right: 16px; top: 16px; color: var(--color-gray-2); }
 .stomatology-page .stom-audience-card .arrow--green { right: 16px; top: 16px; color: var(--color-white); }
 .stomatology-page .stom-audience-mark {
     position: absolute;
@@ -479,13 +476,8 @@
         object-fit: contain;
     }
     .stomatology-page .stom-audience-card .arrow { width: 20px; height: 20px; }
-    .stomatology-page .stom-audience-card .arrow--tr,
-    .stomatology-page .stom-audience-card .arrow--white,
     .stomatology-page .stom-audience-card .arrow--green { right: 16px; top: 16px; }
-    .stomatology-page .stom-audience-card .arrow--br,
-    .stomatology-page .stom-audience-card .arrow--image { right: 16px; bottom: 16px; }
     .stomatology-page .stom-audience-card .arrow--image { right: 16px; top: 28px; bottom: auto; color: var(--color-white); }
-    .stomatology-page .stom-audience-card .arrow--white { color: var(--color-gray-2); }
     .stomatology-page .stom-audience-card .arrow--green { color: var(--color-white); }
     .stomatology-page .stom-audience-summary { max-width: 100%; margin: 16px 0 0; font-size: 16px; line-height: 120%; text-align: left; }
 
