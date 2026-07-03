@@ -3651,6 +3651,27 @@ body.home .site-footer .map-pulse {
         height: 33.941px;
     }
 
+    body.home .direction-card.large {
+        /* Figma node 3116:216: 382×427 card, image crop 123.82%×166.16%, top -33.05%, left 0 */
+        background-size: 123.82% 166.16%;
+        background-position: left 49.9%;
+        background-repeat: no-repeat;
+    }
+
+    body.home .direction-card.large .direction-title {
+        /* Figma node 3116:217: x24 y351, width 203, multiline */
+        width: 203px;
+        max-width: 203px;
+    }
+
+    body.home .direction-card.large .direction-arrow {
+        /* Figma node 3116:218: 33.941×33.941 container at right-bottom */
+        right: 20.059px;
+        bottom: 17.059px;
+        width: 33.941px;
+        height: 33.941px;
+    }
+
     body.home .direction-arrow svg {
         width: 24px;
         height: 24px;
