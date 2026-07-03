@@ -2206,9 +2206,12 @@ body.home .site-footer .map-pulse {
 
     .home-about-desc {
         flex: 0 0 408px;
+        width: 408px;
+        max-width: 408px;
         font-size: 20px;
-        line-height: 120%;
+        line-height: 1.2;
         font-weight: 400;
+        color: #EFEFEF;
         margin: 57px 0 0;
     }
 
