@@ -2770,20 +2770,13 @@ body.home .site-footer .map-pulse {
     }
 
     .task-card:nth-child(4) {
-        background-size: 100% 100%;
-        background-position: center;
+        background-size: 138px 149px;
+        background-position: 226px 9px;
     }
 
     .task-card:nth-child(6) {
-        background-size: 100% 100%;
-        background-position: center;
-    }
-
-    .task-card:nth-child(4) .task-num,
-    .task-card:nth-child(4) .task-title,
-    .task-card:nth-child(6) .task-num,
-    .task-card:nth-child(6) .task-title {
-        display: none;
+        background-size: 199px 116px;
+        background-position: 173px 7px;
     }
 
     .task-num {
@@ -2791,8 +2784,10 @@ body.home .site-footer .map-pulse {
         left: 28px;
         top: 28px;
         z-index: 2;
-        font-size: 14px;
-        line-height: 1;
+        font-family: 'Exo 2', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.1;
         opacity: 1;
         margin: 0;
     }
@@ -2802,10 +2797,11 @@ body.home .site-footer .map-pulse {
         left: 28px;
         top: 166px;
         z-index: 2;
-        width: calc(100% - 56px);
-        font-size: 20px;
-        line-height: 1.2;
+        width: calc(100% - 48px);
+        font-family: 'Exo 2', sans-serif;
+        font-size: 24px;
         font-weight: 600;
+        line-height: 1.1;
         margin: 0;
     }
 
