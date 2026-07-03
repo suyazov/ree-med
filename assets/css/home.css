@@ -2190,6 +2190,8 @@ body.home .site-footer .map-pulse {
 
     .front-page .home-about-text .section-title {
         flex: 0 0 549px;
+        color: #EFEFEF;
+        font-family: var(--font-main);
         font-size: 40px;
         line-height: 108%;
         font-weight: 400;

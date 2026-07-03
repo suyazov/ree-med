@@ -34,6 +34,7 @@ $about_title = get_field('main_about_title') ?: 'ТриМед — поставщ
 $about_desc  = get_field('main_about_desc')  ?: 'Мы помогаем медицинским учреждениям оснащать кабинеты, отделения и клиники современным оборудованием';
 $about_text  = get_field('main_about_text')  ?: 'Берём на себя подбор решений, поставку, консультации и сопровождение проекта на всех этапах';
 $about_image = trimed_image_field('main_about_image', $img_main . '/3-0.png');
+$about_title_html = preg_replace('/ТриМед/u', '<strong>ТриМед</strong>', wp_kses_post($about_title), 1);
 $about_stats = trimed_repeater_field('main_about_stats', array(
     array('num' => '8+ лет', 'label' => 'на рынке'),
     array('num' => '5000+', 'label' => 'позиций оборудования'),
@@ -205,7 +206,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                 <span class="home-about-mobile-label">Кому подходит</span>
                 <div class="home-about-left">
                     <div class="home-about-text">
-                        <h2 class="section-title white"><?php echo wp_kses_post($about_title); ?></h2>
+                        <h2 class="section-title white"><?php echo $about_title_html; ?></h2>
                         <p class="home-about-desc"><?php echo wp_kses_post($about_desc); ?></p>
                     </div>
                     <p class="home-about-add"><?php echo wp_kses_post($about_text); ?></p>
