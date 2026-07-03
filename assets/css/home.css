@@ -2638,14 +2638,15 @@ body.home .site-footer .map-pulse {
     }
 
     .audience-list {
-        flex-shrink: 0;
+        display: grid;
+        flex: 0 0 616px;
+        align-self: flex-start;
         grid-template-columns: repeat(2, 300px);
         grid-template-rows: repeat(4, 96px);
         grid-auto-flow: column;
         gap: 16px;
         width: 616px;
         height: 432px;
-        align-content: start;
     }
 
     .audience-list li {
@@ -2654,6 +2655,7 @@ body.home .site-footer .map-pulse {
         min-height: 96px;
         padding: 24px 16px;
         border-radius: 12px;
+        box-sizing: border-box;
         background: #F9F9F9;
         gap: 20px;
         font-size: 20px;
