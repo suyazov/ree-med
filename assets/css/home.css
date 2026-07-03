@@ -2753,6 +2753,16 @@ body.home .site-footer .map-pulse {
         z-index: 1;
     }
 
+    .task-card:nth-child(1) {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .task-card:nth-child(1) .task-overlay {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.54) 100%);
+    }
+
     .task-card:nth-child(even) {
         background-color: #EFEFEF;
         background-repeat: no-repeat;
