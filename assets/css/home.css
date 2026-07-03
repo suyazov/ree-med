@@ -102,6 +102,11 @@ body.home .site-header {
     font-weight: 600;
 }
 
+.home-hero-title .title-line-dark {
+    color: var(--color-black);
+    font-style: italic;
+}
+
 .home-hero-desc {
     font-size: 16px;
     line-height: 19px;
@@ -2002,10 +2007,18 @@ body.home .site-footer .map-pulse {
     }
 
     .home-hero-cta {
-        flex: 1 0 100%;
-        padding: 20px;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 695px;
         min-height: 57px;
+        padding: 0 20px;
+        border-radius: 8px;
+        background: var(--gradient-green);
+        color: var(--color-white);
         font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
         margin-top: 0;
     }
 
@@ -2069,6 +2082,10 @@ body.home .site-footer .map-pulse {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         justify-content: flex-end;
+    }
+
+    .home-hero-badge:first-child .badge-text {
+        font-weight: 400;
     }
 
     .home-hero-badge:first-child::after {

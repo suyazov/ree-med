@@ -5,7 +5,12 @@ $img_main = get_template_directory_uri() . '/assets/img/main';
 
 // Hero
 $hero_title = get_field('main_hero_title') ?: 'Комплексное оснащение медицинских учреждений в Забайкальском крае';
-$hero_desc  = get_field('main_hero_desc')  ?: 'Подбираем оборудование, расходные материалы и готовые решения для клиник, лабораторий, стоматологий и медицинских центров.';
+$hero_desc_raw = get_field('main_hero_desc');
+if (empty($hero_desc_raw)) {
+    $hero_desc = 'Подбираем оборудование, расходные материалы и готовые решения<br>для клиник, лабораторий, стоматологий и медицинских центров.';
+} else {
+    $hero_desc = str_replace('готовые решения для', 'готовые решения<br>для', $hero_desc_raw);
+}
 $hero_image = trimed_image_field('main_hero_image', $img_main . '/главная-1440-4.png');
 $hero_btn1  = get_field('main_hero_btn1') ?: 'Получить консультацию';
 $hero_btn2  = get_field('main_hero_btn2') ?: 'В магазин';
@@ -141,7 +146,16 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         <div class="container">
             <div class="home-hero-grid">
                 <div class="home-hero-title-wrap">
-                    <h1 class="home-hero-title"><span>Комплексное оснащение</span> <span class="text-green">медицинских учреждений</span> <span>в Забайкальском крае</span></h1>
+                    <h1 class="home-hero-title"><?php
+                        $hero_title_escaped = esc_html($hero_title);
+                        $hero_title_html = preg_replace(
+                            '/^(.+?)\\s+(медицинских учреждений)\\s+(.+)$/u',
+                            '<span>$1</span> <span class="text-green">$2</span> <span class="title-line-dark">$3</span>',
+                            $hero_title_escaped,
+                            1
+                        );
+                        echo $hero_title_html;
+                    ?></h1>
                 </div>
                 <div class="home-hero-image-wrap">
                     <a href="#" class="home-hero-shop-btn"><?php echo esc_html($hero_btn2); ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -173,7 +187,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                         <?php foreach ($hero_checks as $check) : ?>
                             <div class="home-hero-check">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#367643"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                <span><?php echo esc_html($check['text']); ?></span>
+                                <span><?php echo esc_html(str_replace('рещения', 'решения', $check['text'])); ?></span>
                             </div>
                         <?php endforeach; ?>
                     </div>
