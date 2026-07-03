@@ -405,8 +405,6 @@
 }
 
 @media (max-width: 768px) {
-    .stomatology-page { overflow-x: hidden; }
-
     /* Mobile Figma image assets */
     .stomatology-page .stom-audience-card--image { background-image: url('../img/stomatology-audience-2-mobile.png') !important; }
     .stomatology-page .stom-audience-card--image::before { background: rgba(54, 118, 67, 0.5); }

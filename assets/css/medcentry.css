@@ -468,8 +468,6 @@
 }
 
 @media (max-width: 768px) {
-    .medcentry-page { overflow-x: hidden; }
-
     /* Hero mobile */
     .medcentry-page .mc-hero { padding: 0 16px 40px; margin-top: 32px; }
     .medcentry-page .mc-hero-grid { display: flex; flex-direction: column; min-height: 0; gap: 0; }

@@ -1,9 +1,5 @@
 /* Laboratory page styles for Trimed theme */
 
-.laboratory-page {
-    overflow-x: hidden;
-}
-
 .laboratory-page .lab-hero { padding: 20px 0 0; }
 
 .laboratory-page .lab-hero .lab-container { max-width: 1344px; padding: 0; }
