@@ -3617,6 +3617,40 @@ body.home .site-footer .map-pulse {
         height: 33.941px;
     }
 
+    body.home .direction-card:nth-child(4) {
+        /* Figma node 3116:202: local asset, object-position bottom */
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    body.home .direction-card:nth-child(4) .direction-title {
+        /* Figma node 3116:203: x24 y124, width 258, multiline */
+        width: 258px;
+        max-width: 258px;
+    }
+
+    body.home .direction-card:nth-child(4) .direction-arrow {
+        /* Figma node 3116:204: 33.941×33.941 container at x328 y149 inside 382×200 card */
+        right: 20.059px;
+        bottom: 17.059px;
+        width: 33.941px;
+        height: 33.941px;
+    }
+
+    body.home .direction-card:nth-child(5) .direction-title {
+        /* Figma node 3116:210: x24 y124, width 140 */
+        width: 140px;
+        max-width: 140px;
+    }
+
+    body.home .direction-card:nth-child(5) .direction-arrow {
+        /* Figma node 3116:211: 33.941×33.941 container at x328 y149 inside 382×200 card */
+        right: 20.059px;
+        bottom: 17.059px;
+        width: 33.941px;
+        height: 33.941px;
+    }
+
     body.home .direction-arrow svg {
         width: 24px;
         height: 24px;
