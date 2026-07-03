@@ -444,7 +444,7 @@
     .stomatology-page .stom-audience-label { position: absolute; top: -37px; left: 50%; transform: translateX(-50%); color: var(--color-black); font-size: 14px; line-height: 16.8px; letter-spacing: 0; margin: 0; width: auto; }
     .stomatology-page .stom-audience-title { font-size: 22px; line-height: 24.2px; letter-spacing: -0.66px; font-weight: 600; }
     .stomatology-page .stom-audience-desc { font-size: 14px; line-height: 16.8px; letter-spacing: 0; margin: 0; width: 295px; }
-    .stomatology-page .stom-audience-body { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+    .stomatology-page .stom-audience-body { grid-template-columns: 1fr; gap: 16px; margin-top: 68px; }
     .stomatology-page .stom-audience-lead { width: auto; font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; text-align: center; margin: 0; }
     .stomatology-page .stom-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .stomatology-page .stom-audience-card { width: 100%; height: 167px; padding: 16px; font-size: 14px; line-height: 110%; border-radius: 12px; }
