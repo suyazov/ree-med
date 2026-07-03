@@ -1018,14 +1018,14 @@ body.home .site-header {
     padding: 16px;
     background-size: cover;
     background-position: center;
-    color: var(--color-white);
+    color: #EFEFEF;
     text-decoration: none;
 }
 
 .direction-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 52.636%, rgba(0, 0, 0, 0.6) 109.75%);
     z-index: 1;
 }
 
@@ -1035,6 +1035,7 @@ body.home .site-header {
     font-size: 18px;
     line-height: 1.1;
     font-weight: 600;
+    color: #EFEFEF;
     max-width: calc(100% - 50px);
 }
 
@@ -1049,11 +1050,16 @@ body.home .site-header {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: #EFEFEF;
 }
 
 .direction-arrow svg {
     width: 24px;
     height: 24px;
+}
+
+.direction-card:nth-child(4) .direction-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 39.75%, rgba(0, 0, 0, 0.6) 109.75%);
 }
 
 /* Audience */
@@ -2531,7 +2537,11 @@ body.home .site-footer .map-pulse {
     }
 
     .direction-overlay {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 52.636%, rgba(0, 0, 0, 0.6) 109.75%);
+    }
+
+    .direction-card:nth-child(4) .direction-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 39.75%, rgba(0, 0, 0, 0.6) 109.75%);
     }
 
     .direction-card .direction-title {
@@ -2542,6 +2552,7 @@ body.home .site-footer .map-pulse {
         font-size: 24px;
         line-height: 1.1;
         font-weight: 600;
+        color: #EFEFEF;
         max-width: calc(100% - 70px);
     }
 
@@ -2552,6 +2563,7 @@ body.home .site-footer .map-pulse {
         z-index: 2;
         width: 24px;
         height: 24px;
+        color: #EFEFEF;
     }
 
     .direction-arrow svg {
@@ -3553,7 +3565,11 @@ body.home .site-footer .map-pulse {
     }
 
     body.home .direction-card .direction-overlay {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 52.636%, rgba(0, 0, 0, 0.6) 109.75%);
+    }
+
+    body.home .direction-card:nth-child(4) .direction-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 39.75%, rgba(0, 0, 0, 0.6) 109.75%);
     }
 
     body.home .direction-card .direction-title {
@@ -3565,6 +3581,7 @@ body.home .site-footer .map-pulse {
         font-size: 24px;
         line-height: 1.1;
         font-weight: 600;
+        color: #EFEFEF;
     }
 
     body.home .direction-arrow {
@@ -3573,6 +3590,7 @@ body.home .site-footer .map-pulse {
         bottom: 24px;
         width: 24px;
         height: 24px;
+        color: #EFEFEF;
     }
 
     body.home .direction-arrow svg {
