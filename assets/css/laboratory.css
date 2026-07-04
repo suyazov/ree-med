@@ -491,6 +491,8 @@
 
 .laboratory-page .lab-why-subtitle { font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-green); max-width: 647px; margin: 0 auto; }
 
+.laboratory-page .lab-why-subtitle span { color: var(--color-black); }
+
 .laboratory-page .lab-why-grid { display: grid; grid-template-columns: 480px 366px 319px; gap: 0 20px; align-items: start; }
 
 .laboratory-page .lab-why-stats {
@@ -548,7 +550,7 @@
 
 .laboratory-page .lab-why-stat-item .txt { width: 100%; font-size: 14px; line-height: 17px; opacity: 1; }
 
-.laboratory-page .lab-why-center-col { display: flex; flex-direction: column; gap: 40px; }
+.laboratory-page .lab-why-center-col { display: flex; flex-direction: column; gap: 20px; }
 
 .laboratory-page .lab-why-warehouse {
     position: relative;
@@ -556,8 +558,8 @@
     height: 187px;
     border-radius: 12px;
     overflow: hidden;
-    background: var(--color-white-2);
-    padding: 32px;
+    background: #F9F9F9;
+    padding: 28px 32px;
     display: flex;
     align-items: flex-start;
 }
@@ -566,7 +568,7 @@
 
 .laboratory-page .lab-why-warehouse img { position: absolute; right: 4px; bottom: 0; width: 158px; height: 150px; object-fit: contain; }
 
-.laboratory-page .lab-why-features-list { display: flex; flex-direction: column; gap: 12px; margin-top: 72px; }
+.laboratory-page .lab-why-features-list { display: flex; flex-direction: column; gap: 12px; margin-top: 0; }
 
 .laboratory-page .lab-why-feature-item {
     display: flex;
@@ -590,7 +592,7 @@
 
 .laboratory-page .lab-why-feature-item .plus {
     width: 20px; height: 20px; flex-shrink: 0;
-    background: var(--gradient-light-green);
+    background: linear-gradient(48.009deg, #3F8D50 18.162%, #51A462 79.556%);
     border-radius: 50%;
     position: relative;
 }

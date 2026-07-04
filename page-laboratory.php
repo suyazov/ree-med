@@ -308,7 +308,13 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
     <div class="lab-section-inner">
         <div class="lab-why-header">
             <h2 class="lab-why-title"><?php echo wp_kses_post($why_title); ?></h2>
-            <p class="lab-why-subtitle"><?php echo esc_html($why_subtitle); ?></p>
+            <p class="lab-why-subtitle"><?php
+                if (trim(wp_strip_all_tags($why_subtitle)) === 'Надежный партнер для лабораторий региона') {
+                    echo 'Надежный партнер<br><span>для лабораторий региона</span>';
+                } else {
+                    echo esc_html($why_subtitle);
+                }
+            ?></p>
         </div>
 
         <div class="lab-why-grid">
