@@ -5032,8 +5032,8 @@ body.home .site-header {
     }
 
     body.home .home-projects .container {
-        width: min(429px, calc(100vw - 56px));
-        max-width: min(429px, calc(100vw - 56px));
+        width: min(343px, calc(100vw - 32px));
+        max-width: min(343px, calc(100vw - 32px));
         margin-left: auto;
         margin-right: auto;
         padding-left: 0;
@@ -5044,7 +5044,7 @@ body.home .site-header {
     body.home .home-projects-header {
         position: relative;
         width: 100%;
-        margin-bottom: 39px;
+        margin-bottom: 32px;
         padding-right: 54px;
         box-sizing: border-box;
     }
@@ -5071,39 +5071,40 @@ body.home .site-header {
     }
 
     body.home .home-projects .projects-grid {
-        width: 100%;
-        max-width: 100%;
+        width: calc(100vw - 16px);
+        max-width: calc(100vw - 16px);
         overflow: hidden;
         padding-bottom: 0;
     }
 
     body.home .home-projects .project-card {
-        width: 100%;
-        max-width: 100%;
-        flex: 0 0 100%;
-        flex-basis: 100%;
-        gap: 16px;
+        width: 328px;
+        max-width: 328px;
+        flex: 0 0 328px;
+        flex-basis: 328px;
+        height: 426px;
+        gap: 12px;
     }
 
     body.home .home-projects .project-image {
-        width: 100%;
-        max-width: 100%;
+        width: 328px;
+        max-width: 328px;
         flex: 0 0 auto;
         flex-basis: auto;
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 429 / 242;
+        height: 194px;
+        min-height: 194px;
+        aspect-ratio: auto;
         border-radius: 12px;
     }
 
     body.home .home-projects .project-body {
-        width: 100%;
-        max-width: 100%;
+        width: 328px;
+        max-width: 328px;
         flex: 0 0 auto;
         flex-basis: auto;
-        height: 274px;
-        min-height: 274px;
-        padding: 28px 30px;
+        height: 220px;
+        min-height: 220px;
+        padding: 20px 24px;
         border-radius: 12px;
     }
 
@@ -5133,10 +5134,10 @@ body.home .site-header {
     }
 
     body.home .home-projects .project-arrow {
-        top: clamp(216px, 55vw, 266px);
-        right: 30px;
-        width: 40px;
-        height: 40px;
+        top: 226px;
+        right: 24px;
+        width: 32px;
+        height: 32px;
         border-radius: 4px;
     }
 
