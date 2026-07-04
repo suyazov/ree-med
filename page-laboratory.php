@@ -252,10 +252,22 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
 <!-- 4. Included -->
 <section class="lab-included">
     <div class="lab-section-inner">
-        <div class="lab-included-grid">
+        <div class="lab-included-layout">
             <h2 class="lab-included-title"><?php echo wp_kses_post($included_title); ?></h2>
 
-            <?php foreach ($included_cards as $card) :
+            <div class="lab-included-row lab-included-row--top">
+            <?php foreach (array_slice($included_cards, 0, 3) as $card) :
+                $card_image = !empty($card['image']) ? $card['image'] : $placeholder;
+            ?>
+                <div class="lab-included-card">
+                    <div class="lab-included-card-img"><img src="<?php echo esc_url($card_image); ?>" alt=""></div>
+                    <div class="lab-included-card-body"><span class="lab-included-card-num"><?php echo esc_html(!empty($card['number']) ? $card['number'] : ''); ?></span><p><?php echo esc_html(!empty($card['title']) ? $card['title'] : ''); ?></p></div>
+                </div>
+            <?php endforeach; ?>
+            </div>
+
+            <div class="lab-included-row lab-included-row--bottom">
+            <?php foreach (array_slice($included_cards, 3, 3) as $card) :
                 $card_image = !empty($card['image']) ? $card['image'] : $placeholder;
             ?>
                 <div class="lab-included-card">
@@ -266,6 +278,7 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
             <div class="lab-included-result">
                 <span class="arrow"></span>
                 <p><?php echo wp_kses_post($included_result_text); ?></p>
+            </div>
             </div>
         </div>
     </div>
