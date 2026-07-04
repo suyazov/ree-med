@@ -338,21 +338,17 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                         <?php foreach ($projects as $project) :
                             $project_link = !empty($project['link']) ? $project['link'] : '#';
                             $project_cat = (string) $project['cat'];
-                        ?>
-                            <a href="<?php echo esc_url($project_link); ?>" class="project-card case-card">
-                                <div class="project-image case-card__image">
-                                    <img src="<?php echo esc_url($project['image'] ?: $img_main . '/67-0.png'); ?>" alt="">
-                                </div>
-                                <div class="project-body case-card__body">
-                                    <span class="project-cat case-card__meta"><?php echo esc_html($project_cat); ?></span>
-                                    <h3 class="project-title case-card__title"><?php echo esc_html($project['title']); ?></h3>
-                                    <p class="project-desc case-card__text"><?php echo wp_kses_post($project['desc']); ?></p>
-                                </div>
-                                <span class="project-arrow case-card__arrow">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </span>
-                            </a>
-                        <?php endforeach; ?>
+                            trimed_render_case_card(array(
+                                'variant'         => 'home',
+                                'image'           => $project['image'] ?: $img_main . '/67-0.png',
+                                'meta'            => $project_cat,
+                                'title'           => $project['title'],
+                                'text'            => $project['desc'],
+                                'text_allow_html' => true,
+                                'link'            => $project_link,
+                                'arrow'           => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                            ));
+                        endforeach; ?>
                     </div>
                 </div>
                 <button class="slider-arrow next" aria-label="Следующие проекты"></button>

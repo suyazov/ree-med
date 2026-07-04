@@ -220,21 +220,16 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
             </div>
 
             <div class="mc-projects-grid trimed-projects-grid">
-                <?php foreach ($projects as $project) : ?>
-                    <div class="mc-project-card case-card">
-                        <div class="mc-project-card-img case-card__image"><img src="<?php echo esc_url(!empty($project['image']) ? $project['image'] : $placeholder); ?>" alt=""></div>
-                        <div class="mc-project-card-body case-card__body">
-                            <div class="mc-project-card-top case-card__top">
-                                <span class="mc-project-card-num case-card__meta"><?php echo esc_html($project['number']); ?></span>
-                                <span class="mc-project-card-arrow case-card__arrow"><?php echo $arrow_icon; ?></span>
-                            </div>
-                            <div>
-                                <h3 class="mc-project-card-title case-card__title"><?php echo esc_html($project['title']); ?></h3>
-                                <p class="mc-project-card-text case-card__text"><?php echo esc_html($project['text']); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+                <?php foreach ($projects as $project) :
+                    trimed_render_case_card(array(
+                        'variant' => 'medcentry',
+                        'image'   => !empty($project['image']) ? $project['image'] : $placeholder,
+                        'meta'    => $project['number'],
+                        'title'   => $project['title'],
+                        'text'    => $project['text'],
+                        'arrow'   => $arrow_icon,
+                    ));
+                endforeach; ?>
             </div>
         </div>
     </section>

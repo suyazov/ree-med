@@ -897,6 +897,111 @@ function trimed_get_arrow_svg($class = '', $size = 24, $stroke_width = 2) {
     return '<svg' . $class_attr . ' width="' . esc_attr($size) . '" height="' . esc_attr($size) . '" viewBox="0 0 ' . esc_attr($size) . ' ' . esc_attr($size) . '" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="' . $path . '" stroke="currentColor" stroke-width="' . esc_attr($stroke_width) . '" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 }
 
+/**
+ * Render a reusable project/case card.
+ *
+ * Keeps legacy classes for compatibility and adds the shared .case-card pattern.
+ *
+ * @param array $args {
+ *     @type string $variant        'home' or 'medcentry'. Defines legacy class map.
+ *     @type string $image          Image URL.
+ *     @type string $image_alt      Optional image alt text.
+ *     @type string $meta           Category/number text.
+ *     @type string $title          Card title.
+ *     @type string $text           Card description text.
+ *     @type bool   $text_allow_html Whether to allow wp_kses_post in text. Default false.
+ *     @type string $link           Optional URL. If provided, card is wrapped in <a>.
+ *     @type string $arrow          Arrow SVG/html. Defaults to 18px arrow.
+ * }
+ */
+function trimed_render_case_card($args = array()) {
+    $args = wp_parse_args($args, array(
+        'variant'         => 'home',
+        'image'           => '',
+        'image_alt'       => '',
+        'meta'            => '',
+        'title'           => '',
+        'text'            => '',
+        'text_allow_html' => false,
+        'link'            => '',
+        'arrow'           => '',
+    ));
+
+    $variant = sanitize_key($args['variant']);
+    $maps    = array(
+        'home' => array(
+            'card'   => 'project-card',
+            'image'  => 'project-image',
+            'body'   => 'project-body',
+            'meta'   => 'project-cat',
+            'title'  => 'project-title',
+            'text'   => 'project-desc',
+            'arrow'  => 'project-arrow',
+        ),
+        'medcentry' => array(
+            'card'   => 'mc-project-card',
+            'image'  => 'mc-project-card-img',
+            'body'   => 'mc-project-card-body',
+            'top'    => 'mc-project-card-top',
+            'meta'   => 'mc-project-card-num',
+            'title'  => 'mc-project-card-title',
+            'text'   => 'mc-project-card-text',
+            'arrow'  => 'mc-project-card-arrow',
+        ),
+    );
+
+    $map = isset($maps[$variant]) ? $maps[$variant] : $maps['home'];
+
+    $tag       = !empty($args['link']) ? 'a' : 'div';
+    $href_attr = $tag === 'a' ? ' href="' . esc_url($args['link']) . '"' : '';
+    $arrow     = $args['arrow'] !== '' ? $args['arrow'] : trimed_get_arrow_svg('', 18, 2);
+
+    $image = esc_url($args['image']);
+    $meta  = esc_html($args['meta']);
+    $title = esc_html($args['title']);
+    $text  = $args['text_allow_html'] ? wp_kses_post($args['text']) : esc_html($args['text']);
+
+    $image_alt = esc_attr($args['image_alt']);
+
+    $card_class   = trimed_sanitize_class_list($map['card'] . ' case-card');
+    $image_class  = trimed_sanitize_class_list($map['image'] . ' case-card__image');
+    $body_class   = trimed_sanitize_class_list($map['body'] . ' case-card__body');
+    $meta_class   = trimed_sanitize_class_list($map['meta'] . ' case-card__meta');
+    $title_class  = trimed_sanitize_class_list($map['title'] . ' case-card__title');
+    $text_class   = trimed_sanitize_class_list($map['text'] . ' case-card__text');
+    $arrow_class  = trimed_sanitize_class_list($map['arrow'] . ' case-card__arrow');
+
+    echo '<' . $tag . $href_attr . ' class="' . esc_attr($card_class) . '">';
+    echo '<div class="' . esc_attr($image_class) . '">';
+    echo '<img src="' . $image . '" alt="' . $image_alt . '">';
+    echo '</div>';
+    echo '<div class="' . esc_attr($body_class) . '">';
+
+    if ($variant === 'medcentry') {
+        $top_class = trimed_sanitize_class_list($map['top'] . ' case-card__top');
+        echo '<div class="' . esc_attr($top_class) . '">';
+        echo '<span class="' . esc_attr($meta_class) . '">' . $meta . '</span>';
+        echo '<span class="' . esc_attr($arrow_class) . '">' . $arrow . '</span>';
+        echo '</div>';
+        echo '<div>';
+        echo '<h3 class="' . esc_attr($title_class) . '">' . $title . '</h3>';
+        echo '<p class="' . esc_attr($text_class) . '">' . $text . '</p>';
+        echo '</div>';
+    } else {
+        echo '<span class="' . esc_attr($meta_class) . '">' . $meta . '</span>';
+        echo '<h3 class="' . esc_attr($title_class) . '">' . $title . '</h3>';
+        echo '<p class="' . esc_attr($text_class) . '">' . $text . '</p>';
+    }
+
+    echo '</div>';
+
+    if ($variant === 'home') {
+        echo '<span class="' . esc_attr($arrow_class) . '">' . $arrow . '</span>';
+    }
+
+    echo '</' . $tag . '>';
+}
+
 function trimed_enqueue_assets() {
     wp_enqueue_style('trimed-fonts', 'https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&subset=cyrillic&display=swap', array(), null);
     wp_enqueue_style('trimed-style', get_stylesheet_uri(), array('trimed-fonts'), trimed_asset_version('style.css'));
