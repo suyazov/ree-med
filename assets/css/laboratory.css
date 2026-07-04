@@ -929,10 +929,13 @@
     }
     .laboratory-page .lab-request-form input,
     .laboratory-page .lab-request-form textarea {
+        width: 268px;
         height: 52px;
         background: var(--color-gray);
         border-radius: 8px;
     }
+    .laboratory-page .lab-request-form textarea { overflow: hidden; }
+    .laboratory-page .lab-request-form button { width: 268px; }
     .laboratory-page .lab-request-form input::placeholder,
     .laboratory-page .lab-request-form textarea::placeholder { font-size: 12px; }
     .laboratory-page .lab-request-form .form-message:empty { display: none; min-height: 0; margin: 0; }
