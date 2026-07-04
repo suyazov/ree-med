@@ -80,6 +80,10 @@ $default_included_cards = array(
 );
 $included_cards = trimed_repeater_field('lab_included_cards', $default_included_cards);
 $included_result_text = trimed_get_field_value('lab_included_result_text', 'Мы&nbsp;поставляем не&nbsp;отдельные позиции из&nbsp;каталога, а&nbsp;формируем полноценное решение, которое помогает лаборатории работать эффективно и&nbsp;соответствовать современным требованиям');
+$included_result_plain = preg_replace('/\s+/u', ' ', html_entity_decode(wp_strip_all_tags($included_result_text), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+if (trim($included_result_plain) === 'Мы поставляем не отдельные позиции из каталога, а формируем полноценное решение, которое помогает лаборатории работать эффективно и соответствовать современным требованиям') {
+    $included_result_text = 'Мы&nbsp;поставляем не&nbsp;отдельные позиции из&nbsp;каталога, а&nbsp;<strong>формируем полноценное решение, которое помогает лаборатории работать эффективно</strong> и&nbsp;соответствовать современным требованиям';
+}
 
 // Why choose
 $why_title = trimed_get_field_value('lab_why_title', 'Почему выбирают ТриМед');

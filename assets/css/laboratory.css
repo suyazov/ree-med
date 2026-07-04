@@ -384,7 +384,7 @@
 .laboratory-page .lab-supplies-item--left { flex-direction: row-reverse; }
 
 
-.laboratory-page .lab-included { background: var(--color-white-2); padding: 140px 0 80px; }
+.laboratory-page .lab-included { background: #EFEFEF; padding: 140px 0 80px; }
 
 .laboratory-page .lab-included .lab-section-inner { max-width: 1204px; padding: 0; }
 
@@ -416,7 +416,7 @@
 .laboratory-page .lab-included-row--top {
     left: 313px;
     top: 0;
-    width: 891px;
+    width: 896px;
     height: 264px;
 }
 
@@ -429,13 +429,10 @@
 
 .laboratory-page .lab-included-card {
     width: 280px;
+    flex: 0 0 280px;
     background: transparent;
     border-radius: 0;
     overflow: visible;
-}
-
-.laboratory-page .lab-included-row--top .lab-included-card:first-child {
-    width: 275px;
 }
 
 .laboratory-page .lab-included-card-img { width: 100%; height: 180px; background: var(--color-gray-2); border-radius: 12px; overflow: hidden; }
@@ -457,7 +454,7 @@
     width: 280px;
     min-height: 240px;
     height: 240px;
-    background: var(--gradient-light-green);
+    background: linear-gradient(-88.227deg, #367643 0%, #315046 100%);
     padding: 114px 16px 24px 24px;
     display: flex;
     align-items: flex-start;
@@ -472,14 +469,16 @@
 
 .laboratory-page .lab-included-result p { width: 240px; text-align: left; }
 
+.laboratory-page .lab-included-result p strong { font-weight: 600; }
+
 .laboratory-page .lab-included-result .arrow { position: absolute; top: 16px; right: 16px; width: 13px; height: 13px; color: currentColor; }
 
 .laboratory-page .lab-included-result .arrow::before {
     content: '';
     position: absolute; width: 100%; height: 100%;
     background: currentColor;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M17 7H7M17 7V17'/%3E%3C/svg%3E") center/contain no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M17 7H7M17 7V17'/%3E%3C/svg%3E") center/contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.8 0h6.4c1.77 0 3.2 1.43 3.2 3.2v6.4h6.4c1.77 0 3.2 1.43 3.2 3.2v6.4c0 1.77-1.43 3.2-3.2 3.2h-6.4v6.4c0 1.77-1.43 3.2-3.2 3.2h-6.4c-1.77 0-3.2-1.43-3.2-3.2v-6.4H3.2C1.43 22.4 0 20.97 0 19.2v-6.4c0-1.77 1.43-3.2 3.2-3.2h6.4V3.2C9.6 1.43 11.03 0 12.8 0Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.8 0h6.4c1.77 0 3.2 1.43 3.2 3.2v6.4h6.4c1.77 0 3.2 1.43 3.2 3.2v6.4c0 1.77-1.43 3.2-3.2 3.2h-6.4v6.4c0 1.77-1.43 3.2-3.2 3.2h-6.4c-1.77 0-3.2-1.43-3.2-3.2v-6.4H3.2C1.43 22.4 0 20.97 0 19.2v-6.4c0-1.77 1.43-3.2 3.2-3.2h6.4V3.2C9.6 1.43 11.03 0 12.8 0Z'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
 .laboratory-page .lab-why { padding: 60px 0 80px; }
