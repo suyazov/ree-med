@@ -1118,9 +1118,9 @@
 }
 
 .laboratory-page .home-request-form .checkbox-label input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    flex: 0 0 15px;
+    width: var(--form-checkbox-size);
+    height: var(--form-checkbox-size);
+    flex: 0 0 var(--form-checkbox-size);
     margin: 0;
 }
 

@@ -1,4 +1,21 @@
 :root {
+    /* === Trimed responsive contract ===
+       Breakpoint tokens are DOCUMENTATION-ONLY: CSS custom properties cannot
+       be used inside @media queries, so keep media declarations in px.
+       Always prefer these tokens when authoring new component values.
+       Current legacy breakpoints:
+         - main.css: 768px, 1200px, 480px
+         - laboratory.css: 768px, 1200px
+         - home.css: 991px / 992px, 480px, 520px, 360px
+    */
+    --bp-mobile: 480px;
+    --bp-tablet: 768px;
+    --bp-desktop: 1024px;
+    --bp-wide: 1200px;
+    /* Legacy page-specific breakpoints (preserve until unified) */
+    --bp-home-tablet: 991px;
+    --bp-home-desktop: 992px;
+
     --color-white: #EFEFEF;
     --color-white-2: #F9F9F9;
     --color-gray: #E6E7E8;
@@ -18,6 +35,7 @@
     --radius-card: 12px;
     --control-height: 52px;
     --button-height: 57px;
+    --form-checkbox-size: 15px;
     --project-card-height: 220px;
     --project-card-image-width: 175px;
     --project-card-gap: 36px;

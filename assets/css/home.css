@@ -3545,13 +3545,13 @@ body.home .site-header {
     }
 
     .home-request-form .checkbox-label input[type="checkbox"] {
-        width: 15px;
-        height: 15px;
+        width: var(--form-checkbox-size);
+        height: var(--form-checkbox-size);
         margin: 0;
         border: 1px solid #315046;
         border-radius: 2px;
         background: transparent;
-        flex: 0 0 15px;
+        flex: 0 0 var(--form-checkbox-size);
     }
 
     .home-request-form .checkbox-label span {
@@ -4176,9 +4176,9 @@ body.home .site-header {
     }
 
     body.home .home-request-form .checkbox-label input[type="checkbox"] {
-        width: 15px;
-        height: 15px;
-        flex: 0 0 15px;
+        width: var(--form-checkbox-size);
+        height: var(--form-checkbox-size);
+        flex: 0 0 var(--form-checkbox-size);
     }
 
     body.home .home-request-form .request-submit {
