@@ -268,7 +268,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     $large = !empty($dir['large']);
                     $link = !empty($dir['link']) ? $dir['link'] : '#';
                 ?>
-                    <a href="<?php echo esc_url($link); ?>" class="direction-card<?php echo $large ? ' large' : ''; ?>" style="--direction-bg:url('<?php echo esc_url($dir['image'] ?: $img_main . '/главная-1440-4.png'); ?>');background-image:var(--direction-bg)">
+                    <a href="<?php echo esc_url($link); ?>" class="direction-card<?php echo $large ? ' large' : ''; ?>" aria-label="<?php echo esc_attr($dir['title']); ?>" style="--direction-bg:url('<?php echo esc_url($dir['image'] ?: $img_main . '/главная-1440-4.png'); ?>');background-image:var(--direction-bg)">
                         <span class="direction-overlay"></span>
                         <span class="direction-title"><?php echo esc_html($dir['title']); ?></span>
                         <span class="direction-arrow">

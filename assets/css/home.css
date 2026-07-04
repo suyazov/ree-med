@@ -4746,7 +4746,6 @@ body.home .site-header {
         height: 180px;
         min-height: 180px;
         border-radius: 12px;
-        background-image: var(--direction-bg) !important;
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -4758,26 +4757,43 @@ body.home .site-header {
     body.home .direction-card:nth-child(3) { order: 5; }
 
     body.home .direction-card:nth-child(1) {
-        background-size: auto 286.97%;
-        background-position: 50% 73.57%;
+        background-image: url('../img/main/figma-direction-mobile-01.png') !important;
+        background-size: cover;
+        background-position: center;
     }
 
     body.home .direction-card:nth-child(2) {
-        background-size: auto 191%;
-        background-position: center 50.76%;
+        background-image: url('../img/main/figma-direction-mobile-02.png') !important;
+        background-size: cover;
+        background-position: center;
     }
 
     body.home .direction-card:nth-child(3) {
-        background-position: bottom center;
+        background-image: url('../img/main/figma-direction-mobile-05.png') !important;
+        background-size: cover;
+        background-position: center;
+    }
+
+    body.home .direction-card:nth-child(4) {
+        background-image: url('../img/main/figma-direction-mobile-03.png') !important;
     }
 
     body.home .direction-card:nth-child(5) {
-        background-size: 123.82% 166.16%;
-        background-position: left 33.05%;
+        background-image: url('../img/main/figma-direction-mobile-04.png') !important;
+    }
+
+    body.home .direction-card:nth-child(5) {
+        background-size: cover;
+        background-position: center;
+    }
+
+    body.home .direction-card.large {
+        background-size: cover;
+        background-position: center;
     }
 
     body.home .direction-card .direction-title {
-        display: block;
+        display: none;
         left: 24px;
         bottom: 24px;
         max-width: 237px;
@@ -4793,7 +4809,7 @@ body.home .site-header {
 
     body.home .direction-card .direction-overlay,
     body.home .direction-arrow {
-        display: block;
+        display: none;
     }
 
     body.home .direction-arrow {
