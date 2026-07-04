@@ -61,7 +61,7 @@ $aud_title_html = preg_replace('/(с медицинскими)/u', '<em>$1</em>'
 
 // Exact Figma line breaks for the default title text only (preserves ACF edits).
 if ($aud_title_raw === 'Работаем с медицинскими учреждениями любого масштаба') {
-    $aud_title_html = 'Работаем<br><em>с медицинскими</em><br>учреждениями<br>любого масштаба';
+    $aud_title_html = '<span class="audience-title-desktop">Работаем<br><em>с медицинскими</em><br>учреждениями<br>любого масштаба</span><span class="audience-title-mobile">Работаем <em>с медицинскими</em><br>учреждениями любого<br>масштаба</span>';
 }
 $audience_items = trimed_repeater_field('main_audience_items', array(
     array('icon' => $img_main . '/icons/figma-audience-hospital.png', 'text' => 'Государственные больницы'),
