@@ -646,51 +646,209 @@
 }
 
 .laboratory-page .lab-projects .lab-section-inner {
-    max-width: 1200px;
+    max-width: 1298px;
     padding: 0;
 }
 
 .laboratory-page .lab-projects-header {
-    width: 1200px;
-    margin: 0 auto 67px;
+    width: 1298px;
+    margin: 0 auto 44px;
     text-align: center;
 }
 
 .laboratory-page .lab-projects-title {
-    width: 568px;
-    margin: 0 auto 22px;
+    width: 601px;
+    margin: 0 auto;
     font-size: 48px;
-    line-height: 1.1;
+    line-height: 99%;
     font-weight: 600;
-    letter-spacing: -1.44px;
-    color: var(--color-black);
+    letter-spacing: -0.03em;
+    color: var(--color-green);
     text-align: center;
 }
 
 .laboratory-page .lab-projects-desc {
+    display: none;
+}
+
+.laboratory-page .lab-projects-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 1298px;
+    height: 382px;
+}
+
+.laboratory-page .lab-projects-track {
+    position: relative;
+    width: 1200px;
+    height: 382px;
+}
+
+.laboratory-page .lab-project-slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+
+.laboratory-page .lab-project-slide.active {
     display: block;
-    width: 1032px;
-    margin: 0 auto;
-    font-size: 16px;
-    line-height: normal;
+}
+
+.laboratory-page .lab-project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 1200px;
+    height: 382px;
+}
+
+.laboratory-page .lab-project-card-body {
+    width: 761px;
+    height: 382px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.laboratory-page .lab-project-card-top {
+    width: 713px;
+    height: 14px;
+}
+
+.laboratory-page .lab-project-card-num {
+    font-size: 12px;
+    line-height: 120%;
     font-weight: 400;
+    letter-spacing: -0.03em;
     color: var(--color-black);
-    text-align: center;
 }
 
-.laboratory-page .lab-projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+.laboratory-page .lab-project-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 713px;
+    height: 281px;
 }
 
-.laboratory-page .lab-projects .mc-project-card-arrow {
-    margin-right: 20px;
+.laboratory-page .lab-project-card-title {
+    width: 424px;
+    margin: 0;
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-black);
 }
 
-.laboratory-page .lab-projects .mc-project-card-text {
-    max-height: 96px;
+.laboratory-page .lab-project-card-delivered {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 713px;
+}
+
+.laboratory-page .lab-project-card-label {
+    margin: 0;
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+.laboratory-page .lab-project-card-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.laboratory-page .lab-project-card-result {
+    width: 713px;
+    height: 116px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--color-green);
+    color: var(--color-white);
+    border-radius: 8px;
+}
+
+.laboratory-page .lab-project-card-img {
+    width: 427px;
+    height: 378px;
+    margin-top: 2px;
+    flex: 0 0 427px;
+    border-radius: 12px;
     overflow: hidden;
+}
+
+.laboratory-page .lab-project-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.laboratory-page .lab-projects-side-arrow {
+    width: 24px;
+    height: 48px;
+    flex: 0 0 24px;
+    border: 0;
+    padding: 0;
+    background: var(--color-green);
+    cursor: pointer;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 11L18 24L5 37Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 11L18 24L5 37Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.laboratory-page .lab-projects-side-arrow.prev {
+    transform: rotate(180deg);
+}
+
+.laboratory-page .lab-slider-arrows {
+    position: absolute;
+    right: 97px;
+    bottom: 23px;
+    display: flex;
+    gap: 20px;
+    width: 100px;
+    height: 40px;
+    z-index: 2;
+}
+
+.laboratory-page .lab-slider-arrow {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--gradient-light-green);
+    color: var(--color-white);
+    cursor: pointer;
+    position: relative;
+}
+
+.laboratory-page .lab-slider-arrow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 17px;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 17' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L8.5 8.5L1 16Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 17' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L8.5 8.5L1 16Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.laboratory-page .lab-slider-arrow.prev::before {
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .laboratory-page .lab-tasks { padding: 62px 0 80px; }
@@ -1000,7 +1158,7 @@
     .laboratory-page .lab-supplies-item--left { flex-direction: row; }
     .laboratory-page .lab-supplies-item .txt { background: var(--color-white); }
     .laboratory-page .lab-included-result { grid-column: span 1; }
-    .laboratory-page .lab-projects-grid { grid-template-columns: 1fr; }
+    .laboratory-page .lab-projects-slider { width: 100%; }
     .laboratory-page .request-form-wrap { margin-left: 0; max-width: 100%; }
     .laboratory-page .lab-why-warehouse { min-height: 260px; }
     .laboratory-page .lab-why-warehouse img { width: 200px; height: 130px; }
@@ -1127,17 +1285,26 @@
     .laboratory-page .lab-projects { padding: 0 0 69px; overflow: hidden; }
     .laboratory-page .lab-projects .lab-section-inner { width: 343px; max-width: calc(100vw - 32px); margin: 0 auto; padding: 0; }
     .laboratory-page .lab-projects-header { text-align: left; margin-bottom: 32px; }
-    .laboratory-page .lab-projects-title { display: block; width: 273px; font-size: 24px; line-height: 26.4px; text-align: left; margin: 0 0 12px; }
+    .laboratory-page .lab-projects-title { display: block; width: 273px; font-size: 24px; line-height: 26.4px; text-align: left; margin: 0 0 12px; color: var(--color-green); }
     .laboratory-page .lab-projects-desc { display: block; width: 343px; max-width: 343px; margin: 0; font-size: 16px; line-height: 19.2px; text-align: left; }
-    .laboratory-page .lab-projects-grid { display: flex; gap: 16px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; padding: 0 16px 12px 0; scrollbar-width: none; }
-    .laboratory-page .lab-projects-grid::-webkit-scrollbar { display: none; }
-    .laboratory-page .lab-projects .mc-project-card { flex: 0 0 328px; width: 328px; height: 426px; flex-direction: column; gap: 12px; scroll-snap-align: start; border-radius: 0; overflow: visible; background: transparent; }
-    .laboratory-page .lab-projects .mc-project-card-img { width: 328px; height: 194px; border-radius: 12px; overflow: hidden; }
-    .laboratory-page .lab-projects .mc-project-card-body { width: 328px; height: 220px; flex: 0 0 220px; padding: 20px 24px; background: #fff; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between; }
-    .laboratory-page .lab-projects .mc-project-card-top { height: 32px; align-items: flex-start; }
-    .laboratory-page .lab-projects .mc-project-card-title { width: 280px; margin-bottom: 12px; font-size: 20px; line-height: 24px; letter-spacing: -0.6px; font-weight: 600; }
-    .laboratory-page .lab-projects .mc-project-card-text { width: 280px; max-height: 76px; font-size: 16px; line-height: 19.2px; letter-spacing: 0; opacity: 1; }
-    .laboratory-page .lab-projects .mc-project-card-arrow { width: 32px; height: 32px; margin-right: 0; }
+    .laboratory-page .lab-projects-slider { display: block; width: 343px; height: auto; overflow: visible; }
+    .laboratory-page .lab-projects-side-arrow,
+    .laboratory-page .lab-slider-arrows { display: none; }
+    .laboratory-page .lab-projects-track { display: flex; gap: 16px; width: 343px; height: auto; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; padding: 0 16px 12px 0; scrollbar-width: none; }
+    .laboratory-page .lab-projects-track::-webkit-scrollbar { display: none; }
+    .laboratory-page .lab-project-slide,
+    .laboratory-page .lab-project-slide.active { position: static; display: block; flex: 0 0 328px; width: 328px; height: auto; scroll-snap-align: start; }
+    .laboratory-page .lab-project-card { width: 328px; height: auto; flex-direction: column; gap: 12px; }
+    .laboratory-page .lab-project-card-img { order: 1; width: 328px; height: 194px; flex: 0 0 194px; margin-top: 0; border-radius: 12px; overflow: hidden; }
+    .laboratory-page .lab-project-card-body { order: 2; width: 328px; height: auto; min-height: 404px; padding: 20px 24px; background: #fff; border-radius: 12px; }
+    .laboratory-page .lab-project-card-top { width: 280px; height: 14px; margin-bottom: 38px; }
+    .laboratory-page .lab-project-card-content { width: 280px; height: auto; gap: 12px; }
+    .laboratory-page .lab-project-card-title { width: 280px; font-size: 20px; line-height: 24px; letter-spacing: -0.6px; white-space: normal; }
+    .laboratory-page .lab-project-card-delivered,
+    .laboratory-page .lab-project-card-result { width: 280px; }
+    .laboratory-page .lab-project-card-result { height: auto; min-height: 161px; padding: 12px; }
+    .laboratory-page .lab-project-card-label { font-size: 14px; }
+    .laboratory-page .lab-project-card-text { font-size: 13px; line-height: 15.6px; letter-spacing: -0.39px; }
     .laboratory-page .lab-tasks { padding: 0 0 40px; }
     .laboratory-page .lab-tasks .lab-section-inner { padding: 0 16px; }
     .laboratory-page .lab-tasks-grid { grid-template-columns: 1fr; gap: 16px; }
