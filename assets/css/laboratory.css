@@ -195,7 +195,7 @@
 
 .laboratory-page .lab-audience-label { order: 2; font-size: 20px; line-height: 24px; margin: 17px 0 0 0; color: var(--color-black); }
 
-.laboratory-page .lab-audience-title { order: 1; font-size: 48px; line-height: 110%; font-weight: 600; letter-spacing: -0.03em; max-width: 743px; color: var(--color-black); }
+.laboratory-page .lab-audience-title { order: 1; font-size: 48px; line-height: 1.08; font-weight: 600; letter-spacing: -0.03em; max-width: 743px; color: var(--color-black); }
 
 .laboratory-page .lab-audience-title .text-green { color: var(--color-green); }
 
@@ -214,12 +214,15 @@
     border-radius: 12px;
 }
 
-.laboratory-page .lab-audience-card--gray { background: var(--color-gray-2); color: var(--color-black); }
+.laboratory-page .lab-audience-card--gray { background: var(--color-gray); color: var(--color-black); }
 
-.laboratory-page .lab-audience-card--green { background: var(--gradient-light-green); color: var(--color-white); }
+.laboratory-page .lab-audience-card--green { background: linear-gradient(135deg, #4CA35D 0%, #3F8D50 100%); color: var(--color-white); }
 
 .laboratory-page .lab-audience-card--image {
     background: linear-gradient(135deg, #315046 0%, #367643 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--color-white);
 }
 
