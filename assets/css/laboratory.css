@@ -674,27 +674,44 @@
 
 .laboratory-page .lab-tasks .lab-section-inner { max-width: 1202px; padding: 0; }
 
-.laboratory-page .lab-tasks-grid { display: grid; grid-template-columns: 588px 1fr; gap: 40px; }
+.laboratory-page .lab-tasks-grid { display: grid; grid-template-columns: 588px 590px; gap: 24px; }
 
 .laboratory-page .lab-tasks-header {
     background: var(--gradient-green);
     width: 588px;
     height: 444px;
-    border-radius: 4px;
+    border-radius: 12px;
     color: var(--color-white);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 56px 0 44px 44px;
+    padding: 44px;
 }
 
 .laboratory-page .lab-tasks-title { font-size: 44px; line-height: 48.4px; font-weight: 600; letter-spacing: -0.03em; max-width: 345px; }
 
-.laboratory-page .lab-tasks-subtitle { font-size: 14px; line-height: 15.4px; font-weight: 400; opacity: 0.9; max-width: 197px; margin-left: 18px; }
+.laboratory-page .lab-tasks-subtitle {
+    width: 233px;
+    height: 39px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: rgba(54, 118, 67, 0.5);
+    font-size: 14px;
+    line-height: 15.4px;
+    font-weight: 400;
+    opacity: 1;
+    max-width: none;
+    margin: 0;
+}
 
 .laboratory-page .lab-tasks-list { display: flex; flex-direction: column; gap: 12px; padding-top: 0; }
 
 .laboratory-page .lab-tasks-item {
+    width: 590px;
+    height: 64px;
+    padding: 12px 16px;
+    background: var(--color-white-2);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -703,14 +720,16 @@
     color: var(--color-black);
 }
 
-.laboratory-page .lab-tasks-check {
-    width: 40px; height: 40px; border-radius: 8px; background: var(--gradient-light-green); flex-shrink: 0; position: relative;
-}
+.laboratory-page .lab-tasks-check { width: 40px; height: 40px; border-radius: 0; background: transparent center/contain no-repeat; flex-shrink: 0; position: relative; }
 
-.laboratory-page .lab-tasks-check::after {
-    content: ''; position: absolute; left: 15px; top: 8px; width: 8px; height: 16px;
-    border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg);
-}
+.laboratory-page .lab-tasks-check::after { display: none; }
+
+.laboratory-page .lab-tasks-item:nth-child(1) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-1.png'); }
+.laboratory-page .lab-tasks-item:nth-child(2) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-2.png'); }
+.laboratory-page .lab-tasks-item:nth-child(3) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-3.png'); }
+.laboratory-page .lab-tasks-item:nth-child(4) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-4.png'); }
+.laboratory-page .lab-tasks-item:nth-child(5) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-5.png'); }
+.laboratory-page .lab-tasks-item:nth-child(6) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-6.png'); }
 
 .laboratory-page .lab-partners { padding: 61px 0 80px; }
 
@@ -950,11 +969,11 @@
     .laboratory-page .lab-tasks { padding: 0 0 40px; }
     .laboratory-page .lab-tasks .lab-section-inner { padding: 0 16px; }
     .laboratory-page .lab-tasks-grid { grid-template-columns: 1fr; gap: 16px; }
-    .laboratory-page .lab-tasks-header { width: 100%; max-width: 343px; height: auto; min-height: 220px; padding: 24px; border-radius: 20px; }
-    .laboratory-page .lab-tasks-title { font-size: 24px; line-height: 26.4px; }
-    .laboratory-page .lab-tasks-subtitle { margin-left: 0; }
+    .laboratory-page .lab-tasks-header { width: 100%; max-width: 343px; height: 220px; min-height: 220px; padding: 20px; border-radius: 12px; }
+    .laboratory-page .lab-tasks-title { width: 205px; font-size: 24px; line-height: 26.4px; }
+    .laboratory-page .lab-tasks-subtitle { width: 221px; height: 39px; padding: 12px; margin: 0; }
     .laboratory-page .lab-tasks-list { gap: 12px; }
-    .laboratory-page .lab-tasks-item { width: fit-content; font-size: 14px; gap: 12px; background: var(--color-white-2); border-radius: 12px; padding: 12px 16px; }
+    .laboratory-page .lab-tasks-item { width: fit-content; height: 54px; font-size: 14px; line-height: 17px; gap: 8px; background: var(--color-white-2); border-radius: 12px; padding: 12px; }
     .laboratory-page .lab-tasks-check { width: 30px; height: 30px; background: transparent; border-radius: 0; }
     .laboratory-page .lab-tasks-check::after { display: none; }
     .laboratory-page .lab-tasks-item:nth-child(1) .lab-tasks-check { background: url('../img/laboratory-task-icon-1.png') center/contain no-repeat; }
