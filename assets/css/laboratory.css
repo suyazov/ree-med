@@ -570,13 +570,13 @@
 
 .laboratory-page .lab-projects .lab-section-inner { max-width: 1298px; padding: 0; }
 
-.laboratory-page .lab-projects-header { text-align: center; margin-bottom: 3px; }
+.laboratory-page .lab-projects-header { text-align: center; margin-bottom: 44px; }
 
 .laboratory-page .lab-projects-title { font-size: 48px; line-height: 99%; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); display: inline-block; width: 601px; }
 
-.laboratory-page .lab-projects-desc { font-size: 16px; line-height: 140%; color: var(--color-black); max-width: 892px; margin: 0 auto; }
+.laboratory-page .lab-projects-desc { display: none; }
 
-.laboratory-page .lab-projects-slider { position: relative; padding: 0 25px 0 73px; }
+.laboratory-page .lab-projects-slider { position: relative; padding: 0 49px; }
 
 .laboratory-page .lab-project-slide { display: none; animation: lab-slide-in 0.4s ease; }
 
@@ -589,13 +589,14 @@
 
 .laboratory-page .lab-slider-arrow {
     position: absolute;
-    top: 50%;
+    top: 319px;
     transform: translateY(-50%);
-    width: 24px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border: none;
-    background: transparent;
-    color: var(--color-black);
+    background: var(--gradient-light-green);
+    border-radius: 50%;
+    color: var(--color-white);
     cursor: pointer;
     z-index: 10;
     display: flex;
@@ -606,28 +607,21 @@
 
 .laboratory-page .lab-slider-arrow:hover { opacity: 0.6; }
 
-.laboratory-page .lab-slider-arrow.prev { left: 0; }
-.laboratory-page .lab-slider-arrow.next { right: 0; }
+.laboratory-page .lab-slider-arrow.prev { left: auto; right: 109px; }
+.laboratory-page .lab-slider-arrow.next { right: 49px; }
 
 .laboratory-page .lab-slider-arrow::before {
     content: '';
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border: solid currentColor;
-    border-width: 0 3px 3px 0;
+    border-width: 0 2px 2px 0;
     transform: rotate(135deg);
 }
 
 .laboratory-page .lab-slider-arrow.next::before { transform: rotate(-45deg); }
 
-.laboratory-page .lab-slider-dots {
-    position: absolute;
-    left: 986px;
-    bottom: 21px;
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-}
+.laboratory-page .lab-slider-dots { display: none; }
 
 .laboratory-page .lab-slider-dot {
     width: 40px;
@@ -643,25 +637,34 @@
 .laboratory-page .lab-slider-dot.active,
 .laboratory-page .lab-slider-dot:hover { background: var(--color-green); }
 
-.laboratory-page .lab-project-card { display: flex; justify-content: flex-start; gap: 36px; min-height: 378px; }
+.laboratory-page .lab-project-card { display: flex; justify-content: flex-start; align-items: flex-start; gap: 12px; min-height: 382px; }
 
-.laboratory-page .lab-project-card-img { width: 427px; height: 378px; flex-shrink: 0; border-radius: 4px; overflow: hidden; background: var(--color-gray-2); position: relative; }
+.laboratory-page .lab-project-card-img { order: 2; width: 427px; height: 378px; flex-shrink: 0; border-radius: 12px; overflow: hidden; background: var(--color-gray-2); position: relative; }
 
 .laboratory-page .lab-project-card-img img { width: 100%; height: 100%; object-fit: cover; }
 
-.laboratory-page .lab-project-card-body { position: relative; flex: 1; max-width: 713px; height: 378px; padding-top: 22px; }
+.laboratory-page .lab-project-card-body {
+    order: 1;
+    position: relative;
+    flex: 0 0 761px;
+    width: 761px;
+    height: 382px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+}
 
-.laboratory-page .lab-project-card-num { position: absolute; top: 22px; left: 0; font-size: 12px; line-height: 14.4px; font-weight: 400; color: var(--color-black); }
+.laboratory-page .lab-project-card-num { position: absolute; top: 24px; left: 24px; font-size: 12px; line-height: 14.4px; font-weight: 400; letter-spacing: -0.03em; color: var(--color-black); }
 
-.laboratory-page .lab-project-card-title { position: absolute; top: 75px; left: 0; font-size: 24px; line-height: 28.8px; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); max-width: 424px; white-space: nowrap; }
+.laboratory-page .lab-project-card-title { position: absolute; top: 69px; left: 24px; font-size: 24px; line-height: 28.8px; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); max-width: 424px; white-space: nowrap; }
 
-.laboratory-page .lab-project-card-delivered { position: absolute; top: 132px; left: 0; width: 713px; }
+.laboratory-page .lab-project-card-delivered { position: absolute; top: 126px; left: 24px; width: 713px; }
 
 .laboratory-page .lab-project-card-delivered .lab-project-card-label { font-size: 16px; line-height: 19.2px; font-weight: 600; color: var(--color-black); margin-bottom: 8px; }
 
 .laboratory-page .lab-project-card-delivered .lab-project-card-text { font-size: 16px; line-height: 19.2px; font-weight: 400; letter-spacing: -0.03em; color: var(--color-black); }
 
-.laboratory-page .lab-project-card-result { position: absolute; top: 256px; left: 0; width: 713px; background: var(--gradient-green); color: var(--color-white); border-radius: 4px; padding: 0 20px 16px 20px; }
+.laboratory-page .lab-project-card-result { position: absolute; top: 242px; left: 24px; width: 713px; height: 116px; background: var(--color-green); color: var(--color-white); border-radius: 8px; padding: 16px 20px; }
 
 .laboratory-page .lab-project-card-result .lab-project-card-label { font-size: 16px; line-height: 19.2px; font-weight: 600; margin-bottom: 8px; }
 
@@ -924,26 +927,25 @@
     .laboratory-page .lab-why-feature-item .plus { width: 20px; height: 20px; background: var(--gradient-light-green); }
     .laboratory-page .lab-why-feature-item .plus::before { display: none; }
     .laboratory-page .lab-why-feature-item .plus::after { left: 50%; top: 50%; width: 10px; height: 6px; background: transparent; border: solid var(--color-white); border-width: 0 0 2px 2px; transform: translate(-50%, -58%) rotate(-45deg); }
-    .laboratory-page .lab-projects { padding: 0 0 69px; }
+    .laboratory-page .lab-projects { padding: 0 0 69px; overflow: hidden; }
     .laboratory-page .lab-projects .lab-section-inner { padding: 0 16px; }
-    .laboratory-page .lab-projects-title { font-size: 24px; width: auto; }
-    .laboratory-page .lab-projects-desc { font-size: 16px; line-height: 19.2px; }
-    .laboratory-page .lab-projects-slider { position: relative; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 40px; }
+    .laboratory-page .lab-projects-header { text-align: left; margin-bottom: 32px; }
+    .laboratory-page .lab-projects-title { display: block; width: 273px; font-size: 24px; line-height: 26.4px; text-align: left; margin: 0 0 12px; }
+    .laboratory-page .lab-projects-desc { display: block; width: 343px; max-width: 343px; margin: 0; font-size: 16px; line-height: 19.2px; text-align: left; }
+    .laboratory-page .lab-projects-slider { position: relative; display: flex; gap: 16px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; padding: 0 0 0; scrollbar-width: none; }
+    .laboratory-page .lab-projects-slider::-webkit-scrollbar { display: none; }
     .laboratory-page .lab-project-slide,
-    .laboratory-page .lab-project-slide.active { display: block; flex: 0 0 328px; width: 328px; scroll-snap-align: start; }
-    .laboratory-page .lab-project-card { flex-direction: column; gap: 0; }
-    .laboratory-page .lab-project-card-img { width: 100%; height: 194px; order: -1; margin-bottom: 12px; }
-    .laboratory-page .lab-project-card-body { max-width: none; height: auto; padding-top: 12px; }
-    .laboratory-page .lab-project-card-num { position: static; margin-bottom: 8px; }
-    .laboratory-page .lab-project-card-title { position: static; margin-bottom: 12px; white-space: normal; font-size: 20px; line-height: 24px; }
+    .laboratory-page .lab-project-slide.active { display: block; flex: 0 0 328px; width: 328px; height: 610px; scroll-snap-align: start; }
+    .laboratory-page .lab-project-card { width: 328px; height: 610px; flex-direction: column; gap: 12px; min-height: 610px; }
+    .laboratory-page .lab-project-card-img { order: 1; width: 328px; height: 194px; flex: 0 0 194px; margin-bottom: 0; border-radius: 12px; }
+    .laboratory-page .lab-project-card-body { order: 2; width: 328px; flex: 0 0 404px; max-width: none; height: 404px; padding: 20px 24px; background: #fff; border-radius: 12px; }
+    .laboratory-page .lab-project-card-num { position: static; display: block; margin-bottom: 38px; font-size: 12px; line-height: 14.4px; }
+    .laboratory-page .lab-project-card-title { position: static; margin-bottom: 12px; white-space: normal; font-size: 20px; line-height: 24px; width: 280px; max-width: 280px; }
     .laboratory-page .lab-project-card-label { font-size: 14px; }
     .laboratory-page .lab-project-card-text { font-size: 13px; line-height: 15.6px; letter-spacing: -0.39px; }
-    .laboratory-page .lab-project-card-delivered { position: static; width: auto; margin-bottom: 12px; }
-    .laboratory-page .lab-project-card-result { position: static; width: auto; padding: 12px; }
-    .laboratory-page .lab-slider-arrow { display: flex; top: 97px; width: 24px; height: 24px; background: rgba(54, 118, 67, 0.5); border-radius: 50%; color: #ffffff; }
-    .laboratory-page .lab-slider-arrow.prev { left: 8px; }
-    .laboratory-page .lab-slider-arrow.next { right: 8px; }
-    .laboratory-page .lab-slider-arrow::before { width: 8px; height: 8px; border-width: 0 2px 2px 0; }
+    .laboratory-page .lab-project-card-delivered { position: static; width: 280px; margin-bottom: 12px; }
+    .laboratory-page .lab-project-card-result { position: static; width: 280px; height: 161px; padding: 12px; border-radius: 8px; background: var(--color-green); }
+    .laboratory-page .lab-slider-arrow { display: none; }
     .laboratory-page .lab-slider-dots { display: none; }
     .laboratory-page .lab-tasks { padding: 0 0 40px; }
     .laboratory-page .lab-tasks .lab-section-inner { padding: 0 16px; }
