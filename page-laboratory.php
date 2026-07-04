@@ -315,44 +315,28 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
 </section>
 
 <!-- 6. Projects -->
-<section class="lab-projects">
+<section class="lab-projects mc-projects trimed-projects">
     <div class="lab-section-inner">
-        <div class="lab-projects-header">
-            <h2 class="lab-projects-title"><?php echo wp_kses_post($projects_title); ?></h2>
+        <div class="lab-projects-header mc-projects-header">
+            <h2 class="lab-projects-title mc-projects-title"><?php echo wp_kses_post($projects_title); ?></h2>
             <?php if (!empty($projects_subtitle)) : ?>
-                <p class="lab-projects-desc"><?php echo wp_kses_post($projects_subtitle); ?></p>
+                <p class="lab-projects-desc mc-projects-desc"><?php echo wp_kses_post($projects_subtitle); ?></p>
             <?php endif; ?>
         </div>
 
-        <div class="lab-projects-slider">
-            <?php foreach ($projects as $index => $project) :
+        <div class="lab-projects-grid mc-projects-grid trimed-projects-grid">
+            <?php foreach ($projects as $project) :
                 $project_image = !empty($project['image']) ? $project['image'] : $placeholder;
+                $project_text = !empty($project['text']) ? $project['text'] : (!empty($project['delivered']) ? $project['delivered'] : '');
+                trimed_render_case_card(array(
+                    'variant' => 'medcentry',
+                    'image'   => $project_image,
+                    'meta'    => !empty($project['number']) ? $project['number'] : '',
+                    'title'   => !empty($project['title']) ? $project['title'] : '',
+                    'text'    => $project_text,
+                ));
             ?>
-                <div class="lab-project-slide <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <div class="lab-project-card">
-                        <div class="lab-project-card-body">
-                            <span class="lab-project-card-num"><?php echo esc_html(!empty($project['number']) ? $project['number'] : ''); ?></span>
-                            <h3 class="lab-project-card-title"><?php echo esc_html(!empty($project['title']) ? $project['title'] : ''); ?></h3>
-                            <div class="lab-project-card-block lab-project-card-delivered">
-                                <p class="lab-project-card-label">Что было поставлено</p>
-                                <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
-                            </div>
-                            <div class="lab-project-card-block lab-project-card-result">
-                                <p class="lab-project-card-label">Результат</p>
-                                <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
-                            </div>
-                        </div>
-                        <div class="lab-project-card-img"><img src="<?php echo esc_url($project_image); ?>" alt=""></div>
-                    </div>
-                </div>
             <?php endforeach; ?>
-            <button class="lab-slider-arrow prev" aria-label="Предыдущий проект"></button>
-            <button class="lab-slider-arrow next" aria-label="Следующий проект"></button>
-            <div class="lab-slider-dots">
-                <?php for ($i = 0; $i < count($projects); $i++) : ?>
-                    <button class="lab-slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-slide="<?php echo $i; ?>" aria-label="Перейти к проекту <?php echo $i + 1; ?>"></button>
-                <?php endfor; ?>
-            </div>
         </div>
     </div>
 </section>
