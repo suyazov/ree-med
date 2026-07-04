@@ -1071,10 +1071,10 @@
 .laboratory-page .home-request-form .form-field input,
 .laboratory-page .home-request-form .form-field textarea {
     width: 429px;
-    height: 52px;
+    height: var(--control-height);
     margin: 0;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     background: var(--color-gray);
     padding: 20px 16px;
     font-family: inherit;
@@ -1097,7 +1097,7 @@
 }
 
 .laboratory-page .home-request-form .form-field textarea {
-    height: 52px;
+    height: var(--control-height);
     padding-top: 20px;
     resize: none;
     overflow: hidden;
@@ -1126,10 +1126,10 @@
 
 .laboratory-page .home-request-form .request-submit {
     width: 429px;
-    height: 57px;
+    height: var(--button-height);
     margin: 0 auto;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     background: var(--gradient-green);
     color: var(--color-white);
     font-size: 14px;
@@ -1382,9 +1382,9 @@
     .laboratory-page .home-request-form .form-field textarea {
         width: 100%;
         max-width: 268px;
-        height: 52px;
+        height: var(--control-height);
         background: var(--color-gray);
-        border-radius: 8px;
+        border-radius: var(--radius-control);
     }
     .laboratory-page .home-request-form .form-field-phone input { padding-left: 52px; }
     .laboratory-page .home-request-form .form-field textarea { overflow: hidden; }
