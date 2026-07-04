@@ -4284,7 +4284,7 @@ body.home .site-header {
         display: block;
         position: relative;
         width: 656px;
-        height: 373px;
+        height: 405px;
         margin-left: 16px;
     }
 
@@ -4301,7 +4301,7 @@ body.home .site-header {
         left: 0;
         top: 0;
         width: 656px;
-        height: 373px;
+        height: 405px;
     }
 
     .testimonials-content .section-label {
@@ -4912,8 +4912,8 @@ body.home .site-header {
 
     body.home .home-testimonials .testimonials-dots {
         position: absolute;
-        left: calc((100vw - 72px) / 2 - 16px);
-        top: 0;
+        left: 125px;
+        top: 385px;
         z-index: 2;
         display: flex;
         align-items: center;
