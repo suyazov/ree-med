@@ -4613,8 +4613,8 @@ body.home .site-header {
     body.home .audience-list li:nth-child(5) { width: 170px; order: 2; }
     body.home .audience-list li:nth-child(2) { width: 171px; order: 3; }
     body.home .audience-list li:nth-child(6) { width: 323px; order: 4; }
-    body.home .audience-list li:nth-child(3) { width: 202px; order: 5; }
-    body.home .audience-list li:nth-child(7) { width: 139px; height: 64px; min-height: 64px; order: 6; }
+    body.home .audience-list li:nth-child(3) { width: 186px; order: 5; }
+    body.home .audience-list li:nth-child(7) { width: 155px; height: 64px; min-height: 64px; order: 6; }
     body.home .audience-list li:nth-child(4) { width: 190px; order: 7; }
     body.home .audience-list li:nth-child(8) { width: 303px; order: 8; }
 }
