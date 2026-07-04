@@ -36,8 +36,8 @@ $audience_title = trimed_get_field_value('lab_audience_title', 'Решения <
 $default_audience_cards = array(
     array('title' => 'Клинико-диагностические лаборатории', 'image' => $img_dir . '/laboratory-audience-1.png', 'style' => 'image'),
     array('title' => 'Лаборатории медицинских центров', 'image' => '', 'style' => 'default'),
-    array('title' => 'Ветеринарные лаборатории', 'image' => '', 'style' => 'gray'),
     array('title' => 'Научно-исследовательские лаборатории', 'image' => $img_dir . '/laboratory-audience-2.png', 'style' => 'image'),
+    array('title' => 'Ветеринарные лаборатории', 'image' => '', 'style' => 'gray'),
     array('title' => 'Государственные учреждения', 'image' => '', 'style' => 'green'),
     array('title' => 'Производственные лаборатории', 'image' => '', 'style' => 'default'),
 );
