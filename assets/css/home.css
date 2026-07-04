@@ -1463,6 +1463,10 @@ body.home .site-header {
     .category-card:nth-child(6)::before { background-image: url('../img/main/figma-category-img-mobile-06.png'); }
     .category-card:nth-child(7)::before { background-image: url('../img/main/figma-category-img-mobile-07.png'); }
 
+    .category-image {
+        display: none;
+    }
+
     .category-num {
         top: 194px;
         left: 0;
