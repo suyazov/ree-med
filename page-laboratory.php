@@ -29,6 +29,13 @@ usort($hero_features, static function ($a, $b) use ($hero_feature_order) {
     return $a_index <=> $b_index;
 });
 
+$mobile_hero_feature_order = array(
+    'Поставка со склада и под заказ' => 1,
+    'Сервисное сопровождение' => 2,
+    'Оборудование ведущих производителей' => 3,
+    'Комплексное оснащение лабораторий' => 4,
+);
+
 $default_hero_badges = array(
     array('text' => 'Безопасность лаборатории'),
     array('text' => 'Расчёт под объём исследований'),
@@ -177,7 +184,10 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
 
                 <div class="lab-hero-features">
                     <?php foreach ($hero_features as $feature) : ?>
-                        <div class="lab-hero-feature-card">
+                        <?php
+                        $mobile_feature_order = $mobile_hero_feature_order[$feature['text'] ?? ''] ?? 99;
+                        ?>
+                        <div class="lab-hero-feature-card lab-hero-feature-card--mobile-order-<?php echo (int) $mobile_feature_order; ?>">
                             <?php if (!empty($feature['icon'])) : ?>
                                 <img src="<?php echo esc_url($feature['icon']); ?>" alt="" class="icon">
                             <?php elseif (!empty($feature['svg'])) : ?>
