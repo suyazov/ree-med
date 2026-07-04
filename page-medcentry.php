@@ -211,7 +211,7 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
         </div>
     </section>
 
-    <section class="mc-projects">
+    <section class="mc-projects trimed-projects">
         <div class="mc-section-inner">
             <div class="mc-projects-header">
                 <h2 class="mc-projects-title"><?php echo wp_kses_post($projects_title); ?></h2>
@@ -219,18 +219,18 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
                 <p class="mc-projects-desc mc-projects-desc--mobile"><?php echo esc_html($projects_desc_mobile); ?></p>
             </div>
 
-            <div class="mc-projects-grid">
+            <div class="mc-projects-grid trimed-projects-grid">
                 <?php foreach ($projects as $project) : ?>
-                    <div class="mc-project-card">
-                        <div class="mc-project-card-img"><img src="<?php echo esc_url(!empty($project['image']) ? $project['image'] : $placeholder); ?>" alt=""></div>
-                        <div class="mc-project-card-body">
-                            <div class="mc-project-card-top">
-                                <span class="mc-project-card-num"><?php echo esc_html($project['number']); ?></span>
-                                <span class="mc-project-card-arrow"><?php echo $arrow_icon; ?></span>
+                    <div class="mc-project-card case-card">
+                        <div class="mc-project-card-img case-card__image"><img src="<?php echo esc_url(!empty($project['image']) ? $project['image'] : $placeholder); ?>" alt=""></div>
+                        <div class="mc-project-card-body case-card__body">
+                            <div class="mc-project-card-top case-card__top">
+                                <span class="mc-project-card-num case-card__meta"><?php echo esc_html($project['number']); ?></span>
+                                <span class="mc-project-card-arrow case-card__arrow"><?php echo $arrow_icon; ?></span>
                             </div>
                             <div>
-                                <h3 class="mc-project-card-title"><?php echo esc_html($project['title']); ?></h3>
-                                <p class="mc-project-card-text"><?php echo esc_html($project['text']); ?></p>
+                                <h3 class="mc-project-card-title case-card__title"><?php echo esc_html($project['title']); ?></h3>
+                                <p class="mc-project-card-text case-card__text"><?php echo esc_html($project['text']); ?></p>
                             </div>
                         </div>
                     </div>

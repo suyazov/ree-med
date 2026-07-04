@@ -324,7 +324,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         </div>
     </section>
 
-    <section class="home-projects">
+    <section class="home-projects trimed-projects">
         <div class="container">
             <div class="home-projects-header">
                 <h2 class="section-title"><?php echo wp_kses_post($projects_title); ?></h2>
@@ -334,21 +334,21 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
             <div class="home-projects-slider projects-slider">
                 <button class="slider-arrow prev" aria-label="Предыдущие проекты"></button>
                 <div class="project-slide active">
-                    <div class="projects-grid">
+                    <div class="projects-grid trimed-projects-grid">
                         <?php foreach ($projects as $project) :
                             $project_link = !empty($project['link']) ? $project['link'] : '#';
                             $project_cat = (string) $project['cat'];
                         ?>
-                            <a href="<?php echo esc_url($project_link); ?>" class="project-card">
-                                <div class="project-image">
+                            <a href="<?php echo esc_url($project_link); ?>" class="project-card case-card">
+                                <div class="project-image case-card__image">
                                     <img src="<?php echo esc_url($project['image'] ?: $img_main . '/67-0.png'); ?>" alt="">
                                 </div>
-                                <div class="project-body">
-                                    <span class="project-cat"><?php echo esc_html($project_cat); ?></span>
-                                    <h3 class="project-title"><?php echo esc_html($project['title']); ?></h3>
-                                    <p class="project-desc"><?php echo wp_kses_post($project['desc']); ?></p>
+                                <div class="project-body case-card__body">
+                                    <span class="project-cat case-card__meta"><?php echo esc_html($project_cat); ?></span>
+                                    <h3 class="project-title case-card__title"><?php echo esc_html($project['title']); ?></h3>
+                                    <p class="project-desc case-card__text"><?php echo wp_kses_post($project['desc']); ?></p>
                                 </div>
-                                <span class="project-arrow">
+                                <span class="project-arrow case-card__arrow">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </span>
                             </a>
