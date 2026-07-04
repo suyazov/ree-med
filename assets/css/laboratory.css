@@ -1195,7 +1195,7 @@
     .laboratory-page .lab-hero-feature-card .icon { width: 24px; height: 24px; }
     .laboratory-page .lab-hero-bottom-btn { order: 5; width: 100%; max-width: 343px; margin-top: 1px; }
     .laboratory-page .lab-hero-cta-btn { order: 6; position: relative; right: auto; bottom: auto; width: 100%; max-width: 343px; margin-top: 12px; }
-    .laboratory-page .lab-audience { padding: 133px 0 100px; }
+    .laboratory-page .lab-audience { padding: 64px 0 100px; }
     .laboratory-page .lab-audience .lab-section-inner { padding: 0 16px; }
     .laboratory-page .lab-audience-header { padding: 0; margin-bottom: 24px; flex-direction: column; align-items: center; text-align: center; }
     .laboratory-page .lab-audience-title { order: 2; font-size: 24px; margin-bottom: 0; }
