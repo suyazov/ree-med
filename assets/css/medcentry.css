@@ -561,7 +561,15 @@
     .medcentry-page .mc-audience-card--gray .text { max-width: 124px; }
     .medcentry-page .mc-audience-card--green .mc-clover { top: 20px; right: 16px; width: 12px; height: 12px; }
     .medcentry-page .mc-audience-card--green .text { max-width: 147px; }
-    .medcentry-page .mc-audience-summary { max-width: 100%; margin: 16px 0 0; font-size: 20px; line-height: 24px; letter-spacing: -0.6px; text-align: left; }
+    .medcentry-page .mc-audience-summary {
+        width: 348px;
+        max-width: none;
+        margin: 34px 0 0;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.6px;
+        text-align: left;
+    }
 
     /* Included mobile */
     .medcentry-page .mc-included { margin-top: 80px; padding: 0 16px; background: transparent; border-radius: 0; }
