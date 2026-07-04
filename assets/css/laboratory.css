@@ -59,7 +59,7 @@
     align-items: center;
     gap: 12px;
     background: var(--color-gray);
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     padding: 12px 16px;
     font-size: 15px;
     line-height: 120%;
@@ -78,13 +78,13 @@
 
 .laboratory-page .lab-hero-bottom-btn {
     width: 686px;
-    height: 57px;
+    height: var(--button-height);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: var(--gradient-green);
     color: var(--color-white);
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
@@ -120,7 +120,7 @@
     background: rgba(54, 118, 67, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     padding: 12px 16px;
     color: var(--color-white);
     font-size: 14px;
@@ -156,13 +156,13 @@
     right: 28px;
     bottom: 28px;
     width: 216px;
-    height: 57px;
+    height: var(--button-height);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: var(--gradient-light-green);
     color: var(--color-white);
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
@@ -876,7 +876,7 @@
     width: 233px;
     height: 39px;
     padding: 12px 18px;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     background: rgba(54, 118, 67, 0.5);
     font-size: 14px;
     line-height: 15.4px;

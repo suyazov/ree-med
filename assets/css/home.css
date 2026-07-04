@@ -159,7 +159,7 @@ body.home .site-header {
     min-height: 56px;
     text-align: center;
     padding: 14px 16px;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -213,7 +213,7 @@ body.home .site-header {
     -webkit-backdrop-filter: blur(12px);
     color: var(--color-white);
     padding: 10px 14px;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     font-size: 12px;
     line-height: 130%;
     display: flex;
@@ -279,7 +279,7 @@ body.home .site-header {
         width: 44px;
         height: 44px;
         background: linear-gradient(20.1958deg, #3F8D50 18.162%, #51A462 79.556%);
-        border-radius: 8px;
+        border-radius: var(--radius-control);
     }
 
     body.home .site-header .menu-toggle span {
@@ -420,7 +420,7 @@ body.home .site-header {
         max-width: 100%;
         min-height: 44px;
         padding: 14px 16px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         gap: 16px;
         font-size: 12px;
         line-height: 130%;
@@ -429,7 +429,7 @@ body.home .site-header {
 
     .home-hero-cta,
     .home-hero-shop-btn-mobile {
-        min-height: 57px;
+        min-height: var(--button-height);
         font-size: 14px;
     }
 
@@ -950,7 +950,7 @@ body.home .site-header {
         height: 39px;
         min-height: 39px;
         margin: 0 0 49px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         background: rgba(54, 118, 67, 0.5);
         color: #EFEFEF;
         font-size: 14px;
@@ -1515,7 +1515,7 @@ body.home .site-header {
     .projects-btn-mobile {
         display: flex;
         width: 343px;
-        height: 57px;
+        height: var(--button-height);
         margin-top: 28px;
     }
 
@@ -1661,7 +1661,7 @@ body.home .site-header {
 .step-num {
     width: 32px;
     height: 32px;
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     background: linear-gradient(135deg, #3F8D50 0%, #51A462 100%);
     color: #EFEFEF;
     display: flex;
@@ -2049,9 +2049,9 @@ body.home .site-header {
         flex: 0 0 auto;
         width: 100%;
         max-width: 695px;
-        min-height: 57px;
+        min-height: var(--button-height);
         padding: 0 20px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         background: var(--gradient-green);
         color: var(--color-white);
         font-size: 14px;
@@ -2077,12 +2077,12 @@ body.home .site-header {
         background: linear-gradient(20.1958deg, #3F8D50 18.162%, #51A462 79.556%);
         color: var(--color-white);
         padding: 12px 20px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         font-size: 14px;
         font-weight: 600;
         text-decoration: none;
         width: 162px;
-        min-height: 57px;
+        min-height: var(--button-height);
     }
 
     .home-hero-image {
@@ -2625,7 +2625,7 @@ body.home .site-header {
         max-width: max-content;
         padding: 12px 18px;
         margin: 0 0 113px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         background: rgba(54, 118, 67, 0.5);
         font-family: var(--font-main);
         font-size: 14px;
@@ -2845,9 +2845,9 @@ body.home .site-header {
         align-items: center;
         justify-content: center;
         width: 305px;
-        height: 57px;
+        height: var(--button-height);
         padding: 20px 75px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         background: linear-gradient(-81.923deg, #367643 0%, #315046 100%);
         font-family: 'Exo 2', sans-serif;
         font-size: 14px;
@@ -4609,7 +4609,7 @@ body.home .site-header {
         min-height: 0;
         padding: 12px 16px;
         margin: 0 0 68px;
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         font-size: 16px;
         line-height: 1.1;
         font-weight: 400;

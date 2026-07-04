@@ -116,9 +116,9 @@
 .disinfection-page .checkbox-label input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    flex: 0 0 16px;
+    width: var(--form-checkbox-size-lg);
+    height: var(--form-checkbox-size-lg);
+    flex: 0 0 var(--form-checkbox-size-lg);
     margin: 1px 0 0;
     border: 1px solid #315046;
     border-radius: 2px;
