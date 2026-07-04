@@ -30,6 +30,8 @@
     --gradient-gray: linear-gradient(330.13deg, #CDCDCD 17.07%, #E1E1E1 91.62%);
     --font-main: 'Exo 2', sans-serif;
     --container: 1344px;
+    --container-padding-mobile: 16px;
+    --container-padding-xs: 12px;
     --radius-small: 4px;
     --radius-control: 8px;
     --radius-card: 12px;

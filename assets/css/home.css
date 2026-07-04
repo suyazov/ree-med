@@ -248,7 +248,7 @@ body.home .site-header {
     }
 
     body.home .site-header .container {
-        padding: 0 12px;
+        padding: 0 var(--container-padding-xs);
     }
 
     body.home .site-header .header-container {
@@ -313,7 +313,7 @@ body.home .site-header {
     }
 
     .home-hero .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     .home-hero-grid {
@@ -673,7 +673,7 @@ body.home .site-header {
 }
 
 .home-about .container {
-    padding: 0 16px;
+    padding: 0 var(--container-padding-mobile);
 }
 
 .home-about-grid {
@@ -923,7 +923,7 @@ body.home .site-header {
     }
 
     .home-audience .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     .home-audience-grid {
@@ -1495,7 +1495,7 @@ body.home .site-header {
     }
 
     .home-projects .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     .home-projects-header {
@@ -3866,7 +3866,7 @@ body.home .site-header {
     }
 
     body.home .home-steps .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     body.home .steps-header .section-title {
@@ -3920,7 +3920,7 @@ body.home .site-header {
     }
 
     body.home .home-partners .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     body.home .home-partners .section-title {
@@ -4019,7 +4019,7 @@ body.home .site-header {
     }
 
     body.home .home-request .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     body.home .home-request .request-grid {
