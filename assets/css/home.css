@@ -5131,6 +5131,38 @@ body.home .site-header {
     }
 }
 
+@media (min-width: 361px) and (max-width: 991px) {
+    body.home .home-hero .container {
+        max-width: 343px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body.home .home-hero-image-wrap,
+    body.home .home-hero-image {
+        width: 343px;
+        max-width: 343px;
+    }
+
+    body.home .home-hero-badges {
+        left: 12px;
+        width: 319px;
+        max-width: 319px;
+    }
+
+    body.home .home-hero-badge.light {
+        flex: 0 0 179px;
+        width: 179px;
+        max-width: 179px;
+    }
+
+    body.home .home-hero-badge.stat {
+        flex: 0 0 132px;
+        width: 132px;
+        max-width: 132px;
+    }
+}
+
 @media (max-width: 360px) {
     body.home .site-header .container,
     body.home .home-hero .container,
