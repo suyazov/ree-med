@@ -398,20 +398,23 @@
 .laboratory-page .lab-included-grid > .lab-included-card:nth-child(6) .lab-included-card-body p { max-width: 187px; }
 
 .laboratory-page .lab-included-result {
-    min-height: 180px;
-    height: 180px;
+    width: 280px;
+    min-height: 240px;
+    height: 240px;
     background: var(--gradient-light-green);
-    padding: 24px;
+    padding: 114px 16px 24px 24px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     position: relative;
     color: var(--color-white);
     font-size: 14px;
-    line-height: 16.8px;
-    text-align: center;
+    line-height: 17px;
+    text-align: left;
     border-radius: 12px;
 }
+
+.laboratory-page .lab-included-result p { width: 240px; text-align: left; }
 
 .laboratory-page .lab-included-result .arrow { position: absolute; top: 16px; right: 16px; width: 13px; height: 13px; color: currentColor; }
 
@@ -826,8 +829,8 @@
     .laboratory-page .lab-included-card-img { width: 295px; height: 180px; border-radius: 12px; }
     .laboratory-page .lab-included-card-body { padding: 0; gap: 16px; }
     .laboratory-page .lab-included-card-body p { width: 255px; font-size: 18px; line-height: 22px; letter-spacing: -0.03em; }
-    .laboratory-page .lab-included-result { width: 295px; min-height: 180px; border-radius: 12px; font-size: 14px; line-height: 16.8px; padding: 20px; text-align: left; align-items: flex-start; background: var(--gradient-green); }
-    .laboratory-page .lab-included-result p { text-align: left; }
+    .laboratory-page .lab-included-result { width: 295px; min-height: 196px; height: 196px; border-radius: 12px; font-size: 14px; line-height: 17px; padding: 70px 24px 24px; text-align: left; align-items: flex-start; background: var(--gradient-green); }
+    .laboratory-page .lab-included-result p { width: 240px; text-align: left; }
     .laboratory-page .lab-included-result .arrow { width: 16px; height: 16px; }
     .laboratory-page .lab-included-result .arrow::before {
         -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/contain no-repeat;
