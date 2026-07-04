@@ -3308,6 +3308,23 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width: 768px) {
+    .site-footer {
+        overflow: hidden;
+    }
+
+    .site-footer .footer-main {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .site-footer .footer-bg {
+        width: 100vw;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
     .site-footer .map-pulse {
         top: 18%;
         z-index: 3;
