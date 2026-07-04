@@ -558,7 +558,7 @@ body.home .site-header {
     .home-tasks .section-title {
         width: 100%;
         max-width: 295px;
-        margin: 0 0 28px;
+        margin: 0 auto 28px;
         font-family: 'Exo 2', sans-serif;
         font-size: 24px;
         font-weight: 600;
@@ -576,6 +576,7 @@ body.home .site-header {
         flex-direction: column;
         width: 100%;
         max-width: 295px;
+        margin: 0 auto;
         gap: 20px;
     }
 
@@ -4448,6 +4449,18 @@ body.home .site-header {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+    }
+
+    body.home .categories-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body.home .home-request .request-form-wrap {
+        left: 50%;
+        width: calc(100% - 36px);
+        max-width: 308px;
+        transform: translateX(-50%);
     }
 
     .project-card {
