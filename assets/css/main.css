@@ -3229,11 +3229,6 @@ h1, h2, h3, h4, h5, h6, p {
     .map-pulse {
         top: 18%;
     }
-    .map-pulse span:nth-child(1),
-    .map-pulse span:nth-child(2) {
-        animation: none;
-        opacity: 0.2;
-    }
 }
 
 
@@ -3310,6 +3305,13 @@ h1, h2, h3, h4, h5, h6, p {
     width: 14px;
     height: 14px;
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .site-footer .map-pulse {
+        top: 18%;
+        z-index: 3;
+    }
 }
 
 /* Shared footer: map component aligned to 1200px grid across all pages */
