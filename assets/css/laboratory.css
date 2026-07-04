@@ -202,21 +202,24 @@
 .laboratory-page .lab-audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 27px; }
 
 .laboratory-page .lab-audience-card {
+    width: 382px;
+    height: 180px;
     min-height: 180px;
-    padding: 28px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     position: relative;
     overflow: hidden;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 110%;
+    font-weight: 600;
     border-radius: 12px;
 }
 
 .laboratory-page .lab-audience-card--gray { background: var(--color-gray); color: var(--color-black); }
 
-.laboratory-page .lab-audience-card--green { background: linear-gradient(135deg, #4CA35D 0%, #3F8D50 100%); color: var(--color-white); }
+.laboratory-page .lab-audience-card--green { background: linear-gradient(46.27deg, #3F8D50 18.16%, #51A462 79.56%); color: var(--color-white); }
 
 .laboratory-page .lab-audience-card--image {
     background: linear-gradient(135deg, #315046 0%, #367643 100%);
@@ -230,20 +233,24 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(54, 118, 67, 0.55);
+    background: rgba(54, 118, 67, 0.5);
     border-radius: 12px;
+}
+
+.laboratory-page .lab-audience-card--image:nth-child(3)::before {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .laboratory-page .lab-audience-card--white { background: var(--color-white-2); color: var(--color-black); }
 
 .laboratory-page .lab-audience-card .arrow {
     position: absolute;
-    left: auto;
-    right: 24px;
-    top: 24px;
+    left: 20px;
+    right: auto;
+    top: 128px;
     bottom: auto;
-    width: 34px;
-    height: 34px;
+    width: 24px;
+    height: 24px;
     color: currentColor;
     z-index: 1;
 }
@@ -257,7 +264,12 @@
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M17 7H7M17 7V17'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
-.laboratory-page .lab-audience-card .text { position: relative; z-index: 1; padding-right: 48px; }
+.laboratory-page .lab-audience-card .text {
+    position: relative;
+    z-index: 1;
+    width: 280px;
+    padding-right: 0;
+}
 
 
 .laboratory-page .lab-supplies { padding: 0; background: transparent; overflow: hidden; }
