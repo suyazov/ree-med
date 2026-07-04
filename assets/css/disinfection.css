@@ -62,7 +62,7 @@
 .disinfection-page .request-form-wrap {
     position: absolute;
     background: #F9F9F9;
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     box-sizing: border-box;
     z-index: 2;
 }
@@ -77,7 +77,7 @@
 
 .disinfection-page .home-request-form .form-field input,
 .disinfection-page .home-request-form .form-field textarea {
-    height: 52px;
+    height: var(--control-height);
     border: 0;
     padding: 0 16px;
     background: #E6E7E8;
@@ -148,7 +148,7 @@
 
 .disinfection-page .home-request-form .request-submit {
     min-width: 0;
-    height: 57px;
+    height: var(--button-height);
     padding: 0;
 }
 
@@ -177,7 +177,7 @@ body.disinfection-page .tasks-grid {
 body.disinfection-page .tasks-intro.green-card {
     min-height: 580px;
     padding: 64px 48px;
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     background: linear-gradient(106deg, #284f45 0%, #347641 100%);
 }
 
@@ -188,7 +188,7 @@ body.disinfection-page .tasks-intro .tag {
     justify-content: center;
     padding: 16px 24px;
     background: rgba(63, 141, 80, 0.45);
-    border-radius: 8px;
+    border-radius: var(--radius-control);
     font-size: 20px;
     line-height: 120%;
     color: #fff;
@@ -223,7 +223,7 @@ body.disinfection-page .task-item {
     min-height: 72px;
     padding: 0 24px;
     gap: 32px;
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     background: #F9F9F9;
     color: #353535;
     font-size: 24px;
@@ -281,7 +281,7 @@ body.disinfection-page .task-item img {
     body.disinfection-page .why-image-card {
         min-height: 459px;
         padding: 36px;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         background-position: center;
     }
 
@@ -293,7 +293,7 @@ body.disinfection-page .task-item img {
     body.disinfection-page .why-stat {
         min-height: 116px;
         padding: 20px 24px;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         justify-content: flex-start;
     }
 
@@ -323,7 +323,7 @@ body.disinfection-page .task-item img {
     body.disinfection-page .why-info-card {
         min-height: 459px;
         padding: 48px;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         background: #F9F9F9;
     }
 
@@ -338,7 +338,7 @@ body.disinfection-page .task-item img {
         height: auto;
         min-height: 209px;
         padding: 36px;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
     }
 
     body.disinfection-page .why-warehouse-card h3 {
@@ -355,7 +355,7 @@ body.disinfection-page .task-item img {
         min-height: 67px;
         padding: 0 28px;
         gap: 20px;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         background: #E4E6E6;
         font-size: 20px;
         line-height: 120%;
@@ -505,7 +505,7 @@ body.disinfection-page .task-item img {
     body.disinfection-page .faq-item {
         min-height: 68px;
         padding: 0 28px;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         background: #F9F9F9;
         display: flex;
         align-items: center;
@@ -640,7 +640,7 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .home-request .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     .disinfection-page .request-grid {
@@ -717,7 +717,7 @@ body.disinfection-page .task-item img {
 
     /* Tasks mobile: two-column grid with icon above text */
     body.disinfection-page .tasks-section .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     body.disinfection-page .tasks-grid {
@@ -764,7 +764,7 @@ body.disinfection-page .task-item img {
 
     /* Supplies mobile: snake arc layout matching Figma */
     .disinfection-page .supplies-section .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     .disinfection-page .supplies-box {
@@ -868,7 +868,7 @@ body.disinfection-page .task-item img {
 
     .disinfection-page .supply-item > span:last-child {
         background: #EFEFEF;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         padding: 10px 14px;
     }
 
@@ -1009,7 +1009,7 @@ body.disinfection-page .task-item img {
 
     .disinfection-page .hero-badge {
         background: rgba(54, 118, 67, 0.5);
-        border-radius: 8px;
+        border-radius: var(--radius-control);
         padding: 6px 10px;
         font-size: 11px;
         justify-self: stretch;
@@ -1241,7 +1241,7 @@ body.disinfection-page .task-item img {
         width: 295px;
         height: 180px;
         margin-bottom: 0;
-        border-radius: 12px;
+        border-radius: var(--radius-card);
         object-fit: cover;
     }
 
@@ -1377,7 +1377,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .hero-section .container {
-        padding: 0 16px;
+        padding: 0 var(--container-padding-mobile);
         min-height: 729px;
         box-sizing: border-box;
     }
