@@ -731,27 +731,77 @@
 .laboratory-page .lab-tasks-item:nth-child(5) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-5.png'); }
 .laboratory-page .lab-tasks-item:nth-child(6) .lab-tasks-check { background-image: url('../img/laboratory-task-icon-6.png'); }
 
-.laboratory-page .lab-partners { padding: 61px 0 80px; }
+.laboratory-page .partners-section {
+    padding: 61px 0 80px;
+}
 
-.laboratory-page .lab-partners .lab-section-inner { max-width: 1202px; padding: 0; }
+.laboratory-page .partners-section .container {
+    max-width: 1202px;
+    padding: 0;
+}
 
-.laboratory-page .lab-partners-title { font-size: 48px; line-height: 110%; font-weight: 400; letter-spacing: -0.03em; color: var(--color-black); text-align: center; margin: 0 auto 54px; display: block; max-width: 586px; }
+.laboratory-page .partners-section .section-header {
+    margin-bottom: 54px;
+}
 
-.laboratory-page .lab-partners-grid { display: grid; grid-template-columns: repeat(3, 382px); gap: 28px; }
+.laboratory-page .partners-title {
+    max-width: 586px;
+    margin: 0 auto;
+    font-weight: 400;
+}
 
-.laboratory-page .lab-partner-card { background: var(--color-white-2); width: 382px; height: 258px; padding: 20px 17px; border-radius: 4px; }
+.laboratory-page .partners-title .text-green {
+    font-weight: 600;
+}
 
-.laboratory-page .lab-partner-card img { width: 214px; height: 120px; object-fit: contain; display: block; margin: 0 auto 16px auto; }
+.laboratory-page .partners-grid {
+    grid-template-columns: repeat(3, 382px);
+    gap: 28px;
+}
 
-.laboratory-page .lab-partner-name { font-size: 16px; line-height: 19.2px; font-weight: 600; letter-spacing: -0.03em; color: var(--color-black); margin: 16px 0 12px 0; }
+.laboratory-page .partner-card {
+    width: 382px;
+    height: 258px;
+    min-height: 258px;
+    padding: 20px 17px;
+    border-radius: 4px;
+}
 
-.laboratory-page .lab-partner-text { font-size: 14px; line-height: 16.8px; font-weight: 400; letter-spacing: -0.03em; color: var(--color-black); opacity: 0.85; }
+.laboratory-page .partner-card img {
+    width: 214px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 16px;
+}
 
-.laboratory-page .lab-request { padding: 60px 0 141px; }
+.laboratory-page .partner-card h3 {
+    margin: 16px 0 12px;
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
 
-.laboratory-page .lab-request .lab-section-inner { max-width: 1200px; padding: 0; }
+.laboratory-page .partner-card p {
+    font-size: 14px;
+    line-height: 16.8px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--color-black);
+    opacity: 0.85;
+}
 
-.laboratory-page .lab-request-grid {
+.laboratory-page .home-request {
+    padding: 60px 0 141px;
+    background: #EFEFEF;
+}
+
+.laboratory-page .home-request .container {
+    max-width: 1200px;
+    padding: 0;
+}
+
+.laboratory-page .request-grid {
     position: relative;
     background: var(--gradient-light-green);
     width: 1200px;
@@ -760,37 +810,145 @@
     padding: 31px 30px 48px 48px;
 }
 
-.laboratory-page .lab-request-grid::before {
-    content: '';
+.laboratory-page .request-plus {
     position: absolute;
     left: 48px;
     top: 43px;
     width: 40px;
     height: 40px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M20 8v24M8 20h24' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+    color: var(--color-white);
     z-index: 1;
 }
 
-.laboratory-page .lab-request-text { position: absolute; left: 48px; bottom: 48px; width: 445px; }
+.laboratory-page .request-text {
+    position: absolute;
+    left: 48px;
+    bottom: 48px;
+    width: 445px;
+    color: var(--color-white);
+}
 
-.laboratory-page .lab-request-title { font-size: 36px; line-height: 39.6px; font-weight: 600; letter-spacing: -0.03em; color: var(--color-white); margin-bottom: 16px; }
+.laboratory-page .request-text .section-title {
+    margin: 0 0 16px;
+    font-size: 36px;
+    line-height: 39.6px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--color-white);
+}
 
-.laboratory-page .lab-request-desc { font-size: 16px; line-height: 17.6px; font-weight: 400; color: var(--color-white); max-width: 387px; }
+.laboratory-page .request-text .section-title em {
+    font-style: italic;
+}
 
-.laboratory-page .lab-request-form { position: absolute; right: 30px; top: 31px; width: 490px; height: 416px; background: var(--color-white); padding: 30px 31px 31px 30px; display: flex; flex-direction: column; gap: 12px; border-radius: 12px; }
+.laboratory-page .request-copy-mobile {
+    display: none;
+}
 
-.laboratory-page .lab-request-form input,
-.laboratory-page .lab-request-form textarea { width: 429px; height: 52px; margin: 0; background: var(--color-gray); border: none; border-radius: 8px; padding: 20px 16px; font-family: inherit; font-size: 12px; line-height: 12px; color: var(--color-black); }
+.laboratory-page .request-text p {
+    max-width: 387px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 17.6px;
+    font-weight: 400;
+    color: var(--color-white);
+}
 
-.laboratory-page .lab-request-form textarea { height: 52px; padding-top: 20px; resize: none; }
+.laboratory-page .request-form-wrap {
+    position: absolute;
+    right: 30px;
+    top: 31px;
+    width: 490px;
+    height: 416px;
+    padding: 30px 31px 31px 30px;
+    background: var(--color-white);
+    border-radius: 12px;
+}
 
-.laboratory-page .lab-request-form .checkbox { display: flex; align-items: center; gap: 12px; font-size: 12px; line-height: 14px; color: var(--color-black); margin: 0; }
+.laboratory-page .home-request-form {
+    width: 429px;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
 
-.laboratory-page .lab-request-form .form-message:empty { display: none; }
+.laboratory-page .home-request-form .form-row {
+    margin-bottom: 12px;
+}
 
-.laboratory-page .lab-request-form .checkbox input { width: 15px; height: 15px; flex-shrink: 0; }
+.laboratory-page .home-request-form .form-field-label {
+    display: none;
+}
 
-.laboratory-page .lab-request-form button { width: 100%; height: 57px; margin: 0 auto; background: var(--gradient-green); color: var(--color-white); border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.laboratory-page .home-request-form .form-field input,
+.laboratory-page .home-request-form .form-field textarea {
+    width: 429px;
+    height: 52px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-gray);
+    padding: 20px 16px;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--color-black);
+}
+
+.laboratory-page .home-request-form .form-field-phone input {
+    padding-left: 52px;
+}
+
+.laboratory-page .home-request-form .form-field-phone .phone-flag {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 20px;
+    height: 13px;
+    transform: translateY(-50%);
+}
+
+.laboratory-page .home-request-form .form-field textarea {
+    height: 52px;
+    padding-top: 20px;
+    resize: none;
+    overflow: hidden;
+}
+
+.laboratory-page .home-request-form .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 8px 0 12px;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-dark-green);
+}
+
+.laboratory-page .home-request-form .form-message:empty {
+    display: none;
+}
+
+.laboratory-page .home-request-form .checkbox-label input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    margin: 0;
+}
+
+.laboratory-page .home-request-form .request-submit {
+    width: 429px;
+    height: 57px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 8px;
+    background: var(--gradient-green);
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
 
 @media (max-width: 1200px) {
     .laboratory-page .lab-hero-grid {
@@ -825,7 +983,7 @@
     .laboratory-page .lab-slider-arrow.prev { left: 10px; }
     .laboratory-page .lab-slider-arrow.next { right: 10px; }
     .laboratory-page .lab-slider-dots { right: 16px; }
-    .laboratory-page .lab-request-form { margin-left: 0; max-width: 100%; }
+    .laboratory-page .request-form-wrap { margin-left: 0; max-width: 100%; }
     .laboratory-page .lab-why-warehouse { min-height: 260px; }
     .laboratory-page .lab-why-warehouse img { width: 200px; height: 130px; }
 }
@@ -982,24 +1140,27 @@
     .laboratory-page .lab-tasks-item:nth-child(4) .lab-tasks-check { background: url('../img/laboratory-task-icon-4.png') center/contain no-repeat; }
     .laboratory-page .lab-tasks-item:nth-child(5) .lab-tasks-check { background: url('../img/laboratory-task-icon-5.png') center/contain no-repeat; }
     .laboratory-page .lab-tasks-item:nth-child(6) .lab-tasks-check { background: url('../img/laboratory-task-icon-6.png') center/contain no-repeat; }
-    .laboratory-page .lab-partners { padding: 0 0 90px; }
-    .laboratory-page .lab-partners .lab-section-inner { padding: 0 16px; }
-    .laboratory-page .lab-partners-title { font-size: 24px; margin-bottom: 24px; color: var(--color-green); max-width: 260px; margin-left: auto; margin-right: auto; }
-    .laboratory-page .lab-partners-title::first-line { color: var(--color-black); }
-    .laboratory-page .lab-partners-grid { display: flex; overflow-x: auto; gap: 16px; }
-    .laboratory-page .lab-partner-card { flex: 0 0 243px; width: 243px; height: auto; min-height: 253px; padding: 16px; border-radius: 8px; }
-    .laboratory-page .lab-partner-card img { width: 174px; height: 98px; object-fit: contain; margin: 0 auto 12px; }
-    .laboratory-page .lab-partner-name { font-size: 16px; margin: 12px 0 8px; }
-    .laboratory-page .lab-partner-text { font-size: 13px; }
-    .laboratory-page .lab-request { padding: 0 0 101px; }
-    .laboratory-page .lab-request .lab-section-inner { padding: 0 16px; }
-    .laboratory-page .lab-request-grid { width: auto; height: 646px; min-height: 646px; padding: 64px 20px 24px; display: flex; flex-direction: column; gap: 16px; border-radius: 12px; overflow: hidden; }
-    .laboratory-page .lab-request-grid::before { left: 50%; top: 20px; transform: translateX(-50%); width: 16px; height: 16px; }
-    .laboratory-page .lab-request-text { position: static; width: auto; text-align: center; }
-    .laboratory-page .lab-request-title { font-size: 24px; font-style: italic; }
-    .laboratory-page .lab-request-title::first-line { font-style: normal; }
-    .laboratory-page .lab-request-desc { max-width: none; }
-    .laboratory-page .lab-request-form {
+    .laboratory-page .partners-section { padding: 0 0 90px; }
+    .laboratory-page .partners-section .container { padding: 0 16px; }
+    .laboratory-page .partners-section .section-header { margin-bottom: 24px; }
+    .laboratory-page .partners-title { max-width: 260px; font-size: 24px; color: var(--color-black); }
+    .laboratory-page .partners-title .text-green { color: var(--color-green); }
+    .laboratory-page .partners-grid { display: flex; overflow-x: auto; gap: 16px; }
+    .laboratory-page .partner-card { flex: 0 0 243px; width: 243px; height: auto; min-height: 253px; padding: 16px; border-radius: 8px; }
+    .laboratory-page .partner-card img { width: 174px; height: 98px; object-fit: contain; margin: 0 auto 12px; }
+    .laboratory-page .partner-card h3 { font-size: 16px; margin: 12px 0 8px; }
+    .laboratory-page .partner-card p { font-size: 13px; }
+    .laboratory-page .home-request { padding: 0 0 101px; }
+    .laboratory-page .home-request .container { padding: 0 16px; }
+    .laboratory-page .request-grid { width: auto; height: 646px; min-height: 646px; padding: 64px 20px 24px; display: flex; flex-direction: column; gap: 16px; border-radius: 12px; overflow: hidden; }
+    .laboratory-page .request-plus { left: 50%; top: 20px; transform: translateX(-50%); width: 16px; height: 16px; }
+    .laboratory-page .request-text { position: static; width: auto; text-align: center; }
+    .laboratory-page .request-copy-desktop { display: none; }
+    .laboratory-page .request-copy-mobile { display: inline; }
+    .laboratory-page .request-text .section-title { font-size: 24px; line-height: 1.1; font-style: italic; }
+    .laboratory-page .request-text .section-title::first-line { font-style: normal; }
+    .laboratory-page .request-text p { max-width: none; }
+    .laboratory-page .request-form-wrap {
         position: static;
         align-self: center;
         width: 308px;
@@ -1009,19 +1170,22 @@
         padding: 20px 18px;
         border-radius: 12px;
     }
-    .laboratory-page .lab-request-form input,
-    .laboratory-page .lab-request-form textarea {
+    .laboratory-page .home-request-form {
+        width: 268px;
+    }
+    .laboratory-page .home-request-form .form-field input,
+    .laboratory-page .home-request-form .form-field textarea {
         width: 268px;
         height: 52px;
         background: var(--color-gray);
         border-radius: 8px;
     }
-    .laboratory-page .lab-request-form textarea { overflow: hidden; }
-    .laboratory-page .lab-request-form button { width: 268px; }
-    .laboratory-page .lab-request-form input::placeholder,
-    .laboratory-page .lab-request-form textarea::placeholder { font-size: 12px; }
-    .laboratory-page .lab-request-form .form-message:empty { display: none; min-height: 0; margin: 0; }
-    .laboratory-page .lab-request-form button { font-size: 0; }
-    .laboratory-page .lab-request-form button::after { content: 'Отправить'; font-size: 14px; line-height: 17px; }
+    .laboratory-page .home-request-form .form-field-phone input { padding-left: 52px; }
+    .laboratory-page .home-request-form .form-field textarea { overflow: hidden; }
+    .laboratory-page .home-request-form .request-submit { width: 268px; font-size: 0; }
+    .laboratory-page .home-request-form .form-field input::placeholder,
+    .laboratory-page .home-request-form .form-field textarea::placeholder { font-size: 12px; }
+    .laboratory-page .home-request-form .form-message:empty { display: none; min-height: 0; margin: 0; }
+    .laboratory-page .home-request-form .request-submit::after { content: 'Отправить'; font-size: 14px; line-height: 17px; }
 
 }

@@ -375,17 +375,26 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
 </section>
 
 <!-- 8. Partners -->
-<section class="lab-partners">
-    <div class="lab-section-inner">
-        <h2 class="lab-partners-title"><?php echo wp_kses_post($partners_title); ?></h2>
-        <div class="lab-partners-grid">
-            <?php foreach ($partners as $partner) :
-                $partner_image = !empty($partner['image']) ? $partner['image'] : $placeholder;
+<section class="partners-section lab-partners">
+    <div class="container">
+        <div class="section-header center">
+            <?php
+            $partners_title_markup = wp_kses_post($partners_title);
+            if (strpos(wp_strip_all_tags($partners_title_markup), 'производителями') !== false && strpos($partners_title_markup, 'text-green') === false) {
+                $partners_title_markup = str_replace('производителями', '<br><span class="text-green">производителями</span>', $partners_title_markup);
+            }
             ?>
-                <div class="lab-partner-card">
-                    <img src="<?php echo esc_url($partner_image); ?>" alt="">
-                    <h3 class="lab-partner-name"><?php echo esc_html(!empty($partner['name']) ? $partner['name'] : ''); ?></h3>
-                    <p class="lab-partner-text"><?php echo wp_kses_post(!empty($partner['text']) ? $partner['text'] : ''); ?></p>
+            <h2 class="section-title partners-title"><?php echo $partners_title_markup; ?></h2>
+        </div>
+        <div class="partners-grid">
+            <?php foreach ($partners as $partner) :
+                $partner_logo = !empty($partner['logo']) ? $partner['logo'] : (!empty($partner['image']) ? $partner['image'] : $placeholder);
+                $partner_text = !empty($partner['desc']) ? $partner['desc'] : (!empty($partner['text']) ? $partner['text'] : '');
+            ?>
+                <div class="partner-card">
+                    <img src="<?php echo esc_url($partner_logo); ?>" alt="">
+                    <h3><?php echo esc_html(!empty($partner['name']) ? $partner['name'] : ''); ?></h3>
+                    <p><?php echo wp_kses_post($partner_text); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -394,21 +403,16 @@ $request_button_text = trimed_get_field_value('lab_request_button_text', 'Пол
 
 <!-- 9. Request -->
     <?php
-    trimed_render_service_request_section(array(
-        'section_class' => 'lab-request',
-        'container_class' => 'lab-section-inner',
-        'inner_class' => 'lab-request-grid',
-        'summary' => array(
-            'content_class' => 'lab-request-text',
-            'title'        => $request_title,
-            'title_class'  => 'lab-request-title',
-            'desc'         => $request_desc,
-            'desc_class'   => 'lab-request-desc',
-        ),
-        'form' => array(
-            'class'       => 'lab-request-form request-form',
-            'fields'      => array('name', 'phone', 'organization', 'comment'),
-            'button_text' => $request_button_text,
+    trimed_render_request_callout(array(
+        'section_class'      => 'home-request lab-request',
+        'section_id'         => 'request',
+        'title'              => $request_title,
+        'title_mobile'       => 'Подберём оборудование<br><em>для вашей лаборатории</em>',
+        'description'        => $request_desc,
+        'description_mobile' => 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий',
+        'form_args'          => array(
+            'button_text'        => $request_button_text,
+            'button_mobile_text' => 'Отправить',
         ),
     ));
     ?>
