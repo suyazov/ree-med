@@ -245,10 +245,12 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
     $default_dir_title = 'Решения для разных направлений медицины';
     if ( $dir_title === $default_dir_title || strpos($dir_title, $default_dir_title) !== false ) {
         $dir_title_formatted        = 'Решения для разных<br><span class="text-green">направлений медицины</span>';
-        $dir_title_formatted_mobile = 'Решения для разных <span class="text-green">направлений медицины</span>';
+        $dir_title_formatted_mobile = 'Помогаем выстроить систему <span class="text-green">инфекционного контроля</span>';
+        $dir_subtitle_mobile        = 'Что входит';
     } else {
         $dir_title_formatted        = wp_kses_post($dir_title);
         $dir_title_formatted_mobile = wp_kses_post($dir_title);
+        $dir_subtitle_mobile        = $dir_subtitle;
     }
     ?>
     <section class="home-directions">
@@ -258,7 +260,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     <span class="directions-copy-desktop"><?php echo $dir_title_formatted; ?></span>
                     <span class="directions-copy-mobile"><?php echo $dir_title_formatted_mobile; ?></span>
                 </h2>
-                <span class="section-label"><span class="directions-copy-desktop"><?php echo esc_html($dir_subtitle); ?></span><span class="directions-copy-mobile"><?php echo esc_html($dir_subtitle); ?></span></span>
+                <span class="section-label"><span class="directions-copy-desktop"><?php echo esc_html($dir_subtitle); ?></span><span class="directions-copy-mobile"><?php echo esc_html($dir_subtitle_mobile); ?></span></span>
             </div>
             <?php if (!empty($directions)) : ?>
             <div class="directions-grid">
@@ -266,7 +268,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     $large = !empty($dir['large']);
                     $link = !empty($dir['link']) ? $dir['link'] : '#';
                 ?>
-                    <a href="<?php echo esc_url($link); ?>" class="direction-card<?php echo $large ? ' large' : ''; ?>" style="background-image:url('<?php echo esc_url($dir['image'] ?: $img_main . '/главная-1440-4.png'); ?>')">
+                    <a href="<?php echo esc_url($link); ?>" class="direction-card<?php echo $large ? ' large' : ''; ?>" style="--direction-bg:url('<?php echo esc_url($dir['image'] ?: $img_main . '/главная-1440-4.png'); ?>');background-image:var(--direction-bg)">
                         <span class="direction-overlay"></span>
                         <span class="direction-title"><?php echo esc_html($dir['title']); ?></span>
                         <span class="direction-arrow">
