@@ -4925,8 +4925,8 @@ body.home .site-header {
     }
 
     body.home .task-card:nth-child(1) {
-        background-size: auto 379.2%;
-        background-position: 49% 62.63%;
+        background-size: cover;
+        background-position: center 42%;
     }
 
     body.home .task-card:nth-child(2) {
@@ -4935,8 +4935,8 @@ body.home .site-header {
     }
 
     body.home .task-card:nth-child(3) {
-        background-size: auto 195.02%;
-        background-position: 69% 35.29%;
+        background-size: cover;
+        background-position: center 48%;
     }
 
     body.home .task-card:nth-child(4) {
@@ -4945,8 +4945,8 @@ body.home .site-header {
     }
 
     body.home .task-card:nth-child(5) {
-        background-size: auto 231.52%;
-        background-position: 50% 44.46%;
+        background-size: cover;
+        background-position: center 42%;
     }
 
     body.home .task-card:nth-child(6) {
