@@ -517,19 +517,27 @@
 
 .laboratory-page .lab-why-feature-item .plus {
     width: 20px; height: 20px; flex-shrink: 0;
-    background: var(--color-dark-green);
+    background: var(--gradient-light-green);
     border-radius: 50%;
     position: relative;
 }
 
 .laboratory-page .lab-why-feature-item .plus::before, .laboratory-page .lab-why-feature-item .plus::after {
-    content: ''; position: absolute; background: var(--color-white);
-    left: 50%; top: 50%; transform: translate(-50%, -50%);
+    content: '';
+    position: absolute;
 }
 
-.laboratory-page .lab-why-feature-item .plus::before { width: 10px; height: 2px; }
+.laboratory-page .lab-why-feature-item .plus::before { display: none; }
 
-.laboratory-page .lab-why-feature-item .plus::after { width: 2px; height: 10px; }
+.laboratory-page .lab-why-feature-item .plus::after {
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 6px;
+    border: solid var(--color-white);
+    border-width: 0 0 2px 2px;
+    transform: translate(-50%, -58%) rotate(-45deg);
+}
 
 .laboratory-page .lab-why-right-card {
     width: 319px;
@@ -901,9 +909,9 @@
     .laboratory-page .lab-why-features-list { grid-area: features; gap: 9px; align-items: flex-start; }
     .laboratory-page .lab-why-feature-item { padding-left: 0; width: 316px; height: 60px; font-size: 14px; line-height: 110%; font-weight: 600; background: var(--color-gray); border-radius: 12px; padding: 20px 16px; box-sizing: border-box; }
     .laboratory-page .lab-why-feature-item:nth-child(2) { width: 268px; }
-    .laboratory-page .lab-why-feature-item .plus { width: 24px; height: 24px; background: var(--color-green); }
+    .laboratory-page .lab-why-feature-item .plus { width: 20px; height: 20px; background: var(--gradient-light-green); }
     .laboratory-page .lab-why-feature-item .plus::before { display: none; }
-    .laboratory-page .lab-why-feature-item .plus::after { left: 50%; top: 50%; width: 5px; height: 9px; background: transparent; border: solid #fff; border-width: 0 2px 2px 0; transform: translate(-60%, -60%) rotate(45deg); }
+    .laboratory-page .lab-why-feature-item .plus::after { left: 50%; top: 50%; width: 10px; height: 6px; background: transparent; border: solid var(--color-white); border-width: 0 0 2px 2px; transform: translate(-50%, -58%) rotate(-45deg); }
     .laboratory-page .lab-projects { padding: 0 0 69px; }
     .laboratory-page .lab-projects .lab-section-inner { padding: 0 16px; }
     .laboratory-page .lab-projects-title { font-size: 24px; width: auto; }
