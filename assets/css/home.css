@@ -4036,10 +4036,10 @@ body.home .site-header {
     body.home .home-request .request-plus {
         position: absolute;
         display: block;
-        left: 158px;
-        top: 31px;
-        width: 28px;
-        height: 28px;
+        left: 164px;
+        top: 38px;
+        width: 16px;
+        height: 16px;
         color: #EFEFEF;
         background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0C25.5 0 28 4.5 28 10C28 12.2 29.8 14 32 14C37.5 14 40 16.8 40 20C40 23.2 37.5 26 32 26C29.8 26 28 27.8 28 30C28 35.5 25.5 40 20 40C14.5 40 12 35.5 12 30C12 27.8 10.2 26 8 26C2.5 26 0 23.2 0 20C0 16.8 2.5 14 8 14C10.2 14 12 12.2 12 10C12 4.5 14.5 0 20 0Z' fill='%23EFEFEF'/%3E%3C/svg%3E") center / contain no-repeat;
     }
@@ -4074,6 +4074,7 @@ body.home .site-header {
         transform: none;
         padding: 100px 23px 0;
         height: 194px;
+        text-align: center;
         box-sizing: border-box;
     }
 
@@ -4092,8 +4093,8 @@ body.home .site-header {
     body.home .home-request .request-text p {
         width: 297px;
         margin: 0;
-        font-size: 13px;
-        line-height: 15px;
+        font-size: 14px;
+        line-height: 1.1;
     }
 
     body.home .home-request .request-submit {
@@ -4125,7 +4126,11 @@ body.home .site-header {
     body.home .home-request-form .form-field textarea {
         width: 100%;
         height: 52px;
-        padding: 16px;
+        padding: 20px 16px;
+        border-radius: 8px;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        font-weight: 400;
         box-sizing: border-box;
     }
 
@@ -4133,14 +4138,39 @@ body.home .site-header {
         min-height: 52px;
     }
 
+    body.home .home-request-form .form-field-phone .phone-flag {
+        left: 16px;
+        top: 50%;
+        bottom: auto;
+        width: 20px;
+        height: 13px;
+        transform: translateY(-50%);
+        object-fit: cover;
+    }
+
+    body.home .home-request-form .form-field-phone input {
+        padding-left: 44px;
+    }
+
     body.home .home-request-form .checkbox-label {
-        font-size: 11px;
-        line-height: 130%;
-        width: 100%;
+        gap: 8px;
+        font-size: 12px;
+        line-height: normal;
+        letter-spacing: -0.24px;
+        width: 265px;
     }
 
     body.home .home-request-form .checkbox-label span {
-        width: auto;
+        width: 242px;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        opacity: 0.6;
+    }
+
+    body.home .home-request-form .checkbox-label input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 15px;
     }
 
     body.home .home-request-form .request-submit {
@@ -4509,6 +4539,26 @@ body.home .site-header {
     body.home .home-testimonials .testimonial-card {
         width: 100%;
         max-width: calc(100vw - 32px);
+    }
+
+    body.home .home-request .container {
+        width: min(343px, calc(100vw - 32px));
+        max-width: min(343px, calc(100vw - 32px));
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+
+    body.home .home-request .request-grid {
+        width: min(343px, calc(100vw - 32px));
+        max-width: min(343px, calc(100vw - 32px));
+    }
+
+    body.home .home-request .request-form-wrap {
+        left: 50%;
+        width: min(308px, calc(100% - 35px));
+        max-width: 308px;
+        transform: translateX(-50%);
     }
 }
 
