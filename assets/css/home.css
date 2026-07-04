@@ -4135,7 +4135,10 @@ body.home .site-header {
     }
 
     body.home .home-request-form .form-field textarea {
-        min-height: 52px;
+        height: 53px;
+        min-height: 53px;
+        overflow: hidden;
+        resize: none;
     }
 
     body.home .home-request-form .form-field-phone .phone-flag {
