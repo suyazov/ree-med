@@ -48,16 +48,16 @@ $supplies_subtitle = trimed_get_field_value('lab_supplies_subtitle', 'Компл
 $supplies_title = trimed_get_field_value('lab_supplies_title', 'Подберём оборудование <span class="text-green">под&nbsp;задачи вашей лаборатории</span>');
 $supplies_center_image = trimed_image_field('lab_supplies_center_image', $img_dir . '/laboratory-supplies-center.png');
 $default_supplies_items = array(
-    array('text' => 'Лабораторная мебель', 'left' => false, 'style' => 'left:67.63%;top:23.11%'),
-    array('text' => 'Автоматические анализаторы', 'left' => false, 'style' => 'left:67.34%;top:38.40%'),
-    array('text' => 'Холодильное оборудование', 'left' => false, 'style' => 'left:77.75%;top:53.68%'),
-    array('text' => 'Лабораторные расходные материалы', 'left' => false, 'style' => 'left:62.65%;top:68.96%'),
-    array('text' => 'Микроскопы', 'left' => false, 'style' => 'left:73.29%;top:84.25%'),
-    array('text' => 'Аналитическое оборудование', 'left' => true, 'style' => 'left:8.78%;top:28.87%'),
-    array('text' => 'Центрифуги', 'left' => true, 'style' => 'left:5.36%;top:44.15%'),
-    array('text' => 'Стерилизационное оборудование', 'left' => true, 'style' => 'left:10.57%;top:59.43%'),
-    array('text' => 'Инкубаторы и термостаты', 'left' => true, 'style' => 'left:12.95%;top:74.72%'),
-    array('text' => 'Системы хранения и подготовки образцов', 'left' => true, 'style' => 'left:7.07%;top:90.00%'),
+    array('text' => 'Лабораторная мебель', 'left' => false, 'style' => 'left:66.29%;top:21.98%'),
+    array('text' => 'Автоматические анализаторы', 'left' => false, 'style' => 'left:65.99%;top:37.26%'),
+    array('text' => 'Холодильное оборудование', 'left' => false, 'style' => 'left:76.41%;top:52.55%'),
+    array('text' => 'Лабораторные расходные материалы', 'left' => false, 'style' => 'left:61.31%;top:67.83%'),
+    array('text' => 'Микроскопы', 'left' => false, 'style' => 'left:71.95%;top:83.11%'),
+    array('text' => 'Аналитическое оборудование', 'left' => true, 'style' => 'left:7.89%;top:27.74%'),
+    array('text' => 'Центрифуги', 'left' => true, 'style' => 'left:4.46%;top:43.02%'),
+    array('text' => 'Стерилизационное оборудование', 'left' => true, 'style' => 'left:9.67%;top:58.30%'),
+    array('text' => 'Инкубаторы и термостаты', 'left' => true, 'style' => 'left:12.05%;top:73.58%'),
+    array('text' => 'Системы хранения и подготовки образцов', 'left' => true, 'style' => 'left:6.18%;top:88.87%'),
 );
 $supplies_items = trimed_repeater_field('lab_supplies_items', $default_supplies_items);
 

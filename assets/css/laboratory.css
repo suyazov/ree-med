@@ -260,21 +260,23 @@
 .laboratory-page .lab-audience-card .text { position: relative; z-index: 1; padding-right: 48px; }
 
 
-.laboratory-page .lab-supplies { padding: 0; background: var(--color-white-2); overflow: hidden; }
+.laboratory-page .lab-supplies { padding: 0; background: transparent; overflow: hidden; }
 
 .laboratory-page .lab-supplies-diagram {
     position: relative;
-    width: 100%;
+    width: calc(100% - 96px);
     max-width: 1344px;
     margin: 0 auto;
-    aspect-ratio: 1344 / 1060;
+    height: 1060px;
+    background: var(--color-white-2);
+    border-radius: 20px;
     overflow: hidden;
 }
 
 .laboratory-page .lab-supplies-label {
     position: absolute;
-    left: 5.36%;
-    top: 6.42%;
+    left: 72px;
+    top: 68px;
     font-size: 20px;
     line-height: 24px;
     color: var(--color-black);
@@ -283,9 +285,10 @@
 
 .laboratory-page .lab-supplies-title {
     position: absolute;
-    left: 5.29%;
-    top: 10.94%;
-    max-width: 55%;
+    left: 71px;
+    top: 116px;
+    width: 743px;
+    max-width: 743px;
     font-size: 48px;
     line-height: 110%;
     font-weight: 600;
@@ -304,25 +307,25 @@
 
 .laboratory-page .lab-supplies-ring {
     position: absolute;
-    left: 50%;
-    top: 51.13%;
+    left: 672px;
+    top: 542px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 1px solid rgba(54, 118, 67, 0.2);
     aspect-ratio: 1 / 1;
 }
 
-.laboratory-page .lab-supplies-ring--outer { width: 53.12%; }
-.laboratory-page .lab-supplies-ring--middle { width: 41.37%; }
-.laboratory-page .lab-supplies-ring--inner { width: 28.87%; }
+.laboratory-page .lab-supplies-ring--outer { width: 948px; }
+.laboratory-page .lab-supplies-ring--middle { width: 735.93px; }
+.laboratory-page .lab-supplies-ring--inner { width: 515.15px; }
 
 .laboratory-page .lab-supplies-center {
     position: absolute;
-    left: 50%;
-    top: 51.13%;
+    left: 672px;
+    top: 542px;
     transform: translate(-50%, -50%);
-    width: 22.62%;
-    aspect-ratio: 1 / 1;
+    width: 304px;
+    height: 304px;
     border-radius: 50%;
     overflow: hidden;
     z-index: 2;
@@ -344,9 +347,9 @@
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     font-size: 16px;
-    line-height: 120%;
+    line-height: 110%;
     color: var(--color-black);
     white-space: nowrap;
 }
@@ -362,8 +365,8 @@
 
 .laboratory-page .lab-supplies-item .txt {
     background: var(--color-white);
-    border-radius: 8px;
-    padding: 8px 12px;
+    border-radius: 12px;
+    padding: 12px;
 }
 
 .laboratory-page .lab-supplies-item--left { flex-direction: row-reverse; }
