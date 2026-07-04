@@ -4894,6 +4894,36 @@ body.home .site-header {
         flex-basis: min(328px, calc(100vw - 32px));
     }
 
+    body.home .home-testimonials .testimonials-dots {
+        position: absolute;
+        left: calc((100vw - 72px) / 2 - 16px);
+        top: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 72px;
+        height: 8px;
+        margin: 0;
+        transform: none;
+    }
+
+    body.home .home-testimonials .testimonials-dot {
+        display: block;
+        flex: 0 0 auto;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(54, 118, 67, 0.22);
+    }
+
+    body.home .home-testimonials .testimonials-dot.active {
+        width: 24px;
+        border-radius: 999px;
+        background: var(--color-green);
+    }
+
     body.home .home-tasks .container {
         min-height: 1360px;
         height: auto;
