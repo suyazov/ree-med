@@ -15,12 +15,19 @@ $hero_button_text = trimed_get_field_value('lab_hero_button_text', 'Получи
 $hero_bottom_button_text = trimed_get_field_value('lab_hero_bottom_button_text', 'Подобрать оборудование');
 
 $default_hero_features = array(
-    array('icon' => $img_dir . '/lab-hero-icon-2.png', 'text' => 'Поставка со склада и под заказ'),
-    array('icon' => $img_dir . '/lab-hero-icon-4.png', 'text' => 'Сервисное сопровождение'),
-    array('icon' => $img_dir . '/lab-hero-icon-3.png', 'text' => 'Оборудование ведущих производителей'),
     array('icon' => $img_dir . '/lab-hero-icon-1.png', 'text' => 'Комплексное оснащение лабораторий'),
+    array('icon' => $img_dir . '/lab-hero-icon-2.png', 'text' => 'Поставка со склада и под заказ'),
+    array('icon' => $img_dir . '/lab-hero-icon-3.png', 'text' => 'Оборудование ведущих производителей'),
+    array('icon' => $img_dir . '/lab-hero-icon-4.png', 'text' => 'Сервисное сопровождение'),
 );
 $hero_features = trimed_repeater_field('lab_hero_features', $default_hero_features);
+$hero_feature_order = array_flip(array_column($default_hero_features, 'text'));
+usort($hero_features, static function ($a, $b) use ($hero_feature_order) {
+    $a_index = $hero_feature_order[$a['text'] ?? ''] ?? 99;
+    $b_index = $hero_feature_order[$b['text'] ?? ''] ?? 99;
+
+    return $a_index <=> $b_index;
+});
 
 $default_hero_badges = array(
     array('text' => 'Безопасность лаборатории'),
@@ -139,6 +146,14 @@ $partners = trimed_repeater_field('lab_partners', $default_partners);
 $request_title = trimed_get_field_value('lab_request_title', 'Подберём решение для вашего учреждения');
 $request_desc = trimed_get_field_value('lab_request_desc', 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий.');
 $request_button_text = trimed_get_field_value('lab_request_button_text', 'Получить консультацию');
+
+if (trim(wp_strip_all_tags($request_title)) === 'Подберём решение для вашего учреждения') {
+    $request_title = 'Подберем оборудование<br><em>для вашей лаборатории</em>';
+}
+
+if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий.') {
+    $request_desc = 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий';
+}
 ?>
 
 <main class="laboratory-page">
