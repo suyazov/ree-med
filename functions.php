@@ -210,6 +210,7 @@ function trimed_render_responsive_picture($url, $args = array()) {
     $args = wp_parse_args($args, array(
         'class' => '',
         'alt' => '',
+        'mobile_url' => '',
         'width' => null,
         'height' => null,
         'style' => '',
@@ -219,10 +220,14 @@ function trimed_render_responsive_picture($url, $args = array()) {
         return;
     }
 
-    $mobile_url = preg_replace('/\.(png|jpe?g|webp)(\?.*)?$/i', '-mobile.$1$2', $url);
-    $mobile_path = str_replace(get_template_directory_uri(), get_template_directory(), $mobile_url);
-    if (!file_exists($mobile_path)) {
-        $mobile_url = $url;
+    if (!empty($args['mobile_url'])) {
+        $mobile_url = $args['mobile_url'];
+    } else {
+        $mobile_url = preg_replace('/\.(png|jpe?g|webp)(\?.*)?$/i', '-mobile.$1$2', $url);
+        $mobile_path = str_replace(get_template_directory_uri(), get_template_directory(), $mobile_url);
+        if (!file_exists($mobile_path)) {
+            $mobile_url = $url;
+        }
     }
 
     $class_attr = $args['class'] ? ' class="' . esc_attr($args['class']) . '"' : '';
@@ -925,6 +930,7 @@ function trimed_render_case_card($args = array()) {
         'text'            => '',
         'text_allow_html'  => false,
         'responsive_image' => false,
+        'mobile_image'     => '',
         'link'             => '',
         'arrow'            => '',
     ));
@@ -986,8 +992,8 @@ function trimed_render_case_card($args = array()) {
     echo '<' . $tag . $href_attr . ' class="' . esc_attr($card_class) . '">';
     echo '<div class="' . esc_attr($image_class) . '">';
 
-    if (!empty($args['responsive_image'])) {
-        trimed_render_responsive_picture($args['image'], array('alt' => $args['image_alt']));
+    if (!empty($args['responsive_image']) || !empty($args['mobile_image'])) {
+        trimed_render_responsive_picture($args['image'], array('alt' => $args['image_alt'], 'mobile_url' => $args['mobile_image']));
     } else {
         echo '<img src="' . $image . '" alt="' . $image_alt . '">';
     }

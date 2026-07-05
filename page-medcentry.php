@@ -220,16 +220,27 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
             </div>
 
             <div class="mc-projects-grid trimed-projects-grid">
-                <?php foreach ($projects as $project) :
+                <?php
+                $mobile_image_map = array(
+                    1 => $img_dir . '/project-mobile-1.png',
+                    2 => $img_dir . '/project-mobile-2.png',
+                    3 => $img_dir . '/project-mobile-1.png',
+                    4 => $img_dir . '/project-mobile-2.png',
+                );
+                foreach ($projects as $project_index => $project) :
+                    $project_number = $project_index + 1;
                     trimed_render_case_card(array(
-                        'variant' => 'medcentry',
-                        'image'   => !empty($project['image']) ? $project['image'] : $placeholder,
-                        'meta'    => $project['number'],
-                        'title'   => $project['title'],
-                        'text'    => $project['text'],
-                        'arrow'   => $arrow_icon,
+                        'variant'          => 'medcentry',
+                        'image'            => !empty($project['image']) ? $project['image'] : $placeholder,
+                        'mobile_image'     => isset($mobile_image_map[$project_number]) ? $mobile_image_map[$project_number] : '',
+                        'meta'             => $project['number'],
+                        'title'            => $project['title'],
+                        'text'             => $project['text'],
+                        'arrow'            => $arrow_icon,
+                        'responsive_image' => true,
                     ));
-                endforeach; ?>
+                endforeach;
+                ?>
             </div>
         </div>
     </section>

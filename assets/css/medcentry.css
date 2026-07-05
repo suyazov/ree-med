@@ -630,10 +630,6 @@
     .medcentry-page .mc-projects-grid { padding: 0 16px 12px 0; }
     .medcentry-page .mc-project-card { gap: 12px; border-radius: 0; overflow: visible; background: transparent; }
     .medcentry-page .mc-project-card-img { width: 328px; border-radius: var(--radius-card); overflow: hidden; }
-    .medcentry-page .mc-project-card-img img[src*="project-1.png"] { content: url('../img/medcentry/project-mobile-1.png'); }
-    .medcentry-page .mc-project-card-img img[src*="project-2.png"] { content: url('../img/medcentry/project-mobile-2.png'); }
-    .medcentry-page .mc-project-card-img img[src*="project-3.png"] { content: url('../img/medcentry/project-mobile-1.png'); }
-    .medcentry-page .mc-project-card-img img[src*="project-4.png"] { content: url('../img/medcentry/project-mobile-2.png'); }
     .medcentry-page .mc-project-card-body { width: 328px; height: 220px; flex: 0 0 220px; padding: 20px 24px; background: #fff; border-radius: var(--radius-card); display: flex; flex-direction: column; justify-content: space-between; }
     .medcentry-page .mc-project-card-top { height: 32px; align-items: flex-start; }
     .medcentry-page .mc-project-card-title { width: 280px; margin-bottom: 12px; }
