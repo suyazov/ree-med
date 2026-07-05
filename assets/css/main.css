@@ -2721,12 +2721,16 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     body.medcentry-page .site-header .header-action,
-    body.medcentry-page .site-header .header-action svg,
     body.stomatology-page .site-header .header-action,
-    body.stomatology-page .site-header .header-action svg,
     body.laboratory-page .site-header .header-action,
+    body.disinfection-page .site-header .header-action {
+        width: 46px;
+        height: 20px;
+    }
+
+    body.medcentry-page .site-header .header-action svg,
+    body.stomatology-page .site-header .header-action svg,
     body.laboratory-page .site-header .header-action svg,
-    body.disinfection-page .site-header .header-action,
     body.disinfection-page .site-header .header-action svg {
         width: 20px;
         height: 20px;
