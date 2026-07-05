@@ -155,7 +155,7 @@ body.disinfection-page .tasks-section {
 }
 
 body.disinfection-page .tasks-section .container {
-    max-width: 1344px;
+    max-width: 1202px;
     padding: 0;
 }
 
@@ -167,7 +167,7 @@ body.disinfection-page .tasks-grid {
 }
 
 body.disinfection-page .tasks-intro.green-card {
-    min-height: 580px;
+    min-height: 520px;
     padding: 64px 48px;
     border-radius: var(--radius-card);
     background: linear-gradient(106deg, #284f45 0%, #347641 100%);
@@ -207,12 +207,12 @@ body.disinfection-page .tasks-list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 16px;
-    min-height: 580px;
+    gap: 12px;
+    min-height: 520px;
 }
 
 body.disinfection-page .task-item {
-    min-height: 72px;
+    min-height: 64px;
     padding: 0 24px;
     gap: 32px;
     border-radius: var(--radius-card);
@@ -237,23 +237,23 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .why-section .container {
-        max-width: 1344px;
+        max-width: 1200px;
         padding: 0;
     }
 
     body.disinfection-page .why-section .section-header {
-        margin-bottom: 60px;
+        margin-bottom: 0;
     }
 
     body.disinfection-page .why-section .section-label {
-        margin-bottom: 42px;
+        margin-bottom: 20px;
         font-size: 24px;
         line-height: 120%;
         color: #353535;
     }
 
     .disinfection-page .why-section .section-title {
-        font-size: 56px;
+        font-size: 48px;
         line-height: 110%;
         font-weight: 600;
         letter-spacing: -0.03em;
@@ -264,7 +264,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .why-grid {
-        grid-template-columns: 540px 386px 376px;
+        grid-template-columns: 482px 344px 326px;
         grid-template-rows: 209px 226px;
         gap: 24px;
         align-items: stretch;
@@ -408,7 +408,7 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .projects-section {
-        padding: 105px 0 140px;
+        padding: 72px 0 140px;
     }
 
     .disinfection-page .projects-slider,
@@ -422,7 +422,7 @@ body.disinfection-page .task-item img {
 
     /* Partners */
     .disinfection-page .partners-section {
-        padding: 0 0 140px;
+        padding: 0 0 70px;
     }
 
     .disinfection-page .partners-section .section-header {
@@ -457,20 +457,20 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .faq-section .container {
-        max-width: 1344px;
+        max-width: 1200px;
         padding: 0;
     }
 
     body.disinfection-page .faq-header {
         display: block;
-        margin-bottom: 56px;
+        margin-bottom: 19px;
         text-align: center;
     }
 
     body.disinfection-page .faq-header .section-title {
         margin: 0;
         text-align: center;
-        font-size: 56px;
+        font-size: 48px;
         line-height: 110%;
         font-weight: 600;
         letter-spacing: -0.03em;
@@ -490,12 +490,12 @@ body.disinfection-page .task-item img {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 6px;
         align-self: stretch;
     }
 
     body.disinfection-page .faq-item {
-        min-height: 68px;
+        min-height: 50px;
         padding: 0 28px;
         border-radius: var(--radius-card);
         background: #F9F9F9;
@@ -565,17 +565,17 @@ body.disinfection-page .task-item img {
 /* Disinfection: desktop request block (>=1201px) */
 @media (min-width: 1201px) {
     .disinfection-page .home-request {
-        padding: 56px 0 140px;
+        padding: 18px 0 140px;
     }
 
     .disinfection-page .home-request .container {
-        max-width: 1344px;
+        max-width: 1200px;
         padding: 0;
     }
 
     .disinfection-page .request-grid {
-        height: 510px;
-        min-height: 510px;
+        height: 478px;
+        min-height: 478px;
         padding: 0;
     }
 
