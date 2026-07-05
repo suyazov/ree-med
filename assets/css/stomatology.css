@@ -509,7 +509,7 @@
 
     /* Projects mobile */
     .stomatology-page .stom-projects { margin-top: 100px; }
-    .stomatology-page .stom-projects-header { text-align: left; margin-bottom: 24px; }
+    .stomatology-page .stom-projects-header { text-align: left; height: 131px; margin-bottom: 0; }
     .stomatology-page .stom-projects-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; width: auto; text-align: left; margin-bottom: 12px; color: var(--color-green); }
     .stomatology-page .stom-projects-desc { font-size: 16px; line-height: 19.2px; letter-spacing: 0; max-width: 100%; }
     .stomatology-page .stom-project-card { gap: 0; }
@@ -518,7 +518,6 @@
     .stomatology-page .stom-project-card-title { width: auto !important; }
     .stomatology-page .stom-project-card-text { width: auto; letter-spacing: -0.48px; }
 
-    .stomatology-page .stom-projects-header { height: 131px; margin-bottom: 0; }
     .stomatology-page .stom-projects-grid { height: 426px; padding-bottom: 0; }
 
     /* Process mobile */
