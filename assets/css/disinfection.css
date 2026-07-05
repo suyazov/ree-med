@@ -1016,19 +1016,6 @@ body.disinfection-page .task-item img {
         padding: 8px 12px;
     }
 
-    .disinfection-page .hero-badge .check {
-        width: 16px;
-        height: 16px;
-    }
-
-    .disinfection-page .hero-badge .check::after {
-        left: 5px;
-        top: 3px;
-        width: 4px;
-        height: 7px;
-        border-width: 0 1.5px 1.5px 0;
-    }
-
     /* Tasks intro title line breaks */
     body.disinfection-page .tasks-intro h2 {
         width: 180px;
@@ -1148,10 +1135,6 @@ body.disinfection-page .task-item img {
     }
 
     /* Audience mobile */
-    .disinfection-page .audience-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .disinfection-page .audience-card {
         position: relative;
         min-height: 108px;
