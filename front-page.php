@@ -487,9 +487,9 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         'section_class'       => 'home-request',
         'section_id'          => 'request',
         'title'               => $form_title,
-        'title_mobile'        => 'Подберём оборудование<br><em>для вашей лаборатории</em>',
+        'title_mobile'        => 'Подберём оборудование<br><em>под задачи вашей клиники</em>',
         'description'         => $form_desc,
-        'description_mobile'  => 'Оставьте заявку и получите консультацию специалиста по оснащению лабораторий',
+        'description_mobile'  => 'Оставьте заявку и получите консультацию специалиста',
         'form_args'           => array(
             'button_text'        => $form_btn,
             'button_mobile_text' => 'Отправить',
