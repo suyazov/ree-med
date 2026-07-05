@@ -58,12 +58,19 @@ $audience_title = trimed_get_field_value('lab_audience_title', 'Решения <
 $default_audience_cards = array(
     array('title' => 'Клинико-диагностические лаборатории', 'image' => $img_dir . '/laboratory-audience-1.png', 'style' => 'image'),
     array('title' => 'Лаборатории медицинских центров', 'image' => '', 'style' => 'default'),
-    array('title' => 'Научно-исследовательские лаборатории', 'image' => $img_dir . '/laboratory-audience-2.png', 'style' => 'image'),
     array('title' => 'Ветеринарные лаборатории', 'image' => '', 'style' => 'gray'),
+    array('title' => 'Научно-исследовательские лаборатории', 'image' => $img_dir . '/laboratory-audience-2.png', 'style' => 'image'),
     array('title' => 'Государственные учреждения', 'image' => '', 'style' => 'green'),
     array('title' => 'Производственные лаборатории', 'image' => '', 'style' => 'default'),
 );
 $audience_cards = trimed_repeater_field('lab_audience_cards', $default_audience_cards);
+$audience_order = array_flip(array_column($default_audience_cards, 'title'));
+usort($audience_cards, static function ($a, $b) use ($audience_order) {
+    $a_index = $audience_order[$a['title'] ?? ''] ?? 99;
+    $b_index = $audience_order[$b['title'] ?? ''] ?? 99;
+
+    return $a_index <=> $b_index;
+});
 
 // Supplies
 $supplies_subtitle = trimed_get_field_value('lab_supplies_subtitle', 'Комплексное оснащение лабораторий');
