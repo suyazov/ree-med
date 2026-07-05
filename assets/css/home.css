@@ -302,16 +302,6 @@ body.home .site-header {
         gap: 20px;
     }
 
-    .home-about-mobile-label {
-        display: block;
-        width: 100%;
-        color: var(--color-dark-green);
-        font-size: 14px;
-        line-height: 17px;
-        font-weight: 400;
-        text-align: center;
-    }
-
     .home-hero .container {
         padding: 0 var(--container-padding-mobile);
     }
@@ -329,10 +319,6 @@ body.home .site-header {
         line-height: 94%;
         letter-spacing: -0.03em;
         margin-bottom: 0;
-    }
-
-    .home-hero-title .text-green {
-        white-space: nowrap;
     }
 
     .home-hero-image-wrap {

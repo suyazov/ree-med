@@ -940,19 +940,9 @@ body.disinfection-page .task-item img {
         padding: 16px;
     }
 
-    .disinfection-page .partner-card img {
-        width: 174px;
-        height: 98px;
-    }
-
     .disinfection-page .partner-card h3 {
         font-size: 16px;
         margin-bottom: 8px;
-    }
-
-    .disinfection-page .partner-card p {
-        font-size: 14px;
-        line-height: 16.8px;
     }
 
     /* Included mobile: green card first */
