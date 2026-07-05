@@ -3661,6 +3661,39 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 0;
     }
 
+    /* Shared mobile project/case cards (medcentry + stomatology) */
+    :where(.mc-projects-grid, .stom-projects-grid) {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    :where(.mc-project-card, .stom-project-card) {
+        flex: 0 0 328px;
+        width: 328px;
+        height: 426px;
+        flex-direction: column;
+        scroll-snap-align: start;
+    }
+
+    :where(.mc-project-card-img, .stom-project-card-img) {
+        height: 194px;
+    }
+
+    :where(.mc-project-card-title, .stom-project-card-title) {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.6px;
+        font-weight: 600;
+    }
+
+    :where(.mc-project-card-text, .stom-project-card-text) {
+        font-size: 16px;
+        line-height: 19.2px;
+        opacity: 1;
+    }
+
     body.trimed-service-page .site-footer {
         margin-top: 0;
         padding-bottom: 0;

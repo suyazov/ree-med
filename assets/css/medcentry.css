@@ -627,17 +627,17 @@
     .medcentry-page .mc-projects-desc { font-size: 16px; line-height: normal; letter-spacing: 0; text-align: left; margin: 0; }
     .medcentry-page .mc-projects-desc--desktop { display: none; }
     .medcentry-page .mc-projects-desc--mobile { display: block; width: 330px; max-width: 330px; }
-    .medcentry-page .mc-projects-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 16px 12px 0; }
-    .medcentry-page .mc-project-card { flex: 0 0 328px; width: 328px; height: 426px; flex-direction: column; gap: 12px; scroll-snap-align: start; border-radius: 0; overflow: visible; background: transparent; }
-    .medcentry-page .mc-project-card-img { width: 328px; height: 194px; border-radius: var(--radius-card); overflow: hidden; }
+    .medcentry-page .mc-projects-grid { padding: 0 16px 12px 0; }
+    .medcentry-page .mc-project-card { gap: 12px; border-radius: 0; overflow: visible; background: transparent; }
+    .medcentry-page .mc-project-card-img { width: 328px; border-radius: var(--radius-card); overflow: hidden; }
     .medcentry-page .mc-project-card-img img[src*="project-1.png"] { content: url('../img/medcentry/project-mobile-1.png'); }
     .medcentry-page .mc-project-card-img img[src*="project-2.png"] { content: url('../img/medcentry/project-mobile-2.png'); }
     .medcentry-page .mc-project-card-img img[src*="project-3.png"] { content: url('../img/medcentry/project-mobile-1.png'); }
     .medcentry-page .mc-project-card-img img[src*="project-4.png"] { content: url('../img/medcentry/project-mobile-2.png'); }
     .medcentry-page .mc-project-card-body { width: 328px; height: 220px; flex: 0 0 220px; padding: 20px 24px; background: #fff; border-radius: var(--radius-card); display: flex; flex-direction: column; justify-content: space-between; }
     .medcentry-page .mc-project-card-top { height: 32px; align-items: flex-start; }
-    .medcentry-page .mc-project-card-title { font-size: 20px; line-height: 24px; letter-spacing: -0.6px; font-weight: 600; width: 280px; margin-bottom: 12px; }
-    .medcentry-page .mc-project-card-text { width: 280px; font-size: 16px; line-height: 19.2px; letter-spacing: 0; opacity: 1; }
+    .medcentry-page .mc-project-card-title { width: 280px; margin-bottom: 12px; }
+    .medcentry-page .mc-project-card-text { width: 280px; letter-spacing: 0; }
     .medcentry-page .mc-project-card-arrow { width: 32px; height: 32px; margin-right: 0; }
 
     /* Process mobile */
