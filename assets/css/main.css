@@ -1662,6 +1662,83 @@ h1, h2, h3, h4, h5, h6, p {
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    /* Shared mobile process sections for service pages */
+    :where(.mc-process-grid, .stom-process-grid) {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    :where(.mc-process-header, .stom-process-header) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    :where(.mc-process-title, .stom-process-title) {
+        font-size: 24px;
+        line-height: 26.4px;
+        letter-spacing: -0.72px;
+        font-weight: 600;
+        width: auto;
+        text-align: center;
+    }
+
+    :where(.mc-process-image, .stom-process-image) {
+        display: block;
+        order: 2;
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        border-radius: var(--radius-card);
+        overflow: hidden;
+    }
+
+    :where(.mc-process-cards, .stom-process-cards) {
+        order: 3;
+        grid-column: auto;
+        grid-row: auto;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    :where(.mc-process-card, .stom-process-card) {
+        width: 100%;
+    }
+
+    :where(.mc-process-card-num, .stom-process-card-num) {
+        top: 16px;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+    :where(.mc-process-card--green .mc-process-card-num, .stom-process-card--green .stom-process-card-num) {
+        background: #fff;
+        color: var(--color-green);
+    }
+
+    :where(.mc-process-card--light .mc-process-card-num, .stom-process-card--light .stom-process-card-num) {
+        background: var(--gradient-green);
+        color: #fff;
+    }
+
+    :where(.mc-process-card-title, .stom-process-card-title) {
+        font-size: 16px;
+        line-height: 17.6px;
+        letter-spacing: 0;
+        font-weight: 600;
+    }
+
+    :where(.mc-process-card-text, .stom-process-card-text) {
+        font-size: 14px;
+        line-height: 15.4px;
+        letter-spacing: 0;
+    }
+}
+
 :where(.mc-why-cta-btn, .stom-cta-btn) {
     display: inline-flex;
     align-items: center;
