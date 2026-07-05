@@ -370,6 +370,17 @@
 .stomatology-page .stom-cta-btn { width: 363px; align-self: flex-start; background: var(--gradient-light-green); margin: 58px 6px 0 0; }
 .stomatology-page .stom-cta-btn span { font-family: inherit; font-weight: 600; white-space: nowrap; }
 .stomatology-page .stom-cta-icon { position: absolute; left: 36px; top: 36px; width: 31px; height: 31px; color: var(--color-white); }
+
+@media (min-width: 1201px) {
+    .stomatology-page .stom-process {
+        margin-top: 171px;
+    }
+
+    .stomatology-page .stom-cta {
+        padding-bottom: 140px;
+    }
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .stomatology-page .stom-hero-grid { grid-template-columns: 1fr; gap: 24px; }
