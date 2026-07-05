@@ -3,7 +3,7 @@
 /* ===== Hero secondary CTA: green button ===== */
 .disinfection-page .hero-btn-consult {
     background: var(--color-green);
-    color: #FFFFFF;
+    color: var(--color-pure-white);
 }
 
 /* ===== Partners: title black regular ===== */
@@ -21,7 +21,7 @@
 
 /* ===== Application callout block ===== */
 .disinfection-page .home-request {
-    background: #EFEFEF;
+    background: var(--color-white);
 }
 
 .disinfection-page .request-grid {
@@ -34,7 +34,7 @@
 
 .disinfection-page .request-plus {
     position: absolute;
-    color: #EFEFEF;
+    color: var(--color-white);
     z-index: 2;
 }
 
@@ -61,7 +61,7 @@
 
 .disinfection-page .request-form-wrap {
     position: absolute;
-    background: #F9F9F9;
+    background: var(--color-white-2);
     border-radius: var(--radius-card);
     box-sizing: border-box;
     z-index: 2;
@@ -72,7 +72,7 @@
     height: var(--control-height);
     border: 0;
     padding: 0 16px;
-    background: #E6E7E8;
+    background: var(--color-gray);
     font-size: 12px;
     line-height: 12px;
 }
@@ -216,8 +216,8 @@ body.disinfection-page .task-item {
     padding: 0 24px;
     gap: 32px;
     border-radius: var(--radius-card);
-    background: #F9F9F9;
-    color: #353535;
+    background: var(--color-white-2);
+    color: var(--color-black);
     font-size: 24px;
     line-height: 110%;
     font-weight: 400;
@@ -249,7 +249,7 @@ body.disinfection-page .task-item img {
         margin-bottom: 20px;
         font-size: 24px;
         line-height: 120%;
-        color: #353535;
+        color: var(--color-black);
     }
 
     .disinfection-page .why-section .section-title {
@@ -316,7 +316,7 @@ body.disinfection-page .task-item img {
         min-height: 459px;
         padding: 48px;
         border-radius: var(--radius-card);
-        background: #F9F9F9;
+        background: var(--color-white-2);
     }
 
     .disinfection-page .why-info-card h3 {
@@ -498,7 +498,7 @@ body.disinfection-page .task-item img {
         min-height: 50px;
         padding: 0 28px;
         border-radius: var(--radius-card);
-        background: #F9F9F9;
+        background: var(--color-white-2);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -512,7 +512,7 @@ body.disinfection-page .task-item img {
         font-size: 20px;
         line-height: 120%;
         font-weight: 600;
-        color: #353535;
+        color: var(--color-black);
     }
 
     body.disinfection-page .faq-icon {
@@ -522,7 +522,7 @@ body.disinfection-page .task-item img {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        color: #353535;
+        color: var(--color-black);
         transition: transform 0.2s ease;
     }
 
@@ -557,7 +557,7 @@ body.disinfection-page .task-item img {
         margin-top: 24px;
         font-size: 20px;
         line-height: 120%;
-        color: #353535;
+        color: var(--color-black);
     }
 
 }
@@ -851,7 +851,7 @@ body.disinfection-page .task-item img {
         font-size: 14px;
         line-height: 110%;
         font-weight: 400;
-        color: #353535;
+        color: var(--color-black);
         white-space: normal;
         background: transparent;
         padding: 0;
@@ -860,7 +860,7 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .supply-item > span:last-child {
-        background: #EFEFEF;
+        background: var(--color-white);
         border-radius: var(--radius-card);
         padding: 10px 14px;
         font-size: 14px;
@@ -963,7 +963,7 @@ body.disinfection-page .task-item img {
         border: none;
         font-size: 24px;
         line-height: 1;
-        color: #EFEFEF;
+        color: var(--color-white);
         transform: none;
     }
 
