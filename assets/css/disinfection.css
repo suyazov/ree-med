@@ -719,8 +719,18 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .tasks-intro.green-card {
-        min-height: 182px;
+        min-height: 206px;
         padding: 24px;
+    }
+
+    body.disinfection-page .tasks-intro .tag {
+        top: 24px;
+        left: 24px;
+        min-width: 0;
+        width: 208px;
+        padding: 12px 16px;
+        font-size: 14px;
+        line-height: 110%;
     }
 
     body.disinfection-page .tasks-intro h2 {
