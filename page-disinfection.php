@@ -48,9 +48,9 @@ $img_dir = trimed_get_image_dir();
                         <?php
                         $hero_features = trimed_repeater_field('hero_features', array(
                             array('icon' => $img_dir . '/disinfection-hero-icon-1.png', 'text' => 'Широкий выбор дезинфицирующих средств'),
-                            array('icon' => $img_dir . '/disinfection-hero-icon-2.png', 'text' => 'Консультации по подбору решений'),
-                            array('icon' => $img_dir . '/disinfection-hero-icon-3.png', 'text' => 'Поставка со склада в Чите'),
-                            array('icon' => $img_dir . '/disinfection-hero-icon-4.png', 'text' => 'Оборудование для стерилизации и обработки'),
+                            array('icon' => $img_dir . '/disinfection-hero-icon-3.png', 'text' => 'Консультации по подбору решений'),
+                            array('icon' => $img_dir . '/disinfection-hero-icon-4.png', 'text' => 'Поставка со склада в Чите'),
+                            array('icon' => $img_dir . '/disinfection-hero-icon-2.png', 'text' => 'Оборудование для стерилизации и обработки'),
                         ));
                         foreach ($hero_features as $feature) :
                             $icon = !empty($feature['icon']) ? $feature['icon'] : get_template_directory_uri() . '/assets/img/hero-icon-1.png';
