@@ -1253,14 +1253,14 @@
             width: 100%;
         }
     }
-    .laboratory-page .lab-audience { padding: 64px 0 100px; }
+    .laboratory-page .lab-audience { padding: 132px 0 100px; }
     .laboratory-page .lab-audience .lab-section-inner { padding: 0 var(--container-padding-mobile); }
     .laboratory-page .lab-audience-header { padding: 0; margin-bottom: 24px; flex-direction: column; align-items: center; text-align: center; }
     .laboratory-page .lab-audience-title { order: 2; width: 100%; max-width: 343px; font-size: 24px; margin: 0 auto; }
     .laboratory-page .lab-audience-label { order: 1; font-size: 14px; margin: 0 0 8px; }
     .laboratory-page .lab-audience-card .arrow { width: 20px; height: 20px; }
     .laboratory-page .lab-audience-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .laboratory-page .lab-audience-card { width: 100%; min-height: 108px; padding: 16px; font-size: 14px; }
+    .laboratory-page .lab-audience-card { width: 100%; height: 108px; min-height: 108px; padding: 16px; font-size: 14px; }
     .laboratory-page .lab-audience-card:nth-child(1) { order: 1; }
     .laboratory-page .lab-audience-card:nth-child(2) { order: 2; }
     .laboratory-page .lab-audience-card:nth-child(3) { order: 3; }
@@ -1268,13 +1268,13 @@
     .laboratory-page .lab-audience-card:nth-child(5) { order: 5; }
     .laboratory-page .lab-audience-card:nth-child(6) { order: 6; }
     .laboratory-page .lab-audience-card .text { width: auto; max-width: 100%; }
-    .laboratory-page .lab-audience-card .arrow { left: auto; right: 16px; top: 16px; bottom: auto; }
+    .laboratory-page .lab-audience-card .arrow { left: 16px; right: auto; top: auto; bottom: 9px; }
     .laboratory-page .lab-audience-card--white .text,
     .laboratory-page .lab-audience-card--gray .text { max-width: 100%; padding-right: 36px; }
     .laboratory-page .lab-audience-card--white .arrow,
     .laboratory-page .lab-audience-card--gray .arrow { color: var(--color-black); }
     .laboratory-page .lab-audience-card--image .arrow,
-    .laboratory-page .lab-audience-card--green .arrow { left: auto; top: 16px; right: 16px; bottom: auto; color: var(--color-white); }
+    .laboratory-page .lab-audience-card--green .arrow { left: 16px; top: auto; right: auto; bottom: 9px; color: var(--color-white); }
     .laboratory-page .lab-audience-card--white,
     .laboratory-page .lab-audience-card--gray { background-size: auto 70px; background-position: right 16px top 16px; background-repeat: no-repeat; }
     .laboratory-page .lab-supplies { padding: 40px 0 204px; background: #ffffff; border-radius: 20px; }
