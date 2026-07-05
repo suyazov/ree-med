@@ -654,18 +654,19 @@ body.disinfection-page .task-item img {
         top: 70px;
         bottom: auto;
         width: 297px;
+        text-align: center;
     }
 
     .disinfection-page .request-text .section-title {
-        margin-bottom: 8px;
-        font-size: 28px;
+        margin-bottom: 12px;
+        font-size: 24px;
         line-height: 110%;
     }
 
     .disinfection-page .request-text p {
         max-width: 297px;
-        font-size: 15px;
-        line-height: 120%;
+        font-size: 14px;
+        line-height: 110%;
     }
 
     .disinfection-page .request-form-wrap {
