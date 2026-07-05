@@ -2684,9 +2684,20 @@ h1, h2, h3, h4, h5, h6, p {
     body.laboratory-page .site-header .header-container,
     body.disinfection-page .site-header .header-container {
         flex-wrap: nowrap;
-        padding: 0 16px;
+        width: min(351px, calc(100vw - 24px));
+        min-height: 44px;
+        margin: 0 auto;
+        padding: 0;
+        gap: 8px;
         background: transparent;
         border-radius: 0;
+    }
+
+    body.medcentry-page .site-header .container,
+    body.stomatology-page .site-header .container,
+    body.laboratory-page .site-header .container,
+    body.disinfection-page .site-header .container {
+        padding: 0;
     }
 
     body.medcentry-page .site-header .logo img,
@@ -2704,10 +2715,33 @@ h1, h2, h3, h4, h5, h6, p {
         gap: 8px;
     }
 
+    body.medcentry-page .site-header .header-action,
+    body.medcentry-page .site-header .header-action svg,
+    body.stomatology-page .site-header .header-action,
+    body.stomatology-page .site-header .header-action svg,
+    body.laboratory-page .site-header .header-action,
+    body.laboratory-page .site-header .header-action svg,
+    body.disinfection-page .site-header .header-action,
+    body.disinfection-page .site-header .header-action svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    body.medcentry-page .site-header .action-count,
+    body.stomatology-page .site-header .action-count,
+    body.laboratory-page .site-header .action-count,
+    body.disinfection-page .site-header .action-count {
+        width: 20px;
+        height: 20px;
+    }
+
     body.medcentry-page .menu-toggle,
     body.stomatology-page .menu-toggle,
     body.laboratory-page .menu-toggle,
     body.disinfection-page .menu-toggle {
+        width: 44px;
+        height: 44px;
+        margin-left: 8px;
         background: var(--color-green);
         border-radius: var(--radius-control);
     }
