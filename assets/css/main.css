@@ -2297,6 +2297,7 @@ h1, h2, h3, h4, h5, h6, p {
     height: var(--control-height);
     margin-bottom: 20px;
     padding-top: 20px;
+    overflow: hidden;
     resize: none;
 }
 
@@ -2353,6 +2354,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--color-black);
     font-family: var(--font-main);
     font-size: 14px;
+    overflow: hidden;
     outline: none;
 }
 
