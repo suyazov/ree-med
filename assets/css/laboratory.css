@@ -1366,10 +1366,10 @@
     .laboratory-page .lab-why-feature-item .plus::after { left: 50%; top: 50%; width: 10px; height: 6px; background: transparent; border: solid var(--color-white); border-width: 0 0 2px 2px; transform: translate(-50%, -58%) rotate(-45deg); }
     .laboratory-page .lab-projects { padding: 0 0 69px; overflow: hidden; }
     .laboratory-page .lab-projects .lab-section-inner { width: 100%; max-width: 100%; margin: 0 auto; padding: 0 var(--container-padding-mobile); }
-    .laboratory-page .lab-projects-header { width: auto; max-width: 100%; text-align: left; margin-bottom: 32px; }
+    .laboratory-page .lab-projects-header { width: 100%; max-width: 343px; text-align: left; margin: 0 auto 32px; }
     .laboratory-page .lab-projects-title { display: block; width: auto; max-width: 273px; font-size: 24px; line-height: 26.4px; text-align: left; margin: 0 0 12px; color: var(--color-green); }
     .laboratory-page .lab-projects-desc { display: block; width: 100%; max-width: 343px; margin: 0; font-size: 16px; line-height: 19.2px; text-align: left; }
-    .laboratory-page .lab-projects-slider { display: block; width: 100%; max-width: 343px; height: auto; overflow: visible; }
+    .laboratory-page .lab-projects-slider { display: block; width: 100%; max-width: 343px; height: auto; margin: 0 auto; overflow: visible; }
     .laboratory-page .lab-projects-side-arrow,
     .laboratory-page .lab-slider-arrows { display: none; }
     .laboratory-page .lab-projects-track { display: flex; gap: 16px; width: 100%; height: auto; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; padding: 0 16px 12px 0; scrollbar-width: none; }
