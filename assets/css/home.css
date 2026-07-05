@@ -4984,6 +4984,10 @@ body.home .site-header {
 }
 
 @media (max-width: 520px) {
+    body.home .home-tasks {
+        padding-bottom: 62px;
+    }
+
     body.home .home-projects {
         padding: 0 0 72px;
         overflow: hidden;
