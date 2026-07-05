@@ -3375,6 +3375,38 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
+@media (max-width: 340px) {
+    .site-header .header-container {
+        width: calc(100vw - 24px);
+        gap: 6px;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .header-action {
+        gap: 4px;
+    }
+
+    .header-action svg,
+    .action-count {
+        width: 18px;
+        height: 18px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        margin-left: 6px;
+    }
+}
+
 
 /* Mobile footer + map consolidation */
 @media (max-width: 768px) {
