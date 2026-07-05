@@ -3338,11 +3338,32 @@ h1, h2, h3, h4, h5, h6, p {
     .phone-input {
         padding: 12px;
     }
+}
 
-    /* Footer */
+
+/* Mobile footer + map consolidation */
+@media (max-width: 768px) {
+    .site-footer {
+        overflow: hidden;
+    }
+
+    .site-footer .footer-main {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .site-footer .footer-bg {
+        width: 100vw;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
     .footer-main {
         min-height: 560px;
     }
+
     .footer-card {
         position: absolute;
         left: 50%;
@@ -3350,45 +3371,83 @@ h1, h2, h3, h4, h5, h6, p {
         top: auto;
         bottom: 16px;
         transform: translateX(-50%);
-        width: 318px;
+        width: calc(100vw - 32px);
+        max-width: 318px;
+        box-sizing: border-box;
         padding: 24px;
     }
+
     .footer-logo {
         width: 164px;
         margin-bottom: 20px;
     }
+
     .footer-contacts {
         gap: 10px;
         margin-bottom: 20px;
     }
+
     .footer-contact {
         font-size: 14px;
     }
+
     .footer-socials {
         gap: 16px;
         margin-bottom: 20px;
     }
+
     .footer-callback {
+        width: 100%;
+        max-width: 100%;
         padding: 14px;
         font-size: 14px;
     }
+
     .footer-bottom {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
+        box-sizing: border-box;
         padding: 20px 0;
         gap: 16px;
     }
+
     .footer-info p,
     .footer-links a,
     .footer-copyright {
         font-size: 12px;
     }
+
     .map-pulse {
         top: 18%;
     }
-}
 
+    .site-footer .map-pulse {
+        top: 18%;
+        z-index: 3;
+    }
+
+    body.trimed-service-page .site-footer {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    body.trimed-service-page .site-footer .footer-main {
+        min-height: 560px;
+        height: 560px;
+    }
+
+    body.trimed-service-page .site-footer .footer-card {
+        bottom: 16px;
+        min-height: 0;
+    }
+
+    body.trimed-service-page .site-footer .map-pulse {
+        left: 50%;
+        top: 18%;
+    }
+}
 
 @media (max-width: 480px) {
     .audience-grid {
@@ -3463,30 +3522,6 @@ h1, h2, h3, h4, h5, h6, p {
     width: 14px;
     height: 14px;
     opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .site-footer {
-        overflow: hidden;
-    }
-
-    .site-footer .footer-main {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-    }
-
-    .site-footer .footer-bg {
-        width: 100vw;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-    }
-
-    .site-footer .map-pulse {
-        top: 18%;
-        z-index: 3;
-    }
 }
 
 /* Shared footer: map component aligned to 1200px grid across all pages */
@@ -3693,56 +3728,10 @@ h1, h2, h3, h4, h5, h6, p {
         line-height: 19.2px;
         opacity: 1;
     }
-
-    body.trimed-service-page .site-footer {
-        margin-top: 0;
-        padding-bottom: 0;
-    }
-
-    body.trimed-service-page .site-footer .footer-main {
-        min-height: 560px;
-        height: 560px;
-    }
-
-    body.trimed-service-page .site-footer .footer-card {
-        bottom: 16px;
-        min-height: 0;
-    }
-
-    body.trimed-service-page .site-footer .footer-bottom {
-        padding: 20px 0;
-    }
-
-    body.trimed-service-page .site-footer .map-pulse {
-        left: 50%;
-        top: 18%;
-    }
-
-    body.trimed-service-page .site-footer .map-pulse span:nth-child(1),
-    body.trimed-service-page .site-footer .map-pulse span:nth-child(2) {
-        animation: map-pulse 2.4s infinite ease-out;
-    }
-
-    body.trimed-service-page .site-footer .map-pulse span:nth-child(2) {
-        animation-delay: 1.2s;
-    }
 }
 
-@media (max-width: 768px) {
-    .footer-card {
-        width: calc(100vw - 32px);
-        max-width: 318px;
-        box-sizing: border-box;
-    }
-    .footer-callback {
-        width: 100%;
-        max-width: 100%;
-    }
-    .footer-bottom {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
+
+
 
 
 @media (max-width: 768px) {
