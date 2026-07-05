@@ -4860,22 +4860,6 @@ body.home .site-header {
     body.home .audience-list li:nth-child(4) { width: 159px; }
     body.home .audience-list li:nth-child(8) { width: 232px; }
 
-    body.home .home-projects .projects-grid {
-        width: min(328px, calc(100vw - 32px));
-        max-width: min(328px, calc(100vw - 32px));
-        overflow-x: hidden;
-        overflow-y: hidden;
-        scroll-snap-type: none;
-        -webkit-overflow-scrolling: auto;
-        scrollbar-width: none;
-    }
-
-    body.home .home-projects .projects-grid::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
-    }
-
     body.home .home-projects .project-card,
     body.home .home-projects .project-image,
     body.home .home-projects .project-body {
