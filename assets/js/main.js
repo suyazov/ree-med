@@ -28,13 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.faq-section').forEach(function(section) {
             const faqItems = section.querySelectorAll('.faq-item');
             const itemsWithAnswer = Array.from(faqItems).filter(item => !!item.querySelector('p'));
+            const collapsedInitial = section.classList.contains('faq-section--collapsed-initial') && window.matchMedia('(max-width: 767px)').matches;
 
             if (itemsWithAnswer.length > 0) {
                 let hasActive = false;
                 itemsWithAnswer.forEach(function(item) {
                     item.classList.remove('active');
 
-                    if (!hasActive) {
+                    if (!collapsedInitial && !hasActive) {
                         item.classList.add('active');
                         hasActive = true;
                     }
