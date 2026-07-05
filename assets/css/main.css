@@ -21,6 +21,7 @@
     --color-gray: #E6E7E8;
     --color-gray-2: #D1D3D4;
     --color-black: #353535;
+    --color-black-muted: rgba(53, 53, 53, 0.7);
     --color-dark-green: #315046;
     --color-green: #367643;
     --color-light-green-1: #3F8D50;
@@ -2571,7 +2572,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 16px;
     line-height: 19px;
     font-weight: 400;
-    color: rgba(53, 53, 53, 0.7);
+    color: var(--color-black-muted);
 }
 
 .footer-links a {
@@ -3664,7 +3665,7 @@ h1, h2, h3, h4, h5, h6, p {
     .site-footer .footer-info p,
     .site-footer .footer-links a,
     .site-footer .footer-copyright {
-        color: rgba(53, 53, 53, 0.7);
+        color: var(--color-black-muted);
         font-size: 16px;
         line-height: 19px;
     }
