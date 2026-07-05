@@ -207,7 +207,7 @@
     top: 36px;
     width: 20px;
     height: 20px;
-    color: #D1D3D4;
+    color: var(--color-gray-2);
     z-index: 2;
 }
 .stomatology-page .stom-audience-card .text { position: relative; z-index: 1; }

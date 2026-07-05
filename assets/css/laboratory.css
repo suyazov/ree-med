@@ -222,7 +222,7 @@
 .laboratory-page .lab-audience-card--green { background: var(--gradient-light-green); color: var(--color-white); }
 
 .laboratory-page .lab-audience-card--image {
-    background: linear-gradient(135deg, #315046 0%, #367643 100%);
+    background: linear-gradient(135deg, var(--color-dark-green) 0%, var(--color-green) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -384,7 +384,7 @@
 .laboratory-page .lab-supplies-item--left { flex-direction: row-reverse; }
 
 
-.laboratory-page .lab-included { background: #EFEFEF; padding: 140px 0 80px; }
+.laboratory-page .lab-included { background: var(--color-white); padding: 140px 0 80px; }
 
 .laboratory-page .lab-included .lab-section-inner { max-width: 1204px; padding: 0; }
 
@@ -454,7 +454,7 @@
     width: 280px;
     min-height: 240px;
     height: 240px;
-    background: linear-gradient(-88.227deg, #367643 0%, #315046 100%);
+    background: linear-gradient(-88.227deg, var(--color-green) 0%, var(--color-dark-green) 100%);
     padding: 114px 16px 24px 24px;
     display: flex;
     align-items: flex-start;
@@ -558,7 +558,7 @@
     height: 187px;
     border-radius: var(--radius-card);
     overflow: hidden;
-    background: #F9F9F9;
+    background: var(--color-white-2);
     padding: 28px 32px;
     display: flex;
     align-items: flex-start;
@@ -592,7 +592,7 @@
 
 .laboratory-page .lab-why-feature-item .plus {
     width: 20px; height: 20px; flex-shrink: 0;
-    background: linear-gradient(48.009deg, #3F8D50 18.162%, #51A462 79.556%);
+    background: linear-gradient(48.009deg, var(--color-light-green-1) 18.162%, var(--color-light-green-2) 79.556%);
     border-radius: 50%;
     position: relative;
 }
@@ -971,7 +971,7 @@
 
 .laboratory-page .home-request {
     padding: 60px 0 141px;
-    background: #EFEFEF;
+    background: var(--color-white);
 }
 
 .laboratory-page .home-request .container {
@@ -1277,7 +1277,7 @@
     .laboratory-page .lab-audience-card--green .arrow { left: 16px; top: auto; right: auto; bottom: 9px; color: var(--color-white); }
     .laboratory-page .lab-audience-card--white,
     .laboratory-page .lab-audience-card--gray { background-size: auto 70px; background-position: right 16px top 16px; background-repeat: no-repeat; }
-    .laboratory-page .lab-supplies { padding: 0; background: #ffffff; border-radius: 20px; }
+    .laboratory-page .lab-supplies { padding: 0; background: var(--color-pure-white); border-radius: 20px; }
     .laboratory-page .lab-supplies-diagram { width: 100%; max-width: 343px; margin: 0 auto; aspect-ratio: auto; height: 904px; padding: 0; }
     .laboratory-page .lab-supplies-label { position: absolute; left: 16px; top: 40px; font-size: 14px; line-height: 16px; transform: none; }
     .laboratory-page .lab-supplies-title { position: absolute; left: 16px; top: 90px; font-size: 24px; line-height: 110%; max-width: 295px; transform: none; text-align: left; }
