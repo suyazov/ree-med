@@ -863,6 +863,8 @@ body.disinfection-page .task-item img {
         background: #EFEFEF;
         border-radius: var(--radius-card);
         padding: 10px 14px;
+        font-size: 14px;
+        line-height: 110%;
     }
 
     .disinfection-page .supply-item .dot {
