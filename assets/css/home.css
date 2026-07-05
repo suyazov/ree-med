@@ -132,9 +132,6 @@ body.home .site-header {
     background: var(--color-white-2);
     border-radius: 12px;
     padding: 14px;
-}
-
-.home-hero-check {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -199,10 +196,6 @@ body.home .site-header {
     justify-content: space-between;
 }
 
-.home-hero-badge.light {
-    flex: 0 1 50%;
-}
-
 .home-hero-badge.stat {
     flex: 0 0 auto;
 }
@@ -221,6 +214,7 @@ body.home .site-header {
 }
 
 .home-hero-badge.light {
+    flex: 0 1 50%;
     background: rgba(239, 239, 239, 0.92);
     color: var(--color-black);
 }
