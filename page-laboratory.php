@@ -16,9 +16,9 @@ $hero_bottom_button_text = trimed_get_field_value('lab_hero_bottom_button_text',
 
 $default_hero_features = array(
     array('icon' => $img_dir . '/lab-hero-feature-182-508.png', 'text' => 'Комплексное оснащение лабораторий'),
-    array('icon' => $img_dir . '/lab-hero-feature-181-580.png', 'text' => 'Поставка со склада и под заказ'),
-    array('icon' => $img_dir . '/lab-hero-feature-181-584.png', 'text' => 'Оборудование ведущих производителей'),
-    array('icon' => $img_dir . '/lab-hero-feature-182-504.png', 'text' => 'Сервисное сопровождение'),
+    array('icon' => $img_dir . '/lab-hero-feature-181-584.png', 'text' => 'Поставка со склада и под заказ'),
+    array('icon' => $img_dir . '/lab-hero-feature-182-504.png', 'text' => 'Оборудование ведущих производителей'),
+    array('icon' => $img_dir . '/lab-hero-feature-181-580.png', 'text' => 'Сервисное сопровождение'),
 );
 $hero_features = trimed_repeater_field('lab_hero_features', $default_hero_features);
 $hero_feature_icon_map = array_column($default_hero_features, 'icon', 'text');
