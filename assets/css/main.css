@@ -3541,6 +3541,49 @@ h1, h2, h3, h4, h5, h6, p {
         min-width: 0;
     }
 
+    /* Shared mobile service request-form controls */
+    :where(.mc-request-form, .stom-request-form) {
+        width: min(308px, 100%);
+        margin: 0 auto;
+    }
+
+    :where(.mc-request-form, .stom-request-form) input:not(.checkbox input),
+    :where(.mc-request-form, .stom-request-form) textarea,
+    :where(.mc-request-form, .stom-request-form) .phone-input {
+        width: 100%;
+    }
+
+    :where(.mc-request-form, .stom-request-form) input:not(.checkbox input),
+    :where(.mc-request-form, .stom-request-form) textarea,
+    :where(.mc-request-form, .stom-request-form) textarea[name="comment"] {
+        height: var(--control-height);
+    }
+
+    :where(.mc-request-form, .stom-request-form) .checkbox {
+        height: auto;
+        align-items: flex-start;
+        margin-bottom: 8px;
+    }
+
+    :where(.mc-request-form, .stom-request-form) .checkbox input {
+        width: var(--form-checkbox-size);
+        height: var(--form-checkbox-size);
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    :where(.mc-request-form, .stom-request-form) .checkbox span {
+        flex: 1 1 auto;
+        min-width: 0;
+        width: auto;
+        opacity: 1;
+    }
+
+    :where(.mc-request-form, .stom-request-form) button {
+        width: 100%;
+        font-size: 0;
+    }
+
     body.trimed-service-page .site-footer {
         margin-top: 0;
         padding-bottom: 0;
