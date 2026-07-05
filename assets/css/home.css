@@ -4392,7 +4392,6 @@ body.home .site-header {
     .categories-grid,
     .steps-layout,
     .testimonials-layout,
-    .projects-header,
     .request-grid {
         min-width: 0;
         width: 100%;
@@ -4458,7 +4457,6 @@ body.home .site-header {
     .home-categories .categories-grid,
     .category-card,
     .category-card::before,
-    .category-card-bg,
     .category-title,
     .home-projects-header .section-title,
     .projects-btn-mobile,
@@ -4500,13 +4498,11 @@ body.home .site-header {
     }
 
     .home-partners .section-title,
-    .home-partners-grid,
     .partner-card,
     .steps-header .section-title,
     .step-card-mobile,
     .step-card,
-    .request-form,
-    .request-text-block {
+    .request-form {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
@@ -4527,7 +4523,6 @@ body.home .site-header {
     body.home .steps-layout,
     body.home .step-card-mobile,
     body.home .home-partners .section-title,
-    body.home .home-partners-grid,
     body.home .home-request .request-grid,
     body.home .home-testimonials .testimonials-grid,
     body.home .home-testimonials .testimonial-card {
