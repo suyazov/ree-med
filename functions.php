@@ -903,15 +903,16 @@ function trimed_get_arrow_svg($class = '', $size = 24, $stroke_width = 2) {
  * Keeps legacy classes for compatibility and adds the shared .case-card pattern.
  *
  * @param array $args {
- *     @type string $variant        'home' or 'medcentry'. Defines legacy class map.
- *     @type string $image          Image URL.
- *     @type string $image_alt      Optional image alt text.
- *     @type string $meta           Category/number text.
- *     @type string $title          Card title.
- *     @type string $text           Card description text.
- *     @type bool   $text_allow_html Whether to allow wp_kses_post in text. Default false.
- *     @type string $link           Optional URL. If provided, card is wrapped in <a>.
- *     @type string $arrow          Arrow SVG/html. Defaults to 18px arrow.
+ *     @type string $variant          'home', 'medcentry' or 'stomatology'. Defines legacy class map.
+ *     @type string $image            Image URL.
+ *     @type string $image_alt        Optional image alt text.
+ *     @type string $meta             Category/number text.
+ *     @type string $title            Card title.
+ *     @type string $text             Card description text.
+ *     @type bool   $text_allow_html  Whether to allow wp_kses_post in text. Default false.
+ *     @type bool   $responsive_image Whether to render image as <picture> with mobile srcset. Default false.
+ *     @type string $link             Optional URL. If provided, card is wrapped in <a>.
+ *     @type string $arrow            Arrow SVG/html. Defaults to 18px arrow.
  * }
  */
 function trimed_render_case_card($args = array()) {
@@ -922,9 +923,10 @@ function trimed_render_case_card($args = array()) {
         'meta'            => '',
         'title'           => '',
         'text'            => '',
-        'text_allow_html' => false,
-        'link'            => '',
-        'arrow'           => '',
+        'text_allow_html'  => false,
+        'responsive_image' => false,
+        'link'             => '',
+        'arrow'            => '',
     ));
 
     $variant = sanitize_key($args['variant']);
@@ -947,6 +949,16 @@ function trimed_render_case_card($args = array()) {
             'title'  => 'mc-project-card-title',
             'text'   => 'mc-project-card-text',
             'arrow'  => 'mc-project-card-arrow',
+        ),
+        'stomatology' => array(
+            'card'   => 'stom-project-card',
+            'image'  => 'stom-project-card-img',
+            'body'   => 'stom-project-card-body',
+            'top'    => 'stom-project-card-top',
+            'meta'   => 'stom-project-card-num',
+            'title'  => 'stom-project-card-title',
+            'text'   => 'stom-project-card-text',
+            'arrow'  => 'stom-project-card-arrow',
         ),
     );
 
@@ -973,11 +985,17 @@ function trimed_render_case_card($args = array()) {
 
     echo '<' . $tag . $href_attr . ' class="' . esc_attr($card_class) . '">';
     echo '<div class="' . esc_attr($image_class) . '">';
-    echo '<img src="' . $image . '" alt="' . $image_alt . '">';
+
+    if (!empty($args['responsive_image'])) {
+        trimed_render_responsive_picture($args['image'], array('alt' => $args['image_alt']));
+    } else {
+        echo '<img src="' . $image . '" alt="' . $image_alt . '">';
+    }
+
     echo '</div>';
     echo '<div class="' . esc_attr($body_class) . '">';
 
-    if ($variant === 'medcentry') {
+    if ($variant === 'medcentry' || $variant === 'stomatology') {
         $top_class = trimed_sanitize_class_list($map['top'] . ' case-card__top');
         echo '<div class="' . esc_attr($top_class) . '">';
         echo '<span class="' . esc_attr($meta_class) . '">' . $meta . '</span>';

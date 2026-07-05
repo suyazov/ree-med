@@ -259,21 +259,17 @@ $included_bottom = array_slice($included_cards, 3);
             </div>
 
             <div class="stom-projects-grid">
-                <?php foreach ($projects as $project) : ?>
-                    <div class="stom-project-card">
-                        <div class="stom-project-card-img"><?php trimed_render_responsive_picture(!empty($project['image']) ? $project['image'] : $placeholder); ?></div>
-                        <div class="stom-project-card-body">
-                            <div class="stom-project-card-top">
-                                <span class="stom-project-card-num"><?php echo esc_html($project['number']); ?></span>
-                                <span class="stom-project-card-arrow"><img src="<?php echo esc_url($img_dir . '/stomatology-project-arrow.svg'); ?>" alt="" width="14" height="14"></span>
-                            </div>
-                            <div>
-                                <h3 class="stom-project-card-title"><?php echo esc_html($project['title']); ?></h3>
-                                <p class="stom-project-card-text"><?php echo esc_html($project['text']); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+                <?php foreach ($projects as $project) :
+                    trimed_render_case_card(array(
+                        'variant'          => 'stomatology',
+                        'image'            => !empty($project['image']) ? $project['image'] : $placeholder,
+                        'meta'             => $project['number'],
+                        'title'            => $project['title'],
+                        'text'             => $project['text'],
+                        'responsive_image' => true,
+                        'arrow'            => '<img src="' . esc_url($img_dir . '/stomatology-project-arrow.svg') . '" alt="" width="14" height="14">',
+                    ));
+                endforeach; ?>
             </div>
         </div>
     </section>
