@@ -112,7 +112,7 @@
     height: var(--form-checkbox-size-lg);
     flex: 0 0 var(--form-checkbox-size-lg);
     margin: 1px 0 0;
-    border: 1px solid #315046;
+    border: 1px solid var(--color-dark-green);
     border-radius: 2px;
     background: transparent;
 }
