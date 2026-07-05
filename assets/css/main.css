@@ -3575,7 +3575,6 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-
 @media (max-width: 768px) {
     .footer-card {
         width: calc(100vw - 32px);
@@ -3590,4 +3589,23 @@ h1, h2, h3, h4, h5, h6, p {
         width: 100%;
         box-sizing: border-box;
     }
+}
+
+
+@media (max-width: 768px) {
+    .laboratory-page .home-request-form .request-submit::after,
+    .medcentry-page .mc-request-form button::after,
+    .stomatology-page .stom-request-form button::after {
+        content: "Отправить";
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+:where(.laboratory-page, .disinfection-page) .home-request-form .form-row {
+    margin-bottom: 12px;
+}
+
+:where(.laboratory-page, .disinfection-page) .home-request-form .form-field-label {
+    display: none;
 }

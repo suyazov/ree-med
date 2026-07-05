@@ -67,14 +67,6 @@
     z-index: 2;
 }
 
-.disinfection-page .home-request-form .form-row {
-    margin-bottom: 12px;
-}
-
-.disinfection-page .form-field-label {
-    display: none;
-}
-
 .disinfection-page .home-request-form .form-field input,
 .disinfection-page .home-request-form .form-field textarea {
     height: var(--control-height);

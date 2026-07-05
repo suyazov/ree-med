@@ -573,7 +573,6 @@
     .stomatology-page .stom-request-form textarea[name="comment"] { height: var(--control-height); }
     .stomatology-page .stom-request-form button { width: 100%; height: var(--button-height); font-size: 0; }
     .stomatology-page .stom-request-form button span { font-size: 0; }
-    .stomatology-page .stom-request-form button::after { content: 'Отправить'; font-size: 14px; line-height: 17px; }
 
     /* Why mobile */
     .stomatology-page .stom-why { margin-top: 100px; padding: 0; }
