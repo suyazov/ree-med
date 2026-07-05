@@ -453,7 +453,7 @@
     position: relative;
     width: 24px;
     height: 24px;
-    background: linear-gradient(46.27deg, #3F8D50 18.16%, #51A462 79.56%);
+    background: var(--gradient-light-green);
     color: var(--color-white);
 }
 .medcentry-page .mc-request-note .check::before {
