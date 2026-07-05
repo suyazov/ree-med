@@ -15,12 +15,20 @@ $hero_button_text = trimed_get_field_value('lab_hero_button_text', 'Получи
 $hero_bottom_button_text = trimed_get_field_value('lab_hero_bottom_button_text', 'Подобрать оборудование');
 
 $default_hero_features = array(
-    array('icon' => $img_dir . '/lab-hero-icon-1.png', 'text' => 'Комплексное оснащение лабораторий'),
-    array('icon' => $img_dir . '/lab-hero-icon-2.png', 'text' => 'Поставка со склада и под заказ'),
-    array('icon' => $img_dir . '/lab-hero-icon-3.png', 'text' => 'Оборудование ведущих производителей'),
-    array('icon' => $img_dir . '/lab-hero-icon-4.png', 'text' => 'Сервисное сопровождение'),
+    array('icon' => $img_dir . '/lab-hero-feature-182-508.png', 'text' => 'Комплексное оснащение лабораторий'),
+    array('icon' => $img_dir . '/lab-hero-feature-181-580.png', 'text' => 'Поставка со склада и под заказ'),
+    array('icon' => $img_dir . '/lab-hero-feature-181-584.png', 'text' => 'Оборудование ведущих производителей'),
+    array('icon' => $img_dir . '/lab-hero-feature-182-504.png', 'text' => 'Сервисное сопровождение'),
 );
 $hero_features = trimed_repeater_field('lab_hero_features', $default_hero_features);
+$hero_feature_icon_map = array_column($default_hero_features, 'icon', 'text');
+foreach ($hero_features as &$hero_feature) {
+    $feature_text = $hero_feature['text'] ?? '';
+    if (isset($hero_feature_icon_map[$feature_text])) {
+        $hero_feature['icon'] = $hero_feature_icon_map[$feature_text];
+    }
+}
+unset($hero_feature);
 $hero_feature_order = array_flip(array_column($default_hero_features, 'text'));
 usort($hero_features, static function ($a, $b) use ($hero_feature_order) {
     $a_index = $hero_feature_order[$a['text'] ?? ''] ?? 99;
