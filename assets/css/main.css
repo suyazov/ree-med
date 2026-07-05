@@ -1528,8 +1528,8 @@ h1, h2, h3, h4, h5, h6, p {
 
     .trimed-projects .case-card__body {
         width: 328px;
-        height: 220px;
-        flex: 0 0 220px;
+        height: var(--project-card-height);
+        flex: 0 0 var(--project-card-height);
         padding: 20px 24px;
         background: #fff;
         border-radius: var(--radius-card);
