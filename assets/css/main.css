@@ -32,6 +32,7 @@
     --container: 1344px;
     --container-padding-mobile: 16px;
     --container-padding-xs: 12px;
+    --mobile-content-width: min(343px, calc(100vw - 32px));
     --radius-small: 4px;
     --radius-control: 8px;
     --radius-card: 12px;
@@ -2755,7 +2756,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     .site-header .header-container {
         flex-wrap: nowrap;
-        width: min(343px, calc(100vw - 32px));
+        width: var(--mobile-content-width);
         min-height: 44px;
         margin: 0 auto;
         gap: 8px;

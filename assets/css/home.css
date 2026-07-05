@@ -4524,16 +4524,16 @@ body.home .site-header {
     }
 
     body.home .home-request .container {
-        width: min(343px, calc(100vw - 32px));
-        max-width: min(343px, calc(100vw - 32px));
+        width: var(--mobile-content-width);
+        max-width: var(--mobile-content-width);
         padding-left: 0;
         padding-right: 0;
         box-sizing: border-box;
     }
 
     body.home .home-request .request-grid {
-        width: min(343px, calc(100vw - 32px));
-        max-width: min(343px, calc(100vw - 32px));
+        width: var(--mobile-content-width);
+        max-width: var(--mobile-content-width);
     }
 
     body.home .home-request .request-form-wrap {
@@ -4654,8 +4654,8 @@ body.home .site-header {
 @media (max-width: 480px) {
     body.home .home-directions .container,
     body.home .home-tasks .container {
-        width: min(343px, calc(100vw - 32px));
-        max-width: min(343px, calc(100vw - 32px));
+        width: var(--mobile-content-width);
+        max-width: var(--mobile-content-width);
         margin-left: auto;
         margin-right: auto;
         padding-left: 0;
@@ -4800,8 +4800,8 @@ body.home .site-header {
     }
 
     body.home .home-audience .container {
-        width: min(343px, calc(100vw - 32px));
-        max-width: min(343px, calc(100vw - 32px));
+        width: var(--mobile-content-width);
+        max-width: var(--mobile-content-width);
     }
 
     body.home .home-audience-grid {
@@ -4994,8 +4994,8 @@ body.home .site-header {
     }
 
     body.home .home-projects .container {
-        width: min(343px, calc(100vw - 32px));
-        max-width: min(343px, calc(100vw - 32px));
+        width: var(--mobile-content-width);
+        max-width: var(--mobile-content-width);
         margin-left: auto;
         margin-right: auto;
         padding-left: 0;
