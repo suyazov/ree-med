@@ -504,7 +504,9 @@ body.disinfection-page .task-item img {
         justify-content: space-between;
         flex-wrap: wrap;
         align-content: center;
-        align-self: start;
+        align-self: stretch;
+        width: 100%;
+        box-sizing: border-box;
         gap: 0 24px;
     }
 
@@ -1454,7 +1456,13 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .faq-grid {
+        flex-direction: column;
         gap: 12px;
+    }
+
+    body.disinfection-page .faq-column {
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     body.disinfection-page .faq-item {
