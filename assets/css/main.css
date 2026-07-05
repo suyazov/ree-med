@@ -696,13 +696,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 .audience-card.green {
     background: var(--gradient-light-green);
-    color: #EFEFEF;
+    color: var(--color-white);
 }
 
 .audience-card.has-image {
     background-size: cover;
     background-position: center;
-    color: #EFEFEF;
+    color: var(--color-white);
 }
 
 .audience-card .overlay {
@@ -762,7 +762,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: block;
     font-size: 20px;
     line-height: 24px;
-    color: #353535;
+    color: var(--color-black);
     margin-bottom: 14px;
 }
 
@@ -770,7 +770,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 48px;
     line-height: 110%;
     letter-spacing: -0.03em;
-    color: #353535;
+    color: var(--color-black);
     max-width: 743px;
     margin: 0;
 }
@@ -846,7 +846,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 16px;
     line-height: 110%;
     font-weight: 400;
-    color: #353535;
+    color: var(--color-black);
     white-space: nowrap;
 }
 
@@ -878,13 +878,13 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .supply-item .supply-text {
-    background: #EFEFEF;
+    background: var(--color-white);
     border-radius: 12px;
     padding: 12px 16px;
     font-size: 16px;
     line-height: 110%;
     font-weight: 400;
-    color: #353535;
+    color: var(--color-black);
 }
 
 /* Included */
@@ -976,8 +976,8 @@ h1, h2, h3, h4, h5, h6, p {
     right: 24px;
     width: 10px;
     height: 10px;
-    border-top: 2px solid #EFEFEF;
-    border-right: 2px solid #EFEFEF;
+    border-top: 2px solid var(--color-white);
+    border-right: 2px solid var(--color-white);
     transform: rotate(45deg);
 }
 
@@ -2445,7 +2445,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Footer */
 .site-footer {
-    background: #EFEFEF;
+    background: var(--color-white);
     padding-top: 0;
 }
 
@@ -2493,7 +2493,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #EFEFEF;
+    color: var(--color-white);
     font-family: var(--font-main);
     font-size: 16px;
     font-weight: 400;
@@ -2540,8 +2540,8 @@ h1, h2, h3, h4, h5, h6, p {
     height: var(--button-height);
     padding: 20px 14px;
     border-radius: var(--radius-control);
-    background: linear-gradient(11.271deg, #3F8D50 18.162%, #51A462 79.556%);
-    color: #EFEFEF;
+    background: linear-gradient(11.271deg, var(--color-light-green-1) 18.162%, var(--color-light-green-2) 79.556%);
+    color: var(--color-white);
     font-family: var(--font-main);
     font-size: 14px;
     font-weight: 600;
@@ -2555,7 +2555,7 @@ h1, h2, h3, h4, h5, h6, p {
     min-height: 101px;
     padding: 28px 0;
     gap: 40px;
-    background: #EFEFEF;
+    background: var(--color-white);
 }
 
 .footer-info,
@@ -2883,7 +2883,7 @@ h1, h2, h3, h4, h5, h6, p {
         background: transparent;
         backdrop-filter: none;
         padding: 0;
-        color: #EFEFEF;
+        color: var(--color-white);
         font-size: 11px;
         line-height: 110%;
         width: auto;
@@ -2912,7 +2912,7 @@ h1, h2, h3, h4, h5, h6, p {
     .hero-desc {
         font-size: 16px;
         line-height: 19px;
-        color: #353535;
+        color: var(--color-black);
         margin-bottom: 0;
     }
     .hero-features {
@@ -2964,7 +2964,7 @@ h1, h2, h3, h4, h5, h6, p {
     .hero-btn-consult {
         position: static;
         background: var(--gradient-light-green);
-        color: #EFEFEF;
+        color: var(--color-white);
     }
 
     /* Audience */
