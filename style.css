@@ -9,3 +9,317 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: trimed
 */
+
+/*
+ * Client screenshot emergency fixes.
+ * Loaded before page CSS, therefore selectors use !important only for
+ * targeted mobile visual regressions that must win over page styles.
+ */
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    /* Mobile menu must cover page content; no hero image strip above menu. */
+    .site-header {
+        position: relative !important;
+        z-index: 10010 !important;
+    }
+
+    .mobile-menu.active {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 10000 !important;
+        min-height: 100dvh !important;
+        padding: 104px 28px 32px !important;
+        overflow-y: auto !important;
+        background: var(--color-white) !important;
+        box-shadow: none !important;
+    }
+
+    /* Laboratory mobile hero: restore Figma 375 scale and icon mapping. */
+    body.laboratory-page .lab-hero-grid {
+        width: min(344px, calc(100vw - 31px)) !important;
+        max-width: 344px !important;
+    }
+
+    body.laboratory-page .lab-hero-title,
+    body.laboratory-page .lab-hero-desc,
+    body.laboratory-page .lab-hero-features,
+    body.laboratory-page .lab-hero-bottom-btn,
+    body.laboratory-page .lab-hero-cta-btn {
+        width: min(343px, 100%) !important;
+        max-width: 343px !important;
+    }
+
+    body.laboratory-page .lab-hero-image-wrap,
+    body.laboratory-page .lab-hero-main-image {
+        width: min(343px, 100%) !important;
+        max-width: 343px !important;
+        height: 226px !important;
+    }
+
+    body.laboratory-page .lab-hero-main-image {
+        object-fit: cover !important;
+    }
+
+    body.laboratory-page .lab-hero-features {
+        grid-template-columns: 174px 156px !important;
+        gap: 8px !important;
+        justify-content: start !important;
+        overflow: visible !important;
+    }
+
+    body.laboratory-page .lab-hero-feature-card {
+        min-height: 44px !important;
+        height: auto !important;
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        background: var(--color-white-2) !important;
+        gap: 12px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        font-size: 12px !important;
+        line-height: 14px !important;
+    }
+
+    body.laboratory-page .lab-hero-feature-card--mobile-order-1 { order: 1 !important; width: 174px !important; }
+    body.laboratory-page .lab-hero-feature-card--mobile-order-2 { order: 2 !important; width: 156px !important; }
+    body.laboratory-page .lab-hero-feature-card--mobile-order-3 { order: 3 !important; width: 174px !important; }
+    body.laboratory-page .lab-hero-feature-card--mobile-order-4 { order: 4 !important; width: 135px !important; }
+
+    /* Replace mismapped icons from the page defaults without changing PHP data. */
+    body.laboratory-page .lab-hero-feature-card--mobile-order-1 img.icon {
+        content: url('assets/img/lab-hero-feature-181-580.png') !important;
+        width: 26px !important;
+        height: 28px !important;
+    }
+
+    body.laboratory-page .lab-hero-feature-card--mobile-order-2 img.icon {
+        content: url('assets/img/lab-hero-feature-182-504.png') !important;
+        width: 27px !important;
+        height: 28px !important;
+    }
+
+    body.laboratory-page .lab-hero-feature-card--mobile-order-3 img.icon {
+        content: url('assets/img/lab-hero-feature-181-584.png') !important;
+        width: 30px !important;
+        height: 28px !important;
+    }
+
+    body.laboratory-page .lab-hero-feature-card--mobile-order-4 img.icon {
+        content: url('assets/img/lab-hero-feature-182-508.png') !important;
+        width: 20px !important;
+        height: 28px !important;
+    }
+
+    body.laboratory-page .lab-hero-feature-card img.icon {
+        flex: 0 0 auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    @media (max-width: 340px) {
+        body.laboratory-page .lab-hero-grid,
+        body.laboratory-page .lab-hero-title,
+        body.laboratory-page .lab-hero-desc,
+        body.laboratory-page .lab-hero-features,
+        body.laboratory-page .lab-hero-bottom-btn,
+        body.laboratory-page .lab-hero-cta-btn,
+        body.laboratory-page .lab-hero-image-wrap,
+        body.laboratory-page .lab-hero-main-image {
+            width: calc(100vw - 32px) !important;
+            max-width: calc(100vw - 32px) !important;
+        }
+
+        body.laboratory-page .lab-hero-features {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+
+        body.laboratory-page .lab-hero-feature-card,
+        body.laboratory-page .lab-hero-feature-card--mobile-order-1,
+        body.laboratory-page .lab-hero-feature-card--mobile-order-2,
+        body.laboratory-page .lab-hero-feature-card--mobile-order-3,
+        body.laboratory-page .lab-hero-feature-card--mobile-order-4 {
+            width: 100% !important;
+        }
+    }
+
+    /* Laboratory projects and partners: real touch scroll inside block only. */
+    body.laboratory-page .lab-projects,
+    body.laboratory-page .partners-section {
+        overflow: hidden !important;
+    }
+
+    body.laboratory-page .lab-projects-track,
+    body.laboratory-page .partners-grid {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-x !important;
+        overscroll-behavior-inline: contain !important;
+        scrollbar-width: none !important;
+    }
+
+    body.laboratory-page .lab-projects-track::-webkit-scrollbar,
+    body.laboratory-page .partners-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    body.laboratory-page .lab-project-slide,
+    body.laboratory-page .lab-project-slide.active {
+        flex: 0 0 328px !important;
+        width: 328px !important;
+        max-width: 328px !important;
+        scroll-snap-align: start !important;
+    }
+
+    body.laboratory-page .lab-project-card,
+    body.laboratory-page .lab-project-card-img,
+    body.laboratory-page .lab-project-card-body {
+        width: 328px !important;
+        max-width: 328px !important;
+    }
+
+    body.laboratory-page .lab-project-card-img {
+        height: 194px !important;
+    }
+
+    body.laboratory-page .partner-card {
+        flex: 0 0 243px !important;
+        width: 243px !important;
+        max-width: 243px !important;
+    }
+
+    /* Laboratory process block: keep strict one-column mobile layout and vector plus. */
+    body.laboratory-page .lab-included-row,
+    body.laboratory-page .lab-included-row--top,
+    body.laboratory-page .lab-included-row--bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 31px !important;
+    }
+
+    body.laboratory-page .lab-included-card {
+        width: 295px !important;
+        max-width: 295px !important;
+        height: 236px !important;
+        flex: 0 0 auto !important;
+    }
+
+    body.laboratory-page .lab-included-card-img {
+        width: 295px !important;
+        height: 180px !important;
+    }
+
+    body.laboratory-page .lab-included-result {
+        width: 295px !important;
+        max-width: 295px !important;
+        height: 196px !important;
+        min-height: 196px !important;
+        padding: 70px 24px 24px !important;
+        background: linear-gradient(-87.714deg, var(--color-green) 0%, var(--color-dark-green) 100%) !important;
+    }
+
+    body.laboratory-page .lab-included-result .arrow {
+        width: 13px !important;
+        height: 13px !important;
+        top: 16px !important;
+        right: 16px !important;
+        color: var(--color-white) !important;
+    }
+
+    /* Laboratory why block: keep mobile order 5000+ then 20+ and prevent image/overlay drift. */
+    body.laboratory-page .lab-why-stats {
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: 293px !important;
+        min-height: 293px !important;
+        overflow: hidden !important;
+    }
+
+    body.laboratory-page .lab-why-stats-bg {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    body.laboratory-page .lab-why-stat-item:nth-of-type(2) {
+        order: 1 !important;
+    }
+
+    body.laboratory-page .lab-why-stat-item:nth-of-type(1) {
+        order: 2 !important;
+    }
+
+    body.laboratory-page .lab-why-right-card::before,
+    body.laboratory-page .lab-included-result .arrow::before,
+    body.laboratory-page .request-plus {
+        background-color: var(--color-white) !important;
+    }
+
+    /* Laboratory tasks: one chip per row, no accidental two-column layout. */
+    body.laboratory-page .lab-tasks-grid,
+    body.laboratory-page .lab-tasks-list {
+        width: min(343px, calc(100vw - 32px)) !important;
+        max-width: 343px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    body.laboratory-page .lab-tasks-list {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    body.laboratory-page .lab-tasks-item {
+        width: fit-content !important;
+        max-width: 343px !important;
+        min-height: 54px !important;
+        height: auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: normal !important;
+    }
+
+    body.laboratory-page .lab-tasks-check {
+        flex: 0 0 30px !important;
+    }
+
+    /* Request callout: keep form inside green card and remove textarea scroll. */
+    body.laboratory-page .request-grid {
+        width: min(343px, calc(100vw - 32px)) !important;
+        max-width: 343px !important;
+        min-height: 646px !important;
+        height: 646px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        overflow: hidden !important;
+    }
+
+    body.laboratory-page .request-form-wrap {
+        width: min(308px, calc(100vw - 67px)) !important;
+        max-width: 308px !important;
+        height: 402px !important;
+        flex: 0 0 402px !important;
+    }
+
+    body.laboratory-page .home-request-form,
+    body.laboratory-page .home-request-form .form-field input,
+    body.laboratory-page .home-request-form .form-field textarea,
+    body.laboratory-page .home-request-form .request-submit {
+        width: 268px !important;
+        max-width: 268px !important;
+    }
+
+    body.laboratory-page .home-request-form .form-field textarea {
+        overflow: hidden !important;
+        resize: none !important;
+    }
+}
