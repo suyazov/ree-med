@@ -767,20 +767,22 @@ body.disinfection-page .task-item img {
         flex-basis: 24px;
     }
 
-    /* Supplies mobile: snake arc layout matching Figma */
+    /* Supplies mobile: Figma 164:557 */
     .disinfection-page .supplies-section .container {
         padding: 0 var(--container-padding-mobile);
     }
 
     .disinfection-page .supplies-box {
         position: relative;
-        height: 720px !important;
-        padding: 0 !important;
+        height: 899px;
+        padding: 0;
         overflow: hidden;
+        background: #F9F9F9;
+        border-radius: 20px;
     }
 
     .disinfection-page .supplies-box .section-header {
-        position: absolute !important;
+        position: absolute;
         left: 24px;
         top: 40px;
         margin: 0;
@@ -844,61 +846,59 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .supplies-items {
-        position: relative !important;
-        left: auto;
-        top: auto;
-        display: flex !important;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-        padding: 150px 0 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
     }
 
     .disinfection-page .supply-item {
-        position: static !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: flex-start;
-        gap: 12px;
+        position: absolute !important;
+        display: flex;
+        align-items: center;
+        gap: 8px;
         font-size: 14px;
         line-height: 110%;
         font-weight: 400;
-        color: var(--color-black);
+        color: #353535;
         white-space: normal;
         background: transparent;
         padding: 0;
-        width: auto;
-        max-width: 260px;
+        box-sizing: border-box;
     }
 
-    .disinfection-page .supply-item > span:last-child {
-        background: var(--color-white);
-        border-radius: var(--radius-card);
-        padding: 10px 14px;
+    .disinfection-page .supply-item .supply-text {
+        flex: 1 1 0;
+        min-width: 0;
+        background: #EFEFEF;
+        border-radius: 12px;
+        padding: 12px;
         font-size: 14px;
         line-height: 110%;
+        font-weight: 400;
+        color: #353535;
+        box-sizing: border-box;
     }
+
+    .disinfection-page .supply-item:nth-child(1)  { left: 22px;  top: 235px; width: 253px; }
+    .disinfection-page .supply-item:nth-child(2)  { left: 99px;  top: 292px; width: 218px; }
+    .disinfection-page .supply-item:nth-child(3)  { left: 49px;  top: 364px; width: 238px; }
+    .disinfection-page .supply-item:nth-child(4)  { left: 76px;  top: 679px; width: 252px; }
+    .disinfection-page .supply-item:nth-child(5)  { left: 61px;  top: 550px; width: 266px; }
+    .disinfection-page .supply-item:nth-child(6)  { left: 79px;  top: 178px; width: 240px; }
+    .disinfection-page .supply-item:nth-child(7)  { left: 78px;  top: 493px; width: 248px; }
+    .disinfection-page .supply-item:nth-child(8)  { left: 159px; top: 436px; width: 138px; }
+    .disinfection-page .supply-item:nth-child(9)  { left: 15px;  top: 622px; width: 294px; }
+    .disinfection-page .supply-item:nth-child(10) { left: 111.5px; top: 736px; width: 225px; }
+    .disinfection-page .supply-item:nth-child(11) { left: 4px;   top: 808px; width: 300px; }
 
     .disinfection-page .supply-item .dot {
         width: 20px;
         height: 20px;
-        border-width: 3px;
+        border-width: 2.82353px;
         flex-shrink: 0;
-        margin-top: 2px;
+        margin-top: 0;
     }
-
-    /* Reorder DOM to the Figma reference visual order and stagger along the arc */
-    .disinfection-page .supply-item:nth-child(1)  { order: 2;  margin-left: 50px; }
-    .disinfection-page .supply-item:nth-child(2)  { order: 3;  margin-left: 90px; }
-    .disinfection-page .supply-item:nth-child(3)  { order: 4;  margin-left: 70px; }
-    .disinfection-page .supply-item:nth-child(4)  { order: 9;  margin-left: 110px; }
-    .disinfection-page .supply-item:nth-child(5)  { order: 7;  margin-left: 110px; }
-    .disinfection-page .supply-item:nth-child(6)  { order: 1;  margin-left: 70px; }
-    .disinfection-page .supply-item:nth-child(7)  { order: 6;  margin-left: 130px; }
-    .disinfection-page .supply-item:nth-child(8)  { order: 5;  margin-left: 150px; max-width: 120px; }
-    .disinfection-page .supply-item:nth-child(9)  { order: 8;  margin-left: 70px; }
-    .disinfection-page .supply-item:nth-child(10) { order: 10; margin-left: 150px; }
-    .disinfection-page .supply-item:nth-child(11) { order: 11; margin-left: 50px; max-width: 290px; }
 
     /* Projects mobile: one slide at a time */
     .disinfection-page .slides-track {
@@ -1391,7 +1391,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .supplies-box {
-        height: 899px !important;
+        height: 899px;
     }
 
     body.disinfection-page .included-section .container {
