@@ -327,6 +327,12 @@
 .stomatology-page .stom-project-card:nth-child(2) .stom-project-card-title,
 .stomatology-page .stom-project-card:nth-child(3) .stom-project-card-title { width: 330px; }
 
+/* Project card arrow badge: the bundled asset (stomatology-project-arrow.svg)
+   is already a full 32x32 light-green badge with a white arrow. Render it at
+   32x32 with no extra dark background so it matches Figma (172:1905). */
+.stomatology-page .stom-project-card-arrow { background: transparent; }
+.stomatology-page .stom-project-card-arrow img { width: 32px; height: 32px; }
+
 /* Process */
 .stomatology-page .stom-process-subtitle { font-size: 16px; line-height: 110%; color: var(--color-black); max-width: 440px; }
 .stomatology-page .stom-process-cards { margin: 34px 0 0 0; }
@@ -391,6 +397,21 @@
 
     .stomatology-page .stom-cta {
         padding-bottom: 140px;
+    }
+
+    /* 'Что входит': keep the grey rounded background on the centered 1344px
+       container instead of bleeding full-width to the viewport edges (Figma). */
+    .stomatology-page .stom-included {
+        background: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .stomatology-page .stom-included .stom-container {
+        background: var(--color-white-2);
+        border-radius: 20px;
+        padding-top: 72px;
+        padding-bottom: 62px;
     }
 }
 
