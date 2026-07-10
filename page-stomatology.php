@@ -24,10 +24,11 @@ $audience_label = get_field('stom_audience_label') ?: 'Кому подходит
 $audience_title = get_field('stom_audience_title') ?: 'Работаем со стоматологиями <em>на разных этапах</em>';
 $audience_desc  = get_field('stom_audience_desc') ?: 'Мы понимаем, что задачи у всех разные: кто-то открывается с нуля, кто-то расширяется, а кто-то просто хочет обновить оборудование.';
 $audience_lead  = get_field('stom_audience_lead') ?: 'Мы будем полезны, если вы:';
+$audience_lead_html = preg_replace('/будем полезны,/u', '<span class="text-green">$0</span>', esc_html($audience_lead));
 $audience_cards = trimed_repeater_field('stom_audience_cards', array(
     array('text' => 'Открываете стоматологический кабинет и не знаете, какое оборудование выбрать', 'image' => $img_dir . '/stomatology-audience-2.png', 'style' => 'image'),
-    array('text' => 'Расширяете клинику и добавляете новые кресла', 'image' => $img_dir . '/stomatology-audience-white-v2.png', 'style' => 'white'),
-    array('text' => 'Хотите заменить устаревшее оборудование', 'image' => $img_dir . '/stomatology-audience-3.png', 'style' => 'gray'),
+    array('text' => 'Расширяете клинику и добавляете новые кресла', 'image' => $img_dir . '/stomatology-audience-3.png', 'style' => 'white'),
+    array('text' => 'Хотите заменить устаревшее оборудование', 'image' => $img_dir . '/stomatology-audience-equipment.png', 'style' => 'gray'),
     array('text' => 'Хотите работать без простоев и задержек поставок', 'image' => '', 'style' => 'green'),
 ));
 $audience_summary = get_field('stom_audience_summary') ?: 'Мы помогаем не просто купить оборудование, а сделать так, чтобы кабинет начал работать <span class="text-green">максимально эффективно за короткие сроки</span>.';
@@ -166,7 +167,7 @@ $included_bottom = array_slice($included_cards, 3);
             </div>
 
             <div class="stom-audience-body">
-                <p class="stom-audience-lead"><?php echo esc_html($audience_lead); ?></p>
+                <p class="stom-audience-lead"><?php echo $audience_lead_html; ?></p>
 
                 <div class="stom-audience-grid">
                 <?php foreach ($audience_cards as $card) :
@@ -362,10 +363,7 @@ $included_bottom = array_slice($included_cards, 3);
 
     <section class="stom-cta">
         <div class="stom-cta-inner">
-            <svg class="stom-cta-icon" viewBox="0 0 31 31" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="15.5" cy="15.5" r="12"/>
-                <path d="M10 15.5h11M15.5 10v11" stroke-linecap="round"/>
-            </svg>
+            <?php echo trimed_get_clover_svg('stom-cta-icon', 31); ?>
             <p class="stom-cta-text"><?php echo esc_html($cta_text); ?></p>
             <button class="stom-cta-btn" type="button"><span><?php echo esc_html($cta_button); ?></span></button>
         </div>
