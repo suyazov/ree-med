@@ -3842,3 +3842,53 @@ h1, h2, h3, h4, h5, h6, p {
 :where(.laboratory-page, .disinfection-page) .home-request-form .form-field-label {
     display: none;
 }
+
+/* Shared legal pages */
+.legal-section {
+    padding: 72px 0 96px;
+}
+
+.legal-container {
+    max-width: 1200px;
+}
+
+.legal-title {
+    max-width: 900px;
+    margin: 0 0 40px;
+    font-size: 48px;
+    line-height: 1.08;
+    font-weight: 600;
+    color: var(--color-text, #353535);
+}
+
+.legal-content {
+    max-width: 900px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-text, #353535);
+}
+
+.legal-content :where(h2, h3) {
+    margin: 36px 0 16px;
+    line-height: 1.2;
+}
+
+.legal-content :where(p, ul, ol) {
+    margin: 0 0 16px;
+}
+
+@media (max-width: 768px) {
+    .legal-section {
+        padding: 40px 0 64px;
+    }
+
+    .legal-title {
+        margin-bottom: 28px;
+        font-size: 32px;
+        line-height: 1.1;
+    }
+
+    .legal-content {
+        font-size: 16px;
+    }
+}

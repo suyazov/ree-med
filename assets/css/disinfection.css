@@ -1405,7 +1405,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .why-section .container {
-        min-height: 829px;
+        min-height: 0;
     }
 
     body.disinfection-page .projects-section .container {

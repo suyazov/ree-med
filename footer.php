@@ -68,9 +68,9 @@
                 <p>ОГРН 1237500001859</p>
             </div>
             <div class="footer-links">
-                <a href="#">Согласие на обработку персональных данных</a>
-                <a href="#">Политика об обработке персональных данных</a>
-                <a href="#">Пользовательское соглашение</a>
+                <a href="<?php echo esc_url(trimed_legal_url('soglasie-na-obrabotku-personalnyh-dannyh')); ?>">Согласие на обработку персональных данных</a>
+                <a href="<?php echo esc_url(trimed_legal_url('politika-obrabotki-personalnyh-dannyh')); ?>">Политика об обработке персональных данных</a>
+                <a href="<?php echo esc_url(trimed_legal_url('polzovatelskoe-soglashenie')); ?>">Пользовательское соглашение</a>
             </div>
             <p class="footer-copyright">© <?php echo date('Y'); ?>, «ТриМед». Все права защищены.</p>
         </div>

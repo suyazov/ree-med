@@ -147,6 +147,11 @@ function trimed_phone_href($phone = '') {
     return esc_attr(preg_replace('/[^0-9+]/', '', $value));
 }
 
+function trimed_legal_url($slug) {
+    $page = get_page_by_path(sanitize_title($slug));
+    return $page instanceof WP_Post ? get_permalink($page) : home_url('/' . trim($slug, '/') . '/');
+}
+
 function trimed_asset_version($relative_path) {
     $path = get_template_directory() . '/' . ltrim($relative_path, '/');
     return file_exists($path) ? TRIMED_VERSION . '.' . filemtime($path) : TRIMED_VERSION;
@@ -374,7 +379,10 @@ function trimed_render_agree_checkbox($args = array()) {
 
     echo '<label class="' . esc_attr($args['class']) . '">';
     echo '<input type="checkbox" name="agree" value="1" required>';
-    echo '<span>' . esc_html($args['text']) . '</span>';
+    $policy_label = 'Политики обработки персональных данных';
+    $safe_text = esc_html($args['text']);
+    $policy_link = '<a href="' . esc_url(trimed_legal_url('politika-obrabotki-personalnyh-dannyh')) . '">' . esc_html($policy_label) . '</a>';
+    echo '<span>' . str_replace(esc_html($policy_label), $policy_link, $safe_text) . '</span>';
     echo '</label>';
 }
 
@@ -478,7 +486,7 @@ function trimed_render_contact_form($args = array()) {
         echo '<div class="form-row form-agree">';
         echo '<label class="checkbox-label">';
         echo '<input type="checkbox" name="agree" value="1" required>';
-        echo '<span>Оставляя заявку, я соглашаюсь с условиями <a href="#">Политики обработки персональных данных</a></span>';
+        echo '<span>Оставляя заявку, я соглашаюсь с условиями <a href="' . esc_url(trimed_legal_url('politika-obrabotki-personalnyh-dannyh')) . '">Политики обработки персональных данных</a></span>';
         echo '</label>';
         echo '</div>';
     } else {
