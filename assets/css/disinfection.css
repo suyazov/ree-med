@@ -6,6 +6,25 @@
     color: var(--color-pure-white);
 }
 
+/* FAQ arrows stay in the right grid column at every responsive breakpoint. */
+body.disinfection-page .faq-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 16px;
+    column-gap: 24px;
+}
+
+body.disinfection-page .faq-item > span:first-child {
+    grid-column: 1;
+}
+
+body.disinfection-page .faq-item > .faq-icon {
+    grid-column: 2;
+}
+
+body.disinfection-page .faq-item > p {
+    grid-column: 1 / -1;
+}
+
 /* ===== Partners: title black regular ===== */
 .disinfection-page .partners-title,
 .disinfection-page .partners-title strong,
