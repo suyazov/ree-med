@@ -80,29 +80,6 @@ function trimed_body_class($classes) {
 }
 add_filter('body_class', 'trimed_body_class');
 
-function trimed_ensure_medcentry_menu_item($items, $args) {
-    if (!empty($args->theme_location) && $args->theme_location !== 'primary') {
-        return $items;
-    }
-
-    if (empty($args->theme_location) && !in_array($args->menu_class, array('nav-menu', 'mobile-nav-menu'), true)) {
-        return $items;
-    }
-
-    $items_text = wp_strip_all_tags($items);
-    if (
-        stripos($items, 'Медцентры') !== false ||
-        stripos($items_text, 'Медцентр') !== false ||
-        stripos($items, '/medcentry') !== false
-    ) {
-        return $items;
-    }
-
-    $items .= '<li class="menu-item menu-item-medcentry"><a href="' . esc_url(home_url('/medcentry/')) . '">Медцентры</a></li>';
-    return $items;
-}
-add_filter('wp_nav_menu_items', 'trimed_ensure_medcentry_menu_item', 10, 2);
-
 function trimed_get_default_menu_items() {
     return array(
         'home'       => array('url' => home_url('/'), 'label' => 'Главная'),
@@ -455,6 +432,10 @@ function trimed_render_contact_form($args = array()) {
     $form_class .= 'contact-form';
 
     echo '<form id="' . esc_attr($args['id']) . '" class="' . esc_attr(trim($form_class)) . '">';
+    echo '<div class="form-honeypot" aria-hidden="true">';
+    echo '<label>Не заполняйте это поле<input type="text" name="company_website" value="" tabindex="-1" autocomplete="off"></label>';
+    echo '</div>';
+    echo '<input type="hidden" name="form_started_at" value="' . esc_attr((string) time()) . '">';
 
     foreach ($fields as $field) {
         if (!isset($default_form_fields[$field])) {
@@ -1089,10 +1070,27 @@ add_action('wp_enqueue_scripts', 'trimed_enqueue_page_assets');
 function trimed_handle_contact_form() {
     check_ajax_referer('trimed_contact_nonce', 'nonce');
 
-    $name  = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
-    $phone = isset($_POST['phone']) ? sanitize_text_field($_POST['phone']) : '';
-    $org   = isset($_POST['organization']) ? sanitize_text_field($_POST['organization']) : '';
-    $comment = isset($_POST['comment']) ? sanitize_textarea_field($_POST['comment']) : '';
+    $honeypot = isset($_POST['company_website']) ? trim((string) wp_unslash($_POST['company_website'])) : '';
+    if ($honeypot !== '') {
+        wp_send_json_success('Спасибо! Ваша заявка отправлена.');
+    }
+
+    $started_at = isset($_POST['form_started_at']) ? absint($_POST['form_started_at']) : 0;
+    if (!$started_at || (time() - $started_at) < 3) {
+        wp_send_json_error('Не удалось отправить заявку. Попробуйте ещё раз через несколько секунд.', 400);
+    }
+
+    $remote_addr = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : 'unknown';
+    $rate_key = 'trimed_form_rate_' . hash_hmac('sha256', $remote_addr, wp_salt('nonce'));
+    $request_count = (int) get_transient($rate_key);
+    if ($request_count >= 5) {
+        wp_send_json_error('Слишком много заявок. Попробуйте позже или позвоните нам.', 429);
+    }
+
+    $name  = isset($_POST['name']) ? sanitize_text_field(wp_unslash($_POST['name'])) : '';
+    $phone = isset($_POST['phone']) ? sanitize_text_field(wp_unslash($_POST['phone'])) : '';
+    $org   = isset($_POST['organization']) ? sanitize_text_field(wp_unslash($_POST['organization'])) : '';
+    $comment = isset($_POST['comment']) ? sanitize_textarea_field(wp_unslash($_POST['comment'])) : '';
     $agree = isset($_POST['agree']) ? 1 : 0;
 
     if (empty($name) || empty($phone)) {
@@ -1103,9 +1101,18 @@ function trimed_handle_contact_form() {
         wp_send_json_error('Необходимо согласие на обработку персональных данных.');
     }
 
+    if (mb_strlen($name) > 100 || mb_strlen($org) > 150 || mb_strlen($comment) > 2000) {
+        wp_send_json_error('Проверьте длину заполненных полей.');
+    }
+
+    $phone_digits = preg_replace('/\D+/', '', $phone);
+    if (strlen($phone_digits) < 7 || strlen($phone_digits) > 15) {
+        wp_send_json_error('Укажите корректный номер телефона.');
+    }
+
     $to = TRIMED_FORM_EMAIL;
-    if (empty($to) && function_exists('get_field')) {
-        $to = get_field('trimed_contact_email', 'option');
+    if (empty($to)) {
+        $to = trimed_get_contact('email');
     }
     if (empty($to)) {
         $to = get_option('admin_email');
@@ -1119,6 +1126,7 @@ function trimed_handle_contact_form() {
     $message = "Имя: $name\nТелефон: $phone\nОрганизация: $org\nКомментарий: $comment";
     $headers = array('Content-Type: text/plain; charset=UTF-8');
 
+    set_transient($rate_key, $request_count + 1, 15 * MINUTE_IN_SECONDS);
     $sent = wp_mail($to, $subject, $message, $headers);
 
     if ($sent) {

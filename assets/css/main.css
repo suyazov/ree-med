@@ -2445,6 +2445,14 @@ h1, h2, h3, h4, h5, h6, p {
     color: #c62828;
 }
 
+.form-honeypot {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
 /* Footer */
 .site-footer {
     background: var(--color-white);

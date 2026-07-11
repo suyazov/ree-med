@@ -29,7 +29,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'key' => 'field_trimed_contact_email',
                 'label' => 'Email для заявок',
                 'name' => 'trimed_contact_email',
-                'type' => 'text',
+                'type' => 'email',
                 'default_value' => trimed_get_default_contacts()['email'],
                 'instructions' => 'Используется как получатель заявок с форм. Также можно переопределить через константу TRIMED_FORM_EMAIL в wp-config.php.',
             ),
