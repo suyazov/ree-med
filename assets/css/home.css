@@ -4873,7 +4873,7 @@ body.home .site-header {
 
     body.home .home-testimonials .testimonials-dots {
         position: absolute;
-        left: 50%;
+        left: calc(50vw - var(--container-padding-mobile));
         top: 385px;
         z-index: 2;
         display: flex;
