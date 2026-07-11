@@ -576,7 +576,16 @@
         padding-right: 0;
         box-sizing: border-box;
     }
-    .stomatology-page .stom-projects-header { text-align: left; min-height: 131px; height: auto; margin-bottom: 24px; }
+    .stomatology-page .stom-projects-header { position: relative; text-align: left; min-height: 131px; height: auto; margin-bottom: 24px; }
+    .stomatology-page .stom-projects-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 6px;
+        width: 32px;
+        height: 32px;
+        background: url('../img/stomatology-projects-finger.svg') center / 24px 29px no-repeat;
+    }
     .stomatology-page .stom-projects-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; width: auto; text-align: left; margin-bottom: 12px; color: var(--color-green); }
     .stomatology-page .stom-projects-desc { font-size: 16px; line-height: 19.2px; letter-spacing: 0; max-width: 100%; }
     .stomatology-page .stom-project-card { gap: 0; }
