@@ -399,6 +399,43 @@
         padding-bottom: 140px;
     }
 
+    .stomatology-page .stom-process-header {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stomatology-page .stom-process-title {
+        margin-bottom: 0;
+    }
+
+    .stomatology-page .stom-process-card-num {
+        left: 28px;
+    }
+
+    .stomatology-page .stom-process-card--green .stom-process-card-num {
+        background: var(--color-white);
+        color: var(--color-green);
+    }
+
+    .stomatology-page .stom-process-card-title,
+    .stomatology-page .stom-process-card-text {
+        margin-left: 28px;
+    }
+
+    .stomatology-page .stom-process-card-title {
+        margin-bottom: 12px;
+    }
+
+    .stomatology-page .stom-process-cards .stom-process-card:last-child img {
+        position: absolute;
+        top: 3px;
+        left: 87px;
+        width: 236px;
+        height: 162px;
+        object-fit: cover;
+    }
+
     /* 'Что входит': keep the grey rounded background on the centered 1344px
        container instead of bleeding full-width to the viewport edges (Figma). */
     .stomatology-page .stom-included {
@@ -447,6 +484,69 @@
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
+    .stomatology-page .stom-process {
+        height: auto;
+        margin-top: 120px;
+    }
+
+    .stomatology-page .stom-process .stom-section-inner {
+        width: calc(100% - 64px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .stomatology-page .stom-process-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stomatology-page .stom-process-header {
+        margin-bottom: 32px;
+    }
+
+    .stomatology-page .stom-process-image {
+        order: 2;
+        width: 100%;
+        height: 420px;
+        margin: 0 0 24px;
+    }
+
+    .stomatology-page .stom-process-cards {
+        order: 3;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin: 0;
+    }
+
+    .stomatology-page .stom-process-card {
+        width: 100%;
+        height: 220px;
+        padding: 0 28px 28px;
+    }
+
+    .stomatology-page .stom-process-card-num {
+        left: 28px;
+    }
+
+    .stomatology-page .stom-process-card--green .stom-process-card-num {
+        background: var(--color-white);
+        color: var(--color-green);
+    }
+
+    .stomatology-page .stom-process-card-title,
+    .stomatology-page .stom-process-card-text {
+        width: auto !important;
+    }
+
+    .stomatology-page .stom-process-cards .stom-process-card:last-child img {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 175px;
+        height: 120px;
+        object-fit: contain;
+    }
+
     .stomatology-page .stom-included {
         width: calc(100% - 64px);
         margin-left: auto;
@@ -679,6 +779,7 @@
     .stomatology-page .stom-process-card { height: 140px; min-height: 0; padding: 56px 16px 24px; justify-content: center; }
     .stomatology-page .stom-process-cards .stom-process-card:last-child { height: 177px; min-height: 0; justify-content: flex-end; }
     .stomatology-page .stom-process-card-num { left: 16px; background: var(--gradient-green); color: #fff; }
+    .stomatology-page .stom-process-card--green .stom-process-card-num { background: #fff; color: var(--color-green); }
     .stomatology-page .stom-process-card-title { width: auto !important; margin-bottom: 4px; }
     .stomatology-page .stom-process-card-text { width: auto !important; }
     .stomatology-page .stom-process-card img { width: 175px !important; height: 120px !important; }
