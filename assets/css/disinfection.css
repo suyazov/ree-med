@@ -33,11 +33,6 @@ body.disinfection-page .faq-item > p {
     font-weight: 400;
 }
 
-/* ===== Supplies: hide middle ring on desktop ===== */
-.disinfection-page .supplies-rings .ring-2 {
-    display: none;
-}
-
 /* ===== Application callout block ===== */
 .disinfection-page .home-request {
     background: var(--color-white);

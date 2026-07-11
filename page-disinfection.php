@@ -121,7 +121,7 @@ $img_dir = trimed_get_image_dir();
                     $supplies_title = trimed_get_field_value('supplies_title', 'Все для организации инфекционного контроля');
                     $supplies_title = str_replace('Все для организации', '<span class="supplies-title-line">Все для организации</span>', $supplies_title);
                     $supplies_title = str_replace('инфекционного контроля', '<span class="text-green supplies-title-line">инфекционного контроля</span>', $supplies_title);
-                    $supplies_title = str_replace('</span> <span class="text-green supplies-title-line">', '</span><br><span class="text-green supplies-title-line">', $supplies_title);
+                    $supplies_title = str_replace('</span> <span class="text-green supplies-title-line">', '</span><span class="text-green supplies-title-line">', $supplies_title);
                     ?>
                     <h2 class="section-title"><?php echo wp_kses_post($supplies_title); ?></h2>
                 </div>
