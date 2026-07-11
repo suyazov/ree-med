@@ -1118,6 +1118,23 @@ body.disinfection-page .task-item img {
     /* Avoid empty line between "для дезинфекции" and "и инфекционного контроля" on mobile */
     .disinfection-page .hero-title br:nth-of-type(2) { display: none; }
 
+    /* Keep both feature rows aligned with the 343px Figma grid at any mobile width. */
+    .disinfection-page .hero-feature:nth-child(1) {
+        width: calc((100% - 7px) * 0.5297619) !important;
+    }
+
+    .disinfection-page .hero-feature:nth-child(2) {
+        width: calc((100% - 7px) * 0.4702381) !important;
+    }
+
+    .disinfection-page .hero-feature:nth-child(3) {
+        width: calc((100% - 7px) * 0.4285714) !important;
+    }
+
+    .disinfection-page .hero-feature:nth-child(4) {
+        width: calc((100% - 7px) * 0.5714286) !important;
+    }
+
     /* Hero badges: constrain text wrapping to match reference */
     .disinfection-page .hero-badges {
         left: 12px;
