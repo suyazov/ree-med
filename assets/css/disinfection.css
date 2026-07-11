@@ -265,8 +265,8 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .why-section .section-label {
-        margin-bottom: 20px;
-        font-size: 24px;
+        margin-bottom: 24px;
+        font-size: 20px;
         line-height: 120%;
         color: var(--color-black);
     }
@@ -283,42 +283,44 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .why-grid {
-        grid-template-columns: 482px 344px 326px;
-        grid-template-rows: 209px 226px;
-        gap: 24px;
+        grid-template-columns: 480px 344px 336px;
+        grid-template-rows: 187px 198px;
+        gap: 20px;
         align-items: stretch;
         margin-top: 54px;
     }
 
     body.disinfection-page .why-image-card {
-        min-height: 459px;
-        padding: 36px;
+        min-height: 405px;
+        padding: 32px;
         border-radius: var(--radius-card);
-        background-position: center;
+        background-size: 805.5px 537px;
+        background-position: -225.7px -132px;
     }
 
     body.disinfection-page .why-stats {
-        gap: 16px;
+        gap: 13px;
         align-items: flex-end;
     }
 
     body.disinfection-page .why-stat {
-        min-height: 116px;
-        padding: 20px 24px;
+        min-height: 104px;
+        height: 104px;
+        padding: 12px 20px 20px;
         border-radius: var(--radius-card);
         justify-content: flex-start;
     }
 
     body.disinfection-page .why-stat.glass {
-        flex: 1 1 270px;
-        background: rgba(180, 186, 184, 0.62);
-        border: 1px solid rgba(255, 255, 255, 0.28);
-        backdrop-filter: blur(28px);
+        flex: 0 0 236px;
+        background: rgba(39, 81, 69, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
     }
 
     body.disinfection-page .why-stat.green {
-        flex: 0 0 188px;
-        background: #49A65C;
+        flex: 0 0 166px;
+        background: var(--gradient-light-green);
     }
 
     .disinfection-page .why-stat strong {
@@ -333,58 +335,64 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .why-info-card {
-        min-height: 459px;
-        padding: 48px;
+        min-height: 405px;
+        padding: 32px;
         border-radius: var(--radius-card);
         background: var(--color-white-2);
     }
 
     .disinfection-page .why-info-card h3 {
-        max-width: 250px;
-        font-size: 24px;
-        line-height: 120%;
+        max-width: 221px;
+        font-size: 20px;
+        line-height: normal;
         font-weight: 600;
     }
 
     body.disinfection-page .why-warehouse-card {
-        height: auto;
-        min-height: 209px;
-        padding: 36px;
+        height: 187px;
+        min-height: 187px;
+        padding: 28px 32px;
         border-radius: var(--radius-card);
+        justify-content: flex-start;
+        background-size: 569.3px 328px;
+        background-position: -232.8px -51.6px;
     }
 
     body.disinfection-page .why-warehouse-card h3 {
-        font-size: 28px;
-        line-height: 120%;
+        font-size: 24px;
+        line-height: normal;
     }
 
     body.disinfection-page .why-features-list {
-        gap: 12px;
+        gap: 9px;
+        align-items: flex-start;
     }
 
     .disinfection-page .why-feature {
-        max-width: none;
-        min-height: 67px;
-        padding: 0 28px;
-        gap: 20px;
+        width: fit-content;
+        max-width: 100%;
+        min-height: 60px;
+        height: 60px;
+        padding: 20px;
+        gap: 16px;
         border-radius: var(--radius-card);
-        background: #E4E6E6;
-        font-size: 20px;
-        line-height: 120%;
+        background: var(--color-gray);
+        font-size: 16px;
+        line-height: 110%;
         font-weight: 600;
     }
 
     body.disinfection-page .why-feature .check {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         background: #49A65C;
     }
 
     body.disinfection-page .why-feature .check::after {
-        left: 8px;
-        top: 5px;
-        width: 6px;
-        height: 10px;
+        left: 7px;
+        top: 4px;
+        width: 5px;
+        height: 9px;
     }
 
     .disinfection-page .why-plus {

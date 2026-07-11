@@ -253,7 +253,7 @@ $img_dir = trimed_get_image_dir();
                 <div class="why-image-card" style="background-image:url('<?php echo esc_url(trimed_image_field('why_main_image', $img_dir . '/disinfection-why-main.png')); ?>')">
                     <div class="why-stats">
                         <div class="why-stat glass"><strong>20+ лет</strong><span>работы в медицинской сфере</span></div>
-                        <div class="why-stat green"><strong>5000+</strong><span>позиций оборудования в наличии</span></div>
+                        <div class="why-stat green"><strong>5000+</strong><span>позиций в наличии</span></div>
                     </div>
                 </div>
                 <div class="why-info-card">
