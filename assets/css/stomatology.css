@@ -632,7 +632,8 @@
     .stomatology-page .stom-request { margin-top: 80px; }
     .stomatology-page .stom-request-inner { min-height: 645px; }
     .stomatology-page .stom-request-icon { position: static; display: block; width: 16px; height: 16px; margin: 0 auto 50px; }
-    .stomatology-page .stom-request-desc { width: auto; }
+    .stomatology-page .stom-request-title { width: 313px; margin-left: auto; margin-right: auto; }
+    .stomatology-page .stom-request-desc { width: 255px; margin-left: auto; margin-right: auto; }
     .stomatology-page .stom-request-note { display: inline-flex; background: rgba(54, 118, 67, 0.35); border-radius: 999px; padding: 10px 20px; width: fit-content; }
     .stomatology-page .stom-request-note .check { background: var(--gradient-light-green); color: #fff; }
     .stomatology-page .stom-request-form { width: 308px !important; margin: 0 auto; }
