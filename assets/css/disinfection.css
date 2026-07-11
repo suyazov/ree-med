@@ -909,7 +909,13 @@ body.disinfection-page .task-item img {
         scroll-snap-type: x mandatory;
         min-height: auto;
         gap: 16px;
-        width: 672px;
+        width: 100%;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .disinfection-page .slides-track::-webkit-scrollbar {
+        display: none;
     }
 
     .disinfection-page .project-slide {
@@ -932,7 +938,7 @@ body.disinfection-page .task-item img {
 
     .disinfection-page .projects-slider {
         gap: 16px;
-        width: 672px;
+        width: 100%;
         margin-top: 51px;
     }
 

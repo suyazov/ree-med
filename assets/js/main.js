@@ -84,12 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const dots = container.querySelectorAll(dotSelector);
         let currentSlide = 0;
         const totalSlides = slides.length;
+        const scrollTrack = container.closest('.disinfection-page')
+            ? container.querySelector('.slides-track')
+            : null;
 
-        function showSlide(index) {
-            if (totalSlides === 0) {
-                return;
-            }
-
+        function updateActive(index) {
             currentSlide = (index + totalSlides) % totalSlides;
             slides.forEach(function(slide, i) {
                 slide.classList.toggle('active', i === currentSlide);
@@ -97,6 +96,21 @@ document.addEventListener('DOMContentLoaded', function() {
             dots.forEach(function(dot, i) {
                 dot.classList.toggle('active', i === currentSlide);
             });
+        }
+
+        function showSlide(index) {
+            if (totalSlides === 0) {
+                return;
+            }
+
+            updateActive(index);
+
+            if (scrollTrack && window.matchMedia('(max-width: 767px)').matches) {
+                scrollTrack.scrollTo({
+                    left: slides[currentSlide].offsetLeft,
+                    behavior: 'smooth',
+                });
+            }
         }
 
         if (prevBtn) {
@@ -117,6 +131,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 showSlide(index);
             });
         });
+
+        if (scrollTrack) {
+            scrollTrack.addEventListener('scroll', function() {
+                if (!window.matchMedia('(max-width: 767px)').matches) {
+                    return;
+                }
+
+                let nearestIndex = 0;
+                let nearestDistance = Infinity;
+                slides.forEach(function(slide, index) {
+                    const distance = Math.abs(scrollTrack.scrollLeft - slide.offsetLeft);
+                    if (distance < nearestDistance) {
+                        nearestDistance = distance;
+                        nearestIndex = index;
+                    }
+                });
+                updateActive(nearestIndex);
+            }, { passive: true });
+        }
     }
 
     function initSliders(containerSelector, slideSelector, prevSelector, nextSelector, dotSelector) {
