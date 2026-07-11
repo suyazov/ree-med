@@ -257,7 +257,7 @@ $img_dir = trimed_get_image_dir();
                     </div>
                 </div>
                 <div class="why-info-card">
-                    <?php trimed_render_plus_svg('why-plus', 36, 'currentColor', 3, 4); ?>
+                    <?php echo trimed_get_clover_svg('why-plus', 28); ?>
                     <h3>Работа с государственными и частными учреждениями</h3>
                 </div>
                 <div class="why-warehouse-card" style="background-image:url('<?php echo esc_url(trimed_image_field('why_warehouse_image', $img_dir . '/disinfection-warehouse.png')); ?>')">
