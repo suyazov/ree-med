@@ -1,7 +1,13 @@
 <footer class="site-footer">
     <div class="container footer-container">
         <div class="footer-main">
-            <div class="footer-bg" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/main/подвал-0.png')"></div>
+            <a
+                class="footer-bg"
+                href="https://yandex.ru/maps/-/CTqTRF5S"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Открыть ТриМед на Яндекс Картах"
+                style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer-map-trimed.png')"></a>
             <div class="map-pulse">
                 <span></span>
                 <span></span>
@@ -20,10 +26,10 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EFEFEF"/></svg>
                         <span><?php echo esc_html(trimed_get_contact('email')); ?></span>
                     </a>
-                    <div class="footer-contact">
+                    <a href="https://yandex.ru/maps/-/CTqTRF5S" class="footer-contact" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#EFEFEF"/></svg>
                         <span><?php echo esc_html(trimed_get_contact('address')); ?></span>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="footer-socials">

@@ -2461,6 +2461,7 @@ h1, h2, h3, h4, h5, h6, p {
     inset: 0;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .footer-card {
@@ -3602,18 +3603,20 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Shared footer: map component aligned to 1200px grid across all pages */
 .site-footer .footer-container {
-    max-width: none;
+    max-width: 1344px;
+    width: calc(100% - 96px);
+    margin: 0 auto;
     padding: 0;
 }
 
 .site-footer .footer-bg {
-    background-image: url('../img/main/подвал-0.png');
+    background-image: url('../img/footer-map-trimed.png');
 }
 
 @media (min-width: 769px) {
     .site-footer .map-pulse {
-        left: calc((100vw - 1200px) / 2 + 600px);
-        top: 61.1%;
+        left: 50%;
+        top: 50%;
     }
 
     .site-footer .footer-main {
@@ -3622,7 +3625,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .site-footer .footer-card {
-        right: calc((100vw - 1200px) / 2);
+        right: 72px;
         top: 50px;
         transform: none;
         height: 376px;
@@ -3649,7 +3652,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     .site-footer .footer-copyright {
         position: absolute;
-        left: calc((100vw - 1200px) / 2);
+        left: 72px;
         top: 28px;
         width: 307px;
         margin: 0;
@@ -3657,14 +3660,14 @@ h1, h2, h3, h4, h5, h6, p {
 
     .site-footer .footer-info {
         position: absolute;
-        left: calc((100vw - 1200px) / 2);
+        left: 72px;
         top: 55px;
         width: 307px;
     }
 
     .site-footer .footer-links {
         position: absolute;
-        left: calc((100vw - 1200px) / 2 + 829px);
+        left: 901px;
         top: 28px;
         width: 351px;
     }
@@ -3679,6 +3682,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width: 768px) {
+    .site-footer .footer-container {
+        width: 100%;
+    }
+
     :where(.mc-request-inner, .stom-request-inner) {
         grid-template-columns: 1fr;
         gap: 16px;

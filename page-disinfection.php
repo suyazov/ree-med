@@ -374,11 +374,18 @@ $img_dir = trimed_get_image_dir();
     $faq_title = trimed_get_field_value('faq_title', 'Часто задаваемые вопросы');
     $faq_title = str_replace('вопросы', '<span class="text-green">вопросы</span>', $faq_title);
 
+    $faq_items = get_field('faq_items');
+    if (!is_array($faq_items)) {
+        $faq_items = metadata_exists('post', get_the_ID(), 'faq_items')
+            ? array()
+            : trimed_get_default_faq_items('disinfection');
+    }
+
     trimed_render_faq_section(array(
         'section_class' => 'faq-section faq-section--collapsed-initial',
         'title'         => $faq_title,
         'description'   => trimed_get_field_value('faq_description', 'Ответы на популярные вопросы о дезинфекции, подборе оборудования и организации инфекционного контроля'),
-        'items'         => get_field('faq_items') ?: trimed_get_default_faq_items('disinfection'),
+        'items'         => $faq_items,
         'open_first'    => false,
     ));
     ?>

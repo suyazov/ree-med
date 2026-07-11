@@ -523,7 +523,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'name' => 'faq_items',
                 'type' => 'repeater',
                 'min' => 0,
-                'max' => 12,
+                'max' => 0,
                 'layout' => 'block',
                 'button_label' => 'Добавить вопрос',
                 'sub_fields' => array(

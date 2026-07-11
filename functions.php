@@ -701,6 +701,24 @@ function trimed_get_default_faq_items($scope = '') {
     return array();
 }
 
+/**
+ * Show the default disinfection FAQ as editable ACF rows until the page is
+ * saved for the first time. Saved values, including an intentionally empty
+ * repeater, always take precedence afterwards.
+ */
+function trimed_load_disinfection_faq_defaults($value, $post_id, $field) {
+    if (!is_numeric($post_id) || get_page_template_slug((int) $post_id) !== 'page-disinfection.php') {
+        return $value;
+    }
+
+    if (metadata_exists('post', (int) $post_id, 'faq_items')) {
+        return $value;
+    }
+
+    return trimed_get_default_faq_items('disinfection');
+}
+add_filter('acf/load_value/name=faq_items', 'trimed_load_disinfection_faq_defaults', 10, 3);
+
 function trimed_prepare_faq_items($items = array(), $options = array()) {
     $options = wp_parse_args($options, array(
         'open_first' => true,
