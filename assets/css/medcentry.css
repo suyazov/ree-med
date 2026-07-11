@@ -737,8 +737,8 @@
     /* Hero title and badges fit */
     .medcentry-page .mc-hero-title { width: 100%; max-width: 100%; }
     .medcentry-page .mc-hero-badges {
-        width: 300px;
-        max-width: 300px;
+        width: 324px;
+        max-width: 324px;
         flex-wrap: nowrap;
     }
     .medcentry-page .mc-hero-badge-glass,
@@ -752,7 +752,7 @@
     }
 
     .medcentry-page .mc-hero-badge-green {
-        width: 132px;
+        width: 156px;
     }
 
     /* Audience grid responsive */
