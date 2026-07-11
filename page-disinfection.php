@@ -407,6 +407,7 @@ $img_dir = trimed_get_image_dir();
     trimed_render_request_callout(array(
         'section_class' => 'home-request disinfection-request',
         'section_id'    => 'application',
+        'icon'          => trimed_get_clover_svg('request-plus', 40),
         'title'         => $application_title,
         'description'   => trimed_get_field_value('application_desc', 'Оставьте заявку, и специалист поможет подобрать оборудование, дезинфицирующие средства и расходные материалы под ваши задачи.'),
         'form_args'     => array(
