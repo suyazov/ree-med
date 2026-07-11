@@ -127,6 +127,7 @@ $why_warehouse_image = trimed_image_field('lab_why_warehouse_image', $img_dir . 
 
 // Projects
 $projects_title = trimed_get_field_value('lab_projects_title', 'Реализованные проекты');
+$projects_title = preg_replace('/^Реализованные/u', '<span class="text-green">Реализованные</span>', $projects_title, 1);
 $projects_subtitle = trimed_get_field_value('lab_projects_subtitle', 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.');
 $default_projects = array(
     array(
@@ -401,13 +402,15 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
                             </div>
                             <div class="lab-project-card-content">
                                 <h3 class="lab-project-card-title"><?php echo esc_html(!empty($project['title']) ? $project['title'] : ''); ?></h3>
-                                <div class="lab-project-card-block lab-project-card-delivered">
-                                    <p class="lab-project-card-label">Что было поставлено</p>
-                                    <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
-                                </div>
-                                <div class="lab-project-card-block lab-project-card-result">
-                                    <p class="lab-project-card-label">Результат</p>
-                                    <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
+                                <div class="lab-project-card-details">
+                                    <div class="lab-project-card-block lab-project-card-delivered">
+                                        <p class="lab-project-card-label">Что было поставлено</p>
+                                        <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['delivered']) ? $project['delivered'] : ''); ?></p>
+                                    </div>
+                                    <div class="lab-project-card-block lab-project-card-result">
+                                        <p class="lab-project-card-label">Результат</p>
+                                        <p class="lab-project-card-text"><?php echo wp_kses_post(!empty($project['result']) ? $project['result'] : ''); ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

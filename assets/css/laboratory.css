@@ -664,7 +664,7 @@
     line-height: 99%;
     font-weight: 600;
     letter-spacing: -0.03em;
-    color: var(--color-green);
+    color: var(--color-black);
     text-align: center;
 }
 
@@ -734,7 +734,7 @@
     flex-direction: column;
     gap: 28px;
     width: 713px;
-    height: 281px;
+    height: auto;
 }
 
 .laboratory-page .lab-project-card-title {
@@ -745,6 +745,14 @@
     font-weight: 600;
     letter-spacing: -0.03em;
     color: var(--color-black);
+    white-space: nowrap;
+}
+
+.laboratory-page .lab-project-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
 }
 
 .laboratory-page .lab-project-card-delivered {
@@ -780,6 +788,7 @@
     background: var(--color-green);
     color: var(--color-white);
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .laboratory-page .lab-project-card-img {

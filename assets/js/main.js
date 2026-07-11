@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const slides = container.querySelectorAll(slideSelector);
-        const prevBtn = container.querySelector(prevSelector);
-        const nextBtn = container.querySelector(nextSelector);
+        const prevBtns = container.querySelectorAll(prevSelector);
+        const nextBtns = container.querySelectorAll(nextSelector);
         const dots = container.querySelectorAll(dotSelector);
         let currentSlide = 0;
         const totalSlides = slides.length;
@@ -113,17 +113,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        if (prevBtn) {
+        prevBtns.forEach(function(prevBtn) {
             prevBtn.addEventListener('click', function() {
                 showSlide(currentSlide - 1);
             });
-        }
+        });
 
-        if (nextBtn) {
+        nextBtns.forEach(function(nextBtn) {
             nextBtn.addEventListener('click', function() {
                 showSlide(currentSlide + 1);
             });
-        }
+        });
 
         dots.forEach(function(dot) {
             dot.addEventListener('click', function() {
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAQAccordion();
     initMobileMenu();
     initSliders('.projects-slider', '.project-slide', '.slider-arrow.prev', '.slider-arrow.next', '.slider-dot');
-    initSliders('.lab-projects-slider', '.lab-project-slide', '.lab-slider-arrow.prev', '.lab-slider-arrow.next', '.lab-slider-dot');
+    initSliders('.lab-projects-slider', '.lab-project-slide', '.lab-projects-side-arrow.prev, .lab-slider-arrow.prev', '.lab-projects-side-arrow.next, .lab-slider-arrow.next', '.lab-slider-dot');
     initPartnersSlider();
     initTestimonialsSlider();
     initContactForms();
