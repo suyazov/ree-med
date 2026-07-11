@@ -350,7 +350,16 @@
 /* Request */
 .stomatology-page .stom-request { padding: 0; margin-top: 20px; }
 .stomatology-page .stom-request-desc { line-height: 110%; width: 283px; }
-.stomatology-page .stom-request-note { display: inline-flex; gap: 19px; background: rgba(54, 118, 67, 0.35); border-radius: 999px; padding: 10px 20px; width: fit-content; }
+.stomatology-page .stom-request-note {
+    display: inline-flex;
+    width: 248px;
+    height: 44px;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(54, 118, 67, 0.5);
+    box-sizing: border-box;
+}
 .stomatology-page .stom-request-note .check { background: var(--gradient-light-green); color: #fff; }
 .stomatology-page .stom-request-note .check::before { content: ''; width: 10px; height: 8px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 12 10' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 5l3 3 5-6'/%3E%3C/svg%3E") center/contain no-repeat; }
 .stomatology-page .stom-request-form input[name="phone"] { margin-bottom: 12px; }
@@ -434,6 +443,10 @@
         width: 236px;
         height: 162px;
         object-fit: cover;
+    }
+
+    .stomatology-page .stom-request-note {
+        margin-top: 45px;
     }
 
     /* 'Что входит': keep the grey rounded background on the centered 1344px
@@ -804,7 +817,14 @@
     .stomatology-page .stom-request-icon { position: static; display: block; width: 16px; height: 16px; margin: 0 auto 50px; }
     .stomatology-page .stom-request-title { width: 313px; margin-left: auto; margin-right: auto; }
     .stomatology-page .stom-request-desc { width: 255px; margin-left: auto; margin-right: auto; }
-    .stomatology-page .stom-request-note { display: inline-flex; background: rgba(54, 118, 67, 0.35); border-radius: 999px; padding: 10px 20px; width: fit-content; }
+    .stomatology-page .stom-request-note {
+        width: fit-content;
+        height: 44px;
+        gap: 8px;
+        padding: 12px 18px;
+        border-radius: 12px;
+        background: rgba(54, 118, 67, 0.5);
+    }
     .stomatology-page .stom-request-note .check { background: var(--gradient-light-green); color: #fff; }
     .stomatology-page .stom-request-form { width: 308px !important; margin: 0 auto; }
     .stomatology-page .stom-request-form .checkbox input { width: var(--form-checkbox-size) !important; height: var(--form-checkbox-size) !important; }
