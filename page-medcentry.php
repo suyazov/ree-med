@@ -251,7 +251,7 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
                 <div class="mc-process-header">
                     <h2 class="mc-process-title">
                         <span class="mc-process-title-desktop"><?php echo wp_kses_post($process_title); ?></span>
-                        <span class="mc-process-title-mobile">Как мы работаем</span>
+                        <span class="mc-process-title-mobile">Как мы <span class="text-green">работаем</span></span>
                     </h2>
                     <p class="mc-process-subtitle"><?php echo esc_html($process_subtitle); ?></p>
                 </div>
