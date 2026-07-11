@@ -3892,7 +3892,7 @@ body.home .site-header {
     }
 
     body.home .home-partners {
-        height: 403px;
+        height: 443px;
         padding: 0;
         box-sizing: border-box;
         overflow: hidden;
@@ -3925,6 +3925,7 @@ body.home .site-header {
         touch-action: pan-x;
         padding-bottom: 0;
         scrollbar-width: none;
+        margin-left: calc(-1 * var(--container-padding-mobile));
     }
 
     body.home .partners-grid::-webkit-scrollbar {
@@ -3938,13 +3939,14 @@ body.home .site-header {
         width: calc(100vw - 32px);
         max-width: 498px;
         margin-top: 12px;
+        margin-left: calc(-1 * var(--container-padding-mobile));
     }
 
     body.home .partner-card {
         flex: 0 0 243px;
         width: 243px;
-        height: 253px;
-        min-height: 253px;
+        height: 293px;
+        min-height: 293px;
         padding: 16px;
         background: #fff;
         border-radius: var(--radius-card);
@@ -4473,7 +4475,7 @@ body.home .site-header {
     }
 
     body.home .home-request .request-form-wrap {
-        left: 50%;
+        left: calc(50vw - var(--container-padding-mobile));
         width: calc(100% - 36px);
         max-width: 308px;
         transform: translateX(-50%);
@@ -4871,7 +4873,7 @@ body.home .site-header {
 
     body.home .home-testimonials .testimonials-dots {
         position: absolute;
-        left: 125px;
+        left: 50%;
         top: 385px;
         z-index: 2;
         display: flex;
@@ -4881,7 +4883,7 @@ body.home .site-header {
         width: 72px;
         height: 8px;
         margin: 0;
-        transform: none;
+        transform: translateX(-50%);
     }
 
     body.home .home-testimonials .testimonials-dot {
