@@ -500,18 +500,18 @@ body.disinfection-page .task-item img {
         padding: 0 28px;
         border-radius: var(--radius-card);
         background: var(--color-white-2);
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 16px;
+        column-gap: 24px;
         align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
         align-content: center;
         align-self: stretch;
         width: 100%;
         box-sizing: border-box;
-        gap: 0 24px;
     }
 
     body.disinfection-page .faq-item span:first-child {
+        grid-column: 1;
         font-size: 20px;
         line-height: 120%;
         font-weight: 600;
@@ -519,6 +519,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .faq-icon {
+        grid-column: 2;
         width: 16px;
         height: 10px;
         flex-shrink: 0;
@@ -546,6 +547,7 @@ body.disinfection-page .task-item img {
     }
 
     body.disinfection-page .faq-item p {
+        grid-column: 1 / -1;
         width: 100%;
         max-height: 0;
         opacity: 0;
