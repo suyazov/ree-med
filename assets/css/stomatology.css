@@ -540,8 +540,12 @@
     .stomatology-page .stom-audience-summary { max-width: 100%; margin: 16px 0 0; font-size: 16px; line-height: 120%; text-align: left; }
 
     /* Included mobile */
-    .stomatology-page .stom-included { margin-top: 97px; padding: 40px 0 24px; }
-    .stomatology-page .stom-included .stom-container { display: flex; flex-direction: column; padding: 0 40px; gap: 0; }
+    .stomatology-page .stom-included {
+        width: calc(100% - 32px);
+        margin: 97px auto 0;
+        padding: 40px 0 24px;
+    }
+    .stomatology-page .stom-included .stom-container { display: flex; flex-direction: column; padding: 0 24px; gap: 0; }
     .stomatology-page .stom-included-header,
     .stomatology-page .stom-included-header > div,
     .stomatology-page .stom-included-top,
