@@ -16,14 +16,17 @@ Text Domain: trimed
  * targeted mobile visual regressions that must win over page styles.
  */
 @media (max-width: 768px) {
-    html,
-    body {
-        overflow-x: hidden !important;
-    }
+    /* NOTE: no overflow-x override here. main.css clips horizontal overflow on
+     * html/body via `overflow-x: clip` (hidden as fallback), which keeps
+     * `position: sticky` on .site-header working; `overflow-x: hidden` on an
+     * ancestor creates a scroll container and silently breaks sticky. */
 
-    /* Mobile menu must cover page content; no hero image strip above menu. */
+    /* Mobile menu must cover page content; no hero image strip above menu.
+     * Keep main.css `position: sticky` on .site-header (do not force
+     * position: relative) — only the z-index must win over the
+     * .mobile-menu.active overlay (z-index: 10000) so logo and the menu
+     * toggle stay visible and clickable above the open menu. */
     .site-header {
-        position: relative !important;
         z-index: 10010 !important;
     }
 

@@ -967,12 +967,12 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .slider-arrow.prev {
-        left: 12px;
+        left: 16px;
     }
 
     .disinfection-page .slider-arrow.next {
-        right: auto;
-        left: 292px;
+        right: 16px;
+        left: auto;
     }
 
     /* Partners mobile */
@@ -1093,9 +1093,9 @@ body.disinfection-page .task-item img {
     }
 
     .disinfection-page .slider-arrow {
-        top: 98px;
-        bottom: auto;
-        transform: translateY(-50%);
+        top: auto;
+        bottom: 16px;
+        transform: none;
     }
 
     /* Partners mobile card width */
@@ -1129,7 +1129,11 @@ body.disinfection-page .task-item img {
 
 /* ======================== SMALL MOBILE (<=480px) ======================== */
 @media (max-width: 480px) {
-    body.disinfection-page,
+    body.disinfection-page {
+        overflow-x: hidden;
+        overflow-x: clip; /* keeps position:sticky working where overflow:hidden breaks it */
+    }
+
     .disinfection-page .projects-section {
         overflow-x: hidden;
     }
