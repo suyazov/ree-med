@@ -1458,7 +1458,7 @@
     .laboratory-page .partner-card p { font-size: 13px; }
     .laboratory-page .home-request { padding: 0 0 101px; }
     .laboratory-page .home-request .container { padding: 0 var(--container-padding-mobile); }
-    .laboratory-page .request-grid { width: auto; height: 646px; min-height: 646px; padding: 64px 20px 24px; display: flex; flex-direction: column; gap: 16px; border-radius: var(--radius-card); overflow: hidden; }
+    .laboratory-page .request-grid { width: auto; height: 675px; min-height: 675px; padding: 64px 20px 24px; display: flex; flex-direction: column; gap: 16px; border-radius: var(--radius-card); overflow: hidden; }
     .laboratory-page .request-plus { left: 50%; top: 20px; transform: translateX(-50%); width: 16px; height: 16px; }
     .laboratory-page .request-text { position: static; width: auto; text-align: center; }
     .laboratory-page .request-copy-desktop { display: none; }
