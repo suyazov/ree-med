@@ -472,7 +472,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     </div>
                 <?php endforeach; ?>
             </div>
-                    <div class="testimonials-dots" aria-hidden="true">
+                    <div class="testimonials-dots">
                         <?php foreach ($testimonials as $i => $_test) : ?>
                             <span class="testimonials-dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
                         <?php endforeach; ?>

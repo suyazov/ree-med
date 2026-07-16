@@ -1490,7 +1490,7 @@
     }
     .laboratory-page .home-request-form .form-field-phone input { padding-left: 52px; }
     .laboratory-page .home-request-form .form-field textarea { overflow: hidden; }
-    .laboratory-page .home-request-form .request-submit { width: 100%; max-width: 268px; font-size: 0; }
+    .laboratory-page .home-request-form .request-submit { width: 100%; max-width: 268px; }
     .laboratory-page .home-request-form .form-field input::placeholder,
     .laboratory-page .home-request-form .form-field textarea::placeholder { font-size: 12px; }
     .laboratory-page .home-request-form .form-message:empty { display: none; min-height: 0; margin: 0; }

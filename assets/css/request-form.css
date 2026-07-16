@@ -41,7 +41,8 @@
     }
 
     :is(body.home, body.trimed-service-page) .home-request .request-grid {
-        height: 478px;
+        display: flex;
+        justify-content: flex-end;
         min-height: 478px;
         padding: 30px;
         border-radius: 20px;
@@ -96,11 +97,10 @@
     }
 
     :is(body.home, body.trimed-service-page) .home-request .request-form-wrap {
-        position: absolute;
-        top: 30px;
-        right: 30px;
+        position: static;
+        flex: 0 0 490px;
         width: 490px;
-        height: 416px;
+        min-height: 416px;
         margin: 0;
         padding: 30px;
     }
@@ -192,9 +192,9 @@
 
 @media (max-width: 991px) {
     :is(body.home, body.trimed-service-page) .home-request {
-        height: 746px;
-        padding: 0;
-        overflow: hidden;
+        height: auto;
+        padding: 0 0 100px;
+        overflow: visible;
     }
 
     :is(body.home, body.trimed-service-page) .home-request .container {
@@ -208,10 +208,9 @@
         display: block;
         width: 343px;
         max-width: 100%;
-        height: 646px;
         min-height: 646px;
         margin: 0 auto;
-        padding: 0;
+        padding: 0 0 24px;
         border-radius: var(--radius-card);
     }
 
@@ -235,7 +234,7 @@
     :is(body.home, body.trimed-service-page) .home-request .request-text {
         position: static;
         box-sizing: border-box;
-        height: 194px;
+        height: auto;
         padding: 100px 23px 0;
         text-align: center;
         transform: none;
@@ -265,15 +264,12 @@
     }
 
     :is(body.home, body.trimed-service-page) .home-request .request-form-wrap {
-        position: absolute;
-        left: 50%;
-        top: 227px;
+        position: static;
         width: min(308px, calc(100% - 35px));
-        height: 402px;
-        margin: 0;
+        min-height: 402px;
+        margin: 33px auto 0;
         padding: 20px;
-        overflow: hidden;
-        transform: translateX(-50%);
+        transform: none;
     }
 
     :is(body.home, body.trimed-service-page) .home-request .request-copy-desktop {

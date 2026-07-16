@@ -3320,6 +3320,50 @@ body.home .site-header {
         background: var(--color-green);
     }
 
+    /* Desktop testimonials nav: same JS-generated arrows as mobile, pinned to
+       the row ends; dots keep their strict center position. */
+    body.home .home-testimonials .testimonials-dots {
+        position: relative;
+        align-items: center;
+    }
+
+    body.home .home-testimonials .scroll-slider-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: var(--color-green);
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: opacity 0.2s ease;
+    }
+
+    body.home .home-testimonials .scroll-slider-arrow:hover {
+        opacity: 0.85;
+    }
+
+    body.home .home-testimonials .scroll-slider-arrow.prev { left: 0; }
+    body.home .home-testimonials .scroll-slider-arrow.next { right: 0; }
+
+    body.home .home-testimonials .scroll-slider-arrow::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border: solid var(--color-white);
+        border-width: 0 2px 2px 0;
+        transform: translateX(1px) rotate(135deg);
+    }
+
+    body.home .home-testimonials .scroll-slider-arrow.next::before {
+        transform: translateX(-1px) rotate(-45deg);
+    }
+
     .testimonial-card {
         flex: 0 0 381px;
         max-width: 381px;
