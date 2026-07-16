@@ -350,6 +350,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function initPhoneMasks() {
+        document.querySelectorAll('input[type="tel"][name="phone"]').forEach(function(input) {
+            input.setAttribute('maxlength', '18');
+            input.setAttribute('inputmode', 'tel');
+            input.setAttribute('autocomplete', 'tel');
+
+            function extractDigits(value) {
+                let digits = value.replace(/\D/g, '');
+                if (digits.charAt(0) === '7' || digits.charAt(0) === '8') {
+                    digits = digits.substring(1);
+                }
+                return digits.substring(0, 10);
+            }
+
+            function formatPhone(digits) {
+                let result = '+7 (' + digits.substring(0, 3);
+                if (digits.length >= 3) {
+                    result += ') ' + digits.substring(3, 6);
+                }
+                if (digits.length >= 6) {
+                    result += '-' + digits.substring(6, 8);
+                }
+                if (digits.length >= 8) {
+                    result += '-' + digits.substring(8, 10);
+                }
+                return result;
+            }
+
+            input.addEventListener('focus', function() {
+                if (input.value === '') {
+                    input.value = '+7 (';
+                }
+            });
+
+            input.addEventListener('input', function() {
+                const digits = extractDigits(input.value);
+                input.value = digits.length === 0 ? '+7 (' : formatPhone(digits);
+                input.setSelectionRange(input.value.length, input.value.length);
+            });
+
+            input.addEventListener('blur', function() {
+                if (extractDigits(input.value).length < 1) {
+                    input.value = '';
+                }
+            });
+        });
+    }
+
     function initContactForms() {
         if (typeof trimed_ajax === 'undefined' || !trimed_ajax.ajax_url) {
             return;
@@ -408,5 +456,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialsSlider();
     initHomeProjectsSlider();
     initServiceScrollSliders();
+    initPhoneMasks();
     initContactForms();
 });
