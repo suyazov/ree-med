@@ -3643,6 +3643,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (min-width: 769px) {
+    .site-footer {
+        padding-bottom: 32px;
+    }
+
     .site-footer .map-pulse {
         left: 43.8%;
         top: 54%;
