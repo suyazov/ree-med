@@ -299,8 +299,8 @@ Text Domain: trimed
     body.laboratory-page .request-grid {
         width: min(343px, calc(100vw - 32px)) !important;
         max-width: 343px !important;
-        min-height: 646px !important;
-        height: 646px !important;
+        min-height: 675px !important;
+        height: auto !important;
         margin-left: auto !important;
         margin-right: auto !important;
         overflow: hidden !important;
@@ -309,8 +309,9 @@ Text Domain: trimed
     body.laboratory-page .request-form-wrap {
         width: min(308px, calc(100vw - 67px)) !important;
         max-width: 308px !important;
-        height: 402px !important;
-        flex: 0 0 402px !important;
+        min-height: 423px !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
     }
 
     body.laboratory-page .home-request-form,
