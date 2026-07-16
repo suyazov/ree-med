@@ -353,3 +353,35 @@
         text-align: center;
     }
 }
+
+/* Keep submission feedback inside the fixed-height white form card. */
+:is(body.home, body.trimed-service-page) .home-request .home-request-form .form-message:empty {
+    display: none;
+    min-height: 0;
+    margin: 0;
+}
+
+:is(body.home, body.trimed-service-page) .home-request .home-request-form .form-message:not(:empty) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin: 10px 0 0;
+    font-size: 13px;
+    line-height: 1.35;
+    font-weight: 600;
+    text-align: center;
+}
+
+:is(body.home, body.trimed-service-page) .home-request .home-request-form .form-message.success:not(:empty) {
+    color: var(--color-green);
+}
+
+:is(body.home, body.trimed-service-page) .home-request .home-request-form .form-message.error:not(:empty) {
+    color: #c62828;
+}
+
+/* The feedback replaces the consent row after submission. */
+:is(body.home, body.trimed-service-page) .home-request .home-request-form:has(.form-message:not(:empty)) .form-agree {
+    display: none;
+}
