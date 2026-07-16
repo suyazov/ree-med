@@ -405,7 +405,7 @@ $img_dir = trimed_get_image_dir();
     }
 
     trimed_render_request_callout(array(
-        'section_class' => 'home-request disinfection-request',
+        'section_class' => 'home-request',
         'section_id'    => 'application',
         'icon'          => trimed_get_clover_svg('request-plus', 40),
         'title'         => $application_title,

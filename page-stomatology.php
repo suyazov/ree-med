@@ -88,7 +88,6 @@ $process_image    = trimed_image_field('stom_process_image', $img_dir . '/stomat
 
 $request_title  = get_field('stom_request_title') ?: 'Подберём оборудование под вашу <em>стоматологию</em>';
 $request_desc   = get_field('stom_request_desc') ?: 'Оставьте заявку — свяжемся с вами и предложим решение';
-$request_note   = get_field('stom_request_note') ?: 'Консультация бесплатная';
 $request_button = get_field('stom_request_button_text') ?: 'Получить консультацию';
 
 $why_title    = get_field('stom_why_title') ?: 'Почему выбирают <span class="text-green">ТриМед</span>';
@@ -300,24 +299,14 @@ $included_bottom = array_slice($included_cards, 3);
     </section>
 
     <?php
-    trimed_render_service_request_section(array(
-        'section_class' => 'stom-request',
-        'inner_class'   => 'stom-request-inner',
-        'summary'       => array(
-            'icon'             => trimed_get_clover_svg('stom-request-icon', 16),
-            'title'            => $request_title,
-            'title_class'      => 'stom-request-title',
-            'desc'             => $request_desc,
-            'desc_class'       => 'stom-request-desc',
-            'note'             => $request_note,
-            'note_class'       => 'stom-request-note',
-            'note_icon'        => '<svg width="10" height="8" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5l3 3 5-6"/></svg>',
-            'note_label_class' => 'check',
-        ),
-        'form' => array(
-            'class'       => 'stom-request-form request-form',
-            'button_text' => $request_button,
-            'button_span' => true,
+    trimed_render_request_callout(array(
+        'section_class' => 'home-request stom-request',
+        'section_id'    => 'request',
+        'title'         => $request_title,
+        'description'   => $request_desc,
+        'form_args'     => array(
+            'button_text'        => $request_button,
+            'button_mobile_text' => 'Отправить',
         ),
     ));
     ?>

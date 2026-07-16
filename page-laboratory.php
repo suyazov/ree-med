@@ -475,7 +475,7 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
 <!-- 9. Request -->
     <?php
     trimed_render_request_callout(array(
-        'section_class'      => 'home-request lab-request',
+        'section_class'      => 'home-request',
         'section_id'         => 'request',
         'title'              => $request_title,
         'title_mobile'       => 'Подберём оборудование<br><em>для вашей лаборатории</em>',

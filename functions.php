@@ -615,6 +615,24 @@ function trimed_sanitize_class_list($value) {
     return trim(implode(' ', $safe));
 }
 
+/**
+ * Эталонный набор аргументов формы (как на главной странице).
+ * Единый источник DOM-разметки формы для всех страниц.
+ */
+function trimed_get_reference_form_args($overrides = array()) {
+    return wp_parse_args($overrides, array(
+        'class'         => 'home-request-form',
+        'layout'        => 'rows',
+        'fields'        => array('name', 'phone', 'organization', 'comment'),
+        'flag_url'      => trimed_img_url('main/197-0.png'),
+        'button_text'   => 'Получить консультацию',
+        'button_class'  => 'btn btn-primary request-submit',
+    ));
+}
+
+/**
+ * Единый renderer полной секции заявки для всех публичных страниц.
+ */
 function trimed_render_request_callout($args = array()) {
     $args = wp_parse_args($args, array(
         'section_class'      => 'home-request',
@@ -633,14 +651,7 @@ function trimed_render_request_callout($args = array()) {
         'form_args'          => array(),
     ));
 
-    $form_args = wp_parse_args($args['form_args'], array(
-        'class'         => 'home-request-form',
-        'layout'        => 'rows',
-        'fields'        => array('name', 'phone', 'organization', 'comment'),
-        'flag_url'      => trimed_img_url('main/197-0.png'),
-        'button_text'   => 'Получить консультацию',
-        'button_class'  => 'btn btn-primary request-submit',
-    ));
+    $form_args = trimed_get_reference_form_args($args['form_args']);
 
     trimed_render_service_request_section(array(
         'section_class' => $args['section_class'],
@@ -1051,6 +1062,7 @@ function trimed_enqueue_assets() {
 
     if (is_front_page()) {
         wp_enqueue_style('trimed-home', get_template_directory_uri() . '/assets/css/home.css', array('trimed-main'), trimed_asset_version('assets/css/home.css'));
+        wp_enqueue_style('trimed-request-form', get_template_directory_uri() . '/assets/css/request-form.css', array('trimed-home'), trimed_asset_version('assets/css/request-form.css'));
     }
 
     wp_enqueue_script('trimed-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), TRIMED_VERSION, true);
@@ -1082,6 +1094,14 @@ function trimed_enqueue_page_assets() {
             array('trimed-main'),
             trimed_asset_version($config['style']['file'])
         );
+
+        wp_enqueue_style(
+            'trimed-request-form',
+            get_template_directory_uri() . '/assets/css/request-form.css',
+            array($config['style']['handle']),
+            trimed_asset_version('assets/css/request-form.css')
+        );
+        break;
     }
 }
 add_action('wp_enqueue_scripts', 'trimed_enqueue_page_assets');
