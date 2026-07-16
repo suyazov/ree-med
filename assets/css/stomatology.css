@@ -833,7 +833,7 @@
     .stomatology-page .stom-request-form button span { font-size: 0; }
 
     /* Why mobile */
-    .stomatology-page .stom-why { margin-top: 100px; padding: 0; }
+    .stomatology-page .stom-why { margin: 100px 0 101px; padding: 0; }
     .stomatology-page .stom-why-header { margin-bottom: 32px; text-align: center; }
     .stomatology-page .stom-why-title { font-size: 24px; line-height: 26.4px; letter-spacing: -0.72px; font-weight: 600; margin: 0 auto; text-align: center; }
     .stomatology-page .stom-why-grid { grid-template-columns: 1fr; gap: 11px; }
