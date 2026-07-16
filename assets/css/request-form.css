@@ -43,6 +43,7 @@
     :is(body.home, body.trimed-service-page) .home-request .request-grid {
         display: flex;
         justify-content: flex-end;
+        height: auto;
         min-height: 478px;
         padding: 30px;
         border-radius: 20px;
@@ -100,6 +101,7 @@
         position: static;
         flex: 0 0 490px;
         width: 490px;
+        height: auto;
         min-height: 416px;
         margin: 0;
         padding: 30px;
@@ -208,6 +210,7 @@
         display: block;
         width: 343px;
         max-width: 100%;
+        height: auto;
         min-height: 646px;
         margin: 0 auto;
         padding: 0 0 24px;
@@ -266,6 +269,7 @@
     :is(body.home, body.trimed-service-page) .home-request .request-form-wrap {
         position: static;
         width: min(308px, calc(100% - 35px));
+        height: auto;
         min-height: 402px;
         margin: 33px auto 0;
         padding: 20px;
