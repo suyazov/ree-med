@@ -169,6 +169,9 @@
         width: var(--form-checkbox-size);
         height: var(--form-checkbox-size);
         margin: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        position: relative;
     }
 
     :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label span {
@@ -338,6 +341,34 @@
         font-size: 12px;
         letter-spacing: -0.24px;
         opacity: 0.6;
+    }
+
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label input[type="checkbox"] {
+        width: var(--form-checkbox-size);
+        height: var(--form-checkbox-size);
+        flex: 0 0 var(--form-checkbox-size);
+        margin: 0;
+        border: 1px solid var(--color-dark-green);
+        border-radius: 2px;
+        background: transparent;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label input[type="checkbox"]:checked {
+        background: var(--color-green);
+    }
+
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label input[type="checkbox"]:checked::after {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 2px;
+        width: 4px;
+        height: 7px;
+        border: solid var(--color-white);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
     }
 
     :is(body.home, body.trimed-service-page) .home-request-form .request-submit {
