@@ -2,6 +2,27 @@
 if (!defined('ABSPATH')) exit;
 
 if (function_exists('acf_add_local_field_group')) {
+    $medcentry_page = get_page_by_path('medcentry');
+    $medcentry_location = array(
+        array(
+            array(
+                'param' => 'page_template',
+                'operator' => '==',
+                'value' => 'page-medcentry.php',
+            ),
+        ),
+    );
+
+    if ($medcentry_page instanceof WP_Post) {
+        $medcentry_location[] = array(
+            array(
+                'param' => 'page',
+                'operator' => '==',
+                'value' => (string) $medcentry_page->ID,
+            ),
+        );
+    }
+
     acf_add_local_field_group(array(
         'key' => 'group_medcentry_page',
         'title' => 'Страница Медцентры',
@@ -228,15 +249,7 @@ if (function_exists('acf_add_local_field_group')) {
                 ),
             ),
         ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'page_template',
-                    'operator' => '==',
-                    'value' => 'page-medcentry.php',
-                ),
-            ),
-        ),
+        'location' => $medcentry_location,
         'hide_on_screen' => array('the_content', 'featured_image'),
         'position' => 'normal',
         'style' => 'default',
