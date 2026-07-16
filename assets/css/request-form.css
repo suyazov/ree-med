@@ -1,46 +1,46 @@
-.home-request {
+:is(body.home, body.trimed-service-page) .home-request {
     box-sizing: border-box;
     background: var(--color-white);
 }
 
-.home-request .request-grid {
+:is(body.home, body.trimed-service-page) .home-request .request-grid {
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
     background: var(--gradient-light-green);
 }
 
-.home-request .request-text {
+:is(body.home, body.trimed-service-page) .home-request .request-text {
     color: var(--color-white);
 }
 
-.home-request .request-form-wrap {
+:is(body.home, body.trimed-service-page) .home-request .request-form-wrap {
     box-sizing: border-box;
     background: var(--color-white);
     border-radius: var(--radius-card);
 }
 
-.home-request .request-copy-mobile {
+:is(body.home, body.trimed-service-page) .home-request .request-copy-mobile {
     display: none;
 }
 
 @media (min-width: 992px) {
-    .home-request {
+    :is(body.home, body.trimed-service-page) .home-request {
         padding: 56px 0 140px;
     }
 
-    .home-request .container,
-    .home-request .request-grid {
+    :is(body.home, body.trimed-service-page) .home-request .container,
+    :is(body.home, body.trimed-service-page) .home-request .request-grid {
         width: 1200px;
         max-width: 1200px;
     }
 
-    .home-request .container {
+    :is(body.home, body.trimed-service-page) .home-request .container {
         margin: 0 auto;
         padding: 0;
     }
 
-    .home-request .request-grid {
+    :is(body.home, body.trimed-service-page) .home-request .request-grid {
         height: 478px;
         min-height: 478px;
         padding: 30px;
@@ -48,7 +48,7 @@
         background: linear-gradient(22.609deg, var(--color-light-green-1) 18.162%, var(--color-light-green-2) 79.556%);
     }
 
-    .home-request .request-text {
+    :is(body.home, body.trimed-service-page) .home-request .request-text {
         position: absolute;
         left: 48px;
         top: 316px;
@@ -57,11 +57,11 @@
         transform: none;
     }
 
-    .home-request .request-text::before {
+    :is(body.home, body.trimed-service-page) .home-request .request-text::before {
         display: none;
     }
 
-    .home-request .request-text .section-title {
+    :is(body.home, body.trimed-service-page) .home-request .request-text .section-title {
         width: 445px;
         margin: 0 0 16px;
         font: 600 36px/1.1 'Exo 2', sans-serif;
@@ -69,19 +69,19 @@
         color: var(--color-white);
     }
 
-    .home-request .request-text .section-title em {
+    :is(body.home, body.trimed-service-page) .home-request .request-text .section-title em {
         font-style: italic;
         font-weight: 600;
     }
 
-    .home-request .request-text p {
+    :is(body.home, body.trimed-service-page) .home-request .request-text p {
         margin: 0;
         font: 400 16px/1.1 'Exo 2', sans-serif;
         color: var(--color-white);
         opacity: 1;
     }
 
-    .home-request .request-plus {
+    :is(body.home, body.trimed-service-page) .home-request .request-plus {
         position: absolute;
         left: 48px;
         top: 83px;
@@ -91,11 +91,11 @@
         background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0C25.5 0 28 4.5 28 10C28 12.2 29.8 14 32 14C37.5 14 40 16.8 40 20C40 23.2 37.5 26 32 26C29.8 26 28 27.8 28 30C28 35.5 25.5 40 20 40C14.5 40 12 35.5 12 30C12 27.8 10.2 26 8 26C2.5 26 0 23.2 0 20C0 16.8 2.5 14 8 14C10.2 14 12 12.2 12 10C12 4.5 14.5 0 20 0Z' fill='%23EFEFEF'/%3E%3C/svg%3E") center / contain no-repeat;
     }
 
-    .home-request .request-plus path {
+    :is(body.home, body.trimed-service-page) .home-request .request-plus path {
         display: none;
     }
 
-    .home-request .request-form-wrap {
+    :is(body.home, body.trimed-service-page) .home-request .request-form-wrap {
         position: absolute;
         top: 30px;
         right: 30px;
@@ -105,16 +105,16 @@
         padding: 30px;
     }
 
-    .home-request-form .form-row {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-row {
         margin-bottom: 12px;
     }
 
-    .home-request-form .form-field-label {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field-label {
         display: none;
     }
 
-    .home-request-form .form-field input,
-    .home-request-form .form-field textarea {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field input,
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field textarea {
         box-sizing: border-box;
         width: 429px;
         height: var(--control-height);
@@ -128,13 +128,13 @@
         letter-spacing: -0.24px;
     }
 
-    .home-request-form .form-field textarea {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field textarea {
         height: 53px;
         min-height: 53px;
         resize: none;
     }
 
-    .home-request-form .form-field-phone .phone-flag {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field-phone .phone-flag {
         left: 16px;
         top: 50%;
         bottom: auto;
@@ -144,17 +144,17 @@
         object-fit: cover;
     }
 
-    .home-request-form .form-field-phone input {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field-phone input {
         height: 53px;
         padding-left: 44px;
     }
 
-    .home-request-form .form-agree {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-agree {
         margin-top: 20px;
         margin-bottom: 12px;
     }
 
-    .home-request-form .checkbox-label {
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label {
         display: flex;
         align-items: flex-start;
         gap: 8px;
@@ -162,14 +162,14 @@
         color: var(--color-dark-green);
     }
 
-    .home-request-form .checkbox-label input[type="checkbox"] {
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label input[type="checkbox"] {
         flex: 0 0 var(--form-checkbox-size);
         width: var(--form-checkbox-size);
         height: var(--form-checkbox-size);
         margin: 0;
     }
 
-    .home-request-form .checkbox-label span {
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label span {
         width: 278px;
         font: 400 12px/1.1 'HelveticaNeueCyr', 'Helvetica Neue', Arial, sans-serif;
         letter-spacing: -0.24px;
@@ -177,7 +177,7 @@
         opacity: 0.6;
     }
 
-    .home-request-form .request-submit {
+    :is(body.home, body.trimed-service-page) .home-request-form .request-submit {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -191,20 +191,20 @@
 }
 
 @media (max-width: 991px) {
-    .home-request {
+    :is(body.home, body.trimed-service-page) .home-request {
         height: 746px;
         padding: 0;
         overflow: hidden;
     }
 
-    .home-request .container {
+    :is(body.home, body.trimed-service-page) .home-request .container {
         width: calc(100vw - 32px);
         max-width: calc(100vw - 32px);
         margin: 0 auto;
         padding: 0;
     }
 
-    .home-request .request-grid {
+    :is(body.home, body.trimed-service-page) .home-request .request-grid {
         display: block;
         width: 343px;
         max-width: 100%;
@@ -215,7 +215,7 @@
         border-radius: var(--radius-card);
     }
 
-    .home-request .request-plus {
+    :is(body.home, body.trimed-service-page) .home-request .request-plus {
         position: absolute;
         display: block;
         left: 50%;
@@ -227,12 +227,12 @@
         background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0C25.5 0 28 4.5 28 10C28 12.2 29.8 14 32 14C37.5 14 40 16.8 40 20C40 23.2 37.5 26 32 26C29.8 26 28 27.8 28 30C28 35.5 25.5 40 20 40C14.5 40 12 35.5 12 30C12 27.8 10.2 26 8 26C2.5 26 0 23.2 0 20C0 16.8 2.5 14 8 14C10.2 14 12 12.2 12 10C12 4.5 14.5 0 20 0Z' fill='%23EFEFEF'/%3E%3C/svg%3E") center / contain no-repeat;
     }
 
-    .home-request .request-plus path,
-    .home-request .request-text::before {
+    :is(body.home, body.trimed-service-page) .home-request .request-plus path,
+    :is(body.home, body.trimed-service-page) .home-request .request-text::before {
         display: none;
     }
 
-    .home-request .request-text {
+    :is(body.home, body.trimed-service-page) .home-request .request-text {
         position: static;
         box-sizing: border-box;
         height: 194px;
@@ -241,15 +241,15 @@
         transform: none;
     }
 
-    .home-request .request-text .section-title,
-    .home-request .request-text p {
+    :is(body.home, body.trimed-service-page) .home-request .request-text .section-title,
+    :is(body.home, body.trimed-service-page) .home-request .request-text p {
         width: 100%;
         max-width: 297px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .home-request .request-text .section-title {
+    :is(body.home, body.trimed-service-page) .home-request .request-text .section-title {
         margin-top: 0;
         margin-bottom: 12px;
         font-size: 24px;
@@ -257,14 +257,14 @@
         letter-spacing: 0;
     }
 
-    .home-request .request-text p {
+    :is(body.home, body.trimed-service-page) .home-request .request-text p {
         margin-top: 0;
         margin-bottom: 0;
         font-size: 14px;
         line-height: 1.1;
     }
 
-    .home-request .request-form-wrap {
+    :is(body.home, body.trimed-service-page) .home-request .request-form-wrap {
         position: absolute;
         left: 50%;
         top: 227px;
@@ -276,24 +276,24 @@
         transform: translateX(-50%);
     }
 
-    .home-request .request-copy-desktop {
+    :is(body.home, body.trimed-service-page) .home-request .request-copy-desktop {
         display: none;
     }
 
-    .home-request .request-copy-mobile {
+    :is(body.home, body.trimed-service-page) .home-request .request-copy-mobile {
         display: inline;
     }
 
-    .home-request-form .form-row {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-row {
         margin-bottom: 12px;
     }
 
-    .home-request-form .form-field-label {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field-label {
         display: none;
     }
 
-    .home-request-form .form-field input,
-    .home-request-form .form-field textarea {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field input,
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field textarea {
         box-sizing: border-box;
         width: 100%;
         height: var(--control-height);
@@ -304,14 +304,14 @@
         letter-spacing: -0.24px;
     }
 
-    .home-request-form .form-field textarea {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field textarea {
         height: 53px;
         min-height: 53px;
         overflow: hidden;
         resize: none;
     }
 
-    .home-request-form .form-field-phone .phone-flag {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field-phone .phone-flag {
         left: 16px;
         top: 50%;
         bottom: auto;
@@ -321,11 +321,11 @@
         object-fit: cover;
     }
 
-    .home-request-form .form-field-phone input {
+    :is(body.home, body.trimed-service-page) .home-request-form .form-field-phone input {
         padding-left: 44px;
     }
 
-    .home-request-form .checkbox-label {
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label {
         gap: 8px;
         width: 265px;
         font-size: 12px;
@@ -333,14 +333,14 @@
         letter-spacing: -0.24px;
     }
 
-    .home-request-form .checkbox-label span {
+    :is(body.home, body.trimed-service-page) .home-request-form .checkbox-label span {
         width: 242px;
         font-size: 12px;
         letter-spacing: -0.24px;
         opacity: 0.6;
     }
 
-    .home-request-form .request-submit {
+    :is(body.home, body.trimed-service-page) .home-request-form .request-submit {
         box-sizing: border-box;
         width: 100%;
         min-width: 0;
