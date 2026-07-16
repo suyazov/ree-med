@@ -142,6 +142,17 @@ function trimed_get_contact($key, $fallback = '') {
     return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
 }
 
+function trimed_get_theme_option($name, $fallback = '') {
+    if (function_exists('get_field')) {
+        $value = get_field($name, 'option');
+        if ($value !== null && $value !== false && $value !== '') {
+            return $value;
+        }
+    }
+
+    return $fallback;
+}
+
 function trimed_phone_href($phone = '') {
     $value = $phone !== '' ? $phone : trimed_get_contact('phone');
     return esc_attr(preg_replace('/[^0-9+]/', '', $value));
@@ -362,7 +373,7 @@ function trimed_render_phone_input($args = array()) {
     $args = wp_parse_args($args, array(
         'class'       => 'phone-input',
         'flag_url'    => trimed_img_url('phone-flag.png'),
-        'placeholder' => '+7 (999) 999-99-99',
+        'placeholder' => trimed_get_theme_option('trimed_form_phone_placeholder', '+7 (999) 999-99-99'),
     ));
 
     echo '<div class="' . esc_attr($args['class']) . '">';
@@ -374,7 +385,7 @@ function trimed_render_phone_input($args = array()) {
 function trimed_render_agree_checkbox($args = array()) {
     $args = wp_parse_args($args, array(
         'class' => 'checkbox',
-        'text'  => 'Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных',
+        'text'  => trimed_get_theme_option('trimed_form_agreement_text', 'Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных'),
     ));
 
     echo '<label class="' . esc_attr($args['class']) . '">';
@@ -390,24 +401,24 @@ function trimed_get_default_form_fields() {
     return array(
         'name' => array(
             'label' => 'Ваше имя',
-            'placeholder' => 'Иванов Николай Сергеевич',
+            'placeholder' => trimed_get_theme_option('trimed_form_name_placeholder', 'Иванов Николай Сергеевич'),
             'required' => true,
         ),
         'phone' => array(
             'label' => 'Телефон',
-            'placeholder' => '+7 (999) 999-99-99',
+            'placeholder' => trimed_get_theme_option('trimed_form_phone_placeholder', '+7 (999) 999-99-99'),
             'required' => true,
             'type' => 'tel',
             'is_phone' => true,
         ),
         'organization' => array(
             'label' => 'Организация',
-            'placeholder' => 'Название организации',
+            'placeholder' => trimed_get_theme_option('trimed_form_organization_placeholder', 'Название организации'),
             'required' => false,
         ),
         'comment' => array(
             'label' => 'Комментарий',
-            'placeholder' => 'Ваш комментарий',
+            'placeholder' => trimed_get_theme_option('trimed_form_comment_placeholder', 'Ваш комментарий'),
             'required' => false,
             'is_textarea' => true,
         ),

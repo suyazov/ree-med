@@ -3,11 +3,11 @@
         <div class="footer-main">
             <a
                 class="footer-bg"
-                href="https://yandex.ru/maps/-/CTqTRF5S"
+                href="<?php echo esc_url(trimed_get_theme_option('trimed_footer_map_url', 'https://yandex.ru/maps/-/CTqTRF5S')); ?>"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Открыть ТриМед на Яндекс Картах"
-                style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/footer-map-trimed.png')"></a>
+                style="background-image: url('<?php echo esc_url(trimed_get_theme_option('trimed_footer_map_image', get_template_directory_uri() . '/assets/img/footer-map-trimed.png')); ?>')"></a>
             <div class="map-pulse">
                 <span></span>
                 <span></span>
@@ -15,7 +15,7 @@
             </div>
             
             <div class="footer-card">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo-white.png" alt="<?php bloginfo('name'); ?>" class="footer-logo">
+                <img src="<?php echo esc_url(trimed_get_theme_option('trimed_footer_logo', get_template_directory_uri() . '/assets/img/logo-white.png')); ?>" alt="<?php bloginfo('name'); ?>" class="footer-logo">
                 
                 <div class="footer-contacts">
                     <a href="tel:<?php echo trimed_phone_href(); ?>" class="footer-contact">
@@ -26,7 +26,7 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EFEFEF"/></svg>
                         <span><?php echo esc_html(trimed_get_contact('email')); ?></span>
                     </a>
-                    <a href="https://yandex.ru/maps/-/CTqTRF5S" class="footer-contact" target="_blank" rel="noopener noreferrer">
+                    <a href="<?php echo esc_url(trimed_get_theme_option('trimed_footer_map_url', 'https://yandex.ru/maps/-/CTqTRF5S')); ?>" class="footer-contact" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#EFEFEF"/></svg>
                         <span><?php echo esc_html(trimed_get_contact('address')); ?></span>
                     </a>
@@ -58,21 +58,21 @@
                     <?php endforeach; ?>
                 </div>
 
-                <a href="#" class="btn btn-primary footer-callback">Заказать звонок</a>
+                <a href="<?php echo esc_url(trimed_get_theme_option('trimed_footer_callback_url', '#application')); ?>" class="btn btn-primary footer-callback"><?php echo esc_html(trimed_get_theme_option('trimed_footer_callback_text', 'Заказать звонок')); ?></a>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="footer-info">
-                <p>ИНН 7500009501</p>
-                <p>ОГРН 1237500001859</p>
+                <p><?php echo esc_html(trimed_get_theme_option('trimed_footer_inn', 'ИНН 7500009501')); ?></p>
+                <p><?php echo esc_html(trimed_get_theme_option('trimed_footer_ogrn', 'ОГРН 1237500001859')); ?></p>
             </div>
             <div class="footer-links">
-                <a href="<?php echo esc_url(trimed_legal_url('soglasie-na-obrabotku-personalnyh-dannyh')); ?>">Согласие на обработку персональных данных</a>
-                <a href="<?php echo esc_url(trimed_legal_url('politika-obrabotki-personalnyh-dannyh')); ?>">Политика об обработке персональных данных</a>
-                <a href="<?php echo esc_url(trimed_legal_url('polzovatelskoe-soglashenie')); ?>">Пользовательское соглашение</a>
+                <a href="<?php echo esc_url(trimed_legal_url('soglasie-na-obrabotku-personalnyh-dannyh')); ?>"><?php echo esc_html(trimed_get_theme_option('trimed_footer_consent_text', 'Согласие на обработку персональных данных')); ?></a>
+                <a href="<?php echo esc_url(trimed_legal_url('politika-obrabotki-personalnyh-dannyh')); ?>"><?php echo esc_html(trimed_get_theme_option('trimed_footer_policy_text', 'Политика об обработке персональных данных')); ?></a>
+                <a href="<?php echo esc_url(trimed_legal_url('polzovatelskoe-soglashenie')); ?>"><?php echo esc_html(trimed_get_theme_option('trimed_footer_agreement_text', 'Пользовательское соглашение')); ?></a>
             </div>
-            <p class="footer-copyright">© <?php echo date('Y'); ?>, «ТриМед». Все права защищены.</p>
+            <p class="footer-copyright"><?php echo esc_html(trimed_get_theme_option('trimed_footer_copyright', '© ' . date('Y') . ', «ТриМед». Все права защищены.')); ?></p>
         </div>
     </div>
 </footer>

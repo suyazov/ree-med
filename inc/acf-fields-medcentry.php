@@ -106,6 +106,7 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             array('key' => 'field_med_projects_title', 'label' => 'Заголовок', 'name' => 'med_projects_title', 'type' => 'text', 'default_value' => '<span class="text-green">Реализованные</span> проекты'),
             array('key' => 'field_med_projects_desc', 'label' => 'Описание', 'name' => 'med_projects_desc', 'type' => 'textarea', 'default_value' => 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае. Мы понимаем специфику региона, требования врачей и реальные условия работы.'),
+            array('key' => 'field_med_projects_desc_mobile', 'label' => 'Описание на мобильных', 'name' => 'med_projects_desc_mobile', 'type' => 'textarea', 'default_value' => 'За время работы мы реализовали проекты по оснащению медицинских кабинетов и центров в Забайкальском крае.'),
             array(
                 'key' => 'field_med_projects',
                 'label' => 'Проекты',
@@ -160,6 +161,7 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             array('key' => 'field_med_request_title', 'label' => 'Заголовок формы', 'name' => 'med_request_title', 'type' => 'text', 'default_value' => 'Подберём оборудование под вашу клинику'),
             array('key' => 'field_med_request_desc', 'label' => 'Описание формы', 'name' => 'med_request_desc', 'type' => 'textarea', 'default_value' => 'Оставьте заявку — свяжемся с вами, разберём задачу и предложим решение'),
+            array('key' => 'field_med_request_desc_mobile', 'label' => 'Описание формы на мобильных', 'name' => 'med_request_desc_mobile', 'type' => 'textarea', 'default_value' => 'Оставьте заявку, мы свяжемся с вами и предложим решение'),
             array('key' => 'field_med_request_note', 'label' => 'Примечание', 'name' => 'med_request_note', 'type' => 'text', 'default_value' => 'Консультация бесплатная'),
             array('key' => 'field_med_request_button_text', 'label' => 'Текст кнопки формы', 'name' => 'med_request_button_text', 'type' => 'text', 'default_value' => 'Отправить'),
 
@@ -235,6 +237,7 @@ if (function_exists('acf_add_local_field_group')) {
                 ),
             ),
         ),
+        'hide_on_screen' => array('the_content', 'featured_image'),
         'position' => 'normal',
         'style' => 'default',
         'label_placement' => 'top',
