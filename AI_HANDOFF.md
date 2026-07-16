@@ -120,7 +120,7 @@ Kimi часто хорошо собирает контекст, но может 
 
 ```text
 Задача: [один результат].
-Рабочая папка: /var/www/test1.sy3.ru/wp-content/themes/trimed
+Рабочая папка: /root/ree-med-live
 Менять только: [список файлов или типов файлов].
 Figma: [ссылка], desktop node [id], mobile node [id].
 Не делай общий аудит. Не запускай subagents без необходимости. Не печатай base64/пиксели/длинные JSON.
@@ -166,10 +166,11 @@ Codex отвечает за контроль результата:
 ```bash
 php -l functions.php
 php -l page-disinfection.php
-curl -I https://test1.sy3.ru/
-curl -I https://test1.sy3.ru/stomatologiya/
-curl -I https://test1.sy3.ru/medcentry/
-curl -I https://test1.sy3.ru/laboratoriya/
+curl -I https://tree-med.ru/
+curl -I https://tree-med.ru/stomatologiya/
+curl -I https://tree-med.ru/medcentry/
+curl -I https://tree-med.ru/laboratoriya/
+curl -I https://tree-med.ru/dezinfektsiya/
 ```
 
 Если менялись формы, дополнительно проверить:
@@ -183,7 +184,7 @@ curl -I https://test1.sy3.ru/laboratoriya/
 
 ```text
 Проект: TRIMED WordPress theme.
-Рабочая папка: /var/www/test1.sy3.ru/wp-content/themes/trimed
+Рабочая папка: /root/ree-med-live
 
 Задача: [коротко один результат]
 
@@ -232,7 +233,7 @@ curl -I https://test1.sy3.ru/laboratoriya/
 - Figma: `ТРИМЕД for AS2`
 - Desktop frame: `Главная 1440`, node `3116:33`
 - Mobile frame: `Главная 375`, node `3116:538`
-- Figma token на сервере: `/root/.figma_token`
+- Figma token хранится вне репозитория в переменной окружения или локальном secret store.
 - Не использовать старый `.env` токен темы для AS2, он может открывать другой файл или давать 404.
 - Не читать PNG как base64 и не печатать большие JSON в ответ.
 - Сначала сделать рабочий шаблон/стили, потом сверять визуально.

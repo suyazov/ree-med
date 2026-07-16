@@ -3,26 +3,22 @@
 ## Общая информация
 
 - **Проект:** ТриМед (trimed)
-- **Сайт:** https://test1.sy3.ru
-- **Тип:** Landing page "Дезинфекция" на WordPress
-- **WordPress:** установлен в `/var/www/test1.sy3.ru`
-- **Тема:** `trimed` в `/var/www/test1.sy3.ru/wp-content/themes/trimed/`
-- **Главная страница:** страница "Дезинфекция" (шаблон `page-disinfection.php`)
+- **Production:** https://tree-med.ru
+- **Репозиторий:** https://github.com/suyazov/ree-med
+- **Тип:** многостраничная WordPress-тема
+- **Тема:** `trimed`
+- **Шаблоны:** главная, медцентры, лаборатория, стоматология и дезинфекция
 
 ## Серверное окружение
 
-- **Web-сервер:** Nginx
-- **PHP:** 8.4 FPM
-- **База данных:** MariaDB
-- **БД:** `test1_sy3_ru`
-- **Пользователь БД:** `test1_sy3_ru`
-- **SSL:** Let's Encrypt (действителен до 2026-09-15)
+- **Хостинг:** Beget
+- **Production WordPress:** https://tree-med.ru
+- Секреты, SSH-данные, пароли WordPress и базы данных хранятся вне Git.
 
 ## Доступы
 
-- **Админка WordPress:** https://test1.sy3.ru/wp-admin
-- **Логин:** `admin`
-- **Пароль:** `ijNIa8AgofU3Z5AfBGia`
+- **Админка WordPress:** https://tree-med.ru/wp-admin
+- Учётные данные хранятся в менеджере доступов владельца проекта и не коммитятся.
 
 ## Используемые плагины
 

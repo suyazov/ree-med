@@ -5,10 +5,11 @@
 
 ## Проверенные страницы
 
-- https://test1.sy3.ru/ (главная / дезинфекция)
-- https://test1.sy3.ru/stomatologiya/
-- https://test1.sy3.ru/laboratoriya/
-- https://test1.sy3.ru/medcentry/
+- https://tree-med.ru/
+- https://tree-med.ru/stomatologiya/
+- https://tree-med.ru/laboratoriya/
+- https://tree-med.ru/medcentry/
+- https://tree-med.ru/dezinfektsiya/
 
 ## Результаты live-проверки
 

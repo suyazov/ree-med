@@ -2,7 +2,8 @@
 
 WordPress-тема для страниц компании ТриМед.
 
-- **Сайт:** https://test1.sy3.ru
+- **Production:** https://tree-med.ru
+- **Репозиторий:** https://github.com/suyazov/ree-med
 - **Шаблоны:** `page-medcentry.php`, `page-laboratory.php`, `page-stomatology.php`, `page-disinfection.php`
 - **Редактирование контента:** через ACF-поля соответствующих страниц в админке WordPress
 
@@ -31,7 +32,7 @@ WordPress-тема для страниц компании ТриМед.
 
 ## Разработка
 
-При изменении CSS/JS увеличивайте константу `TRIMED_VERSION` в `functions.php`, чтобы сбросить кэш браузера.
+Версии CSS/JS формируются через `trimed_asset_version()` по времени изменения файла.
 
 ## Регламент рефакторинга
 
