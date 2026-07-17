@@ -23,6 +23,15 @@ function trimed_setup() {
 }
 add_action('after_setup_theme', 'trimed_setup');
 
+/**
+ * Контент сайта редактируется через ACF, поэтому блочный редактор не нужен.
+ */
+function trimed_disable_block_editor($use_block_editor, $post_type) {
+    return false;
+}
+add_filter('use_block_editor_for_post_type', 'trimed_disable_block_editor', 100, 2);
+add_filter('use_widgets_block_editor', '__return_false', 100);
+
 function trimed_get_service_pages_config() {
     return array(
         'medcentry' => array(
