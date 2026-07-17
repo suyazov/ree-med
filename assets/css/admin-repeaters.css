@@ -17,11 +17,66 @@
     margin-top: 0;
 }
 
-#trimed-free-repeaters .tr-section-title {
-    margin: 20px 0 8px;
-    padding: 0 0 4px;
-    border-bottom: 1px solid #dcdcde;
-    font-size: 14px;
+#trimed-free-repeaters .inside {
+    padding: 0;
+    margin: 0;
+}
+
+#trimed-free-repeaters .tr-hint,
+#trimed-free-repeaters > .inside > input {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+#trimed-free-repeaters .tr-admin-tabs {
+    display: grid;
+    grid-template-columns: minmax(180px, 230px) minmax(0, 1fr);
+    min-height: 260px;
+    border-top: 1px solid #dcdcde;
+}
+
+#trimed-free-repeaters .tr-tab-nav {
+    padding: 10px 0;
+    background: #f6f7f7;
+    border-right: 1px solid #dcdcde;
+}
+
+#trimed-free-repeaters .tr-tab-button {
+    display: block;
+    width: 100%;
+    padding: 11px 14px;
+    border: 0;
+    border-left: 3px solid transparent;
+    background: transparent;
+    color: #2c3338;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+#trimed-free-repeaters .tr-tab-button:hover,
+#trimed-free-repeaters .tr-tab-button:focus {
+    color: #135e96;
+    background: #fff;
+}
+
+#trimed-free-repeaters .tr-tab-button.is-active {
+    color: #1d2327;
+    background: #fff;
+    border-left-color: #2271b1;
+}
+
+#trimed-free-repeaters .tr-tab-content {
+    padding: 14px;
+    min-width: 0;
+}
+
+#trimed-free-repeaters .tr-tab-panel {
+    display: none;
+}
+
+#trimed-free-repeaters .tr-tab-panel.is-active {
+    display: block;
 }
 
 #trimed-free-repeaters .tr-repeater {
@@ -93,4 +148,15 @@
 
 #trimed-free-repeaters .tr-add {
     margin-top: 4px;
+}
+
+@media (max-width: 782px) {
+    #trimed-free-repeaters .tr-admin-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    #trimed-free-repeaters .tr-tab-nav {
+        border-right: 0;
+        border-bottom: 1px solid #dcdcde;
+    }
 }

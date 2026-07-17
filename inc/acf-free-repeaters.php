@@ -358,11 +358,11 @@ function trimed_free_repeater_add_metabox($post_type, $post) {
 
     add_meta_box(
         'trimed-free-repeaters',
-        'Повторяющиеся блоки',
+        'Карточки и списки',
         'trimed_free_repeater_render_metabox',
         'page',
         'normal',
-        'high'
+        'low'
     );
 }
 add_action('add_meta_boxes', 'trimed_free_repeater_add_metabox', 10, 2);
@@ -437,13 +437,34 @@ function trimed_free_repeater_render_row($field, $index, $row, $number) {
 function trimed_free_repeater_render_metabox($post) {
     wp_nonce_field('trimed_repeater_save', 'trimed_repeater_nonce');
     echo '<input type="hidden" name="trimed_repeater_present" value="1">';
-    echo '<p class="tr-hint">Повторяющиеся блоки страницы: проекты, партнёры, отзывы, FAQ и списки. Изменения применяются после «Обновить».</p>';
+    echo '<p class="tr-hint">Карточки, проекты, партнёры, отзывы, FAQ и другие списки. Изменения применяются после «Обновить».</p>';
 
+    $sections = array();
     foreach (trimed_free_repeater_groups_for_post($post->ID) as $group_key) {
         foreach (trimed_free_repeater_collect_sections($group_key) as $section) {
-            echo '<h3 class="tr-section-title">' . esc_html($section['tab']) . '</h3>';
+            $sections[] = $section;
+        }
+    }
 
-            foreach ($section['repeaters'] as $field) {
+    if (empty($sections)) {
+        echo '<p>Для этой страницы повторяющиеся блоки не настроены.</p>';
+        return;
+    }
+
+    echo '<div class="tr-admin-tabs">';
+    echo '<div class="tr-tab-nav" role="tablist" aria-label="Разделы карточек и списков">';
+    foreach ($sections as $section_index => $section) {
+        $tab_id = 'tr-tab-' . $post->ID . '-' . $section_index;
+        echo '<button type="button" class="tr-tab-button' . ($section_index === 0 ? ' is-active' : '') . '" role="tab" aria-selected="' . ($section_index === 0 ? 'true' : 'false') . '" aria-controls="' . esc_attr($tab_id) . '" data-tab="' . esc_attr($tab_id) . '">' . esc_html($section['tab']) . '</button>';
+    }
+    echo '</div>';
+    echo '<div class="tr-tab-content">';
+
+    foreach ($sections as $section_index => $section) {
+        $tab_id = 'tr-tab-' . $post->ID . '-' . $section_index;
+        echo '<section id="' . esc_attr($tab_id) . '" class="tr-tab-panel' . ($section_index === 0 ? ' is-active' : '') . '" role="tabpanel">';
+
+        foreach ($section['repeaters'] as $field) {
                 $raw_rows = trimed_free_repeater_get_raw_rows($post->ID, $field);
                 if ($raw_rows === null) {
                     // Страница ни разу не сохранялась: показать значения по умолчанию
@@ -469,9 +490,13 @@ function trimed_free_repeater_render_metabox($post) {
                 echo '</template>';
                 echo '<button type="button" class="button tr-add">' . esc_html($button_label) . '</button>';
                 echo '</div>';
-            }
         }
+
+        echo '</section>';
     }
+
+    echo '</div>';
+    echo '</div>';
 }
 
 /**

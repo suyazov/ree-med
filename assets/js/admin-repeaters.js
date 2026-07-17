@@ -26,6 +26,18 @@
         reindexAll();
     });
 
+    $(document).on('click', '.tr-tab-button', function (e) {
+        e.preventDefault();
+        var $button = $(this);
+        var $tabs = $button.closest('.tr-admin-tabs');
+        var target = $button.attr('data-tab');
+
+        $tabs.find('.tr-tab-button').removeClass('is-active').attr('aria-selected', 'false');
+        $tabs.find('.tr-tab-panel').removeClass('is-active');
+        $button.addClass('is-active').attr('aria-selected', 'true');
+        $('#' + target).addClass('is-active');
+    });
+
     $(document).on('click', '.tr-add', function (e) {
         e.preventDefault();
         var $repeater = $(this).closest('.tr-repeater');
