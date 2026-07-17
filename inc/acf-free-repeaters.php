@@ -34,10 +34,10 @@ if (!trimed_acf_free_repeaters_active()) {
 function trimed_free_repeater_group_map() {
     return array(
         'group_main_page'        => 'front_page',
-        'group_disinfection_page' => 'page-disinfection.php',
-        'group_laboratory_page'  => 'page-laboratory.php',
-        'group_stomatology_page' => 'page-stomatology.php',
-        'group_medcentry_page'   => 'page-medcentry.php',
+        'group_disinfection_page' => array('template' => 'page-disinfection.php', 'slug' => 'dezinfektsiya'),
+        'group_laboratory_page'  => array('template' => 'page-laboratory.php', 'slug' => 'laboratoriya'),
+        'group_stomatology_page' => array('template' => 'page-stomatology.php', 'slug' => 'stomatologiya'),
+        'group_medcentry_page'   => array('template' => 'page-medcentry.php', 'slug' => 'medcentry'),
     );
 }
 
@@ -50,6 +50,11 @@ function trimed_free_repeater_groups_for_post($post_id) {
         return array();
     }
 
+    $post = get_post($post_id);
+    if (!($post instanceof WP_Post) || $post->post_type !== 'page') {
+        return array();
+    }
+
     $groups = array();
     foreach (trimed_free_repeater_group_map() as $group_key => $rule) {
         if ($rule === 'front_page') {
@@ -58,7 +63,11 @@ function trimed_free_repeater_groups_for_post($post_id) {
             }
             continue;
         }
-        if (get_page_template_slug($post_id) === $rule) {
+
+        $template = isset($rule['template']) ? $rule['template'] : '';
+        $slug = isset($rule['slug']) ? $rule['slug'] : '';
+        if (($template !== '' && get_page_template_slug($post_id) === $template)
+            || ($slug !== '' && $post->post_name === $slug)) {
             $groups[] = $group_key;
         }
     }
