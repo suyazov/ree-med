@@ -62,11 +62,19 @@ if (function_exists('acf_add_local_field_group')) {
 
             // Социальные сети
             array('key' => 'tab_trimed_socials', 'label' => 'Социальные сети', 'name' => 'tab_trimed_socials', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'field_trimed_social_1_url', 'label' => 'Соцсеть 1 — ссылка', 'name' => 'trimed_social_1_url', 'type' => 'url'),
+            array('key' => 'field_trimed_social_1_icon', 'label' => 'Соцсеть 1 — иконка', 'name' => 'trimed_social_1_icon', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail', 'instructions' => 'Если иконка не выбрана, используется стандартная из темы.'),
+            array('key' => 'field_trimed_social_2_url', 'label' => 'Соцсеть 2 — ссылка', 'name' => 'trimed_social_2_url', 'type' => 'url'),
+            array('key' => 'field_trimed_social_2_icon', 'label' => 'Соцсеть 2 — иконка', 'name' => 'trimed_social_2_icon', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail', 'instructions' => 'Если иконка не выбрана, используется стандартная из темы.'),
+            array('key' => 'field_trimed_social_3_url', 'label' => 'Соцсеть 3 — ссылка', 'name' => 'trimed_social_3_url', 'type' => 'url'),
+            array('key' => 'field_trimed_social_3_icon', 'label' => 'Соцсеть 3 — иконка', 'name' => 'trimed_social_3_icon', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail', 'instructions' => 'Если иконка не выбрана, используется стандартная из темы.'),
             array(
                 'key' => 'field_trimed_contact_socials',
-                'label' => 'Социальные сети',
+                'label' => 'Социальные сети (legacy, не редактируется)',
                 'name' => 'trimed_contact_socials',
                 'type' => 'repeater',
+                'instructions' => 'Устаревшее поле-repeater: в ACF Free не редактируется. Редактируйте слоты выше. Ранее сохранённые значения продолжают выводиться, пока не заполнен ни один слот.',
+                'wrapper' => array('class' => 'trimed-legacy-field'),
                 'min' => 0,
                 'max' => 5,
                 'layout' => 'table',

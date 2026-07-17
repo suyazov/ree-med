@@ -1,0 +1,96 @@
+/* Редактор повторяющихся блоков (ACF Free) — только админка. */
+
+/* Нативный UI repeater недоступен в ACF Free: скрываем сломанные поля,
+   редактирование идёт через metabox «Повторяющиеся блоки». */
+.acf-field-repeater {
+    display: none !important;
+}
+
+/* Legacy-поля, помеченные классом обёртки (например, trimed_contact_socials
+   на странице «Настройки сайта»), скрываем точечно по классу. */
+.acf-field.trimed-legacy-field {
+    display: none !important;
+}
+
+#trimed-free-repeaters .tr-hint {
+    color: #646970;
+    margin-top: 0;
+}
+
+#trimed-free-repeaters .tr-section-title {
+    margin: 20px 0 8px;
+    padding: 0 0 4px;
+    border-bottom: 1px solid #dcdcde;
+    font-size: 14px;
+}
+
+#trimed-free-repeaters .tr-repeater {
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin: 0 0 16px;
+}
+
+#trimed-free-repeaters .tr-repeater-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#trimed-free-repeaters .tr-repeater-title .tr-max {
+    font-weight: 400;
+    color: #646970;
+}
+
+#trimed-free-repeaters .tr-row {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin: 0 0 8px;
+}
+
+#trimed-free-repeaters .tr-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+#trimed-free-repeaters .tr-row-title {
+    font-weight: 600;
+    color: #2c3338;
+}
+
+#trimed-free-repeaters .tr-field {
+    margin: 0 0 8px;
+}
+
+#trimed-free-repeaters .tr-label {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+#trimed-free-repeaters .tr-input {
+    width: 100%;
+    max-width: 100%;
+}
+
+#trimed-free-repeaters .tr-field-true_false .tr-label {
+    display: none;
+}
+
+#trimed-free-repeaters .tr-image-preview img {
+    max-width: 90px;
+    height: auto;
+    display: block;
+    margin: 4px 0;
+    border: 1px solid #dcdcde;
+    border-radius: 3px;
+}
+
+#trimed-free-repeaters .tr-add {
+    margin-top: 4px;
+}

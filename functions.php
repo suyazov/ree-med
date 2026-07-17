@@ -151,6 +151,73 @@ function trimed_get_theme_option($name, $fallback = '') {
     return trimed_get_option_value($name, $fallback);
 }
 
+/**
+ * Чтение legacy-repeater соцсетей напрямую из wp_options (ACF Free не умеет
+ * repeater; данные, сохранённые ранее, продолжают работать).
+ */
+function trimed_get_legacy_social_options() {
+    $count = (int) get_option('options_trimed_contact_socials', 0);
+    if ($count <= 0) {
+        return array();
+    }
+
+    $items = array();
+    for ($i = 0; $i < $count; $i++) {
+        $url = get_option('options_trimed_contact_socials_' . $i . '_url', '');
+        $icon = get_option('options_trimed_contact_socials_' . $i . '_icon', '');
+        if (is_numeric($icon)) {
+            $icon = wp_get_attachment_url((int) $icon);
+        }
+        if (!is_string($url) || $url === '') {
+            continue;
+        }
+        $items[] = array('url' => $url, 'icon' => is_string($icon) ? $icon : '');
+    }
+
+    return $items;
+}
+
+/**
+ * Ссылки соцсетей для подвала. Приоритет:
+ * 1) фиксированные слоты «Настройки сайта» (заполнен хотя бы один URL);
+ * 2) legacy-repeater trimed_contact_socials (get_field либо wp_options);
+ * 3) стандартные три плейсхолдера из темы.
+ * Формат элемента: array('url' => ..., 'icon' => ...).
+ */
+function trimed_get_social_links() {
+    $slots = array();
+    for ($i = 1; $i <= 3; $i++) {
+        $url = trimed_get_option_value('trimed_social_' . $i . '_url', '');
+        if (!is_string($url) || $url === '') {
+            continue;
+        }
+        $icon = trimed_get_option_value('trimed_social_' . $i . '_icon', '');
+        if (!is_string($icon) || $icon === '') {
+            $icon = get_template_directory_uri() . '/assets/img/footer-social-' . $i . '.svg';
+        }
+        $slots[] = array('url' => $url, 'icon' => $icon);
+    }
+    if (!empty($slots)) {
+        return $slots;
+    }
+
+    $legacy = trimed_get_option_value('trimed_contact_socials', array());
+    if (!empty($legacy) && is_array($legacy)) {
+        return $legacy;
+    }
+
+    $legacy = trimed_get_legacy_social_options();
+    if (!empty($legacy)) {
+        return $legacy;
+    }
+
+    return array(
+        array('url' => '#', 'icon' => get_template_directory_uri() . '/assets/img/footer-social-1.svg'),
+        array('url' => '#', 'icon' => get_template_directory_uri() . '/assets/img/footer-social-2.svg'),
+        array('url' => '#', 'icon' => get_template_directory_uri() . '/assets/img/footer-social-3.svg'),
+    );
+}
+
 function trimed_get_contact($key, $fallback = '') {
     $field = 'trimed_contact_' . $key;
     // Публичный email — отдельная опция. Legacy-поле trimed_contact_email
@@ -1222,3 +1289,6 @@ add_filter('excerpt_length', 'trimed_excerpt_length', 999);
 require_once get_template_directory() . '/inc/acf-fields.php';
 require_once get_template_directory() . '/inc/acf-fields-medcentry.php';
 require_once get_template_directory() . '/inc/acf-fields-main.php';
+
+// Редактор repeaters для ACF Free (при ACF Pro не активируется)
+require_once get_template_directory() . '/inc/acf-free-repeaters.php';

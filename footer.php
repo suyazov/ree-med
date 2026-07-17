@@ -34,14 +34,7 @@
 
                 <div class="footer-socials">
                     <?php
-                    $socials = trimed_get_option_value('trimed_contact_socials', array());
-                    if (empty($socials) || !is_array($socials)) {
-                        $socials = array(
-                            array('url' => '#', 'icon' => get_template_directory_uri() . '/assets/img/footer-social-1.svg'),
-                            array('url' => '#', 'icon' => get_template_directory_uri() . '/assets/img/footer-social-2.svg'),
-                            array('url' => '#', 'icon' => get_template_directory_uri() . '/assets/img/footer-social-3.svg'),
-                        );
-                    }
+                    $socials = trimed_get_social_links();
                     foreach ($socials as $i => $social) :
                         $social_url = !empty($social['url']) ? $social['url'] : '#';
                         $social_icon = !empty($social['icon']) ? $social['icon'] : get_template_directory_uri() . '/assets/img/footer-social-1.svg';
