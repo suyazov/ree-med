@@ -3,36 +3,38 @@ if (!defined('ABSPATH')) exit;
 
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
-        'page_title' => 'Контакты и настройки темы',
-        'menu_title' => 'Контакты ТриМед',
+        'page_title' => 'Настройки сайта',
+        'menu_title' => 'Настройки сайта',
         'menu_slug'  => 'trimed-theme-options',
         'capability' => 'manage_options',
         'redirect'   => false,
+        'icon_url'   => 'dashicons-admin-generic',
     ));
 }
 
 if (function_exists('acf_add_local_field_group')) {
 
-    // Theme contacts / options
+    // Глобальные настройки сайта (options). Вкладки placement=top, без endpoint.
     acf_add_local_field_group(array(
         'key' => 'group_trimed_contacts',
-        'title' => 'Контакты сайта',
+        'title' => 'Настройки сайта',
         'fields' => array(
-            array('key' => 'tab_trimed_contacts', 'label' => 'Контакты', 'name' => 'tab_trimed_contacts', 'type' => 'tab', 'placement' => 'left'),
+            // Контакты
+            array('key' => 'tab_trimed_contacts', 'label' => 'Контакты', 'name' => 'tab_trimed_contacts', 'type' => 'tab', 'placement' => 'top'),
             array(
                 'key' => 'field_trimed_contact_phone',
-                'label' => 'Телефон',
+                'label' => 'Основной телефон',
                 'name' => 'trimed_contact_phone',
                 'type' => 'text',
                 'default_value' => trimed_get_default_contacts()['phone'],
             ),
             array(
-                'key' => 'field_trimed_contact_email',
-                'label' => 'Email для заявок',
-                'name' => 'trimed_contact_email',
+                'key' => 'field_trimed_contact_public_email',
+                'label' => 'Публичный email',
+                'name' => 'trimed_contact_public_email',
                 'type' => 'email',
                 'default_value' => trimed_get_default_contacts()['email'],
-                'instructions' => 'Используется как получатель заявок с форм. Также можно переопределить через константу TRIMED_FORM_EMAIL в wp-config.php.',
+                'instructions' => 'Отображается на сайте (в подвале). Если не заполнен, показывается публичный адрес по умолчанию.',
             ),
             array(
                 'key' => 'field_trimed_contact_address',
@@ -41,6 +43,25 @@ if (function_exists('acf_add_local_field_group')) {
                 'type' => 'text',
                 'default_value' => trimed_get_default_contacts()['address'],
             ),
+
+            // Заявки
+            array('key' => 'tab_trimed_form', 'label' => 'Заявки', 'name' => 'tab_trimed_form', 'type' => 'tab', 'placement' => 'top'),
+            array(
+                'key' => 'field_trimed_contact_email',
+                'label' => 'Email получателя заявок',
+                'name' => 'trimed_contact_email',
+                'type' => 'email',
+                'default_value' => trimed_get_default_contacts()['email'],
+                'instructions' => 'Служебный адрес: сюда приходят заявки с форм. На сайте не выводится. Можно переопределить константой TRIMED_FORM_EMAIL в wp-config.php.',
+            ),
+            array('key' => 'field_trimed_form_name_placeholder', 'label' => 'Подсказка поля «Имя»', 'name' => 'trimed_form_name_placeholder', 'type' => 'text', 'default_value' => 'Иванов Николай Сергеевич'),
+            array('key' => 'field_trimed_form_phone_placeholder', 'label' => 'Подсказка поля «Телефон»', 'name' => 'trimed_form_phone_placeholder', 'type' => 'text', 'default_value' => '+7 (999) 999-99-99'),
+            array('key' => 'field_trimed_form_organization_placeholder', 'label' => 'Подсказка поля «Организация»', 'name' => 'trimed_form_organization_placeholder', 'type' => 'text', 'default_value' => 'Название организации'),
+            array('key' => 'field_trimed_form_comment_placeholder', 'label' => 'Подсказка поля «Комментарий»', 'name' => 'trimed_form_comment_placeholder', 'type' => 'text', 'default_value' => 'Ваш комментарий'),
+            array('key' => 'field_trimed_form_agreement_text', 'label' => 'Текст согласия', 'name' => 'trimed_form_agreement_text', 'type' => 'textarea', 'default_value' => 'Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных'),
+
+            // Социальные сети
+            array('key' => 'tab_trimed_socials', 'label' => 'Социальные сети', 'name' => 'tab_trimed_socials', 'type' => 'tab', 'placement' => 'top'),
             array(
                 'key' => 'field_trimed_contact_socials',
                 'label' => 'Социальные сети',
@@ -67,7 +88,33 @@ if (function_exists('acf_add_local_field_group')) {
                     ),
                 ),
             ),
-            array('key' => 'tab_trimed_header', 'label' => 'Шапка', 'name' => 'tab_trimed_header', 'type' => 'tab', 'placement' => 'left'),
+
+            // Реквизиты
+            array('key' => 'tab_trimed_footer', 'label' => 'Реквизиты', 'name' => 'tab_trimed_footer', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'field_trimed_footer_inn', 'label' => 'ИНН', 'name' => 'trimed_footer_inn', 'type' => 'text', 'default_value' => 'ИНН 7500009501'),
+            array('key' => 'field_trimed_footer_ogrn', 'label' => 'ОГРН', 'name' => 'trimed_footer_ogrn', 'type' => 'text', 'default_value' => 'ОГРН 1237500001859'),
+            array('key' => 'field_trimed_footer_copyright', 'label' => 'Копирайт', 'name' => 'trimed_footer_copyright', 'type' => 'text', 'default_value' => '© 2026, «ТриМед». Все права защищены.'),
+
+            // Ссылки
+            array('key' => 'tab_trimed_links', 'label' => 'Ссылки', 'name' => 'tab_trimed_links', 'type' => 'tab', 'placement' => 'top'),
+            array(
+                'key' => 'field_trimed_shop_url',
+                'label' => 'Ссылка «В магазин» (каталог)',
+                'name' => 'trimed_shop_url',
+                'type' => 'url',
+                'instructions' => 'Глобальная ссылка на магазин/каталог. Пока не заполнена, кнопка «В магазин» ведёт на #.',
+            ),
+            array('key' => 'field_trimed_footer_consent_text', 'label' => 'Название ссылки «Согласие»', 'name' => 'trimed_footer_consent_text', 'type' => 'text', 'default_value' => 'Согласие на обработку персональных данных'),
+            array('key' => 'field_trimed_footer_policy_text', 'label' => 'Название ссылки «Политика»', 'name' => 'trimed_footer_policy_text', 'type' => 'text', 'default_value' => 'Политика об обработке персональных данных'),
+            array('key' => 'field_trimed_footer_agreement_text', 'label' => 'Название ссылки «Соглашение»', 'name' => 'trimed_footer_agreement_text', 'type' => 'text', 'default_value' => 'Пользовательское соглашение'),
+
+            // Карта
+            array('key' => 'tab_trimed_map', 'label' => 'Карта', 'name' => 'tab_trimed_map', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'field_trimed_footer_map_image', 'label' => 'Изображение карты', 'name' => 'trimed_footer_map_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
+            array('key' => 'field_trimed_footer_map_url', 'label' => 'Ссылка на карту', 'name' => 'trimed_footer_map_url', 'type' => 'url', 'default_value' => 'https://yandex.ru/maps/-/CTqTRF5S'),
+
+            // Шапка и подвал
+            array('key' => 'tab_trimed_header', 'label' => 'Шапка и подвал', 'name' => 'tab_trimed_header', 'type' => 'tab', 'placement' => 'top'),
             array('key' => 'field_trimed_header_logo', 'label' => 'Логотип', 'name' => 'trimed_header_logo', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
             array('key' => 'field_trimed_header_compare_url', 'label' => 'Ссылка «Сравнение»', 'name' => 'trimed_header_compare_url', 'type' => 'url'),
             array('key' => 'field_trimed_header_compare_count', 'label' => 'Счётчик «Сравнение»', 'name' => 'trimed_header_compare_count', 'type' => 'text', 'default_value' => '1'),
@@ -75,24 +122,9 @@ if (function_exists('acf_add_local_field_group')) {
             array('key' => 'field_trimed_header_favorite_count', 'label' => 'Счётчик «Избранное»', 'name' => 'trimed_header_favorite_count', 'type' => 'text', 'default_value' => '1'),
             array('key' => 'field_trimed_header_cart_url', 'label' => 'Ссылка «Корзина»', 'name' => 'trimed_header_cart_url', 'type' => 'url'),
             array('key' => 'field_trimed_header_cart_count', 'label' => 'Счётчик «Корзина»', 'name' => 'trimed_header_cart_count', 'type' => 'text', 'default_value' => '3'),
-            array('key' => 'tab_trimed_form', 'label' => 'Формы', 'name' => 'tab_trimed_form', 'type' => 'tab', 'placement' => 'left'),
-            array('key' => 'field_trimed_form_name_placeholder', 'label' => 'Подсказка поля «Имя»', 'name' => 'trimed_form_name_placeholder', 'type' => 'text', 'default_value' => 'Иванов Николай Сергеевич'),
-            array('key' => 'field_trimed_form_phone_placeholder', 'label' => 'Подсказка поля «Телефон»', 'name' => 'trimed_form_phone_placeholder', 'type' => 'text', 'default_value' => '+7 (999) 999-99-99'),
-            array('key' => 'field_trimed_form_organization_placeholder', 'label' => 'Подсказка поля «Организация»', 'name' => 'trimed_form_organization_placeholder', 'type' => 'text', 'default_value' => 'Название организации'),
-            array('key' => 'field_trimed_form_comment_placeholder', 'label' => 'Подсказка поля «Комментарий»', 'name' => 'trimed_form_comment_placeholder', 'type' => 'text', 'default_value' => 'Ваш комментарий'),
-            array('key' => 'field_trimed_form_agreement_text', 'label' => 'Текст согласия', 'name' => 'trimed_form_agreement_text', 'type' => 'textarea', 'default_value' => 'Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных'),
-            array('key' => 'tab_trimed_footer', 'label' => 'Подвал', 'name' => 'tab_trimed_footer', 'type' => 'tab', 'placement' => 'left'),
             array('key' => 'field_trimed_footer_logo', 'label' => 'Белый логотип', 'name' => 'trimed_footer_logo', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
-            array('key' => 'field_trimed_footer_map_image', 'label' => 'Изображение карты', 'name' => 'trimed_footer_map_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
-            array('key' => 'field_trimed_footer_map_url', 'label' => 'Ссылка на карту', 'name' => 'trimed_footer_map_url', 'type' => 'url', 'default_value' => 'https://yandex.ru/maps/-/CTqTRF5S'),
             array('key' => 'field_trimed_footer_callback_text', 'label' => 'Текст кнопки звонка', 'name' => 'trimed_footer_callback_text', 'type' => 'text', 'default_value' => 'Заказать звонок'),
             array('key' => 'field_trimed_footer_callback_url', 'label' => 'Ссылка кнопки звонка', 'name' => 'trimed_footer_callback_url', 'type' => 'text', 'default_value' => '#application'),
-            array('key' => 'field_trimed_footer_copyright', 'label' => 'Копирайт', 'name' => 'trimed_footer_copyright', 'type' => 'text', 'default_value' => '© 2026, «ТриМед». Все права защищены.'),
-            array('key' => 'field_trimed_footer_inn', 'label' => 'ИНН', 'name' => 'trimed_footer_inn', 'type' => 'text', 'default_value' => 'ИНН 7500009501'),
-            array('key' => 'field_trimed_footer_ogrn', 'label' => 'ОГРН', 'name' => 'trimed_footer_ogrn', 'type' => 'text', 'default_value' => 'ОГРН 1237500001859'),
-            array('key' => 'field_trimed_footer_consent_text', 'label' => 'Название ссылки «Согласие»', 'name' => 'trimed_footer_consent_text', 'type' => 'text', 'default_value' => 'Согласие на обработку персональных данных'),
-            array('key' => 'field_trimed_footer_policy_text', 'label' => 'Название ссылки «Политика»', 'name' => 'trimed_footer_policy_text', 'type' => 'text', 'default_value' => 'Политика об обработке персональных данных'),
-            array('key' => 'field_trimed_footer_agreement_text', 'label' => 'Название ссылки «Соглашение»', 'name' => 'trimed_footer_agreement_text', 'type' => 'text', 'default_value' => 'Пользовательское соглашение'),
         ),
         'location' => array(
             array(

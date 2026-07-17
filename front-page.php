@@ -171,7 +171,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     ?></h1>
                 </div>
                 <div class="home-hero-image-wrap">
-                    <a href="#" class="home-hero-shop-btn"><?php echo esc_html($hero_btn2); ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a href="<?php echo esc_url(trimed_get_option_value('trimed_shop_url', '#')); ?>" class="home-hero-shop-btn"><?php echo esc_html($hero_btn2); ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="home-hero-image">
                     <?php if (!empty($hero_badges)) : ?>
                     <div class="home-hero-badges">
@@ -206,7 +206,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     </div>
                     <?php endif; ?>
                     <a href="#request" class="home-hero-cta"><?php echo esc_html($hero_btn1); ?></a>
-                    <a href="#" class="home-hero-shop-btn-mobile"><?php echo esc_html($hero_btn2); ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a href="<?php echo esc_url(trimed_get_option_value('trimed_shop_url', '#')); ?>" class="home-hero-shop-btn-mobile"><?php echo esc_html($hero_btn2); ?><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                 </div>
             </div>
         </div>

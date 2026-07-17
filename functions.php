@@ -131,26 +131,68 @@ function trimed_get_default_contacts() {
     );
 }
 
-function trimed_get_contact($key, $fallback = '') {
-    if (function_exists('get_field')) {
-        $value = get_field('trimed_contact_' . $key, 'option');
-        if (!empty($value)) {
-            return $value;
-        }
-    }
-    $fallbacks = trimed_get_default_contacts();
-    return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
-}
-
-function trimed_get_theme_option($name, $fallback = '') {
+/**
+ * Единый безопасный читатель глобальных настроек («Настройки сайта», ACF options).
+ * Пустая опция всегда возвращает $fallback: пока настройка не заполнена,
+ * фронтенд показывает текущие live-значения.
+ */
+function trimed_get_option_value($name, $fallback = '') {
     if (function_exists('get_field')) {
         $value = get_field($name, 'option');
-        if ($value !== null && $value !== false && $value !== '') {
+        if ($value !== null && $value !== false && $value !== '' && $value !== array()) {
             return $value;
         }
     }
 
     return $fallback;
+}
+
+function trimed_get_theme_option($name, $fallback = '') {
+    return trimed_get_option_value($name, $fallback);
+}
+
+function trimed_get_contact($key, $fallback = '') {
+    $field = 'trimed_contact_' . $key;
+    // Публичный email — отдельная опция. Legacy-поле trimed_contact_email
+    // служебное (получатель заявок): публично не выводится и в фолбэке
+    // публичного адреса не участвует — при пустой опции показываем
+    // публичный адрес по умолчанию.
+    if ($key === 'email') {
+        $field = 'trimed_contact_public_email';
+    }
+
+    $value = trimed_get_option_value($field, '');
+
+    if ($value !== '') {
+        return $value;
+    }
+
+    $fallbacks = trimed_get_default_contacts();
+    return isset($fallbacks[$key]) && $fallback === '' ? $fallbacks[$key] : $fallback;
+}
+
+/**
+ * Email получателя заявок из «Настройки сайта». Приоритет:
+ * константа TRIMED_FORM_EMAIL (wp-config.php) → опция trimed_contact_email
+ * → текущий безопасный fallback (email из контактов по умолчанию) → admin_email.
+ * Служебный адрес публично не выводится.
+ */
+function trimed_get_form_recipient_email() {
+    if (defined('TRIMED_FORM_EMAIL') && TRIMED_FORM_EMAIL !== '') {
+        return TRIMED_FORM_EMAIL;
+    }
+
+    $value = trimed_get_option_value('trimed_contact_email', '');
+    if ($value !== '') {
+        return $value;
+    }
+
+    $defaults = trimed_get_default_contacts();
+    if (!empty($defaults['email'])) {
+        return $defaults['email'];
+    }
+
+    return get_option('admin_email');
 }
 
 function trimed_phone_href($phone = '') {
@@ -1149,13 +1191,7 @@ function trimed_handle_contact_form() {
         wp_send_json_error('Укажите корректный номер телефона.');
     }
 
-    $to = TRIMED_FORM_EMAIL;
-    if (empty($to)) {
-        $to = trimed_get_contact('email');
-    }
-    if (empty($to)) {
-        $to = get_option('admin_email');
-    }
+    $to = trimed_get_form_recipient_email();
 
     if (empty($to) || !is_email($to)) {
         wp_send_json_error('Не настроен email получателя. Обратитесь к администратору сайта.');
