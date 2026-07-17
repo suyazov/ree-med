@@ -15,7 +15,7 @@ acf_add_local_field_group(array(
             'label' => 'Первый экран',
             'name' => 'tab_main_hero',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_hero_title', 'label' => 'Заголовок', 'name' => 'main_hero_title', 'type' => 'text', 'default_value' => 'Комплексное оснащение медицинских учреждений в Забайкальском крае'),
         array('key' => 'field_main_hero_desc', 'label' => 'Описание', 'name' => 'main_hero_desc', 'type' => 'textarea', 'default_value' => 'Подбираем оборудование, расходные материалы и готовые решения для клиник, лабораторий, стоматологий и медицинских центров.'),
@@ -51,35 +51,13 @@ acf_add_local_field_group(array(
             ),
         ),
 
-        // Stats bar
-        array(
-            'key' => 'tab_main_stats',
-            'label' => 'Плашка преимуществ',
-            'name' => 'tab_main_stats',
-            'type' => 'tab',
-            'placement' => 'left',
-        ),
-        array(
-            'key' => 'field_main_stats',
-            'label' => 'Пункты',
-            'name' => 'main_stats',
-            'type' => 'repeater',
-            'min' => 0,
-            'max' => 4,
-            'layout' => 'table',
-            'button_label' => 'Добавить пункт',
-            'sub_fields' => array(
-                array('key' => 'field_main_stats_text', 'label' => 'Текст', 'name' => 'text', 'type' => 'text'),
-            ),
-        ),
-
         // About
         array(
             'key' => 'tab_main_about',
             'label' => 'О компании',
             'name' => 'tab_main_about',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_about_title', 'label' => 'Заголовок', 'name' => 'main_about_title', 'type' => 'text', 'default_value' => 'ТриМед — поставщик медицинского оборудования и расходных материалов'),
         array('key' => 'field_main_about_desc', 'label' => 'Описание', 'name' => 'main_about_desc', 'type' => 'textarea', 'default_value' => 'Мы помогаем медицинским учреждениям оснащать кабинеты, отделения и клиники современным оборудованием.'),
@@ -106,7 +84,7 @@ acf_add_local_field_group(array(
             'label' => 'Направления',
             'name' => 'tab_main_directions',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_directions_subtitle', 'label' => 'Подзаголовок', 'name' => 'main_directions_subtitle', 'type' => 'text', 'default_value' => 'Направления работы'),
         array('key' => 'field_main_directions_title', 'label' => 'Заголовок', 'name' => 'main_directions_title', 'type' => 'text', 'default_value' => 'Решения для разных направлений медицины'),
@@ -133,7 +111,7 @@ acf_add_local_field_group(array(
             'label' => 'Кому помогаем',
             'name' => 'tab_main_audience',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_audience_subtitle', 'label' => 'Подзаголовок', 'name' => 'main_audience_subtitle', 'type' => 'text', 'default_value' => 'Кому мы помогаем'),
         array('key' => 'field_main_audience_title', 'label' => 'Заголовок', 'name' => 'main_audience_title', 'type' => 'text', 'default_value' => 'Работаем с медицинскими учреждениями любого масштаба'),
@@ -158,7 +136,7 @@ acf_add_local_field_group(array(
             'label' => 'Задачи клиники',
             'name' => 'tab_main_tasks',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_tasks_title', 'label' => 'Заголовок', 'name' => 'main_tasks_title', 'type' => 'text', 'default_value' => 'Не просто поставляем оборудование, а решаем задачи клиники'),
         array(
@@ -181,10 +159,10 @@ acf_add_local_field_group(array(
         // Projects
         array(
             'key' => 'tab_main_projects',
-            'label' => 'Проекты',
+            'label' => 'Реализованные проекты',
             'name' => 'tab_main_projects',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_projects_title', 'label' => 'Заголовок', 'name' => 'main_projects_title', 'type' => 'text', 'default_value' => 'Реализованные проекты'),
         array('key' => 'field_main_projects_btn', 'label' => 'Кнопка', 'name' => 'main_projects_btn', 'type' => 'text', 'default_value' => 'Смотреть все проекты'),
@@ -212,7 +190,7 @@ acf_add_local_field_group(array(
             'label' => 'Категории оборудования',
             'name' => 'tab_main_categories',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_categories_title', 'label' => 'Заголовок', 'name' => 'main_categories_title', 'type' => 'text', 'default_value' => 'Основные категории оборудования'),
         array(
@@ -238,7 +216,7 @@ acf_add_local_field_group(array(
             'label' => 'Этапы работы',
             'name' => 'tab_main_steps',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_steps_subtitle', 'label' => 'Подзаголовок', 'name' => 'main_steps_subtitle', 'type' => 'text', 'default_value' => 'Этапы работы'),
         array('key' => 'field_main_steps_title', 'label' => 'Заголовок', 'name' => 'main_steps_title', 'type' => 'text', 'default_value' => 'От запроса до поставки'),
@@ -264,7 +242,7 @@ acf_add_local_field_group(array(
             'label' => 'Партнёры',
             'name' => 'tab_main_partners',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_partners_title', 'label' => 'Заголовок', 'name' => 'main_partners_title', 'type' => 'text', 'default_value' => 'Работаем с ведущими производителями медицинского оборудования'),
         array(
@@ -290,7 +268,7 @@ acf_add_local_field_group(array(
             'label' => 'Отзывы',
             'name' => 'tab_main_testimonials',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_testimonials_subtitle', 'label' => 'Подзаголовок', 'name' => 'main_testimonials_subtitle', 'type' => 'text', 'default_value' => 'Что о нас говорят клиенты'),
         array('key' => 'field_main_testimonials_title', 'label' => 'Заголовок', 'name' => 'main_testimonials_title', 'type' => 'text', 'default_value' => 'Отзывы руководителей клиник и врачей'),
@@ -317,11 +295,34 @@ acf_add_local_field_group(array(
             'label' => 'Форма заявки',
             'name' => 'tab_main_form',
             'type' => 'tab',
-            'placement' => 'left',
+            'placement' => 'top',
         ),
         array('key' => 'field_main_form_title', 'label' => 'Заголовок', 'name' => 'main_form_title', 'type' => 'text', 'default_value' => 'Подберём оборудование под задачи вашей клиники'),
         array('key' => 'field_main_form_desc', 'label' => 'Описание', 'name' => 'main_form_desc', 'type' => 'textarea', 'default_value' => 'Оставьте заявку и получите консультацию специалиста'),
         array('key' => 'field_main_form_btn', 'label' => 'Текст кнопки', 'name' => 'main_form_btn', 'type' => 'text', 'default_value' => 'Получить консультацию'),
+
+        // Служебные поля (сейчас не выводятся на сайте)
+        array(
+            'key' => 'tab_main_stats',
+            'label' => 'Плашка преимуществ (не выводится)',
+            'name' => 'tab_main_stats',
+            'type' => 'tab',
+            'placement' => 'top',
+        ),
+        array(
+            'key' => 'field_main_stats',
+            'label' => 'Пункты',
+            'name' => 'main_stats',
+            'type' => 'repeater',
+            'instructions' => 'Техническое поле: сейчас не выводится на сайте, оставлено для совместимости.',
+            'min' => 0,
+            'max' => 4,
+            'layout' => 'table',
+            'button_label' => 'Добавить пункт',
+            'sub_fields' => array(
+                array('key' => 'field_main_stats_text', 'label' => 'Текст', 'name' => 'text', 'type' => 'text'),
+            ),
+        ),
     ),
     'location' => array(
         array(
