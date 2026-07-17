@@ -20,7 +20,7 @@ if (function_exists('acf_add_local_field_group')) {
         'title' => 'Настройки сайта',
         'fields' => array(
             // Контакты
-            array('key' => 'tab_trimed_contacts', 'label' => 'Контакты', 'name' => 'tab_trimed_contacts', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_contacts', 'label' => 'Контакты', 'name' => 'tab_trimed_contacts', 'type' => 'tab', 'placement' => 'left'),
             array(
                 'key' => 'field_trimed_contact_phone',
                 'label' => 'Основной телефон',
@@ -45,7 +45,7 @@ if (function_exists('acf_add_local_field_group')) {
             ),
 
             // Заявки
-            array('key' => 'tab_trimed_form', 'label' => 'Заявки', 'name' => 'tab_trimed_form', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_form', 'label' => 'Заявки', 'name' => 'tab_trimed_form', 'type' => 'tab', 'placement' => 'left'),
             array(
                 'key' => 'field_trimed_contact_email',
                 'label' => 'Email получателя заявок',
@@ -61,7 +61,7 @@ if (function_exists('acf_add_local_field_group')) {
             array('key' => 'field_trimed_form_agreement_text', 'label' => 'Текст согласия', 'name' => 'trimed_form_agreement_text', 'type' => 'textarea', 'default_value' => 'Оставляя заявку, я соглашаюсь с условиями Политики обработки персональных данных'),
 
             // Социальные сети
-            array('key' => 'tab_trimed_socials', 'label' => 'Социальные сети', 'name' => 'tab_trimed_socials', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_socials', 'label' => 'Социальные сети', 'name' => 'tab_trimed_socials', 'type' => 'tab', 'placement' => 'left'),
             array('key' => 'field_trimed_social_1_url', 'label' => 'Соцсеть 1 — ссылка', 'name' => 'trimed_social_1_url', 'type' => 'url'),
             array('key' => 'field_trimed_social_1_icon', 'label' => 'Соцсеть 1 — иконка', 'name' => 'trimed_social_1_icon', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail', 'instructions' => 'Если иконка не выбрана, используется стандартная из темы.'),
             array('key' => 'field_trimed_social_2_url', 'label' => 'Соцсеть 2 — ссылка', 'name' => 'trimed_social_2_url', 'type' => 'url'),
@@ -98,13 +98,13 @@ if (function_exists('acf_add_local_field_group')) {
             ),
 
             // Реквизиты
-            array('key' => 'tab_trimed_footer', 'label' => 'Реквизиты', 'name' => 'tab_trimed_footer', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_footer', 'label' => 'Реквизиты', 'name' => 'tab_trimed_footer', 'type' => 'tab', 'placement' => 'left'),
             array('key' => 'field_trimed_footer_inn', 'label' => 'ИНН', 'name' => 'trimed_footer_inn', 'type' => 'text', 'default_value' => 'ИНН 7500009501'),
             array('key' => 'field_trimed_footer_ogrn', 'label' => 'ОГРН', 'name' => 'trimed_footer_ogrn', 'type' => 'text', 'default_value' => 'ОГРН 1237500001859'),
             array('key' => 'field_trimed_footer_copyright', 'label' => 'Копирайт', 'name' => 'trimed_footer_copyright', 'type' => 'text', 'default_value' => '© 2026, «ТриМед». Все права защищены.'),
 
             // Ссылки
-            array('key' => 'tab_trimed_links', 'label' => 'Ссылки', 'name' => 'tab_trimed_links', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_links', 'label' => 'Ссылки', 'name' => 'tab_trimed_links', 'type' => 'tab', 'placement' => 'left'),
             array(
                 'key' => 'field_trimed_shop_url',
                 'label' => 'Ссылка «В магазин» (каталог)',
@@ -117,12 +117,12 @@ if (function_exists('acf_add_local_field_group')) {
             array('key' => 'field_trimed_footer_agreement_text', 'label' => 'Название ссылки «Соглашение»', 'name' => 'trimed_footer_agreement_text', 'type' => 'text', 'default_value' => 'Пользовательское соглашение'),
 
             // Карта
-            array('key' => 'tab_trimed_map', 'label' => 'Карта', 'name' => 'tab_trimed_map', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_map', 'label' => 'Карта', 'name' => 'tab_trimed_map', 'type' => 'tab', 'placement' => 'left'),
             array('key' => 'field_trimed_footer_map_image', 'label' => 'Изображение карты', 'name' => 'trimed_footer_map_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
             array('key' => 'field_trimed_footer_map_url', 'label' => 'Ссылка на карту', 'name' => 'trimed_footer_map_url', 'type' => 'url', 'default_value' => 'https://yandex.ru/maps/-/CTqTRF5S'),
 
             // Шапка и подвал
-            array('key' => 'tab_trimed_header', 'label' => 'Шапка и подвал', 'name' => 'tab_trimed_header', 'type' => 'tab', 'placement' => 'top'),
+            array('key' => 'tab_trimed_header', 'label' => 'Шапка и подвал', 'name' => 'tab_trimed_header', 'type' => 'tab', 'placement' => 'left'),
             array('key' => 'field_trimed_header_logo', 'label' => 'Логотип', 'name' => 'trimed_header_logo', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
             array('key' => 'field_trimed_header_compare_url', 'label' => 'Ссылка «Сравнение»', 'name' => 'trimed_header_compare_url', 'type' => 'url'),
             array('key' => 'field_trimed_header_compare_count', 'label' => 'Счётчик «Сравнение»', 'name' => 'trimed_header_compare_count', 'type' => 'text', 'default_value' => '1'),
@@ -159,7 +159,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Первый экран',
                 'name' => 'tab_hero',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_hero_title',
@@ -241,7 +241,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Кому подходит',
                 'name' => 'tab_audience',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_audience_subtitle',
@@ -304,7 +304,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Что мы поставляем',
                 'name' => 'tab_supplies',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_supplies_subtitle',
@@ -354,7 +354,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Что входит',
                 'name' => 'tab_included',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_included_subtitle',
@@ -423,7 +423,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Задачи клиентов',
                 'name' => 'tab_tasks',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_tasks_subtitle',
@@ -472,7 +472,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Почему выбирают',
                 'name' => 'tab_why',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_why_subtitle',
@@ -515,7 +515,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Реализованные проекты',
                 'name' => 'tab_projects',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_projects_title',
@@ -556,7 +556,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Партнёры',
                 'name' => 'tab_partners',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_partners_title',
@@ -604,7 +604,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Вопросы и ответы',
                 'name' => 'tab_faq',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_faq_title',
@@ -660,7 +660,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Форма заявки',
                 'name' => 'tab_application',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_application_title',
@@ -704,7 +704,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Первый экран',
                 'name' => 'tab_lab_hero',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_hero_title',
@@ -795,7 +795,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Для кого мы работаем',
                 'name' => 'tab_lab_audience',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_audience_subtitle',
@@ -859,7 +859,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Что мы поставляем',
                 'name' => 'tab_lab_supplies',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_supplies_subtitle',
@@ -910,7 +910,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Что входит',
                 'name' => 'tab_lab_included',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_included_title',
@@ -965,7 +965,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Почему выбирают',
                 'name' => 'tab_lab_why',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_why_title',
@@ -1058,7 +1058,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Реализованные проекты',
                 'name' => 'tab_lab_projects',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_projects_title',
@@ -1125,7 +1125,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Задачи клиентов',
                 'name' => 'tab_lab_tasks',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_tasks_title',
@@ -1167,7 +1167,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Партнёры',
                 'name' => 'tab_lab_partners',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_partners_title',
@@ -1215,7 +1215,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Форма заявки',
                 'name' => 'tab_lab_request',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_lab_request_title',
@@ -1265,7 +1265,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Первый экран',
                 'name' => 'tab_stom_hero',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_hero_title',
@@ -1350,7 +1350,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Кому подходит',
                 'name' => 'tab_stom_audience',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_audience_label',
@@ -1434,7 +1434,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Что входит',
                 'name' => 'tab_stom_included',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_included_title',
@@ -1503,7 +1503,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Реализованные проекты',
                 'name' => 'tab_stom_projects',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_projects_title',
@@ -1564,7 +1564,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Как проходит работа',
                 'name' => 'tab_stom_process',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_process_title',
@@ -1633,7 +1633,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Форма заявки',
                 'name' => 'tab_stom_request',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_request_title',
@@ -1670,7 +1670,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Почему выбирают',
                 'name' => 'tab_stom_why',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_why_title',
@@ -1755,7 +1755,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Призыв к действию',
                 'name' => 'tab_stom_cta',
                 'type' => 'tab',
-                'placement' => 'top',
+                'placement' => 'left',
             ),
             array(
                 'key' => 'field_stom_cta_text',
