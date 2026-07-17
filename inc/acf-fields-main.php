@@ -20,6 +20,7 @@ acf_add_local_field_group(array(
         array('key' => 'field_main_hero_title', 'label' => 'Заголовок', 'name' => 'main_hero_title', 'type' => 'text', 'default_value' => 'Комплексное оснащение медицинских учреждений в Забайкальском крае'),
         array('key' => 'field_main_hero_desc', 'label' => 'Описание', 'name' => 'main_hero_desc', 'type' => 'textarea', 'default_value' => 'Подбираем оборудование, расходные материалы и готовые решения для клиник, лабораторий, стоматологий и медицинских центров.'),
         array('key' => 'field_main_hero_image', 'label' => 'Изображение', 'name' => 'main_hero_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
+        array('key' => 'field_main_hero_thumb_image', 'label' => 'Дополнительное изображение', 'name' => 'main_hero_thumb_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail'),
         array('key' => 'field_main_hero_btn1', 'label' => 'Кнопка «Получить консультацию»', 'name' => 'main_hero_btn1', 'type' => 'text', 'default_value' => 'Получить консультацию'),
         array('key' => 'field_main_hero_btn2', 'label' => 'Кнопка «В магазин»', 'name' => 'main_hero_btn2', 'type' => 'text', 'default_value' => 'В магазин'),
         array(
@@ -282,6 +283,7 @@ acf_add_local_field_group(array(
             'layout' => 'block',
             'button_label' => 'Добавить отзыв',
             'sub_fields' => array(
+                array('key' => 'field_main_test_image', 'label' => 'Фотография', 'name' => 'image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'thumbnail'),
                 array('key' => 'field_main_test_name', 'label' => 'Имя', 'name' => 'name', 'type' => 'text'),
                 array('key' => 'field_main_test_position', 'label' => 'Должность', 'name' => 'position', 'type' => 'text'),
                 array('key' => 'field_main_test_text', 'label' => 'Текст', 'name' => 'text', 'type' => 'textarea'),

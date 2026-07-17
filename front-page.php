@@ -12,6 +12,7 @@ if (empty($hero_desc_raw)) {
     $hero_desc = str_replace('готовые решения для', 'готовые решения<br>для', $hero_desc_raw);
 }
 $hero_image = trimed_image_field('main_hero_image', $img_main . '/главная-1440-4.png');
+$hero_thumb_image = trimed_image_field('main_hero_thumb_image', $img_main . '/hero-thumb-3116-136.png');
 $hero_btn1  = get_field('main_hero_btn1') ?: 'Получить консультацию';
 $hero_btn2  = get_field('main_hero_btn2') ?: 'В магазин';
 $hero_checks = trimed_repeater_field('main_hero_checks', array(
@@ -193,7 +194,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                 </div>
                 <div class="home-hero-bottom">
                     <div class="home-hero-thumb">
-                        <img src="<?php echo esc_url($img_main . '/hero-thumb-3116-136.png'); ?>" alt="">
+                        <img src="<?php echo esc_url($hero_thumb_image); ?>" alt="">
                     </div>
                     <?php if (!empty($hero_checks)) : ?>
                     <div class="home-hero-check-card">
@@ -460,7 +461,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
                     <div class="testimonial-card">
                         <div class="testimonial-author">
                             <span class="testimonial-avatar" style="background-color:<?php echo esc_attr($color); ?>">
-                                <img src="<?php echo esc_url($img_main . '/10-2.png'); ?>" alt="">
+                                <img src="<?php echo esc_url(!empty($test['image']) ? $test['image'] : $img_main . '/10-2.png'); ?>" alt="<?php echo esc_attr($test['name']); ?>">
                                 <span><?php echo esc_html($initial); ?></span>
                             </span>
                             <div class="testimonial-meta">

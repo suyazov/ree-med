@@ -122,6 +122,7 @@ $default_why_features = array(
     array('text' => 'Работа с&nbsp;государственными и&nbsp;частными учреждениями'),
 );
 $why_features = trimed_repeater_field('lab_why_features', $default_why_features);
+$why_main_image = trimed_image_field('lab_why_main_image', $img_dir . '/laboratory-why-main.png');
 $why_warehouse_title = trimed_get_field_value('lab_why_warehouse_title', 'Склад в Чите');
 $why_warehouse_image = trimed_image_field('lab_why_warehouse_image', $img_dir . '/laboratory-warehouse.png');
 
@@ -345,7 +346,7 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
 
         <div class="lab-why-grid">
             <div class="lab-why-stats">
-                <img src="<?php echo esc_url($img_dir . '/laboratory-why-main.png'); ?>" alt="" class="lab-why-stats-bg">
+                <img src="<?php echo esc_url($why_main_image); ?>" alt="" class="lab-why-stats-bg">
                 <?php foreach ($why_stats as $stat) : ?>
                     <div class="lab-why-stat-item">
                         <span class="num"><?php echo esc_html(!empty($stat['number']) ? $stat['number'] : ''); ?></span>

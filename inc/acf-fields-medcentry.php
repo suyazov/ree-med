@@ -139,6 +139,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'button_label' => 'Добавить проект',
                 'sub_fields' => array(
                     array('key' => 'field_med_project_image', 'label' => 'Изображение', 'name' => 'image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
+                    array('key' => 'field_med_project_mobile_image', 'label' => 'Изображение для мобильных', 'name' => 'mobile_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Необязательно. Если не выбрано, используется основное изображение.'),
                     array('key' => 'field_med_project_number', 'label' => 'Номер', 'name' => 'number', 'type' => 'text'),
                     array('key' => 'field_med_project_title', 'label' => 'Название', 'name' => 'title', 'type' => 'text'),
                     array('key' => 'field_med_project_text', 'label' => 'Описание', 'name' => 'text', 'type' => 'textarea'),
@@ -196,6 +197,7 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             array('key' => 'field_med_why_title', 'label' => 'Заголовок', 'name' => 'med_why_title', 'type' => 'text', 'default_value' => 'Почему выбирают <span class="text-green">ТриМед</span>'),
             array('key' => 'field_med_why_warehouse_title', 'label' => 'Заголовок склада', 'name' => 'med_why_warehouse_title', 'type' => 'text', 'default_value' => 'Собственный склад в Чите'),
+            array('key' => 'field_med_why_cta_image', 'label' => 'Изображение CTA', 'name' => 'med_why_cta_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'),
             array('key' => 'field_med_why_cta_text', 'label' => 'Текст CTA', 'name' => 'med_why_cta_text', 'type' => 'textarea', 'default_value' => 'Нужна консультация по оборудованию?'),
             array('key' => 'field_med_why_cta_button_text', 'label' => 'Текст кнопки CTA', 'name' => 'med_why_cta_button_text', 'type' => 'text', 'default_value' => 'Оставить заявку'),
             array(

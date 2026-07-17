@@ -1089,6 +1089,14 @@ if (function_exists('acf_add_local_field_group')) {
                 ),
             ),
             array(
+                'key' => 'field_lab_why_main_image',
+                'label' => 'Основное изображение статистики',
+                'name' => 'lab_why_main_image',
+                'type' => 'image',
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+            ),
+            array(
                 'key' => 'field_lab_why_warehouse_title',
                 'label' => 'Заголовок склада',
                 'name' => 'lab_why_warehouse_title',

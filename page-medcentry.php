@@ -51,6 +51,7 @@ $why_title    = trimed_get_field_value('med_why_title', 'Почему выбир
 $why_warehouse_title = trimed_get_field_value('med_why_warehouse_title', 'Собственный склад в Чите');
 $why_cta_text = trimed_get_field_value('med_why_cta_text', 'Нужна консультация по оборудованию?');
 $why_cta_button = trimed_get_field_value('med_why_cta_button_text', 'Оставить заявку');
+$why_cta_image = trimed_image_field('med_why_cta_image', $img_dir . '/why-cta-image.png');
 
 // Fallbacks
 $audience_cards = trimed_repeater_field('med_audience_cards', array(
@@ -216,18 +217,11 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
 
             <div class="mc-projects-grid trimed-projects-grid">
                 <?php
-                $mobile_image_map = array(
-                    1 => $img_dir . '/project-mobile-1.png',
-                    2 => $img_dir . '/project-mobile-2.png',
-                    3 => $img_dir . '/project-mobile-1.png',
-                    4 => $img_dir . '/project-mobile-2.png',
-                );
                 foreach ($projects as $project_index => $project) :
-                    $project_number = $project_index + 1;
                     trimed_render_case_card(array(
                         'variant'          => 'medcentry',
                         'image'            => !empty($project['image']) ? $project['image'] : $placeholder,
-                        'mobile_image'     => isset($mobile_image_map[$project_number]) ? $mobile_image_map[$project_number] : '',
+                        'mobile_image'     => !empty($project['mobile_image']) ? $project['mobile_image'] : '',
                         'meta'             => $project['number'],
                         'title'            => $project['title'],
                         'text'             => $project['text'],
@@ -304,7 +298,7 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
                     </div>
                 </div>
                 <div class="mc-why-cta">
-                    <img src="<?php echo esc_url($img_dir . '/why-cta-image.png'); ?>" alt="" class="mc-why-cta-bg">
+                    <img src="<?php echo esc_url($why_cta_image); ?>" alt="" class="mc-why-cta-bg">
                     <div class="mc-why-cta-content">
                         <p class="mc-why-cta-text"><?php echo esc_html($why_cta_text); ?></p>
                         <a href="#contact-form" class="mc-why-cta-btn"><span><?php echo esc_html($why_cta_button); ?></span></a>
