@@ -21,11 +21,11 @@ function trimed_acf_free_repeaters_active() {
         return false;
     }
 
-    return !acf_get_setting('pro');
-}
+    if ((defined('ACF_PRO') && ACF_PRO) || class_exists('acf_pro')) {
+        return false;
+    }
 
-if (!trimed_acf_free_repeaters_active()) {
-    return;
+    return !acf_get_setting('pro');
 }
 
 /**
@@ -204,6 +204,10 @@ function trimed_free_repeater_get_rows($post_id, $field) {
  * в массив строк. Срабатывает для всех чтений get_field()/trimed_repeater_field.
  */
 function trimed_free_repeater_load_value($value, $post_id, $field) {
+    if (!trimed_acf_free_repeaters_active()) {
+        return $value;
+    }
+
     if (!is_array($field) || !isset($field['type']) || $field['type'] !== 'repeater') {
         return $value;
     }
@@ -321,6 +325,10 @@ function trimed_free_repeater_save_post_data($post_id, $input) {
  * Обработчик save_post: guards + извлечение входных данных.
  */
 function trimed_free_repeater_save($post_id, $post, $update) {
+    if (!trimed_acf_free_repeaters_active()) {
+        return;
+    }
+
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
@@ -349,6 +357,10 @@ add_action('save_post_page', 'trimed_free_repeater_save', 10, 3);
  * Регистрация metabox на применимых страницах.
  */
 function trimed_free_repeater_add_metabox($post_type, $post) {
+    if (!trimed_acf_free_repeaters_active()) {
+        return;
+    }
+
     if ($post_type !== 'page' || !($post instanceof WP_Post)) {
         return;
     }
@@ -503,6 +515,10 @@ function trimed_free_repeater_render_metabox($post) {
  * Admin assets только на применимых edit screen.
  */
 function trimed_free_repeater_admin_assets($hook) {
+    if (!trimed_acf_free_repeaters_active()) {
+        return;
+    }
+
     // Options page «Настройки сайта»: только CSS, чтобы скрыть legacy-repeater.
     if ($hook === 'toplevel_page_trimed-theme-options') {
         wp_enqueue_style(
