@@ -10,6 +10,58 @@ if (function_exists('acf_add_options_page')) {
         'redirect'   => false,
         'icon_url'   => 'dashicons-admin-generic',
     ));
+} elseif (is_admin()) {
+    /**
+     * ACF Free не содержит Options Page. Регистрируем совместимую страницу
+     * вручную, а поля и значения оставляем в стандартном ACF options storage.
+     */
+    function trimed_register_free_options_page() {
+        $hook = add_menu_page(
+            'Настройки сайта',
+            'Настройки сайта',
+            'manage_options',
+            'trimed-theme-options',
+            'trimed_render_free_options_page',
+            'dashicons-admin-generic',
+            58
+        );
+
+        add_action('load-' . $hook, 'trimed_prepare_free_options_page');
+    }
+    add_action('admin_menu', 'trimed_register_free_options_page');
+
+    function trimed_prepare_free_options_page() {
+        if (function_exists('acf_form_head')) {
+            acf_form_head();
+        }
+    }
+
+    function trimed_render_free_options_page() {
+        if (!current_user_can('manage_options')) {
+            wp_die(esc_html__('У вас недостаточно прав для просмотра этой страницы.'));
+        }
+
+        echo '<div class="wrap trimed-options-page">';
+        echo '<h1>Настройки сайта</h1>';
+
+        if (!function_exists('acf_form')) {
+            echo '<div class="notice notice-error"><p>Для редактирования настроек требуется активный плагин ACF.</p></div>';
+            echo '</div>';
+            return;
+        }
+
+        acf_form(array(
+            'post_id' => 'options',
+            'field_groups' => array('group_trimed_contacts'),
+            'form' => true,
+            'submit_value' => 'Сохранить настройки',
+            'updated_message' => 'Настройки сайта сохранены.',
+            'return' => admin_url('admin.php?page=trimed-theme-options&updated=true'),
+            'uploader' => 'wp',
+        ));
+
+        echo '</div>';
+    }
 }
 
 if (function_exists('acf_add_local_field_group')) {
