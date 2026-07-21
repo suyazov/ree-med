@@ -1503,9 +1503,10 @@ body.home .site-header {
         padding-bottom: 0;
     }
 
-    .project-card {
+    body.home .home-projects .project-card {
         flex-basis: 328px;
         max-width: 328px;
+        height: auto;
         min-height: 0;
         padding: 0;
         gap: 12px;
@@ -1529,9 +1530,10 @@ body.home .site-header {
         opacity: 0;
     }
 
-    .project-body {
+    body.home .home-projects .project-body {
         width: 328px;
-        height: 220px;
+        flex: 1 1 auto;
+        height: auto;
         min-height: 220px;
         padding: 20px 24px;
         background: #fff;
@@ -2845,7 +2847,8 @@ body.home .site-header {
     }
 
     .home-projects-slider {
-        height: 464px;
+        height: auto;
+        min-height: 464px;
     }
 
     .home-projects-slider .slider-arrow {
@@ -2886,7 +2889,8 @@ body.home .site-header {
         grid-template-columns: 175px 402px;
         gap: 12px;
         width: 589px;
-        height: 220px;
+        height: auto;
+        min-height: 220px;
         padding: 0;
         background: transparent;
         border-radius: 0;
@@ -2906,7 +2910,7 @@ body.home .site-header {
 
     .project-body {
         width: 402px;
-        height: 220px;
+        height: auto;
         min-height: 220px;
         padding: 20px 24px;
         justify-content: flex-start;
@@ -2943,7 +2947,7 @@ body.home .site-header {
 
     .project-card:first-child .project-title {
         font-size: 19.5px;
-        white-space: nowrap;
+        white-space: normal;
     }
 
     .project-card:nth-child(4) .project-title {
@@ -4239,7 +4243,7 @@ body.home .site-header {
 
     body.home .project-body {
         width: 328px;
-        height: 220px;
+        height: auto;
         min-height: 220px;
         padding: 20px 24px;
         background: #fff;
@@ -5084,7 +5088,7 @@ body.home .site-header {
         max-width: 100%;
         height: auto;
         min-height: 426px;
-        align-items: flex-start;
+        align-items: stretch;
         overflow-x: auto;
         overflow-y: visible;
         padding-bottom: 0;
@@ -5095,7 +5099,7 @@ body.home .site-header {
         max-width: 328px;
         flex: 0 0 328px;
         flex-basis: 328px;
-        height: 426px;
+        height: auto;
         min-height: 426px;
         gap: 12px;
     }
@@ -5114,17 +5118,11 @@ body.home .site-header {
     body.home .home-projects .project-body {
         width: 328px;
         max-width: 328px;
-        flex: 0 0 auto;
-        flex-basis: auto;
-        height: 220px;
+        flex: 1 1 auto;
+        height: auto;
         min-height: 220px;
         padding: 20px 24px;
         border-radius: var(--radius-card);
-    }
-
-    body.home .home-projects .project-card:nth-child(4),
-    body.home .home-projects .project-card:nth-child(4) .project-body {
-        height: auto;
     }
 
     body.home .home-projects .project-cat {
