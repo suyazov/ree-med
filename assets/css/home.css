@@ -5370,3 +5370,123 @@ body.home .site-header {
         row-gap: 0;
     }
 }
+
+/* ============================================================
+   Yandex reviews widget (секция «Отзывы» на главной)
+   ------------------------------------------------------------
+   Намеренно НЕ переиспользует старые классы .testimonials-layout /
+   .testimonials-intro / .testimonials-content — у них абсолютное
+   позиционирование и фиксированные px-размеры под прежний грид из
+   4 карточек, заданные в нескольких разных media-запросах. Блок
+   ниже — самостоятельный и не зависит от той вёрстки.
+   Добавлен в конец файла, чтобы гарантированно выигрывать каскад.
+   ============================================================ */
+
+/* Сбрасываем фиксированную высоту + overflow:hidden, унаследованные
+   секцией .home-testimonials от старой карточной вёрстки — иначе
+   виджет обрезается по высоте, а следующий блок наезжает на него. */
+body.home .home-testimonials {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 64px 0;
+    box-sizing: border-box;
+}
+
+body.home .home-testimonials .container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 var(--container-padding-mobile, 16px);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.testimonials-yandex-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    gap: 28px;
+    text-align: center;
+}
+
+.testimonials-yandex-intro {
+    width: 100%;
+}
+
+.testimonials-yandex-intro .section-title {
+    margin: 0;
+}
+
+.testimonials-yandex-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
+}
+
+.testimonials-yandex-content .section-label {
+    display: block;
+    margin: 0;
+}
+
+.testimonials-yandex-widget {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    max-width: 560px;
+    aspect-ratio: 560 / 800;
+    border-radius: var(--radius-card, 12px);
+    box-sizing: border-box;
+}
+
+.testimonials-yandex-widget iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    border-radius: inherit;
+}
+
+.testimonials-yandex-widget a {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 10px;
+    font-family: 'YS Text', sans-serif;
+    padding: 0 16px;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    max-height: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .testimonials-yandex-widget {
+        /* Немного шире дефолта Яндекса (560px), чтобы виджет не
+           выглядел потерянным в широком десктопном контейнере. */
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-yandex-widget {
+        /* На узких экранах пропорция 560:800 даёт слишком высокий
+           блок — ограничиваем высоту вьюпортом. */
+        aspect-ratio: auto;
+        width: 100%;
+        height: min(80vh, 700px);
+        max-width: 100%;
+    }
+}

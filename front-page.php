@@ -446,39 +446,25 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
 
     <section class="home-testimonials">
         <div class="container">
-            <div class="testimonials-layout">
-                <div class="testimonials-intro">
+            <div class="testimonials-yandex-layout">
+                <div class="testimonials-yandex-intro">
                     <h2 class="section-title"><span class="text-green"><?php echo esc_html($test_title_first); ?></span> <span><?php echo esc_html($test_title_rest); ?></span></h2>
                 </div>
-            <?php if (!empty($testimonials)) : ?>
-                <div class="testimonials-content">
+                <div class="testimonials-yandex-content">
                     <span class="section-label"><?php echo esc_html($test_subtitle); ?></span>
-                    <div class="testimonials-grid">
-                <?php foreach ($testimonials as $test) :
-                    $initial = mb_substr($test['name'], 0, 1);
-                    $color = !empty($test['color']) ? $test['color'] : '#315046';
-                ?>
-                    <div class="testimonial-card">
-                        <div class="testimonial-author">
-                            <span class="testimonial-avatar" style="background-color:<?php echo esc_attr($color); ?>">
-                                <img src="<?php echo esc_url(!empty($test['image']) ? $test['image'] : $img_main . '/10-2.png'); ?>" alt="<?php echo esc_attr($test['name']); ?>">
-                                <span><?php echo esc_html($initial); ?></span>
-                            </span>
-                            <div class="testimonial-meta">
-                                <strong><?php echo esc_html($test['name']); ?></strong>
-                                <span><?php echo esc_html($test['position']); ?></span>
-                            </div>
-                        </div>
-                        <p class="testimonial-text"><?php echo wp_kses_post($test['text']); ?></p>
+                    <div class="testimonials-yandex-widget">
+                        <iframe
+                            src="https://yandex.ru/maps-reviews-widget/121247451024?comments"
+                            title="Отзывы о ТриМед на Яндекс Картах"
+                            loading="lazy"
+                        ></iframe>
+                        <a
+                            href="https://yandex.ru/maps/org/trimed/121247451024/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >ТриМед на карте Читы — Яндекс Карты</a>
                     </div>
-                <?php endforeach; ?>
-            </div>
-                    <div class="testimonials-dots">
-                        <?php foreach ($testimonials as $i => $_test) : ?>
-                            <span class="testimonials-dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
-                        <?php endforeach; ?>
-                    </div>
-            <?php endif; ?>
+                </div>
             </div>
         </div>
     </section>
