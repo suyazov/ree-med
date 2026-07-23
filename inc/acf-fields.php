@@ -570,6 +570,14 @@ if (function_exists('acf_add_local_field_group')) {
                 'placement' => 'left',
             ),
             array(
+                'key' => 'field_disinfection_show_projects',
+                'label' => 'Показывать блок «Реализованные проекты»',
+                'name' => 'disinfection_show_projects',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+            ),
+            array(
                 'key' => 'field_projects_title',
                 'label' => 'Заголовок',
                 'name' => 'projects_title',
@@ -1121,6 +1129,14 @@ if (function_exists('acf_add_local_field_group')) {
                 'placement' => 'left',
             ),
             array(
+                'key' => 'field_lab_show_projects',
+                'label' => 'Показывать блок «Реализованные проекты»',
+                'name' => 'lab_show_projects',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+            ),
+            array(
                 'key' => 'field_lab_projects_title',
                 'label' => 'Заголовок',
                 'name' => 'lab_projects_title',
@@ -1564,6 +1580,14 @@ if (function_exists('acf_add_local_field_group')) {
                 'name' => 'tab_stom_projects',
                 'type' => 'tab',
                 'placement' => 'left',
+            ),
+            array(
+                'key' => 'field_stom_show_projects',
+                'label' => 'Показывать блок «Реализованные проекты»',
+                'name' => 'stom_show_projects',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
             ),
             array(
                 'key' => 'field_stom_projects_title',

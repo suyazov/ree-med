@@ -165,6 +165,14 @@ acf_add_local_field_group(array(
             'type' => 'tab',
             'placement' => 'left',
         ),
+        array(
+            'key' => 'field_main_show_projects',
+            'label' => 'Показывать блок «Реализованные проекты»',
+            'name' => 'main_show_projects',
+            'type' => 'true_false',
+            'default_value' => 1,
+            'ui' => 1,
+        ),
         array('key' => 'field_main_projects_title', 'label' => 'Заголовок', 'name' => 'main_projects_title', 'type' => 'text', 'default_value' => 'Реализованные проекты'),
         array('key' => 'field_main_projects_btn', 'label' => 'Кнопка', 'name' => 'main_projects_btn', 'type' => 'text', 'default_value' => 'Смотреть все проекты'),
         array(

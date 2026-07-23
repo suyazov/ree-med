@@ -380,6 +380,7 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
 </section>
 
 <!-- 6. Projects -->
+<?php if (trimed_is_page_section_enabled('lab_show_projects')) : ?>
 <section class="lab-projects">
     <div class="lab-section-inner">
         <div class="lab-projects-header">
@@ -428,6 +429,7 @@ if (trim(wp_strip_all_tags($request_desc)) === 'Оставьте заявку и
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- 7. Tasks -->
 <section class="lab-tasks">

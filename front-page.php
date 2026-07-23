@@ -325,6 +325,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
         </div>
     </section>
 
+    <?php if (trimed_is_page_section_enabled('main_show_projects')) : ?>
     <section class="home-projects trimed-projects">
         <div class="container">
             <div class="home-projects-header">
@@ -358,6 +359,7 @@ $form_btn   = (!empty($form_btn_raw) && $form_btn_raw !== 'Отправить') 
             <a href="#" class="btn btn-primary projects-btn-mobile"><?php echo esc_html($projects_btn); ?></a>
         </div>
     </section>
+    <?php endif; ?>
 
     <section class="home-categories">
         <div class="container">

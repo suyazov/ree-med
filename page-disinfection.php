@@ -280,6 +280,7 @@ $img_dir = trimed_get_image_dir();
     </section>
 
     <!-- Projects -->
+    <?php if (trimed_is_page_section_enabled('disinfection_show_projects')) : ?>
     <section class="projects-section">
         <div class="container">
             <div class="section-header row">
@@ -341,6 +342,7 @@ $img_dir = trimed_get_image_dir();
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <!-- Partners -->
     <section class="partners-section">

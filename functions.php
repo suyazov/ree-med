@@ -312,6 +312,23 @@ function trimed_get_field_value($field, $fallback = '') {
     return $fallback;
 }
 
+/**
+ * Returns a page-level ACF toggle while keeping legacy pages enabled by default.
+ */
+function trimed_is_page_section_enabled($field, $default = true, $post_id = 0) {
+    $post_id = $post_id ? (int) $post_id : (int) get_queried_object_id();
+
+    if (!$post_id || !metadata_exists('post', $post_id, $field)) {
+        return (bool) $default;
+    }
+
+    if (function_exists('get_field')) {
+        return (bool) get_field($field, $post_id);
+    }
+
+    return (bool) get_post_meta($post_id, $field, true);
+}
+
 function trimed_image_field($field, $fallback) {
     $value = trimed_get_field_value($field, '');
     return !empty($value) ? $value : $fallback;
@@ -755,6 +772,7 @@ function trimed_render_request_callout($args = array()) {
     $args = wp_parse_args($args, array(
         'section_class'      => 'home-request',
         'section_id'         => '',
+        'anchor_id'          => 'contacts',
         'container_class'    => 'container',
         'grid_class'         => 'request-grid',
         'icon'               => '<svg class="request-plus" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>',
@@ -774,6 +792,7 @@ function trimed_render_request_callout($args = array()) {
     trimed_render_service_request_section(array(
         'section_class' => $args['section_class'],
         'section_id'    => $args['section_id'],
+        'anchor_id'     => $args['anchor_id'],
         'container_class' => $args['container_class'],
         'inner_class'   => $args['grid_class'],
         'summary' => array(
@@ -986,6 +1005,7 @@ function trimed_render_service_request_section($args = array()) {
     $args = wp_parse_args($args, array(
         'section_class' => '',
         'section_id'    => '',
+        'anchor_id'     => '',
         'container_class' => '',
         'inner_class'   => '',
         'wrap_form'     => false,
@@ -995,6 +1015,7 @@ function trimed_render_service_request_section($args = array()) {
 
     $section_class = trimed_sanitize_class_list($args['section_class']);
     $section_id = trim(sanitize_html_class($args['section_id']));
+    $anchor_id = trim(sanitize_html_class($args['anchor_id']));
     $container_class = trimed_sanitize_class_list($args['container_class']);
     $inner_class = trimed_sanitize_class_list($args['inner_class']);
 
@@ -1002,6 +1023,9 @@ function trimed_render_service_request_section($args = array()) {
     $form = is_array($args['form']) ? $args['form'] : array();
 
     echo '<section class="' . esc_attr($section_class) . '"' . (!empty($section_id) ? ' id="' . esc_attr($section_id) . '"' : '') . '>';
+    if ($anchor_id && $anchor_id !== $section_id) {
+        echo '<span id="' . esc_attr($anchor_id) . '" aria-hidden="true"></span>';
+    }
 
     if ($container_class) {
         echo '<div class="' . esc_attr($container_class) . '">';

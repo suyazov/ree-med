@@ -251,6 +251,7 @@ $included_bottom = array_slice($included_cards, 3);
         </div>
     </section>
 
+    <?php if (trimed_is_page_section_enabled('stom_show_projects')) : ?>
     <section class="stom-projects">
         <div class="stom-section-inner">
             <div class="stom-projects-header">
@@ -273,6 +274,7 @@ $included_bottom = array_slice($included_cards, 3);
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <section class="stom-process">
         <div class="stom-section-inner">

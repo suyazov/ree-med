@@ -207,6 +207,7 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
         </div>
     </section>
 
+    <?php if (trimed_is_page_section_enabled('med_show_projects')) : ?>
     <section class="mc-projects trimed-projects">
         <div class="mc-section-inner">
             <div class="mc-projects-header">
@@ -233,6 +234,7 @@ $warehouse_icon = '<svg width="32" height="29" viewBox="0 0 32 29" fill="none" x
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <section class="mc-process">
         <div class="mc-section-inner">
